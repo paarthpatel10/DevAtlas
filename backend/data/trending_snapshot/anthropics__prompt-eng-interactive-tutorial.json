@@ -1,0 +1,31 @@
+{
+  "archived": false,
+  "category": "llm_agents",
+  "created_at_github": "2024-04-02T15:52:00Z",
+  "default_branch": "master",
+  "description": "Anthropic's Interactive Prompt Engineering Tutorial",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 4346,
+  "full_name": "anthropics/prompt-eng-interactive-tutorial",
+  "github_id": 781022269,
+  "homepage_url": null,
+  "html_url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+  "languages": {
+    "Jupyter Notebook": 1322538,
+    "Python": 25486
+  },
+  "license_name": null,
+  "license_spdx": null,
+  "name": "prompt-eng-interactive-tutorial",
+  "open_issues": 64,
+  "owner": "anthropics",
+  "primary_language": "Jupyter Notebook",
+  "pushed_at_github": "2026-08-28T05:31:39Z",
+  "readme_text": "# Welcome to Anthropic's Prompt Engineering Interactive Tutorial\n\n## Course introduction and goals\n\nThis course is intended to provide you with a comprehensive step-by-step understanding of how to engineer optimal prompts within Claude.\n\n**After completing this course, you will be able to**:\n- Master the basic structure of a good prompt \n- Recognize common failure modes and learn the '80/20' techniques to address them\n- Understand Claude's strengths and weaknesses\n- Build strong prompts from scratch for common use cases\n\n## Course structure and content\n\nThis course is structured to allow you many chances to practice writing and troubleshooting prompts yourself. The course is broken up into **9 chapters with accompanying exercises**, as well as an appendix of even more advanced methods. It is intended for you to **work through the course in chapter order**. \n\n**Each lesson has an \"Example Playground\" area** at the bottom where you are free to experiment with the examples in the lesson and see for yourself how changing prompts can change Claude's responses. There is also an [answer key](https://docs.google.com/spreadsheets/d/1jIxjzUWG-6xBVIa2ay6yDpLyeuOh_hR_ZB75a47KX_E/edit?usp=sharing).\n\nNote: This tutorial uses our smallest, fastest, and cheapest model, Claude 3 Haiku. Anthropic has [two other models](https://docs.anthropic.com/claude/docs/models-overview), Claude 3 Sonnet and Claude 3 Opus, which are more intelligent than Haiku, with Opus being the most intelligent.\n\n*This tutorial also exists on [Google Sheets using Anthropic's Claude for Sheets extension](https://docs.google.com/spreadsheets/d/19jzLgRruG9kjUQNKtCg1ZjdD6l6weA6qRXG5zLIAhC8/edit?usp=sharing). We recommend using that version as it is more user friendly.*\n\nWhen you are ready to begin, go to `01_Basic Prompt Structure` to proceed.\n\n## Table of Contents\n\nEach chapter consists of a lesson and a set of exercises.\n\n### Beginner\n- **Chapter 1:** Basic Prompt Structure\n\n- **Chapter 2:** Being Clear and Direct  \n\n- **Chapter 3:** Assigning Roles\n\n### Intermediate \n- **Chapter 4:** Separating Data from Instructions\n\n- **Chapter 5:** Formatting Output & Speaking for Claude\n\n- **Chapter 6:** Precognition (Thinking Step by Step)\n\n- **Chapter 7:** Using Examples\n\n### Advanced\n- **Chapter 8:** Avoiding Hallucinations\n\n- **Chapter 9:** Building Complex Prompts (Industry Use Cases)\n  - Complex Prompts from Scratch - Chatbot\n  - Complex Prompts for Legal Services\n  - **Exercise:** Complex Prompts for Financial Services\n  - **Exercise:** Complex Prompts for Coding\n  - Congratulations & Next Steps\n\n- **Appendix:** Beyond Standard Prompting\n  - Chaining Prompts\n  - Tool Use\n  - Search & Retrieval",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/anthropics/prompt-eng-interactive-tutorial/blob/master/README.md",
+  "stars": 39184,
+  "topics": [],
+  "updated_at_github": "2026-11-10T08:27:39Z"
+}

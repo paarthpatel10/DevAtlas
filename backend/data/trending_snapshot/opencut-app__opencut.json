@@ -1,0 +1,36 @@
+{
+  "archived": false,
+  "category": "developer_tools",
+  "created_at_github": "2025-06-22T08:02:17Z",
+  "default_branch": "main",
+  "description": "The open-source CapCut alternative",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 9778,
+  "full_name": "OpenCut-app/OpenCut",
+  "github_id": 1006414368,
+  "homepage_url": "https://opencut.app",
+  "html_url": "https://github.com/OpenCut-app/OpenCut",
+  "languages": {
+    "CSS": 4631,
+    "Rust": 38455,
+    "TypeScript": 223183
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "OpenCut",
+  "open_issues": 386,
+  "owner": "OpenCut-app",
+  "primary_language": "TypeScript",
+  "pushed_at_github": "2026-09-24T09:24:44Z",
+  "readme_text": "<table width=\"100%\">\n  <tr>\n    <td align=\"left\" width=\"120\">\n      <img src=\"https://assets.opencut.app/branding/symbol.svg\" alt=\"OpenCut Logo\" width=\"100\" />\n    </td>\n    <td align=\"right\">\n      <h1>OpenCut</h1>\n      <h3 style=\"margin-top: -10px;\">A free and open source video editor for web, desktop, and mobile.</h3>\n    </td>\n  </tr>\n</table>\n\n[![Discord](https://img.shields.io/discord/1386309140057690133?label=Discord&logo=discord&logoColor=fff&color=5865F2&style=flat)](https://discord.gg/zmR9N35cjK)\n[![X](https://img.shields.io/badge/follow-%40opencutapp-000?logo=x&logoColor=fff&style=flat)](https://x.com/opencutapp)\n[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat)](LICENSE)\n\n## Status\n\n**OpenCut is being rewritten from the ground up.** What's coming:\n\n- An Editor API\n- First-class third party plugins (made possible by a plugin-first architecture)\n- Desktop, mobile, and browser from one codebase (Rust core)\n- MCP server (for AI agents)\n- Headless mode (automation, batch rendering)\n- A scripting tab directly in the editor\n\nYou can still find the previous version at [opencut-app/opencut-classic](https://github.com/opencut-app/opencut-classic), which is the one to reach for today. [opencut.app](https://opencut.app) still runs the classic version. The rewrite will live at [new.opencut.app](https://new.opencut.app) until it's ready to take over.\n\n## Development\n\nInstall [proto](https://moonrepo.dev/proto) if you haven't already:\n\n**Linux, macOS, WSL:**\n\n```sh\nbash <(curl -fsSL https://moonrepo.dev/install/proto.sh)\n```\n\n**Windows (PowerShell):**\n\n```powershell\nirm https://moonrepo.dev/install/proto.ps1 | iex\n```\n\nIf shims fail to run, allow local scripts for your user:\n\n```powershell\nSet-ExecutionPolicy -Scope CurrentUser RemoteSigned\n```\n\nFrom the repo root:\n\n```sh\nproto use    # installs the tools pinned in .prototools\n```\n\n```sh\nmoon run web:dev       # localhost:5173\nmoon run api:dev       # localhost:8787\nmoon run desktop:dev   # see apps/desktop/README.md\n```\n\n## Contributing\n\nWe're not set up to take outside contributions yet while the architecture is being designed. If you want to follow along, ask questions, or just hang out, [join the Discord](https://discord.gg/zmR9N35cjK) or [open an issue](https://github.com/opencut-app/opencut/issues).\n\n## Sponsors\n\nOpenCut is supported by companies that believe in open source creator tools.\n\n- [**fal.ai**](https://fal.ai?utm_source=github-opencut&utm_campaign=oss): Generative image, video, and audio models all in one place.\n\nWant your logo here? Reach out at [sponsor@opencut.app](mailto:sponsor@opencut.app).\n\n## License\n\n[MIT](LICENSE)\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/OpenCut-app/OpenCut/blob/main/README.md",
+  "stars": 97982,
+  "topics": [
+    "editor",
+    "oss",
+    "videoeditor"
+  ],
+  "updated_at_github": "2026-11-10T08:54:57Z"
+}

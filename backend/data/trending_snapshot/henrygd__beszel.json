@@ -1,0 +1,42 @@
+{
+  "archived": false,
+  "category": "devops_platform",
+  "created_at_github": "2024-07-07T21:36:28Z",
+  "default_branch": "main",
+  "description": "Lightweight server monitoring with historical data, docker stats, and alerts.",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 1161,
+  "full_name": "henrygd/beszel",
+  "github_id": 825470378,
+  "homepage_url": "https://beszel.dev",
+  "html_url": "https://github.com/henrygd/beszel",
+  "languages": {
+    "C#": 2866,
+    "CSS": 5751,
+    "Go": 2986268,
+    "Go Template": 3545,
+    "HTML": 4733,
+    "Makefile": 4403,
+    "PowerShell": 42572,
+    "Shell": 68258,
+    "TypeScript": 126111
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "beszel",
+  "open_issues": 389,
+  "owner": "henrygd",
+  "primary_language": "Go",
+  "pushed_at_github": "2026-11-09T19:27:14Z",
+  "readme_text": "# Beszel\n\nBeszel is a lightweight server monitoring platform that includes Docker statistics, historical data, and alert functions.\n\nIt has a friendly web interface, simple configuration, and is ready to use out of the box. It supports automatic backup, multi-user, OAuth authentication, and API access.\n\n[![agent Docker Image Size](https://img.shields.io/docker/image-size/henrygd/beszel-agent/latest?logo=docker&label=agent%20image%20size)](https://hub.docker.com/r/henrygd/beszel-agent)\n[![hub Docker Image Size](https://img.shields.io/docker/image-size/henrygd/beszel/latest?logo=docker&label=hub%20image%20size)](https://hub.docker.com/r/henrygd/beszel)\n[![MIT license](https://img.shields.io/github/license/henrygd/beszel?color=%239944ee)](https://github.com/henrygd/beszel/blob/main/LICENSE)\n[![Crowdin](https://badges.crowdin.net/beszel/localized.svg)](https://crowdin.com/project/beszel)\n\n![Screenshot of Beszel dashboard and system page, side by side. The dashboard shows metrics from multiple connected systems, while the system page shows detailed metrics for a single system.](https://henrygd-assets.b-cdn.net/beszel/screenshot-new.png)\n\n## Features\n\n- **Lightweight**: Smaller and less resource-intensive than leading solutions.\n- **Simple**: Easy setup with little manual configuration required.\n- **Alerts**: Configurable alerts for most metrics. Supports many notification services.\n- **Docker stats**: Tracks CPU, memory, and network usage history for each container.\n- **Network monitoring**: Monitor response time and interruptions directly from agents.\n- **S.M.A.R.T.**: Disk health data and notifications on drive failure.\n- **Multi-user**: Users manage their own systems. Admins can share systems across users.\n- **OAuth / OIDC**: Supports many OAuth2 providers. Password auth can be disabled.\n- **Automatic backups**: Save to and restore from disk or S3-compatible storage.\n<!-- - **REST API**: Use or update your data in your own scripts and applications. -->\n\n## Architecture\n\nBeszel consists of two main components: the **hub** and the **agent**.\n\n- **Hub**: A web application built on [PocketBase](https://pocketbase.io/) that provides a dashboard for viewing and managing connected systems.\n- **Agent**: Runs on each system you want to monitor and communicates system metrics to the hub.\n\n## Getting started\n\nThe [quick start guide](https://beszel.dev/guide/getting-started) and other documentation is available on our website, [beszel.dev](https://beszel.dev). You'll be up and running in a few minutes.\n\n## Screenshots\n\n![Dashboard](https://beszel.dev/image/dashboard.png)\n![System page](https://beszel.dev/image/system-full.png)\n![Notification Settings](https://beszel.dev/image/settings-notifications.png)\n\n## Supported metrics\n\n- **CPU usage** - Host system and Docker / Podman containers.\n- **Memory usage** - Host system and containers. Includes swap and ZFS ARC.\n- **Disk usage** - Host system. Supports multiple partitions and devices.\n- **Disk I/O** - Host system. Supports multiple partitions and devices.\n- **Network usage** - Host system and containers.\n- **Load average** - Host system.\n- **Temperature** - Host system sensors.\n- **Fan speed** - Host system sensors (Linux, via `/sys/class/hwmon`).\n- **GPU usage / power draw** - Nvidia, AMD, and Intel.\n- **Battery charge** - Host system and some peripherals.\n- **Containers** - Status and metrics of all running Docker / Podman containers.\n- **S.M.A.R.T.** - Host system disk health (includes eMMC wear/EOL and Linux mdraid array health via sysfs when available).\n- **ZFS** - Pool capacity, usage, health, I/O throughput, scrub status, and per-dataset usage.\n\n## Help and discussion\n\nPlease search existing issues and discussions before opening a new one. I try my best to respond, but may not always have time to do so.\n\n#### Bug reports and feature requests\n\nBug reports and feature requests can be posted on [GitHub issues](https://github.com/henrygd/beszel/issues).\n\n#### Support and general discussion\n\nSupport requests and general discussion can be posted on [GitHub discussions](https://github.com/henrygd/beszel/discussions) or the community-run [Matrix room](https://matrix.to/#/#beszel:matrix.org): `#beszel:matrix.org`.\n\n## License\n\nBeszel is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/henrygd/beszel/blob/main/readme.md",
+  "stars": 27108,
+  "topics": [
+    "homelab",
+    "monitoring",
+    "self-hosted"
+  ],
+  "updated_at_github": "2026-11-10T09:00:27Z"
+}

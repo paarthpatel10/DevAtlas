@@ -1,0 +1,39 @@
+{
+  "archived": false,
+  "category": "developer_tools",
+  "created_at_github": "2023-07-13T19:41:40Z",
+  "default_branch": "main",
+  "description": "A TizenBrew module to remove ads and add support for SponsorBlock for your Tizen TV.",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 246,
+  "full_name": "reisxd/TizenTube",
+  "github_id": 666132902,
+  "homepage_url": "https://tizentube.app",
+  "html_url": "https://github.com/reisxd/TizenTube",
+  "languages": {
+    "CSS": 3013,
+    "HTML": 3486,
+    "JavaScript": 399003
+  },
+  "license_name": "GNU General Public License v3.0",
+  "license_spdx": "GPL-3.0",
+  "name": "TizenTube",
+  "open_issues": 143,
+  "owner": "reisxd",
+  "primary_language": "JavaScript",
+  "pushed_at_github": "2026-10-16T21:15:34Z",
+  "readme_text": "# ▶️ TizenTube\n<p align=\"center\">\n    <img width=\"600px\" src=\".github/assets/TizenTube Standalone Banner.png\">\n    <br>\n    <sub> TizenTube logo, banner and README by <a href=\"https://github.com/Zyborg777\">@Zyborg777</a> </sub>\n</p>\n\n**TizenTube** is a TizenBrew module that enhances your favourite streaming websites viewing experience by removing ads and adding support for Sponsorblock. **Now works as a standalone app!**\n\n** **\n🤖 **Looking for an app for Android TVs?** Check out [TizenTube Cobalt](https://github.com/reisxd/TizenTubeCobalt). It offers everything TizenTube has for Android TVs.\n\n\n<p align=\"left\">\n    <a href=\"https://github.com/reisxd/TizenTubeCobalt/releases/latest\">\n        <picture>\n            <img width=\"250px\"\n                src=\".github/assets/TizenTube_Cobalt_dl-button.png\" />\n        </picture>\n    </a>\n</p>\n\n## ❓ How to install\n\nFollow the guide in the [Installation Guide](./docs/README.md).\n\n## ✨ Features\n- 📺 **Picture-in-Picture Mode**\n- 🛑 **Ad Blocker**: Enjoy your favourite streaming website without interruptions from ads.\n- ❗ **SponsorBlock Support**: Automatically skip sponsored segments in videos.\n- ⏭️ **Video Speed Control**: Adjust playback speed to your preference.\n- 🔺 **[DeArrow](https://dearrow.ajay.app/) Support**: Remove clickbait and misleading video titles.\n- ➕ **More to come!** Request features via [issues](https://github.com/reisxd/TizenTube/issues/new).\n\n## 🌐 Community and Support \n| Links |\n| ------------- |\n| [r/TizenTube Subreddit](https://www.reddit.com/r/TizenTube/)  |\n| [Discord Server](https://discord.gg/m2P7v8Y2qR)  | \n| [Telegram](https://t.me/tizentubeofficial)  |\n| [Matrix Space](https://matrix.to/#/!BLE5ubNYktI30e8K0j:matrix.6513006.xyz)  |\n| [Report Issues / Request Features](https://github.com/reisxd/TizenTube/issues)  |\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/reisxd/TizenTube/blob/main/README.md",
+  "stars": 2493,
+  "topics": [
+    "ad-blocker",
+    "tizen",
+    "tizen-tv",
+    "tizenbrew",
+    "ublock-origin",
+    "youtube"
+  ],
+  "updated_at_github": "2026-11-10T08:29:12Z"
+}

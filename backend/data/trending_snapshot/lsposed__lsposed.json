@@ -1,0 +1,40 @@
+{
+  "archived": false,
+  "category": "developer_tools",
+  "created_at_github": "2020-12-12T08:39:37Z",
+  "default_branch": "master",
+  "description": "LSPosed Framework",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 3591,
+  "full_name": "LSPosed/LSPosed",
+  "github_id": 320785435,
+  "homepage_url": "https://lsposed.org",
+  "html_url": "https://github.com/LSPosed/LSPosed",
+  "languages": {
+    "AIDL": 4579,
+    "C": 12611,
+    "C++": 218320,
+    "CMake": 3667,
+    "CSS": 26708,
+    "HTML": 1218,
+    "Java": 1152330,
+    "Shell": 19673
+  },
+  "license_name": "GNU General Public License v3.0",
+  "license_spdx": "GPL-3.0",
+  "name": "LSPosed",
+  "open_issues": 5,
+  "owner": "LSPosed",
+  "primary_language": "Java",
+  "pushed_at_github": "2026-10-14T04:37:33Z",
+  "readme_text": "# LSPosed Framework\n\n[![Build](https://img.shields.io/github/actions/workflow/status/LSPosed/LSPosed/core.yml?branch=master&event=push&logo=github&label=Build)](https://github.com/LSPosed/LSPosed/actions/workflows/core.yml?query=event%3Apush+branch%3Amaster+is%3Acompleted) [![Crowdin](https://img.shields.io/badge/Localization-Crowdin-blueviolet?logo=Crowdin)](https://lsposed.crowdin.com/lsposed) [![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/LSPosed) [![Chat](https://img.shields.io/badge/Join-QQ%E9%A2%91%E9%81%93-red?logo=tencent-qq&logoColor=red)](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&inviteCode=Xz9dJ&from=246610&biz=ka) [![Download](https://img.shields.io/github/v/release/LSPosed/LSPosed?color=orange&logoColor=orange&label=Download&logo=DocuSign)](https://github.com/LSPosed/LSPosed/releases/latest) [![Total](https://shields.io/github/downloads/LSPosed/LSPosed/total?logo=Bookmeter&label=Counts&logoColor=yellow&color=yellow)](https://github.com/LSPosed/LSPosed/releases)\n\n## Introduction \n\nA Riru / Zygisk module trying to provide an ART hooking framework which delivers consistent APIs with the OG Xposed, leveraging LSPlant hooking framework.\n\n> Xposed is a framework for modules that can change the behavior of the system and apps without touching any APKs. That's great because it means that modules can work for different versions and even ROMs without any changes (as long as the original code was not changed too much). It's also easy to undo. As all changes are done in the memory, you just need to deactivate the module and reboot to get your original system back. There are many other advantages, but here is just one more: multiple modules can do changes to the same part of the system or app. With modified APKs, you have to choose one. No way to combine them, unless the author builds multiple APKs with different combinations.\n\n## Supported Versions\n\nAndroid 8.1 ~ 14\n\n## Install\n\n1. Install Magisk v24+\n2. (For Riru flavor) Install [Riru](https://github.com/RikkaApps/Riru/releases/latest) v26.1.7+\n3. [Download](#download) and install LSPosed in Magisk app\n4. Reboot\n5. Open LSPosed manager from notification\n6. Have fun :)\n\n## Download\n\n- For stable releases, please go to [Github Releases page](https://github.com/LSPosed/LSPosed/releases)\n- For canary build, please check [Github Actions](https://github.com/LSPosed/LSPosed/actions/workflows/core.yml?query=branch%3Amaster)\n\nNote: debug builds are only available in Github Actions.\n\n## Get Help\n**Only bug reports from **THE LATEST DEBUG BUILD** will be accepted.**\n- GitHub issues: [Issues](https://github.com/LSPosed/LSPosed/issues/)\n- (For Chinese speakers) 本项目只接受英语**标题**的issue。如果您不懂英语，请使用[翻译工具](https://www.deepl.com/zh/translator)\n\n## For Developers\n\nDevelopers are welcome to write Xposed modules with hooks based on LSPosed Framework. A module based on LSPosed framework is fully compatible with the original Xposed Framework, and vice versa, a Xposed Framework-based module will work well with LSPosed framework too.\n\n- [Xposed Framework API](https://api.xposed.info/)\n\nWe use our own module repository. We welcome developers to submit modules to our repository, and then modules can be downloaded in LSPosed.\n\n- [LSPosed Module Repository](https://github.com/Xposed-Modules-Repo)\n\n## Community Discussion\n\n- Telegram: [@LSPosed](https://t.me/s/LSPosed)\n\nNotice: These community groups don't accept any bug report, please use [Get help](#get-help) to report.\n\n## Translation Contributing\n\nYou can contribute translation [here](https://lsposed.crowdin.com/lsposed).\n\n## Credits \n\n- [Magisk](https://github.com/topjohnwu/Magisk/): makes all these possible\n- [Riru](https://github.com/RikkaApps/Riru): provides a way to inject code into zygote process\n- [XposedBridge](https://github.com/rovo89/XposedBridge): the OG Xposed framework APIs\n- [Dobby](https://github.com/jmpews/Dobby): used for inline hooking\n- [LSPlant](https://github.com/LSPosed/LSPlant): the core ART hooking framework\n- [EdXposed](https://github.com/ElderDrivers/EdXposed): fork source\n- ~[SandHook](https://github.com/ganyao114/SandHook/): ART hooking framework for SandHook variant~\n- ~[YAHFA](https://github.com/rk700/YAHFA): previous ART hooking framework~\n- ~[dexmaker](https://github.com/linkedin/dexmaker) and [dalvikdx](https://github.com/JakeWharton/dalvik-dx): to dynamically generate YAHFA hooker classes~\n- ~[DexBuilder](https://github.com/LSPosed/DexBuilder): to dynamically generate YAHFA hooker classes~\n\n## License\n\nLSPosed is licensed under the **GNU General Public License v3 (GPL-3)** (http://www.gnu.org/copyleft/gpl.html).\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/LSPosed/LSPosed/blob/master/README.md",
+  "stars": 25415,
+  "topics": [
+    "android",
+    "xposed"
+  ],
+  "updated_at_github": "2026-11-10T09:00:58Z"
+}
