@@ -15,9 +15,11 @@ target_metadata = Base.metadata
 
 
 def database_url() -> str:
-    url = config.get_main_option("sqlalchemy.url") or get_settings().database_url
+    # Migrations need a direct (non-pooled) connection: PgBouncer's transaction mode
+    # does not keep session state across statements.
+    url = config.get_main_option("sqlalchemy.url") or get_settings().migration_database_url
     if not url:
-        raise RuntimeError("DATABASE_URL is not set (backend/.env).")
+        raise RuntimeError("DATABASE_URL_UNPOOLED / DATABASE_URL is not set (.env).")
     return url
 
 
