@@ -1,0 +1,35 @@
+{
+  "archived": false,
+  "category": "frontend",
+  "created_at_github": "2020-01-01T00:00:00Z",
+  "default_branch": "main",
+  "description": "Accessible React component library written in TypeScript",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:00Z",
+  "forks": 10,
+  "full_name": "acme/ui",
+  "github_id": 9002,
+  "homepage_url": null,
+  "html_url": "https://github.com/acme/ui",
+  "languages": {
+    "CSS": 500,
+    "TypeScript": 8000
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "ui",
+  "open_issues": 3,
+  "owner": "acme",
+  "primary_language": "TypeScript",
+  "pushed_at_github": "2026-11-01T00:00:00Z",
+  "readme_text": "# ui\n\nAccessible, themeable React components for design systems.\n\n## Features\n\n- Keyboard navigation and focus management\n- Dark mode theming\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/acme/ui/blob/main/README.md",
+  "stars": 800,
+  "topics": [
+    "react",
+    "components",
+    "ui"
+  ],
+  "updated_at_github": "2026-11-01T00:00:00Z"
+}

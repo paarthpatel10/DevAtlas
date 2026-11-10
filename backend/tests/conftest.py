@@ -2,6 +2,7 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
+from app.ai.provider import Providers, get_providers
 from app.config import Settings
 from app.main import create_app
 
@@ -9,6 +10,11 @@ from app.main import create_app
 @pytest.fixture
 def settings() -> Settings:
     return Settings(app_env="test", database_url=None, _env_file=None)
+
+
+@pytest.fixture
+def providers(settings: Settings) -> Providers:
+    return get_providers(settings)
 
 
 @pytest.fixture

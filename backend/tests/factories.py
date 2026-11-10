@@ -1,11 +1,19 @@
 """Test data builders (test-only helpers)."""
 
+import json
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
 from app.models import Repository
+from app.schemas.snapshot import RepoSnapshot
 
 FIXED_TIME = datetime(2026, 11, 10, tzinfo=UTC)
+FIXTURES_DIR = Path(__file__).parent / "fixtures" / "snapshots"
+
+
+def load_fixture(name: str) -> RepoSnapshot:
+    return RepoSnapshot(**json.loads((FIXTURES_DIR / name).read_text(encoding="utf-8")))
 
 
 def make_repo(**overrides: Any) -> Repository:
