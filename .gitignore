@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.local
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Tooling
+.superpowers/
+*.log
+.DS_Store
