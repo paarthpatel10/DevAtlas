@@ -155,6 +155,22 @@ test("empty results show guidance from the pipeline", async () => {
   expect(screen.getByRole("link", { name: /browse explore/i })).toHaveAttribute("href", "/explore");
 });
 
+test("a slow earlier response never replaces a newer query's results", async () => {
+  let resolveFirst!: (value: RecommendResponse) => void;
+  vi.mocked(recommend)
+    .mockImplementationOnce(() => new Promise((resolve) => (resolveFirst = resolve)))
+    .mockResolvedValueOnce(response);
+  render(<AskView />);
+  await userEvent.type(textbox(), "first query{Enter}");
+  await userEvent.clear(textbox());
+  await userEvent.type(textbox(), "second query{Enter}");
+  expect(await screen.findByRole("article", { name: /acme\/jobs/ })).toBeInTheDocument();
+  resolveFirst({ ...response, results: [], pipeline: { ...response.pipeline, notes: ["stale"] } });
+  await new Promise((r) => setTimeout(r, 0));
+  expect(screen.getByRole("article", { name: /acme\/jobs/ })).toBeInTheDocument();
+  expect(screen.queryByText("stale")).not.toBeInTheDocument();
+});
+
 test("initial query from the URL runs once", async () => {
   vi.mocked(recommend).mockResolvedValue(response);
   render(<AskView initialQuery="Alternatives to celery/celery" />);

@@ -178,11 +178,16 @@ def _maintenance_signals(repo: Repository) -> list[Signal]:
     return signals
 
 
-def _sources(repo: Repository) -> list[SourceRef]:
+def is_web_url(url: str | None) -> bool:
+    """Third-party URLs (e.g. an owner-set homepage) become links only if http(s)."""
+    return bool(url) and url.lower().startswith(("https://", "http://"))
+
+
+def build_sources(repo: Repository) -> list[SourceRef]:
     sources = [SourceRef(label="GitHub repository", url=repo.html_url)]
-    if repo.readme_url:
+    if is_web_url(repo.readme_url):
         sources.append(SourceRef(label="README", url=repo.readme_url))
-    if repo.homepage_url:
+    if is_web_url(repo.homepage_url):
         sources.append(SourceRef(label="Homepage", url=repo.homepage_url))
     return sources
 
@@ -202,7 +207,7 @@ def get_detail(session: Session, owner: str, name: str, user_id: uuid.UUID) -> R
         readme_truncated=repo.readme_truncated,
         analysis=_analysis_view(repo),
         maintenance_signals=_maintenance_signals(repo),
-        sources=_sources(repo),
+        sources=build_sources(repo),
     )
 
 

@@ -38,17 +38,25 @@ export function AskView({ initialQuery }: { initialQuery?: string }) {
   const [history, setHistory] = useState<string[]>([]);
   const lastQuery = useRef<string>("");
   const started = useRef(false);
+  const latestRequest = useRef(0);
 
   function fetchFor(query: string) {
     lastQuery.current = query;
+    const requestId = ++latestRequest.current;
+    // Only the most recent request may update the view; slower earlier ones are ignored.
+    const isCurrent = () => requestId === latestRequest.current;
     recommend({ query }).then(
-      (response) => setState({ kind: "done", response }),
-      (error: unknown) =>
+      (response) => {
+        if (isCurrent()) setState({ kind: "done", response });
+      },
+      (error: unknown) => {
+        if (!isCurrent()) return;
         setState({
           kind: "error",
           message:
             error instanceof ApiError ? error.message : "The request failed. Try again shortly.",
-        }),
+        });
+      },
     );
   }
 
