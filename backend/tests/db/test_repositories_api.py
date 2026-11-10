@@ -11,7 +11,7 @@ def test_list_default_sort_featured_then_stars(api):
     # acme/jobs is featured; then by stars desc with nulls last (searchy 5000, ui 800, bare None)
     assert full_names(r) == ["acme/jobs", "acme/searchy", "acme/ui", "acme/bare"]
     item = r.json()["items"][0]
-    assert item["category_label"] == "Backend"
+    assert item["category_label"] == "Backend Engineering"
     assert item["is_saved"] is False
     assert item["data_source"] == "seed_snapshot"
 
@@ -97,7 +97,7 @@ def test_save_unknown_repo_404(api):
 
 def test_facets_counts(api):
     f = api.get("/api/v1/repositories/facets").json()
-    assert {"value": "backend", "label": "Backend", "count": 2} in f["categories"]
+    assert {"value": "backend", "label": "Backend Engineering", "count": 2} in f["categories"]
     assert {"value": "Python", "count": 1} in f["languages"]
     assert {"value": "MIT", "count": 2} in f["licenses"]
     assert all(v["value"] is not None for v in f["languages"] + f["licenses"])
