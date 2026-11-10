@@ -12,8 +12,11 @@ from alembic.config import Config
 from sqlalchemy import Engine, text
 from sqlalchemy.orm import Session
 
+from app.ai.provider import get_providers
 from app.config import BACKEND_DIR, Settings
 from app.db.session import get_engine
+from app.services.ingestion_service import seed_from_directory
+from tests.factories import FIXTURES_DIR
 
 TEST_DATABASE_URL = Settings().test_database_url
 
@@ -44,13 +47,39 @@ def db_engine() -> Iterator[Engine]:
     engine.dispose()
 
 
+def _truncate(engine: Engine) -> None:
+    with engine.begin() as conn:
+        conn.execute(text("TRUNCATE users, repositories RESTART IDENTITY CASCADE"))
+
+
 @pytest.fixture
 def db_session(db_engine: Engine) -> Iterator[Session]:
-    with db_engine.begin() as conn:
-        conn.execute(text("TRUNCATE users, repositories RESTART IDENTITY CASCADE"))
+    _truncate(db_engine)
     session = Session(db_engine, expire_on_commit=False)
     try:
         yield session
     finally:
         session.rollback()
         session.close()
+
+
+@pytest.fixture(scope="module")
+def seeded_module_session(db_engine: Engine) -> Iterator[Session]:
+    """The 4 fixture repositories, seeded once per test module (Neon round trips are slow)."""
+    _truncate(db_engine)
+    session = Session(db_engine, expire_on_commit=False)
+    seed_from_directory(session, FIXTURES_DIR, get_providers(Settings(_env_file=None)))
+    try:
+        yield session
+    finally:
+        session.rollback()
+        session.close()
+
+
+@pytest.fixture
+def seeded(seeded_module_session: Session) -> Iterator[Session]:
+    """Seeded session; per-user state (saves) is cleared before each test."""
+    seeded_module_session.execute(text("DELETE FROM saved_repositories"))
+    seeded_module_session.commit()
+    yield seeded_module_session
+    seeded_module_session.rollback()
