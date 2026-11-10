@@ -137,9 +137,10 @@ def test_new_eligibility_rules():
 
 
 def test_hidden_gems_use_category_relative_star_percentile():
-    giants = [sig(i, category="frontend", stars=100_000 + i) for i in range(10, 16)]
+    # Categories large enough (>= min_category_size) for a within-category percentile.
+    giants = [sig(i, category="frontend", stars=100_000 + i) for i in range(10, 20)]
     gem_among_giants = sig(1, category="frontend", stars=2_000)
-    tiny = [sig(i, category="learning", stars=40 + i) for i in range(20, 26)]
+    tiny = [sig(i, category="learning", stars=40 + i) for i in range(20, 30)]
     not_gem_among_tiny = sig(2, category="learning", stars=2_000)
     entries = rank_hidden_gems(giants + tiny + [gem_among_giants, not_gem_among_tiny], CFG, NOW)
     chosen = set(ids(entries))
@@ -187,3 +188,15 @@ def test_readme_completeness_scores():
     )
     assert readme_completeness(full) == pytest.approx(1.0)
     assert readme_completeness("# Tool\n\nShort.") == 0.0
+
+
+def test_hidden_gems_small_categories_use_the_global_percentile():
+    # A 4-repo category is too small for a meaningful within-category percentile.
+    small = [
+        sig(i, category="security", stars=s) for i, s in ((30, 30_000), (31, 25_000), (32, 20_000))
+    ]
+    famous_in_small = sig(33, category="security", stars=11_000)
+    others = [sig(i, category="backend", stars=200 + i) for i in range(40, 52)]
+    entries = rank_hidden_gems(small + [famous_in_small] + others, CFG, NOW)
+    assert 33 not in ids(entries)  # 11k stars is not lesser-known across the index
+    assert entries[0].signals["threshold_scope"] in {"category", "global"}

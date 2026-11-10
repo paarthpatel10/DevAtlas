@@ -51,6 +51,7 @@ class NewConfig(BaseModel):
 
 class HiddenGemsConfig(BaseModel):
     star_percentile_max: float
+    min_category_size: int = 8
     pushed_within_days: int
     min_readme_completeness: float
     require_license: bool
@@ -320,10 +321,20 @@ def rank_hidden_gems(
     for s in signals:
         if s.stars is not None:
             by_category.setdefault(s.category, []).append(s.stars)
-    thresholds = {c: _percentile(v, hc.star_percentile_max) for c, v in by_category.items()}
+    all_stars = [stars for values in by_category.values() for stars in values]
+    global_threshold = _percentile(all_stars, hc.star_percentile_max) if all_stars else 0.0
+    thresholds: dict[str, tuple[float, str]] = {
+        c: (_percentile(v, hc.star_percentile_max), "category")
+        if len(v) >= hc.min_category_size
+        else (global_threshold, "global")
+        for c, v in by_category.items()
+    }
     rows = []
     for s in signals:
-        if s.stars is None or s.stars >= thresholds[s.category]:
+        if s.stars is None:
+            continue
+        threshold, scope = thresholds[s.category]
+        if s.stars >= threshold:
             continue
         since_push = _days_since(s.pushed_at, now)
         if since_push is None or since_push > hc.pushed_within_days:
@@ -339,7 +350,8 @@ def rank_hidden_gems(
                 0.6 * s.readme_completeness + 0.4 * recency,
                 {
                     "stars": s.stars,
-                    "category_star_threshold": round(thresholds[s.category]),
+                    "category_star_threshold": round(threshold),
+                    "threshold_scope": scope,
                     "readme_completeness": s.readme_completeness,
                     "days_since_push": int(since_push),
                 },

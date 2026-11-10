@@ -27,6 +27,7 @@ new:
 
 hidden_gems:
   star_percentile_max: 40      # within the repository's own category
+  min_category_size: 8         # smaller categories use the percentile across all repositories
   pushed_within_days: 90
   min_readme_completeness: 0.6
   require_license: true

@@ -206,7 +206,8 @@ def describe_signals(
     elif reason == "first_release":
         text.append("First release within the last month")
     if signals.get("category_star_threshold") is not None and signals.get("stars") is not None:
-        text.append(f"{signals['stars']:,} stars: fewer than most projects in its category")
+        scope = "in its category" if signals.get("threshold_scope") != "global" else "in the index"
+        text.append(f"{signals['stars']:,} stars: fewer than most projects {scope}")
     weeks = signals.get("active_weeks_of_last_4")
     if weeks:
         text.append(f"Commits in {weeks} of the last 4 weeks")
