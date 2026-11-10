@@ -6,6 +6,7 @@ renamed repositories (redirects). It is only used by offline jobs, never in requ
 
 import base64
 import logging
+import ssl
 import time
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -13,6 +14,7 @@ from datetime import UTC, datetime
 from typing import Any
 
 import httpx
+import truststore
 
 logger = logging.getLogger(__name__)
 
@@ -64,6 +66,8 @@ class GitHubClient:
             timeout=timeout,
             follow_redirects=True,
             transport=transport,
+            # Verify TLS against the OS trust store (works behind TLS-inspecting proxies).
+            verify=truststore.SSLContext(ssl.PROTOCOL_TLS_CLIENT),
         )
         self._max_retries = max_retries
         self._max_wait = max_wait_seconds

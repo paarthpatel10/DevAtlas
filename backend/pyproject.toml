@@ -12,6 +12,7 @@ dependencies = [
     "pydantic-settings>=2.16.2",
     "pyyaml>=6.0.3",
     "sqlalchemy>=2",
+    "truststore>=0.10.5",
     "uvicorn[standard]>=0.54.0",
 ]
 
@@ -20,6 +21,8 @@ package = false
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# The default Windows temp dir is not writable in some sandboxes; keep tmp inside the project.
+addopts = "--basetemp=.pytest_tmp"
 markers = [
     "db: needs TEST_DATABASE_URL",
     "benchmark: relevance benchmark",

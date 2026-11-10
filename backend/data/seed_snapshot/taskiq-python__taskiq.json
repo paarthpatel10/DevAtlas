@@ -1,0 +1,38 @@
+{
+  "archived": false,
+  "category": "backend",
+  "created_at_github": "2022-07-17T14:05:07Z",
+  "default_branch": "master",
+  "description": "Distributed task queue with full async support",
+  "featured": false,
+  "fetched_at": "2026-11-10T04:13:59.726865Z",
+  "forks": 159,
+  "full_name": "taskiq-python/taskiq",
+  "github_id": 514860374,
+  "homepage_url": null,
+  "html_url": "https://github.com/taskiq-python/taskiq",
+  "languages": {
+    "Python": 452319
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "taskiq",
+  "open_issues": 145,
+  "owner": "taskiq-python",
+  "primary_language": "Python",
+  "pushed_at_github": "2026-11-07T11:56:25Z",
+  "readme_text": "[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/taskiq?style=for-the-badge)](https://pypi.org/project/taskiq/)\n[![PyPI](https://img.shields.io/pypi/v/taskiq?style=for-the-badge)](https://pypi.org/project/taskiq/)\n[![PyPI - Downloads](https://img.shields.io/pypi/dm/taskiq?style=for-the-badge)](https://pypistats.org/packages/taskiq)\n\n<div align=\"center\">\n<a href=\"https://taskiq-python.github.io/\"><img src=\"https://raw.githubusercontent.com/taskiq-python/taskiq/master/imgs/logo.svg\" width=600></a>\n<hr/>\n</div>\n\nDocumentation: https://taskiq-python.github.io/\n\n## What is taskiq?\n\nTaskiq is an asynchronous distributed task queue for python.\nThis project takes inspiration from big projects such as [Celery](https://docs.celeryq.dev) and [Dramatiq](https://dramatiq.io/).\nBut taskiq can send and run both the sync and async functions, has\nintegration with popular async frameworks, such as [FastAPI](https://fastapi.tiangolo.com/) and [AioHTTP](https://docs.aiohttp.org/en/stable/).\n\nAlso, we use [PEP-612](https://peps.python.org/pep-0612/) to provide the best autosuggestions possible. All code is type-hinted.\n\n# Installation\n\nThis project can be installed using pip:\n```bash\npip install taskiq\n```\n\nOr it can be installed directly from git:\n\n```bash\npip install git+https://github.com/taskiq-python/taskiq\n```\n\n# Usage\n\nAt first you need to create a broker. Broker is an object that can communicate to workers using distributed queues.\n\nWe have different brokers for different queue backends. For example, we have a broker for [NATS](https://github.com/taskiq-python/taskiq-nats), [Redis](https://github.com/taskiq-python/taskiq-redis), [RabbitMQ](https://github.com/taskiq-python/taskiq-aio-pika), [Kafka](https://github.com/taskiq-python/taskiq-aio-kafka) and even more. Choose the one that fits you and create an instance.\n\n```python\nfrom taskiq_nats import JetStreamBroker\n\nbroker = JetStreamBroker(\"nats://localhost:4222\", queue=\"my_queue\")\n```\n\nDeclaring tasks is as easy as declaring a function. Just add a decorator to your function and you are ready to go.\n\n```python\nimport asyncio\n\nfrom taskiq_nats import JetStreamBroker\n\nbroker = JetStreamBroker(\"nats://localhost:4222\", queue=\"my_queue2\")\n\n\n@broker.task\nasync def my_task(a: int, b: int) -> None:\n    print(\"AB\", a + b)\n\n\nasync def main():\n    await broker.startup()\n\n    await my_task.kiq(1, 2)\n\n    await broker.shutdown()\n\n\nif __name__ == \"__main__\":\n    asyncio.run(main())\n\n\n```\n\nThe message is going to be sent to the broker and then to the worker. The worker will execute the function. To start worker processes, just run the following command:\n\n```bash\ntaskiq worker path.to.the.module:broker\n```\n\nWhere `path.to.the.module` is the path to the module where the broker is defined and `broker` is the name of the broker variable.\n\nIf you have tasks in different modules, you can ask taskiq to automatically import them by passing the `--fs-discover` flag:\n\n```bash\ntaskiq worker path.to.the.module:broker --fs-discover\n```\n\nIt will import all modules called `tasks.py` in the current directory and all subdirectories.\n\nAlso, we support hot reload for workers. To enable it, just pass the `--reload` flag. It will reload the worker when the code changes (To use it, install taskiq with reload extra. E.g `pip install taskiq[reload]`).\n\n\nAlso, we have cool integrations with popular async frameworks. For example, we have an integration with [FastAPI](https://taskiq-python.github.io/framework_integrations/taskiq-with-fastapi.html) or [AioHTTP](https://taskiq-python.github.io/framework_integrations/taskiq-with-aiohttp.html). You can use it to reuse dependencies from your web app in your tasks.\n\nRead about all features in our documentation: https://taskiq-python.github.io/\n\n# Local development\n\n\n## Linting\n\nWe use pre-commit to do linting locally.\n\nAfter cloning this project, please install [pre-commit](https://pre-commit.com/#install). It helps fix files before committing changes.\n\n```bash\npre-commit install\n```\n\n\n## Testing\n\nPytest can run without any additional actions or options.\n\n```bash\npytest\n```\n\n## Docs\n\nTo run docs locally, you need to install [yarn](https://yarnpkg.com/getting-started/install).\n\nFirst, you need to install dependencies.\n```\nyarn install\n```\n\nAfter that you can set up a docs server by running:\n\n```\nyarn docs:dev\n```\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md",
+  "stars": 2374,
+  "topics": [
+    "asyncio",
+    "celery-like",
+    "hacktoberfest",
+    "python",
+    "python3",
+    "task-executor",
+    "task-manager"
+  ],
+  "updated_at_github": "2026-11-09T19:23:40Z"
+}

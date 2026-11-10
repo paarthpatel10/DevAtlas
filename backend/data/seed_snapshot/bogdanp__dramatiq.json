@@ -1,0 +1,40 @@
+{
+  "archived": false,
+  "category": "backend",
+  "created_at_github": "2017-05-30T11:55:29Z",
+  "default_branch": "master",
+  "description": "A fast and reliable background task processing library for Python 3.",
+  "featured": false,
+  "fetched_at": "2026-11-10T04:13:58.793192Z",
+  "forks": 388,
+  "full_name": "Bogdanp/dramatiq",
+  "github_id": 92827980,
+  "homepage_url": "https://dramatiq.io",
+  "html_url": "https://github.com/Bogdanp/dramatiq",
+  "languages": {
+    "Lua": 9291,
+    "Python": 487492
+  },
+  "license_name": "GNU Lesser General Public License v3.0",
+  "license_spdx": "LGPL-3.0",
+  "name": "dramatiq",
+  "open_issues": 68,
+  "owner": "Bogdanp",
+  "primary_language": "Python",
+  "pushed_at_github": "2026-11-04T11:14:51Z",
+  "readme_text": "<img src=\"https://dramatiq.io/_static/logo.png\" align=\"right\" width=\"131\" />\n\n# dramatiq\n\n[![Build Status](https://github.com/Bogdanp/dramatiq/workflows/CI/badge.svg)](https://github.com/Bogdanp/dramatiq/actions?query=workflow%3A%22CI%22)\n[![PyPI version](https://badge.fury.io/py/dramatiq.svg)](https://badge.fury.io/py/dramatiq)\n[![Documentation](https://img.shields.io/badge/doc-latest-brightgreen.svg)](http://dramatiq.io)\n[![Discuss](https://img.shields.io/badge/discuss-online-orange.svg)](https://groups.io/g/dramatiq-users)\n\n*A fast and reliable distributed task processing library for Python 3.*\n\n<hr/>\n\n**Changelog**: https://dramatiq.io/changelog.html <br/>\n**Community**: https://groups.io/g/dramatiq-users <br/>\n**Documentation**: https://dramatiq.io <br/>\n\n<hr/>\n\n<h3 align=\"center\">Sponsors</h3>\n\n<p align=\"center\" dir=\"auto\">\n  <a href=\"https://franz.defn.io\" target=\"_blank\">\n    <img width=\"64px\" src=\"docs/source/_static/franz-logo.png\" />\n  </a>\n  <a href=\"https://podcatcher.defn.io\" target=\"_blank\">\n    <img width=\"64px\" src=\"docs/source/_static/podcatcher-logo.png\" />\n  </a>\n</p>\n\n\n## Installation\n\nIf you want to use it with [RabbitMQ]\n\n    pip install 'dramatiq[rabbitmq, watch]'\n\nor if you want to use it with [Redis]\n\n    pip install 'dramatiq[redis, watch]'\n\n\n## Quickstart\n\nMake sure you've got [RabbitMQ] running, then create a new file called\n`example.py`:\n\n``` python\nimport dramatiq\nimport requests\nimport sys\n\n\n@dramatiq.actor\ndef count_words(url):\n    response = requests.get(url)\n    count = len(response.text.split(\" \"))\n    print(f\"There are {count} words at {url!r}.\")\n\n\nif __name__ == \"__main__\":\n    count_words.send(sys.argv[1])\n```\n\nIn one terminal, run your workers:\n\n    dramatiq example\n\nIn another, start enqueueing messages:\n\n    python example.py http://example.com\n    python example.py https://github.com\n    python example.py https://news.ycombinator.com\n\nCheck out the [user guide] to learn more!\n\n\n## License\n\ndramatiq is licensed under the LGPL.  Please see [COPYING] and\n[COPYING.LESSER] for licensing details.\n\n\n[COPYING.LESSER]: https://github.com/Bogdanp/dramatiq/blob/master/COPYING.LESSER\n[COPYING]: https://github.com/Bogdanp/dramatiq/blob/master/COPYING\n[RabbitMQ]: https://www.rabbitmq.com/\n[Redis]: https://redis.io\n[user guide]: https://dramatiq.io/guide.html\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md",
+  "stars": 5341,
+  "topics": [
+    "distributed-lock",
+    "python",
+    "rabbit",
+    "redis",
+    "task",
+    "task-manager",
+    "task-runner",
+    "task-scheduler"
+  ],
+  "updated_at_github": "2026-11-06T23:23:34Z"
+}
