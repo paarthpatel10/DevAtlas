@@ -1,0 +1,92 @@
+# Curated seed dataset: real public GitHub repositories, grouped by curated category.
+# An entry is either "owner/name" or {repo: owner/name, featured: true}.
+# Metadata/README are fetched from the GitHub API by scripts/build_seed_snapshot.py.
+
+backend:
+  - {repo: celery/celery, featured: true}
+  - rq/rq
+  - coleifer/huey
+  - Bogdanp/dramatiq
+  - taskiq-python/taskiq
+  - agronholm/apscheduler
+  - {repo: fastapi/fastapi, featured: true}
+  - encode/starlette
+  - pallets/flask
+  - django/django
+  - expressjs/express
+  - nestjs/nest
+  - casbin/casbin
+  - casbin/pycasbin
+  - authlib/authlib
+  - keycloak/keycloak
+  - ory/kratos
+  - supabase/supabase
+
+frontend:
+  - {repo: vercel/next.js, featured: true}
+  - facebook/react
+  - vuejs/core
+  - sveltejs/svelte
+  - tailwindlabs/tailwindcss
+  - {repo: shadcn-ui/ui, featured: true}
+  - TanStack/query
+  - pmndrs/zustand
+  - react-hook-form/react-hook-form
+  - colinhacks/zod
+
+databases_search:
+  - {repo: pgvector/pgvector, featured: true}
+  - redis/redis
+  - meilisearch/meilisearch
+  - typesense/typesense
+  - qdrant/qdrant
+  - duckdb/duckdb
+  - sqlalchemy/sqlalchemy
+  - prisma/prisma
+
+ai_ml:
+  - pytorch/pytorch
+  - {repo: huggingface/transformers, featured: true}
+  - scikit-learn/scikit-learn
+  - mlflow/mlflow
+
+llm_agents_mcp:
+  - langchain-ai/langchain
+  - run-llama/llama_index
+  - {repo: modelcontextprotocol/python-sdk, featured: true}
+  - modelcontextprotocol/servers
+  - {repo: ollama/ollama, featured: true}
+  - vllm-project/vllm
+  - BerriAI/litellm
+  - pydantic/pydantic-ai
+
+devops_platform:
+  - kubernetes/kubernetes
+  - hashicorp/terraform
+  - opentofu/opentofu
+  - prometheus/prometheus
+  - grafana/grafana
+  - argoproj/argo-cd
+  - traefik/traefik
+
+data_engineering:
+  - apache/airflow
+  - dagster-io/dagster
+  - PrefectHQ/prefect
+  - dbt-labs/dbt-core
+  - apache/spark
+  - pola-rs/polars
+
+developer_tools:
+  - {repo: astral-sh/ruff, featured: true}
+  - astral-sh/uv
+  - pre-commit/pre-commit
+  - microsoft/playwright
+  - pytest-dev/pytest
+  - getsentry/sentry
+
+learning:
+  - donnemartin/system-design-primer
+  - microsoft/generative-ai-for-beginners
+  - karpathy/nanoGPT
+  - codecrafters-io/build-your-own-x

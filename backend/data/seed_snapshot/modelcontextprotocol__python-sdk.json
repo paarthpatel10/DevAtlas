@@ -1,0 +1,38 @@
+{
+  "archived": false,
+  "category": "llm_agents_mcp",
+  "created_at_github": "2024-09-24T21:01:35Z",
+  "default_branch": "main",
+  "description": "The official Python SDK for Model Context Protocol servers and clients",
+  "featured": true,
+  "fetched_at": "2026-11-10T05:13:36.195586Z",
+  "forks": 4118,
+  "full_name": "modelcontextprotocol/python-sdk",
+  "github_id": 862584018,
+  "homepage_url": "https://py.sdk.modelcontextprotocol.io/",
+  "html_url": "https://github.com/modelcontextprotocol/python-sdk",
+  "languages": {
+    "HTML": 76,
+    "JavaScript": 2276,
+    "Python": 5775906,
+    "Shell": 8626
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "python-sdk",
+  "open_issues": 403,
+  "owner": "modelcontextprotocol",
+  "primary_language": "Python",
+  "pushed_at_github": "2026-11-05T13:38:56Z",
+  "readme_text": "# MCP Python SDK\n\n<div align=\"center\">\n\n<strong>Python implementation of the Model Context Protocol (MCP)</strong>\n\n[![PyPI][pypi-badge]][pypi-url]\n[![MIT licensed][mit-badge]][mit-url]\n[![Python Version][python-badge]][python-url]\n[![Documentation][docs-badge]][docs-url]\n[![Protocol][protocol-badge]][protocol-url]\n[![Specification][spec-badge]][spec-url]\n\n</div>\n\n## Documentation\n\n**The documentation lives at <https://py.sdk.modelcontextprotocol.io/>.**\n\nIt has a [Get started guide](https://py.sdk.modelcontextprotocol.io/get-started/), [What's new in v2](https://py.sdk.modelcontextprotocol.io/whats-new/), the [API reference](https://py.sdk.modelcontextprotocol.io/api/mcp/), and the [migration guide](https://py.sdk.modelcontextprotocol.io/migration/).\n\n## What is MCP?\n\nThe [Model Context Protocol](https://modelcontextprotocol.io) lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can:\n\n- **Build MCP servers** that expose tools, resources, and prompts to any MCP host\n- **Build MCP clients** that connect to any MCP server\n- Speak every standard transport: stdio, Streamable HTTP, and SSE\n\n## Requirements\n\nPython 3.11+.\n\n## Installation\n\n```bash\nuv add \"mcp[cli]\"      # or: pip install \"mcp[cli]\"\n```\n\nThe `cli` extra adds the `mcp` command-line tool (`mcp dev`, `mcp run`, `mcp install`) on top of the SDK; install plain `mcp` if you don't need it. For one-off commands, `uv run --with \"mcp[cli]\" mcp ...` works without a project.\n\n## A server in 15 lines\n\nCreate a `server.py`:\n\n<!-- snippet-source docs_src/index/tutorial001.py -->\n```python\nfrom mcp.server import MCPServer\n\nmcp = MCPServer(\"Demo\")\n\n\n@mcp.tool()\ndef add(a: int, b: int) -> int:\n    \"\"\"Add two numbers.\"\"\"\n    return a + b\n\n\n@mcp.resource(\"greeting://{name}\")\ndef greeting(name: str) -> str:\n    \"\"\"Greet someone by name.\"\"\"\n    return f\"Hello, {name}!\"\n```\n\n_Full example: [docs_src/index/tutorial001.py](https://github.com/modelcontextprotocol/python-sdk/blob/main/docs_src/index/tutorial001.py)_\n<!-- /snippet-source -->\n\nThat's a complete MCP server: one tool, one templated resource. Open it in the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):\n\n```bash\nuv run mcp dev server.py\n```\n\nCall `add` with `a=1`, `b=2` and you get `3` back.\n\nNotice what you did **not** write: no JSON Schema (`a: int, b: int` _is_ the schema), no request parsing, no validation code, no protocol handling. Two type-hinted Python functions and a docstring.\n\n[Get started](https://py.sdk.modelcontextprotocol.io/get-started/) takes it from here.\n\n## A client in 10 lines\n\nThe same package is a full MCP **client**. Serve `server.py` over HTTP:\n\n```bash\nuv run mcp run server.py --transport streamable-http\n```\n\nthen point a `Client` at it:\n\n```python\nimport asyncio\n\nfrom mcp import Client\n\n\nasync def main() -> None:\n    async with Client(\"http://localhost:8000/mcp\") as client:\n        result = await client.call_tool(\"add\", {\"a\": 1, \"b\": 2})\n        print(result.structured_content)  # {'result': 3}\n\n\nasyncio.run(main())\n```\n\nA URL means Streamable HTTP, the transport you deploy. `Client` can also launch a local server as a stdio subprocess or take any custom transport; [Clients](https://py.sdk.modelcontextprotocol.io/client/) has the rest.\n\n## Contributing\n\nWe are passionate about supporting contributors of all levels of experience and would love to see you get involved in the project. See the [contributing guide](https://github.com/modelcontextprotocol/python-sdk/blob/main/CONTRIBUTING.md) to get started.\n\n## License\n\nThis project is licensed under the MIT License. See the [LICENSE](https://github.com/modelcontextprotocol/python-sdk/blob/main/LICENSE) file for details.\n\n[pypi-badge]: https://img.shields.io/pypi/v/mcp.svg\n[pypi-url]: https://pypi.org/project/mcp/\n[mit-badge]: https://img.shields.io/pypi/l/mcp.svg\n[mit-url]: https://github.com/modelcontextprotocol/python-sdk/blob/main/LICENSE\n[python-badge]: https://img.shields.io/pypi/pyversions/mcp.svg\n[python-url]: https://www.python.org/downloads/\n[docs-badge]: https://img.shields.io/badge/docs-python--sdk-blue.svg\n[docs-url]: https://py.sdk.modelcontextprotocol.io/\n[protocol-badge]: https://img.shields.io/badge/protocol-modelcontextprotocol.io-blue.svg\n[protocol-url]: https://modelcontextprotocol.io\n[spec-badge]: https://img.shields.io/badge/spec-spec.modelcontextprotocol.io-blue.svg\n[spec-url]: https://modelcontextprotocol.io/specification/latest\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md",
+  "stars": 24817,
+  "topics": [
+    "mcp",
+    "mcp-client",
+    "mcp-server",
+    "python"
+  ],
+  "updated_at_github": "2026-11-10T04:04:00Z"
+}

@@ -1,0 +1,38 @@
+{
+  "archived": false,
+  "category": "frontend",
+  "created_at_github": "2016-11-20T18:13:05Z",
+  "default_branch": "main",
+  "description": "web development for the rest of us",
+  "featured": false,
+  "fetched_at": "2026-11-10T05:08:57.301650Z",
+  "forks": 6027,
+  "full_name": "sveltejs/svelte",
+  "github_id": 74293321,
+  "homepage_url": "https://svelte.dev",
+  "html_url": "https://github.com/sveltejs/svelte",
+  "languages": {
+    "CSS": 54733,
+    "HTML": 42351,
+    "JavaScript": 3532228,
+    "Svelte": 1123234,
+    "TypeScript": 251107
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "svelte",
+  "open_issues": 1294,
+  "owner": "sveltejs",
+  "primary_language": "JavaScript",
+  "pushed_at_github": "2026-11-10T02:55:34Z",
+  "readme_text": "<a href=\"https://svelte.dev\">\n\t<picture>\n\t\t<source media=\"(prefers-color-scheme: dark)\" srcset=\"assets/banner_dark.png\">\n\t\t<img src=\"assets/banner.png\" alt=\"Svelte - web development for the rest of us\" />\n\t</picture>\n</a>\n\n[![License](https://img.shields.io/npm/l/svelte.svg)](LICENSE.md) [![Chat](https://img.shields.io/discord/457912077277855764?label=chat&logo=discord)](https://svelte.dev/chat)\n\n## What is Svelte?\n\nSvelte is a new way to build web applications. It's a compiler that takes your declarative components and converts them into efficient JavaScript that surgically updates the DOM.\n\nLearn more at the [Svelte website](https://svelte.dev), or stop by the [Discord chatroom](https://svelte.dev/chat).\n\n## Supporting Svelte\n\nSvelte is an MIT-licensed open source project with its ongoing development made possible entirely by fantastic volunteers. If you'd like to support their efforts, please consider:\n\n- [Becoming a backer on Open Collective](https://opencollective.com/svelte).\n\nFunds donated via Open Collective will be used for compensating expenses related to Svelte's development such as hosting costs. If sufficient donations are received, funds may also be used to support Svelte's development more directly.\n\n## Roadmap\n\nYou may view [our roadmap](https://svelte.dev/roadmap) if you'd like to see what we're currently working on.\n\n## Contributing\n\nPlease see the [Contributing Guide](CONTRIBUTING.md) and the [`svelte`](packages/svelte) package for information on contributing to Svelte.\n\n## Is svelte.dev down?\n\nProbably not, but it's possible. If you can't seem to access any `.dev` sites, check out [this SuperUser question and answer](https://superuser.com/q/1413402).\n\n## License\n\n[MIT](LICENSE.md)\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/sveltejs/svelte/blob/main/README.md",
+  "stars": 88689,
+  "topics": [
+    "compiler",
+    "template",
+    "ui"
+  ],
+  "updated_at_github": "2026-11-09T22:45:40Z"
+}

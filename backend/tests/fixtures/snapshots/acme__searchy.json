@@ -1,0 +1,33 @@
+{
+  "archived": false,
+  "category": "databases_search",
+  "created_at_github": "2020-01-01T00:00:00Z",
+  "default_branch": "main",
+  "description": "Typo-tolerant full-text search engine with a REST API",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:00Z",
+  "forks": 10,
+  "full_name": "acme/searchy",
+  "github_id": 9004,
+  "homepage_url": null,
+  "html_url": "https://github.com/acme/searchy",
+  "languages": {
+    "Rust": 9000
+  },
+  "license_name": "Apache License 2.0",
+  "license_spdx": "Apache-2.0",
+  "name": "searchy",
+  "open_issues": 3,
+  "owner": "acme",
+  "primary_language": "Rust",
+  "pushed_at_github": "2026-11-01T00:00:00Z",
+  "readme_text": "# searchy\n\nA fast, typo-tolerant search engine for product catalogs and apps.\n\n## Features\n\n- Typo tolerance and ranking rules\n- Faceted filtering\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/acme/searchy/blob/main/README.md",
+  "stars": 5000,
+  "topics": [
+    "search-engine",
+    "full-text-search"
+  ],
+  "updated_at_github": "2026-11-01T00:00:00Z"
+}

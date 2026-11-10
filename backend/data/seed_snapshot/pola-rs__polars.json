@@ -1,0 +1,42 @@
+{
+  "archived": false,
+  "category": "data_engineering",
+  "created_at_github": "2020-05-13T19:45:33Z",
+  "default_branch": "main",
+  "description": "Extremely fast Query Engine for DataFrames, written in Rust",
+  "featured": false,
+  "fetched_at": "2026-11-10T05:14:01.360158Z",
+  "forks": 3233,
+  "full_name": "pola-rs/polars",
+  "github_id": 263727855,
+  "homepage_url": "https://docs.pola.rs",
+  "html_url": "https://github.com/pola-rs/polars",
+  "languages": {
+    "Makefile": 20462,
+    "Nix": 19540,
+    "Python": 12517199,
+    "Rust": 20188126
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "polars",
+  "open_issues": 2942,
+  "owner": "pola-rs",
+  "primary_language": "Rust",
+  "pushed_at_github": "2026-11-09T21:12:58Z",
+  "readme_text": "<h1 align=\"center\">\n  <a href=\"https://pola.rs\">\n    <img src=\"https://raw.githubusercontent.com/pola-rs/polars-static/master/banner/polars_github_banner.svg\" alt=\"Polars logo\">\n  </a>\n</h1>\n\n<div align=\"center\">\n  <a href=\"https://crates.io/crates/polars\">\n    <img src=\"https://img.shields.io/crates/v/polars.svg\" alt=\"crates.io Latest Release\"/>\n  </a>\n  <a href=\"https://pypi.org/project/polars/\">\n    <img src=\"https://img.shields.io/pypi/v/polars.svg\" alt=\"PyPi Latest Release\"/>\n  </a>\n  <a href=\"https://www.npmjs.com/package/nodejs-polars\">\n    <img src=\"https://img.shields.io/npm/v/nodejs-polars.svg\" alt=\"NPM Latest Release\"/>\n  </a>\n  <a href=\"https://community.r-multiverse.org/polars\">\n    <img src=\"https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcommunity.r-multiverse.org%2Fapi%2Fpackages%2Fpolars&query=%24.Version&label=r-multiverse\" alt=\"R-multiverse Latest Release\"/>\n  </a>\n  <a href=\"https://doi.org/10.5281/zenodo.7697217\">\n    <img src=\"https://zenodo.org/badge/DOI/10.5281/zenodo.7697217.svg\" alt=\"DOI Latest Release\"/>\n  </a>\n</div>\n\n<p align=\"center\">\n  <b>Documentation</b>:\n  <a href=\"https://docs.pola.rs/api/python/stable/reference/index.html\">Python</a>\n  -\n  <a href=\"https://docs.rs/polars/latest/polars/\">Rust</a>\n  -\n  <a href=\"https://pola-rs.github.io/nodejs-polars/index.html\">Node.js</a>\n  -\n  <a href=\"https://pola-rs.github.io/r-polars/index.html\">R</a>\n  -\n  <a href=\"https://docs.pola.rs/api/python/stable/reference/sql/index.html\">SQL</a>\n  |\n  <b>Agents</b>:\n  <a href=\"https://github.com/polars-inc/skills/tree/main/polars\">Skill</a>\n  -\n  <a href=\"https://docs.pola.rs/user-guide/misc/polars_llms/\">MCP</a>\n  |\n  <a href=\"https://docs.pola.rs/\">User guide</a>\n  |\n  <a href=\"https://discord.gg/4UfP5cfBE7\">Discord</a>\n</p>\n\n## Polars: Extremely fast Query Engine for DataFrames and SQL\n\nPolars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in\nSQL, or mix both: they run through the same optimizer and the same engine. It is designed to be\nfast, easy to use and expressive. Key features are:\n\n- **Fast**: written from the ground up in Rust with multi-threaded, vectorized (SIMD) execution\n- **Spill to disk**: Operations that exceed available RAM can spill to disk\n- **Expressive API**: compose complex queries with powerful expressions\n- **Extensible**: extend Polars natively with custom code through\n  [I/O and Expression plugins](https://docs.pola.rs/user-guide/plugins/)\n- **GPU support**: optionally accelerate queries on NVIDIA GPUs\n- **Interoperable**: uses the\n  [Apache Arrow Columnar Format](https://arrow.apache.org/docs/format/Columnar.html) for zero-copy\n  data sharing\n\nTo learn more, read the [user guide](https://docs.pola.rs/).\n\n## Polars in action\n\n### DataFrame API\n\nQueries are composed from expressions or SQL. This lazy query gets optimized out of the box and runs\nin parallel across all available cores:\n\n```python\nimport polars as pl\n\ndf = (\n    pl.scan_parquet(\"orders.parquet\")\n    .filter(pl.col(\"status\") == \"shipped\")\n    .group_by(\"customer_id\")\n    .agg(\n        pl.col(\"amount\").sum().alias(\"total\"),\n        pl.len().alias(\"n_orders\"),\n    )\n    .sort(\"total\", descending=True)\n    .collect()\n)\n```\n\n### SQL\n\n```python\nimport polars as pl\n\ndf = pl.sql(\"\"\"\n    WITH totals AS (\n        SELECT customer_id, SUM(amount) AS total, COUNT(*) AS n_orders\n        FROM read_parquet('orders.parquet')\n        WHERE status = 'shipped'\n        GROUP BY customer_id\n    )\n    SELECT c.name, t.total, t.n_orders, RANK() OVER (ORDER BY t.total DESC) AS rank\n    FROM totals t\n    JOIN read_parquet('customers.parquet') c USING (customer_id)\n    ORDER BY t.total DESC\n\"\"\").collect()\n```\n\n### Mix both\n\nDataFrames and LazyFrames in scope can be queried by name, and the result of a SQL query is a\nregular `LazyFrame`, so you can switch between SQL and expressions freely:\n\n```python\norders = pl.scan_parquet(\"orders.parquet\")\n\ndf = (\n    pl.sql(\"SELECT customer_id, SUM(amount) AS total FROM orders GROUP BY customer_id\")\n    .filter(pl.col(\"total\") > 1_000)\n    .collect()\n)\n```\n\nRead more in the [SQL user guide](https://docs.pola.rs/user-guide/sql/intro/).\n\n## Performance\n\nPolars is very fast. In fact, it is one of the best performing query engines available, for both\nDataFrame and SQL workloads. See the [PDS-H benchmarks](https://www.pola.rs/benchmarks.html)\nresults.\n\n## Installation\n\n### Python\n\nInstall the latest Polars version with:\n\n```sh\npip install polars\n```\n\nSee the [User Guide](https://docs.pola.rs/user-guide/installation/#feature-flags) for more details\non optional dependencies\n\n<details>\n<summary><b>Compile Polars from source</b></summary>\n\nIf you want a bleeding edge release you should compile Polars from source. Advanced users can also\ncompile for maximum performance for their architecture.\n\nThis can be done by going through the following steps in sequence:\n\n1. Install the latest [Rust compiler](https://www.rust-lang.org/tools/install)\n2. Install [maturin](https://maturin.rs/): `pip install maturin`\n3. `cd py-polars` and choose one of the following:\n   - `make build`, slow binary with debug assertions and limited symbols, fast compile times\n   - `make build-debug`, same as `make build`, but with all symbols, produces large binaries\n   - `make build-release`, fast binary without debug assertions, minimal debug symbols, long compile\n     times\n   - `make build-nodebug-release`, same as build-release but without any debug symbols, slightly\n     faster to compile\n   - `make build-debug-release`, same as build-release but with full debug symbols, slightly slower\n     to compile\n   - `make build-dist-release`, fastest binary, extreme compile times\n\nBy default the binary is compiled with optimizations turned on for a modern CPU. Specify `LTS_CPU=1`\nwith the command if your CPU is older and does not support e.g. AVX2.\n\nNote that the Rust crate implementing the Python bindings is called `py-polars` to distinguish from\nthe wrapped Rust crate `polars` itself. However, both the Python package and the Python module are\nnamed `polars`, so you can `pip install polars` and `import polars`.\n\n</details>\n\nCheck the [Installation guide](https://docs.pola.rs/user-guide/installation/) for more advanced\ninstallations. For example when you expect more than 2^32 (~4.2 billion) rows, run on an old CPU\n(e.g. dating from before 2011), or on an `x86-64` build of Python on Apple Silicon under Rosetta.\n\n## Contributing\n\nWant to contribute? Read our [contributing guide](https://docs.pola.rs/development/contributing/)\nand check the issue tracker for accepted issues.\n\nContributors new to the codebase can look for the `good first issue` label to get familiar with the\nproject.\n\nYou can [join the Polars Discord server](https://discord.gg/4UfP5cfBE7) for any help along the way.\n\n## Distributed Polars\n\nRunning into hardware limitations executing your queries? Read how you can\n[horizontally scale your Polars query on a cluster](https://docs.nanook.pola.rs/).\n\n## License\n\nPolars is licensed under the [MIT License](LICENSE) (SPDX: `MIT`).\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/pola-rs/polars/blob/main/README.md",
+  "stars": 40296,
+  "topics": [
+    "arrow",
+    "dataframe",
+    "dataframe-library",
+    "dataframes",
+    "out-of-core",
+    "polars",
+    "python",
+    "rust"
+  ],
+  "updated_at_github": "2026-11-10T03:17:50Z"
+}

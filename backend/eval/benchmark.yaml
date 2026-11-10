@@ -1,0 +1,66 @@
+# Relevance smoke benchmark for the recommendation pipeline (spec section 12).
+# `expected`: repositories (canonical GitHub names) that would genuinely help; a query
+# "hits" when any of them appears in the top 5.
+# Caveat: the demo vocabulary was written alongside these queries, so this is a smoke test
+# of the pipeline, not an unbiased evaluation. A held-out set arrives in milestone M4.
+
+- id: jobs
+  query: I am building a FastAPI application and need background jobs with retries and scheduling
+  expected: [celery/celery, rq/rq, coleifer/huey, Bogdanp/dramatiq, taskiq-python/taskiq, agronholm/apscheduler]
+  must_have: [background jobs, retries, scheduling]
+- id: rbac
+  query: role-based access control for a multi-tenant SaaS using Next.js and FastAPI
+  expected: [apache/casbin, apache/casbin-pycasbin, keycloak/keycloak]
+  must_have: [access control, multi-tenancy]
+- id: fts
+  query: typo-tolerant full-text search engine for a product catalog
+  expected: [meilisearch/meilisearch, typesense/typesense]
+  must_have: [full-text search]
+- id: vector
+  query: vector database for semantic similarity search over embeddings
+  expected: [qdrant/qdrant, pgvector/pgvector]
+  must_have: [vector search]
+- id: local-llm
+  query: run large language models locally on my laptop
+  expected: [ollama/ollama, vllm-project/vllm]
+  must_have: [large language models, local inference]
+- id: mcp
+  query: build an agent that calls tools through the Model Context Protocol
+  expected: [modelcontextprotocol/python-sdk, modelcontextprotocol/servers, pydantic/pydantic-ai, langchain-ai/langchain]
+  must_have: [agents and tool calling]
+- id: pipelines
+  query: orchestrate data pipelines with scheduling and retries
+  expected: [apache/airflow, dagster-io/dagster, PrefectHQ/prefect]
+  must_have: [data pipelines, scheduling]
+- id: iac
+  query: infrastructure as code to provision cloud resources
+  expected: [hashicorp/terraform, opentofu/opentofu]
+  must_have: [infrastructure as code]
+- id: lint
+  query: fast Python linter and code formatter
+  expected: [astral-sh/ruff]
+  must_have: [linting and formatting]
+- id: e2e
+  query: end-to-end browser testing for my web app
+  expected: [microsoft/playwright]
+  must_have: [end-to-end testing]
+- id: forms
+  query: form validation in React with TypeScript schemas
+  expected: [react-hook-form/react-hook-form, colinhacks/zod]
+  must_have: [form validation]
+- id: sysdesign
+  query: learn how large-scale systems are designed
+  expected: [donnemartin/system-design-primer]
+  must_have: [system design]
+- id: monitoring
+  query: metrics monitoring and alerting for Kubernetes clusters
+  expected: [prometheus/prometheus, grafana/grafana]
+  must_have: [monitoring and alerting]
+- id: server-state
+  query: fetch, cache and sync server state in a React app
+  expected: [TanStack/query]
+  must_have: [server state and caching]
+- id: dataframes
+  query: fast DataFrame library for analytics in Python
+  expected: [pola-rs/polars, duckdb/duckdb]
+  must_have: [dataframes and analytics]
