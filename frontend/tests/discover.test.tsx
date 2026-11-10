@@ -75,6 +75,7 @@ test("card shows labels as text, signals, AI summary and actions", () => {
   expect(screen.getByText("+100 stars in 7 days")).toBeInTheDocument();
   expect(screen.getByText("A background job queue for Python apps.")).toBeInTheDocument();
   expect(screen.getByText(/AI summary/i)).toBeInTheDocument();
+  expect(screen.getByText(/why explore this\? \(AI\)/i)).toBeInTheDocument();
   expect(screen.getByRole("link", { name: /explore/i })).toHaveAttribute("href", "/repositories/acme/jobs");
   expect(screen.getByRole("button", { name: /why is this interesting/i })).toBeInTheDocument();
   expect(screen.getByRole("button", { name: /what can i build/i })).toBeInTheDocument();

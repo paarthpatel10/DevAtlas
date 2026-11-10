@@ -63,7 +63,7 @@ export function DiscoverCard({ item }: { item: DiscoverItem }) {
 
       {item.why_explore && (
         <p className="text-xs text-muted">
-          <span className="font-medium text-ink">Why explore this? </span>
+          <span className="font-medium text-ink">Why explore this? (AI) </span>
           {item.why_explore}
         </p>
       )}

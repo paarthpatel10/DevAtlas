@@ -79,7 +79,8 @@ export function CompareView() {
     <div className="space-y-4">
       <p className="text-sm text-muted">
         No overall winner: each repository fits different situations. Values come from GitHub
-        metadata and the repositories&apos; own READMEs.
+        metadata and AI reports grounded in each repository&apos;s README (see each repository
+        page for the cited sources).
       </p>
 
       <div className="hidden overflow-x-auto md:block">
