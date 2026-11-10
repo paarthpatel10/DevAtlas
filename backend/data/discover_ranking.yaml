@@ -1,0 +1,38 @@
+# Discover ranking parameters. Methodology: docs/discover-ranking.md.
+# Scores are internal ordering devices, never shown as quality.
+
+trending:
+  periods: {day: 1, week: 7, month: 30}
+  # Minimum stars gained in the period to appear when growth history exists.
+  min_stars_gained: {day: 1, week: 3, month: 5}
+  # Without history: "recently active" means a push within this many days.
+  active_within_days: 30
+  limit: 50
+
+rising:
+  window_days: 30
+  # Growth ratio = stars gained in 30 days / max(stars 30 days ago, size_floor).
+  size_floor: 200
+  min_active_weeks: 3          # weeks with commits among the last 4
+  min_stars_gained: 10         # in 30 days
+  acceleration_boost: 1.25     # applied when the 7-day daily rate beats the 30-day rate
+  exclude_top_popular: 10      # leave the most-starred repositories to Trending
+  limit: 50
+
+new:
+  created_within_days: 90
+  discovered_within_days: 14   # applies to repositories found by search discovery
+  first_release_within_days: 30
+  limit: 50
+
+hidden_gems:
+  star_percentile_max: 40      # within the repository's own category
+  pushed_within_days: 90
+  min_readme_completeness: 0.6
+  require_license: true
+  limit: 50
+
+weekly:
+  per_feed: 3
+  total: 10
+  max_per_category: 2
