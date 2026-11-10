@@ -36,3 +36,26 @@ weekly:
   per_feed: 3
   total: 10
   max_per_category: 2
+
+# GitHub search discovery of new repositories (scripts/discover_new.py).
+search:
+  per_category_limit: 5
+  min_stars: 20
+  # Very large star counts on months-old repositories are often star farming; real
+  # breakout projects belong in the curated list instead.
+  max_stars: 25000
+  created_within_days: 120
+  min_readme_completeness: 0.5   # install/usage docs before a repository is added
+  queries:
+    ai_ml: ["topic:machine-learning", "topic:deep-learning"]
+    llm_agents: ["topic:llm", "topic:ai-agents"]
+    mcp_automation: ["topic:mcp", "topic:model-context-protocol"]
+    backend: ["topic:backend", "topic:web-framework"]
+    frontend: ["topic:frontend", "topic:react-components"]
+    full_stack: ["topic:fullstack", "topic:full-stack"]
+    databases_search: ["topic:database", "topic:vector-database"]
+    data_engineering: ["topic:data-engineering", "topic:etl"]
+    devops_platform: ["topic:devops", "topic:kubernetes"]
+    security: ["topic:security", "topic:authentication"]
+    developer_tools: ["topic:developer-tools", "topic:cli"]
+    learning: ["topic:tutorial", "topic:learning-resources"]

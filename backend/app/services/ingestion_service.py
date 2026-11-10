@@ -182,6 +182,7 @@ def ingest_snapshot(
     providers: Providers,
     *,
     data_source: str = "seed_snapshot",
+    discovery_source: str | None = None,
 ) -> IngestResult:
     now = datetime.now(UTC)
     repo = session.scalar(select(Repository).where(Repository.github_id == snap.github_id))
@@ -190,6 +191,8 @@ def ingest_snapshot(
         repo = Repository(id=uuid.uuid4(), github_id=snap.github_id)
         session.add(repo)
     _apply_metadata(repo, snap, data_source)
+    if discovery_source is not None:
+        repo.discovery_source = discovery_source
     repo.last_ingested_at = now
     if not created:
         repo.last_refreshed_at = now
@@ -222,13 +225,18 @@ def seed_from_directory(
     directory: Path,
     providers: Providers,
     curated: dict[str, CuratedEntry] | None = None,
+    *,
+    data_source: str = "seed_snapshot",
+    discovery_source: str | None = None,
 ) -> SeedReport:
     ensure_demo_user(session)
     session.commit()
     created = updated = unchanged = 0
     for path in sorted(directory.glob("*.json")):
         snap = load_snapshot(path, curated)
-        result = ingest_snapshot(session, snap, providers)
+        result = ingest_snapshot(
+            session, snap, providers, data_source=data_source, discovery_source=discovery_source
+        )
         session.commit()
         if result.created:
             created += 1

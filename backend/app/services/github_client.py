@@ -107,6 +107,13 @@ class GitHubClient:
     def get_languages(self, full_name: str) -> dict[str, int]:
         return self._request(f"/repos/{full_name}/languages").json()
 
+    def search_repositories(
+        self, q: str, sort: str = "stars", per_page: int = 30
+    ) -> list[dict[str, Any]]:
+        params = {"q": q, "sort": sort, "order": "desc", "per_page": per_page}
+        data = self._request("/search/repositories", params=params).json()
+        return list(data.get("items") or [])
+
     def graphql(self, query: str, variables: dict[str, Any]) -> dict[str, Any]:
         payload = self._request(
             "/graphql", method="POST", json={"query": query, "variables": variables}
@@ -139,12 +146,16 @@ class GitHubClient:
     # Internals --------------------------------------------------------------------------
 
     def _request(
-        self, path: str, method: str = "GET", json: dict[str, Any] | None = None
+        self,
+        path: str,
+        method: str = "GET",
+        json: dict[str, Any] | None = None,
+        params: dict[str, Any] | None = None,
     ) -> httpx.Response:
         attempt = 0
         while True:
             try:
-                response = self._client.request(method, path, json=json)
+                response = self._client.request(method, path, json=json, params=params)
             except httpx.TransportError as exc:
                 self._backoff_or_raise(attempt, f"transport error: {exc}")
                 attempt += 1
