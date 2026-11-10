@@ -51,7 +51,9 @@ def db_engine() -> Iterator[Engine]:
 
 def _truncate(engine: Engine) -> None:
     with engine.begin() as conn:
-        conn.execute(text("TRUNCATE users, repositories, discovery_feed_runs RESTART IDENTITY CASCADE"))
+        conn.execute(
+            text("TRUNCATE users, repositories, discovery_feed_runs RESTART IDENTITY CASCADE")
+        )
 
 
 @pytest.fixture

@@ -57,7 +57,14 @@ class Settings(BaseSettings):
     github_token: SecretStr | None = None
     github_api_base_url: str = "https://api.github.com"
 
-    ai_provider: Literal["mock", "bedrock"] = "mock"
+    # auto = Gemini when a key is configured, otherwise the deterministic mock (demo mode).
+    ai_provider: Literal["auto", "mock", "gemini", "bedrock"] = "auto"
+    gemini_api_key: SecretStr | None = Field(
+        default=None, validation_alias=AliasChoices("gemini_api_key", "gemini")
+    )
+    gemini_model: str = "gemini-3.5-flash"
+    gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta"
+    ai_requests_per_minute: int = 10
     embedding_dim: int = 1024
     rrf_k: int = 60
 

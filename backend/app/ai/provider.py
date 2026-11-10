@@ -31,18 +31,28 @@ class LLMProvider(Protocol):
 class Providers:
     llm: LLMProvider
     embeddings: EmbeddingProvider
+    llm_available: bool = False
 
 
 def get_providers(settings: Settings) -> Providers:
-    if settings.ai_provider == "mock":
-        from app.ai.mock_providers import HashingEmbeddingProvider, MockLLMProvider
+    from app.ai.mock_providers import HashingEmbeddingProvider, MockLLMProvider
 
-        return Providers(
-            llm=MockLLMProvider(),
-            embeddings=HashingEmbeddingProvider(dimension=settings.embedding_dim),
-        )
-    raise AppError(
-        "Bedrock provider arrives in milestone M3; set AI_PROVIDER=mock",
-        code="provider_not_available",
-        status_code=500,
+    # Search embeddings stay deterministic/lexical in every mode (see Discover design §2).
+    embeddings = HashingEmbeddingProvider(dimension=settings.embedding_dim)
+    key = settings.gemini_api_key.get_secret_value() if settings.gemini_api_key else None
+    provider = settings.ai_provider
+    if provider == "auto":
+        provider = "gemini" if key else "mock"
+    if provider == "mock":
+        return Providers(llm=MockLLMProvider(), embeddings=embeddings, llm_available=False)
+    if provider == "gemini" and key:
+        from app.ai.gemini_provider import GeminiLLMProvider
+
+        llm = GeminiLLMProvider(key, settings.gemini_model, settings.gemini_base_url)
+        return Providers(llm=llm, embeddings=embeddings, llm_available=True)
+    message = (
+        "AI_PROVIDER=gemini needs a Gemini API key (GEMINI_API_KEY)."
+        if provider == "gemini"
+        else "Bedrock provider is not implemented yet; use AI_PROVIDER=auto or gemini."
     )
+    raise AppError(message, code="provider_not_available", status_code=500)
