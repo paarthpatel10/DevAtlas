@@ -32,24 +32,37 @@ and is unit-tested in `backend/tests/unit/test_discover_ranking.py`.
 
 ## Feeds
 
-### Trending (today / this week / this month / all time)
-- **Growth basis**: rank by stars gained in the period (minimum 1 / 3 / 5); ties broken by
-  forks gained, then active weeks. Only repositories with measured growth take part.
-- **Fallback**: when *no* repository has measured growth for the period, the feed is ranked
-  by popularity (recently pushed first, then stars) and labelled
-  `basis = popularity_activity` in the API and UI. "All time" is always popularity.
-- The **Trending** label appears on cards only when this week's ranking is growth-based.
+### Trending (today / this week / this month): from GitHub Trending
+- Source: **github.com/trending**, GitHub's own daily ranking with its "stars today" count,
+  recorded once a day by `scripts/track_github_trending.py` for the overall page and the
+  language pages listed under `github_trending:` in the config.
+- Only the daily view is fetched: github.com/robots.txt disallows `?since=` URLs (weekly and
+  monthly views) for automated clients.
+- **Today**: the latest recorded day, ordered by the stars GitHub reported that day (the
+  highest value across the overall and language pages).
+- **This week / this month**: our stored daily observations added up over 7 / 30 days:
+  days on GitHub Trending and the stars GitHub reported on those days. Until the tracker has
+  run for the whole window, the feed says how many days it is based on.
+- Without any observations, Trending falls back to measured star growth when it exists;
+  otherwise it is empty and says so. It never shows a "most starred" list.
+- Repositories that appear on GitHub Trending and are not yet indexed are added through the
+  GitHub API (README, report, category inferred from topics and description).
 
-### Rising
+### Rising: repeatedly on GitHub Trending
+Repositories on GitHub Trending on at least 2 different days in the last 7 (momentum rather
+than a one-day spike), ordered by days on Trending, then stars reported. Needs at least 2
+days of observations. Without GitHub Trending data, the star-growth rule below applies.
+
+#### Star-growth rule (when history exists)
 - Requires 30-day star growth; otherwise the feed reports `insufficient_history`.
 - Growth ratio = stars gained in 30 days ÷ max(stars 30 days ago, 200).
 - Eligible: ≥10 stars gained, commits in ≥3 of the last 4 weeks, and not among the 10 most
-  starred repositories (those belong to Trending).
+  starred repositories.
 - ×1.25 when the 7-day daily rate beats the 30-day daily rate ("accelerating").
 
 ### New & recently discovered
 Eligible if any of: created within 90 days; found by search discovery within 14 days
-(curated repositories never count as "newly discovered"); first release within 30 days.
+or on GitHub Trending (curated repositories never count as "newly discovered"); first release within 30 days.
 Ordered by early traction (log-scaled stars per day of age, capped at 1) + README completeness,
 so a small, well-documented project can outrank a large one.
 
@@ -80,5 +93,5 @@ repositories are often star farming; real breakouts can be curated), and README 
   and the model is told never to follow instructions inside it.
 
 ## Running it
-Suggested daily order: `refresh_repositories` → `compute_feeds` → `generate_insights`.
+Suggested daily order: `track_github_trending` → `refresh_repositories` → `compute_feeds` → `generate_insights`.
 `discover_new` and `backfill_history` can run weekly. All jobs are idempotent and resumable.

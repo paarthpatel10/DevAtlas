@@ -21,7 +21,7 @@ What works today, in demo mode with no AI credentials:
   requirements evidenced in the README → per-requirement evidence quotes, stack
   compatibility (evidenced / inferred / not established) and limitations.
 - **Saved**: save and unsave from any page; a saved list.
-- **Discover**: Trending (today / week / month / all time), Rising, New & recently
+- **Discover**: Trending (today / week / month, from GitHub Trending), Rising, New & recently
   discovered, Hidden gems and a weekly mix, filterable by category and language. Every card
   shows the measured signals behind its placement; without enough history a feed says it is
   popularity-based instead of claiming growth ([methodology](docs/discover-ranking.md)).
@@ -112,6 +112,7 @@ All jobs are idempotent CLI scripts (no queue service); run them from `backend/`
 
 | Job | What it does | Suggested schedule |
 |-----|--------------|--------------------|
+| `uv run python -m scripts.track_github_trending` | Record github.com/trending (daily view) and add new trending repositories | daily |
 | `uv run python -m scripts.refresh_repositories` | GitHub metadata + daily snapshot + recent stars/forks/commits/releases | daily |
 | `uv run python -m scripts.compute_feeds` | Recompute Trending/Rising/New/Hidden gems/Weekly | daily, after refresh |
 | `uv run python -m scripts.generate_insights` | Gemini reports for new or changed READMEs (throttled, resumable) | daily |
@@ -124,6 +125,7 @@ Windows Task Scheduler example (daily at 06:00):
 ```powershell
 # refresh.ps1 (save next to the repository, adjust the path)
 Set-Location C:/path/to/DevAtlas/backend
+uv run python -m scripts.track_github_trending
 uv run python -m scripts.refresh_repositories
 uv run python -m scripts.compute_feeds
 uv run python -m scripts.generate_insights
