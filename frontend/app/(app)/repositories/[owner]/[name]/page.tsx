@@ -5,12 +5,15 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { ForksMetric, LicenseLabel, StarsMetric } from "@/components/repository/meta";
-import { RepoName } from "@/components/repository/repository-card";
+import { CompareButton } from "@/components/compare/compare-button";
+import { AskPanel } from "@/components/insights/ask-panel";
+import { ReportSections } from "@/components/insights/report-sections";
+import { RepoName, repoHref } from "@/components/repository/repository-card";
 import { SaveButton } from "@/components/repository/save-button";
 import { RefreshError } from "@/components/states/refresh-error";
-import { ApiError, getRepository } from "@/lib/api";
+import { ApiError, getInsights, getRepository } from "@/lib/api";
 import { formatCount, formatDate, snapshotLabel } from "@/lib/format";
-import type { RepositoryDetail } from "@/lib/types";
+import type { InsightsOut, RepositoryDetail } from "@/lib/types";
 
 type Props = PageProps<"/repositories/[owner]/[name]">;
 
@@ -62,8 +65,11 @@ function languageShares(languages: Record<string, number>) {
 export default async function RepositoryPage(props: Props) {
   const { owner, name } = await props.params;
   let repo: RepositoryDetail;
+  let insights: InsightsOut | null = null;
   try {
-    repo = await getRepository(decodeURIComponent(owner), decodeURIComponent(name));
+    const [o, n] = [decodeURIComponent(owner), decodeURIComponent(name)];
+    // Insights are optional: if they fail, the page still shows the repository facts.
+    [repo, insights] = await Promise.all([getRepository(o, n), getInsights(o, n).catch(() => null)]);
   } catch (error) {
     if (error instanceof ApiError && error.status === 404) notFound();
     const message = error instanceof ApiError ? error.message : "The repository could not load.";
@@ -87,6 +93,7 @@ export default async function RepositoryPage(props: Props) {
           </h1>
           <div className="flex items-center gap-2">
             <SaveButton owner={repo.owner} name={repo.name} initialSaved={repo.is_saved} />
+            <CompareButton fullName={repo.full_name} />
             <a
               href={repo.html_url}
               target="_blank"
@@ -126,6 +133,12 @@ export default async function RepositoryPage(props: Props) {
       </header>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_18rem]">
+        {insights ? (
+          <div className="space-y-6">
+            <ReportSections insights={insights} readmeUrl={readmeUrl} owner={repo.owner} name={repo.name} />
+            <AskPanel owner={repo.owner} name={repo.name} />
+          </div>
+        ) : (
         <div className="space-y-6">
           <Section title="Overview">
             {analysis?.summary ? (
@@ -188,6 +201,8 @@ export default async function RepositoryPage(props: Props) {
           </Section>
         </div>
 
+        )}
+
         <aside className="space-y-6">
           <Section title="Maintenance signals">
             {repo.maintenance_signals.length > 0 ? (
@@ -247,6 +262,22 @@ export default async function RepositoryPage(props: Props) {
               </p>
             )}
           </Section>
+
+          {insights && insights.related.length > 0 && (
+            <Section title="Related in the index">
+              <ul className="space-y-1.5">
+                {insights.related.map((r) => (
+                  <li key={r.id}>
+                    <Link href={repoHref(r)} className="hover:text-accent hover:underline">
+                      <RepoName repo={r} />
+                    </Link>
+                    {r.description && <p className="line-clamp-2 text-xs text-muted">{r.description}</p>}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-xs text-muted">Similar projects in the same category, not ranked as better.</p>
+            </Section>
+          )}
 
           <Section title="Looking for alternatives?">
             <Link
