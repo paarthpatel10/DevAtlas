@@ -10,10 +10,10 @@ import { ApiError, getFeed } from "@/lib/api";
 import type { FeedName, FeedPage, Period } from "@/lib/types";
 
 const FEEDS: Record<FeedName, { title: string; description: string }> = {
-  trending: { title: "Trending", description: "Repositories gaining the most stars in the period." },
+  trending: { title: "Trending", description: "What's gaining stars on GitHub right now, from GitHub Trending." },
   rising: {
     title: "Rising",
-    description: "Sustained growth relative to size, with steady development activity.",
+    description: "Repeatedly on GitHub Trending this week: momentum, not a one-day spike.",
   },
   new: { title: "New and recently discovered", description: "Created recently, newly found, or newly released." },
   "hidden-gems": {
@@ -22,7 +22,7 @@ const FEEDS: Record<FeedName, { title: string; description: string }> = {
   },
   weekly: { title: "This week's discoveries", description: "A short mix across feeds and categories." },
 };
-const PERIODS: Period[] = ["day", "week", "month", "all"];
+const PERIODS: Period[] = ["day", "week", "month"];
 const PAGE_SIZE = 20;
 
 type Props = PageProps<"/discover/[feed]">;

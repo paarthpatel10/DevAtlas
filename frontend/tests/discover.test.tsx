@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { beforeEach, expect, test, vi } from "vitest";
 
 import { DiscoverCard } from "@/components/discover/discover-card";
+import { PeriodTabs } from "@/components/discover/discover-filters";
 import { FeedSection } from "@/components/discover/feed-section";
 import { ApiError, getBuildIdeas, getInsights } from "@/lib/api";
 import { clearCompare, getCompareList, toggleCompare } from "@/lib/compare-store";
@@ -132,19 +133,41 @@ test("compare button toggles membership", async () => {
 
 function page(basis: FeedPage["basis"], items: DiscoverItem[] = [item]): FeedPage {
   return { items, page: 1, page_size: 6, total: items.length, feed: "trending", period: "week",
-           basis, computed_at: "2026-11-10T09:00:00Z" };
+           basis, computed_at: "2026-11-10T09:00:00Z", note: null };
 }
 
-test("feed section labels popularity-based ranking", () => {
-  render(<FeedSection title="Trending now" feed="trending" data={page("popularity_activity")} />);
-  expect(screen.getByText(/ranked by popularity and recent activity/i)).toBeInTheDocument();
+test("feed section credits GitHub Trending and shows the observation note", () => {
+  render(
+    <FeedSection
+      title="Trending this week"
+      feed="trending"
+      data={{ ...page("github_trending"), note: "Based on 1 day of GitHub Trending observations so far." }}
+    />,
+  );
+  expect(screen.getByText(/from github trending/i)).toBeInTheDocument();
+  expect(screen.getByText(/based on 1 day of github trending observations/i)).toBeInTheDocument();
+});
+
+test("period tabs offer today, this week and this month only", () => {
+  render(<PeriodTabs base="/discover" params={{}} />);
+  expect(screen.getByRole("link", { name: "Today" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "This month" })).toBeInTheDocument();
+  expect(screen.queryByRole("link", { name: /all time/i })).not.toBeInTheDocument();
 });
 
 test("feed section explains insufficient history and not computed", () => {
   const { rerender } = render(
     <FeedSection title="Rising" feed="rising" data={page("insufficient_history", [])} />,
   );
-  expect(screen.getByText(/not enough star history yet/i)).toBeInTheDocument();
+  expect(screen.getByText(/not enough history yet/i)).toBeInTheDocument();
+  rerender(
+    <FeedSection
+      title="Rising"
+      feed="rising"
+      data={{ ...page("insufficient_history", []), note: "Rising needs GitHub Trending observations on at least 2 days (1 day so far)." }}
+    />,
+  );
+  expect(screen.getByText(/1 day so far/i)).toBeInTheDocument();
   rerender(<FeedSection title="Rising" feed="rising" data={{ ...page("not_computed", []), computed_at: null }} />);
   expect(screen.getByText(/hasn't been computed yet/i)).toBeInTheDocument();
 });

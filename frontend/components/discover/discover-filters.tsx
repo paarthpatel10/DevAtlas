@@ -86,7 +86,6 @@ const PERIODS: { value: Period; label: string }[] = [
   { value: "day", label: "Today" },
   { value: "week", label: "This week" },
   { value: "month", label: "This month" },
-  { value: "all", label: "All time" },
 ];
 
 export function PeriodTabs({

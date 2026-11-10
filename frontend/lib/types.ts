@@ -161,9 +161,14 @@ export type ApiErrorBody = {
 // ---- Discover ---------------------------------------------------------------------------
 
 export type FeedName = "trending" | "rising" | "new" | "hidden-gems" | "weekly";
-export type Period = "day" | "week" | "month" | "all";
+export type Period = "day" | "week" | "month";
 export type FeedLabel = "trending" | "rising" | "new" | "hidden_gem";
-export type FeedBasis = "growth" | "popularity_activity" | "insufficient_history" | "not_computed";
+export type FeedBasis =
+  | "growth"
+  | "github_trending"
+  | "popularity_activity"
+  | "insufficient_history"
+  | "not_computed";
 
 export type DiscoverItem = RepositorySummary & {
   labels: FeedLabel[];
@@ -182,6 +187,7 @@ export type FeedPage = {
   period: string | null;
   basis: FeedBasis;
   computed_at: string | null;
+  note: string | null;
 };
 
 export type CategorySummary = { value: string; label: string; count: number; top: DiscoverItem[] };

@@ -8,12 +8,11 @@ import type { Period } from "@/lib/types";
 
 export const metadata: Metadata = { title: "Discover" };
 
-const PERIODS: Period[] = ["day", "week", "month", "all"];
+const PERIODS: Period[] = ["day", "week", "month"];
 const PERIOD_TEXT: Record<Period, string> = {
   day: "today",
   week: "this week",
   month: "this month",
-  all: "of all time",
 };
 
 function str(value: string | string[] | undefined): string | undefined {
@@ -74,7 +73,7 @@ export default async function DiscoverPage(props: PageProps<"/discover">) {
         <PeriodTabs base="/discover" params={params} />
         <FeedSection
           title={`Trending ${PERIOD_TEXT[period]}`}
-          description="Repositories gaining the most stars in the period."
+          description="What's gaining stars on GitHub right now, from GitHub Trending."
           feed="trending"
           data={data.trending}
           seeAllHref={seeAll("trending")}
@@ -82,7 +81,7 @@ export default async function DiscoverPage(props: PageProps<"/discover">) {
       </div>
       <FeedSection
         title="Rising"
-        description="Sustained growth relative to size, with steady development activity."
+        description="On GitHub Trending again and again this week: momentum, not a one-day spike."
         feed="rising"
         data={data.rising}
         seeAllHref={seeAll("rising")}

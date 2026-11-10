@@ -6,10 +6,10 @@ import type { FeedName, FeedPage } from "@/lib/types";
 export function basisNote(data: FeedPage): string | null {
   if (data.basis === "not_computed") return "This feed hasn't been computed yet. Run the compute_feeds job.";
   if (data.basis === "insufficient_history")
-    return "Not enough star history yet: this feed needs at least 30 days of daily snapshots.";
+    return data.note ?? "Not enough history yet for this feed.";
   if (data.basis === "popularity_activity")
     return "Ranked by popularity and recent activity: there isn't enough star history for this period yet.";
-  return null;
+  return data.note;
 }
 
 export function FeedSection({
@@ -44,6 +44,15 @@ export function FeedSection({
           </Link>
         )}
       </div>
+      {data.basis === "github_trending" && (
+        <p className="text-xs text-muted">
+          From GitHub Trending (
+          <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+            github.com/trending
+          </a>
+          ), recorded daily: star counts are the ones GitHub reports.
+        </p>
+      )}
       {note && (
         <p className="rounded border border-amber/40 bg-amber-soft px-3 py-2 text-xs text-amber">{note}</p>
       )}
