@@ -1,0 +1,40 @@
+{
+  "archived": false,
+  "category": "backend",
+  "created_at_github": "2026-08-12T16:51:43Z",
+  "default_branch": "main",
+  "description": "Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL.",
+  "featured": false,
+  "fetched_at": "2026-11-10T07:57:41.452852Z",
+  "forks": 0,
+  "full_name": "antonkarasbiz/FastAPI-boilerplate",
+  "github_id": 1332254360,
+  "homepage_url": "https://fastapi.tiangolo.com",
+  "html_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate",
+  "languages": {
+    "Dockerfile": 3328,
+    "Jinja": 8472,
+    "Mako": 704,
+    "Python": 520233
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "FastAPI-boilerplate",
+  "open_issues": 0,
+  "owner": "antonkarasbiz",
+  "primary_language": "Python",
+  "pushed_at_github": "2026-09-13T15:04:24Z",
+  "readme_text": "# FastAPI service boilerplate\n\nAsync API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.\n\n## Overview\n\nUse this repository when a new product needs auth, CRUD, background jobs, caching, and rate limits without assembling those pieces from scratch. It is the Python service template in the [antonkarasbiz](https://github.com/antonkarasbiz) full-stack and AI stack.\n\n## Capabilities\n\n- Fully async FastAPI + SQLAlchemy 2.0\n- Pydantic v2 models and validation\n- Server-side sessions, CSRF, OAuth, and API keys\n- FastCRUD generics and pagination\n- Optional SQLAdmin panel (environment toggle)\n- Taskiq workers on Redis or RabbitMQ\n- Redis or Memcached cache (`@cache` + provider API)\n- Per-tier and per-path rate limits\n- Alembic migrations with a production confirm gate\n- `bp` CLI for compose files, env audit, and plugins\n- Docker Compose for local, prod, and nginx-fronted shapes\n\n## Repository layout\n\n```text\nFastAPI-boilerplate/\n├── pyproject.toml          uv workspace root\n├── backend/                deployable application\n│   ├── src/                interfaces, infrastructure, modules\n│   ├── pyproject.toml\n│   └── Dockerfile\n└── cli/                    bp — operator tool, not shipped in prod\n```\n\n## Quickstart\n\n```bash\ngit clone https://github.com/antonkarasbiz/FastAPI-boilerplate\ncd FastAPI-boilerplate\nuv sync --all-packages --all-extras\n```\n\nGenerate a compose file:\n\n```bash\nuv run bp deploy generate local\n# uv run bp deploy generate prod\n# uv run bp deploy generate nginx\n```\n\nEnvironment:\n\n```bash\ncp backend/.env.example backend/.env\nuv run bp env gen-secret\nuv run bp env validate\n```\n\nStart:\n\n```bash\ndocker compose up --build\n# http://127.0.0.1:8000  — OpenAPI at /docs\n```\n\nWithout Docker (local Postgres + Redis required):\n\n```bash\ncd backend\nuv run alembic upgrade head\nuv run python -m scripts.setup_initial_data\n```\n\n## When to use it\n\nChoose this template for a single deployable API that will grow by modules. It is not a microservices monorepo scaffold. Deeper operator notes live under `docs/`.\n\n## License\n\nMIT. Implementation follows the FastAPI-boilerplate / Fastro lineage. Upstream license terms apply.\n\n## Maintainer\n\n[Anton Karas](https://github.com/antonkarasbiz) — full-stack, blockchain, and AI engineering.\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md",
+  "stars": 57,
+  "topics": [
+    "backend",
+    "boilerplate",
+    "fastapi",
+    "postgresql",
+    "python",
+    "redis"
+  ],
+  "updated_at_github": "2026-09-13T15:04:28Z"
+}

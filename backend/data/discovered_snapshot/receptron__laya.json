@@ -1,0 +1,43 @@
+{
+  "archived": false,
+  "category": "ai_ml",
+  "created_at_github": "2026-09-19T15:30:52Z",
+  "default_branch": "main",
+  "description": "Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime",
+  "featured": false,
+  "fetched_at": "2026-11-10T07:57:41.452852Z",
+  "forks": 88,
+  "full_name": "receptron/laya",
+  "github_id": 1377318357,
+  "homepage_url": "https://www.npmjs.com/package/@receptron/laya",
+  "html_url": "https://github.com/receptron/laya",
+  "languages": {
+    "JavaScript": 3779,
+    "Python": 4047,
+    "TypeScript": 38353
+  },
+  "license_name": "MIT License",
+  "license_spdx": "MIT",
+  "name": "laya",
+  "open_issues": 5,
+  "owner": "receptron",
+  "primary_language": "TypeScript",
+  "pushed_at_github": "2026-10-17T00:22:23Z",
+  "readme_text": "# @receptron/laya\n\nRun **[Laya](https://huggingface.co/convaiinnovations/laya)** — the open-source, Jev-compatible\n_System 1 decision model_ by Convai Innovations — from Node.js / TypeScript.\n\nLaya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed\nquestions, and it returns every answer with calibrated probabilities in **one forward pass**:\n\n- `choice` — pick one option, with a probability per option\n- `score` — an expected level on an ordered rubric, with the distribution\n- `noul` — a calibrated P(true) for a yes/no statement\n\nThis package runs the model with [ONNX Runtime](https://onnxruntime.ai/); PyTorch and Python are\nnot needed at runtime. The request/response shape is the same as the Python reference\nimplementation (`RLAgent.system_one`) and as TypeSafe Jev's `system_one` API, and the output\nmatches the Python implementation to four decimal places.\n\n## Install\n\n```sh\nnpm install @receptron/laya\n```\n\nNode.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version\nin `devDependencies` is only for type-checking this package and does not require Node 24.\n\nThe ONNX weights (about 1.7 GB, fp32) are downloaded from Hugging Face on first use and cached under\n`~/.cache/receptron-laya` (override with `LAYA_CACHE`). Budget roughly 2 GB of RAM for the loaded model\nplus a few hundred MB per batch of questions.\n\nThe first `Laya.load()` therefore includes that download, so time it after the cache is warm. To\nfetch the weights ahead of time (in a build step or container image), call `ensureBundle()`:\n\n```sh\nnode -e 'import(\"@receptron/laya\").then((m) => m.ensureBundle())'\n```\n\nLater loads only send a cheap freshness check and read from the cache (about 4 s on an Apple M4, [measured in #13](https://github.com/receptron/laya/issues/13)).\n\n## Usage\n\n```ts\nimport { Laya } from \"@receptron/laya\";\n\nconst laya = await Laya.load();\n\nconst result = await laya.systemOne(\n  { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" },\n  {\n    department: {\n      type: \"choice\",\n      instructions: \"Which team should handle this ticket?\",\n      criteria: { billing: \"payments, refunds, invoices\", support: \"product help and bugs\", sales: \"new purchases\" },\n    },\n    urgency: {\n      type: \"score\",\n      instructions: \"How urgent is this ticket?\",\n      criteria: [\"not urgent\", \"somewhat urgent\", \"urgent\", \"critical\"],\n    },\n    churn_risk: { type: \"noul\", instructions: \"Is the customer likely to cancel or dispute?\" },\n  },\n);\n\nresult.answers.department.choice; // \"billing\"\nresult.answers.department.probabilities; // { billing: 0.9415, support: 0.031, sales: 0.0275 }\nresult.answers.urgency.score; // 1.3886   (expected level, 0..3)\nresult.answers.churn_risk.noul; // 0.0988   (P(true))\nresult.answers.department.answer_confidence; // 0.9415   (max probability, on every answer type)\nresult.usage.input_tokens; // 267\n\nawait laya.close();\n```\n\nThe answer types follow the question types, so `result.answers.department` is a `ChoiceAnswer`\nand `result.answers.churn_risk` a `NoulAnswer` without any casting.\n\nTo gate on confidence, use `answer_confidence`: the probability of the reported answer (`max(p)`),\nwhich is the quantity the checkpoint's temperatures are fitted for and means the same thing for every\nquestion type. `confidence` on `choice` / `score` answers is a different quantity (1 − normalized entropy).\n\n### Options\n\n```ts\nawait Laya.load({\n  modelDir: \"./onnx\", // use a local export instead of downloading (see below)\n  repo: \"receptron/laya-onnx\", // Hugging Face repo that holds the ONNX bundle\n  subfolder: \"multilingual\", // a checkpoint variant inside that repo\n  revision: \"main\", // pin a commit hash for reproducible results; \"main\" follows the repo\n  cacheDir: \"/var/cache/laya\",\n  token: process.env.HF_TOKEN, // for private repos\n  onProgress: ({ file, received, total }) => {}, // download progress\n  executionProviders: [\"cpu\"], // onnxruntime-node execution providers\n  sessionOptions: { intraOpNumThreads: 4 },\n});\n```\n\nEvery question of one `systemOne` call is batched into a single run; a call with three questions\ntakes about 140 ms on an Apple-silicon CPU once the model is warm.\n\n## Exporting the ONNX bundle yourself\n\n`export/export_onnx.py` turns the Hugging Face checkpoint (ModernBERT encoder + Laya's decision head)\ninto one ONNX graph and copies the tokenizer and calibration values next to it. You only need this\nto build a bundle from a newer checkpoint or from a variant that is not published:\n\n```sh\ncd export\nuv venv -p 3.12 .venv\nuv pip install -p .venv/bin/python torch transformers safetensors onnx onnxscript onnxruntime huggingface_hub\n.venv/bin/python -c \"from huggingface_hub import snapshot_download; snapshot_download('convaiinnovations/laya', local_dir='model', allow_patterns=['model.safetensors','encoder/*','tokenizer/*','rl_agent_config.json','rl_common.py','rl_agent_api.py'])\"\n.venv/bin/python export_onnx.py model ../onnx   # prints the max logit difference vs. PyTorch (≈1e-5)\n```\n\nThen `Laya.load({ modelDir: \"./onnx\" })`. The bundle is the five files listed in `BUNDLE_FILES`:\n`laya.onnx`, `laya.onnx.data`, `laya_config.json`, `tokenizer/tokenizer.json`, `tokenizer/tokenizer_config.json`.\n\n## Limits\n\n- Each question's options must fit in `head_max_len` (192) tokens; `systemOne` throws otherwise.\n  Fewer than about 20 options per `choice` question is the model's own recommendation.\n- The state is truncated to `max_len` (512 tokens for the English checkpoint) after the question header.\n  A string or object state keeps its start; a list state (a conversation) keeps its newest end, as in training.\n- `choice` labels given as a list must be distinct; a repeated label throws instead of being merged.\n- Temperatures are clamped to [0.5, 5]. The published bundle uses 0.945 for `choice` questions with\n  11 or more options, where the upstream checkpoint ships 0.1006 (clamped to 0.5 by the Python `laya`\n  package), so confidences for those questions differ from upstream by design.\n- A JSON state is serialized like Python's `json.dumps(ensure_ascii=False)` so that tokens match the\n  reference implementation; non-integer numbers may format differently between JS and Python.\n\n## Development\n\n```sh\nyarn install\nyarn test        # unit tests; the model test runs when ./onnx holds a bundle (or LAYA_MODEL_DIR)\nyarn typecheck\nyarn build\nLAYA_MODEL_DIR=./onnx yarn example\n```\n\n## License\n\nMIT. The Laya model weights are published by Convai Innovations under Apache 2.0.\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/receptron/laya/blob/main/README.md",
+  "stars": 1058,
+  "topics": [
+    "classification",
+    "decision-model",
+    "inference",
+    "llm",
+    "local-first",
+    "machine-learning",
+    "nodejs",
+    "onnx",
+    "onnxruntime",
+    "typescript"
+  ],
+  "updated_at_github": "2026-11-10T07:13:40Z"
+}

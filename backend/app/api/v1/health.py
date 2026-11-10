@@ -3,7 +3,7 @@ from typing import Literal
 from fastapi import APIRouter, Request
 from pydantic import BaseModel
 
-from app.ai.provider import get_providers
+from app.api.deps import get_providers_dep
 from app.core.errors import AppError
 from app.db.session import check_database, get_engine
 
@@ -31,7 +31,7 @@ def health(request: Request) -> HealthOut:
     ai_provider: Literal["mock", "gemini", "misconfigured"] = "misconfigured"
     llm_model: str | None = None
     try:
-        providers = get_providers(settings)
+        providers = get_providers_dep(request)
         if providers.llm_available:
             ai_provider, llm_model = "gemini", providers.llm.model_name
         else:
