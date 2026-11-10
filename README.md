@@ -8,7 +8,7 @@ inferred compatibility are labelled as such.
 > `DevAtlas` is the internal working name; the UI uses a neutral placeholder brand.
 > The product specification is [`open_source_intelligence_v0_spec.md`](open_source_intelligence_v0_spec.md).
 
-## Status: milestone M1 (foundation + end-to-end discovery)
+## Status: M1 (discovery foundation) + Discover (trending and repository intelligence)
 
 What works today, in demo mode with no AI credentials:
 
@@ -21,6 +21,15 @@ What works today, in demo mode with no AI credentials:
   requirements evidenced in the README → per-requirement evidence quotes, stack
   compatibility (evidenced / inferred / not established) and limitations.
 - **Saved**: save and unsave from any page; a saved list.
+- **Discover**: Trending (today / week / month / all time), Rising, New & recently
+  discovered, Hidden gems and a weekly mix, filterable by category and language. Every card
+  shows the measured signals behind its placement; without enough history a feed says it is
+  popularity-based instead of claiming growth ([methodology](docs/discover-ranking.md)).
+- **Repository intelligence**: Gemini-generated reports (what it is, why it is notable, who
+  should care, use cases, project ideas, technical overview, limitations) in which every item
+  cites README excerpts; "Ask AI about this repository" answers only from the repository's
+  own documentation; "What can I build?" ideas on demand.
+- **Compare**: 2–4 repositories on the same dimensions, with no overall winner.
 - **Relevance smoke benchmark**: 15 developer queries, hit@5 = 1.00, MRR = 0.93
   (see [Evaluation](#evaluation) for the caveat).
 
@@ -70,7 +79,10 @@ See [`backend/.env.example`](backend/.env.example) and
 | `DATABASE_URL_UNPOOLED` | Optional direct (non-pooled) URL for migrations. |
 | `TEST_DATABASE_URL` (or `neon_db_test`) | Separate database for tests. **It is wiped by the test suite.** |
 | `GITHUB_TOKEN` | Optional; raises the GitHub API limit from 60 to 5,000 requests/hour. |
-| `AI_PROVIDER` | `mock` (default, no credentials). `bedrock` arrives in M3. |
+| `AI_PROVIDER` | `auto` (default: Gemini when a key is set, otherwise the deterministic mock), `mock`, or `gemini`. |
+| `GEMINI_API_KEY` (or `gemini`) | Gemini key for intelligence reports, build ideas and repository Q&A. |
+| `GEMINI_MODEL` | Default `gemini-3.5-flash-lite` (the free tier allows only 20 requests/day for `gemini-3.5-flash`). |
+| `AI_REQUESTS_PER_MINUTE` | Limit for on-demand AI endpoints and the report job (default 10). |
 | `NEXT_PUBLIC_API_BASE_URL` | Frontend → API base URL (default `http://localhost:8000/api/v1`). |
 
 Secrets live only in `.env` files (git-ignored) and are never sent to the browser.
@@ -93,6 +105,32 @@ npm run dev                              # http://localhost:3000
 
 Behind a TLS-inspecting corporate proxy, use the OS certificate store:
 `$env:UV_NATIVE_TLS=1` for uv and `$env:NODE_OPTIONS="--use-system-ca"` for npm/Next.js.
+
+## Background jobs (Discover)
+
+All jobs are idempotent CLI scripts (no queue service); run them from `backend/`:
+
+| Job | What it does | Suggested schedule |
+|-----|--------------|--------------------|
+| `uv run python -m scripts.refresh_repositories` | GitHub metadata + daily snapshot + recent stars/forks/commits/releases | daily |
+| `uv run python -m scripts.compute_feeds` | Recompute Trending/Rising/New/Hidden gems/Weekly | daily, after refresh |
+| `uv run python -m scripts.generate_insights` | Gemini reports for new or changed READMEs (throttled, resumable) | daily |
+| `uv run python -m scripts.discover_new` | Find new repositories via GitHub search (quality-filtered) | weekly |
+| `uv run python -m scripts.backfill_history --days 35` | One-off history backfill | once / after adding repositories |
+| `uv run python -m scripts.export_snapshots` | Write history and reports to `backend/data/` for offline seeding | after the jobs above |
+
+Windows Task Scheduler example (daily at 06:00):
+
+```powershell
+# refresh.ps1 (save next to the repository, adjust the path)
+Set-Location C:/path/to/DevAtlas/backend
+uv run python -m scripts.refresh_repositories
+uv run python -m scripts.compute_feeds
+uv run python -m scripts.generate_insights
+
+# Register it once:
+schtasks /Create /SC DAILY /ST 06:00 /TN "DevAtlas refresh" /TR "powershell -NoProfile -File C:/path/to/DevAtlas/refresh.ps1"
+```
 
 ## Tests and checks
 
@@ -130,9 +168,14 @@ vocabulary was written alongside these queries, so this is a smoke test of the p
 not an unbiased measurement; a larger held-out set is planned for M4. Low P@5 shows that
 lower-ranked results are noisy (very large READMEs mention many concepts).
 
-## Demo mode
+## Demo mode and AI
 
-With `AI_PROVIDER=mock` (the only provider in M1):
+Seeding loads committed snapshots of GitHub metadata, history and Gemini reports, so the
+whole app, including Discover and stored reports, works without any credentials. Without a
+Gemini key, only the on-demand actions ("Generate more ideas", "Ask AI about this
+repository") are unavailable, and they say so.
+
+Ask AI recommendations (the M1 pipeline) stay deterministic in every mode:
 
 - **Embeddings** are deterministic feature-hashed word vectors: lexical, not truly
   semantic.
@@ -159,8 +202,20 @@ The UI shows a "Demo mode: mock AI" badge and labels generated analysis.
 8. **Saves are a flat list in M1**; named collections arrive in M2.
 9. **Explore search** uses AND keyword semantics and falls back to OR when nothing matches.
 10. **No shadcn/ui yet**: native accessible elements and a few small components.
+11. **Discover categories** follow the 12 categories from the Discover brief (supersedes the
+    original 9); curated labels live in `backend/data/curated_repositories.yaml`.
+12. **Contributor activity** is not collected; it is listed as unavailable rather than estimated.
+13. **Compare list** is stored in the browser (no accounts yet).
 
 ## Known limitations
+
+- **Star growth needs history.** The configured fine-grained GitHub token cannot list
+  stargazers, so star growth builds up from daily snapshots: Trending is popularity-based
+  until 1–30 days of snapshots exist, and Rising needs 30 days. A classic token (no scopes)
+  enables an immediate 35-day backfill.
+- **Getting-started links** in reports are often empty: cleaned README chunks drop link URLs,
+  and only URLs present in the sources are kept.
+- **Free-tier Gemini quotas** limit how many reports and answers can be generated per day.
 
 - No LLM in the loop yet: explanations are templated from facts, and compatibility is
   established only by text mentions or a shared primary language.
