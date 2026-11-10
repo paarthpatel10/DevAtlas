@@ -6,9 +6,11 @@ from pydantic import BaseModel
 from app.schemas.repository import RepositoryCard
 
 FeedName = Literal["trending", "rising", "new", "hidden-gems", "weekly"]
-Period = Literal["day", "week", "month", "all"]
+Period = Literal["day", "week", "month"]
 Label = Literal["trending", "rising", "new", "hidden_gem"]
-FeedBasis = Literal["growth", "popularity_activity", "insufficient_history", "not_computed"]
+FeedBasis = Literal[
+    "growth", "github_trending", "popularity_activity", "insufficient_history", "not_computed"
+]
 
 
 class DiscoverItem(RepositoryCard):
@@ -28,6 +30,7 @@ class FeedPage(BaseModel):
     period: str | None
     basis: FeedBasis
     computed_at: datetime | None
+    note: str | None = None
 
 
 class CategorySummary(BaseModel):

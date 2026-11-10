@@ -8,7 +8,7 @@ import math
 import re
 import uuid
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Literal
 
@@ -20,7 +20,7 @@ from app.services.activity_client import ReleaseInfo
 from app.services.chunking import ReadmeFormat, clean_readme, split_sections
 from app.services.history_service import Growth
 
-Basis = Literal["growth", "popularity_activity"]
+Basis = Literal["growth", "popularity_activity", "github_trending"]
 RANKING_PATH = BACKEND_DIR / "data" / "discover_ranking.yaml"
 _UNKNOWN = Growth(None, False, None)
 
@@ -395,3 +395,128 @@ def rank_weekly(
         )
         for i, (e, feed) in enumerate(chosen, start=1)
     ]
+
+
+# ---- GitHub Trending observations ---------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class TrendingObservation:
+    repository_id: uuid.UUID
+    day: date
+    scope: str  # "" = the overall page, otherwise a language slug
+    rank: int
+    stars_today: int
+
+
+def _daily_max(observations: list[TrendingObservation]) -> dict[uuid.UUID, dict[date, int]]:
+    """Stars GitHub reported per repository per day (max across overall/language pages)."""
+    per: dict[uuid.UUID, dict[date, int]] = {}
+    for o in observations:
+        days = per.setdefault(o.repository_id, {})
+        days[o.day] = max(days.get(o.day, 0), o.stars_today)
+    return per
+
+
+def rank_github_trending(
+    observations: list[TrendingObservation], period_days: int, today: date, limit: int
+) -> tuple[list[FeedEntry], int]:
+    """GitHub Trending ranking. 1 day = the latest observed day as GitHub reported it;
+    longer periods add up our daily observations within the window."""
+    if not observations:
+        return [], 0
+    latest = max(o.day for o in observations if o.day <= today)
+    start = latest - timedelta(days=period_days)
+    window = [o for o in observations if start < o.day <= latest]
+    observed_days = len({o.day for o in window})
+    per_repo = _daily_max(window)
+    rows: list[tuple[uuid.UUID, float, dict[str, Any]]] = []
+    if period_days == 1:
+        overall_rank = {o.repository_id: o.rank for o in window if o.scope == ""}
+        for repo_id, days in per_repo.items():
+            stars = days[latest]
+            rows.append(
+                (
+                    repo_id,
+                    float(stars),
+                    {
+                        "github_stars_today": stars,
+                        "github_rank": overall_rank.get(repo_id),
+                        "observed_day": latest.isoformat(),
+                    },
+                )
+            )
+    else:
+        for repo_id, days in per_repo.items():
+            total = sum(days.values())
+            rows.append(
+                (
+                    repo_id,
+                    float(total) + len(days) / 1000,
+                    {
+                        "github_trending_days": len(days),
+                        "github_stars_reported": total,
+                        "window_days": period_days,
+                        "observed_days": observed_days,
+                    },
+                )
+            )
+    rows.sort(key=lambda r: (-r[1], str(r[0])))
+    entries = [
+        FeedEntry(
+            repository_id=repo_id,
+            rank=i,
+            score=round(score, 6),
+            signals=signals,
+            basis="github_trending",
+        )
+        for i, (repo_id, score, signals) in enumerate(rows[:limit], start=1)
+    ]
+    return entries, observed_days
+
+
+def rank_rising_from_trending(
+    observations: list[TrendingObservation],
+    today: date,
+    *,
+    window_days: int = 7,
+    min_days: int = 2,
+    limit: int = 50,
+) -> tuple[list[FeedEntry], int]:
+    """Momentum = appearing on GitHub Trending on several days, not one spike."""
+    if not observations:
+        return [], 0
+    latest = max(o.day for o in observations if o.day <= today)
+    window = [o for o in observations if latest - timedelta(days=window_days) < o.day <= latest]
+    observed_days = len({o.day for o in window})
+    if observed_days < min_days:
+        return [], observed_days
+    rows = []
+    for repo_id, days in _daily_max(window).items():
+        if len(days) < min_days:
+            continue
+        total = sum(days.values())
+        rows.append(
+            (
+                repo_id,
+                len(days) * 1_000_000 + total,
+                {
+                    "github_trending_days": len(days),
+                    "github_stars_reported": total,
+                    "window_days": window_days,
+                    "observed_days": observed_days,
+                },
+            )
+        )
+    rows.sort(key=lambda r: (-r[1], str(r[0])))
+    entries = [
+        FeedEntry(
+            repository_id=repo_id,
+            rank=i,
+            score=float(score),
+            signals=signals,
+            basis="github_trending",
+        )
+        for i, (repo_id, score, signals) in enumerate(rows[:limit], start=1)
+    ]
+    return entries, observed_days

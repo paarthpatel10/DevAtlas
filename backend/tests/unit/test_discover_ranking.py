@@ -200,3 +200,70 @@ def test_hidden_gems_small_categories_use_the_global_percentile():
     entries = rank_hidden_gems(small + [famous_in_small] + others, CFG, NOW)
     assert 33 not in ids(entries)  # 11k stars is not lesser-known across the index
     assert entries[0].signals["threshold_scope"] in {"category", "global"}
+
+
+# ---- GitHub Trending observations ------------------------------------------------------
+
+from datetime import date as _date  # noqa: E402
+
+from app.services.discover_ranking import (  # noqa: E402
+    TrendingObservation,
+    rank_github_trending,
+    rank_rising_from_trending,
+)
+
+DAY = _date(2026, 11, 10)
+
+
+def obs(n: int, day_offset: int, stars: int, scope: str = "", rank: int = 1) -> TrendingObservation:
+    return TrendingObservation(
+        uuid.UUID(int=n), DAY - timedelta(days=day_offset), scope, rank, stars
+    )
+
+
+def test_github_trending_today_uses_latest_day_and_stars_today():
+    observations = [
+        obs(1, 0, 500, rank=2),
+        obs(2, 0, 900, rank=1),
+        obs(2, 0, 950, scope="python", rank=1),
+        obs(3, 1, 5000),  # yesterday: not "today"
+    ]
+    entries, observed_days = rank_github_trending(observations, 1, DAY, limit=50)
+    assert ids(entries) == [2, 1] and observed_days == 1
+    assert entries[0].basis == "github_trending"
+    assert entries[0].signals["github_stars_today"] == 950  # max across pages that day
+    assert entries[0].signals["github_rank"] == 1  # rank on the overall page
+
+
+def test_github_trending_week_sums_daily_observations():
+    observations = [obs(1, 0, 100), obs(1, 1, 100), obs(1, 2, 100), obs(2, 0, 250), obs(3, 9, 9999)]
+    entries, observed_days = rank_github_trending(observations, 7, DAY, limit=50)
+    assert ids(entries) == [1, 2]  # 300 over 3 days beats 250; day -9 is outside the week
+    assert entries[0].signals == {
+        "github_trending_days": 3,
+        "github_stars_reported": 300,
+        "window_days": 7,
+        "observed_days": 3,
+    }
+    assert observed_days == 3
+
+
+def test_github_trending_without_observations_is_empty():
+    assert rank_github_trending([], 7, DAY, limit=50) == ([], 0)
+
+
+def test_rising_needs_two_observed_days_and_repeat_appearances():
+    one_day = [obs(1, 0, 100), obs(2, 0, 50)]
+    assert rank_rising_from_trending(one_day, DAY) == ([], 1)
+    several = [
+        obs(1, 0, 10),
+        obs(1, 1, 10),
+        obs(1, 2, 10),
+        obs(2, 0, 500),
+        obs(2, 1, 400),
+        obs(3, 0, 9000),
+    ]
+    entries, observed_days = rank_rising_from_trending(several, DAY)
+    assert observed_days == 3
+    assert ids(entries) == [1, 2]  # 3 days beats 2 days; a single big day is not "rising"
+    assert entries[0].signals["github_trending_days"] == 3

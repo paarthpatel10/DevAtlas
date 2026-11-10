@@ -114,3 +114,24 @@ class DiscoveryFeedRun(Base):
     note: Mapped[str | None] = mapped_column(Text)
 
     __table_args__ = (UniqueConstraint("feed", "period"),)
+
+
+class GitHubTrendingObservation(Base):
+    """One repository's appearance on github.com/trending (daily view) on one day."""
+
+    __tablename__ = "github_trending_observations"
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    day: Mapped[date] = mapped_column(Date, index=True)
+    scope: Mapped[str] = mapped_column(String(60))  # "" = overall page, else language slug
+    rank: Mapped[int] = mapped_column(Integer)
+    full_name: Mapped[str] = mapped_column(String(401))
+    repository_id: Mapped[uuid.UUID | None] = mapped_column(
+        ForeignKey("repositories.id", ondelete="CASCADE"), index=True
+    )
+    stars_today: Mapped[int] = mapped_column(Integer)
+    stars_total: Mapped[int | None] = mapped_column(Integer)
+    forks_total: Mapped[int | None] = mapped_column(Integer)
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+    __table_args__ = (UniqueConstraint("day", "scope", "full_name"),)

@@ -8,12 +8,12 @@ from datetime import UTC, date, datetime, timedelta
 from typing import Any
 
 from sqlalchemy import delete, func, select
-from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
 from app.models import (
     DiscoveryFeedEntry,
     DiscoveryFeedRun,
+    GitHubTrendingObservation,
     Repository,
     RepositoryDailyStat,
     RepositoryEmbedding,
@@ -27,9 +27,12 @@ from app.services.discover_ranking import (
     FeedEntry,
     RankingConfig,
     RepoSignals,
+    TrendingObservation,
+    rank_github_trending,
     rank_hidden_gems,
     rank_new,
     rank_rising,
+    rank_rising_from_trending,
     rank_trending,
     rank_weekly,
     readme_completeness,
@@ -107,30 +110,91 @@ def build_signals(session: Session, now: datetime) -> list[RepoSignals]:
 # ---- Computation ------------------------------------------------------------------------
 
 
+TRENDING_PERIODS = {"day": 1, "week": 7, "month": 30}
+
+
+def load_trending_observations(session: Session, today: date) -> list[TrendingObservation]:
+    rows = session.execute(
+        select(
+            GitHubTrendingObservation.repository_id,
+            GitHubTrendingObservation.day,
+            GitHubTrendingObservation.scope,
+            GitHubTrendingObservation.rank,
+            GitHubTrendingObservation.stars_today,
+        ).where(
+            GitHubTrendingObservation.repository_id.is_not(None),
+            GitHubTrendingObservation.day > today - timedelta(days=40),
+            GitHubTrendingObservation.day <= today,
+        )
+    ).all()
+    return [TrendingObservation(*row) for row in rows]
+
+
+def _days(n: int) -> str:
+    return f"{n} day" if n == 1 else f"{n} days"
+
+
 def compute_feeds(session: Session, cfg: RankingConfig, now: datetime) -> dict[str, int]:
     signals = build_signals(session, now)
-    results: dict[tuple[str, str], tuple[list[FeedEntry], str]] = {}
-    for period in ("day", "week", "month", "all"):
+    observations = load_trending_observations(session, now.date())
+    results: dict[tuple[str, str], tuple[list[FeedEntry], str, str | None]] = {}
+
+    for period, days in TRENDING_PERIODS.items():
+        if observations:
+            entries, observed = rank_github_trending(
+                observations, days, now.date(), cfg.trending.limit
+            )
+            note = None
+            if days > 1 and observed < days:
+                note = (
+                    f"Based on {_days(observed)} of GitHub Trending observations so far; "
+                    "totals fill in as the daily tracker runs."
+                )
+            results[("trending", period)] = (entries, "github_trending", note)
+            continue
         entries, basis = rank_trending(signals, period, cfg, now)
-        results[("trending", period)] = (entries, basis)
-    rising, rising_basis = rank_rising(signals, cfg, now)
-    results[("rising", "")] = (rising, rising_basis)
-    results[("new", "")] = (rank_new(signals, cfg, now), "growth")
-    results[("hidden_gem", "")] = (rank_hidden_gems(signals, cfg, now), "growth")
+        if basis == "growth":
+            results[("trending", period)] = (entries, "growth", None)
+        else:  # never present a most-starred list as "trending"
+            results[("trending", period)] = (
+                [],
+                "insufficient_history",
+                "No GitHub Trending observations yet. Run the track_github_trending job.",
+            )
+
+    if observations:
+        rising, observed = rank_rising_from_trending(
+            observations, now.date(), limit=cfg.rising.limit
+        )
+        if rising or observed >= 2:
+            results[("rising", "")] = (rising, "github_trending", None)
+        else:
+            results[("rising", "")] = (
+                [],
+                "insufficient_history",
+                "Rising needs GitHub Trending observations on at least 2 days "
+                f"({_days(observed)} so far).",
+            )
+    else:
+        rising, rising_basis = rank_rising(signals, cfg, now)
+        results[("rising", "")] = (rising, rising_basis, None)
+
+    results[("new", "")] = (rank_new(signals, cfg, now), "growth", None)
+    results[("hidden_gem", "")] = (rank_hidden_gems(signals, cfg, now), "growth", None)
+    week_entries, week_basis, _ = results[("trending", "week")]
     weekly_inputs = {
-        "trending": results[("trending", "week")][0]
-        if results[("trending", "week")][1] == "growth"
-        else [],
-        "rising": rising,
+        "trending": week_entries if week_basis in ("growth", "github_trending") else [],
+        "rising": results[("rising", "")][0],
         "new": results[("new", "")][0],
         "hidden_gem": results[("hidden_gem", "")][0],
     }
     by_id = {s.repository_id: s for s in signals}
-    results[("weekly", "")] = (rank_weekly(weekly_inputs, by_id, cfg), "growth")
+    results[("weekly", "")] = (rank_weekly(weekly_inputs, by_id, cfg), "growth", None)
 
     session.execute(delete(DiscoveryFeedEntry))
+    session.execute(delete(DiscoveryFeedRun))
     counts: dict[str, int] = {}
-    for (feed, period), (entries, basis) in results.items():
+    for (feed, period), (entries, basis, note) in results.items():
         session.add_all(
             DiscoveryFeedEntry(
                 feed=feed,
@@ -144,18 +208,14 @@ def compute_feeds(session: Session, cfg: RankingConfig, now: datetime) -> dict[s
             )
             for e in entries
         )
-        stmt = insert(DiscoveryFeedRun).values(
-            id=uuid.uuid4(),
-            feed=feed,
-            period=period,
-            basis=basis,
-            entry_count=len(entries),
-            computed_at=now,
-        )
-        session.execute(
-            stmt.on_conflict_do_update(
-                index_elements=["feed", "period"],
-                set_={"basis": basis, "entry_count": len(entries), "computed_at": now},
+        session.add(
+            DiscoveryFeedRun(
+                feed=feed,
+                period=period,
+                basis=basis,
+                entry_count=len(entries),
+                computed_at=now,
+                note=note,
             )
         )
         counts[f"{feed}:{period}" if period else feed] = len(entries)
@@ -188,6 +248,21 @@ def describe_signals(
 ) -> list[str]:
     """Human-readable, factual descriptions of the numbers that placed an item."""
     text: list[str] = []
+    today_stars = signals.get("github_stars_today")
+    if today_stars is not None:
+        text.append(f"+{today_stars:,} stars today on GitHub Trending")
+        if signals.get("github_rank"):
+            text.append(f"#{signals['github_rank']} on GitHub Trending today")
+    trending_days = signals.get("github_trending_days")
+    if trending_days is not None:
+        observed = signals.get("observed_days") or trending_days
+        window = signals.get("window_days") or observed
+        if observed >= window:
+            span = f"the last {window} days"
+        else:
+            span = f"{observed} observed {'day' if observed == 1 else 'days'}"
+        reported = signals.get("github_stars_reported", 0)
+        text.append(f"On GitHub Trending {trending_days} of {span} (+{reported:,} stars reported)")
     gained, days = signals.get("stars_gained"), signals.get("period_days")
     if gained is not None and days:
         prefix = "≥" if signals.get("stars_gained_lower_bound") else "+"
@@ -228,8 +303,10 @@ def _labels(session: Session, repo_ids: list[uuid.UUID]) -> dict[uuid.UUID, list
     ).all()
     labels: dict[uuid.UUID, list[str]] = {}
     for repo_id, feed, period, basis in rows:
-        if feed == "trending" and not (period == "week" and basis == "growth"):
-            continue  # "Trending" only when it is measured growth, never popularity
+        if feed == "trending" and not (
+            period in ("day", "week") and basis in ("growth", "github_trending")
+        ):
+            continue  # "Trending" only when measured (growth or GitHub Trending)
         if feed in ("trending", "rising", "new", "hidden_gem"):
             current = labels.setdefault(repo_id, [])
             if feed not in current:
@@ -333,6 +410,7 @@ def get_feed(
         period=period_key or None,
         basis=run.basis if run else "not_computed",
         computed_at=run.computed_at if run else None,
+        note=run.note if run else None,
     )
 
 
@@ -374,7 +452,7 @@ def get_categories(
 
 
 _FEED_PHRASE = {
-    "trending": "Trending this week",
+    "trending": "Trending",
     "rising": "Rising",
     "new": "New",
     "hidden_gem": "Hidden gem",
@@ -392,7 +470,7 @@ def why_trending(session: Session, repo: Repository, now: datetime) -> tuple[lis
     for entry in entries:
         if entry.feed not in labels:
             continue
-        if entry.feed == "trending" and entry.period != "week":
+        if entry.feed == "trending" and entry.period not in ("day", "week"):
             continue
         text = describe_signals(entry.signals, None, now)
         if text:

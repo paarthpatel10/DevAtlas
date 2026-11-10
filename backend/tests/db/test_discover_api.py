@@ -6,6 +6,7 @@ from sqlalchemy import delete, select, update
 from app.models import (
     DiscoveryFeedEntry,
     DiscoveryFeedRun,
+    GitHubTrendingObservation,
     Repository,
     RepositoryDailyStat,
 )
@@ -22,6 +23,7 @@ def reset_history(session):
     session.execute(delete(RepositoryDailyStat))
     session.execute(delete(DiscoveryFeedEntry))
     session.execute(delete(DiscoveryFeedRun))
+    session.execute(delete(GitHubTrendingObservation))
     session.execute(
         update(Repository).values(
             star_history_since=None, fork_history_since=None, commit_history_since=None
@@ -75,17 +77,51 @@ def test_not_computed_feed_is_empty_and_says_so(api, history_free):
     assert body["basis"] == "not_computed"
 
 
-def test_trending_without_history_is_popularity_based(api, history_free):
+def test_trending_without_observations_or_history_never_lists_most_starred(api, history_free):
     compute_feeds(history_free, load_ranking_config(), NOW)
     history_free.commit()
     body = feed(api, "trending", period="day")
-    assert body["basis"] == "popularity_activity"
-    assert body["computed_at"] is not None
-    assert body["items"], "popularity fallback still lists repositories"
-    assert not any(t.startswith(("+", "≥")) for i in body["items"] for t in i["signal_text"])
-    assert all("trending" not in i["labels"] for i in body["items"])
-    bare = next(i for i in body["items"] if i["full_name"] == "acme/bare")
-    assert bare["signal_text"] == [] and bare["stars"] is None
+    assert body["basis"] == "insufficient_history"
+    assert body["items"] == [] and "track_github_trending" in body["note"]
+    assert api.get("/api/v1/discover/trending", params={"period": "all"}).status_code == 422
+
+
+def add_trending(session, full_name, day, stars_today, scope="", rank=1):
+    session.add(
+        GitHubTrendingObservation(
+            day=day,
+            scope=scope,
+            rank=rank,
+            full_name=full_name,
+            repository_id=repo(session, full_name).id,
+            stars_today=stars_today,
+            stars_total=None,
+            forks_total=None,
+            observed_at=NOW,
+        )
+    )
+    session.commit()
+
+
+def test_trending_from_github_trending_observations(api, history_free):
+    add_trending(history_free, "acme/searchy", TODAY, 1038, rank=1)
+    add_trending(history_free, "acme/ui", TODAY, 200, rank=2)
+    compute_feeds(history_free, load_ranking_config(), NOW)
+    history_free.commit()
+    day = feed(api, "trending", period="day")
+    assert day["basis"] == "github_trending"
+    assert names(day) == ["acme/searchy", "acme/ui"]
+    top = day["items"][0]
+    assert "+1,038 stars today on GitHub Trending" in top["signal_text"]
+    assert "trending" in top["labels"]
+    week = feed(api, "trending", period="week")
+    assert "1 day of GitHub Trending observations" in week["note"]
+    assert (
+        "On GitHub Trending 1 of 1 observed day (+1,038 stars reported)"
+        in (week["items"][0]["signal_text"])
+    )
+    rising = feed(api, "rising")
+    assert rising["basis"] == "insufficient_history" and "1 day so far" in rising["note"]
 
 
 def test_trending_week_with_history_is_growth_based(api, history_free):
@@ -111,6 +147,8 @@ def test_capped_growth_renders_as_lower_bound(api, history_free):
 
 
 def test_filters_category_and_language(api, history_free):
+    for name in ("acme/jobs", "acme/ui", "acme/searchy"):
+        add_star_history(history_free, name, {TODAY: 10})
     compute_feeds(history_free, load_ranking_config(), NOW)
     history_free.commit()
     assert names(feed(api, "trending", period="week", category="frontend")) == ["acme/ui"]
