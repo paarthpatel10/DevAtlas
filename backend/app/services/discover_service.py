@@ -16,6 +16,7 @@ from app.models import (
     DiscoveryFeedRun,
     Repository,
     RepositoryDailyStat,
+    RepositoryEmbedding,
     RepositoryInsight,
     RepositoryRelease,
 )
@@ -369,3 +370,64 @@ def get_categories(
             CategorySummary(value=category, label=category_label(category), count=count, top=top)
         )
     return summaries
+
+
+_FEED_PHRASE = {
+    "trending": "Trending this week",
+    "rising": "Rising",
+    "new": "New",
+    "hidden_gem": "Hidden gem",
+}
+
+
+def why_trending(session: Session, repo: Repository, now: datetime) -> tuple[list[str], list[str]]:
+    """(labels, lines): the measured reasons a repository appears in Discover feeds."""
+    entries = session.scalars(
+        select(DiscoveryFeedEntry).where(DiscoveryFeedEntry.repository_id == repo.id)
+    ).all()
+    labels = _labels(session, [repo.id]).get(repo.id, [])
+    release = _latest_releases(session, [repo.id]).get(repo.id)
+    lines: list[str] = []
+    for entry in entries:
+        if entry.feed not in labels:
+            continue
+        if entry.feed == "trending" and entry.period != "week":
+            continue
+        text = describe_signals(entry.signals, None, now)
+        if text:
+            lines.append(f"{_FEED_PHRASE[entry.feed]}: " + "; ".join(text))
+    release_text = describe_signals({}, release, now)
+    lines.extend(release_text)
+    return labels, list(dict.fromkeys(lines))
+
+
+def related_repositories(session: Session, repo: Repository, limit: int = 4) -> list[Repository]:
+    """Nearest repositories in the same category by summary embedding (not "better")."""
+    own = session.scalar(
+        select(RepositoryEmbedding.embedding).where(
+            RepositoryEmbedding.repository_id == repo.id, RepositoryEmbedding.kind == "summary"
+        )
+    )
+    query = select(Repository).where(
+        Repository.category == repo.category,
+        Repository.id != repo.id,
+        Repository.archived.is_(False),
+    )
+    if own is None:
+        return list(
+            session.scalars(query.order_by(Repository.stars.desc().nulls_last()).limit(limit))
+        )
+    distance = RepositoryEmbedding.embedding.cosine_distance(own)
+    rows = session.scalars(
+        select(Repository)
+        .join(RepositoryEmbedding, RepositoryEmbedding.repository_id == Repository.id)
+        .where(
+            RepositoryEmbedding.kind == "summary",
+            Repository.category == repo.category,
+            Repository.id != repo.id,
+            Repository.archived.is_(False),
+        )
+        .order_by(distance)
+        .limit(limit)
+    )
+    return list(rows)
