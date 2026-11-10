@@ -1,0 +1,56 @@
+"""Fixtures for tests that need a real Postgres + pgvector database.
+
+These tests run only when TEST_DATABASE_URL is set (backend/.env or environment).
+The database is wiped: point it at a dedicated test database/branch.
+"""
+
+from collections.abc import Iterator
+
+import pytest
+from alembic import command
+from alembic.config import Config
+from sqlalchemy import Engine, text
+from sqlalchemy.orm import Session
+
+from app.config import BACKEND_DIR, Settings
+from app.db.session import get_engine
+
+TEST_DATABASE_URL = Settings().test_database_url
+
+
+def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item]) -> None:
+    for item in items:
+        if "tests/db/" in item.nodeid.replace("\\", "/"):
+            item.add_marker(pytest.mark.db)
+            if not TEST_DATABASE_URL:
+                item.add_marker(pytest.mark.skip(reason="TEST_DATABASE_URL not set"))
+
+
+def alembic_config(url: str) -> Config:
+    cfg = Config(str(BACKEND_DIR / "alembic.ini"))
+    cfg.set_main_option("script_location", str(BACKEND_DIR / "app" / "db" / "migrations"))
+    cfg.set_main_option("sqlalchemy.url", url.replace("%", "%%"))
+    return cfg
+
+
+@pytest.fixture(scope="session")
+def db_engine() -> Iterator[Engine]:
+    assert TEST_DATABASE_URL, "TEST_DATABASE_URL must be set for db tests"
+    cfg = alembic_config(TEST_DATABASE_URL)
+    command.downgrade(cfg, "base")
+    command.upgrade(cfg, "head")
+    engine = get_engine(TEST_DATABASE_URL)
+    yield engine
+    engine.dispose()
+
+
+@pytest.fixture
+def db_session(db_engine: Engine) -> Iterator[Session]:
+    with db_engine.begin() as conn:
+        conn.execute(text("TRUNCATE users, repositories RESTART IDENTITY CASCADE"))
+    session = Session(db_engine, expire_on_commit=False)
+    try:
+        yield session
+    finally:
+        session.rollback()
+        session.close()

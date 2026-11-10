@@ -1,0 +1,19 @@
+# Optional local Postgres + pgvector for contributors who have Docker.
+# Not used on the primary dev machine, which uses hosted Neon (see roadmap decision D1),
+# so this file has not been verified there.
+#   docker compose up -d db
+#   DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/opensource_intel
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: opensource_intel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

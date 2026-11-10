@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request
 from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from sqlalchemy import exc as sa_exc
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 logger = logging.getLogger(__name__)
@@ -72,6 +73,13 @@ def register_error_handlers(app: FastAPI) -> None:
     @app.exception_handler(StarletteHTTPException)
     async def _http_error(_: Request, exc: StarletteHTTPException) -> JSONResponse:
         return error_response(exc.status_code, "http_error", str(exc.detail))
+
+    @app.exception_handler(sa_exc.OperationalError)
+    @app.exception_handler(sa_exc.InterfaceError)
+    async def _db_unavailable(_: Request, exc: Exception) -> JSONResponse:
+        logger.warning("Database unavailable: %s", type(exc).__name__)
+        err = DatabaseUnavailableError()
+        return error_response(err.status_code, err.code, err.message)
 
     @app.exception_handler(Exception)
     async def _unhandled(_: Request, exc: Exception) -> JSONResponse:
