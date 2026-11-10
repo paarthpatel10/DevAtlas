@@ -157,3 +157,93 @@ export type RecommendResponse = {
 export type ApiErrorBody = {
   error: { code: string; message: string; details: unknown };
 };
+
+// ---- Discover ---------------------------------------------------------------------------
+
+export type FeedName = "trending" | "rising" | "new" | "hidden-gems" | "weekly";
+export type Period = "day" | "week" | "month" | "all";
+export type FeedLabel = "trending" | "rising" | "new" | "hidden_gem";
+export type FeedBasis = "growth" | "popularity_activity" | "insufficient_history" | "not_computed";
+
+export type DiscoverItem = RepositorySummary & {
+  labels: FeedLabel[];
+  signals: Record<string, unknown>;
+  signal_text: string[];
+  one_liner: string | null;
+  why_explore: string | null;
+};
+
+export type FeedPage = {
+  items: DiscoverItem[];
+  page: number;
+  page_size: number;
+  total: number;
+  feed: string;
+  period: string | null;
+  basis: FeedBasis;
+  computed_at: string | null;
+};
+
+export type CategorySummary = { value: string; label: string; count: number; top: DiscoverItem[] };
+
+// ---- Intelligence reports ---------------------------------------------------------------
+
+export type Citation = {
+  id: string;
+  section_title: string | null;
+  source_url: string | null;
+  excerpt: string;
+};
+export type CitedText = { text: string; citations: Citation[] };
+export type Idea = {
+  title: string;
+  description: string;
+  how_it_is_used: string;
+  complementary_tech: string[];
+  citations: Citation[];
+};
+export type GroundedReport = {
+  generated: boolean;
+  what_is_it: { one_line: string; explanation: string; citations: Citation[] } | null;
+  problem_solved: CitedText | null;
+  why_interesting: { point: string; citations: Citation[] }[];
+  who_should_care: { audience: string; reason: string; citations: Citation[] }[];
+  use_cases: CitedText[];
+  build_ideas: Idea[];
+  technical: {
+    frameworks: { name: string; citations: Citation[] }[];
+    capabilities: { name: string; citations: Citation[] }[];
+    integrations: { name: string; citations: Citation[] }[];
+    prerequisites: CitedText[];
+    architecture: CitedText | null;
+  };
+  limitations: CitedText[];
+  getting_started: { label: string; url: string; citations: Citation[] }[];
+};
+export type InsightsOut = {
+  report: GroundedReport;
+  generated: boolean;
+  model_name: string | null;
+  generated_at: string | null;
+  stale: boolean;
+  labels: FeedLabel[];
+  why_trending: string[];
+  related: RepositorySummary[];
+};
+export type BuildIdeasOut = {
+  ideas: Idea[];
+  generated: boolean;
+  model_name: string | null;
+  cached: boolean;
+};
+export type AskOut = {
+  covered: boolean;
+  answer: string;
+  citations: Citation[];
+  model_name: string | null;
+  cached: boolean;
+};
+export type CompareOut = {
+  dimensions: string[];
+  rows: { repository: RepositorySummary; values: Record<string, string | null>; fits_when: string[] }[];
+};
