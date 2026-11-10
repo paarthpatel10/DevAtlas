@@ -1,0 +1,462 @@
+{
+  "full_name": "meilisearch/meilisearch",
+  "generated_at": "2026-11-10 09:05:40.575193+00:00",
+  "github_id": 130688011,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+            "id": "C3",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **Media** — Search movies and streaming platforms to watch them using hybrid search. - **Agentic search** — Chat with an AI agent to recommend movies and streaming platforms. - **Flickr** — Search and explore one hundred million Flickr…",
+            "id": "C4",
+            "section_title": "🖥 Examples",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+            "id": "C6",
+            "section_title": "🤖 AI & LLM integrations",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "OpenAI API",
+          "LangChain",
+          "Next.js"
+        ],
+        "description": "A chat interface where users can ask for movie recommendations in natural language.",
+        "how_it_is_used": "Uses Meilisearch's conversational search and hybrid search features to ground LLM responses in movie dataset indexes.",
+        "title": "AI-Powered Movie Recommendation Chatbot"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+            "id": "C2",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **Media** — Search movies and streaming platforms to watch them using hybrid search. - **Agentic search** — Chat with an AI agent to recommend movies and streaming platforms. - **Flickr** — Search and explore one hundred million Flickr…",
+            "id": "C4",
+            "section_title": "🖥 Examples",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Leaflet.js",
+          "React",
+          "Node.js"
+        ],
+        "description": "An interactive map and listing page for finding holiday homes based on location and criteria.",
+        "how_it_is_used": "Relies on Meilisearch's geosearch filters and sorting capabilities alongside custom filtering options.",
+        "title": "Real Estate Rental Finder with Geosearch"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Option A: Meilisearch Cloud (recommended).** No install. Start a 14-day trial, then create a project and pick a region. Your project URL and API keys are on the project settings page. **Option B: Self-host.** Run the open-source engine…",
+            "id": "C9",
+            "section_title": "1. Get a Meilisearch instance",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "label": "Install Script via cURL",
+        "url": "https://install.meilisearch.com"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -X POST \"https://ms-url-example.meilisearch.io/indexes/movies/search\" \\ -H 'Content-Type: application/json' \\ -H \"Authorization: Bearer apiKey\" \\ --data-binary '{ \"q\": \"wondre woman\" }' ``` Meilisearch returns *Wonder Woman*…",
+            "id": "C11",
+            "section_title": "3. Search, typo included",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "text": "Indexing is asynchronous, so newly added documents may require a brief wait before appearing in search results."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. Topics: ai, api, app search, database, enterprise search, faceting, full text search, fuzzy search, geosearch,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/meilisearch/meilisearch"
+        },
+        {
+          "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+          "id": "C2",
+          "section_title": "✨ Features",
+          "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+        },
+        {
+          "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+          "id": "C3",
+          "section_title": "✨ Features",
+          "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+        }
+      ],
+      "text": "It solves the difficulty of building fast, intuitive search experiences by combining semantic and full-text search, handling typos gracefully, and returning results in under 50 milliseconds without complex configuration."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+            "id": "C3",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | What you get | Get started | | --- | --- | --- | | **Meilisearch Cloud** (recommended) | Managed Meilisearch: no servers to deploy or upgrade, plus monitoring, search analytics, and team management. Available in 9 regions across…",
+            "id": "C8",
+            "section_title": "☁️ Ways to run Meilisearch",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "text": "Exposes a RESTful API and supports replication and sharding to distribute data across multiple nodes for horizontal scaling."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. Topics: ai, api, app search, database, enterprise search, faceting, full text search, fuzzy search, geosearch,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/meilisearch/meilisearch"
+            },
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Hybrid search combining semantic and full-text search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Search-as-you-type responses under 50 milliseconds"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. Topics: ai, api, app search, database, enterprise search, faceting, full text search, fuzzy search, geosearch,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/meilisearch/meilisearch"
+            },
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Typo tolerance and misspelling matching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Filtering, faceted search, and sorting"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Geosearch filtering and sorting"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+              "id": "C2",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-tenancy and security management with fine-grained API keys"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+              "id": "C3",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            },
+            {
+              "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+              "id": "C6",
+              "section_title": "🤖 AI & LLM integrations",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Conversational search and natural language question answering"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+              "id": "C6",
+              "section_title": "🤖 AI & LLM integrations",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "Native experimental MCP server at the /mcp route"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+              "id": "C3",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            },
+            {
+              "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+              "id": "C6",
+              "section_title": "🤖 AI & LLM integrations",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "LangChain"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+              "id": "C3",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            },
+            {
+              "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+              "id": "C6",
+              "section_title": "🤖 AI & LLM integrations",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "LangChain"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+              "id": "C6",
+              "section_title": "🤖 AI & LLM integrations",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "name": "MCP clients"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+              "id": "C3",
+              "section_title": "✨ Features",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            },
+            {
+              "excerpt": "**Option A: Meilisearch Cloud (recommended).** No install. Start a 14-day trial, then create a project and pick a region. Your project URL and API keys are on the project settings page. **Option B: Self-host.** Run the open-source engine…",
+              "id": "C9",
+              "section_title": "1. Get a Meilisearch instance",
+              "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+            }
+          ],
+          "text": "Can be deployed via Meilisearch Cloud or self-hosted via Docker, cURL, Homebrew, or APT."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Media** — Search movies and streaming platforms to watch them using hybrid search. - **Agentic search** — Chat with an AI agent to recommend movies and streaming platforms. - **Flickr** — Search and explore one hundred million Flickr…",
+            "id": "C4",
+            "section_title": "🖥 Examples",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "text": "E-commerce catalogs featuring range and rating filtering, pagination, and disjunctive facets."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Media** — Search movies and streaming platforms to watch them using hybrid search. - **Agentic search** — Chat with an AI agent to recommend movies and streaming platforms. - **Flickr** — Search and explore one hundred million Flickr…",
+            "id": "C4",
+            "section_title": "🖥 Examples",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "text": "Conversational assistant applications that let users chat with an AI agent to find holiday rentals or movies."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Media** — Search movies and streaming platforms to watch them using hybrid search. - **Agentic search** — Chat with an AI agent to recommend movies and streaming platforms. - **Flickr** — Search and explore one hundred million Flickr…",
+            "id": "C4",
+            "section_title": "🖥 Examples",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "text": "Multi-tenant SaaS CRM applications searching contacts, deals, and companies across tenants."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. Topics: ai, api, app search, database, enterprise search, faceting, full text search, fuzzy search, geosearch,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/meilisearch/meilisearch"
+        },
+        {
+          "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+          "id": "C2",
+          "section_title": "✨ Features",
+          "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+        },
+        {
+          "excerpt": "Website | Roadmap | Meilisearch Cloud | Blog | Documentation | FAQ | Discord ⚡ A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow 🔍 Meilisearch is a search engine for fast, relevant full-text,…",
+          "id": "C7",
+          "section_title": null,
+          "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+        }
+      ],
+      "explanation": "Meilisearch is an open-source search engine designed to provide fast, relevant full-text, semantic, and hybrid search capabilities. It offers out-of-the-box features like typo tolerance, search-as-you-type, filtering, faceted search, and conversational AI integrations.",
+      "one_line": "A fast search engine API bringing AI-powered hybrid search to applications."
+    },
+    "who_should_care": [
+      {
+        "audience": "Full-Stack Developers",
+        "citations": [
+          {
+            "excerpt": "meilisearch/meilisearch: A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications. Topics: ai, api, app search, database, enterprise search, faceting, full text search, fuzzy search, geosearch,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/meilisearch/meilisearch"
+          },
+          {
+            "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+            "id": "C2",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` curl -X POST \"https://ms-url-example.meilisearch.io/indexes/movies/search\" \\ -H 'Content-Type: application/json' \\ -H \"Authorization: Bearer apiKey\" \\ --data-binary '{ \"q\": \"wondre woman\" }' ``` Meilisearch returns *Wonder Woman*…",
+            "id": "C11",
+            "section_title": "3. Search, typo included",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "reason": "Need to implement fast search-as-you-type, typo-tolerant search bars into web or mobile applications with minimal setup."
+      },
+      {
+        "audience": "AI Engineers",
+        "citations": [
+          {
+            "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+            "id": "C3",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+            "id": "C6",
+            "section_title": "🤖 AI & LLM integrations",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "reason": "Want to connect LLMs or AI agents to a vector store and use native MCP server features or LangChain."
+      },
+      {
+        "audience": "Product Teams",
+        "citations": [
+          {
+            "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+            "id": "C2",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "reason": "Require advanced discovery features like faceted search, filtering, geosearch, and multi-tenancy personalization."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Hybrid search:** Combine the best of both semantic & full-text search to get the most relevant results - **Search-as-you-type:** Find & display results in less than 50 milliseconds to provide an intuitive experience - **Typo…",
+            "id": "C2",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "point": "Delivers search-as-you-type results in less than 50 milliseconds."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "results for any number of application tenants - **Highly Customizable:** customize Meilisearch to your specific needs or use our out-of-the-box and hassle-free presets - **RESTful API:** integrate Meilisearch in your technical stack with…",
+            "id": "C3",
+            "section_title": "✨ Features",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "point": "Provides native conversational search allowing users to ask natural language questions grounded in search results."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **MCP server:** Meilisearch ships a native MCP server at the `/mcp` route (experimental), so AI agents and MCP clients can search your indexes directly. It works the same on Meilisearch Cloud and self-hosted instances. - **LangChain:**…",
+            "id": "C6",
+            "section_title": "🤖 AI & LLM integrations",
+            "source_url": "https://github.com/meilisearch/meilisearch/blob/main/README.md"
+          }
+        ],
+        "point": "Includes built-in MCP server routing and LangChain integration for AI agent workflows."
+      }
+    ]
+  },
+  "source_hash": "7b0a70470812db07fc11dba9df4b81d38fe925f76f01d30f0613da85b62168c3"
+}

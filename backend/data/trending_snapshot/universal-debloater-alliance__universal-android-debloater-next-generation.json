@@ -1,0 +1,41 @@
+{
+  "archived": false,
+  "category": "security",
+  "created_at_github": "2023-10-26T17:00:49Z",
+  "default_branch": "main",
+  "description": "Cross-platform GUI written in Rust using ADB to debloat non-rooted Android devices. Improve your privacy, the security and battery life of your device.",
+  "featured": false,
+  "fetched_at": "2026-11-10T09:00:15.847710Z",
+  "forks": 432,
+  "full_name": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+  "github_id": 710425233,
+  "homepage_url": null,
+  "html_url": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+  "languages": {
+    "Nix": 5997,
+    "Rust": 280536,
+    "Shell": 1065
+  },
+  "license_name": "GNU General Public License v3.0",
+  "license_spdx": "GPL-3.0",
+  "name": "universal-android-debloater-next-generation",
+  "open_issues": 276,
+  "owner": "Universal-Debloater-Alliance",
+  "primary_language": "Rust",
+  "pushed_at_github": "2026-11-05T20:35:58Z",
+  "readme_text": "# Universal Android Debloater Next Generation\n\n> [!warning]\n> **DISCLAIMER**: Use at your own risk. We're not responsible for anything that could happen to your devices.\n\n<div align=center>\n<img width=75% alt=\"screenshot of apps view\" src=./resources/screenshots/v1.0.2.png>\n</div>\n\nThis is a detached fork of the [UAD project](https://github.com/0x192/universal-android-debloater). This aims to improve privacy and efficiency (energy, speed, memory) by removing unnecessary and obscure system apps.\nThis can also improve security by reducing the [attack surface](https://en.wikipedia.org/wiki/Attack_surface). Read [the wiki](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki) for more details.\n\n## Documentation\n\nEverything about UAD-ng (and related stuff) can be found on the Wiki, such as:\n\n- [Getting started](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Getting-started)\n- Features of this app\n- [Usage guide](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Usage)\n- Suggested Android app replacements\n- How to get the cutting-edge version by [building the source-code](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/Building-from-source)\n- Weird things OEMs do\n- [Suggested apps for analyzing APKs](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/wiki/How-to-contribute#useful-apps)\n\n## Privacy\n\nUAD-ng does not collect or transmit any user data. The only external connections are `GET` requests to GitHub for fetching the [package list](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/resources/assets/uad_lists.json) ([crates/uad-core/src/uad_lists.rs](crates/uad-core/src/uad_lists.rs)) and checking for updates ([crates/uad-core/src/update.rs](crates/uad-core/src/update.rs)).\n\n## Contact\n\n**For real-time communication and support, consider joining our Discord guild:**\n\n[<img width=64em alt=\"Discord symbol\" src=./resources/images/icon_clyde_blurple.svg>](https://discord.gg/CzwbMCPEZa)\n\n**If you prefer using Matrix, we have a bridge to Discord:**\n\n[<img width=64em src=https://matrix.org/images/matrix-favicon.svg>](https://matrix.to/#/#uad-ng:matrix.org)\n\n## Friends\n\nSeveral projects integrate with or depend on UAD-ng's data and tools:\n\n- **[Canta](https://github.com/samolego/Canta)** — A mobile Android debloater that uses Shizuku for rootless privilege escalation. It integrates with UAD-ng's Universal Debloat List to provide safe package recommendations without requiring a PC.\n\n- **Projects by [Muntashir Akon](https://github.com/MuntashirAkon):**\n  - **[AppManager](https://github.com/MuntashirAkon/AppManager)** — An advanced Android app manager with powerful debloating features.\n  - **[android-debloat-list](https://github.com/MuntashirAkon/android-debloat-list)** — A comprehensive, community-driven list of Android packages to debloat, based on UAD-ng's list.\n- **[De-Bloater](https://github.com/sunilpaulmathew/De-Bloater)** — An application using the power of Magisk to debloat unwanted system apps!\n\n## Special thanks\n\n- [@0x192](https://github.com/0x192) who created the original UAD project.\n- [@mawilms](https://github.com/mawilms) for his LotRO plugin manager ([Lembas](https://github.com/mawilms/lembas)) which helped a lot to understand how to use the [Iced](https://github.com/iced-rs/iced) GUI library.\n- [@casperstorm](https://github.com/casperstorm) for the UI/UX inspiration.\n",
+  "readme_truncated": false,
+  "readme_url": "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation/blob/main/README.md",
+  "stars": 9885,
+  "topics": [
+    "adb",
+    "android",
+    "bloatware-list",
+    "bloatware-removal",
+    "debloat",
+    "debloater",
+    "debloating",
+    "privacy"
+  ],
+  "updated_at_github": "2026-11-10T08:34:52Z"
+}

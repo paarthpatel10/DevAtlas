@@ -1,0 +1,501 @@
+{
+  "full_name": "since2006/shell-rs",
+  "generated_at": "2026-11-10 09:16:34.844143+00:00",
+  "github_id": 1366081475,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "- They follow the current remote terminal and read and run on that terminal's own connection, with no second login. ⌘⌥B (Ctrl+Alt+B elsewhere) shows or hides them. - System monitor: system details, CPU (per core too), memory, network rates…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Python",
+          "Bash"
+        ],
+        "description": "Build an automation script that uses AI tools integrated with ShellRS to inspect container logs, search remote error strings, and summarize system issues.",
+        "how_it_is_used": "Uses the ShellRS CLI and agent skills to execute commands and read logs across saved hosts securely.",
+        "title": "Automated Remote Log Analyzer"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Hosts** - Groups nest to any depth; drag to rearrange, type to search. - The remote OS is detected on connect and shown as a badge in the host tree and on tabs (Linux distributions, the BSDs, macOS, Windows). - Three ways to log in:…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Node.js",
+          "Electron",
+          "WebSockets"
+        ],
+        "description": "Develop a monitoring dashboard that accesses hardware serial ports and remote Telnet-enabled lab switches through a unified interface.",
+        "how_it_is_used": "Relies on ShellRS host management and serial/Telnet connectivity features.",
+        "title": "Cross-Platform IoT Device Debugger"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+          "id": "C2",
+          "section_title": "About",
+          "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+        }
+      ],
+      "text": "It consolidates host management, tabbed terminals, dual-pane SFTP file transfer, and port forwarding into a single native application that integrates with bastion hosts and system keychains without storing plain-text secrets in its database."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "since2006/shell-rs: High-performance native SSH client in Rust, GPU-rendered with GPUI: host manager, terminal, WinSCP-style SFTP and port forwarding. Rust 编写、GPU 渲染的原生 SSH 客户端。 Topics: ai agents, cross platform, desktop app, devops, gpu,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/since2006/shell-rs"
+            },
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "GPU-rendered native UI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "since2006/shell-rs: High-performance native SSH client in Rust, GPU-rendered with GPUI: host manager, terminal, WinSCP-style SFTP and port forwarding. Rust 编写、GPU 渲染的原生 SSH 客户端。 Topics: ai agents, cross platform, desktop app, devops, gpu,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/since2006/shell-rs"
+            },
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            },
+            {
+              "excerpt": "health, and the compute processes, which you can end. Off by default; turn it on in the settings, where the other tools can be hidden too. **SFTP** - A dual-pane browser modeled on WinSCP Commander: symmetric local and remote panes with…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "WinSCP-style dual-pane SFTP browser with resumable transfers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "since2006/shell-rs: High-performance native SSH client in Rust, GPU-rendered with GPUI: host manager, terminal, WinSCP-style SFTP and port forwarding. Rust 编写、GPU 渲染的原生 SSH 客户端。 Topics: ai agents, cross platform, desktop app, devops, gpu,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/since2006/shell-rs"
+            },
+            {
+              "excerpt": "Each SFTP tab has its own connection and asks only for the SFTP subsystem, so no shell is needed on the server. **Opening from a bastion host** - Launched the way Xshell and WinSCP are: in the client of a bastion host such as JumpServer,…",
+              "id": "C8",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "SSH port forwarding with live diagrams (local, remote, dynamic)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "System keychain integration for secure secret storage"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            },
+            {
+              "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "CLI and Agent Skills for AI tool integrations"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Hosts** - Groups nest to any depth; drag to rearrange, type to search. - The remote OS is detected on connect and shown as a badge in the host tree and on tabs (Linux distributions, the BSDs, macOS, Windows). - Three ways to log in:…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Support for jump hosts, HTTP/SOCKS5 proxies, Telnet, and serial ports"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "since2006/shell-rs: High-performance native SSH client in Rust, GPU-rendered with GPUI: host manager, terminal, WinSCP-style SFTP and port forwarding. Rust 编写、GPU 渲染的原生 SSH 客户端。 Topics: ai agents, cross platform, desktop app, devops, gpu,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/since2006/shell-rs"
+            },
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "GPUI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "gpui-kit"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "at the device's prompts and the same jump hosts and proxies; and serial ports of this computer, for console cables and debug ports. **Terminal** - Tabbed remote and local terminals (built on `alacritty_terminal`); full-screen programs like…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "alacritty_terminal"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "macOS Keychain"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Windows Credential Manager"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Linux Secret Service"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "SQLite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+              "id": "C2",
+              "section_title": "About",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            },
+            {
+              "excerpt": "Each SFTP tab has its own connection and asks only for the SFTP subsystem, so no shell is needed on the server. **Opening from a bastion host** - Launched the way Xshell and WinSCP are: in the client of a bastion host such as JumpServer,…",
+              "id": "C8",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "JumpServer"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- They follow the current remote terminal and read and run on that terminal's own connection, with no second login. ⌘⌥B (Ctrl+Alt+B elsewhere) shows or hides them. - System monitor: system details, CPU (per core too), memory, network rates…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Docker"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- They follow the current remote terminal and read and run on that terminal's own connection, with no second login. ⌘⌥B (Ctrl+Alt+B elsewhere) shows or hides them. - System monitor: system details, CPU (per core too), memory, network rates…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Kubernetes"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Codex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "OpenCode"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "WorkBuddy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Install `shellrs` into your PATH and an Agent Skill for Claude Code, Codex, OpenCode or WorkBuddy from the settings page. **Security and updates** - Secrets stay in the system keychain. Host keys are recorded in ShellRS's own…",
+              "id": "C10",
+              "section_title": "Features",
+              "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+            }
+          ],
+          "name": "Aptabase"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Hosts** - Groups nest to any depth; drag to rearrange, type to search. - The remote OS is detected on connect and shown as a badge in the host tree and on tabs (Linux distributions, the BSDs, macOS, Windows). - Three ways to log in:…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "text": "Managing servers and lab equipment through direct SSH, jump hosts, HTTP/SOCKS5 proxies, Telnet, or serial ports."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "health, and the compute processes, which you can end. Off by default; turn it on in the settings, where the other tools can be hidden too. **SFTP** - A dual-pane browser modeled on WinSCP Commander: symmetric local and remote panes with…",
+            "id": "C7",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "text": "Executing resumable dual-pane SFTP file transfers with built-in text editing and preview capabilities."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "text": "Enabling AI agents to perform devops workflows, execute commands, and sync files using local saved hosts without seeing master passwords."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "since2006/shell-rs: High-performance native SSH client in Rust, GPU-rendered with GPUI: host manager, terminal, WinSCP-style SFTP and port forwarding. Rust 编写、GPU 渲染的原生 SSH 客户端。 Topics: ai agents, cross platform, desktop app, devops, gpu,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/since2006/shell-rs"
+        },
+        {
+          "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+          "id": "C2",
+          "section_title": "About",
+          "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+        },
+        {
+          "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+          "id": "C9",
+          "section_title": "Features",
+          "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+        }
+      ],
+      "explanation": "ShellRS is a cross-platform desktop application that combines Xshell-style host management, tabbed terminals, a WinSCP-style dual-pane SFTP browser, and SSH port forwarding. It is written in Rust and uses the GPU-accelerated GPUI framework, eliminating Electron and JVM dependencies. It also provides a CLI and agent skills for AI assistants to securely run commands and transfer files.",
+      "one_line": "A high-performance native SSH client, terminal emulator, and SFTP browser built in Rust with GPUI."
+    },
+    "who_should_care": [
+      {
+        "audience": "DevOps Engineers and SysAdmins",
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Hosts** - Groups nest to any depth; drag to rearrange, type to search. - The remote OS is detected on connect and shown as a badge in the host tree and on tabs (Linux distributions, the BSDs, macOS, Windows). - Three ways to log in:…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "reason": "Needs a cross-platform remote management tool with nested host groups, support for SSH jump hosts, HTTP/SOCKS5 proxies, serial ports, and Telnet connections."
+      },
+      {
+        "audience": "Developers using AI Coding Assistants",
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "reason": "Can leverage the built-in CLI and agent skills to let AI tools safely run remote commands and manage files on saved hosts."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "point": "Built with Rust and GPU-accelerated GPUI without relying on Electron or a JVM."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "point": "Secures credentials by storing passwords and passphrases in the system keychain while maintaining host metadata in a local SQLite database."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ShellRS brings Xshell-style host management and tabbed terminals, a WinSCP-style dual-pane SFTP browser and SSH port forwarding together in one cross-platform app, which bastion hosts such as JumpServer can launch the way they launch…",
+            "id": "C2",
+            "section_title": "About",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          },
+          {
+            "excerpt": "and where they go. - Every rule keeps its own SSH connection and reconnects three times after a drop; rules can start with ShellRS. **Credentials** - Password, key and SSH agent credentials that many hosts can share. Change a credential…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/since2006/shell-rs/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a CLI and agent skills allowing AI agents like Claude Code or Codex to execute commands and transfer files without exposing passwords."
+      }
+    ]
+  },
+  "source_hash": "30c39a4c042b258e09d57ca5ef4df465199f7a8d48378fdfbed4870c3508f724"
+}

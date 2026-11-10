@@ -1,0 +1,491 @@
+{
+  "full_name": "CopilotKit/OpenBot",
+  "generated_at": "2026-11-10 09:11:31.156156+00:00",
+  "github_id": 1336502227,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+            "id": "C4",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "In Personal Edition, you start with one assistant on your computer. With the source template, Docker Compose starts the supporting services, PostgreSQL stores the workspace configuration, and you choose the model. OpenBot encrypts stored…",
+            "id": "C10",
+            "section_title": "What it is",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PostgreSQL",
+          "OpenAI API",
+          "Docker"
+        ],
+        "description": "Deploy a dedicated bot that indexes company documentation to answer internal team questions and cite its sources accurately.",
+        "how_it_is_used": "Define a bot using a YAML configuration or via the /bots interface, connecting it to document directories and granting read-only tool access.",
+        "title": "Automated Document Q&A Knowledge Bot"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+            "id": "C4",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "In Personal Edition, you start with one assistant on your computer. With the source template, Docker Compose starts the supporting services, PostgreSQL stores the workspace configuration, and you choose the model. OpenBot encrypts stored…",
+            "id": "C10",
+            "section_title": "What it is",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Anthropic API",
+          "Bun",
+          "TypeScript"
+        ],
+        "description": "A workflow assistant that parses meeting notes files to automatically extract and list assigned tasks and owners.",
+        "how_it_is_used": "Add a new bot template into the agents directory that reads file inputs and extracts structural lists using an LLM model.",
+        "title": "Meeting Action Item Extractor"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+            "id": "C4",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "Some tests fail on Bun version 1.3."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+            "id": "C11",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+            "id": "C12",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "A missing policy permits nothing, and a broken rule refuses execution."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/CopilotKit/OpenBot"
+        },
+        {
+          "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+          "id": "C2",
+          "section_title": "Architecture",
+          "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+          "id": "C11",
+          "section_title": "Features",
+          "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+        }
+      ],
+      "text": "Uncontrolled AI agent actions and lack of enterprise governance by enforcing identity, permissions, action policies, and auditable records before any bot execution occurs."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+            "id": "C2",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "OpenBot consists of frontends (Mac, Windows, web, iOS, Android, Slack, Teams), a backend handling workspace APIs, built-in bots, and external tool connections, and CopilotKit Intelligence providing durable conversations, memory, and governance services."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/CopilotKit/OpenBot"
+            }
+          ],
+          "name": "Browser automation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+              "id": "C11",
+              "section_title": "Features",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "CEL policy enforcement"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+              "id": "C2",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            },
+            {
+              "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+              "id": "C11",
+              "section_title": "Features",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Audit logging"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+              "id": "C11",
+              "section_title": "Features",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Container isolation per user or bot"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+              "id": "C12",
+              "section_title": "Features",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Human-in-the-loop control handover"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "LangGraph"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+              "id": "C12",
+              "section_title": "Features",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "React"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Google"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+              "id": "C2",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Slack"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+              "id": "C2",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Teams"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "it as the default by itself unless Admin → Automatic Learning has a saved setting. Managed Intelligence needs no separate licence token. The same CopilotKit CLI sign-in provisions Composio automatically when you run `bash…",
+              "id": "C8",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "name": "Composio"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "text": "Docker, for PostgreSQL and shipped bots."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "text": "Bun 1.4+, for the app, API server, and tests."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "text": "A CopilotKit Intelligence project and license."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To run the open-source template locally, you’ll need the following. - Docker, for PostgreSQL and the shipped Bots. - Bun 1.4+, for the app, the API server and the tests (some tests fail on 1.3). - A CopilotKit Intelligence project and…",
+              "id": "C4",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+            }
+          ],
+          "text": "A model key (OpenAI, Anthropic, or Google)."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/CopilotKit/OpenBot"
+          },
+          {
+            "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+            "id": "C2",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "Automating browser-based tasks and workflows with built-in or custom AI coworkers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "In Personal Edition, you start with one assistant on your computer. With the source template, Docker Compose starts the supporting services, PostgreSQL stores the workspace configuration, and you choose the model. OpenBot encrypts stored…",
+            "id": "C10",
+            "section_title": "What it is",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "Answering questions from connected company documents with citations via a Knowledge bot."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "In Personal Edition, you start with one assistant on your computer. With the source template, Docker Compose starts the supporting services, PostgreSQL stores the workspace configuration, and you choose the model. OpenBot encrypts stored…",
+            "id": "C10",
+            "section_title": "What it is",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "text": "Processing meeting notes to list who agreed to do what tasks."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/CopilotKit/OpenBot"
+        },
+        {
+          "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+          "id": "C2",
+          "section_title": "Architecture",
+          "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+        }
+      ],
+      "explanation": "OpenBot provides open-source AI coworkers that each receive their own isolated computer environment featuring a browser, files, and tools. Every single action is decided and recorded through a governed gateway. It connects humans and AI agents across various frontends like Mac, Windows, web, Slack, and Teams.",
+      "one_line": "Open-source AI coworkers equipped with their own browser, files, and tools."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/CopilotKit/OpenBot"
+          },
+          {
+            "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+            "id": "C2",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "In Personal Edition, you start with one assistant on your computer. With the source template, Docker Compose starts the supporting services, PostgreSQL stores the workspace configuration, and you choose the model. OpenBot encrypts stored…",
+            "id": "C10",
+            "section_title": "What it is",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+            "id": "C12",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "reason": "Can bring any AG-UI agent or framework endpoint to share the same workspace and utilize built-in bots or custom YAML agent configurations."
+      },
+      {
+        "audience": "DevOps Engineers",
+        "citations": [
+          {
+            "excerpt": "OpenBot has three parts. On your laptop, setup runs the backend and Intelligence for you. For a team, the Helm chart deploys both on Kubernetes in your own infrastructure. | Part | What it does | | --- | --- | | **OpenBot frontends** |…",
+            "id": "C2",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "in the OpenBot server; your own agents can run alongside OpenBot or on any agent execution platform. Both use AG-UI and can share the same workspace. Computer execution is pluggable: use the default Kubernetes setup or connect a compatible…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+            "id": "C11",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "reason": "Can deploy OpenBot on Kubernetes using Helm charts with PostgreSQL, persistent storage, and optional gVisor container runtimes."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "CopilotKit/OpenBot: Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent. Topics: ag ui, agent governance, ai…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/CopilotKit/OpenBot"
+          },
+          {
+            "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+            "id": "C11",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          },
+          {
+            "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+            "id": "C12",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "point": "Every action taken by a bot is decided before it happens and recorded after via a single gateway that enforces fail-closed CEL policies."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **A computer per person**: the supervisor gives each person their own container, with a folder and browser profile for each of their Bots. Tick Isolated on a Bot to give it a container of its own. Set `COMPUTER_RUNTIME=runsc` to run them…",
+            "id": "C11",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "point": "Gives bots a shell and browser environment where they can run commands, install packages, and process files within an isolated container per person or bot."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "evaluated before allow, a missing policy permits nothing, and a broken rule refuses rather than opens. - **Watch what it is doing**: the screen shows what a Bot is looking at, and the Activity list under it shows what it ran, read and…",
+            "id": "C12",
+            "section_title": "Features",
+            "source_url": "https://github.com/CopilotKit/OpenBot/blob/main/README.md"
+          }
+        ],
+        "point": "Allows human takeover when a bot hits a login wall or 2FA prompt, recording the intervention."
+      }
+    ]
+  },
+  "source_hash": "3a5e964e8c03cba051bff92d341e1596127136e485b3d8ce4c05739f81050658"
+}

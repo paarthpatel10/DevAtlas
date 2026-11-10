@@ -1,0 +1,403 @@
+{
+  "full_name": "openai/codex-security",
+  "generated_at": "2026-11-10 09:11:14.326913+00:00",
+  "github_id": 1299769220,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          },
+          {
+            "excerpt": "To run a weekly repository scan on GitHub-hosted Ubuntu: 1. Add an OpenAI API key as the repository secret `CODEX_SECURITY_API_KEY`. 2. Copy the weekly workflow to `.github/workflows/codex-security.yml`. Replace…",
+            "id": "C11",
+            "section_title": "GitHub Actions",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "Docker"
+        ],
+        "description": "Run routine security scans on GitHub Actions to check code changes on pull requests.",
+        "how_it_is_used": "Uses the GitHub Action or CLI within CI pipelines to scan code and report findings.",
+        "title": "Automated CI Security Gate"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Node.js",
+          "PostgreSQL",
+          "React"
+        ],
+        "description": "A dashboard that ingests security scan findings to track remediation and ownership.",
+        "how_it_is_used": "Exports scan findings as JSON or SARIF to ingest into a custom tracking application.",
+        "title": "Custom Security Dashboard"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "openai/codex-security: OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security Topics: ai security, application security, cli,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/openai/codex-security"
+          }
+        ],
+        "label": "npm package",
+        "url": "https://www.npmjs.com/package/@openai/codex-security"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "openai/codex-security: OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security Topics: ai security, application security, cli,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/openai/codex-security"
+        },
+        {
+          "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+          "id": "C2",
+          "section_title": "Features",
+          "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+        },
+        {
+          "excerpt": "Use `policy` to draft a new `SECURITY.md` or update an existing one. Use `--path` to select a component: ``` cs policy . cs policy . --path services/api --knowledge-base architecture.md ``` The command saves its draft outside the…",
+          "id": "C9",
+          "section_title": "Generate SECURITY.md",
+          "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+        }
+      ],
+      "text": "It automates the discovery, validation, and patching of software vulnerabilities, helping developers find security flaws and draft security policies."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            },
+            {
+              "excerpt": "Choose a scope and scan mode: ``` # Scan selected paths. cs scan . --path src --path tests # Scan committed changes from a base revision to HEAD. cs scan . --diff origin/main # Run a deep scan of the repository. cs scan . --mode deep ```…",
+              "id": "C6",
+              "section_title": "Scan options",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Repository and Git diff vulnerability scanning"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Patch generation and fix verification"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            },
+            {
+              "excerpt": "Scans and policy generation save threat models with their results. Export a saved model without starting another analysis: ``` cs export --scan SCAN_ID --artifact threat-model --output threatmodel.md ``` Omit `--scan` to use the current…",
+              "id": "C10",
+              "section_title": "Save and export threat models",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Threat model generation and export"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            },
+            {
+              "excerpt": "Use `policy` to draft a new `SECURITY.md` or update an existing one. Use `--path` to select a component: ``` cs policy . cs policy . --path services/api --knowledge-base architecture.md ``` The command saves its draft outside the…",
+              "id": "C9",
+              "section_title": "Generate SECURITY.md",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "SECURITY.md policy drafting"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "openai/codex-security: OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security Topics: ai security, application security, cli,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/openai/codex-security"
+            },
+            {
+              "excerpt": "Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+. Python 3.10 also requires `tomli`. Install the CLI globally and sign in: ``` npm install --global @openai/codex-security cs login ``` Run your first scan…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Node.js"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Linear"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "Jira"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "GitHub"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Scans and policy generation save threat models with their results. Export a saved model without starting another analysis: ``` cs export --scan SCAN_ID --artifact threat-model --output threatmodel.md ``` Omit `--scan` to use the current…",
+              "id": "C10",
+              "section_title": "Save and export threat models",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "name": "ServiceNow Application Vulnerability Response"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+. Python 3.10 also requires `tomli`. Install the CLI globally and sign in: ``` npm install --global @openai/codex-security cs login ``` Run your first scan…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+. Python 3.10 also requires `tomli`. Install the CLI globally and sign in: ``` npm install --global @openai/codex-security cs login ``` Run your first scan…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.10+ (Python 3.10 also requires tomli)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+. Python 3.10 also requires `tomli`. Install the CLI globally and sign in: ``` npm install --global @openai/codex-security cs login ``` Run your first scan…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+            }
+          ],
+          "text": "OpenAI API key or Codex API key set in the environment for CI usage"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          },
+          {
+            "excerpt": "Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+. Python 3.10 also requires `tomli`. Install the CLI globally and sign in: ``` npm install --global @openai/codex-security cs login ``` Run your first scan…",
+            "id": "C3",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "text": "Scanning a repository or specific paths for security vulnerabilities before deployment."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          },
+          {
+            "excerpt": "Use `policy` to draft a new `SECURITY.md` or update an existing one. Use `--path` to select a component: ``` cs policy . cs policy . --path services/api --knowledge-base architecture.md ``` The command saves its draft outside the…",
+            "id": "C9",
+            "section_title": "Generate SECURITY.md",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "text": "Drafting or updating SECURITY.md files and generating threat models."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "text": "Tracking findings across external issue trackers like Linear, Jira, or GitHub."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "openai/codex-security: OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security Topics: ai security, application security, cli,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/openai/codex-security"
+        },
+        {
+          "excerpt": "Codex Security helps you find, investigate, and fix vulnerabilities in your code. Use its security workflows in Codex, or automate them with the `@openai/codex-security` CLI and TypeScript SDK. - **In Codex:** choose a security workflow. -…",
+          "id": "C4",
+          "section_title": "Codex Security",
+          "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+        }
+      ],
+      "explanation": "Codex Security is a toolset designed to find, investigate, and fix security vulnerabilities in source code. It offers a CLI and TypeScript SDK that can scan repositories, evaluate changes, validate findings, and generate security policies or threat models.",
+      "one_line": "An OpenAI security CLI and TypeScript SDK for finding, validating, and fixing vulnerabilities."
+    },
+    "who_should_care": [
+      {
+        "audience": "Application Security Engineers",
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "reason": "They can automate vulnerability scans across multiple repositories and export reports in SARIF, JSON, or CSV formats."
+      },
+      {
+        "audience": "TypeScript Developers",
+        "citations": [
+          {
+            "excerpt": "Codex Security helps you find, investigate, and fix vulnerabilities in your code. Use its security workflows in Codex, or automate them with the `@openai/codex-security` CLI and TypeScript SDK. - **In Codex:** choose a security workflow. -…",
+            "id": "C4",
+            "section_title": "Codex Security",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          },
+          {
+            "excerpt": "Install the package locally in your TypeScript project: ``` npm install @openai/codex-security ``` Then import it: ``` import { CodexSecurity } from \"@openai/codex-security\"; const security = new CodexSecurity(); try { const result = await…",
+            "id": "C7",
+            "section_title": "TypeScript SDK",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "reason": "They can integrate security workflows directly into their applications using the TypeScript SDK."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "point": "Supports both standard scans and deep scans that repeat and deduplicate findings."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings. - Validate candidate findings, generate patches, and verify existing fixes. - Draft `SECURITY.md` policies and…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          },
+          {
+            "excerpt": "Use `policy` to draft a new `SECURITY.md` or update an existing one. Use `--path` to select a component: ``` cs policy . cs policy . --path services/api --knowledge-base architecture.md ``` The command saves its draft outside the…",
+            "id": "C9",
+            "section_title": "Generate SECURITY.md",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "point": "Can draft SECURITY.md policies and save threat models."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "openai/codex-security: OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security Topics: ai security, application security, cli,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/openai/codex-security"
+          },
+          {
+            "excerpt": "Codex Security helps you find, investigate, and fix vulnerabilities in your code. Use its security workflows in Codex, or automate them with the `@openai/codex-security` CLI and TypeScript SDK. - **In Codex:** choose a security workflow. -…",
+            "id": "C4",
+            "section_title": "Codex Security",
+            "source_url": "https://github.com/openai/codex-security/blob/main/README.md"
+          }
+        ],
+        "point": "Provides both a CLI tool and a TypeScript SDK for automation."
+      }
+    ]
+  },
+  "source_hash": "2b4e2aeae036019aa43a5a656fea1971560664a9806a717decbbc39b55f48e82"
+}

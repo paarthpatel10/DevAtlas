@@ -161,4 +161,9 @@ def test_repo_curated_file_is_valid():
     entries = load_curated(BACKEND_DIR / "data" / "curated_repositories.yaml")
     assert len(entries) == 71
     assert {e.category for e in entries} == set(CATEGORY_LABELS)
+    assert len(CATEGORY_LABELS) == 12
+    by_name = {e.full_name: e.category for e in entries}
+    assert by_name["vercel/next.js"] == "full_stack"
+    assert by_name["modelcontextprotocol/python-sdk"] == "mcp_automation"
+    assert by_name["ory/kratos"] == "security"
     assert sum(e.featured for e in entries) == 9

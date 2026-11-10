@@ -275,7 +275,8 @@ def recommend(
         intent=intent,
         results=results,
         pipeline=PipelineInfo(
-            provider=providers.llm.model_name,
+            # Query understanding and explanations are deterministic in every mode (LLM: M4).
+            provider="mock",
             embedding_model=providers.embeddings.model_name,
             rrf_k=settings.rrf_k,
             keyword_candidates=len(keyword_hits),

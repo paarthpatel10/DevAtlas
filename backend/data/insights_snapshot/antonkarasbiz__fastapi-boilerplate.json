@@ -1,0 +1,445 @@
+{
+  "full_name": "antonkarasbiz/FastAPI-boilerplate",
+  "generated_at": "2026-11-10 09:19:06.680492+00:00",
+  "github_id": 1332254360,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+            "id": "C4",
+            "section_title": "FastAPI service boilerplate",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          },
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Celery",
+          "RabbitMQ",
+          "PostgreSQL"
+        ],
+        "description": "Build an API that handles user project boards and offloads heavy report generation to background workers.",
+        "how_it_is_used": "Leverages FastAPI for request handling, SQLAlchemy 2.0 with FastCRUD for data persistence, and Taskiq workers on Redis for executing background report generation.",
+        "title": "Task Management API with Background Workers"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "antonkarasbiz/FastAPI-boilerplate: Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL. Topics: backend, boilerplate, fastapi, postgresql, python, redis. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+          },
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Redis",
+          "OAuth2 providers",
+          "Docker"
+        ],
+        "description": "Create a multi-tier SaaS platform backend with strict per-path and per-tier access controls.",
+        "how_it_is_used": "Utilizes the built-in per-tier and per-path rate limits, OAuth, API key authentication, and server-side sessions.",
+        "title": "Rate-Limited SaaS Backend"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` git clone https://github.com/antonkarasbiz/FastAPI-boilerplate cd FastAPI-boilerplate uv sync --all-packages --all-extras ``` Generate a compose file: ``` uv run bp deploy generate local # uv run bp deploy generate prod # uv run bp…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Choose this template for a single deployable API that will grow by modules. It is not a microservices monorepo scaffold. Deeper operator notes live under `docs/`.",
+            "id": "C7",
+            "section_title": "When to use it",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "text": "Not designed or structured as a microservices monorepo scaffold."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Use this repository when a new product needs auth, CRUD, background jobs, caching, and rate limits without assembling those pieces from scratch. It is the Python service template in the antonkarasbiz full-stack and AI stack.",
+          "id": "C2",
+          "section_title": "Overview",
+          "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+        }
+      ],
+      "text": "Eliminates the repetitive effort of assembling auth, CRUD, background jobs, caching, and rate limits from scratch when starting a new product."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+            "id": "C4",
+            "section_title": "FastAPI service boilerplate",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "text": "Organized as vertical-slice modules with swappable infrastructure and a developer CLI."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Fully async FastAPI and SQLAlchemy 2.0"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Pydantic v2 models and validation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Server-side sessions, CSRF, OAuth, and API keys"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "FastCRUD generics and pagination"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Optional SQLAdmin panel"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Taskiq workers on Redis or RabbitMQ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Redis or Memcached caching with decorator API"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Per-tier and per-path rate limits"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Alembic migrations with production confirm gate"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "bp CLI for compose files, environment audits, and plugins"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Docker Compose configurations for local, production, and nginx-fronted setups"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+              "id": "C4",
+              "section_title": "FastAPI service boilerplate",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "FastAPI"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "antonkarasbiz/FastAPI-boilerplate: Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL. Topics: backend, boilerplate, fastapi, postgresql, python, redis. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "antonkarasbiz/FastAPI-boilerplate: Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL. Topics: backend, boilerplate, fastapi, postgresql, python, redis. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+            }
+          ],
+          "name": "Redis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "RabbitMQ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+              "id": "C5",
+              "section_title": "Capabilities",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "name": "Memcached"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` git clone https://github.com/antonkarasbiz/FastAPI-boilerplate cd FastAPI-boilerplate uv sync --all-packages --all-extras ``` Generate a compose file: ``` uv run bp deploy generate local # uv run bp deploy generate prod # uv run bp…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+            }
+          ],
+          "text": "Local Postgres and Redis required if running without Docker"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Use this repository when a new product needs auth, CRUD, background jobs, caching, and rate limits without assembling those pieces from scratch. It is the Python service template in the antonkarasbiz full-stack and AI stack.",
+            "id": "C2",
+            "section_title": "Overview",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          },
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "text": "Bootstrapping a new product that requires built-in authentication, server-side sessions, CSRF, and API keys."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "text": "Running background tasks using Taskiq workers backed by Redis or RabbitMQ."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "text": "Managing database migrations with Alembic that include a production confirmation gate."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "antonkarasbiz/FastAPI-boilerplate: Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL. Topics: backend, boilerplate, fastapi, postgresql, python, redis. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+        },
+        {
+          "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+          "id": "C4",
+          "section_title": "FastAPI service boilerplate",
+          "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+        }
+      ],
+      "explanation": "This repository provides an async API foundation for production backends built with FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. It is organized as vertical-slice modules with swappable infrastructure and a developer CLI to help bootstrap new products without manual configuration.",
+      "one_line": "An async FastAPI service template featuring authentication, background jobs, caching, and PostgreSQL."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "antonkarasbiz/FastAPI-boilerplate: Async FastAPI service template with authentication, background jobs, caching, and PostgreSQL. Topics: backend, boilerplate, fastapi, postgresql, python, redis. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate"
+          },
+          {
+            "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+            "id": "C4",
+            "section_title": "FastAPI service boilerplate",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "reason": "Developers looking for a production-ready asynchronous starting point for FastAPI services with pre-integrated PostgreSQL and Redis."
+      },
+      {
+        "audience": "Backend Engineers",
+        "citations": [
+          {
+            "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+            "id": "C4",
+            "section_title": "FastAPI service boilerplate",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          },
+          {
+            "excerpt": "Choose this template for a single deployable API that will grow by modules. It is not a microservices monorepo scaffold. Deeper operator notes live under `docs/`.",
+            "id": "C7",
+            "section_title": "When to use it",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "reason": "Engineers building single deployable APIs that grow by vertical-slice modules rather than microservices."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Async API foundation for production backends: FastAPI, Pydantic v2, SQLAlchemy 2.0, PostgreSQL, and Redis. The tree is organized as vertical-slice modules with swappable infrastructure and a developer CLI.",
+            "id": "C4",
+            "section_title": "FastAPI service boilerplate",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "point": "Organized into vertical-slice modules with swappable infrastructure."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` FastAPI-boilerplate/ ├── pyproject.toml uv workspace root ├── backend/ deployable application │ ├── src/ interfaces, infrastructure, modules │ ├── pyproject.toml │ └── Dockerfile └── cli/ bp — operator tool, not shipped in prod ```",
+            "id": "C6",
+            "section_title": "Repository layout",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a built-in operator CLI tool named 'bp' for tasks like compose generation, env auditing, and plugins."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Fully async FastAPI + SQLAlchemy 2.0 - Pydantic v2 models and validation - Server-side sessions, CSRF, OAuth, and API keys - FastCRUD generics and pagination - Optional SQLAdmin panel (environment toggle) - Taskiq workers on Redis or…",
+            "id": "C5",
+            "section_title": "Capabilities",
+            "source_url": "https://github.com/antonkarasbiz/FastAPI-boilerplate/blob/main/README.md"
+          }
+        ],
+        "point": "Features comprehensive built-in capabilities such as Taskiq workers, per-tier rate limits, and server-side sessions."
+      }
+    ]
+  },
+  "source_hash": "8ef81151e068f1f676b70b932766c3e7020fc617ce446b4ad520468cf852b3e4"
+}

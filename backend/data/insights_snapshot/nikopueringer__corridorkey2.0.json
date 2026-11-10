@@ -1,0 +1,453 @@
+{
+  "full_name": "nikopueringer/CorridorKey2.0",
+  "generated_at": "2026-11-10 09:14:34.844375+00:00",
+  "github_id": 1302069600,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "From the repository root: ``` python infer.py \\ --input /path/to/input.mp4 \\ --output_dir /path/to/output ``` This runs native-resolution inference with no external hint. By default it writes: - `alpha`: predicted matte as a video preview.…",
+            "id": "C2",
+            "section_title": "Quick Start",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "The easiest way to run CorridorKey is to drag a clip, a frame-sequence folder, or a folder of clips onto the launcher in the repository root: - **Windows:** `CorridorKey_DRAG_CLIPS_HERE.bat` - **Linux:** `CorridorKey_DRAG_CLIPS_HERE.sh`…",
+            "id": "C6",
+            "section_title": "Drag-And-Drop Launcher",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Celery",
+          "FastAPI",
+          "Docker"
+        ],
+        "description": "A background service that watches an incoming folder of video clips and automatically processes them using native-resolution inference to generate alpha mattes and foreground previews.",
+        "how_it_is_used": "Invokes the python inference script programmatically across multiple clips with configured output directories.",
+        "title": "Automated Batch Video Matting Pipeline"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_frame1_hint \\ --hint_first_frame frame_0001_matte.png \\ --hint_quality 0.95 ``` Use this when you can provide a good matte for the first frame. The hint should be a single-channel…",
+            "id": "C9",
+            "section_title": "First-Frame Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "`--hint_quality` tells the model how much to trust an explicit hint. It does not change the hint image itself; it changes the conditioning value supplied to the model. Practical values: - `0.95`: high-quality matte or artist-provided hint.…",
+            "id": "C12",
+            "section_title": "Hint Quality",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Streamlit",
+          "Flask",
+          "OpenCV"
+        ],
+        "description": "A web interface that lets artists upload a starting frame matte or rough scribble and preview the propagated tracking across a video clip.",
+        "how_it_is_used": "Passes first-frame hints and hint quality parameters to the underlying python model wrapper.",
+        "title": "Interactive Roto-Assistance Web Tool"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_no_hint ``` Use this when no matte or object hint is available. The model decides what the foreground subject is. Tradeoffs: - Fastest setup because no hint asset is needed. -…",
+            "id": "C8",
+            "section_title": "No Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "Un-hinted inference may be less controlled when multiple plausible subjects are present, potentially selecting a different subject than intended."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_frame1_hint \\ --hint_first_frame frame_0001_matte.png \\ --hint_quality 0.95 ``` Use this when you can provide a good matte for the first frame. The hint should be a single-channel…",
+            "id": "C9",
+            "section_title": "First-Frame Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "First-frame hint modes can drift on long, crowded shots or shots with large occlusions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 ``` Use this when you have a matte, roto pass, garbage matte, or other subject hint for every frame. Tradeoffs: -…",
+            "id": "C10",
+            "section_title": "Full Hint Video",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "Full hint videos tend to follow systematic biases in the hint, steering results incorrectly if the hint is eroded, dilated, or attached to the wrong subject."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "nikopueringer/CorridorKey2.0: Corridor Key 2.0 for all your green and blue screen needs Topics: blue screen, chroma key, compositing, green screen, keying, machine learning, pytorch, vfx, video matting. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0"
+        },
+        {
+          "excerpt": "From the repository root: ``` python infer.py \\ --input /path/to/input.mp4 \\ --output_dir /path/to/output ``` This runs native-resolution inference with no external hint. By default it writes: - `alpha`: predicted matte as a video preview.…",
+          "id": "C2",
+          "section_title": "Quick Start",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+        },
+        {
+          "excerpt": "CorridorKey can run with no hints, a single first-frame hint, or a full hint video. The right mode depends on what information you have and how much you want the model to decide for itself.",
+          "id": "C7",
+          "section_title": "Choosing An Inference Mode",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+        }
+      ],
+      "text": "Automates green screen, blue screen, and video matting tasks while preserving native resolution and offering flexible inference modes ranging from fully autonomous subject selection to precise user-guided hint conditioning."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "From the repository root: ``` python infer.py \\ --input /path/to/input.mp4 \\ --output_dir /path/to/output ``` This runs native-resolution inference with no external hint. By default it writes: - `alpha`: predicted matte as a video preview.…",
+              "id": "C2",
+              "section_title": "Quick Start",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "Native-resolution inference"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_frame1_hint \\ --hint_first_frame frame_0001_matte.png \\ --hint_quality 0.95 ``` Use this when you can provide a good matte for the first frame. The hint should be a single-channel…",
+              "id": "C9",
+              "section_title": "First-Frame Hint",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "First-frame hint processing with Hann carry"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 ``` Use this when you have a matte, roto pass, garbage matte, or other subject hint for every frame. Tradeoffs: -…",
+              "id": "C10",
+              "section_title": "Full Hint Video",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            },
+            {
+              "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint_no_carry \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 \\ --no_carry_hint ``` Use this when the hint video is authoritative and you do not want the model's…",
+              "id": "C11",
+              "section_title": "Full Hint Video Without Carry",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "Full hint video conditioning with optional carry disabling"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "`--hint_quality` tells the model how much to trust an explicit hint. It does not change the hint image itself; it changes the conditioning value supplied to the model. Practical values: - `0.95`: high-quality matte or artist-provided hint.…",
+              "id": "C12",
+              "section_title": "Hint Quality",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "Adjustable hint quality settings"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "nikopueringer/CorridorKey2.0: Corridor Key 2.0 for all your green and blue screen needs Topics: blue screen, chroma key, compositing, green screen, keying, machine learning, pytorch, vfx, video matting. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0"
+            },
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "PyTorch"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "torchvision"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "C-RADIOv4-SO400M"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "MoGe-2 ViT-B"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "RVM small"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "Hugging Face"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "name": "ffmpeg"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "text": "NVIDIA GPU (RTX 30-series or newer recommended) with at least 4 GB VRAM for footage up to 1440p, or 6 GB for 4K"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "text": "ffmpeg on your PATH"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+              "id": "C5",
+              "section_title": "Setup",
+              "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+            }
+          ],
+          "text": "Python environment with CUDA-enabled PyTorch installed"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "From the repository root: ``` python infer.py \\ --input /path/to/input.mp4 \\ --output_dir /path/to/output ``` This runs native-resolution inference with no external hint. By default it writes: - `alpha`: predicted matte as a video preview.…",
+            "id": "C2",
+            "section_title": "Quick Start",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_no_hint ``` Use this when no matte or object hint is available. The model decides what the foreground subject is. Tradeoffs: - Fastest setup because no hint asset is needed. -…",
+            "id": "C8",
+            "section_title": "No Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "Removing green or blue screen backgrounds from video clips automatically without external hints."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_frame1_hint \\ --hint_first_frame frame_0001_matte.png \\ --hint_quality 0.95 ``` Use this when you can provide a good matte for the first frame. The hint should be a single-channel…",
+            "id": "C9",
+            "section_title": "First-Frame Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "Performing guided video matting and temporal tracking using a single first-frame matte hint."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 ``` Use this when you have a matte, roto pass, garbage matte, or other subject hint for every frame. Tradeoffs: -…",
+            "id": "C10",
+            "section_title": "Full Hint Video",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "text": "Using complete rotoscoping passes or garbage mattes as full video hints to control subject extraction across frames."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "nikopueringer/CorridorKey2.0: Corridor Key 2.0 for all your green and blue screen needs Topics: blue screen, chroma key, compositing, green screen, keying, machine learning, pytorch, vfx, video matting. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0"
+        },
+        {
+          "excerpt": "Welcome to CorridorKey 2.0! You may rest easy, weary artist. The green beast has been slain. The CorridorKey 2.0 model was designed and trained by Zachary Harris, in direct collaboration with Niko and Corridor Digital.",
+          "id": "C3",
+          "section_title": "CorridorKey 2.0",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+        },
+        {
+          "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+          "id": "C5",
+          "section_title": "Setup",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+        },
+        {
+          "excerpt": "CorridorKey can run with no hints, a single first-frame hint, or a full hint video. The right mode depends on what information you have and how much you want the model to decide for itself.",
+          "id": "C7",
+          "section_title": "Choosing An Inference Mode",
+          "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+        }
+      ],
+      "explanation": "CorridorKey 2.0 is an open-source machine learning model and Python toolkit designed for green and blue screen removal, video matting, and visual effects compositing. It supports native-resolution inference and can operate with no hints, a single first-frame hint, or a full hint video. The system builds on top of foundation models including C-RADIOv4-SO400M, MoGe-2 ViT-B, and RVM small.",
+      "one_line": "A machine learning Python tool for video matting, chroma keying, and visual effects compositing."
+    },
+    "who_should_care": [
+      {
+        "audience": "VFX Artists and Compositors",
+        "citations": [
+          {
+            "excerpt": "nikopueringer/CorridorKey2.0: Corridor Key 2.0 for all your green and blue screen needs Topics: blue screen, chroma key, compositing, green screen, keying, machine learning, pytorch, vfx, video matting. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0"
+          },
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 ``` Use this when you have a matte, roto pass, garbage matte, or other subject hint for every frame. Tradeoffs: -…",
+            "id": "C10",
+            "section_title": "Full Hint Video",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "reason": "Needs automated and guided tools for subject extraction, chroma keying, and video matting from footage."
+      },
+      {
+        "audience": "Python Developers and ML Researchers",
+        "citations": [
+          {
+            "excerpt": "The most requested feature we've heard this year- \"Can you make a plugin for my favorite software? ...yes! Finally! Led by Ale Alvaro, we now have a plugin (and stand-alone app) available for almost every media software package. A one-time…",
+            "id": "C4",
+            "section_title": "Check out our official plugin!",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+            "id": "C5",
+            "section_title": "Setup",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "reason": "Wants to experiment, tinker, and build custom Python tools using video matting models and foundation integrations."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "From the repository root: ``` python infer.py \\ --input /path/to/input.mp4 \\ --output_dir /path/to/output ``` This runs native-resolution inference with no external hint. By default it writes: - `alpha`: predicted matte as a video preview.…",
+            "id": "C2",
+            "section_title": "Quick Start",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "point": "Preserves native resolution by reflect-pading internally to required shape quantums and cropping back to original sizes."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "CorridorKey can run with no hints, a single first-frame hint, or a full hint video. The right mode depends on what information you have and how much you want the model to decide for itself.",
+            "id": "C7",
+            "section_title": "Choosing An Inference Mode",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_frame1_hint \\ --hint_first_frame frame_0001_matte.png \\ --hint_quality 0.95 ``` Use this when you can provide a good matte for the first frame. The hint should be a single-channel…",
+            "id": "C9",
+            "section_title": "First-Frame Hint",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          },
+          {
+            "excerpt": "``` python infer.py \\ --input shot.mp4 \\ --output_dir out_full_hint \\ --hint_video hint_matte_video.mp4 \\ --hint_quality 0.95 ``` Use this when you have a matte, roto pass, garbage matte, or other subject hint for every frame. Tradeoffs: -…",
+            "id": "C10",
+            "section_title": "Full Hint Video",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "point": "Offers multiple granular inference modes, such as no hints, first-frame hints with Hann carry, and full hint video integration."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "You need an NVIDIA GPU (currently RTX 30-series or newer) with at least 4 GB of VRAM for footage up to 1440p, or 6 GB for 4K, `ffmpeg` on your PATH, and a Python environment with CUDA-enabled PyTorch installed. On smaller cards, see Long…",
+            "id": "C5",
+            "section_title": "Setup",
+            "source_url": "https://github.com/nikopueringer/CorridorKey2.0/blob/master/README.md"
+          }
+        ],
+        "point": "Built on top of three frozen foundation models from NVIDIA, Microsoft, and Google DeepMind."
+      }
+    ]
+  },
+  "source_hash": "20681bbc36809ab8a253b6bd37e7ec18b252fa043daada4314bf64971ed3673a"
+}

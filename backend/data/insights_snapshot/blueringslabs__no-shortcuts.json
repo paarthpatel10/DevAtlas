@@ -1,0 +1,383 @@
+{
+  "full_name": "BlueRingsLabs/no-shortcuts",
+  "generated_at": "2026-11-10 09:18:38.130282+00:00",
+  "github_id": 1389734435,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Standalone companions to the course, each one in its own branch of this repository. They aren't part of the syllabus and you don't need them to follow it; each covers something the course takes for granted. | # | Addendum | What it teaches…",
+            "id": "C7",
+            "section_title": "Addenda",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "NumPy",
+          "PyTorch",
+          "scikit-learn"
+        ],
+        "description": "Implement plain Python miniatures of libraries like NumPy, pandas, scikit-learn, PyTorch, and sentence-transformers.",
+        "how_it_is_used": "Builds internal comprehension of standard machine learning tooling from the inside out.",
+        "title": "Miniature ML Library Rebuild"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Part | What it covers | Why it's there | |---|---|---| | 0. Orientation | The job titles, your workstation, how to study | So you don't waste the first three months | | I. Foundations | Python, linear algebra, calculus, probability,…",
+            "id": "C9",
+            "section_title": "How it's organized",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "tools, retrieval, RAG, agents, MCP, evals, LLM security | Building products on top of foundation models without embarrassing yourself | | VII. Reinforcement Learning | Bandits, MDPs, Q-learning, DQN, policy gradients, PPO | Needed for…",
+            "id": "C10",
+            "section_title": "How it's organized",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "LLM APIs",
+          "Vector Databases"
+        ],
+        "description": "Build a Retrieval-Augmented Generation system equipped with agent workflows, evaluation loops, and built-in defensive threat models against user attacks.",
+        "how_it_is_used": "Uses curriculum concepts on retrieval, prompt handling, agent design, and LLM security.",
+        "title": "Secure RAG System and Evaluator"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Part | What it covers | Why it's there | |---|---|---| | 0. Orientation | The job titles, your workstation, how to study | So you don't waste the first three months | | I. Foundations | Python, linear algebra, calculus, probability,…",
+            "id": "C9",
+            "section_title": "How it's organized",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PyTorch",
+          "Python",
+          "CUDA"
+        ],
+        "description": "Train a small transformer and a small GPT language model from scratch using PyTorch while monitoring GPU performance.",
+        "how_it_is_used": "Applied via deep learning and language model training modules to understand underlying GPU training behaviors.",
+        "title": "Custom GPT From Scratch"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Honestly? If you start with decent programming skills and high school math, about **1,800 hours**, and that's my estimate for someone who actually does the labs. At 15 hours a week that's a bit over two years. At full time, about eleven…",
+            "id": "C11",
+            "section_title": "How long this takes",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "text": "Requires a substantial time investment (estimated at approximately 1,800 hours for completion)."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "*by Gonzalo L. Romero (DeepRat)* --- Every week somebody on the internet promises to turn you into an \"AI Engineer\" in six weeks. You watch the videos, you copy the notebook, you call `model.fit()`, you get 97% accuracy on a dataset that…",
+          "id": "C5",
+          "section_title": "Data, Machine Learning, Deep Learning and AI Engineering, the long way round",
+          "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+        }
+      ],
+      "text": "It addresses short, superficial AI courses that teach users to copy-paste basic notebooks without preparing them for real-world production environments, messy data, latency constraints, or security threats."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+              "id": "C3",
+              "section_title": "What \"completing this course\" is supposed to mean",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "Data engineering platforms (ingestion, storage, modeling, orchestration, streaming, quality checks, access control)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+              "id": "C3",
+              "section_title": "What \"completing this course\" is supposed to mean",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "Classical machine learning toolbox implementation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+              "id": "C3",
+              "section_title": "What \"completing this course\" is supposed to mean",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "Deep networks and transformer training"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+              "id": "C3",
+              "section_title": "What \"completing this course\" is supposed to mean",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "Language model pretraining, fine-tuning, alignment, quantization, serving, and RAG/agent building"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "tools, retrieval, RAG, agents, MCP, evals, LLM security | Building products on top of foundation models without embarrassing yourself | | VII. Reinforcement Learning | Bandits, MDPs, Q-learning, DQN, policy gradients, PPO | Needed for…",
+              "id": "C10",
+              "section_title": "How it's organized",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "Reinforcement learning (Bandits, MDPs, Q-learning, DQN, policy gradients, PPO)"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "BlueRingsLabs/no-shortcuts: Free Course : Data, Machine Learning, Deep Learning and AI Engineering, the long way round: the math, the code, the systems and the security. 173 lessons, 166 runnable labs, no shortcuts. Free under CC BY-NC…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts"
+            },
+            {
+              "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+              "id": "C3",
+              "section_title": "What \"completing this course\" is supposed to mean",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            },
+            {
+              "excerpt": "Standalone companions to the course, each one in its own branch of this repository. They aren't part of the syllabus and you don't need them to follow it; each covers something the course takes for granted. | # | Addendum | What it teaches…",
+              "id": "C7",
+              "section_title": "Addenda",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "name": "PyTorch"
+        }
+      ],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- You can program in *some* language and you're not scared of a terminal. Python specifically is taught in Part I, but I won't teach you what a loop is. - High school algebra. Everything above that (linear algebra, calculus, probability,…",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "text": "Ability to program in some programming language and comfort with the terminal."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- You can program in *some* language and you're not scared of a terminal. Python specifically is taught in Part I, but I won't teach you what a loop is. - High school algebra. Everything above that (linear algebra, calculus, probability,…",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "text": "High school algebra proficiency."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- You can program in *some* language and you're not scared of a terminal. Python specifically is taught in Part I, but I won't teach you what a loop is. - High school algebra. Everything above that (linear algebra, calculus, probability,…",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+            }
+          ],
+          "text": "A computer with 16 GB of RAM (8 GB works for almost everything) and an optional GPU or access to free Colab/Kaggle GPUs."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "BlueRingsLabs/no-shortcuts: Free Course : Data, Machine Learning, Deep Learning and AI Engineering, the long way round: the math, the code, the systems and the security. 173 lessons, 166 runnable labs, no shortcuts. Free under CC BY-NC…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts"
+          },
+          {
+            "excerpt": "Honestly? If you start with decent programming skills and high school math, about **1,800 hours**, and that's my estimate for someone who actually does the labs. At 15 hours a week that's a bit over two years. At full time, about eleven…",
+            "id": "C11",
+            "section_title": "How long this takes",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "text": "Self-paced study for individuals seeking a master's-level curriculum in data engineering, machine learning, deep learning, and AI engineering."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Standalone companions to the course, each one in its own branch of this repository. They aren't part of the syllabus and you don't need them to follow it; each covers something the course takes for granted. | # | Addendum | What it teaches…",
+            "id": "C7",
+            "section_title": "Addenda",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "text": "Building miniature versions of standard data science and machine learning libraries to understand their internal mechanics."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "BlueRingsLabs/no-shortcuts: Free Course : Data, Machine Learning, Deep Learning and AI Engineering, the long way round: the math, the code, the systems and the security. 173 lessons, 166 runnable labs, no shortcuts. Free under CC BY-NC…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/BlueRingsLabs/no-shortcuts"
+        },
+        {
+          "excerpt": "Ten parts, 57 modules, 173 lessons. The full catalogue is in SYLLABUS.md.",
+          "id": "C8",
+          "section_title": "How it's organized",
+          "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+        },
+        {
+          "excerpt": "| Part | What it covers | Why it's there | |---|---|---| | 0. Orientation | The job titles, your workstation, how to study | So you don't waste the first three months | | I. Foundations | Python, linear algebra, calculus, probability,…",
+          "id": "C9",
+          "section_title": "How it's organized",
+          "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+        }
+      ],
+      "explanation": "This repository provides a rigorous, long-form curriculum consisting of 173 lessons and 166 runnable labs designed to take learners from foundations to production-ready engineering roles. It covers mathematical theory, code implementation from scratch, production systems, and security across 10 structured parts.",
+      "one_line": "A comprehensive, hands-on, free open-source course covering data, machine learning, deep learning, and AI engineering."
+    },
+    "who_should_care": [
+      {
+        "audience": "Aspiring Data and AI Engineers",
+        "citations": [
+          {
+            "excerpt": "When you finish, you should be able to walk into a job as a **Data Engineer**, **Data Scientist**, **Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words…",
+            "id": "C2",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Part | What it covers | Why it's there | |---|---|---| | 0. Orientation | The job titles, your workstation, how to study | So you don't waste the first three months | | I. Foundations | Python, linear algebra, calculus, probability,…",
+            "id": "C9",
+            "section_title": "How it's organized",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "reason": "Looking for a comprehensive path from math and foundational code to production system design and career readiness."
+      },
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "Standalone companions to the course, each one in its own branch of this repository. They aren't part of the syllabus and you don't need them to follow it; each covers something the course takes for granted. | # | Addendum | What it teaches…",
+            "id": "C7",
+            "section_title": "Addenda",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "- You can program in *some* language and you're not scared of a terminal. Python specifically is taught in Part I, but I won't teach you what a loop is. - High school algebra. Everything above that (linear algebra, calculus, probability,…",
+            "id": "C12",
+            "section_title": "Prerequisites",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "reason": "Wanting to understand underlying mathematics, machine learning libraries, and AI model internals by building them from scratch."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "*by Gonzalo L. Romero (DeepRat)* --- Every week somebody on the internet promises to turn you into an \"AI Engineer\" in six weeks. You watch the videos, you copy the notebook, you call `model.fit()`, you get 97% accuracy on a dataset that…",
+            "id": "C5",
+            "section_title": "Data, Machine Learning, Deep Learning and AI Engineering, the long way round",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "code, and every piece of code in the labs is executed by CI before it lands here, because I don't trust code I haven't run, and neither should you. I'm a systems engineer (technically still a student, the paperwork is slower than the…",
+            "id": "C6",
+            "section_title": "Data, Machine Learning, Deep Learning and AI Engineering, the long way round",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "point": "Every lab's code is tested and executed by CI before landing in the repository."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          },
+          {
+            "excerpt": "code, and every piece of code in the labs is executed by CI before it lands here, because I don't trust code I haven't run, and neither should you. I'm a systems engineer (technically still a student, the paperwork is slower than the…",
+            "id": "C6",
+            "section_title": "Data, Machine Learning, Deep Learning and AI Engineering, the long way round",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "point": "Includes security training focused on system vulnerabilities, credential leaks, and attacking RAG systems."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Machine Learning Engineer**, **Deep Learning Engineer** or **AI Engineer** and do the work. That means more than knowing what the words mean: - You can take a messy business question and turn it into a well-posed learning problem, or…",
+            "id": "C3",
+            "section_title": "What \"completing this course\" is supposed to mean",
+            "source_url": "https://github.com/BlueRingsLabs/no-shortcuts/blob/main/README.md"
+          }
+        ],
+        "point": "Deep learning components include building deep networks, transformers, and a small GPT from scratch in PyTorch."
+      }
+    ]
+  },
+  "source_hash": "bf362e5cc40181477dacb7eef7aebf39769cbfdb0f76146de45c46bf326e730c"
+}

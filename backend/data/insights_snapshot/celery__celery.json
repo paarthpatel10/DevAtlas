@@ -1,0 +1,488 @@
+{
+  "full_name": "celery/celery",
+  "generated_at": "2026-11-10 07:48:44.510761+00:00",
+  "github_id": 184460,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          },
+          {
+            "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+            "id": "C4",
+            "section_title": "It supports...",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          },
+          {
+            "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+            "id": "C5",
+            "section_title": "Framework Integration",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "Flask",
+          "FastAPI",
+          "Redis",
+          "RabbitMQ"
+        ],
+        "description": "Build a web application with Flask or FastAPI that offloads compute-heavy jobs to background workers.",
+        "how_it_is_used": "Celery queues the long-running tasks using RabbitMQ or Redis as the broker and executes them in background worker pools.",
+        "title": "Asynchronous Task Processing Service"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "Node.js",
+          "Go",
+          "Rust"
+        ],
+        "description": "Create a multi-language job system where non-Python clients enqueue HTTP endpoints to be processed asynchronously by Celery workers.",
+        "how_it_is_used": "Uses Celery's webhook integration pattern to enqueue URLs that worker nodes request upon receiving queue messages.",
+        "title": "Cross-Language Webhook Queue"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": ":Version: 5.7.0 (Collider) :Web: https://docs.celeryq.dev/en/stable/index.html :Download: https://pypi.org/project/celery/ :Source: https://github.com/celery/celery/ :DeepWiki: :Keywords: task, queue, job, async, rabbitmq, amqp, redis,…",
+            "id": "C8",
+            "section_title": null,
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "label": "Celery Documentation",
+        "url": "https://docs.celeryq.dev/en/stable/index.html"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Download the latest version of Celery from PyPI: https://pypi.org/project/celery/ You can install it by doing the following: :: $ tar xvfz celery-0.0.0.tar.gz $ cd celery-0.0.0 $ python setup.py build # python setup.py install The last…",
+            "id": "C7",
+            "section_title": "Downloading and installing from source",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          },
+          {
+            "excerpt": ":Version: 5.7.0 (Collider) :Web: https://docs.celeryq.dev/en/stable/index.html :Download: https://pypi.org/project/celery/ :Source: https://github.com/celery/celery/ :DeepWiki: :Keywords: task, queue, job, async, rabbitmq, amqp, redis,…",
+            "id": "C8",
+            "section_title": null,
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "label": "PyPI Package",
+        "url": "https://pypi.org/project/celery/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": ":Version: 5.7.0 (Collider) :Web: https://docs.celeryq.dev/en/stable/index.html :Download: https://pypi.org/project/celery/ :Source: https://github.com/celery/celery/ :DeepWiki: :Keywords: task, queue, job, async, rabbitmq, amqp, redis,…",
+            "id": "C8",
+            "section_title": null,
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/celery/celery/"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+            "id": "C3",
+            "section_title": "What do I need?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Microsoft Windows is not supported, and users are requested not to open issues for that platform."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+            "id": "C3",
+            "section_title": "What do I need?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Celery 5.7.x is the final release line supporting Python 3.11, as v5.8.x and 6.x will require Python 3.12 or newer."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+          "id": "C2",
+          "section_title": "What's a Task Queue?",
+          "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+        },
+        {
+          "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+          "id": "C3",
+          "section_title": "What do I need?",
+          "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+        }
+      ],
+      "text": "Distributing and offloading asynchronous work across threads, processes, or machines using message brokers to achieve high availability and scale."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          },
+          {
+            "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+            "id": "C3",
+            "section_title": "What do I need?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Celery employs a broker-mediated architecture where client applications send message units (tasks) to a broker, which delivers them to worker processes monitoring the queue across single or multiple machines."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Concurrency management via Prefork, Eventlet, gevent, and solo modes"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Message serialization using pickle, json, yaml, or msgpack with zlib/bzip2 compression and cryptographic signing"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Result storage across AMQP, Redis, memcached, SQLAlchemy, Django ORM, Cassandra, IronCache, Elasticsearch, and Google Cloud Storage"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Django"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Pyramid"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Pylons"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Flask"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "web2py"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Tornado"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+              "id": "C5",
+              "section_title": "Framework Integration",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "FastAPI"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+              "id": "C3",
+              "section_title": "What do I need?",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            },
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "RabbitMQ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+              "id": "C3",
+              "section_title": "What do I need?",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            },
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Redis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Amazon SQS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+              "id": "C4",
+              "section_title": "It supports...",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "Google Pub/Sub"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+              "id": "C3",
+              "section_title": "What do I need?",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "name": "SQLite"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+              "id": "C3",
+              "section_title": "What do I need?",
+              "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+            }
+          ],
+          "text": "Python 3.11+ or PyPy3.11+ (v8+) for Celery version 5.7.x"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Distributing background task processing across multiple dedicated worker processes."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Executing remote HTTP requests by enqueuing webhooks for workers to call asynchronously."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+            "id": "C4",
+            "section_title": "It supports...",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "text": "Storing and querying task results using backends such as Redis, SQLAlchemy, Django ORM, Elasticsearch, or Google Cloud Storage."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "celery/celery: Distributed Task Queue (development branch) Topics: amqp, python, python library, python3, queue tasks, queue workers, queued jobs, redis, redis queue, sqs, sqs queue, task manager, task runner, task scheduler. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/celery/celery"
+        },
+        {
+          "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+          "id": "C2",
+          "section_title": "What's a Task Queue?",
+          "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+        },
+        {
+          "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+          "id": "C3",
+          "section_title": "What do I need?",
+          "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+        }
+      ],
+      "explanation": "Celery is a Python-based distributed task queue that uses message brokers to transfer tasks between client applications and worker processes. It supports running across single machines, multiple servers, or datacenters to provide horizontal scaling and high availability.",
+      "one_line": "A distributed task queue for Python designed to process asynchronous units of work across threads or machines."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Web Developers",
+        "citations": [
+          {
+            "excerpt": "Celery is easy to integrate with web frameworks, some of which even have integration packages: +--------------------+------------------------+ | Django +--------------------+------------------------+ | Pyramid | pyramid_celery |…",
+            "id": "C5",
+            "section_title": "Framework Integration",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "reason": "They can integrate background job queues into web frameworks like Django, Flask, FastAPI, Pyramid, and Tornado."
+      },
+      {
+        "audience": "Backend & Infrastructure Engineers",
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          },
+          {
+            "excerpt": "Celery version 5.7.x runs on: - Python (3.11+) - PyPy3.11+ (v8+) This is the last version of Celery which will support Python 3.11. Celery v5.8.x or 6.x will work on Python 3.12 or newer versions. If you're running an older version of…",
+            "id": "C3",
+            "section_title": "What do I need?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "reason": "They can horizontally scale background processing across machines or datacenters using brokers like RabbitMQ or Redis."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+            "id": "C4",
+            "section_title": "It supports...",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "point": "Supports flexible message transports including RabbitMQ, Redis, Amazon SQS, and Google Pub/Sub."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Message Transports** - RabbitMQ_, Redis_, Amazon SQS, Google Pub/Sub - **Concurrency** - Prefork, Eventlet_, gevent_, single threaded (``solo``) - **Result Stores** - AMQP, Redis - memcached - SQLAlchemy, Django ORM - Apache Cassandra,…",
+            "id": "C4",
+            "section_title": "It supports...",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "point": "Offers diverse execution options with concurrency models like Prefork, Eventlet, gevent, and solo mode."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Task queues are used as a mechanism to distribute work across threads or machines. A task queue's input is a unit of work, called a task, dedicated worker processes then constantly monitor the queue for new work to perform. Celery…",
+            "id": "C2",
+            "section_title": "What's a Task Queue?",
+            "source_url": "https://github.com/celery/celery/blob/main/README.rst"
+          }
+        ],
+        "point": "Enables cross-language execution via webhooks and client libraries available in Node.js, Go, PHP, and Rust."
+      }
+    ]
+  },
+  "source_hash": "632e1712e9e2b008f8f0f5c81e1fa6b835bf9b78e83c9cccfea7181eca819232"
+}

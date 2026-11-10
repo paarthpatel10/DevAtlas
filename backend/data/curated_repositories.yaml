@@ -18,12 +18,8 @@ backend:
   - casbin/casbin
   - casbin/pycasbin
   - authlib/authlib
-  - keycloak/keycloak
-  - ory/kratos
-  - supabase/supabase
 
 frontend:
-  - {repo: vercel/next.js, featured: true}
   - facebook/react
   - vuejs/core
   - sveltejs/svelte
@@ -33,6 +29,10 @@ frontend:
   - pmndrs/zustand
   - react-hook-form/react-hook-form
   - colinhacks/zod
+
+full_stack:
+  - {repo: vercel/next.js, featured: true}
+  - supabase/supabase
 
 databases_search:
   - {repo: pgvector/pgvector, featured: true}
@@ -50,15 +50,17 @@ ai_ml:
   - scikit-learn/scikit-learn
   - mlflow/mlflow
 
-llm_agents_mcp:
+llm_agents:
   - langchain-ai/langchain
   - run-llama/llama_index
-  - {repo: modelcontextprotocol/python-sdk, featured: true}
-  - modelcontextprotocol/servers
   - {repo: ollama/ollama, featured: true}
   - vllm-project/vllm
   - BerriAI/litellm
   - pydantic/pydantic-ai
+
+mcp_automation:
+  - {repo: modelcontextprotocol/python-sdk, featured: true}
+  - modelcontextprotocol/servers
 
 devops_platform:
   - kubernetes/kubernetes
@@ -76,6 +78,10 @@ data_engineering:
   - dbt-labs/dbt-core
   - apache/spark
   - pola-rs/polars
+
+security:
+  - keycloak/keycloak
+  - ory/kratos
 
 developer_tools:
   - {repo: astral-sh/ruff, featured: true}

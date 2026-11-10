@@ -1,0 +1,481 @@
+{
+  "full_name": "monid-ai/monid",
+  "generated_at": "2026-11-10 09:12:51.751262+00:00",
+  "github_id": 1346870728,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "TypeScript",
+          "Deno",
+          "OpenAI SDK or LangChain"
+        ],
+        "description": "An agent that searches live news, scrapes URLs, and performs company enrichment by querying Monid's unified endpoint catalog dynamically based on job fitness.",
+        "how_it_is_used": "Uses Monid as the single gateway API and tool registry to query multiple providers like TinyFish and Exa.",
+        "title": "Autonomous Multi-Provider Research Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "}, usage: { model: { kind: UsageModelKind.FREE } }, }); ``` An **endpoint** declares the request and the input schema: ``` // connectors/tinyfish/endpoints/search/endpoint.ts export default defineEndpoint({ meta: { displayName: \"TinyFish…",
+            "id": "C10",
+            "section_title": "The shape",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "TypeScript",
+          "Zod",
+          "Deno"
+        ],
+        "description": "A developer tool utility that ingests an external API's documentation or OpenAPI spec and uses a coding agent to output valid Monid provider and endpoint definitions.",
+        "how_it_is_used": "Relies on the declarative nature of Monid connectors and the reference examples in the repository to generate inputs, schemas, and fixtures.",
+        "title": "Automated API Connector Scaffolder"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/monid-ai/monid.git"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "monid-ai/monid: Monid - OpenRouter for agent tools. Join our community at https://discord.gg/rQzztcgJV8 Topics: ai agents, developer tools. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/monid-ai/monid"
+          }
+        ],
+        "label": "Community Discord",
+        "url": "https://discord.gg/rQzztcgJV8"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "label": "Agent Skill File",
+        "url": "https://monid.ai/SKILL.md"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+          "id": "C2",
+          "section_title": "Why it exists",
+          "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+        }
+      ],
+      "text": "It removes the need to hardcode specific API integrations months in advance by allowing endpoints to be chosen dynamically at call time based on rank, price, live health, and observed latency. It also standardizes metered usage across different providers through raw response envelopes."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "A **provider** declares identity, auth, and how usage is counted: ``` // connectors/tinyfish/provider.ts export default defineProvider({ name: \"tinyfish\", meta: { displayName: \"TinyFish\", summary: \"Zero-cost live-web search and clean…",
+            "id": "C9",
+            "section_title": "The shape",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "}, usage: { model: { kind: UsageModelKind.FREE } }, }); ``` An **endpoint** declares the request and the input schema: ``` // connectors/tinyfish/endpoints/search/endpoint.ts export default defineEndpoint({ meta: { displayName: \"TinyFish…",
+            "id": "C10",
+            "section_title": "The shape",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "text": "A generic connector framework where providers define identity, authentication, and usage models, while endpoints define inputs, methods, base URLs, and timeouts. An internal engine handles routing, discovery, and usage settlement on raw response envelopes."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+              "id": "C6",
+              "section_title": "Monid (OpenRouter for agent tools)",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "A **provider** declares identity, auth, and how usage is counted: ``` // connectors/tinyfish/provider.ts export default defineProvider({ name: \"tinyfish\", meta: { displayName: \"TinyFish\", summary: \"Zero-cost live-web search and clean…",
+              "id": "C9",
+              "section_title": "The shape",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "}, usage: { model: { kind: UsageModelKind.FREE } }, }); ``` An **endpoint** declares the request and the input schema: ``` // connectors/tinyfish/endpoints/search/endpoint.ts export default defineEndpoint({ meta: { displayName: \"TinyFish…",
+              "id": "C10",
+              "section_title": "The shape",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Declarative provider and endpoint definition"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+              "id": "C2",
+              "section_title": "Why it exists",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Per-call usage metering and billing model settlement"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+              "id": "C2",
+              "section_title": "Why it exists",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Dynamic endpoint discovery with latency and health tracking"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "endpoint only ├── endpoint.test.ts # replay + gated live tests └── fixtures/*.json # recorded responses, trimmed ``` 1. Read `connectors/exa/`, the reference implementation, and the authoring guide in DEVELOPMENT.md. 2. Write the provider…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Replay-based testing with recorded response fixtures"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The format above is declarative and the contract is written down, so step 2 is work a coding agent can do. AGENT.md is the brief: give it that file, your own API docs, and `connectors/exa/` as the worked example, and it can produce the…",
+              "id": "C12",
+              "section_title": "Let an agent write it",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Apify actor input schema scaffolding"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Deno"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "The format above is declarative and the contract is written down, so step 2 is work a coding agent can do. AGENT.md is the brief: give it that file, your own API docs, and `connectors/exa/` as the worked example, and it can produce the…",
+              "id": "C12",
+              "section_title": "Let an agent write it",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Zod"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "monid-ai/monid: Monid - OpenRouter for agent tools. Join our community at https://discord.gg/rQzztcgJV8 Topics: ai agents, developer tools. Primary language: TypeScript.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/monid-ai/monid"
+            },
+            {
+              "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+              "id": "C6",
+              "section_title": "Monid (OpenRouter for agent tools)",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "OpenRouter"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "A **provider** declares identity, auth, and how usage is counted: ``` // connectors/tinyfish/provider.ts export default defineProvider({ name: \"tinyfish\", meta: { displayName: \"TinyFish\", summary: \"Zero-cost live-web search and clean…",
+              "id": "C9",
+              "section_title": "The shape",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "}, usage: { model: { kind: UsageModelKind.FREE } }, }); ``` An **endpoint** declares the request and the input schema: ``` // connectors/tinyfish/endpoints/search/endpoint.ts export default defineEndpoint({ meta: { displayName: \"TinyFish…",
+              "id": "C10",
+              "section_title": "The shape",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "TinyFish"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            },
+            {
+              "excerpt": "endpoint only ├── endpoint.test.ts # replay + gated live tests └── fixtures/*.json # recorded responses, trimmed ``` 1. Read `connectors/exa/`, the reference implementation, and the authoring guide in DEVELOPMENT.md. 2. Write the provider…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Exa"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The format above is declarative and the contract is written down, so step 2 is work a coding agent can do. AGENT.md is the brief: give it that file, your own API docs, and `connectors/exa/` as the worked example, and it can produce the…",
+              "id": "C12",
+              "section_title": "Let an agent write it",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "name": "Apify"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+            }
+          ],
+          "text": "Deno 2.x"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "text": "Routing agent requests dynamically to the cheapest or best-fitting web search or data enrichment endpoint at runtime."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Deno 2.x. ``` git clone https://github.com/monid-ai/monid.git cd monid deno task check && deno task test # types + 188 replay tests, zero network ``` Run a real endpoint with your own vendor key: ``` export…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "endpoint only ├── endpoint.test.ts # replay + gated live tests └── fixtures/*.json # recorded responses, trimmed ``` 1. Read `connectors/exa/`, the reference implementation, and the authoring guide in DEVELOPMENT.md. 2. Write the provider…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "The format above is declarative and the contract is written down, so step 2 is work a coding agent can do. AGENT.md is the brief: give it that file, your own API docs, and `connectors/exa/` as the worked example, and it can produce the…",
+            "id": "C12",
+            "section_title": "Let an agent write it",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "text": "Scaffolding and testing new API integrations using recorded fixtures and Deno-based replay tests without live network dependencies."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "monid-ai/monid: Monid - OpenRouter for agent tools. Join our community at https://discord.gg/rQzztcgJV8 Topics: ai agents, developer tools. Primary language: TypeScript.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/monid-ai/monid"
+        },
+        {
+          "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+          "id": "C6",
+          "section_title": "Monid (OpenRouter for agent tools)",
+          "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+        }
+      ],
+      "explanation": "Monid allows AI agents to access over 2,000 tools across 72+ providers through a single base URL and API key. The repository houses a declarative connector framework where providers and endpoints are described uniformly, letting developers or coding agents easily add new tool integrations.",
+      "one_line": "An open framework and connector layer acting as OpenRouter for AI agent tools."
+    },
+    "who_should_care": [
+      {
+        "audience": "AI Engineers and Developers",
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "}, usage: { model: { kind: UsageModelKind.FREE } }, }); ``` An **endpoint** declares the request and the input schema: ``` // connectors/tinyfish/endpoints/search/endpoint.ts export default defineEndpoint({ meta: { displayName: \"TinyFish…",
+            "id": "C10",
+            "section_title": "The shape",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "reason": "Want to provide their AI agents with a unified interface to thousands of external tools without writing individual client adaptors for every provider."
+      },
+      {
+        "audience": "API Providers",
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "A connector describes one provider and its endpoints. Adding one is a pull request, and once it merges those endpoints are in `discover` for every agent on the platform.",
+            "id": "C8",
+            "section_title": "Writing a connector",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "reason": "Want their APIs exposed to AI agents on the platform by contributing a declarative connector via a pull request."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "point": "Dynamic endpoint discovery ranks the whole catalog across providers for a given job and returns prices, live health, and latency statistics."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Usage is metered per call.** Every connector declares its own usage model in the definition: a flat charge per call, a charge per returned result, or a rate per unit such as a thousand characters or a second of video. The engine settles…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "point": "Usage is metered per call according to each connector's definition (flat charge, per result, or rate per unit) and settles on the raw response envelope."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools.** One base URL, one key, and an agent can reach **2,000+ tools across 72+ providers**: web search and scraping, people and company enrichment, social platforms, reviews and market data, and video, image…",
+            "id": "C6",
+            "section_title": "Monid (OpenRouter for agent tools)",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          },
+          {
+            "excerpt": "The format above is declarative and the contract is written down, so step 2 is work a coding agent can do. AGENT.md is the brief: give it that file, your own API docs, and `connectors/exa/` as the worked example, and it can produce the…",
+            "id": "C12",
+            "section_title": "Let an agent write it",
+            "source_url": "https://github.com/monid-ai/monid/blob/main/README.md"
+          }
+        ],
+        "point": "The connector structure is declarative, enabling coding agents to write and scaffold new integrations using API documentation and reference examples."
+      }
+    ]
+  },
+  "source_hash": "6671923409711c34880e7751bf3fdcc01c643340e449a1c1de5eb9caf93d27a5"
+}

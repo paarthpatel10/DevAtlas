@@ -1,0 +1,560 @@
+{
+  "full_name": "rehan-remade/universal-modder",
+  "generated_at": "2026-11-10 09:11:53.346427+00:00",
+  "github_id": 1397016507,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+            "id": "C8",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "ImageMagick",
+          "fal API"
+        ],
+        "description": "Build a script that takes low-resolution game textures, runs them through asset generation pipelines for upscaling and PBR map creation, and prepares engine-exact frames.",
+        "how_it_is_used": "Utilizes the asset pipeline and fal asset generation capabilities provided by the `um` CLI and skills.",
+        "title": "Automated Game Texture Remaster Pipeline"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+            "id": "C9",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "ffmpeg",
+          "Python",
+          "OpenCV"
+        ],
+        "description": "Create an automated tool that records game window sessions with process-loopback audio, identifies key moments, and cuts a styled showcase video.",
+        "how_it_is_used": "Relies on the showcase video and game automation capabilities to record windows and process EDL edits.",
+        "title": "Automated Gameplay Recorder and Highlight Cutter"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+            "id": "C9",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Blender",
+          "Python"
+        ],
+        "description": "Develop a pipeline to convert 3D GLB models into engine-exact 2D sprite sheets for isometric or top-down games.",
+        "how_it_is_used": "Uses `um render3d` along with Blender to render frames from specific game camera angles.",
+        "title": "3D Model to Isometric Sprite Converter"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Agent | Install | |---|---| | **Claude Code** | `/plugin marketplace add rehan-remade/universal-modder``/plugin install universal-modder@universal-modder` | | **Codex** | `codex plugin marketplace add rehan-remade/universal-modder``codex…",
+            "id": "C3",
+            "section_title": "Install",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/rehan-remade/universal-modder"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "status docs, and a Forge 1.7.10 → Fabric 1.20.1 mapping table share-field-notesSearch the knowledge base, write your own note, open the PR **Agents** (`agents/`, subagent files with `name` + `description` frontmatter): a three-agent team…",
+            "id": "C10",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "text": "Using the multi-agent team setup consumes several times more tokens than a single agent session."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/rehan-remade/universal-modder"
+        },
+        {
+          "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+          "id": "C8",
+          "section_title": "What's inside",
+          "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+        },
+        {
+          "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+          "id": "C9",
+          "section_title": "What's inside",
+          "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+        }
+      ],
+      "text": "Modding PC games typically requires switching between scattered documentation, manual reverse engineering, external asset generation tools, and tedious in-game testing loops. This project integrates these steps into an AI-assisted workflow, providing structured engine playbooks, automated game reconnaissance, asset pipelines, and safety rules directly to AI agents."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/rehan-remade/universal-modder"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Game engine recon and fingerprinting"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+              "id": "C8",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Reverse engineering support via ILSpy, Cpp2IL, Vineflower, Ghidra, IDA, Cheat Engine, Frida, and RenderDoc"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+              "id": "C8",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Asset generation for sprites, textures, 3D models, audio, and video via fal, ComfyUI, Sprixen, and Voidless"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Process control, screenshot capture, and input driving for Windows games"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "status docs, and a Forge 1.7.10 → Fabric 1.20.1 mapping table share-field-notesSearch the knowledge base, write your own note, open the PR **Agents** (`agents/`, subagent files with `name` + `description` frontmatter): a three-agent team…",
+              "id": "C10",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "the game worker on Sonnet 5.5 at medium, and the offline worker on Opus 5.5 at high. Any agent can read the files as role briefs. AgentWhat it does mod-orchestratorThe supervisor. Plans the work, runs the two workers, checks what they…",
+              "id": "C11",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-agent team coordination for orchestration, live game testing, and offline development"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/rehan-remade/universal-modder"
+            },
+            {
+              "excerpt": "the game worker on Sonnet 5.5 at medium, and the offline worker on Opus 5.5 at high. Any agent can read the files as role briefs. AgentWhat it does mod-orchestratorThe supervisor. Plans the work, runs the two workers, checks what they…",
+              "id": "C11",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Python"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/rehan-remade/universal-modder"
+            },
+            {
+              "excerpt": "Pick your agent. Each gets the same skills (Agent Skills format), the fal MCP server, and the `um` CLI.",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "fal MCP server"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**The `um` CLI.** The Claude Code plugin puts it on PATH (its SessionStart hook), and so does a clone opened in Claude Code (`.claude/settings.json`); in a clone with another agent, `export PATH=\"$PWD/bin:$PATH\"`. Other agents' plugin…",
+              "id": "C5",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "ComfyUI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Sprixen"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Voidless"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+              "id": "C12",
+              "section_title": "What's inside",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "name": "Blender"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "text": "Git"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.10+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "text": "ffmpeg"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "text": "Blender (required for 3D to sprite renders)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**The `um` CLI.** The Claude Code plugin puts it on PATH (its SessionStart hook), and so does a clone opened in Claude Code (`.claude/settings.json`); in a clone with another agent, `export PATH=\"$PWD/bin:$PATH\"`. Other agents' plugin…",
+              "id": "C5",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            },
+            {
+              "excerpt": "the browser instead (fal's MCP guides), and `um comfy` makes images on a local ComfyUI server. `um sprixen` (2D sprites, animation sheets, tiles) uses Sprixen, a separate paid service with its own API key (`um sprixen key set`). `um…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+            }
+          ],
+          "text": "uv (recommended for CLI tool installation)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "text": "Scanning and fingerprinting game installations to identify the underlying engine, version, save folders, and anti-cheat status."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+            "id": "C8",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "text": "Generating custom game assets such as transparent sprites, seamless textures, PBR maps, 3D models, sound effects, and music using fal, ComfyUI, Sprixen, or Voidless."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+            "id": "C9",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "text": "Automating game testing loops by launching games, capturing GPU-safe screenshots, feeding safe inputs, and cleaning up crash reporters."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+            "id": "C9",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "text": "Porting an existing mod to a newer game version or loader with unit-by-unit testing and mapping tables."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/rehan-remade/universal-modder"
+        },
+        {
+          "excerpt": "Pick your agent. Each gets the same skills (Agent Skills format), the fal MCP server, and the `um` CLI.",
+          "id": "C2",
+          "section_title": "Install",
+          "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+        }
+      ],
+      "explanation": "Universal Modder provides a set of skills, an MCP server, and a CLI (`um`) that equip AI agents like Claude Code, Codex, and Gemini CLI to mod PC games. It handles reconnaissance, reverse engineering, asset generation, in-game testing, and showcase video creation.",
+      "one_line": "Skills, tools, and MCP servers for AI coding assistants to mod PC games."
+    },
+    "who_should_care": [
+      {
+        "audience": "Game modders",
+        "citations": [
+          {
+            "excerpt": "rehan-remade/universal-modder: Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. Topics:…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/rehan-remade/universal-modder"
+          },
+          {
+            "excerpt": "mod-any-gameThe whole loop, hard safety rules, and engine playbooks: Unity, Unreal, .NET/XNA (Terraria, Stardew, Celeste), Godot, Source 1/2, Bethesda, Minecraft, AoE2/Genie, Bannerlord, Binding of Isaac, RE Engine/MT…",
+            "id": "C8",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "SFX, music, voice, cutscene video asset-pipelineArt → engine-exact frames: cutout, nearest-neighbour fit, palettes, sheets, team-colour masks, 3D → 8/16-heading sprites game-automationLaunch, screenshot (GPU-safe), click/type safely,…",
+            "id": "C9",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "reason": "They can leverage AI agents equipped with engine playbooks, reverse engineering tools, and asset pipelines to build, test, and port game mods faster."
+      },
+      {
+        "audience": "AI assistant plugin and extension developers",
+        "citations": [
+          {
+            "excerpt": "Pick your agent. Each gets the same skills (Agent Skills format), the fal MCP server, and the `um` CLI.",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Agent | Install | |---|---| | **Claude Code** | `/plugin marketplace add rehan-remade/universal-modder``/plugin install universal-modder@universal-modder` | | **Codex** | `codex plugin marketplace add rehan-remade/universal-modder``codex…",
+            "id": "C3",
+            "section_title": "Install",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "status docs, and a Forge 1.7.10 → Fabric 1.20.1 mapping table share-field-notesSearch the knowledge base, write your own note, open the PR **Agents** (`agents/`, subagent files with `name` + `description` frontmatter): a three-agent team…",
+            "id": "C10",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "reason": "They can examine how Universal Modder packages specialized domain skills, custom MCP servers, and multi-agent workflows across various developer environments."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "status docs, and a Forge 1.7.10 → Fabric 1.20.1 mapping table share-field-notesSearch the knowledge base, write your own note, open the PR **Agents** (`agents/`, subagent files with `name` + `description` frontmatter): a three-agent team…",
+            "id": "C10",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "the game worker on Sonnet 5.5 at medium, and the offline worker on Opus 5.5 at high. Any agent can read the files as role briefs. AgentWhat it does mod-orchestratorThe supervisor. Plans the work, runs the two workers, checks what they…",
+            "id": "C11",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "point": "Provides a multi-agent team architecture (`mod-orchestrator`, `mod-game-worker`, and `mod-offline-worker`) specifically tailored to handle long-running modding tasks."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**The `um` CLI.** The Claude Code plugin puts it on PATH (its SessionStart hook), and so does a clone opened in Claude Code (`.claude/settings.json`); in a clone with another agent, `export PATH=\"$PWD/bin:$PATH\"`. Other agents' plugin…",
+            "id": "C5",
+            "section_title": "Install",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "the game worker on Sonnet 5.5 at medium, and the offline worker on Opus 5.5 at high. Any agent can read the files as role briefs. AgentWhat it does mod-orchestratorThe supervisor. Plans the work, runs the two workers, checks what they…",
+            "id": "C11",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          },
+          {
+            "excerpt": "um scanFind Steam/Epic/Xbox installs; fingerprint engine and version, .NET vs native, anti-cheat, installed loaders, save folders, ranked routes um falsprite, image, edit, rmbg, pixelate, upscale, texture, pbr, model3d, rig, sfx, music,…",
+            "id": "C12",
+            "section_title": "What's inside",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a comprehensive Python CLI (`um`) that supports scanning games, asset processing, rendering 3D assets to 2D sprites via Blender, and controlling Windows game processes and audio capture."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Agent | Install | |---|---| | **Claude Code** | `/plugin marketplace add rehan-remade/universal-modder``/plugin install universal-modder@universal-modder` | | **Codex** | `codex plugin marketplace add rehan-remade/universal-modder``codex…",
+            "id": "C3",
+            "section_title": "Install",
+            "source_url": "https://github.com/rehan-remade/universal-modder/blob/main/README.md"
+          }
+        ],
+        "point": "Integrates directly with multiple AI coding agent environments including Claude Code, Cursor, VS Code/Copilot, Codex, Gemini CLI, and OpenCode."
+      }
+    ]
+  },
+  "source_hash": "ce9c213a67032d0e65917411f958c0fef40cf1c6149df1f6fbbe30a6a2773813"
+}

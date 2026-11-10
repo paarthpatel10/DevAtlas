@@ -1,0 +1,415 @@
+{
+  "full_name": "apache/casbin-pycasbin",
+  "generated_at": "2026-11-10 09:14:44.817424+00:00",
+  "github_id": 149631013,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          },
+          {
+            "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+            "id": "C10",
+            "section_title": "PyCasbin",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Django",
+          "SQLAlchemy"
+        ],
+        "description": "Build an API security layer that checks user permissions dynamically against specific tenant domains and resource roles.",
+        "how_it_is_used": "Uses PyCasbin's RBAC with domains/tenants model and policy evaluation to block unauthorized multi-tenant requests.",
+        "title": "Multi-Tenant SaaS Authorization Middleware"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          },
+          {
+            "excerpt": "= r.sub == p.sub && r.obj == p.obj \\ && r.act == p.act ``` Furthermore, if you are using ABAC, you can use the `in` operator like the following: ``` # Matchers [matchers] m = r.obj == p.obj && r.act == p.act || r.obj in ('data2', 'data3')…",
+            "id": "C6",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Flask",
+          "Redis",
+          "Docker"
+        ],
+        "description": "Create a custom API gateway route filter that matches incoming requests against object ownership attributes.",
+        "how_it_is_used": "Uses PyCasbin's ABAC model capabilities and the `in` operator syntax sugar to evaluate resource ownership rules.",
+        "title": "Attribute-Based API Gateway Filter"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "https://casbin.apache.org/docs/overview/",
+            "id": "C12",
+            "section_title": "Documentation",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "label": "Casbin Documentation",
+        "url": "https://casbin.apache.org/docs/overview/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+            "id": "C10",
+            "section_title": "PyCasbin",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "label": "Casbin Online Editor",
+        "url": "https://editor.casbin.org/"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "What Casbin does: 1. enforce the policy in the classic ``{subject, object, action}`` form or a customized form as you defined, both allow and deny authorizations are supported. 2. handle the storage of the access control model and its…",
+            "id": "C7",
+            "section_title": "Features",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "Does not handle user authentication (verifying usernames and passwords during login)."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "What Casbin does: 1. enforce the policy in the classic ``{subject, object, action}`` form or a customized form as you defined, both allow and deny authorizations are supported. 2. handle the storage of the access control model and its…",
+            "id": "C7",
+            "section_title": "Features",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "Does not manage the list of users or roles directly as a password container, though it does store user-role mappings for RBAC."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/apache/casbin-pycasbin"
+        },
+        {
+          "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+          "id": "C4",
+          "section_title": "Supported models",
+          "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+        },
+        {
+          "excerpt": "What Casbin does: 1. enforce the policy in the classic ``{subject, object, action}`` form or a customized form as you defined, both allow and deny authorizations are supported. 2. handle the storage of the access control model and its…",
+          "id": "C7",
+          "section_title": "Features",
+          "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+        }
+      ],
+      "text": "It solves the complexity of managing application authorization by providing a unified library that handles multiple access control models (such as ACL, RBAC, ABAC, and RESTful matching) and policy storage without requiring developers to build custom authorization engines from scratch."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "In Casbin, an access control model is abstracted into a CONF file based on the **PERM metamodel (Policy, Effect, Request, Matchers)**. So switching or upgrading the authorization mechanism for a project is just as simple as modifying a…",
+            "id": "C5",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          },
+          {
+            "excerpt": "= r.sub == p.sub && r.obj == p.obj \\ && r.act == p.act ``` Furthermore, if you are using ABAC, you can use the `in` operator like the following: ``` # Matchers [matchers] m = r.obj == p.obj && r.act == p.act || r.obj in ('data2', 'data3')…",
+            "id": "C6",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "PyCasbin uses the PERM metamodel, separating models into CONF configuration files and policies into data files (such as CSV). It utilizes simpleeval as an expression engine for evaluation."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/apache/casbin-pycasbin"
+            },
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "ACL access control model"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/apache/casbin-pycasbin"
+            },
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            },
+            {
+              "excerpt": "What Casbin does: 1. enforce the policy in the classic ``{subject, object, action}`` form or a customized form as you defined, both allow and deny authorizations are supported. 2. handle the storage of the access control model and its…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "RBAC access control model with role hierarchy and domains"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/apache/casbin-pycasbin"
+            },
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "ABAC access control model"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "RESTful path and HTTP method matching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "Deny-override policy effect handling"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+              "id": "C4",
+              "section_title": "Supported models",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "Prioritized policy rules"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+              "id": "C10",
+              "section_title": "PyCasbin",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            },
+            {
+              "excerpt": "- Supported models - How it works? - Features - Installation - Documentation - Online editor - Tutorials - Get started - Policy management - Policy persistence - Role manager - Async Enforcer - Benchmarks - Logging - Examples - Middlewares…",
+              "id": "C11",
+              "section_title": "Table of contents",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "Asynchronous enforcer support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+              "id": "C10",
+              "section_title": "PyCasbin",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "name": "Django"
+        }
+      ],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+              "id": "C10",
+              "section_title": "PyCasbin",
+              "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+            }
+          ],
+          "text": "Pycasbin version >= 1.23.0 for async support"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "Enforcing RESTful API path permissions using wildcard patterns and HTTP methods like GET, POST, PUT, and DELETE."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "Managing multi-tenant applications where users maintain different role sets across distinct domains or tenants."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          },
+          {
+            "excerpt": "= r.sub == p.sub && r.obj == p.obj \\ && r.act == p.act ``` Furthermore, if you are using ABAC, you can use the `in` operator like the following: ``` # Matchers [matchers] m = r.obj == p.obj && r.act == p.act || r.obj in ('data2', 'data3')…",
+            "id": "C6",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "text": "Implementing attribute-based access control (ABAC) rules evaluated through expression engines like simpleeval."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/apache/casbin-pycasbin"
+        },
+        {
+          "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+          "id": "C10",
+          "section_title": "PyCasbin",
+          "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+        }
+      ],
+      "explanation": "PyCasbin is an authorization library for Python projects that enforces policies based on various access control models. It abstracts access control configurations into CONF files using the PERM metamodel, separating policy logic from application code.",
+      "one_line": "An authorization library for Python that supports access control models like ACL, RBAC, and ABAC."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Backend Developers",
+        "citations": [
+          {
+            "excerpt": "apache/casbin-pycasbin: An authorization library that supports access control models like ACL, RBAC, ABAC in Python Topics: abac, access control, acl, auth, authorization, authz, casbin, permission, pycasbin, python, rbac. Primary…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/apache/casbin-pycasbin"
+          },
+          {
+            "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+            "id": "C10",
+            "section_title": "PyCasbin",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "reason": "They need a robust, plug-and-play authorization system to handle complex access control logic like role hierarchies and attribute-based permissions."
+      },
+      {
+        "audience": "System Architects",
+        "citations": [
+          {
+            "excerpt": "In Casbin, an access control model is abstracted into a CONF file based on the **PERM metamodel (Policy, Effect, Request, Matchers)**. So switching or upgrading the authorization mechanism for a project is just as simple as modifying a…",
+            "id": "C5",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "reason": "They can abstract permission management into configuration and policy files, allowing models to be easily swapped or audited."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. **ACL (Access Control List)** 2. **ACL with superuser** 3. **ACL without users**: especially useful for systems that don't have authentication or user log-ins. 4. **ACL without resources**: some scenarios may target for a type of…",
+            "id": "C4",
+            "section_title": "Supported models",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "point": "Supports a wide variety of access control models including ACL, RBAC with domains, ABAC, RESTful paths, deny-overrides, and priority rules out of the box."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "In Casbin, an access control model is abstracted into a CONF file based on the **PERM metamodel (Policy, Effect, Request, Matchers)**. So switching or upgrading the authorization mechanism for a project is just as simple as modifying a…",
+            "id": "C5",
+            "section_title": "How it works?",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "point": "Uses the PERM metamodel (Policy, Effect, Request, Matchers) defined in a configuration file, allowing authorization mechanics to be changed simply by modifying configuration files."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**News**: 🔥 How to use it with `Django` ? Try Django Authorization, an authorization library for `Django` framework. **News**: Async is now supported by Pycasbin >= 1.23.0! **News**: still worry about how to write the correct Casbin…",
+            "id": "C10",
+            "section_title": "PyCasbin",
+            "source_url": "https://github.com/apache/casbin-pycasbin/blob/master/README.md"
+          }
+        ],
+        "point": "Includes support for asynchronous execution as well as integration options with frameworks like Django."
+      }
+    ]
+  },
+  "source_hash": "683077b7bb855f15073374c5b7830117c75e7eb67815edba9157ef2b6d741e49"
+}

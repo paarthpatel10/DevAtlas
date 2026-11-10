@@ -1,0 +1,473 @@
+{
+  "full_name": "orbi-build/orbi",
+  "generated_at": "2026-11-10 09:18:27.707393+00:00",
+  "github_id": 1345151921,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+            "id": "C4",
+            "section_title": "What it does",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "systemd"
+        ],
+        "description": "Automatically dispatch bugs reported via issue templates to be implemented and tested in isolated worktrees.",
+        "how_it_is_used": "Relies on Orbi's ability to claim issues labeled 'ai-ready', create worktrees, and submit PRs with fix commits.",
+        "title": "Automated Bug Triage and Fix Pipeline"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/orbi-build/orbi"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub CLI",
+          "Docker"
+        ],
+        "description": "Trigger release gates, tag creation, and release notes generation automatically upon issue completion.",
+        "how_it_is_used": "Relies on Orbi's release gate execution and publishing capabilities.",
+        "title": "Self-Hosted Autonomous Release Manager"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` git clone https://github.com/orbi-build/orbi.git && cd orbi uv tool install --force --reinstall --editable --python python3 . # compatible system Python (>= 3.14, e.g. Fedora 43 / current Arch); older (e.g. Ubuntu 24.04's 3.12):…",
+            "id": "C2",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/orbi-build/orbi.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+            "id": "C4",
+            "section_title": "What it does",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "text": "Command errors fail immediately without silent fallbacks, requiring human intervention via 'ai-blocked' issue labels."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "text": "AI never merges or pushes protected branches directly, requiring an independent review gate."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/orbi-build/orbi"
+        },
+        {
+          "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+          "id": "C3",
+          "section_title": "Why Orbi",
+          "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+        }
+      ],
+      "text": "Automates the end-to-end software delivery lifecycle from a GitHub Issue to a merged pull request and release, removing manual polling and supervision overhead."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "text": "Stateless server design relying entirely on GitHub Issues for state storage, executing tasks through periodic ticks triggered by systemd or launchd timers."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "Isolated worktree creation from a frozen base SHA"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "Independent PR review and automated fix cycles"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "Scheduler integration with systemd and launchd"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "Fail-fast error handling marking blocked issues without silent fallbacks"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/orbi-build/orbi"
+            }
+          ],
+          "name": "Python"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/orbi-build/orbi"
+            },
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+              "id": "C5",
+              "section_title": "Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "GitHub"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "- `uv`: `uv --version`; Pi and its provider: `pi --version`, then `pi --print \"reply with the single word: ok\"` - GitHub CLI ≥ 2.94 (official repository — Ubuntu 24.04's package 2.45.0 is too old): run `gh auth login` once, then verify `gh…",
+              "id": "C6",
+              "section_title": "Ready check (before setup)",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "systemd"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+              "id": "C3",
+              "section_title": "Why Orbi",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+              "id": "C4",
+              "section_title": "What it does",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "- `uv`: `uv --version`; Pi and its provider: `pi --version`, then `pi --print \"reply with the single word: ok\"` - GitHub CLI ≥ 2.94 (official repository — Ubuntu 24.04's package 2.45.0 is too old): run `gh auth login` once, then verify `gh…",
+              "id": "C6",
+              "section_title": "Ready check (before setup)",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "name": "launchd"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` git clone https://github.com/orbi-build/orbi.git && cd orbi uv tool install --force --reinstall --editable --python python3 . # compatible system Python (>= 3.14, e.g. Fedora 43 / current Arch); older (e.g. Ubuntu 24.04's 3.12):…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "text": "Python >= 3.14"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- `uv`: `uv --version`; Pi and its provider: `pi --version`, then `pi --print \"reply with the single word: ok\"` - GitHub CLI ≥ 2.94 (official repository — Ubuntu 24.04's package 2.45.0 is too old): run `gh auth login` once, then verify `gh…",
+              "id": "C6",
+              "section_title": "Ready check (before setup)",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "text": "GitHub CLI >= 2.94"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` git clone https://github.com/orbi-build/orbi.git && cd orbi uv tool install --force --reinstall --editable --python python3 . # compatible system Python (>= 3.14, e.g. Fedora 43 / current Arch); older (e.g. Ubuntu 24.04's 3.12):…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            },
+            {
+              "excerpt": "- `uv`: `uv --version`; Pi and its provider: `pi --version`, then `pi --print \"reply with the single word: ok\"` - GitHub CLI ≥ 2.94 (official repository — Ubuntu 24.04's package 2.45.0 is too old): run `gh auth login` once, then verify `gh…",
+              "id": "C6",
+              "section_title": "Ready check (before setup)",
+              "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+            }
+          ],
+          "text": "uv package manager"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/orbi-build/orbi"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "Another real delivery, recorded from the live GitHub pages — including the review that rejected the first attempt: 1. **An issue** — a bug, labelled `ai-ready` 2. **It writes the code** — PR #1023, on a recorded base SHA 3. **The review…",
+            "id": "C7",
+            "section_title": "The loop, in 35 seconds",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "text": "Automated bug fixing and feature implementation directly from labeled GitHub Issues."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "text": "Automated release management, running release gates, and publishing tags and release notes."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/orbi-build/orbi"
+        },
+        {
+          "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+          "id": "C5",
+          "section_title": "Orbi",
+          "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+        }
+      ],
+      "explanation": "Orbi is a self-hostable autonomous software delivery system for GitHub. By labeling a GitHub Issue as 'ai-ready', Orbi creates an isolated worktree, plans and implements the task, runs tests, and takes the PR through independent review and merge gates. It uses GitHub Issues as its only state store without needing an external database, queue, or custom daemon.",
+      "one_line": "An open-source software factory that turns GitHub Issues into independently reviewed, merged PRs and tagged releases."
+    },
+    "who_should_care": [
+      {
+        "audience": "Open-Source Maintainers",
+        "citations": [
+          {
+            "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/orbi-build/orbi"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "reason": "Can automate issue triage, implementation, and pull request merging using GitHub labels."
+      },
+      {
+        "audience": "DevOps Engineers",
+        "citations": [
+          {
+            "excerpt": "orbi-build/orbi: Open-source (AGPL-3.0), self-hostable lights-out software factory for the agent era: label a GitHub Issue, get an independently reviewed, merged PR and a tagged release. Topics: agpl, ai agent, ai coding agent, autonomous…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/orbi-build/orbi"
+          },
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "reason": "Can set up self-hosted automated software factories driven by git workflows and background timers like systemd or launchd."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Label a GitHub Issue. Get back a reviewed, merged PR. Release when you decide.** Try Orbi Cloud — 3 merged deliveries free · no server, no credit card required **See one real loop:** Issue #1367 → PR #1370 → Release v0.5.47 Orbi is an…",
+            "id": "C5",
+            "section_title": "Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "point": "GitHub Issues serve as the sole state store, eliminating separate task databases, background queues, or long-running daemons."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "point": "Features independent review and merge gates where an independent session reviews pull requests and fixes findings before merging."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Issues are the task pool**: the `ai-ready` label dispatches work, and the delivery record (comments, PRs, and CI) is complete by default, with no second task system; - **Fully automated**: a user scheduler timer (systemd on…",
+            "id": "C3",
+            "section_title": "Why Orbi",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` GitHub Issue (ai-ready) → Claim: create a feature branch + isolated worktree (from the frozen origin/main SHA) → Pi development: plan → implement → test → verify → Commit delivery (the Agent stops at the commit) → Runner closeout: sync…",
+            "id": "C4",
+            "section_title": "What it does",
+            "source_url": "https://github.com/orbi-build/orbi/blob/main/README.md"
+          }
+        ],
+        "point": "Provides end-to-end observability by carrying a consistent run_id across journal logs and GitHub progress comments."
+      }
+    ]
+  },
+  "source_hash": "a45f41b754b8f7b9bd2cc8282d404152fa366c072c3fb228cdc4691add92e26b"
+}

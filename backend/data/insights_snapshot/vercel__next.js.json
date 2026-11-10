@@ -1,0 +1,258 @@
+{
+  "full_name": "vercel/next.js",
+  "generated_at": "2026-11-10 07:46:04.530222+00:00",
+  "github_id": 70107786,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vercel/next.js"
+          },
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "complementary_tech": [
+          "React"
+        ],
+        "description": "Develop a web application combining client UI and server capabilities.",
+        "how_it_is_used": "Next.js provides the full-stack framework extending React features with Rust-based build tooling.",
+        "title": "Full-Stack Web Application"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vercel/next.js"
+          },
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "complementary_tech": [
+          "Markdown"
+        ],
+        "description": "Build a statically generated blog site with fast build performance.",
+        "how_it_is_used": "Uses Next.js static site generation capabilities and Rust-based JavaScript build tools.",
+        "title": "Static Blog Platform"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Visit https://nextjs.org/docs to view the full documentation.",
+            "id": "C3",
+            "section_title": "Documentation",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "label": "Next.js Documentation",
+        "url": "https://nextjs.org/docs"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "If you believe you have found a security vulnerability in Next.js, we encourage you to **_responsibly disclose this and NOT open a public issue_**. To participate in our Open Source Software Bug Bounty program, please visit…",
+            "id": "C7",
+            "section_title": "Security",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "label": "HackerOne Bug Bounty Program",
+        "url": "https://hackerone.com/vercel"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+          "id": "C2",
+          "section_title": "Getting Started",
+          "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+        }
+      ],
+      "text": "Enables developers to build full-stack web applications using React while leveraging Rust-based JavaScript tooling for fast builds."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+              "id": "C2",
+              "section_title": "Getting Started",
+              "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+            }
+          ],
+          "name": "Full-stack web application development"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+              "id": "C2",
+              "section_title": "Getting Started",
+              "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+            }
+          ],
+          "name": "Rust-based JavaScript tooling for fast builds"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/vercel/next.js"
+            }
+          ],
+          "name": "Server rendering and static site generation"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/vercel/next.js"
+            },
+            {
+              "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+              "id": "C2",
+              "section_title": "Getting Started",
+              "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+            }
+          ],
+          "name": "React"
+        }
+      ],
+      "integrations": [],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "text": "Building full-stack web applications extending React capabilities."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vercel/next.js"
+          }
+        ],
+        "text": "Creating static site generator (SSG) and server-rendered web applications."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "vercel/next.js: The React Framework Topics: blog, browser, compiler, components, hybrid, nextjs, node, react, server rendering, ssg, static, static site generator, universal, vercel. Primary language: JavaScript.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/vercel/next.js"
+        },
+        {
+          "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+          "id": "C2",
+          "section_title": "Getting Started",
+          "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+        }
+      ],
+      "explanation": "Next.js is a React framework that enables developers to build full-stack web applications. It extends the latest React features and integrates Rust-based JavaScript tooling for fast builds.",
+      "one_line": "A React framework for building full-stack web applications with Rust-based JavaScript tooling."
+    },
+    "who_should_care": [
+      {
+        "audience": "React Developers",
+        "citations": [
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "reason": "To create full-stack web applications while taking advantage of fast Rust-based tooling and React features."
+      },
+      {
+        "audience": "Open Source Contributors",
+        "citations": [
+          {
+            "excerpt": "The Next.js community can be found on GitHub Discussions where you can ask questions, voice ideas, and share your projects with other people. To chat with other community members, you can join the Next.js Discord server. Do note that our…",
+            "id": "C4",
+            "section_title": "Community",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          },
+          {
+            "excerpt": "Contributions to Next.js are welcome and highly appreciated. However, before you jump right into it, we would like you to review our Contribution Guidelines to make sure you have a smooth experience contributing to Next.js.",
+            "id": "C5",
+            "section_title": "Contributing",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          },
+          {
+            "excerpt": "We have a list of **good first issues** that contain bugs that have a relatively limited scope. This is a great place for newcomers and beginners alike to get started, gain experience, and get familiar with our contribution process. ---",
+            "id": "C6",
+            "section_title": "Good First Issues:",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "reason": "To find beginner-friendly bugs via good first issues and contribute under established community guidelines."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "point": "Integrates Rust-based JavaScript tooling designed for fast build performance."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Used by some of the world's largest companies, Next.js enables you to create full-stack web applications by extending the latest React features, and integrating powerful Rust-based JavaScript tooling for the fastest builds. - Visit our…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/vercel/next.js/blob/canary/readme.md"
+          }
+        ],
+        "point": "Extends the latest React capabilities to enable full-stack web application development."
+      }
+    ]
+  },
+  "source_hash": "475e459a25ec1d1fef89a90bf43d5e47bbf12cff2fdab5ffa877c6305d677e8b"
+}

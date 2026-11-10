@@ -1,0 +1,309 @@
+{
+  "full_name": "shadcn-ui/ui",
+  "generated_at": "2026-11-10 07:46:47.866853+00:00",
+  "github_id": 585146387,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          },
+          {
+            "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+            "id": "C2",
+            "section_title": "shadcn/ui",
+            "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Tailwind CSS"
+        ],
+        "description": "Build a corporate design system by extending and customizing the component templates provided by shadcn/ui.",
+        "how_it_is_used": "Use the composable, accessible base components as starter code and modify styling and structure to fit brand requirements.",
+        "title": "Custom Application Design System"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "TypeScript"
+        ],
+        "description": "Develop a generative AI web interface utilizing custom UI components built on top of shadcn/ui.",
+        "how_it_is_used": "Integrate the component library into a web framework to render interactive interfaces for generative AI applications.",
+        "title": "Generative UI Web Application"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Visit https://ui.shadcn.com/docs to view the documentation.",
+            "id": "C3",
+            "section_title": "Documentation",
+            "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+          }
+        ],
+        "label": "Documentation",
+        "url": "https://ui.shadcn.com/docs"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/shadcn-ui/ui"
+        },
+        {
+          "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+          "id": "C2",
+          "section_title": "shadcn/ui",
+          "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+        }
+      ],
+      "text": "It provides reusable, accessible components and customizable code to help developers build their own tailored component libraries instead of relying on rigid, pre-packaged UI frameworks."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Composable and accessible UI component architecture"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            },
+            {
+              "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+              "id": "C2",
+              "section_title": "shadcn/ui",
+              "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+            }
+          ],
+          "name": "Customizable and extendable component source code"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Next.js"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Tailwind CSS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Radix UI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "React Aria"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Laravel"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "Vite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/shadcn-ui/ui"
+            }
+          ],
+          "name": "TanStack"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          },
+          {
+            "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+            "id": "C2",
+            "section_title": "shadcn/ui",
+            "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+          }
+        ],
+        "text": "Building a custom component library for web applications."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          }
+        ],
+        "text": "Integrating accessible, composable UI building blocks into React and Next.js applications."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/shadcn-ui/ui"
+        },
+        {
+          "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+          "id": "C2",
+          "section_title": "shadcn/ui",
+          "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+        }
+      ],
+      "explanation": "shadcn/ui provides a collection of composable and accessible components built with thoughtful defaults. Developers can customize, extend, and adapt the component code to create their own component libraries. The project is open source and open code.",
+      "one_line": "A collection of composable, accessible components for building custom component libraries."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Engineers and UI Developers",
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          },
+          {
+            "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+            "id": "C2",
+            "section_title": "shadcn/ui",
+            "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+          }
+        ],
+        "reason": "They can build bespoke component libraries for their applications using accessible and fully customizable code templates."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          },
+          {
+            "excerpt": "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.",
+            "id": "C2",
+            "section_title": "shadcn/ui",
+            "source_url": "https://github.com/shadcn-ui/ui/blob/main/README.md"
+          }
+        ],
+        "point": "Allows developers to own, customize, and extend the component code directly rather than using a closed library."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "shadcn-ui/ui: Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own. Topics: ai, base ui, components, gen ui, generative ai, generative ui,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/shadcn-ui/ui"
+          }
+        ],
+        "point": "Focuses on composable and accessible component designs with thoughtful default configurations."
+      }
+    ]
+  },
+  "source_hash": "fe8e3d7b17a146e3e904463d0848913517beda702decc7b26fce6ab0f5ed3771"
+}

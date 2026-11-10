@@ -1,0 +1,467 @@
+{
+  "full_name": "VinkyDev/vibestart",
+  "generated_at": "2026-11-10 09:17:39.471453+00:00",
+  "github_id": 1403809641,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+            "id": "C5",
+            "section_title": "Supported stacks",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+            "id": "C6",
+            "section_title": "Supported stacks",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "TanStack Start",
+          "Effect",
+          "Tailwind CSS"
+        ],
+        "description": "Build a modern full-stack web app featuring Effect mode, typed errors, scoped service layers, and TanStack Start.",
+        "how_it_is_used": "VibeStart provides the composed base project structure using TanStack Start and Effect HTTP/RPC components.",
+        "title": "Full-Stack Web Application with Effect and TanStack Start"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+            "id": "C5",
+            "section_title": "Supported stacks",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+            "id": "C6",
+            "section_title": "Supported stacks",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Expo",
+          "Electron",
+          "Drizzle ORM"
+        ],
+        "description": "Create an ecosystem with a shared backend and multiple clients including Expo for mobile and Electron for desktop.",
+        "how_it_is_used": "VibeStart composes the target layers including Expo, Electron, and a chosen backend database and ORM.",
+        "title": "Cross-Platform Mobile and Desktop Suite"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+            "id": "C4",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "text": "Does not host applications, migrate production data, or hide the generated code."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Full details: Why vibestart. With a coding agent, the hard part of an application is rarely the first day. It is the thirtieth: features pile up, the structure erodes, and each fix introduces another bug. VibeStart gives the agent, and…",
+          "id": "C2",
+          "section_title": "Why VibeStart",
+          "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+        }
+      ],
+      "text": "Solves the problem of codebase erosion and declining code quality when working with AI coding agents over extended periods, where features pile up and fixes introduce new bugs."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+              "id": "C4",
+              "section_title": "Why VibeStart",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Type safety across the stack from database to frontend without code generation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+              "id": "C4",
+              "section_title": "Why VibeStart",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Automated template upgrading via three-way merge"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+              "id": "C3",
+              "section_title": "Why VibeStart",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Constraint validation for incompatible technology stack choices"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+              "id": "C3",
+              "section_title": "Why VibeStart",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "TanStack Start"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Next.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Hono"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            },
+            {
+              "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+              "id": "C6",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Effect"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Expo"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Electron"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+              "id": "C3",
+              "section_title": "Why VibeStart",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Drizzle ORM"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Prisma"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Mongoose"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+              "id": "C6",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Better Auth"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "MySQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "SQLite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Layer | Choices | | ------------------------ | ---------------------------------------------------------------------------------------------- | | Mode | Standard (default) or Effect (`--mode effect`) | | App | React SPA (TanStack…",
+              "id": "C5",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "MongoDB"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+              "id": "C6",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Playwright"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | ORM | Drizzle, or Prisma on PostgreSQL and MySQL; Mongoose on MongoDB | | Auth | Better Auth | | Deployment | Docker, Void on Cloudflare Workers (preview) | | UI | shadcn (Base UI) and Tailwind 4 | | Unit & integration tests | Vitest |…",
+              "id": "C6",
+              "section_title": "Supported stacks",
+              "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+            }
+          ],
+          "name": "Vitest"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "VinkyDev/vibestart: Compose a full-stack TypeScript stack and get a cutting-edge, verified project made for AI coding agents, with type safety, lint, and tests built in. | 自由组合全栈 TypeScript 技术栈，得到一个前沿、经过验证、为 AI 编码智能体打造的项目，内置类型安全、lint 与测试。…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/VinkyDev/vibestart"
+          },
+          {
+            "excerpt": "Paste this command, along with what you want to build, into Claude Code, Codex, Cursor, or any coding agent: ``` npx skills add VinkyDev/vibestart --skill vibestart ``` The agent installs the vibestart skill, chooses the stack, and creates…",
+            "id": "C9",
+            "section_title": "Hand it to an AI agent",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "text": "Initializing a verified full-stack TypeScript application tailored for development with AI coding agents like Claude Code, Codex, or Cursor."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+            "id": "C4",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "text": "Upgrading an existing project's template structure via a three-way merge without overwriting application code."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "VinkyDev/vibestart: Compose a full-stack TypeScript stack and get a cutting-edge, verified project made for AI coding agents, with type safety, lint, and tests built in. | 自由组合全栈 TypeScript 技术栈，得到一个前沿、经过验证、为 AI 编码智能体打造的项目，内置类型安全、lint 与测试。…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/VinkyDev/vibestart"
+        },
+        {
+          "excerpt": "Full details: Why vibestart. With a coding agent, the hard part of an application is rarely the first day. It is the thirtieth: features pile up, the structure erodes, and each fix introduces another bug. VibeStart gives the agent, and…",
+          "id": "C2",
+          "section_title": "Why VibeStart",
+          "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+        },
+        {
+          "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+          "id": "C4",
+          "section_title": "Why VibeStart",
+          "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+        }
+      ],
+      "explanation": "VibeStart is a tool that allows developers to compose a full-stack TypeScript stack for AI coding agents, providing a project structure with built-in type safety, linting, and tests. It helps prevent codebase erosion over time by giving agents a consistent structure, an AGENTS.md guide, and rapid feedback checks. Projects are generated as ordinary repositories with no runtime dependency on VibeStart.",
+      "one_line": "Compose a verified full-stack TypeScript project tailored for AI coding agents with built-in tests and type safety."
+    },
+    "who_should_care": [
+      {
+        "audience": "Developers using AI coding agents",
+        "citations": [
+          {
+            "excerpt": "Full details: Why vibestart. With a coding agent, the hard part of an application is rarely the first day. It is the thirtieth: features pile up, the structure erodes, and each fix introduces another bug. VibeStart gives the agent, and…",
+            "id": "C2",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+            "id": "C3",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "reason": "Provides a clean starting architecture with written rules and fast checks designed to help coding agents write and maintain good code."
+      },
+      {
+        "audience": "Full-stack TypeScript developers",
+        "citations": [
+          {
+            "excerpt": "VinkyDev/vibestart: Compose a full-stack TypeScript stack and get a cutting-edge, verified project made for AI coding agents, with type safety, lint, and tests built in. | 自由组合全栈 TypeScript 技术栈，得到一个前沿、经过验证、为 AI 编码智能体打造的项目，内置类型安全、lint 与测试。…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/VinkyDev/vibestart"
+          },
+          {
+            "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+            "id": "C4",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "reason": "Offers an end-to-end TypeScript toolchain spanning from the database schema to frontend pages without requiring a separate code generation step."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+            "id": "C3",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "point": "Every generated project ships with an AGENTS.md file instructing coding agents on how and where changes should be made."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Good code begets good code.** An agent imitates the code around it, follows written rules, and corrects itself from errors. Every project ships a consistent codebase, an `AGENTS.md` that says where and how each change is made, and…",
+            "id": "C3",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          },
+          {
+            "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+            "id": "C4",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "point": "Every supported stack combination is verified in CI and its passes are recorded with fingerprints before a release."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "its choices together, have been installed, type-checked, linted, tested, tested in a browser, and built in a combination that CI ran. The passes are recorded with fingerprints on the `verification` branch, and the CLI shows a…",
+            "id": "C4",
+            "section_title": "Why VibeStart",
+            "source_url": "https://github.com/VinkyDev/vibestart/blob/main/README.md"
+          }
+        ],
+        "point": "Template upgrades use a three-way merge to apply updates to template files while keeping your custom application code intact."
+      }
+    ]
+  },
+  "source_hash": "47e16573780d189fced397b0a7663f1d70c6ce3583513301aa263dda8cb80952"
+}

@@ -1,0 +1,660 @@
+{
+  "full_name": "jddevtime/open-lakehouse-compute-fabric",
+  "generated_at": "2026-11-10 09:17:49.812438+00:00",
+  "github_id": 1415050252,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+            "id": "C4",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "Claude Code",
+          "Anthropic MCP SDK"
+        ],
+        "description": "Build an intelligent assistant using Claude Desktop or Claude Code connected through OLCF's MCP endpoint to answer natural language queries about data provenance and upstream impact analysis.",
+        "how_it_is_used": "Uses the built-in MCP endpoint to browse the data catalog and follow lineage edges.",
+        "title": "AI-Powered Data Lineage Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Microsoft Fabric",
+          "Apache Spark",
+          "OneLake"
+        ],
+        "description": "Create a pipeline workflow that offloads heavy Spark execution from Microsoft Fabric notebooks to an on-premises or cloud-based Spark cluster managed by OLCF.",
+        "how_it_is_used": "Uses the Microsoft Fabric compute extension via `olcf.run_remote()` inside a Fabric notebook.",
+        "title": "Hybrid Microsoft Fabric Offloader"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+            "id": "C5",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Prometheus",
+          "Grafana",
+          "DuckDB"
+        ],
+        "description": "Set up scheduled pipelines to run Delta table optimization, vacuum routines, and data quality checks while exposing metrics to observability tooling.",
+        "how_it_is_used": "Uses OLCF pipelines, Lakehouse and SQL management features, and Prometheus/OTLP export capabilities.",
+        "title": "Automated Lakehouse Maintenance and Monitoring"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -fsSL https://raw.githubusercontent.com/jddevtime/open-lakehouse-compute-fabric/main/scripts/install.sh | sh ``` It downloads a checksum-verified `uv`, lets `uv` provide a private Python 3.13, installs OLCF from this repository's…",
+            "id": "C9",
+            "section_title": "1. One-line installer (macOS and Linux, also a Mac without the Xcode Command Line Tools)",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "label": "One-line installer script",
+        "url": "https://raw.githubusercontent.com/jddevtime/open-lakehouse-compute-fabric/main/scripts/install.sh"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "OLCF is a pure-Python package; **nothing is compiled**, no administrator rights are needed, and every dependency is a wheel. There is no package-index or release download yet, so every route below installs from this repository.…",
+            "id": "C8",
+            "section_title": "Install",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "text": "There is no official package-index or release download yet, requiring installation directly from the repository source."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+          "id": "C3",
+          "section_title": "What it is",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        },
+        {
+          "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+          "id": "C4",
+          "section_title": "What it is",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        },
+        {
+          "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+          "id": "C5",
+          "section_title": "What is in the box",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        }
+      ],
+      "text": "Provides an independent lakehouse compute platform and web console with enterprise capabilities like data lineage, workspace management, and Spark orchestration that can be run locally or across distributed infrastructure without requiring a Microsoft subscription."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+            "id": "C7",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "text": "Consists of a control plane handling the REST API, modules, worker hub, and metadata database (SQLite or PostgreSQL); a worker fleet of agents dialing out to the control plane; and a data plane where executors and drivers read and write storage directly."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Web console, REST API, CLI, and Python SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+              "id": "C6",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Worker agent fleet with WebSocket and optional mutual TLS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Microsoft Fabric compute extension"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+              "id": "C5",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "OLCF Intelligence for lineage and impact analysis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+              "id": "C6",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "MCP endpoint with 29 tools"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+              "id": "C6",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Role-Based Access Control (RBAC) with eight roles"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+              "id": "C5",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Apache Spark"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+              "id": "C5",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Apache Iceberg"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+              "id": "C5",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Delta Lake"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+              "id": "C5",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "DuckDB"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+              "id": "C4",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Microsoft Fabric"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+            },
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "OneLake"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "S3 and MinIO"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "ADLS Gen2"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+              "id": "C6",
+              "section_title": "What is in the box",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+              "id": "C3",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            },
+            {
+              "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+              "id": "C4",
+              "section_title": "What it is",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Desktop and Claude Code"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "OLCF is a pure-Python package; **nothing is compiled**, no administrator rights are needed, and every dependency is a wheel. There is no package-index or release download yet, so every route below installs from this repository.…",
+              "id": "C8",
+              "section_title": "Install",
+              "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+            }
+          ],
+          "text": "Python package environment (pure-Python package with wheel dependencies)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "text": "Executing Microsoft Fabric notebooks remotely on custom Spark infrastructure using `olcf.run_remote()`."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+            "id": "C4",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "text": "Querying lakehouse metadata and tracing data lineage using AI assistants via the Model Context Protocol (MCP)."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "OLCF gives you, on one laptop, a few on-premises machines, cloud VMs or Kubernetes:",
+            "id": "C2",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+            "id": "C5",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "text": "Running multi-tenant lakehouse workspaces with notebooks, SQL queries, pipelines, and schedules on local hardware or Kubernetes."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "jddevtime/open-lakehouse-compute-fabric: Open Lakehouse Compute Fabric: an open-source lakehouse platform with Microsoft Fabric Compute Extension. Topics: apache iceberg, apache spark, data engineering, delta lake, lakehouse, mcp,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric"
+        },
+        {
+          "excerpt": "OLCF gives you, on one laptop, a few on-premises machines, cloud VMs or Kubernetes:",
+          "id": "C2",
+          "section_title": "What it is",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        },
+        {
+          "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+          "id": "C3",
+          "section_title": "What it is",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        },
+        {
+          "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+          "id": "C4",
+          "section_title": "What it is",
+          "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+        }
+      ],
+      "explanation": "Open Lakehouse Compute Fabric (OLCF) is a platform that provides workspaces, lakehouses, a SQL editor, dashboards, and Jupyter-compatible notebooks across local laptops, on-premises machines, cloud VMs, or Kubernetes. It includes a worker agent system that forms an Apache Spark Standalone cluster and features a Microsoft Fabric compute extension allowing remote execution from Fabric notebooks directly to your own Spark environment. Additionally, it offers OLCF Intelligence for data lineage and an MCP endpoint for AI agents.",
+      "one_line": "An open-source lakehouse platform featuring a Microsoft Fabric Compute Extension and multi-machine compute fabric."
+    },
+    "who_should_care": [
+      {
+        "audience": "Data Engineers",
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+            "id": "C5",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "reason": "They can manage lakehouses, Delta and Iceberg tables, build pipelines, and orchestrate Spark standalone clusters across local or cloud infrastructure."
+      },
+      {
+        "audience": "Platform Engineers",
+        "citations": [
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+            "id": "C7",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "reason": "They can deploy a control plane with SQLite or PostgreSQL, configure RBAC, use OIDC/LDAP, monitor via Prometheus/OTLP, and manage a secure fleet of outbound-dialing worker agents."
+      },
+      {
+        "audience": "AI Application Developers",
+        "citations": [
+          {
+            "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+            "id": "C4",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "reason": "They can connect AI agents to the MCP endpoint to query data catalogs, analyze data lineage, and run read-only SQL securely."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a Microsoft Fabric compute extension enabling notebooks to run remotely on your own Spark cluster while reading and writing OneLake directly."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "an **MCP endpoint** so AI agents such as Claude Desktop and Claude Code can browse the catalog, follow lineage and run read-only SQL with exactly the permissions of the person who created the token. Fabric is an adapter, not the core.…",
+            "id": "C4",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "point": "Features an MCP endpoint allowing AI agents like Claude Desktop and Claude Code to browse the catalog, follow lineage, and execute read-only SQL."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "score, gaps and coverage | guide | | Pipelines | notebook, Spark job, script, SQL, copy, HTTP and control-flow activities; cron, webhook, storage and dependency triggers; outbound signed webhooks; alerts | guide | | Security | RBAC with…",
+            "id": "C6",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "* **Control plane** (one process, or several behind a load balancer): REST API `/v1` with identity, RBAC and audit; the modules (workspaces and items, catalog, scheduler and job services, Intelligence, the Fabric adapter); the worker hub…",
+            "id": "C7",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "point": "Built with worker agents that dial out via WebSocket using optional mutual TLS, requiring no inbound network access to workers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* a **web console, REST API, CLI and Python SDK** with workspaces, lakehouses (Delta Lake, Iceberg discovery, Parquet), a SQL editor, dashboards, Jupyter-compatible notebooks, pipelines, environments, connections, secrets, schedules,…",
+            "id": "C3",
+            "section_title": "What it is",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Area | What you get | Guide | |---|---|---| | Workspaces and items | multi-tenant workspaces; notebooks, lakehouses, SQL queries, pipelines, environments, Spark job definitions, variable sets, schedules, reports; versions, recycle bin,…",
+            "id": "C5",
+            "section_title": "What is in the box",
+            "source_url": "https://github.com/jddevtime/open-lakehouse-compute-fabric/blob/main/README.md"
+          }
+        ],
+        "point": "Offers OLCF Intelligence to track dataset lineage, impact analysis, ownership, and data quality gaps."
+      }
+    ]
+  },
+  "source_hash": "abd2c73cbe1f02066a8f534b60a2b390b3ebb9d4de23684b3c46a3cd90705b35"
+}

@@ -1,0 +1,542 @@
+{
+  "full_name": "qwdwqfwq/topconf-paper-figure-gallery",
+  "generated_at": "2026-11-10 09:14:53.883676+00:00",
+  "github_id": 1374667371,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+            "id": "C8",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "JavaScript",
+          "Canvas API",
+          "Tailwind CSS"
+        ],
+        "description": "A local web application that extracts color palettes and layout hierarchies from selected gallery figures to guide graphic consistency.",
+        "how_it_is_used": "Relies on the gallery's categorized visual pattern tags, metadata, and extracted figure crops.",
+        "title": "Academic Figure Style Inspector"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "在线浏览 / Online: GitHub Pages。 本地运行 / Local server: ``` git clone https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git cd topconf-paper-figure-gallery python -m http.server 8000 # open http://localhost:8000 ``` 或直接双击…",
+            "id": "C3",
+            "section_title": "🚀 快速开始 / Quick start",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "JavaScript",
+          "IndexedDB",
+          "FlexSearch"
+        ],
+        "description": "An offline-first search utility indexing paper metadata and visual pattern tags to quickly find specific architectural diagrams or flowcharts.",
+        "how_it_is_used": "Utilizes the pre-indexed data structure provided in assets/figures.js.",
+        "title": "Offline Research Diagram Search Engine"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "在线浏览 / Online: GitHub Pages。 本地运行 / Local server: ``` git clone https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git cd topconf-paper-figure-gallery python -m http.server 8000 # open http://localhost:8000 ``` 或直接双击…",
+            "id": "C3",
+            "section_title": "🚀 快速开始 / Quick start",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+            "id": "C9",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "text": "FigureForge generates high-quality first drafts for Figure 1 genres; text and numbers must be manually checked before submission."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+            "id": "C9",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "text": "Certain providers like Anthropic and Tencent Hunyuan do not support browser CORS natively and require a relay when used with the browser tool."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+          "id": "C6",
+          "section_title": "English",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+        },
+        {
+          "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+          "id": "C8",
+          "section_title": "🛠️ FigureForge Beta",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+        }
+      ],
+      "text": "Helps researchers find design and layout references for academic paper figures (such as system frameworks, pipelines, architectures, and teasers) by browsing curated, hand-reviewed top-conference figures instead of starting from generic chat prompts."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "以下是画廊 FigureForge 的实际生图示例。 机器人策略与执行Robot policy &amp; execution 时空扩散 Transformer · 可控视频生成Controllable video generation via spatio-temporal diffusion transformer 湿磨芦苇秸秆浆料 · 稳定性与流变控制Stability and rheology control of wet-milled reed straw…",
+            "id": "C2",
+            "section_title": "✨ FigureForge 生图成品 · Generated examples",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "在线浏览 / Online: GitHub Pages。 本地运行 / Local server: ``` git clone https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git cd topconf-paper-figure-gallery python -m http.server 8000 # open http://localhost:8000 ``` 或直接双击…",
+            "id": "C3",
+            "section_title": "🚀 快速开始 / Quick start",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+            "id": "C9",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "text": "Client-side static web application where data is bundled locally in JavaScript files and processing tasks such as vector/text searching and UI rendering run entirely inside the browser."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "以下是画廊 FigureForge 的实际生图示例。 机器人策略与执行Robot policy &amp; execution 时空扩散 Transformer · 可控视频生成Controllable video generation via spatio-temporal diffusion transformer 湿磨芦苇秸秆浆料 · 稳定性与流变控制Stability and rheology control of wet-milled reed straw…",
+              "id": "C2",
+              "section_title": "✨ FigureForge 生图成品 · Generated examples",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+              "id": "C6",
+              "section_title": "English",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Static HTML/CSS/JS gallery with masonry layout and lightbox"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+              "id": "C6",
+              "section_title": "English",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Full-text search over titles, authors, and keywords"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+              "id": "C7",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Local CLIP and BM25 hybrid search for visual pattern matching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+              "id": "C8",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Browser-based figure generation supporting SVG and bitmap output modes"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "qwdwqfwq/topconf-paper-figure-gallery: 3,516 curated Figure 1 / teasers from ICLR, ICML, NeurIPS, CVPR, ACL, AAAI (2023-2026), with tier badges and FigureForge retrieval-augmented figure drafting Topics: aaai, academic writing, acl,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery"
+            }
+          ],
+          "name": "JavaScript"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Volcengine Ark"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "SiliconFlow"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Zhipu"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "感谢 **Infistar.cc 无限星河** 为本项目提供大模型 API 算力支持！ - 🔬 **主流模型一站接入**：聚合 Claude、OpenAI、DeepSeek 等模型，支持图表代码生成（TikZ / Python）、论文润色与图表解析。 - 📉 **降低科研成本**：部分模型价格低至官方 0.1 折，倍率以平台实时公示为准。 - ⚡ **高并发支持**：支持开票；模型可用性与限流规则以平台实时状态为准。 - 🎁 **专属体验礼**：通过专属推广链接注册，可领取…",
+              "id": "C5",
+              "section_title": "🎨 算力赞助伙伴｜Infistar.cc 无限星河",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "DeepSeek"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "感谢 **Infistar.cc 无限星河** 为本项目提供大模型 API 算力支持！ - 🔬 **主流模型一站接入**：聚合 Claude、OpenAI、DeepSeek 等模型，支持图表代码生成（TikZ / Python）、论文润色与图表解析。 - 📉 **降低科研成本**：部分模型价格低至官方 0.1 折，倍率以平台实时公示为准。 - ⚡ **高并发支持**：支持开票；模型可用性与限流规则以平台实时状态为准。 - 🎁 **专属体验礼**：通过专属推广链接注册，可领取…",
+              "id": "C5",
+              "section_title": "🎨 算力赞助伙伴｜Infistar.cc 无限星河",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Moonshot"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Qwen"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Tencent Hunyuan"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "在线浏览 / Online: GitHub Pages。 本地运行 / Local server: ``` git clone https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git cd topconf-paper-figure-gallery python -m http.server 8000 # open http://localhost:8000 ``` 或直接双击…",
+              "id": "C3",
+              "section_title": "🚀 快速开始 / Quick start",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+              "id": "C7",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "text": "A modern web browser or a local Python installation to run a static file server."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+              "id": "C8",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            },
+            {
+              "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+              "id": "C9",
+              "section_title": "🛠️ FigureForge Beta",
+              "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+            }
+          ],
+          "text": "An API key for a supported model provider if using the FigureForge generation feature."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "text": "Browsing and filtering conference paper figures by venue, year, acceptance tier (Oral, Spotlight, Best Paper), and visual pattern."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+            "id": "C7",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+            "id": "C8",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+            "id": "C9",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "text": "Drafting paper figures by providing titles, abstracts, or PDFs to FigureForge, selecting layout references, and generating SVG or bitmap outputs using bring-your-own model API keys."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "qwdwqfwq/topconf-paper-figure-gallery: 3,516 curated Figure 1 / teasers from ICLR, ICML, NeurIPS, CVPR, ACL, AAAI (2023-2026), with tier badges and FigureForge retrieval-augmented figure drafting Topics: aaai, academic writing, acl,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery"
+        },
+        {
+          "excerpt": "以下是画廊 FigureForge 的实际生图示例。 机器人策略与执行Robot policy &amp; execution 时空扩散 Transformer · 可控视频生成Controllable video generation via spatio-temporal diffusion transformer 湿磨芦苇秸秆浆料 · 稳定性与流变控制Stability and rheology control of wet-milled reed straw…",
+          "id": "C2",
+          "section_title": "✨ FigureForge 生图成品 · Generated examples",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+        },
+        {
+          "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+          "id": "C6",
+          "section_title": "English",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+        },
+        {
+          "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+          "id": "C7",
+          "section_title": "🛠️ FigureForge Beta",
+          "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+        }
+      ],
+      "explanation": "Top-Conf Figure Gallery collects Figure 1 and teaser figures from six machine learning and AI conferences spanning 2023 to 2026 as a design reference. It includes a browser-based tool called FigureForge that uses these figures as layout references to draft new paper figures based on user input. The project runs as a pure static site with no backend or build step required.",
+      "one_line": "A searchable, filterable gallery of Figure 1 and teaser figures from top machine learning conferences."
+    },
+    "who_should_care": [
+      {
+        "audience": "Academic Researchers and Authors",
+        "citations": [
+          {
+            "excerpt": "以下是画廊 FigureForge 的实际生图示例。 机器人策略与执行Robot policy &amp; execution 时空扩散 Transformer · 可控视频生成Controllable video generation via spatio-temporal diffusion transformer 湿磨芦苇秸秆浆料 · 稳定性与流变控制Stability and rheology control of wet-milled reed straw…",
+            "id": "C2",
+            "section_title": "✨ FigureForge 生图成品 · Generated examples",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "reason": "Seeking layout references and visual inspiration for academic paper Figure 1 illustrations, architectures, or pipelines."
+      },
+      {
+        "audience": "Machine Learning Practitioners",
+        "citations": [
+          {
+            "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+            "id": "C7",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "model reads the picks, distils their common layout, elements, palette and hierarchy, selects 2–3 representative figures, and only then generates. 5. **Choose a mode, add your key, download.** SVG mode gives accurate, editable text (Figma /…",
+            "id": "C8",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "reason": "Wanting to draft publication-style system diagrams or use browser-based tools grounded in top-conference formatting conventions."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "qwdwqfwq/topconf-paper-figure-gallery: 3,516 curated Figure 1 / teasers from ICLR, ICML, NeurIPS, CVPR, ACL, AAAI (2023-2026), with tier badges and FigureForge retrieval-augmented figure drafting Topics: aaai, academic writing, acl,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery"
+          },
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "point": "Contains thousands of hand-reviewed and heuristic-filtered Figure 1 and teaser diagrams from major AI conferences (ICLR, ICML, NeurIPS, CVPR, ACL, AAAI) tagged with visual patterns and acceptance tier badges."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "FigureForge drafts your Figure 1 from the gallery: describe your paper, and 3,452 top-conference figures provide the layout reference. No sign-up, no server; it runs in your browser. **Try FigureForge →** **▶ Full demo video, 3:23 with…",
+            "id": "C7",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "grounds the draft in top-conference figures, so it keeps the panel grid, comparative narrative and restrained palette of a paper figure. > - Runs entirely in your browser: the CLIP model and gallery index are bundled locally; paper content…",
+            "id": "C9",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "FigureForge 基于画廊生成你的 Figure 1 初稿：描述论文，3,452 张顶会主图作为版式参考。免注册、无服务器，全部在浏览器本地运行。**立即试用 →** **▶ 完整演示视频，3 分 23 秒，有声音** 1. **输入论文**：粘贴标题和摘要、上传 PDF（步骤一的模型直接阅读，按概览、架构、流程、结果总结相关章节），或写一句话讲清「输入 → 方法 → 输出」。 2. **选模式**：系统或多智能体总览选 `framework`，端到端流程选…",
+            "id": "C12",
+            "section_title": "🛠️ FigureForge Beta",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "point": "Includes FigureForge, a browser-based tool that runs CLIP and BM25 hybrid search locally to match user descriptions against reference layouts and generate new drafts via a vision model."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "以下是画廊 FigureForge 的实际生图示例。 机器人策略与执行Robot policy &amp; execution 时空扩散 Transformer · 可控视频生成Controllable video generation via spatio-temporal diffusion transformer 湿磨芦苇秸秆浆料 · 稳定性与流变控制Stability and rheology control of wet-milled reed straw…",
+            "id": "C2",
+            "section_title": "✨ FigureForge 生图成品 · Generated examples",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "在线浏览 / Online: GitHub Pages。 本地运行 / Local server: ``` git clone https://github.com/qwdwqfwq/topconf-paper-figure-gallery.git cd topconf-paper-figure-gallery python -m http.server 8000 # open http://localhost:8000 ``` 或直接双击…",
+            "id": "C3",
+            "section_title": "🚀 快速开始 / Quick start",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Top-Conf Figure Gallery** collects Figure 1 / teaser figures (concept diagrams, system frameworks, pipelines, architectures, benchmark overviews) from six ML/AI conferences, 2023–2026. It is a design reference, not a paper ranking. Each…",
+            "id": "C6",
+            "section_title": "English",
+            "source_url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery/blob/main/README.md"
+          }
+        ],
+        "point": "Operates as a completely static site with no server requirements, allowing local usage via a simple HTTP server or by opening index.html directly."
+      }
+    ]
+  },
+  "source_hash": "67f2dfe98b51150a68116e1f53c53903e3a24e54487fec4ea581c454b776def5"
+}

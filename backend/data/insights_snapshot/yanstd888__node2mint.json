@@ -1,0 +1,425 @@
+{
+  "full_name": "yanstd888/node2mint",
+  "generated_at": "2026-11-10 09:19:27.444454+00:00",
+  "github_id": 1429106521,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+            "id": "C3",
+            "section_title": "⚡ Why Node2Mint?",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          },
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "OpenAI SDK",
+          "Anthropic API"
+        ],
+        "description": "Offer proprietary or third-party LLM access under custom pricing tiers with automatic token metering.",
+        "how_it_is_used": "Utilizes the OpenAI-compatible /v1/chat/completions endpoint, dynamic token billing, and Redis-backed fixed-window rate limiting.",
+        "title": "Custom AI Model Reselling Service"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Stripe",
+          "PostgreSQL"
+        ],
+        "description": "Build a platform where creators can sell prompts, fine-tuned models, and datasets with automated payouts.",
+        "how_it_is_used": "Relies on the storefront product catalog, buyer funds escrow holding, and seller store management modules.",
+        "title": "Digital Asset and Prompt Marketplace"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` git clone https://github.com/yanstd888/node2mint.git cd node2mint ```",
+            "id": "C12",
+            "section_title": "2. Clone the Repository",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/yanstd888/node2mint.git"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Running an AI model reselling service or token marketplace requires strict ledger safety. Distributed billing systems frequently suffer from race conditions, double-spending, and upstream provider outages. **Node2Mint** solves these…",
+          "id": "C2",
+          "section_title": "⚡ Why Node2Mint?",
+          "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+        },
+        {
+          "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+          "id": "C3",
+          "section_title": "⚡ Why Node2Mint?",
+          "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+        }
+      ],
+      "text": "Distributed billing systems frequently suffer from race conditions, double-spending, and upstream provider outages. Node2Mint solves this with an atomic PostgreSQL transaction model using row-level database locking and automated provider failover."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "``` Client (Web / Mobile / CLI / OpenAI SDK) │ ▼ Caddy 2 Reverse Proxy (HTTPS / TLS Termination) ┌──────────┴──────────┐ ▼ ▼ Next.js 15 Frontend Go API Gateway (Port 3000 / SSR) (Port 8080 / REST) │…",
+            "id": "C6",
+            "section_title": "🏗️ System Architecture",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "text": "Uses Caddy 2 as a reverse proxy for TLS termination, routing traffic to a Next.js 15 SSR frontend and a Go REST API gateway. The backend connects to PostgreSQL 16 for ledger/orders/auth data and Redis 7 for rate limiting, while communicating with upstream AI providers."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "🪙 Node2Mint — AI Sell Modern Self-hosted AI marketplace, token billing engine, and OpenAI-compatible API gateway with atomic ledger balances, provider failover, and affiliate distribution. A production-ready full-stack platform built with…",
+              "id": "C7",
+              "section_title": null,
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Atomic PostgreSQL ledger balances"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+              "id": "C3",
+              "section_title": "⚡ Why Node2Mint?",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Automated provider failover and health checks"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+              "id": "C4",
+              "section_title": "🧩 Features & Core Modules",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Fixed-window rate limiting via Redis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+              "id": "C4",
+              "section_title": "🧩 Features & Core Modules",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Escrow commerce settlement"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+              "id": "C3",
+              "section_title": "⚡ Why Node2Mint?",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Affiliate and referral tracking engine"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "🪙 Node2Mint — AI Sell Modern Self-hosted AI marketplace, token billing engine, and OpenAI-compatible API gateway with atomic ledger balances, provider failover, and affiliate distribution. A production-ready full-stack platform built with…",
+              "id": "C7",
+              "section_title": null,
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Next.js 15"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "🪙 Node2Mint — AI Sell Modern Self-hosted AI marketplace, token billing engine, and OpenAI-compatible API gateway with atomic ledger balances, provider failover, and affiliate distribution. A production-ready full-stack platform built with…",
+              "id": "C7",
+              "section_title": null,
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Go 1.22"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` node2mint/ ├── gateway/ # Go backend gateway (Chi router, pgxpool, redis) │ ├── cmd/gateway/ # Application entrypoint │ ├── internal/ │ │ ├── auth/ # JWT Bearer tokens, password hashing │ │ ├── billing/ # Atomic charges, balance…",
+              "id": "C9",
+              "section_title": "Directory Structure",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Tailwind CSS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` node2mint/ ├── gateway/ # Go backend gateway (Chi router, pgxpool, redis) │ ├── cmd/gateway/ # Application entrypoint │ ├── internal/ │ │ ├── auth/ # JWT Bearer tokens, password hashing │ │ ├── billing/ # Atomic charges, balance…",
+              "id": "C9",
+              "section_title": "Directory Structure",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "shadcn/ui"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "yanstd888/node2mint: Self-hosted AI marketplace, token billing engine & OpenAI-compatible Go API gateway with atomic PostgreSQL ledger, escrow commerce, and Stripe/DOKU/QRIS payments. Topics: affiliate system, ai gateway, ai marketplace,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/yanstd888/node2mint"
+            }
+          ],
+          "name": "Stripe"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "yanstd888/node2mint: Self-hosted AI marketplace, token billing engine & OpenAI-compatible Go API gateway with atomic PostgreSQL ledger, escrow commerce, and Stripe/DOKU/QRIS payments. Topics: affiliate system, ai gateway, ai marketplace,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/yanstd888/node2mint"
+            }
+          ],
+          "name": "DOKU"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "yanstd888/node2mint: Self-hosted AI marketplace, token billing engine & OpenAI-compatible Go API gateway with atomic PostgreSQL ledger, escrow commerce, and Stripe/DOKU/QRIS payments. Topics: affiliate system, ai gateway, ai marketplace,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/yanstd888/node2mint"
+            }
+          ],
+          "name": "QRIS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+              "id": "C4",
+              "section_title": "🧩 Features & Core Modules",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Telegram Bot API"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+              "id": "C3",
+              "section_title": "⚡ Why Node2Mint?",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+              "id": "C3",
+              "section_title": "⚡ Why Node2Mint?",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "* **Docker Engine** & **Docker Compose v2+** * **Go 1.22+** (for local backend development) * **Node.js 18+** (for local frontend development)",
+              "id": "C11",
+              "section_title": "1. Prerequisites",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "text": "Docker Engine and Docker Compose v2+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Docker Engine** & **Docker Compose v2+** * **Go 1.22+** (for local backend development) * **Node.js 18+** (for local frontend development)",
+              "id": "C11",
+              "section_title": "1. Prerequisites",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "text": "Go 1.22+ for local backend development"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Docker Engine** & **Docker Compose v2+** * **Go 1.22+** (for local backend development) * **Node.js 18+** (for local frontend development)",
+              "id": "C11",
+              "section_title": "1. Prerequisites",
+              "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 18+ for local frontend development"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "text": "Hosting a private or public AI model reselling gateway compatible with OpenAI SDKs, Cursor, and Cline."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "text": "Running a multi-vendor digital marketplace for prompts, datasets, fine-tuned models, and subscription access packs with escrow protection."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "yanstd888/node2mint: Self-hosted AI marketplace, token billing engine & OpenAI-compatible Go API gateway with atomic PostgreSQL ledger, escrow commerce, and Stripe/DOKU/QRIS payments. Topics: affiliate system, ai gateway, ai marketplace,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/yanstd888/node2mint"
+        },
+        {
+          "excerpt": "Running an AI model reselling service or token marketplace requires strict ledger safety. Distributed billing systems frequently suffer from race conditions, double-spending, and upstream provider outages. **Node2Mint** solves these…",
+          "id": "C2",
+          "section_title": "⚡ Why Node2Mint?",
+          "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+        }
+      ],
+      "explanation": "Node2Mint is a full-stack platform for running an AI model reselling service or digital token marketplace. It combines a high-concurrency Go API gateway with an atomic PostgreSQL ledger to manage transactions, upstream provider failover, and multi-channel payments.",
+      "one_line": "Self-hosted AI marketplace, token billing engine, and OpenAI-compatible Go API gateway."
+    },
+    "who_should_care": [
+      {
+        "audience": "AI Service Resellers",
+        "citations": [
+          {
+            "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+            "id": "C3",
+            "section_title": "⚡ Why Node2Mint?",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          },
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "reason": "They need an OpenAI-compatible API gateway with token metering, dynamic rate limiting, and upstream failover."
+      },
+      {
+        "audience": "Marketplace Developers",
+        "citations": [
+          {
+            "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+            "id": "C3",
+            "section_title": "⚡ Why Node2Mint?",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          },
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "reason": "They can leverage the built-in escrow commerce engine, affiliate commissions, and integrated payment gateways like Stripe, DOKU, and QRIS."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+            "id": "C3",
+            "section_title": "⚡ Why Node2Mint?",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "point": "Uses row-level database locking (SELECT FOR UPDATE) within strict transaction boundaries to eliminate negative-balance race conditions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* 🔒 **Atomic Money & Token Balances:** All balance debits and credits use row-level database locking (`SELECT FOR UPDATE`) within strict transaction boundaries—eliminating negative-balance race conditions. * 🔄 **Automated Provider…",
+            "id": "C3",
+            "section_title": "⚡ Why Node2Mint?",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          },
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "point": "Provides an OpenAI-compatible /v1/chat/completions endpoint that routes traffic through upstream providers with health checks and circuit breaker fallback."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "🔀 API Gateway & Token Billing OpenAI-Compatible /v1/chat/completions: Serves upstream models to client apps, SDKs, Cursor, and Cline using standardized schema headers. Dynamic Token Metering: Deducts user balances based on exact model…",
+            "id": "C4",
+            "section_title": "🧩 Features & Core Modules",
+            "source_url": "https://github.com/yanstd888/node2mint/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a built-in multi-vendor digital marketplace with escrow settlement and order management."
+      }
+    ]
+  },
+  "source_hash": "a8ee5ec1bf692677a8d808bb9d54992efaf3f2526c939109f13d7115ca80a692"
+}

@@ -1,0 +1,672 @@
+{
+  "full_name": "deeplethe/utopia",
+  "generated_at": "2026-11-10 09:12:04.732848+00:00",
+  "github_id": 1327088798,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Who and what | Input | Question, and what comes back | What the base adds over search or RAG | |---|---|---|---| | **A contract chain.** Legal or procurement, a master agreement amended several times. | The agreement and its amendments,…",
+            "id": "C11",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "LangChain",
+          "LlamaIndex",
+          "PostgreSQL",
+          "Python"
+        ],
+        "description": "Build an application that ingests master procurement agreements and subsequent amendments, allowing lawyers to query exact payment terms and valid clauses as they applied on any given historical date.",
+        "how_it_is_used": "Uses Utopia's document ingest for PDF/Word documents, bitemporal graph storage to close out older terms without overwriting, and chat/search with citations.",
+        "title": "Bitemporal Legal Contract Auditor"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "Cursor",
+          "Model Context Protocol (MCP)",
+          "Docker"
+        ],
+        "description": "Create an internal company assistant that connects via Model Context Protocol to provide engineers and operations staff with accurate answers drawn directly from verified company documentation.",
+        "how_it_is_used": "Uses Utopia's MCP server integration to expose typed, dated facts, graphs, and structured document stores to Claude Desktop or Cursor with fine-grained permissions.",
+        "title": "Secure Internal AI Assistant with Claude Desktop"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Grafana",
+          "MQTT",
+          "Node.js",
+          "Docker"
+        ],
+        "description": "Develop a monitoring dashboard that tracks telemetry and asset locations over time, automatically handling attribute updates and closing out older values when fresh observations arrive.",
+        "how_it_is_used": "Pushes observation entries directly into Utopia's extraction contracts via curl or API endpoints to query object states at explicit historical moments.",
+        "title": "IoT & Robotics State Tracker"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+            "id": "C7",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/deeplethe/utopia.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+            "id": "C7",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Tags up to 0.1.0-rc7 are amd64 only (prebuilt images for later versions support both linux/amd64 and linux/arm64)."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "cardinality conflicts. | | **Agent adjudication** | The agent adjudicates on its own, from common sense and the business documents. Low-confidence calls go to the human review queue, and the decisions people make there are recorded and…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Derived facts can produce wrong results if axioms are incorrectly specified (derivation is off by default)."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Philosophy · Quick start · Features · Roadmap **The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store…",
+          "id": "C8",
+          "section_title": "Utopia",
+          "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+        },
+        {
+          "excerpt": "We gave it a somewhat romantic name, **Utopia**. Ptolemy's geocentric model was taken for truth for a very long time, then falsified step by step by Copernicus, Kepler, Galileo and Newton. Looking back, what we keep is not only that…",
+          "id": "C9",
+          "section_title": "Philosophy",
+          "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+        }
+      ],
+      "text": "Standard vector stores and knowledge graphs struggle to accurately preserve changing understandings and histories over time; Utopia solves this by putting time awareness and ontology in the base layer, tracking both when something was true in the world and when the system came to believe it."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Runs as a single Rust binary paired with a PostgreSQL database containing pgvector, embedded full-text search via Tantivy, and database table-backed job queues, with a web frontend console combining a graph browser, system console, and ontology workbench."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/deeplethe/utopia"
+            },
+            {
+              "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "Philosophy · Quick start · Features · Roadmap **The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store…",
+              "id": "C8",
+              "section_title": "Utopia",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "We gave it a somewhat romantic name, **Utopia**. Ptolemy's geocentric model was taken for truth for a very long time, then falsified step by step by Copernicus, Kepler, Galileo and Newton. Looking back, what we keep is not only that…",
+              "id": "C9",
+              "section_title": "Philosophy",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Bitemporal knowledge graph"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/deeplethe/utopia"
+            },
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Semantic search and RRF vector fusion"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Automated document ingestion and multi-format parsing"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "cardinality conflicts. | | **Agent adjudication** | The agent adjudicates on its own, from common sense and the business documents. Low-confidence calls go to the human review queue, and the decisions people make there are recorded and…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Entity resolution and human-in-the-loop review queues"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "cardinality conflicts. | | **Agent adjudication** | The agent adjudicates on its own, from common sense and the business documents. Low-confidence calls go to the human review queue, and the decisions people make there are recorded and…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "engines that speak its protocol, ClickHouse, Trino for Iceberg / Delta Lake / Hive, Databricks, Snowflake) and chat can query it alongside the documents. The agent proposes how its tables map onto the ontology, and you confirm. The method…",
+              "id": "C6",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Ontology-driven SQL querying and reasoning via forward chaining"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+              "id": "C12",
+              "section_title": "Use cases",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Model Context Protocol (MCP) server integration"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/deeplethe/utopia"
+            },
+            {
+              "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+              "id": "C7",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Rust"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+              "id": "C7",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Node.js"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/deeplethe/utopia"
+            },
+            {
+              "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/deeplethe/utopia"
+            },
+            {
+              "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            },
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "pgvector"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Tantivy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI-compatible endpoints (DeepSeek, Qwen, GLM, Ollama, vLLM)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "MinerU and Volcengine Ark vision models"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "External sync sources (GitHub, Jira, Notion, WebDAV, S3, RSS, Web pages)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "engines that speak its protocol, ClickHouse, Trino for Iceberg / Delta Lake / Hive, Databricks, Snowflake) and chat can query it alongside the documents. The agent proposes how its tables map onto the ontology, and you confirm. The method…",
+              "id": "C6",
+              "section_title": "Features",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "name": "Databases for mounting (Postgres, MySQL, ClickHouse, Trino, Databricks, Snowflake)"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+              "id": "C7",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "text": "Docker"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+              "id": "C7",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "text": "Rust 1.85+ (for local development builds)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requirements: Docker (local development also needs Rust 1.85+, Node 20+, pnpm). The prebuilt image is published for `linux/amd64` and `linux/arm64`, so it runs natively on x86-64 hosts as well as Apple Silicon and AWS Graviton. Tags up to…",
+              "id": "C7",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+            }
+          ],
+          "text": "Node 20+ and pnpm (for local development builds)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Who and what | Input | Question, and what comes back | What the base adds over search or RAG | |---|---|---|---| | **A contract chain.** Legal or procurement, a master agreement amended several times. | The agreement and its amendments,…",
+            "id": "C11",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Querying complex master agreements and amendments to discover which terms were in force on a specific historical date."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Who and what | Input | Question, and what comes back | What the base adds over search or RAG | |---|---|---|---| | **A contract chain.** Legal or procurement, a master agreement amended several times. | The agreement and its amendments,…",
+            "id": "C11",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Tracking corporate handovers, restatements, and project leadership changes across time using dual timeline awareness."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Connecting AI assistant frameworks like Claude Desktop or Cursor over MCP to safely query structured facts and paths across a company knowledge base."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "text": "Ingesting observations from monitoring systems, security tooling, or robotics to track object states and timestamps via direct API endpoints."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "deeplethe/utopia: World's first open-source enterprise world model. Topics: agent memory, bitemporal, graphrag, knowledge base, knowledge graph, llm, ontology, pgvector, postgresql, rag, rust, self hosted, semantic search, temporal…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/deeplethe/utopia"
+        },
+        {
+          "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+          "id": "C2",
+          "section_title": "Features",
+          "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+        },
+        {
+          "excerpt": "Philosophy · Quick start · Features · Roadmap **The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store…",
+          "id": "C8",
+          "section_title": "Utopia",
+          "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+        },
+        {
+          "excerpt": "We gave it a somewhat romantic name, **Utopia**. Ptolemy's geocentric model was taken for truth for a very long time, then falsified step by step by Copernicus, Kepler, Galileo and Newton. Looking back, what we keep is not only that…",
+          "id": "C9",
+          "section_title": "Philosophy",
+          "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+        }
+      ],
+      "explanation": "Utopia is an enterprise world model built with a bitemporal knowledge graph and ontology base layer. It automatically ingests documents and data, resolves entity duplicates, detects conflicts, and enables semantic search, chat, and agentic RAG over your data. It operates as a self-hosted application packaged in a single Rust binary and Postgres instance.",
+      "one_line": "An open-source enterprise world model featuring a bitemporal knowledge graph, knowledge governance, and self-hosted decision intelligence."
+    },
+    "who_should_care": [
+      {
+        "audience": "Enterprise Developers & Engineers",
+        "citations": [
+          {
+            "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "Philosophy · Quick start · Features · Roadmap **The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store…",
+            "id": "C8",
+            "section_title": "Utopia",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "reason": "Can deploy a complete, self-hosted knowledge management and RAG foundation with vector search, full-text search, and relational databases locally or on-premises."
+      },
+      {
+        "audience": "AI & Agent Builders",
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "engines that speak its protocol, ClickHouse, Trino for Iceberg / Delta Lake / Hive, Databricks, Snowflake) and chat can query it alongside the documents. The agent proposes how its tables map onto the ontology, and you confirm. The method…",
+            "id": "C6",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "reason": "Can hook up external AI agents via MCP to traverse bitemporal knowledge graphs, query structured data sources via ontology mapping, and interact through tool-calling."
+      },
+      {
+        "audience": "Compliance & Legal Teams",
+        "citations": [
+          {
+            "excerpt": "engines that speak its protocol, ClickHouse, Trino for Iceberg / Delta Lake / Hive, Databricks, Snowflake) and chat can query it alongside the documents. The agent proposes how its tables map onto the ontology, and you confirm. The method…",
+            "id": "C6",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "Philosophy · Quick start · Features · Roadmap **The enterprise world model built by DeepLethe.** It is the first open substrate for knowledge engineering that learns passively and governs itself. Where a knowledge graph or a vector store…",
+            "id": "C8",
+            "section_title": "Utopia",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Who and what | Input | Question, and what comes back | What the base adds over search or RAG | |---|---|---|---| | **A contract chain.** Legal or procurement, a master agreement amended several times. | The agreement and its amendments,…",
+            "id": "C11",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "reason": "Benefits from an append-only decision ledger, historical state tracking, conflict detection, and traceable audit trails for enterprise contracts and regulatory records."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "We gave it a somewhat romantic name, **Utopia**. Ptolemy's geocentric model was taken for truth for a very long time, then falsified step by step by Copernicus, Kepler, Galileo and Newton. Looking back, what we keep is not only that…",
+            "id": "C9",
+            "section_title": "Philosophy",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "point": "Employs a bitemporal graph that records two timelines: when a fact was true in the world and when the system came to believe it."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "One Rust binary and one Postgres. Full-text search is embedded in the binary, vectors go in pgvector, and the job queue is a table: nothing else to run.",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "point": "Self-contained architecture requiring only one Rust binary and one PostgreSQL database with pgvector, with embedded full-text search and job queues."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **A complete application** | A system console, a graph browser and an ontology workbench in one web UI. A product, not a library: install it and it works. | | **Knowledge ingest** | Upload PDF, DOCX, PPTX, XLSX, XLS, ODS,…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "QA bench measures this. | | **An agent that reads the base.** Engineering or operations teams with Claude Desktop, Cursor or their own agent. | An existing base; the agent connects over MCP with a token scoped to it. | *Facts about this…",
+            "id": "C12",
+            "section_title": "Use cases",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "point": "Exposes a built-in agent harness and Model Context Protocol (MCP) servers so external agent frameworks like Claude Desktop and Cursor can query knowledge bases securely."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "server for every knowledge base, so Claude Desktop, Cursor, Workbuddy and other agent frameworks can connect, with fine-grained permissions. | | **Ontology and cold start** | A new knowledge base has no vocabulary of its own; it starts…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          },
+          {
+            "excerpt": "cardinality conflicts. | | **Agent adjudication** | The agent adjudicates on its own, from common sense and the business documents. Low-confidence calls go to the human review queue, and the decisions people make there are recorded and…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/deeplethe/utopia/blob/main/README.md"
+          }
+        ],
+        "point": "Features automated ontology alignment, reasoning, rule compilation from ontology axioms via forward chaining, and multi-stage entity resolution."
+      }
+    ]
+  },
+  "source_hash": "9264480fb23fe242752f9801b6b04e3b9115744c1e52e7b95dcc7dda5f9f4b8b"
+}

@@ -1,0 +1,493 @@
+{
+  "full_name": "makecindy/cindy",
+  "generated_at": "2026-11-10 09:11:44.954069+00:00",
+  "github_id": 1309102418,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+            "id": "C3",
+            "section_title": "What's in this repo",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Electron",
+          "Expo",
+          "React Native"
+        ],
+        "description": "Build custom companion skills that execute terminal commands or manage files on a remote host machine via mobile interactions.",
+        "how_it_is_used": "Utilizes the device-link and agent orchestration shared packages to route instructions across nodes.",
+        "title": "Cross-Device Remote Companion"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+            "id": "C3",
+            "section_title": "What's in this repo",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+            "id": "C8",
+            "section_title": "Keep your favorite agents. Get a better way to work.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Codex",
+          "MCP"
+        ],
+        "description": "Configure an agent team where one agent implements a feature, another reviews code, and a third runs validation checks.",
+        "how_it_is_used": "Leverages Cindy's agent orchestration layer to assign different harnesses and roles toward a shared goal.",
+        "title": "Multi-Agent Code Review Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Contributor setup, Git LFS, dependency updates, and access requirements are maintained in `CONTRIBUTING.en.md`. Plugins are installed through SkillHub or manually. Minimal entry point: ``` git clone https://github.com/makecindy/cindy.git…",
+            "id": "C4",
+            "section_title": "Getting started",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/makecindy/cindy.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+            "id": "C3",
+            "section_title": "What's in this repo",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Server-backed capabilities are unavailable when using the 'Skip Sign-In' mode."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Remote computer access provides file access to projects rather than a whole-disk sync."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+            "id": "C8",
+            "section_title": "Keep your favorite agents. Get a better way to work.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Switching harnesses within a session hands off or rebuilds the engine context rather than forcing internal states to be identical."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+          "id": "C7",
+          "section_title": "All your devices. One Cindy.",
+          "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+        }
+      ],
+      "text": "Eliminates the friction of managing fragmented AI tools across separate devices, allowing developers to continue sessions, access files, and share model configurations seamlessly between desktop and mobile."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+            "id": "C3",
+            "section_title": "What's in this repo",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "This repository contains Cindy's open-source **desktop and mobile clients** and their shared packages, organized as a pnpm monorepo.",
+            "id": "C11",
+            "section_title": "For developers",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Organized as a pnpm monorepo containing desktop and mobile client applications in apps/ along with shared core packages like auth, device-link, agent orchestration, and model providers in packages/."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+              "id": "C7",
+              "section_title": "All your devices. One Cindy.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-device session continuation and file access"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+              "id": "C7",
+              "section_title": "All your devices. One Cindy.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Remote desktop operation from mobile devices"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+              "id": "C3",
+              "section_title": "What's in this repo",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            },
+            {
+              "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+              "id": "C8",
+              "section_title": "Keep your favorite agents. Get a better way to work.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-agent orchestration and team workflows"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Contributor setup, Git LFS, dependency updates, and access requirements are maintained in `CONTRIBUTING.en.md`. Plugins are installed through SkillHub or manually. Minimal entry point: ``` git clone https://github.com/makecindy/cindy.git…",
+              "id": "C4",
+              "section_title": "Getting started",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            },
+            {
+              "excerpt": "Work with your files, browser and apps. Ask for a change, inspect what happened, and keep working from the result. Answers can include **charts, interactive controls and rich HTML**, not just a wall of text. Build a recurring routine with…",
+              "id": "C9",
+              "section_title": "Real work, in your actual tools",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Plugin and Skill extension through SkillHub or MCP"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+              "id": "C3",
+              "section_title": "What's in this repo",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Electron"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "makecindy/cindy: Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。 Topics: agent, ai agent, ai assistant, android, claude code, codex, electron, ios, llm, macos, react native, typescript,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/makecindy/cindy"
+            },
+            {
+              "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+              "id": "C3",
+              "section_title": "What's in this repo",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "React Native"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+              "id": "C3",
+              "section_title": "What's in this repo",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Expo"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "The **client is free**. Authorize a supported subscription you already pay for, including Claude Code or Codex plans, connect your own API keys, or use a local model. You can also use Cindy's managed model service. Provider limits and…",
+              "id": "C2",
+              "section_title": "Start with what you already have",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            },
+            {
+              "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+              "id": "C8",
+              "section_title": "Keep your favorite agents. Get a better way to work.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The **client is free**. Authorize a supported subscription you already pay for, including Claude Code or Codex plans, connect your own API keys, or use a local model. You can also use Cindy's managed model service. Provider limits and…",
+              "id": "C2",
+              "section_title": "Start with what you already have",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            },
+            {
+              "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+              "id": "C8",
+              "section_title": "Keep your favorite agents. Get a better way to work.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Codex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+              "id": "C8",
+              "section_title": "Keep your favorite agents. Get a better way to work.",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Pi"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Work with your files, browser and apps. Ask for a change, inspect what happened, and keep working from the result. Answers can include **charts, interactive controls and rich HTML**, not just a wall of text. Build a recurring routine with…",
+              "id": "C9",
+              "section_title": "Real work, in your actual tools",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Slack"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Work with your files, browser and apps. Ask for a change, inspect what happened, and keep working from the result. Answers can include **charts, interactive controls and rich HTML**, not just a wall of text. Build a recurring routine with…",
+              "id": "C9",
+              "section_title": "Real work, in your actual tools",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "name": "Telegram"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Node.js** 22.x - **pnpm** 10.x (v11 is not yet supported) - **Git LFS**",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 22.x"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Node.js** 22.x - **pnpm** 10.x (v11 is not yet supported) - **Git LFS**",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "text": "pnpm 10.x (v11 is not yet supported)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Node.js** 22.x - **pnpm** 10.x (v11 is not yet supported) - **Git LFS**",
+              "id": "C12",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+            }
+          ],
+          "text": "Git LFS"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Continuing a coding session and accessing project files from your phone while away from your workstation."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Operating a connected computer remotely from a mobile device using built-in remote desktop capabilities."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Create your own companions.** Give them a role, instructions, skills and recurring work — a reviewer, researcher, project partner, or something of your own. - **Make experience reusable.** Keep useful preferences and knowledge in…",
+            "id": "C10",
+            "section_title": "Ready from day one. Yours to shape over time.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "text": "Setting up specialized AI companions for recurring routines, research, code reviewing, or project planning."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "makecindy/cindy: Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。 Topics: agent, ai agent, ai assistant, android, claude code, codex, electron, ios, llm, macos, react native, typescript,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/makecindy/cindy"
+        },
+        {
+          "excerpt": "English · 简体中文 Download Cindy &nbsp;·&nbsp; Website &nbsp;·&nbsp; Build with us &nbsp;·&nbsp; Get help ★ GitHub Trending #1 · 2026.10.26 Cindy is an **open-source AI agent, ready out of the box and yours to shape**. Connect your computers…",
+          "id": "C6",
+          "section_title": null,
+          "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+        },
+        {
+          "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+          "id": "C7",
+          "section_title": "All your devices. One Cindy.",
+          "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+        },
+        {
+          "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+          "id": "C8",
+          "section_title": "Keep your favorite agents. Get a better way to work.",
+          "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+        }
+      ],
+      "explanation": "Cindy is an open-source AI agent client designed to connect your computers and phone into a multi-device workspace. It brings together existing subscriptions and harnesses like Claude Code and Codex, providing a unified interface for agent orchestration, file access, and automated tasks.",
+      "one_line": "An open-source AI agent client that works out of the box across desktop and mobile devices."
+    },
+    "who_should_care": [
+      {
+        "audience": "Developers using AI coding harnesses",
+        "citations": [
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+            "id": "C8",
+            "section_title": "Keep your favorite agents. Get a better way to work.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **Create your own companions.** Give them a role, instructions, skills and recurring work — a reviewer, researcher, project partner, or something of your own. - **Make experience reusable.** Keep useful preferences and knowledge in…",
+            "id": "C10",
+            "section_title": "Ready from day one. Yours to shape over time.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "reason": "You can integrate Claude Code or Codex into a unified mobile and desktop client with custom tools, agent teams, and reusable skills."
+      },
+      {
+        "audience": "Mobile and Desktop App Developers",
+        "citations": [
+          {
+            "excerpt": "makecindy/cindy: Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。 Topics: agent, ai agent, ai assistant, android, claude code, codex, electron, ios, llm, macos, react native, typescript,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/makecindy/cindy"
+          },
+          {
+            "excerpt": "| Path | Description | | --- | --- | | `apps/desktop` | Electron desktop client | | `apps/mobile` | Expo / React Native mobile client | | `packages/*` | Shared client capabilities (auth, device-link, agent orchestration, model providers,…",
+            "id": "C3",
+            "section_title": "What's in this repo",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          },
+          {
+            "excerpt": "This repository contains Cindy's open-source **desktop and mobile clients** and their shared packages, organized as a pnpm monorepo.",
+            "id": "C11",
+            "section_title": "For developers",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "reason": "You can inspect, extend, or contribute to a monorepo featuring an Electron desktop client and an Expo/React Native mobile client built with TypeScript."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+            "id": "C8",
+            "section_title": "Keep your favorite agents. Get a better way to work.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "point": "Brings multiple agent harnesses like Claude Code, Codex, and Pi together into a single shared interface."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Your work computer, home desktop, laptop and phone belong together. - **Pick up the same work.** Open a session from another device, continue the conversation, and access its files without copying everything into a new chat. - **Share more…",
+            "id": "C7",
+            "section_title": "All your devices. One Cindy.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "point": "Turns your computers into servers for remote access across devices without requiring self-hosting setups or server rentals."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Already using Claude Code or Codex? Cindy brings them together with **Pi**, then adds a shared interface, multi-device access, tools and a companion of your own. | Harness | What it brings | | --- | --- | | **Claude Code** | Claude Code's…",
+            "id": "C8",
+            "section_title": "Keep your favorite agents. Get a better way to work.",
+            "source_url": "https://github.com/makecindy/cindy/blob/main/README.md"
+          }
+        ],
+        "point": "Supports multi-agent team workflows, assigning different agents to planning, parallel implementation, and review."
+      }
+    ]
+  },
+  "source_hash": "6cd590c7f21769cd74e22140c1fee4b9efa1caf33d54294a6e7949b8b0bd9d3b"
+}

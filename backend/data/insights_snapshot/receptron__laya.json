@@ -1,0 +1,358 @@
+{
+  "full_name": "receptron/laya",
+  "generated_at": "2026-11-10 09:15:57.113618+00:00",
+  "github_id": 1377318357,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+            "id": "C3",
+            "section_title": "Usage",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          },
+          {
+            "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+            "id": "C5",
+            "section_title": "@receptron/laya",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Express",
+          "Fastify",
+          "PostgreSQL"
+        ],
+        "description": "Build an email or ticket triage tool that reads incoming support requests, determines the correct department, computes urgency scores, and estimates churn risk.",
+        "how_it_is_used": "Uses `laya.systemOne()` with `choice`, `score`, and `noul` question types to parse incoming ticket bodies and subjects.",
+        "title": "Automated Support Ticket Router"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+            "id": "C3",
+            "section_title": "Usage",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          },
+          {
+            "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+            "id": "C5",
+            "section_title": "@receptron/laya",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Commander.js",
+          "Node.js file system APIs"
+        ],
+        "description": "Create a local utility that reads JSON objects or text files and categorizes them based on custom rubric criteria.",
+        "how_it_is_used": "Loads the model via `Laya.load()` and evaluates structured state data locally using ONNX Runtime.",
+        "title": "Local Document Classification Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Each question's options must fit in `head_max_len` (192) tokens; `systemOne` throws otherwise. Fewer than about 20 options per `choice` question is the model's own recommendation. - The state is truncated to `max_len` (512 tokens for the…",
+            "id": "C8",
+            "section_title": "Limits",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "text": "Each question's options must fit within 192 tokens."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Each question's options must fit in `head_max_len` (192) tokens; `systemOne` throws otherwise. Fewer than about 20 options per `choice` question is the model's own recommendation. - The state is truncated to `max_len` (512 tokens for the…",
+            "id": "C8",
+            "section_title": "Limits",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "text": "The state is truncated to 512 tokens for the English checkpoint after the question header."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Each question's options must fit in `head_max_len` (192) tokens; `systemOne` throws otherwise. Fewer than about 20 options per `choice` question is the model's own recommendation. - The state is truncated to `max_len` (512 tokens for the…",
+            "id": "C8",
+            "section_title": "Limits",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "text": "Choice labels given as a list must be distinct; repeated labels throw an error."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+          "id": "C5",
+          "section_title": "@receptron/laya",
+          "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+        }
+      ],
+      "text": "It removes the need to run Python or PyTorch at runtime when utilizing the Laya decision model, letting TypeScript and Node.js applications perform inference locally via ONNX Runtime."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+              "id": "C3",
+              "section_title": "Usage",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            },
+            {
+              "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+              "id": "C5",
+              "section_title": "@receptron/laya",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "Choice question evaluation with probabilities per option"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+              "id": "C3",
+              "section_title": "Usage",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            },
+            {
+              "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+              "id": "C5",
+              "section_title": "@receptron/laya",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "Score question evaluation on an ordered rubric"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+              "id": "C3",
+              "section_title": "Usage",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            },
+            {
+              "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+              "id": "C5",
+              "section_title": "@receptron/laya",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "Noul question evaluation for calibrated P(true) yes/no statements"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "Automatic caching and downloading of model weights from Hugging Face"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "receptron/laya: Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime Topics: classification, decision model, inference, llm, local first, machine learning, nodejs, onnx, onnxruntime,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/receptron/laya"
+            },
+            {
+              "excerpt": "``` await Laya.load({ modelDir: \"./onnx\", // use a local export instead of downloading (see below) repo: \"receptron/laya-onnx\", // Hugging Face repo that holds the ONNX bundle subfolder: \"multilingual\", // a checkpoint variant inside that…",
+              "id": "C6",
+              "section_title": "Options",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "ONNX Runtime"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` await Laya.load({ modelDir: \"./onnx\", // use a local export instead of downloading (see below) repo: \"receptron/laya-onnx\", // Hugging Face repo that holds the ONNX bundle subfolder: \"multilingual\", // a checkpoint variant inside that…",
+              "id": "C6",
+              "section_title": "Options",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            },
+            {
+              "excerpt": "`export/export_onnx.py` turns the Hugging Face checkpoint (ModernBERT encoder + Laya's decision head) into one ONNX graph and copies the tokenizer and calibration values next to it. You only need this to build a bundle from a newer…",
+              "id": "C7",
+              "section_title": "Exporting the ONNX bundle yourself",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "name": "Hugging Face"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 20 or newer"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+            }
+          ],
+          "text": "Roughly 2 GB of RAM for the loaded model plus additional space per question batch"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` import { Laya } from \"@receptron/laya\"; const laya = await Laya.load(); const result = await laya.systemOne( { subject: \"Refund not received\", body: \"I cancelled two weeks ago and still have no refund...\" }, { department: { type:…",
+            "id": "C3",
+            "section_title": "Usage",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` await Laya.load({ modelDir: \"./onnx\", // use a local export instead of downloading (see below) repo: \"receptron/laya-onnx\", // Hugging Face repo that holds the ONNX bundle subfolder: \"multilingual\", // a checkpoint variant inside that…",
+            "id": "C6",
+            "section_title": "Options",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "text": "Classifying support tickets by department, urgency, and customer churn risk in a single batch call."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "receptron/laya: Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime Topics: classification, decision model, inference, llm, local first, machine learning, nodejs, onnx, onnxruntime,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/receptron/laya"
+        },
+        {
+          "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+          "id": "C5",
+          "section_title": "@receptron/laya",
+          "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+        }
+      ],
+      "explanation": "Laya is a System-1 decision model that takes a state (like an email, ticket, or JSON object) and typed questions, and returns calibrated probabilities in a single forward pass without generating text. The package allows developers to execute this model locally from Node.js or TypeScript using ONNX Runtime, eliminating the need for Python or PyTorch at runtime.",
+      "one_line": "Run the open-source Laya System-1 decision model from Node.js and TypeScript via ONNX Runtime."
+    },
+    "who_should_care": [
+      {
+        "audience": "TypeScript and Node.js developers",
+        "citations": [
+          {
+            "excerpt": "receptron/laya: Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime Topics: classification, decision model, inference, llm, local first, machine learning, nodejs, onnx, onnxruntime,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/receptron/laya"
+          },
+          {
+            "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+            "id": "C5",
+            "section_title": "@receptron/laya",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "reason": "They can integrate Laya's decision-making and classification capabilities directly into JavaScript apps without spinning up a Python sidecar."
+      },
+      {
+        "audience": "Developers building local-first machine learning applications",
+        "citations": [
+          {
+            "excerpt": "receptron/laya: Run Laya, the open-source Jev-compatible System-1 decision model, from Node.js / TypeScript via ONNX Runtime Topics: classification, decision model, inference, llm, local first, machine learning, nodejs, onnx, onnxruntime,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/receptron/laya"
+          },
+          {
+            "excerpt": "``` await Laya.load({ modelDir: \"./onnx\", // use a local export instead of downloading (see below) repo: \"receptron/laya-onnx\", // Hugging Face repo that holds the ONNX bundle subfolder: \"multilingual\", // a checkpoint variant inside that…",
+            "id": "C6",
+            "section_title": "Options",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "reason": "They can run the model locally using ONNX Runtime with configurable options for local exports and execution providers."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+            "id": "C5",
+            "section_title": "@receptron/laya",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "point": "Performs inference in a single forward pass to return answers with calibrated probabilities for choices, scores, and yes/no statements."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Run **Laya** — the open-source, Jev-compatible _System 1 decision model_ by Convai Innovations — from Node.js / TypeScript. Laya does not generate text. You hand it a state (a ticket, an email, a JSON object) and typed questions, and it…",
+            "id": "C5",
+            "section_title": "@receptron/laya",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "point": "Outputs match the Python reference implementation down to four decimal places."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` npm install @receptron/laya ``` Node.js 20 or newer; CI runs on Node 20, 22 and 24 (Linux, macOS, Windows). The `@types/node` version in `devDependencies` is only for type-checking this package and does not require Node 24. The ONNX…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/receptron/laya/blob/main/README.md"
+          }
+        ],
+        "point": "Handles model weight downloads automatically on first use from Hugging Face and caches them locally."
+      }
+    ]
+  },
+  "source_hash": "c70570469173d5e69019e79b3aec2e84e7b4d01d505c05e3581cd45ad70dd7d0"
+}

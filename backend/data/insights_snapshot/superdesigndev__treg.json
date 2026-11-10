@@ -1,0 +1,429 @@
+{
+  "full_name": "superdesigndev/treg",
+  "generated_at": "2026-11-10 09:12:16.208218+00:00",
+  "github_id": 1301657572,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "The tools an agent needs for real work sit behind subscriptions nobody buys for a single run — Semrush $139/mo, Moz $99/mo, Crunchbase $99/mo, Apollo $59/seat — behind signup walls, or behind no public API at all (invite-only,…",
+            "id": "C2",
+            "section_title": "Why it exists",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+            "id": "C10",
+            "section_title": "Treg (OpenRouter for Tools)",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "LangChain",
+          "OpenAI API",
+          "FastAPI"
+        ],
+        "description": "An AI agent that gathers comprehensive website backlink profiles, keyword rankings, and company data on demand.",
+        "how_it_is_used": "Leverages treg catalog searches and paid SEO endpoints billed per call without managing external subscriptions.",
+        "title": "Automated SEO Audit Bot"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "Docker",
+          "Node.js"
+        ],
+        "description": "An automated pipeline that converts documentation or notification text into speech clips using voice cloning or discovery.",
+        "how_it_is_used": "Invokes Fish Audio TTS endpoints via the treg CLI and redirects binary outputs into downloadable audio artifacts.",
+        "title": "Voice Generation CI Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "superdesigndev/treg: OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn Topics: agents, api keys, cli, credentials, developer tools, dsh plugin, mcp, proxy, python, registry, secrets. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/superdesigndev/treg"
+          }
+        ],
+        "label": "Discord Community",
+        "url": "https://discord.gg/6mQYYfFMAn"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "label": "CLI Installation Script",
+        "url": "https://treg.to/install.sh"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Request flow for `/call`:** resolve tool (by URL host + longest `base_url` prefix, or by name) → decrypt its secret(s) → apply each binding's injector → stream to the upstream → fire-and-forget audit record. The infra relay streams bytes…",
+            "id": "C6",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "text": "Call responses exceeding 8 MiB that require settlement or ownership evidence return a 502 error without charging instead of a truncated success."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "The tools an agent needs for real work sit behind subscriptions nobody buys for a single run — Semrush $139/mo, Moz $99/mo, Crunchbase $99/mo, Apollo $59/seat — behind signup walls, or behind no public API at all (invite-only,…",
+          "id": "C2",
+          "section_title": "Why it exists",
+          "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+        },
+        {
+          "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+          "id": "C10",
+          "section_title": "Treg (OpenRouter for Tools)",
+          "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+        }
+      ],
+      "text": "Solves the friction of managing expensive, fragmented subscriptions, signup walls, and missing public APIs for developer agent tasks by carrying accounts centrally and billing fractions of a cent per call."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "**Request flow for `/call`:** resolve tool (by URL host + longest `base_url` prefix, or by name) → decrypt its secret(s) → apply each binding's injector → stream to the upstream → fire-and-forget audit record. The infra relay streams bytes…",
+            "id": "C6",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Module | Role | | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | | `proxy.py` | `relay()` — the whole product in one…",
+            "id": "C7",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "a registerable bundle manifest | | `api.py` | the API — the only brain; CLI + skill are thin clients over it | | `cli.py` | the `treg` CLI | | `models.py` | SQLModel tables: `Org`, `User`, `Membership`, `Invite`, `Secret`, `Tool`,…",
+            "id": "C8",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "text": "Comprises a central API application that acts as the brain, a thin CLI and skill client layer, an async database with SQLModel models, and a core proxy module that resolves tools, decrypts secrets, injects authentication, and relays streams upstream."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "a registerable bundle manifest | | `api.py` | the API — the only brain; CLI + skill are thin clients over it | | `cli.py` | the `treg` CLI | | `models.py` | SQLModel tables: `Org`, `User`, `Membership`, `Invite`, `Secret`, `Tool`,…",
+              "id": "C8",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Fernet encryption for stored secrets"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Module | Role | | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | | `proxy.py` | `relay()` — the whole product in one…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            },
+            {
+              "excerpt": "(material lifted from a CLI's keychain). **Faithful-relay contract:** the proxy alters **only** three things, everything else is verbatim: 1. hop-by-hop transport headers (re-derived per hop), 2. treg's own control + edge-forwarding…",
+              "id": "C9",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Single-flight OAuth token refresh and automated connect flows"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Module | Role | | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | | `proxy.py` | `relay()` — the whole product in one…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            },
+            {
+              "excerpt": "(material lifted from a CLI's keychain). **Faithful-relay contract:** the proxy alters **only** three things, everything else is verbatim: 1. hop-by-hop transport headers (re-derived per hop), 2. treg's own control + edge-forwarding…",
+              "id": "C9",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Credential health checks with webhook alerts for broken integrations"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Request flow for `/call`:** resolve tool (by URL host + longest `base_url` prefix, or by name) → decrypt its secret(s) → apply each binding's injector → stream to the upstream → fire-and-forget audit record. The infra relay streams bytes…",
+              "id": "C6",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Module | Role | | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | | `proxy.py` | `relay()` — the whole product in one…",
+              "id": "C7",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Streaming proxy for handling responses and spooled media items"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "a registerable bundle manifest | | `api.py` | the API — the only brain; CLI + skill are thin clients over it | | `cli.py` | the `treg` CLI | | `models.py` | SQLModel tables: `Org`, `User`, `Membership`, `Invite`, `Secret`, `Tool`,…",
+              "id": "C8",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "SQLModel"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            },
+            {
+              "excerpt": "fishaudio.voices.discover --query self=false --query licensed=false --query language=en treg resources list --provider fishaudio --kind voice ``` With your own Fish key, requests remain an unrestricted, unmetered upstream relay and Fish…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Fish Audio"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` /plugin marketplace add superdesigndev/treg /plugin install treg@treg ``` Installs the treg skill and treg's tools with no token and no configuration. Run `/mcp`, pick treg and sign in; the tools appear after it. Other agents: `npx…",
+              "id": "C5",
+              "section_title": "Or install it as a Claude Code plugin",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` /plugin marketplace add superdesigndev/treg /plugin install treg@treg ``` Installs the treg skill and treg's tools with no token and no configuration. Run `/mcp`, pick treg and sign in; the tools appear after it. Other agents: `npx…",
+              "id": "C5",
+              "section_title": "Or install it as a Claude Code plugin",
+              "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            }
+          ],
+          "name": "MiniMax Plugin Marketplace"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "superdesigndev/treg: OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn Topics: agents, api keys, cli, credentials, developer tools, dsh plugin, mcp, proxy, python, registry, secrets. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/superdesigndev/treg"
+            }
+          ],
+          "text": "Python environment"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "text": "Searching for domain backlinks or other tools dynamically using natural language through the catalog search feature."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "text": "Generating text-to-speech audio via Fish Audio integration by calling endpoints and redirecting binary stdout to files."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` /plugin marketplace add superdesigndev/treg /plugin install treg@treg ``` Installs the treg skill and treg's tools with no token and no configuration. Run `/mcp`, pick treg and sign in; the tools appear after it. Other agents: `npx…",
+            "id": "C5",
+            "section_title": "Or install it as a Claude Code plugin",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "text": "Installing treg as a plugin inside Claude Code or MiniMax to give agent environments immediate tool access."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "superdesigndev/treg: OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn Topics: agents, api keys, cli, credentials, developer tools, dsh plugin, mcp, proxy, python, registry, secrets. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/superdesigndev/treg"
+        },
+        {
+          "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+          "id": "C10",
+          "section_title": "Treg (OpenRouter for Tools)",
+          "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **The catalog** — external endpoints treg can serve with its own key or through a verified public route that needs no provider key. Own-key calls use the team's prepaid balance; anonymous calls are free. No account with the provider is…",
+          "id": "C11",
+          "section_title": "Two kinds of tool, one token",
+          "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+        },
+        {
+          "excerpt": "`gh`, `vercel`, ...) run with the credential injected. - **skill / bundle** = a recipe (`SKILL.md`) + its secrets + its tool(s), registered together. **The one rule:** the proxy **relays, never models** the upstream, and **injects auth…",
+          "id": "C12",
+          "section_title": "Two kinds of tool, one token",
+          "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+        }
+      ],
+      "explanation": "Treg acts as an OpenRouter equivalent specifically for agent tools, routing requests to thousands of endpoints across multiple providers with pay-per-call pricing. It allows agents and developers to call APIs, use skills, and run CLIs without managing individual vendor accounts, signup walls, or costly subscriptions. A single token and base URL authenticate callers while treg handles server-side credential injection and request relaying.",
+      "one_line": "OpenRouter for agent tools, providing access to a curated catalog of thousands of endpoints priced per call."
+    },
+    "who_should_care": [
+      {
+        "audience": "AI Agent Developers",
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+            "id": "C10",
+            "section_title": "Treg (OpenRouter for Tools)",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "reason": "Agents can access paid tools, SEO data, search APIs, and media generation capabilities through a single base URL and token without holding direct vendor credentials."
+      },
+      {
+        "audience": "Engineering Teams",
+        "citations": [
+          {
+            "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+            "id": "C10",
+            "section_title": "Treg (OpenRouter for Tools)",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **The catalog** — external endpoints treg can serve with its own key or through a verified public route that needs no provider key. Own-key calls use the team's prepaid balance; anonymous calls are free. No account with the provider is…",
+            "id": "C11",
+            "section_title": "Two kinds of tool, one token",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "reason": "Teams can share registered proprietary tools, paid API accounts, and vendor CLIs among teammates securely without exposing the underlying credentials."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Same flow as the dashboard's **Getting started** guide: ``` # 1. install the CLI — also points it at the registry curl -fsSL https://treg.to/install.sh | sh # 2. sign in (GitHub default · --email for a one-time code · --token for…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "**OpenRouter, but for agent tools instead of models.** Point an agent at one base URL with one token and it can do the job: **a curated catalog of thousands of endpoints across many providers** — SEO and backlinks, social and trends,…",
+            "id": "C10",
+            "section_title": "Treg (OpenRouter for Tools)",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "point": "Allows querying tools by what they do via a catalog search rather than requiring users to know which specific vendor provides the data."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "a registerable bundle manifest | | `api.py` | the API — the only brain; CLI + skill are thin clients over it | | `cli.py` | the `treg` CLI | | `models.py` | SQLModel tables: `Org`, `User`, `Membership`, `Invite`, `Secret`, `Tool`,…",
+            "id": "C8",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "(material lifted from a CLI's keychain). **Faithful-relay contract:** the proxy alters **only** three things, everything else is verbatim: 1. hop-by-hop transport headers (re-derived per hop), 2. treg's own control + edge-forwarding…",
+            "id": "C9",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "`gh`, `vercel`, ...) run with the credential injected. - **skill / bundle** = a recipe (`SKILL.md`) + its secrets + its tool(s), registered together. **The one rule:** the proxy **relays, never models** the upstream, and **injects auth…",
+            "id": "C12",
+            "section_title": "Two kinds of tool, one token",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "point": "Uses a faithful-relay proxy contract that alters only hop-by-hop transport headers, control headers, and injected credentials, ensuring resilience to upstream API changes."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Module | Role | | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | | `proxy.py` | `relay()` — the whole product in one…",
+            "id": "C7",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          },
+          {
+            "excerpt": "a registerable bundle manifest | | `api.py` | the API — the only brain; CLI + skill are thin clients over it | | `cli.py` | the `treg` CLI | | `models.py` | SQLModel tables: `Org`, `User`, `Membership`, `Invite`, `Secret`, `Tool`,…",
+            "id": "C8",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+          }
+        ],
+        "point": "Supports four different auth shapes (env, secret_file, oauth, and cli_auth) to seamlessly inject secrets into headers or queries server-side."
+      }
+    ]
+  },
+  "source_hash": "3c2093343afcb6c8f2e06a771f02fad36044877ebd5f311026f6660895c2e21f"
+}

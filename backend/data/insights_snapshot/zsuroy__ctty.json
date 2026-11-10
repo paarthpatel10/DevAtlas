@@ -1,0 +1,506 @@
+{
+  "full_name": "zsuroy/ctty",
+  "generated_at": "2026-11-10 09:18:08.247590+00:00",
+  "github_id": 1333312695,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "move my-server # Move host with custom SSH config file (requires Include directives) ctty move my-server -c /path/to/custom/ssh_config # Search for hosts (interactive filter or keyword/tag query) ctty search ctty search prod ctty search…",
+            "id": "C7",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "ftp rename lab-nas /pub/old.txt /pub/new.txt # Open WebDAV site manager, or a site browser directly ctty webdav ctty webdav nextcloud # WebDAV headless transfers (no TUI, dirs recursive, progress on stderr) ctty webdav ls nextcloud…",
+            "id": "C8",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "Restore configuration files from a backup archive ctty restore backup.tar.gz --dry-run ctty restore backup.ctty -p \"passphrase\" --overwrite # Export connection profiles to JSON or OpenSSH format ctty export --format json ctty export…",
+            "id": "C10",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "jq",
+          "FastAPI"
+        ],
+        "description": "Create a script that queries server metrics and bucket contents using ctty's JSON output flags and parses them to generate a status overview page.",
+        "how_it_is_used": "Relies on ctty's headless CLI commands with `--format json` like `ctty peek` and `ctty s3 list` to collect real-time data programmatically.",
+        "title": "Automated Multi-Cloud Infrastructure Health Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+            "id": "C2",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "my-bucket/olddir my-bucket/newdir # Browse the local filesystem (search, mkdir/delete/rename, file details) ctty browse ctty browse ~/Downloads # Open Serial device manager directly ctty serial # Add/edit a host without opening the form…",
+            "id": "C9",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Bash",
+          "Node.js"
+        ],
+        "description": "Build a wrapper tool that standardizes backup archives and migrates configuration states seamlessly across different developer workstations.",
+        "how_it_is_used": "Utilizes `ctty backup` and `ctty restore` commands with AES-256-GCM encryption support to safely package and deploy configuration credentials.",
+        "title": "Cross-Platform Migration Assistant"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Homebrew (Recommended for macOS):** ``` brew install zsuroy/ctty/ctty ``` **Unix/Linux/macOS (One-line install):** ``` curl -sSL https://raw.githubusercontent.com/zsuroy/ctty/master/install/unix.sh | bash ``` **Termux (Android):** ```…",
+            "id": "C4",
+            "section_title": "Installation",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "label": "Homebrew (macOS)",
+        "url": "https://raw.githubusercontent.com/zsuroy/ctty/master/install/unix.sh"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Homebrew (Recommended for macOS):** ``` brew install zsuroy/ctty/ctty ``` **Unix/Linux/macOS (One-line install):** ``` curl -sSL https://raw.githubusercontent.com/zsuroy/ctty/master/install/unix.sh | bash ``` **Termux (Android):** ```…",
+            "id": "C4",
+            "section_title": "Installation",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "label": "Unix/Linux/macOS Install Script",
+        "url": "https://raw.githubusercontent.com/zsuroy/ctty/master/install/unix.sh"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Homebrew (Recommended for macOS):** ``` brew install zsuroy/ctty/ctty ``` **Unix/Linux/macOS (One-line install):** ``` curl -sSL https://raw.githubusercontent.com/zsuroy/ctty/master/install/unix.sh | bash ``` **Termux (Android):** ```…",
+            "id": "C4",
+            "section_title": "Installation",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "label": "Windows PowerShell Install Script",
+        "url": "https://raw.githubusercontent.com/zsuroy/ctty/master/install/windows.ps1"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Extract and install tar -xzf ctty_Linux_x86_64.tar.gz # contains the single \"ctty\" binary sudo mv ctty /usr/local/bin/ctty ``` *Windows:* ``` # Download and extract Invoke-WebRequest -Uri…",
+            "id": "C5",
+            "section_title": "Installation",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "label": "GitHub Repository Source",
+        "url": "https://github.com/zsuroy/ctty.git"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+          "id": "C11",
+          "section_title": "🚀 ctty - Connection Manager",
+          "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+        }
+      ],
+      "text": "Eliminates the need for bloated, resource-heavy Electron GUI connection managers by consolidating multi-protocol connections (SSH, Serial, SFTP, Telnet, FTP, WebDAV, and S3) into a single, fast terminal binary."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+              "id": "C11",
+              "section_title": "🚀 ctty - Connection Manager",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            },
+            {
+              "excerpt": "- **🎨 Beautiful TUI Interface** - Navigate your SSH hosts with an elegant, interactive terminal UI and zero vertical layout jitter - **⚡ Quick Connect & Health Peek** - Connect instantly with `Enter` or inspect real-time system metrics…",
+              "id": "C12",
+              "section_title": "🚀 Core Capabilities",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Interactive Terminal UI (TUI)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Headless CLI with JSON output"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            },
+            {
+              "excerpt": "my-bucket/olddir my-bucket/newdir # Browse the local filesystem (search, mkdir/delete/rename, file details) ctty browse ctty browse ~/Downloads # Open Serial device manager directly ctty serial # Add/edit a host without opening the form…",
+              "id": "C9",
+              "section_title": "CLI Usage",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "AES-256-GCM encrypted backups"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            },
+            {
+              "excerpt": "Restore configuration files from a backup archive ctty restore backup.tar.gz --dry-run ctty restore backup.ctty -p \"passphrase\" --overwrite # Export connection profiles to JSON or OpenSSH format ctty export --format json ctty export…",
+              "id": "C10",
+              "section_title": "CLI Usage",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Multi-app profile import (Tabby, Termius, FinalShell)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Backups** - Backup configurations automatically before changes - **✅ Validation** - Prevent configuration errors with built-in validation - **🔗 ProxyJump/ProxyCommand Support** - Secure connection tunneling through bastion hosts - **⌨️…",
+              "id": "C3",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "ProxyJump/ProxyCommand tunneling"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "SSH"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "Serial"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "SFTP"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "Telnet"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "FTP"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "WebDAV"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/zsuroy/ctty"
+            }
+          ],
+          "name": "S3"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Cursor"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+              "id": "C2",
+              "section_title": "🛠️ Technical Features",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "name": "Codex"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Extract and install tar -xzf ctty_Linux_x86_64.tar.gz # contains the single \"ctty\" binary sudo mv ctty /usr/local/bin/ctty ``` *Windows:* ``` # Download and extract Invoke-WebRequest -Uri…",
+              "id": "C5",
+              "section_title": "Installation",
+              "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+            }
+          ],
+          "text": "Go 1.23+ required if building from source."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "move my-server # Move host with custom SSH config file (requires Include directives) ctty move my-server -c /path/to/custom/ssh_config # Search for hosts (interactive filter or keyword/tag query) ctty search ctty search prod ctty search…",
+            "id": "C7",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "- **🎨 Beautiful TUI Interface** - Navigate your SSH hosts with an elegant, interactive terminal UI and zero vertical layout jitter - **⚡ Quick Connect & Health Peek** - Connect instantly with `Enter` or inspect real-time system metrics…",
+            "id": "C12",
+            "section_title": "🚀 Core Capabilities",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "text": "Inspecting real-time system metrics (CPU load, memory usage, uptime, and disk space) across multiple production servers simultaneously using quick peek and batch execution."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+            "id": "C2",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "Restore configuration files from a backup archive ctty restore backup.tar.gz --dry-run ctty restore backup.ctty -p \"passphrase\" --overwrite # Export connection profiles to JSON or OpenSSH format ctty export --format json ctty export…",
+            "id": "C10",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "text": "Migrating existing host profiles and configurations effortlessly from tools like Tabby, Termius, or FinalShell into standard formats."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "move my-server # Move host with custom SSH config file (requires Include directives) ctty move my-server -c /path/to/custom/ssh_config # Search for hosts (interactive filter or keyword/tag query) ctty search ctty search prod ctty search…",
+            "id": "C7",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "ftp rename lab-nas /pub/old.txt /pub/new.txt # Open WebDAV site manager, or a site browser directly ctty webdav ctty webdav nextcloud # WebDAV headless transfers (no TUI, dirs recursive, progress on stderr) ctty webdav ls nextcloud…",
+            "id": "C8",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "my-bucket/olddir my-bucket/newdir # Browse the local filesystem (search, mkdir/delete/rename, file details) ctty browse ctty browse ~/Downloads # Open Serial device manager directly ctty serial # Add/edit a host without opening the form…",
+            "id": "C9",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "text": "Performing headless file transfers and operations via SFTP, FTP, WebDAV, or S3 within automated deployment scripts."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/zsuroy/ctty"
+        },
+        {
+          "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+          "id": "C11",
+          "section_title": "🚀 ctty - Connection Manager",
+          "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+        }
+      ],
+      "explanation": "ctty is a lightweight command-line tool and interactive terminal user interface (TUI) designed to manage multiple connection types without heavy dependencies like Electron. It serves as a unified manager for SSH hosts, serial devices, telnet endpoints, SFTP transfers, FTP sites, WebDAV servers, and S3 object storage.",
+      "one_line": "An all-in-one terminal connection manager supporting SSH, Serial, SFTP, Telnet, FTP, WebDAV, and S3."
+    },
+    "who_should_care": [
+      {
+        "audience": "DevOps Engineers and System Administrators",
+        "citations": [
+          {
+            "excerpt": "zsuroy/ctty: A lightweight, all-in-one connection manager — SSH, Serial, SFTP, Telnet, FTP, WebDAV and S3 in a single TUI 🔥 Topics: cli, devops, filemanager, ftp, s3, serialport, sftp, skill, ssh, telnet, terminal, tui, webdav. Primary…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/zsuroy/ctty"
+          },
+          {
+            "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+            "id": "C11",
+            "section_title": "🚀 ctty - Connection Manager",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "- **🎨 Beautiful TUI Interface** - Navigate your SSH hosts with an elegant, interactive terminal UI and zero vertical layout jitter - **⚡ Quick Connect & Health Peek** - Connect instantly with `Enter` or inspect real-time system metrics…",
+            "id": "C12",
+            "section_title": "🚀 Core Capabilities",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "reason": "Need to manage infrastructure across SSH, serial ports, file servers, and S3 buckets rapidly from the terminal using keyboard shortcuts and batch execution tools."
+      },
+      {
+        "audience": "Developers building AI agent workflows",
+        "citations": [
+          {
+            "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+            "id": "C2",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "Restore configuration files from a backup archive ctty restore backup.tar.gz --dry-run ctty restore backup.ctty -p \"passphrase\" --overwrite # Export connection profiles to JSON or OpenSSH format ctty export --format json ctty export…",
+            "id": "C10",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "reason": "Can utilize ctty's headless CLI, agent skills, and JSON output formats to interact with infrastructure programmatically."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Backups** - Backup configurations automatically before changes - **✅ Validation** - Prevent configuration errors with built-in validation - **🔗 ProxyJump/ProxyCommand Support** - Secure connection tunneling through bastion hosts - **⌨️…",
+            "id": "C3",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+            "id": "C11",
+            "section_title": "🚀 ctty - Connection Manager",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "point": "Operates as a single ~5MB binary with zero dependencies and no configuration required."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+            "id": "C2",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "point": "Provides an agent skill and headless CLI modes with JSON outputs tailored for scripts and AI agents like Cursor, Claude Code, and Codex."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **🔒 Secure** - Works directly with your existing `~/.ssh/config` file (credentials stored separately, never pollutes standard SSH configs) - **📁 Custom Config Support** - Use any SSH configuration file with the `-c` flag - **🤖 Agent…",
+            "id": "C2",
+            "section_title": "🛠️ Technical Features",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "my-bucket/olddir my-bucket/newdir # Browse the local filesystem (search, mkdir/delete/rename, file details) ctty browse ctty browse ~/Downloads # Open Serial device manager directly ctty serial # Add/edit a host without opening the form…",
+            "id": "C9",
+            "section_title": "CLI Usage",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          },
+          {
+            "excerpt": "English | 中文 > **A lightweight, all-in-one connection manager — SSH, serial, telnet, SFTP, FTP, WebDAV, and S3 in a single TUI** 🔥 ctty is a fast, native terminal tool for managing all your connections — SSH hosts, serial devices, telnet…",
+            "id": "C11",
+            "section_title": "🚀 ctty - Connection Manager",
+            "source_url": "https://github.com/zsuroy/ctty/blob/master/README.md"
+          }
+        ],
+        "point": "Integrates directly with standard OpenSSH configuration files (e.g., ~/.ssh/config) while supporting separate credential storage and secure backups."
+      }
+    ]
+  },
+  "source_hash": "645ba26ae5bb7536042354a565f398fbbaabdc497de454859623aeac8834042e"
+}

@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "llm_agents",
   "created_at_github": "2022-11-02T04:24:54Z",
   "default_branch": "main",
   "description": "LlamaIndex is the document processing platform for AI",

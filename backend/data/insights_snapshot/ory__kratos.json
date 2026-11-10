@@ -1,0 +1,420 @@
+{
+  "full_name": "ory/kratos",
+  "generated_at": "2026-11-10 09:10:24.849382+00:00",
+  "github_id": 135321861,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Vue.js",
+          "Express"
+        ],
+        "description": "Build a decoupled frontend application handling user logins and profile management that communicates entirely via Kratos HTTP APIs.",
+        "how_it_is_used": "Relies on Kratos to expose authentication workflows over HTTP APIs, separating identity logic from downstream microservices.",
+        "title": "Custom Auth Portal for Microservices"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/ory/kratos"
+          },
+          {
+            "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+            "id": "C2",
+            "section_title": "What is Ory Kratos?",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Docker",
+          "PostgreSQL"
+        ],
+        "description": "Create an enterprise user portal enforcing TOTP, SMS, and passkey verifications during sign-in.",
+        "how_it_is_used": "Uses Kratos's built-in support for multi-factor authentication, passkeys, SMS, and TOTP workflows.",
+        "title": "Multi-Factor Authentication Gateway"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Install the Ory CLI and create a new project to try Ory Identities. ``` # Install the Ory CLI if you do not have it yet: bash <(curl https://raw.githubusercontent.com/ory/meta/master/install.sh) -b . ory sudo mv ./ory /usr/local/bin/ #…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "label": "Ory Meta Install Script",
+        "url": "https://raw.githubusercontent.com/ory/meta/master/install.sh"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "commercial agreement to reduce operational and security risk. The **Ory Enterprise License (OEL)** layers on top of self-hosted Kratos and provides: - Additional enterprise features that are not available in the open source version such as…",
+            "id": "C10",
+            "section_title": "Self-host Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "text": "Certain features like SCIM, SAML, organization login (SSO), and CAPTCHAs require the Ory Enterprise License on top of self-hosted deployments."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/ory/kratos"
+        },
+        {
+          "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+          "id": "C2",
+          "section_title": "What is Ory Kratos?",
+          "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+        },
+        {
+          "excerpt": "Chat · Discussions · Newsletter · Docs · Try Ory Network · Jobs Ory Kratos is an API first identity and user management system for cloud native applications. It centralizes login, registration, recovery, verification, and profile…",
+          "id": "C5",
+          "section_title": null,
+          "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+        }
+      ],
+      "text": "Eliminates the need to build homegrown authentication and user management logic into every application by centralizing core workflows like login, registration, account recovery, verification, and profile management behind HTTP APIs."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+            "id": "C2",
+            "section_title": "What is Ory Kratos?",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "Chat · Discussions · Newsletter · Docs · Try Ory Network · Jobs Ory Kratos is an API first identity and user management system for cloud native applications. It centralizes login, registration, recovery, verification, and profile…",
+            "id": "C5",
+            "section_title": null,
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "The Ory Network is the fastest way to use Ory services in production. **Ory Identities** is powered by the open source Ory Kratos server and is API compatible. The Ory Network provides: - Identity and credential management that scales to…",
+            "id": "C8",
+            "section_title": "Use Ory Kratos on the Ory Network",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "text": "API-first cloud-native architecture exposing identity features over HTTP endpoints, separating user-facing workflows from application code and running either self-hosted or managed on the Ory Network."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Self-service login and registration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Account verification and recovery"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/ory/kratos"
+            },
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Multi-factor authentication (MFA, TOTP, SMS, Passkeys)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Profile and account management"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Identity schemas and traits"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+              "id": "C2",
+              "section_title": "What is Ory Kratos?",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Admin APIs for lifecycle management"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/ory/kratos"
+            }
+          ],
+          "name": "Go"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "If you are migrating from Auth0, Okta, or another identity provider that uses OAuth2 / OpenID Connect based login, consider using **Ory Hydra + Ory Kratos** together: - **Ory Hydra** acts as the OAuth2 and OpenID Connect provider and can…",
+              "id": "C6",
+              "section_title": "Migrating from Auth0, Okta, and similar providers",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "Ory Hydra"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You can run Ory Kratos yourself for full control over infrastructure, deployment, and customization. The install guide explains how to: - Install Kratos on Linux, macOS, Windows, and Docker - Configure databases such as PostgreSQL, MySQL,…",
+              "id": "C9",
+              "section_title": "Self-host Ory Kratos",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You can run Ory Kratos yourself for full control over infrastructure, deployment, and customization. The install guide explains how to: - Install Kratos on Linux, macOS, Windows, and Docker - Configure databases such as PostgreSQL, MySQL,…",
+              "id": "C9",
+              "section_title": "Self-host Ory Kratos",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "MySQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You can run Ory Kratos yourself for full control over infrastructure, deployment, and customization. The install guide explains how to: - Install Kratos on Linux, macOS, Windows, and Docker - Configure databases such as PostgreSQL, MySQL,…",
+              "id": "C9",
+              "section_title": "Self-host Ory Kratos",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "name": "CockroachDB"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Install the Ory CLI and create a new project to try Ory Identities. ``` # Install the Ory CLI if you do not have it yet: bash <(curl https://raw.githubusercontent.com/ory/meta/master/install.sh) -b . ory sudo mv ./ory /usr/local/bin/ #…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+            }
+          ],
+          "text": "Ory CLI (for quickstart setup)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+            "id": "C2",
+            "section_title": "What is Ory Kratos?",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "text": "Implementing self-service login, registration, and account recovery for web and native applications."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "If you are migrating from Auth0, Okta, or another identity provider that uses OAuth2 / OpenID Connect based login, consider using **Ory Hydra + Ory Kratos** together: - **Ory Hydra** acts as the OAuth2 and OpenID Connect provider and can…",
+            "id": "C6",
+            "section_title": "Migrating from Auth0, Okta, and similar providers",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "text": "Migrating authentication systems away from providers like Auth0 or Okta using Ory Kratos paired with Ory Hydra."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/ory/kratos"
+        },
+        {
+          "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+          "id": "C2",
+          "section_title": "What is Ory Kratos?",
+          "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+        },
+        {
+          "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+          "id": "C3",
+          "section_title": "Why Ory Kratos",
+          "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+        },
+        {
+          "excerpt": "Chat · Discussions · Newsletter · Docs · Try Ory Network · Jobs Ory Kratos is an API first identity and user management system for cloud native applications. It centralizes login, registration, recovery, verification, and profile…",
+          "id": "C5",
+          "section_title": null,
+          "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+        }
+      ],
+      "explanation": "Ory Kratos is an API-first identity and user management system designed to handle core identity workflows like login, registration, recovery, verification, and profile management. It removes identity logic from application code, exposing it over HTTP APIs to integrate with any UI framework or cloud-native environment.",
+      "one_line": "Headless cloud-native authentication and identity management system written in Go."
+    },
+    "who_should_care": [
+      {
+        "audience": "Backend Developers",
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+            "id": "C2",
+            "section_title": "What is Ory Kratos?",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "reason": "To offload complex authentication, registration, and identity schemas from application code into dedicated HTTP APIs."
+      },
+      {
+        "audience": "Platform Engineers",
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "You can run Ory Kratos yourself for full control over infrastructure, deployment, and customization. The install guide explains how to: - Install Kratos on Linux, macOS, Windows, and Docker - Configure databases such as PostgreSQL, MySQL,…",
+            "id": "C9",
+            "section_title": "Self-host Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "reason": "To deploy a cloud-native identity management system that fits into modern orchestration environments like Kubernetes."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is an API first identity and user management system that follows cloud architecture best practices. It focuses on core identity workflows that almost every application needs: - Self service login and registration - Account…",
+            "id": "C2",
+            "section_title": "What is Ory Kratos?",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          },
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "point": "API-first architecture that decouples identity logic from application code."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ory/kratos: Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/ory/kratos"
+          }
+        ],
+        "point": "Supports a wide variety of authentication methods including passkeys, social sign-in, OIDC, magic links, MFA, SMS, SAML, and TOTP."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Ory Kratos is designed to: - Remove identity logic from your application code and expose it over HTTP APIs - Work well with any UI framework through browser based and native app flows - Scale to large numbers of identities and devices -…",
+            "id": "C3",
+            "section_title": "Why Ory Kratos",
+            "source_url": "https://github.com/ory/kratos/blob/master/README.md"
+          }
+        ],
+        "point": "Works with any UI framework through browser-based and native app flows."
+      }
+    ]
+  },
+  "source_hash": "609ca3048f8516127bb6dbfb74081c5595c5c58d1e953334b2e6952f18fbee2c"
+}

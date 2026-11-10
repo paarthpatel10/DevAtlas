@@ -1,0 +1,413 @@
+{
+  "full_name": "modelcontextprotocol/servers",
+  "generated_at": "2026-11-10 09:03:10.520459+00:00",
+  "github_id": 890668799,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+            "id": "C5",
+            "section_title": "🌟 Reference Servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          },
+          {
+            "excerpt": "However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server: ``` { \"mcpServers\": { \"memory\": { \"command\": \"npx\",…",
+            "id": "C8",
+            "section_title": "Using an MCP Client",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "TypeScript",
+          "Python"
+        ],
+        "description": "Build an intelligent assistant that retains facts across sessions by storing and retrieving structured memories.",
+        "how_it_is_used": "Configure the Memory reference server into an MCP client to give the LLM persistent knowledge graph capabilities.",
+        "title": "Custom Knowledge Graph Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+            "id": "C5",
+            "section_title": "🌟 Reference Servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          },
+          {
+            "excerpt": "However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server: ``` { \"mcpServers\": { \"memory\": { \"command\": \"npx\",…",
+            "id": "C8",
+            "section_title": "Using an MCP Client",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "Git",
+          "uvx"
+        ],
+        "description": "Create an LLM interface that can read, search, and manipulate local Git repositories.",
+        "how_it_is_used": "Run the Git reference server as a subprocess via an MCP client configuration.",
+        "title": "Local Git Repository Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+            "id": "C5",
+            "section_title": "🌟 Reference Servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          },
+          {
+            "excerpt": "However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server: ``` { \"mcpServers\": { \"memory\": { \"command\": \"npx\",…",
+            "id": "C8",
+            "section_title": "Using an MCP Client",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "Node.js"
+        ],
+        "description": "Build a coding assistant that can read and write files within strict directory boundaries.",
+        "how_it_is_used": "Integrate the Filesystem reference server with an allowed path configuration argument.",
+        "title": "Secure Local File Editor"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "This repository is a collection of *reference implementations* for the Model Context Protocol (MCP), as well as references to community-built servers and additional resources. > [!IMPORTANT] > If you are looking for a list of MCP servers,…",
+            "id": "C3",
+            "section_title": "Model Context Protocol servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "text": "The servers in this repository are intended as reference implementations and educational examples, not production-ready solutions."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "This repository is a collection of *reference implementations* for the Model Context Protocol (MCP), as well as references to community-built servers and additional resources. > [!IMPORTANT] > If you are looking for a list of MCP servers,…",
+          "id": "C3",
+          "section_title": "Model Context Protocol servers",
+          "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+        },
+        {
+          "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+          "id": "C5",
+          "section_title": "🌟 Reference Servers",
+          "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+        }
+      ],
+      "text": "It demonstrates how to implement the Model Context Protocol to give LLMs secure, controlled access to tools, prompts, and data sources."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "An MCP server talks to its client over a **transport**. The protocol defines two standard ones, and they run very differently: | Transport | How the server runs | How a client reaches it | |---|---|---| | **stdio** | The client launches…",
+            "id": "C9",
+            "section_title": "Transports: stdio and Streamable HTTP",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "text": "Servers communicate with clients via transports, specifically stdio (where the client runs the server as a subprocess) or Streamable HTTP (where the server runs as an independent HTTP service)."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Prompts, resources, and tools reference server"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Web content fetching and conversion"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Secure file operations with configurable access controls"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Git repository search and manipulation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Knowledge graph-based persistent memory system"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Sequential thinking thought-sequence problem solving"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+              "id": "C5",
+              "section_title": "🌟 Reference Servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Time and timezone conversion"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An MCP server talks to its client over a **transport**. The protocol defines two standard ones, and they run very differently: | Transport | How the server runs | How a client reaches it | |---|---|---| | **stdio** | The client launches…",
+              "id": "C9",
+              "section_title": "Transports: stdio and Streamable HTTP",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Stdio and Streamable HTTP transport support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "C# MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Go MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Java MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Kotlin MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "PHP MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Python MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Ruby MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Rust MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Swift MCP SDK"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "to give Large Language Models (LLMs) secure, controlled access to tools and data sources. Typically, each MCP server is implemented with an MCP SDK: - C# MCP SDK - Go MCP SDK - Java MCP SDK - Kotlin MCP SDK - PHP MCP SDK - Python MCP SDK -…",
+              "id": "C4",
+              "section_title": "Model Context Protocol servers",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "TypeScript MCP SDK"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server: ``` { \"mcpServers\": { \"memory\": { \"command\": \"npx\",…",
+              "id": "C8",
+              "section_title": "Using an MCP Client",
+              "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Desktop"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+            "id": "C5",
+            "section_title": "🌟 Reference Servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          },
+          {
+            "excerpt": "However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server: ``` { \"mcpServers\": { \"memory\": { \"command\": \"npx\",…",
+            "id": "C8",
+            "section_title": "Using an MCP Client",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "text": "Testing and demonstrating MCP client-server integration using reference servers like Everything, Fetch, Filesystem, and Git."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "This repository is a collection of *reference implementations* for the Model Context Protocol (MCP), as well as references to community-built servers and additional resources. > [!IMPORTANT] > If you are looking for a list of MCP servers,…",
+          "id": "C3",
+          "section_title": "Model Context Protocol servers",
+          "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+        }
+      ],
+      "explanation": "This repository houses reference servers maintained by the MCP steering group to demonstrate features and official SDK usage. It showcases how Large Language Models can gain secure, controlled access to external tools and data sources. The servers are meant to serve as educational examples for developers rather than production-ready solutions.",
+      "one_line": "A collection of reference implementations and resources for the Model Context Protocol (MCP)."
+    },
+    "who_should_care": [
+      {
+        "audience": "Developers building MCP servers",
+        "citations": [
+          {
+            "excerpt": "This repository is a collection of *reference implementations* for the Model Context Protocol (MCP), as well as references to community-built servers and additional resources. > [!IMPORTANT] > If you are looking for a list of MCP servers,…",
+            "id": "C3",
+            "section_title": "Model Context Protocol servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "reason": "Provides educational reference implementations and examples of official SDK usage."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "These servers aim to demonstrate MCP features and the official SDKs. - **Everything** - Reference / test server with prompts, resources, and tools. - **Fetch** - Web content fetching and conversion for efficient LLM usage. - **Filesystem**…",
+            "id": "C5",
+            "section_title": "🌟 Reference Servers",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "point": "Includes multiple reference servers showcasing capabilities like web fetching, secure file operations, Git repository manipulation, and persistent memory."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "An MCP server talks to its client over a **transport**. The protocol defines two standard ones, and they run very differently: | Transport | How the server runs | How a client reaches it | |---|---|---| | **stdio** | The client launches…",
+            "id": "C9",
+            "section_title": "Transports: stdio and Streamable HTTP",
+            "source_url": "https://github.com/modelcontextprotocol/servers/blob/main/README.md"
+          }
+        ],
+        "point": "Demonstrates protocol transport mechanisms including stdio subprocess communication and Streamable HTTP."
+      }
+    ]
+  },
+  "source_hash": "9aec1ee838da9b0aa46a28f169bf25d7625eb0923f1fe2f0bd01858ec5622128"
+}

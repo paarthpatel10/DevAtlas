@@ -1,0 +1,67 @@
+# Discover ranking parameters. Methodology: docs/discover-ranking.md.
+# Scores are internal ordering devices, never shown as quality.
+
+trending:
+  periods: {day: 1, week: 7, month: 30}
+  # Minimum stars gained in the period to appear when growth history exists.
+  min_stars_gained: {day: 1, week: 3, month: 5}
+  # Without history: "recently active" means a push within this many days.
+  active_within_days: 30
+  limit: 50
+
+rising:
+  window_days: 30
+  # Growth ratio = stars gained in 30 days / max(stars 30 days ago, size_floor).
+  size_floor: 200
+  min_active_weeks: 3          # weeks with commits among the last 4
+  min_stars_gained: 10         # in 30 days
+  acceleration_boost: 1.25     # applied when the 7-day daily rate beats the 30-day rate
+  exclude_top_popular: 10      # leave the most-starred repositories to Trending
+  limit: 50
+
+new:
+  created_within_days: 90
+  discovered_within_days: 14   # applies to repositories found by search discovery
+  first_release_within_days: 30
+  limit: 50
+
+hidden_gems:
+  star_percentile_max: 40      # within the repository's own category
+  min_category_size: 8         # smaller categories use the percentile across all repositories
+  pushed_within_days: 90
+  min_readme_completeness: 0.6
+  require_license: true
+  limit: 50
+
+weekly:
+  per_feed: 3
+  total: 10
+  max_per_category: 2
+
+# GitHub search discovery of new repositories (scripts/discover_new.py).
+search:
+  per_category_limit: 5
+  min_stars: 20
+  # Very large star counts on months-old repositories are often star farming; real
+  # breakout projects belong in the curated list instead.
+  max_stars: 25000
+  created_within_days: 120
+  min_readme_completeness: 0.5   # install/usage docs before a repository is added
+  queries:
+    ai_ml: ["topic:machine-learning", "topic:deep-learning"]
+    llm_agents: ["topic:llm", "topic:ai-agents"]
+    mcp_automation: ["topic:mcp", "topic:model-context-protocol"]
+    backend: ["topic:backend", "topic:web-framework"]
+    frontend: ["topic:frontend", "topic:react-components"]
+    full_stack: ["topic:fullstack", "topic:full-stack"]
+    databases_search: ["topic:database", "topic:vector-database"]
+    data_engineering: ["topic:data-engineering", "topic:etl"]
+    devops_platform: ["topic:devops", "topic:kubernetes"]
+    security: ["topic:security", "topic:authentication"]
+    developer_tools: ["topic:developer-tools", "topic:cli"]
+    learning: ["topic:tutorial", "topic:learning-resources"]
+
+# GitHub Trending tracker (scripts/track_github_trending.py): daily pages only.
+github_trending:
+  delay_s: 2.0
+  languages: [python, typescript, javascript, go, rust, java, c++, jupyter-notebook]

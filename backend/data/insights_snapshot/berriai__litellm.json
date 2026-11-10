@@ -1,0 +1,466 @@
+{
+  "full_name": "BerriAI/litellm",
+  "generated_at": "2026-11-10 09:05:27.631452+00:00",
+  "github_id": 671269505,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          },
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Redis",
+          "Docker"
+        ],
+        "description": "Build an internal routing application that fails over from one LLM provider to another seamlessly when errors or rate limits occur.",
+        "how_it_is_used": "Utilize LiteLLM's unified API and load balancing capabilities to route requests across different backend models using the OpenAI format.",
+        "title": "Multi-Provider LLM Fallback Proxy"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+            "id": "C2",
+            "section_title": "What is LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          },
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "PostgreSQL",
+          "Tailwind CSS"
+        ],
+        "description": "Create a usage tracking dashboard that monitors token consumption and monetary costs per virtual key and department.",
+        "how_it_is_used": "Deploy the LiteLLM Proxy server to manage virtual keys and track spend across organizational teams.",
+        "title": "Team AI Spend Dashboard"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "This requires uv to be installed. ``` git clone https://github.com/BerriAI/litellm.git cd litellm make install-dev # Install development dependencies make format # Format your code make lint # Run all linting checks make test-unit # Run…",
+            "id": "C12",
+            "section_title": "Quick Start for Contributors",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "label": "LiteLLM Repository",
+        "url": "https://github.com/BerriAI/litellm.git"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+          "id": "C3",
+          "section_title": "Why LiteLLM",
+          "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+        }
+      ],
+      "text": "Managing LLM calls across multiple providers quickly becomes complicated due to distinct SDKs, authentication patterns, request formats, and error types. LiteLLM eliminates this friction by providing a unified API and drop-in OpenAI compatibility so users can switch providers without rewriting code."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          },
+          {
+            "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+            "id": "C2",
+            "section_title": "What is LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "text": "Features a Rust core combined with a Python SDK, deployable either as a direct library integration or as a centralized AI Gateway proxy server."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            },
+            {
+              "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+              "id": "C3",
+              "section_title": "Why LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Unified API for 100+ LLM providers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+              "id": "C3",
+              "section_title": "Why LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Drop-in OpenAI compatibility format"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+              "id": "C3",
+              "section_title": "Why LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Cost tracking and spend management"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+              "id": "C3",
+              "section_title": "Why LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Load balancing and guardrails"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+              "id": "C3",
+              "section_title": "Why LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Virtual keys and admin dashboard"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "AWS Bedrock"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Azure"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            },
+            {
+              "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+              "id": "C2",
+              "section_title": "What is LiteLLM",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "name": "Vertex AI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            }
+          ],
+          "name": "vLLM"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/BerriAI/litellm"
+            }
+          ],
+          "name": "Nvidia NIM"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "This requires uv to be installed. ``` git clone https://github.com/BerriAI/litellm.git cd litellm make install-dev # Install development dependencies make format # Format your code make lint # Run all linting checks make test-unit # Run…",
+              "id": "C12",
+              "section_title": "Quick Start for Contributors",
+              "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+            }
+          ],
+          "text": "uv (required for development contribution installation)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          },
+          {
+            "excerpt": "LLMs - Call 100+ LLMs (Python SDK + AI Gateway) **All Supported Endpoints** - `/chat/completions`, `/responses`, `/embeddings`, `/images`, `/audio`, `/batches`, `/rerank`, `/a2a`, `/messages` and more.",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "text": "Routing chat completion, embedding, image generation, audio, and batch requests to over 100 different model providers via a unified interface."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          },
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "text": "Tracking costs and managing spending across multiple LLM endpoints using a centralized gateway."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/BerriAI/litellm"
+        },
+        {
+          "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+          "id": "C2",
+          "section_title": "What is LiteLLM",
+          "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+        },
+        {
+          "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+          "id": "C3",
+          "section_title": "Why LiteLLM",
+          "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+        }
+      ],
+      "explanation": "LiteLLM is an AI Gateway available as a Python SDK or a deployable proxy server that unifies calls to over 100 LLM providers using the OpenAI format. It abstracts away differing SDKs, authentication patterns, request formats, and error types across various language models.",
+      "one_line": "An open source AI Gateway offering a unified interface to call 100+ LLM providers."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          },
+          {
+            "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+            "id": "C2",
+            "section_title": "What is LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          },
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "reason": "To integrate multiple LLMs using a single consistent API and standard formats without rewriting integration code for different providers."
+      },
+      {
+        "audience": "Engineering Teams and Organizations",
+        "citations": [
+          {
+            "excerpt": "LiteLLM is an open source AI Gateway that gives you a single, unified interface to call 100+ LLM providers — OpenAI, Anthropic, Gemini, Bedrock, Azure, and more — using the OpenAI format. Use it as a **Python SDK** for direct library…",
+            "id": "C2",
+            "section_title": "What is LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          },
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "reason": "To deploy a centralized AI Gateway proxy server for team use equipped with spend tracking, virtual keys, load balancing, and guardrails."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "point": "Unified API that connects to 100+ LLMs without juggling provider-specific SDKs."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "point": "Drop-in OpenAI compatibility allowing providers to be swapped easily."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Managing LLM calls across providers gets complicated fast — different SDKs, auth patterns, request formats, and error types for every model. LiteLLM removes that friction: - **Unified API** — one interface for 100+ LLMs, no…",
+            "id": "C3",
+            "section_title": "Why LiteLLM",
+            "source_url": "https://github.com/BerriAI/litellm/blob/main/README.md"
+          }
+        ],
+        "point": "Production-ready gateway features including virtual keys, spend tracking, guardrails, load balancing, and an admin dashboard."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "BerriAI/litellm: The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/BerriAI/litellm"
+          }
+        ],
+        "point": "Features a Rust core combined with a Python SDK."
+      }
+    ]
+  },
+  "source_hash": "13699c9c9be695f40b1f5b982850b1cb918b851b3b07a8d416151d75f2b89be9"
+}

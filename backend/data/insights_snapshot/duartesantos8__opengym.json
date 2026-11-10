@@ -1,0 +1,475 @@
+{
+  "full_name": "DuarteSantos8/openGym",
+  "generated_at": "2026-11-10 09:09:12.183014+00:00",
+  "github_id": 1305213943,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Home Assistant",
+          "n8n",
+          "ntfy"
+        ],
+        "description": "Trigger external smart home alerts or record logs whenever a workout session finishes or a new personal record is set.",
+        "how_it_is_used": "Uses openGym's signed webhooks capability to send events to automation tools.",
+        "title": "Automated Home Gym Notification System"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Desktop",
+          "Anthropic API",
+          "Ollama"
+        ],
+        "description": "Query training history, analyze past performance trends, and log new workouts via natural language interactions.",
+        "how_it_is_used": "Connects an external model assistant to openGym's local MCP server.",
+        "title": "AI Personal Training Assistant"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "You need Docker with Compose. ``` git clone https://github.com/DuarteSantos8/openGym cd openGym cp .env.example .env docker compose pull # prebuilt images, amd64 + arm64 (skip this to build from source) docker compose up -d ``` Open , tap…",
+            "id": "C11",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/DuarteSantos8/openGym"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+          "id": "C2",
+          "section_title": "Why openGym",
+          "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+        }
+      ],
+      "text": "Eliminates reliance on third-party fitness servers, forced subscriptions, tracking telemetries, and unexpected app shutdowns by allowing users to self-host their data and control it locally."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            },
+            {
+              "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+              "id": "C2",
+              "section_title": "Why openGym",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Passkey authentication"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            },
+            {
+              "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+              "id": "C2",
+              "section_title": "Why openGym",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Progressive Web Application (PWA)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+              "id": "C2",
+              "section_title": "Why openGym",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Offline support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Guided sessions: today's workout starts itself, weights are pre-filled from last time, a rest timer runs between sets, PRs are detected as you go. On a rest day it tells you when the next session is. - A quiet workout screen: one menu…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Plate math calculation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "AI coach integration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "MCP server integration"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            }
+          ],
+          "name": "Node.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            }
+          ],
+          "name": "Vite"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "after the fact, log one you did on paper, or move it to the right date. Records are re-read from the corrected history. **Accounts and data** - Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            },
+            {
+              "excerpt": "right-to-left Arabic and Traditional Chinese. Exercise names and instructions are translated for most of them. **On the phone and the wrist** - Apps for iPhone, iPad and Android that work on their own (no server, no account) or connected…",
+              "id": "C8",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Apple Health"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "right-to-left Arabic and Traditional Chinese. Exercise names and instructions are translated for most of them. **On the phone and the wrist** - Apps for iPhone, iPad and Android that work on their own (no server, no account) or connected…",
+              "id": "C8",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            },
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Health Connect"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            },
+            {
+              "excerpt": "after the fact, log one you did on paper, or move it to the right date. Records are re-read from the corrected history. **Accounts and data** - Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Strong"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            },
+            {
+              "excerpt": "after the fact, log one you did on paper, or move it to the right date. Records are re-read from the corrected history. **Accounts and data** - Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Hevy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DuarteSantos8/openGym"
+            },
+            {
+              "excerpt": "after the fact, log one you did on paper, or move it to the right date. Records are re-read from the corrected history. **Accounts and data** - Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password…",
+              "id": "C7",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "FitNotes"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "Home Assistant"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "n8n"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+              "id": "C9",
+              "section_title": "Features",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "name": "ntfy"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need Docker with Compose. ``` git clone https://github.com/DuarteSantos8/openGym cd openGym cp .env.example .env docker compose pull # prebuilt images, amd64 + arm64 (skip this to build from source) docker compose up -d ``` Open , tap…",
+              "id": "C11",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+            }
+          ],
+          "text": "Docker with Compose"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Guided sessions: today's workout starts itself, weights are pre-filled from last time, a rest timer runs between sets, PRs are detected as you go. On a rest day it tells you when the next session is. - A quiet workout screen: one menu…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "text": "Logging guided gym sessions with pre-filled weights from previous workouts, rest timers, and automatic PR detection."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/DuarteSantos8/openGym"
+          },
+          {
+            "excerpt": "after the fact, log one you did on paper, or move it to the right date. Records are re-read from the corrected history. **Accounts and data** - Passkeys (Face ID, Touch ID, fingerprint) with per-profile data synced across devices. Password…",
+            "id": "C7",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "text": "Importing historical workout data from platforms like Strong, Hevy, or FitNotes."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "right-to-left Arabic and Traditional Chinese. Exercise names and instructions are translated for most of them. **On the phone and the wrist** - Apps for iPhone, iPad and Android that work on their own (no server, no account) or connected…",
+            "id": "C8",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "text": "Tracking health metrics and receiving reminders when walking into a registered gym."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/DuarteSantos8/openGym"
+        },
+        {
+          "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+          "id": "C2",
+          "section_title": "Why openGym",
+          "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+        }
+      ],
+      "explanation": "openGym is an open-source workout and fitness tracking application that allows users to plan routines, log sessions, and track muscle volume. It can be self-hosted via Docker or used independently on mobile devices without requiring external servers or subscriptions.",
+      "one_line": "Open-source gym and bodyweight tracker with self-hosting support, companion mobile apps, and routine planning."
+    },
+    "who_should_care": [
+      {
+        "audience": "Self-hosting enthusiasts",
+        "citations": [
+          {
+            "excerpt": "DuarteSantos8/openGym: Open-source gym & body-weight tracker, now in the App Store (iPhone + Apple Watch) and as an Android APK. Plan routines, log workouts, see which muscles are trained, import from Strong/Hevy/FitNotes. Self-host it or…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/DuarteSantos8/openGym"
+          },
+          {
+            "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+            "id": "C2",
+            "section_title": "Why openGym",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "reason": "They want a feature-complete fitness and gym tracker they can run via Docker on their own hardware with zero telemetry."
+      },
+      {
+        "audience": "Weightlifters and fitness practitioners",
+        "citations": [
+          {
+            "excerpt": "**Planning** - A routine per weekday over a library of **over 5,600 exercises** with animated demos, searchable and browsable by muscle on a body map. Filter by the equipment you own. - Four starter plans (Push/Pull/Legs, Upper/Lower, Full…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          },
+          {
+            "excerpt": "- Guided sessions: today's workout starts itself, weights are pre-filled from last time, a rest timer runs between sets, PRs are detected as you go. On a rest day it tells you when the next session is. - A quiet workout screen: one menu…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          },
+          {
+            "excerpt": "real weight stack, odd steps included, and progression sticks to it. - The session's volume runs live at the end of the progress bar. **Progress** - Progression rules per routine or per exercise: linear, Greyskull LP, double progression…",
+            "id": "C6",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "reason": "They need structured routine planning, plate math calculators, automated progression rules, and live volume tracking."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+            "id": "C2",
+            "section_title": "Why openGym",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "point": "Runs locally via Docker, keeping all workout data inside a folder controlled directly by the user."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most workout apps keep your data on their servers, push you towards a subscription, or vanish when the company does. openGym runs on your own box, keeps your data in a folder you control, and is yours to fork. It still behaves like a…",
+            "id": "C2",
+            "section_title": "Why openGym",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "point": "Includes offline functionality, passkey sign-in, and synchronization between devices."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Planning** - A routine per weekday over a library of **over 5,600 exercises** with animated demos, searchable and browsable by muscle on a body map. Filter by the equipment you own. - Four starter plans (Push/Pull/Legs, Upper/Lower, Full…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "point": "Features a library of over 5,600 animated exercises with muscle mapping and equipment filters."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Activity on the iPhone: log a set, skip the rest or jump to the next exercise from the Lock Screen without opening the app. **Only what you use** - Modules: switch whole parts of the app on and off in Settings → Modules, from \"Just…",
+            "id": "C9",
+            "section_title": "Features",
+            "source_url": "https://github.com/DuarteSantos8/openGym/blob/main/README.md"
+          }
+        ],
+        "point": "Supports an optional local or cloud-provided AI coach and an MCP server for integrations."
+      }
+    ]
+  },
+  "source_hash": "e3e11cfd2607393003cf7554eb5cb1a6f3a368f09f91d429a314d97ed7398a49"
+}

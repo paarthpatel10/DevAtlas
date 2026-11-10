@@ -4,13 +4,14 @@ Source text (README, metadata) is stored separately from generated analysis.
 """
 
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any
 
 from pgvector.sqlalchemy import VECTOR
 from sqlalchemy import (
     BigInteger,
     Boolean,
+    Date,
     DateTime,
     ForeignKey,
     Index,
@@ -63,6 +64,14 @@ class Repository(TimestampMixin, Base):
     last_ingested_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     last_refreshed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     search_vector: Mapped[Any | None] = mapped_column(TSVECTOR)
+    # Discover: provenance and event-history coverage (None = no event history collected).
+    discovery_source: Mapped[str] = mapped_column(String(20), default="curated")
+    first_indexed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), server_default=func.now()
+    )
+    star_history_since: Mapped[date | None] = mapped_column(Date)
+    fork_history_since: Mapped[date | None] = mapped_column(Date)
+    commit_history_since: Mapped[date | None] = mapped_column(Date)
 
     analysis: Mapped["RepositoryAnalysis | None"] = relationship(
         back_populates="repository", uselist=False, passive_deletes=True

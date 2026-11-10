@@ -1,0 +1,323 @@
+{
+  "full_name": "microsoft/generative-ai-for-beginners",
+  "generated_at": "2026-11-10 09:02:09.050833+00:00",
+  "github_id": 655806940,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+            "id": "C7",
+            "section_title": "To run the code of this course, you can use either:",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          },
+          {
+            "excerpt": "- A short video introduction to the topic - A written lesson located in the README - Python and TypeScript code samples supporting Azure OpenAI and OpenAI API - Links to extra resources to continue your learning",
+            "id": "C11",
+            "section_title": "📂 Each lesson includes:",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Node.js",
+          "Python",
+          "Express",
+          "FastAPI"
+        ],
+        "description": "Create a chat application that allows switching between Azure OpenAI, standard OpenAI API, and fully offline local models.",
+        "how_it_is_used": "Utilize course concepts and code samples demonstrating integration with Azure OpenAI Service, OpenAI API, and Foundry Local.",
+        "title": "Multi-Provider LLM Chat Application"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+            "id": "C2",
+            "section_title": "🌱 Getting Started",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "TypeScript",
+          "Python"
+        ],
+        "description": "Build a command-line tool or small library that implements advanced prompt engineering patterns in both Python and TypeScript.",
+        "how_it_is_used": "Leverage the dual Python and TypeScript code examples provided across the build lessons.",
+        "title": "TypeScript and Python Prompt Engineering Toolkit"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "(Cyrillic) | Slovak | Slovenian | Spanish | Swahili | Swedish | Tagalog (Filipino) | Tamil | Telugu | Thai | Turkish | Ukrainian | Urdu | Vietnamese > **Prefer to Clone Locally?** > > This repository includes 50+ language translations…",
+            "id": "C5",
+            "section_title": "Translations maintained with Co-op Translator",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/microsoft/generative-ai-for-beginners.git"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+          "id": "C2",
+          "section_title": "🌱 Getting Started",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+        },
+        {
+          "excerpt": "Learn the fundamentals of building Generative AI applications with our 21-lesson comprehensive course by Microsoft Cloud Advocates.",
+          "id": "C6",
+          "section_title": "Generative AI for Beginners (Version 3) - A Course",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+        }
+      ],
+      "text": "Provides a structured educational pathway and hands-on code examples for developers looking to understand generative AI concepts and implement them using Python or TypeScript."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Building with Generative AI Topics: ai, azure, chatgpt, dall e, generative ai, generativeai, gpt, language model, llms, microsoft for beginners, openai, prompt engineering,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners"
+            }
+          ],
+          "name": "Generative AI curriculum with 21 lessons"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+              "id": "C2",
+              "section_title": "🌱 Getting Started",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "Code examples in Python and TypeScript"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "Offline model execution support via Foundry Local"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "Azure OpenAI Service"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI API"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "Microsoft Foundry Models"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "name": "Foundry Local"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "text": "Basic knowledge of Python or TypeScript"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+              "id": "C7",
+              "section_title": "To run the code of this course, you can use either:",
+              "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ],
+          "text": "A GitHub account to fork the repository"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- A short video introduction to the topic - A written lesson located in the README - Python and TypeScript code samples supporting Azure OpenAI and OpenAI API - Links to extra resources to continue your learning",
+            "id": "C11",
+            "section_title": "📂 Each lesson includes:",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "text": "Learning generative AI concepts through structured video introductions, written explanations, and supplementary resources."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+            "id": "C2",
+            "section_title": "🌱 Getting Started",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "text": "Building prototype generative AI applications with code examples using Python or TypeScript."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Building with Generative AI Topics: ai, azure, chatgpt, dall e, generative ai, generativeai, gpt, language model, llms, microsoft for beginners, openai, prompt engineering,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners"
+        },
+        {
+          "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+          "id": "C2",
+          "section_title": "🌱 Getting Started",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+        },
+        {
+          "excerpt": "Learn the fundamentals of building Generative AI applications with our 21-lesson comprehensive course by Microsoft Cloud Advocates.",
+          "id": "C6",
+          "section_title": "Generative AI for Beginners (Version 3) - A Course",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+        },
+        {
+          "excerpt": "- A short video introduction to the topic - A written lesson located in the README - Python and TypeScript code samples supporting Azure OpenAI and OpenAI API - Links to extra resources to continue your learning",
+          "id": "C11",
+          "section_title": "📂 Each lesson includes:",
+          "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+        }
+      ],
+      "explanation": "Generative AI for Beginners is a 21-lesson curriculum created by Microsoft Cloud Advocates to help developers learn how to build generative AI applications. It covers concepts through dedicated 'Learn' and 'Build' lessons featuring code examples in both Python and TypeScript, supporting multiple backend services like Azure OpenAI and the OpenAI API.",
+      "one_line": "A comprehensive 21-lesson course teaching the fundamentals of building generative AI applications using Python and TypeScript."
+    },
+    "who_should_care": [
+      {
+        "audience": "Beginner developers",
+        "citations": [
+          {
+            "excerpt": "microsoft/generative-ai-for-beginners: 21 Lessons, Get Started Building with Generative AI Topics: ai, azure, chatgpt, dall e, generative ai, generativeai, gpt, language model, llms, microsoft for beginners, openai, prompt engineering,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners"
+          },
+          {
+            "excerpt": "Learn the fundamentals of building Generative AI applications with our 21-lesson comprehensive course by Microsoft Cloud Advocates.",
+            "id": "C6",
+            "section_title": "Generative AI for Beginners (Version 3) - A Course",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          },
+          {
+            "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+            "id": "C7",
+            "section_title": "To run the code of this course, you can use either:",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "reason": "They want to learn the fundamentals of generative AI, large language models, and prompt engineering with guided lessons and code samples."
+      },
+      {
+        "audience": ".NET Developers",
+        "citations": [
+          {
+            "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+            "id": "C2",
+            "section_title": "🌱 Getting Started",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "reason": "There is a dedicated Generative AI for Beginners .NET Edition available."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+            "id": "C2",
+            "section_title": "🌱 Getting Started",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "point": "Contains 21 modular lessons that can be explored independently depending on user interest."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This course has 21 lessons. Each lesson covers its own topic so start wherever you like! Lessons are labeled either \"Learn\" lessons explaining a Generative AI concept or \"Build\" lessons that explain a concept and code examples in both…",
+            "id": "C2",
+            "section_title": "🌱 Getting Started",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "point": "Provides code examples in both Python and TypeScript for the build-focused lessons."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Azure OpenAI Service - **Lessons:** \"aoai-assignment\" - Microsoft Foundry Models - **Lessons:** \"githubmodels\" (GitHub Models is retiring at the end of July 2026 - use Microsoft Foundry Models instead) - OpenAI API - **Lessons:**…",
+            "id": "C7",
+            "section_title": "To run the code of this course, you can use either:",
+            "source_url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+          }
+        ],
+        "point": "Supports running examples via multiple services including Azure OpenAI Service, OpenAI API, and Foundry Local for offline execution."
+      }
+    ]
+  },
+  "source_hash": "7403dc3b8c0f096148ca0ebe189c43a1c906e47adbefd4db13758360919a0514"
+}

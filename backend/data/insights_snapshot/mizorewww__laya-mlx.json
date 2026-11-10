@@ -1,0 +1,484 @@
+{
+  "full_name": "mizorewww/laya-mlx",
+  "generated_at": "2026-11-10 09:12:34.659015+00:00",
+  "github_id": 1377211520,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+            "id": "C2",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          },
+          {
+            "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+            "id": "C3",
+            "section_title": "What else it does",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Pydantic",
+          "LangChain"
+        ],
+        "description": "An automated ticket intake application that reads incoming customer messages and routes them to billing, technical, or sales departments with confidence gating.",
+        "how_it_is_used": "Uses laya-mlx `Router()` or `predict` with choice criteria to evaluate customer intent locally.",
+        "title": "Local Customer Support Router"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+            "id": "C5",
+            "section_title": "Question types",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Click",
+          "SQLite",
+          "Rich"
+        ],
+        "description": "A document review pipeline that grades incoming text articles or user submissions against ordered rubric levels.",
+        "how_it_is_used": "Uses the `score` question type to obtain probability per rubric level and expected score values.",
+        "title": "Automated Content Rubric Scorer"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "This is an independent port, not an official Convai Innovations release. Prompt formatting, calibration, routing, output schema and host APIs follow NandhaKishorM/laya **v0.4.17**; the encoder and decision heads are reimplemented in MLX.…",
+            "id": "C9",
+            "section_title": "Relationship to upstream",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "CUDA, ONNX, PyTorch backend controls, and training are out of scope."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+            "id": "C5",
+            "section_title": "Question types",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "Confidence scores do not guarantee accuracy on a new task."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/mizorewww/laya-mlx"
+        },
+        {
+          "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+          "id": "C4",
+          "section_title": "Laya-MLX",
+          "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+        }
+      ],
+      "text": "Eliminates the latency and overhead of generative text models, token parsing, and cloud APIs when performing structured classification, routing, or decision tasks by executing directly on local hardware via MLX."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "This is an independent port, not an official Convai Innovations release. Prompt formatting, calibration, routing, output schema and host APIs follow NandhaKishorM/laya **v0.4.17**; the encoder and decision heads are reimplemented in MLX.…",
+            "id": "C9",
+            "section_title": "Relationship to upstream",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          },
+          {
+            "excerpt": "Apache-2.0; see LICENSE and NOTICE. Laya and its pretrained weights are by Convai Innovations and upstream contributors. The neural architecture follows Laya and Hugging Face ModernBERT.",
+            "id": "C11",
+            "section_title": "License",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "Reimplemented encoder and decision heads using MLX following Laya and Hugging Face ModernBERT architectures."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+              "id": "C5",
+              "section_title": "Question types",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Choice prediction with custom options and descriptions"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+              "id": "C5",
+              "section_title": "Question types",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Rubric scoring"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+              "id": "C5",
+              "section_title": "Question types",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "True/false proposition evaluation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Language routing and checkpoint management"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Batch predictions and long document scanning"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Confidence gating"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Large choice set filtering via embeddings and tournaments"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mizorewww/laya-mlx"
+            },
+            {
+              "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+              "id": "C4",
+              "section_title": "Laya-MLX",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "MLX"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "LangChain"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "LlamaIndex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "CrewAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Agno"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "CLI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "HTTP server"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+              "id": "C3",
+              "section_title": "What else it does",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "name": "Model Context Protocol (MCP) server"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mizorewww/laya-mlx"
+            },
+            {
+              "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "text": "Apple Silicon hardware"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "text": "macOS 14+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+              "id": "C2",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.11+"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+            "id": "C2",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "Routing support tickets to specific departments based on customer request text."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Requires Apple Silicon, macOS 14+ and Python 3.11+. ``` pip install laya-mlx ``` ``` import laya_mlx as laya agent = laya.load(\"aac6fef/laya-mlx\") result = agent.predict( \"I was billed twice. Please refund the duplicate.\", { \"department\":…",
+            "id": "C2",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+            "id": "C5",
+            "section_title": "Question types",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "Checking yes/no propositions or specific criteria in customer messages."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The GIF above is a real local run at original speed: every move asks Laya three questions, and a visible safety layer can override unsafe moves. ``` pip install 'laya-mlx[demo]' hf download aac6fef/laya-multilingual-mlx laya-snake # paced;…",
+            "id": "C8",
+            "section_title": "Snake demo",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "text": "Running fast decision models inside local agent environments or terminal demos."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/mizorewww/laya-mlx"
+        },
+        {
+          "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+          "id": "C4",
+          "section_title": "Laya-MLX",
+          "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+        }
+      ],
+      "explanation": "Laya-MLX is a native MLX runtime for Laya typed decision models that runs locally on Apple Silicon without requiring PyTorch, Transformers, or cloud APIs. It evaluates constrained questions such as choice selection, rubrics, and true/false propositions using calibrated probabilities from a single bidirectional forward pass.",
+      "one_line": "Native MLX runtime for Laya typed decision models running locally on Apple Silicon."
+    },
+    "who_should_care": [
+      {
+        "audience": "AI Engineers building on Apple Silicon",
+        "citations": [
+          {
+            "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mizorewww/laya-mlx"
+          },
+          {
+            "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+            "id": "C4",
+            "section_title": "Laya-MLX",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "reason": "Developers looking to run local, highly performant decision routing and classification tasks without heavy LLM runtimes or cloud costs."
+      },
+      {
+        "audience": "Python Developers implementing structured workflows",
+        "citations": [
+          {
+            "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+            "id": "C4",
+            "section_title": "Laya-MLX",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+            "id": "C5",
+            "section_title": "Question types",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "reason": "Those who need typed choices, rubric scoring, or proposition checks that output clean probabilities rather than raw generated text."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "mizorewww/laya-mlx: Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API. Topics: apple silicon, decision model, inference, laya, local ai, machine learning, mlx,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mizorewww/laya-mlx"
+          },
+          {
+            "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+            "id": "C4",
+            "section_title": "Laya-MLX",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "point": "Executes entirely locally on Apple Silicon with fast short-decision latencies (7 to 14 milliseconds)."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Open-weight typed decisions, running natively on Apple Silicon.** 中文 · Usage reference · Benchmarks · Hugging Face weights · Changelog Laya answers constrained questions (pick an option, score against a rubric, judge true or false) with…",
+            "id": "C4",
+            "section_title": "Laya-MLX",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Type | You provide | You get | |---|---|---| | `choice` | Named options, as a list or a label → description dict | Probability per option | | `score` | Ordered rubric levels | Probability per level and the expected level | | `noul` | A…",
+            "id": "C5",
+            "section_title": "Question types",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "point": "Performs zero token generation and requires no JSON parsing, returning direct calibrated probabilities and expected levels."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "All of these are covered in the usage reference: - **Language routing:** `Router()` detects the language, picks a checkpoint and keeps up to two resident. You can register your own checkpoints. - **Batches and long documents:**…",
+            "id": "C3",
+            "section_title": "What else it does",
+            "source_url": "https://github.com/mizorewww/laya-mlx/blob/main/README.md"
+          }
+        ],
+        "point": "Provides built-in extras and integrations for CLI, HTTP service, Model Context Protocol (MCP), and frameworks like LangChain."
+      }
+    ]
+  },
+  "source_hash": "43f25f684d543b54b9ac11326873849271d2615c8dda254dcb42490f94c706d5"
+}

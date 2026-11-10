@@ -1,0 +1,512 @@
+"""Build ranking signals from stored history, precompute feeds, and serve them.
+
+Feeds are recomputed by `scripts/compute_feeds.py`; requests only read the stored result.
+"""
+
+import uuid
+from datetime import UTC, date, datetime, timedelta
+from typing import Any
+
+from sqlalchemy import delete, func, select
+from sqlalchemy.orm import Session
+
+from app.models import (
+    DiscoveryFeedEntry,
+    DiscoveryFeedRun,
+    GitHubTrendingObservation,
+    Repository,
+    RepositoryDailyStat,
+    RepositoryEmbedding,
+    RepositoryInsight,
+    RepositoryRelease,
+)
+from app.schemas.discover import CategorySummary, DiscoverItem, FeedPage
+from app.services.activity_client import ReleaseInfo
+from app.services.chunking import detect_format
+from app.services.discover_ranking import (
+    FeedEntry,
+    RankingConfig,
+    RepoSignals,
+    TrendingObservation,
+    rank_github_trending,
+    rank_hidden_gems,
+    rank_new,
+    rank_rising,
+    rank_rising_from_trending,
+    rank_trending,
+    rank_weekly,
+    readme_completeness,
+)
+from app.services.history_service import growth
+from app.services.repository_service import category_label, saved_ids, to_card
+from app.services.search_service import SearchFilters, apply_filters
+
+WINDOWS = (1, 7, 30)
+RELEASE_LIMIT = 20  # releases fetched per repository; fewer means the list is complete
+FEED_STORE = {"hidden-gems": "hidden_gem"}  # API name -> stored feed name
+
+
+# ---- Signals ----------------------------------------------------------------------------
+
+
+def _active_weeks(session: Session, repo: Repository, today: date) -> int | None:
+    coverage = repo.commit_history_since
+    if coverage is None or coverage > today - timedelta(days=27):
+        return None
+    rows = session.execute(
+        select(RepositoryDailyStat.day, RepositoryDailyStat.commits).where(
+            RepositoryDailyStat.repository_id == repo.id,
+            RepositoryDailyStat.day > today - timedelta(days=28),
+            RepositoryDailyStat.day <= today,
+        )
+    ).all()
+    weeks = {(today - day).days // 7 for day, commits in rows if commits}
+    return len(weeks)
+
+
+def build_signals(session: Session, now: datetime) -> list[RepoSignals]:
+    today = now.date()
+    repos = session.scalars(select(Repository).where(Repository.archived.is_(False))).all()
+    signals: list[RepoSignals] = []
+    for repo in repos:
+        releases = session.scalars(
+            select(RepositoryRelease)
+            .where(RepositoryRelease.repository_id == repo.id)
+            .order_by(RepositoryRelease.published_at.desc().nulls_last())
+        ).all()
+        latest = releases[0] if releases else None
+        published = [r.published_at for r in releases if r.published_at]
+        signals.append(
+            RepoSignals(
+                repository_id=repo.id,
+                category=repo.category,
+                discovery_source=repo.discovery_source,
+                stars=repo.stars,
+                forks=repo.forks,
+                created_at=repo.created_at_github,
+                first_indexed_at=repo.first_indexed_at,
+                pushed_at=repo.pushed_at_github,
+                has_license=bool(repo.license_spdx or repo.license_name),
+                readme_completeness=readme_completeness(
+                    repo.readme_content, detect_format(repo.readme_url)
+                ),
+                stars_gained={d: growth(session, repo, "stars", d, today) for d in WINDOWS},
+                forks_gained={d: growth(session, repo, "forks", d, today) for d in WINDOWS},
+                commits={d: growth(session, repo, "commits", d, today) for d in WINDOWS},
+                active_weeks_of_last_4=_active_weeks(session, repo, today),
+                latest_release=(
+                    ReleaseInfo(latest.tag, latest.name, latest.published_at, latest.url)
+                    if latest
+                    else None
+                ),
+                first_release_at=(
+                    min(published) if published and len(releases) < RELEASE_LIMIT else None
+                ),
+            )
+        )
+    return signals
+
+
+# ---- Computation ------------------------------------------------------------------------
+
+
+TRENDING_PERIODS = {"day": 1, "week": 7, "month": 30}
+
+
+def load_trending_observations(session: Session, today: date) -> list[TrendingObservation]:
+    rows = session.execute(
+        select(
+            GitHubTrendingObservation.repository_id,
+            GitHubTrendingObservation.day,
+            GitHubTrendingObservation.scope,
+            GitHubTrendingObservation.rank,
+            GitHubTrendingObservation.stars_today,
+        ).where(
+            GitHubTrendingObservation.repository_id.is_not(None),
+            GitHubTrendingObservation.day > today - timedelta(days=40),
+            GitHubTrendingObservation.day <= today,
+        )
+    ).all()
+    return [TrendingObservation(*row) for row in rows]
+
+
+def _days(n: int) -> str:
+    return f"{n} day" if n == 1 else f"{n} days"
+
+
+def compute_feeds(session: Session, cfg: RankingConfig, now: datetime) -> dict[str, int]:
+    signals = build_signals(session, now)
+    observations = load_trending_observations(session, now.date())
+    results: dict[tuple[str, str], tuple[list[FeedEntry], str, str | None]] = {}
+
+    for period, days in TRENDING_PERIODS.items():
+        if observations:
+            entries, observed = rank_github_trending(
+                observations, days, now.date(), cfg.trending.limit
+            )
+            note = None
+            if days > 1 and observed < days:
+                note = (
+                    f"Based on {_days(observed)} of GitHub Trending observations so far; "
+                    "totals fill in as the daily tracker runs."
+                )
+            results[("trending", period)] = (entries, "github_trending", note)
+            continue
+        entries, basis = rank_trending(signals, period, cfg, now)
+        if basis == "growth":
+            results[("trending", period)] = (entries, "growth", None)
+        else:  # never present a most-starred list as "trending"
+            results[("trending", period)] = (
+                [],
+                "insufficient_history",
+                "No GitHub Trending observations yet. Run the track_github_trending job.",
+            )
+
+    if observations:
+        rising, observed = rank_rising_from_trending(
+            observations, now.date(), limit=cfg.rising.limit
+        )
+        if rising or observed >= 2:
+            results[("rising", "")] = (rising, "github_trending", None)
+        else:
+            results[("rising", "")] = (
+                [],
+                "insufficient_history",
+                "Rising needs GitHub Trending observations on at least 2 days "
+                f"({_days(observed)} so far).",
+            )
+    else:
+        rising, rising_basis = rank_rising(signals, cfg, now)
+        results[("rising", "")] = (rising, rising_basis, None)
+
+    results[("new", "")] = (rank_new(signals, cfg, now), "growth", None)
+    results[("hidden_gem", "")] = (rank_hidden_gems(signals, cfg, now), "growth", None)
+    week_entries, week_basis, _ = results[("trending", "week")]
+    weekly_inputs = {
+        "trending": week_entries if week_basis in ("growth", "github_trending") else [],
+        "rising": results[("rising", "")][0],
+        "new": results[("new", "")][0],
+        "hidden_gem": results[("hidden_gem", "")][0],
+    }
+    by_id = {s.repository_id: s for s in signals}
+    results[("weekly", "")] = (rank_weekly(weekly_inputs, by_id, cfg), "growth", None)
+
+    session.execute(delete(DiscoveryFeedEntry))
+    session.execute(delete(DiscoveryFeedRun))
+    counts: dict[str, int] = {}
+    for (feed, period), (entries, basis, note) in results.items():
+        session.add_all(
+            DiscoveryFeedEntry(
+                feed=feed,
+                period=period or None,
+                repository_id=e.repository_id,
+                rank=e.rank,
+                score=e.score,
+                signals=e.signals,
+                basis=e.basis,
+                computed_at=now,
+            )
+            for e in entries
+        )
+        session.add(
+            DiscoveryFeedRun(
+                feed=feed,
+                period=period,
+                basis=basis,
+                entry_count=len(entries),
+                computed_at=now,
+                note=note,
+            )
+        )
+        counts[f"{feed}:{period}" if period else feed] = len(entries)
+    session.flush()
+    return counts
+
+
+# ---- Presentation -----------------------------------------------------------------------
+
+
+def _ago(moment: datetime, now: datetime) -> str:
+    days = max(0, (now - moment).days)
+    if days == 0:
+        return "today"
+    if days == 1:
+        return "yesterday"
+    if days < 14:
+        return f"{days} days ago"
+    if days < 60:
+        return f"{days // 7} weeks ago"
+    return f"{days // 30} months ago"
+
+
+def _period_phrase(days: int) -> str:
+    return "in the last day" if days == 1 else f"in {days} days"
+
+
+def describe_signals(
+    signals: dict[str, Any], latest_release: RepositoryRelease | None, now: datetime
+) -> list[str]:
+    """Human-readable, factual descriptions of the numbers that placed an item."""
+    text: list[str] = []
+    today_stars = signals.get("github_stars_today")
+    if today_stars is not None:
+        text.append(f"+{today_stars:,} stars today on GitHub Trending")
+        if signals.get("github_rank"):
+            text.append(f"#{signals['github_rank']} on GitHub Trending today")
+    trending_days = signals.get("github_trending_days")
+    if trending_days is not None:
+        observed = signals.get("observed_days") or trending_days
+        window = signals.get("window_days") or observed
+        if observed >= window:
+            span = f"the last {window} days"
+        else:
+            span = f"{observed} observed {'day' if observed == 1 else 'days'}"
+        reported = signals.get("github_stars_reported", 0)
+        text.append(f"On GitHub Trending {trending_days} of {span} (+{reported:,} stars reported)")
+    gained, days = signals.get("stars_gained"), signals.get("period_days")
+    if gained is not None and days:
+        prefix = "≥" if signals.get("stars_gained_lower_bound") else "+"
+        text.append(f"{prefix}{gained:,} stars {_period_phrase(days)}")
+    g30 = signals.get("stars_gained_30d")
+    if g30 is not None:
+        prefix = "≥" if signals.get("stars_gained_30d_lower_bound") else "+"
+        text.append(f"{prefix}{g30:,} stars in 30 days")
+        if signals.get("accelerating"):
+            text.append("Gaining stars faster this week than its 30-day average")
+    reason = signals.get("reason")
+    if reason == "created" and signals.get("age_days") is not None:
+        text.append(f"Created {_ago(now - timedelta(days=signals['age_days']), now)}")
+    elif reason == "discovered":
+        text.append("Newly discovered")
+    elif reason == "first_release":
+        text.append("First release within the last month")
+    if signals.get("category_star_threshold") is not None and signals.get("stars") is not None:
+        scope = "in its category" if signals.get("threshold_scope") != "global" else "in the index"
+        text.append(f"{signals['stars']:,} stars: fewer than most projects {scope}")
+    weeks = signals.get("active_weeks_of_last_4")
+    if weeks:
+        text.append(f"Commits in {weeks} of the last 4 weeks")
+    if latest_release and latest_release.published_at:
+        if now - latest_release.published_at <= timedelta(days=30):
+            text.append(f"{latest_release.tag} released {_ago(latest_release.published_at, now)}")
+    return list(dict.fromkeys(text))
+
+
+def _labels(session: Session, repo_ids: list[uuid.UUID]) -> dict[uuid.UUID, list[str]]:
+    rows = session.execute(
+        select(
+            DiscoveryFeedEntry.repository_id,
+            DiscoveryFeedEntry.feed,
+            DiscoveryFeedEntry.period,
+            DiscoveryFeedEntry.basis,
+        ).where(DiscoveryFeedEntry.repository_id.in_(repo_ids))
+    ).all()
+    labels: dict[uuid.UUID, list[str]] = {}
+    for repo_id, feed, period, basis in rows:
+        if feed == "trending" and not (
+            period in ("day", "week") and basis in ("growth", "github_trending")
+        ):
+            continue  # "Trending" only when measured (growth or GitHub Trending)
+        if feed in ("trending", "rising", "new", "hidden_gem"):
+            current = labels.setdefault(repo_id, [])
+            if feed not in current:
+                current.append(feed)
+    return labels
+
+
+def _insight_lines(session: Session, repo_ids: list[uuid.UUID]) -> dict[uuid.UUID, tuple]:
+    rows = session.execute(
+        select(RepositoryInsight.repository_id, RepositoryInsight.report).where(
+            RepositoryInsight.repository_id.in_(repo_ids)
+        )
+    ).all()
+    lines: dict[uuid.UUID, tuple] = {}
+    for repo_id, report in rows:
+        one_line = ((report or {}).get("what_is_it") or {}).get("one_line")
+        points = (report or {}).get("why_interesting") or []
+        lines[repo_id] = (one_line, points[0].get("point") if points else None)
+    return lines
+
+
+def _latest_releases(session: Session, repo_ids: list[uuid.UUID]) -> dict[uuid.UUID, Any]:
+    latest: dict[uuid.UUID, Any] = {}
+    rows = session.scalars(
+        select(RepositoryRelease)
+        .where(RepositoryRelease.repository_id.in_(repo_ids))
+        .order_by(RepositoryRelease.published_at.desc().nulls_last())
+    )
+    for release in rows:
+        latest.setdefault(release.repository_id, release)
+    return latest
+
+
+def to_items(
+    session: Session,
+    rows: list[tuple[Repository, dict[str, Any]]],
+    user_id: uuid.UUID,
+    now: datetime,
+) -> list[DiscoverItem]:
+    ids = [repo.id for repo, _ in rows]
+    saved = saved_ids(session, user_id, ids)
+    labels = _labels(session, ids)
+    lines = _insight_lines(session, ids)
+    releases = _latest_releases(session, ids)
+    items = []
+    for repo, signals in rows:
+        one_liner, why = lines.get(repo.id, (None, None))
+        items.append(
+            DiscoverItem(
+                **to_card(repo, repo.id in saved).model_dump(),
+                labels=labels.get(repo.id, []),
+                signals=signals,
+                signal_text=describe_signals(signals, releases.get(repo.id), now),
+                one_liner=one_liner,
+                why_explore=why,
+            )
+        )
+    return items
+
+
+def get_feed(
+    session: Session,
+    *,
+    feed: str,
+    period: str | None,
+    filters: SearchFilters,
+    page: int,
+    page_size: int,
+    user_id: uuid.UUID,
+) -> FeedPage:
+    stored = FEED_STORE.get(feed, feed)
+    period_key = period if stored == "trending" else ""
+    run = session.scalar(
+        select(DiscoveryFeedRun).where(
+            DiscoveryFeedRun.feed == stored, DiscoveryFeedRun.period == period_key
+        )
+    )
+    base = (
+        select(DiscoveryFeedEntry, Repository)
+        .join(Repository, Repository.id == DiscoveryFeedEntry.repository_id)
+        .where(DiscoveryFeedEntry.feed == stored)
+    )
+    base = base.where(
+        DiscoveryFeedEntry.period == period_key
+        if period_key
+        else DiscoveryFeedEntry.period.is_(None)
+    )
+    base = apply_filters(base, filters)
+    total = session.scalar(select(func.count()).select_from(base.subquery())) or 0
+    rows = session.execute(
+        base.order_by(DiscoveryFeedEntry.rank).offset((page - 1) * page_size).limit(page_size)
+    ).all()
+    now = datetime.now(UTC)
+    items = to_items(session, [(repo, entry.signals) for entry, repo in rows], user_id, now)
+    return FeedPage(
+        items=items,
+        page=page,
+        page_size=page_size,
+        total=total,
+        feed=feed,
+        period=period_key or None,
+        basis=run.basis if run else "not_computed",
+        computed_at=run.computed_at if run else None,
+        note=run.note if run else None,
+    )
+
+
+def get_categories(
+    session: Session, language: str | None, user_id: uuid.UUID
+) -> list[CategorySummary]:
+    filters = SearchFilters(language=language)
+    counts = session.execute(
+        apply_filters(select(Repository.category, func.count()), filters).group_by(
+            Repository.category
+        )
+    ).all()
+    summaries = []
+    now = datetime.now(UTC)
+    for category, count in sorted(counts, key=lambda c: category_label(c[0])):
+        week = get_feed(
+            session,
+            feed="trending",
+            period="week",
+            filters=SearchFilters(category=category, language=language),
+            page=1,
+            page_size=3,
+            user_id=user_id,
+        )
+        top = week.items
+        if not top:
+            repos = session.scalars(
+                apply_filters(
+                    select(Repository), SearchFilters(category=category, language=language)
+                )
+                .order_by(Repository.stars.desc().nulls_last())
+                .limit(3)
+            ).all()
+            top = to_items(session, [(r, {}) for r in repos], user_id, now)
+        summaries.append(
+            CategorySummary(value=category, label=category_label(category), count=count, top=top)
+        )
+    return summaries
+
+
+_FEED_PHRASE = {
+    "trending": "Trending",
+    "rising": "Rising",
+    "new": "New",
+    "hidden_gem": "Hidden gem",
+}
+
+
+def why_trending(session: Session, repo: Repository, now: datetime) -> tuple[list[str], list[str]]:
+    """(labels, lines): the measured reasons a repository appears in Discover feeds."""
+    entries = session.scalars(
+        select(DiscoveryFeedEntry).where(DiscoveryFeedEntry.repository_id == repo.id)
+    ).all()
+    labels = _labels(session, [repo.id]).get(repo.id, [])
+    release = _latest_releases(session, [repo.id]).get(repo.id)
+    lines: list[str] = []
+    for entry in entries:
+        if entry.feed not in labels:
+            continue
+        if entry.feed == "trending" and entry.period not in ("day", "week"):
+            continue
+        text = describe_signals(entry.signals, None, now)
+        if text:
+            lines.append(f"{_FEED_PHRASE[entry.feed]}: " + "; ".join(text))
+    release_text = describe_signals({}, release, now)
+    lines.extend(release_text)
+    return labels, list(dict.fromkeys(lines))
+
+
+def related_repositories(session: Session, repo: Repository, limit: int = 4) -> list[Repository]:
+    """Nearest repositories in the same category by summary embedding (not "better")."""
+    own = session.scalar(
+        select(RepositoryEmbedding.embedding).where(
+            RepositoryEmbedding.repository_id == repo.id, RepositoryEmbedding.kind == "summary"
+        )
+    )
+    query = select(Repository).where(
+        Repository.category == repo.category,
+        Repository.id != repo.id,
+        Repository.archived.is_(False),
+    )
+    if own is None:
+        return list(
+            session.scalars(query.order_by(Repository.stars.desc().nulls_last()).limit(limit))
+        )
+    distance = RepositoryEmbedding.embedding.cosine_distance(own)
+    rows = session.scalars(
+        select(Repository)
+        .join(RepositoryEmbedding, RepositoryEmbedding.repository_id == Repository.id)
+        .where(
+            RepositoryEmbedding.kind == "summary",
+            Repository.category == repo.category,
+            Repository.id != repo.id,
+            Repository.archived.is_(False),
+        )
+        .order_by(distance)
+        .limit(limit)
+    )
+    return list(rows)

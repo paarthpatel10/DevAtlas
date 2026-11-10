@@ -1,0 +1,523 @@
+{
+  "full_name": "coleifer/huey",
+  "generated_at": "2026-11-10 07:41:02.441866+00:00",
+  "github_id": 2703394,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+            "id": "C6",
+            "section_title": "Frameworks",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "Django",
+          "PostgreSQL"
+        ],
+        "description": "Create a background reporting tool in a Django application that executes scheduled database cleanups and daily email reports.",
+        "how_it_is_used": "Uses Huey's Django integration, crontab-style recurring scheduling, and Django admin visibility tools.",
+        "title": "Django Scheduled Maintenance and Reporting Service"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Run the consumer with four worker processes: To run the consumer with a single worker thread (default): If your work-loads are mostly IO-bound, you can run the consumer with threads or greenlets instead. Because greenlets are so…",
+            "id": "C4",
+            "section_title": "Running the consumer",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "httpx",
+          "BeautifulSoup"
+        ],
+        "description": "Build an asynchronous web scraping system that processes large numbers of web requests concurrently.",
+        "how_it_is_used": "Uses Huey's greenlet worker mode for IO-bound work alongside fan-out groups and map/reduce chords to aggregate scraped data.",
+        "title": "High-Concurrency Web Scraping Pipeline"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+            "id": "C5",
+            "section_title": "Storage",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "SQLite",
+          "Click"
+        ],
+        "description": "Construct a self-contained local CLI automation tool that queues and executes background jobs without running a separate database server.",
+        "how_it_is_used": "Leverages Huey's built-in SQLite storage backend, task locking, rate limiting, and retry mechanisms.",
+        "title": "Embedded SQLite Task Scheduler Utility"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "text": "Requires external packages like redis-py or psycopg depending on the choice of database broker."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+          "id": "C2",
+          "section_title": null,
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        },
+        {
+          "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+          "id": "C3",
+          "section_title": "At a glance",
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        }
+      ],
+      "text": "Provides a simple, zero-dependency task queue for Python applications to execute background tasks, manage retries, schedule cron-like jobs, and track results without needing complex setup."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+            "id": "C3",
+            "section_title": "At a glance",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+            "id": "C5",
+            "section_title": "Storage",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+            "id": "C6",
+            "section_title": "Frameworks",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "text": "Huey functions via a decorator pattern where decorated functions return result handles and enqueue function calls for consumer execution. Storage backends implement a unified simple API informed by Redis capabilities, supporting task storage, result retention, and stat tracking."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Run the consumer with four worker processes: To run the consumer with a single worker thread (default): If your work-loads are mostly IO-bound, you can run the consumer with threads or greenlets instead. Because greenlets are so…",
+              "id": "C4",
+              "section_title": "Running the consumer",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Multiple worker execution modes (multi-process, multi-thread, greenlets)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+              "id": "C3",
+              "section_title": "At a glance",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Task scheduling (delayed execution and crontab recurring tasks)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Task workflow orchestration (pipelines, chains, fan-out groups, map/reduce chords)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Task controls (retries, locking, rate-limits, timeouts, prioritization, expiration)"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "coleifer/huey: a little task queue for python Topics: dank, django, python, queue, redis, task queue. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/coleifer/huey"
+            },
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+              "id": "C6",
+              "section_title": "Frameworks",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Django"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+              "id": "C6",
+              "section_title": "Frameworks",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "flask-peewee"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+              "id": "C5",
+              "section_title": "Storage",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Redis / Valkey / Redict"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+              "id": "C5",
+              "section_title": "Storage",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+              "id": "C5",
+              "section_title": "Storage",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "SQLite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+              "id": "C6",
+              "section_title": "Frameworks",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Django and django.tasks"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            },
+            {
+              "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+              "id": "C6",
+              "section_title": "Frameworks",
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "name": "Django Admin and flask-peewee Admin"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "text": "redis-py is required when using Redis-like brokers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+              "id": "C2",
+              "section_title": null,
+              "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+            }
+          ],
+          "text": "psycopg is required when using PostgreSQL storage"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+            "id": "C3",
+            "section_title": "At a glance",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "text": "Scheduling recurring cron-like tasks or executing delayed background tasks."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Run the consumer with four worker processes: To run the consumer with a single worker thread (default): If your work-loads are mostly IO-bound, you can run the consumer with threads or greenlets instead. Because greenlets are so…",
+            "id": "C4",
+            "section_title": "Running the consumer",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "text": "Running IO-bound background jobs concurrently using lightweight greenlet or thread workers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "text": "Structuring complex task flows using pipelines, fan-out groups, and map/reduce chords with result tracking."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "coleifer/huey: a little task queue for python Topics: dank, django, python, queue, redis, task queue. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/coleifer/huey"
+        },
+        {
+          "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+          "id": "C2",
+          "section_title": null,
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        },
+        {
+          "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+          "id": "C3",
+          "section_title": "At a glance",
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        },
+        {
+          "excerpt": "Run the consumer with four worker processes: To run the consumer with a single worker thread (default): If your work-loads are mostly IO-bound, you can run the consumer with threads or greenlets instead. Because greenlets are so…",
+          "id": "C4",
+          "section_title": "Running the consumer",
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        },
+        {
+          "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+          "id": "C5",
+          "section_title": "Storage",
+          "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+        }
+      ],
+      "explanation": "Huey is a task queue written in Python featuring a clean and simple API. It enables enqueuing function calls for consumer execution and supports running workers across processes, threads, or greenlets. It includes built-in storage drivers for Redis, Postgres, SQLite, filesystem, and in-memory storage.",
+      "one_line": "A lightweight Python task queue library supporting multiple storage backends and execution models."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Web Developers",
+        "citations": [
+          {
+            "excerpt": "coleifer/huey: a little task queue for python Topics: dank, django, python, queue, redis, task queue. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/coleifer/huey"
+          },
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Calling a ``task``-decorated function will enqueue the function call for execution by the consumer. A special result handle is returned immediately, which can be used to fetch the result once the task is finished: Tasks can be scheduled to…",
+            "id": "C3",
+            "section_title": "At a glance",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "reason": "Need a lightweight background task queue with scheduling, retries, and result storage."
+      },
+      {
+        "audience": "Django Developers",
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey provides Django integration either natively or via ``django.tasks``. Huey also provides an optional admin integration for Django: Huey also provides flask-peewee admin integration based on the same underlying stat-tracking system:…",
+            "id": "C6",
+            "section_title": "Frameworks",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "reason": "Huey provides native Django and django.tasks support, along with Django admin integration for task management and visibility."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Huey's design and feature-set were informed by the capabilities of the Redis database. Redis is a fantastic fit for a lightweight task queueing library like Huey: it's self-contained, versatile, and can be a multi-purpose solution for…",
+            "id": "C5",
+            "section_title": "Storage",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "point": "Zero core dependencies while offering multiple storage options including Redis, Postgres, SQLite, filesystem, and in-memory."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          },
+          {
+            "excerpt": "Run the consumer with four worker processes: To run the consumer with a single worker thread (default): If your work-loads are mostly IO-bound, you can run the consumer with threads or greenlets instead. Because greenlets are so…",
+            "id": "C4",
+            "section_title": "Running the consumer",
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "point": "Flexible execution models including multi-process, multi-thread, or greenlet workers for IO-bound workloads."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*a lightweight alternative*. huey is: * a task queue * written in python * clean and simple API huey has: * support for redis (or valkey/redict), postgres, sqlite, file-system, or in-memory storage * zero dependencies (``redis-py``…",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/coleifer/huey/blob/master/README.rst"
+          }
+        ],
+        "point": "Rich task execution features including rate limiting, locking, prioritization, pipelines, fan-out groups, and map/reduce chords."
+      }
+    ]
+  },
+  "source_hash": "ef320ff6629ca52cd7b35c744ac06d3c1b17da1fdcbb4de35abee80d0cca4cbf"
+}

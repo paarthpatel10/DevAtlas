@@ -1,5 +1,13 @@
 import type {
   ApiErrorBody,
+  AskOut,
+  BuildIdeasOut,
+  CategorySummary,
+  CompareOut,
+  FeedName,
+  FeedPage,
+  InsightsOut,
+  Period,
   Facets,
   Health,
   Page,
@@ -107,3 +115,39 @@ export const recommend = (body: { query: string; max_results?: number }) =>
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
+
+export const getFeed = (
+  feed: FeedName,
+  p: { period?: Period; category?: string; language?: string; page?: number; pageSize?: number } = {},
+) =>
+  apiFetch<FeedPage>(
+    `/discover/${feed}${query({
+      period: feed === "trending" ? p.period : undefined,
+      category: p.category,
+      language: p.language,
+      page: p.page,
+      page_size: p.pageSize,
+    })}`,
+  );
+
+export const getDiscoverCategories = (language?: string) =>
+  apiFetch<CategorySummary[]>(`/discover/categories${query({ language })}`);
+
+export const getInsights = (owner: string, name: string) =>
+  apiFetch<InsightsOut>(`${repoPath(owner, name)}/insights`);
+
+const postJson = <T,>(path: string, body: unknown) =>
+  apiFetch<T>(path, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+
+export const getBuildIdeas = (owner: string, name: string, more = false) =>
+  postJson<BuildIdeasOut>(`${repoPath(owner, name)}/build-ideas`, { more });
+
+export const askRepository = (owner: string, name: string, question: string) =>
+  postJson<AskOut>(`${repoPath(owner, name)}/ask`, { question });
+
+export const compareRepositories = (repositories: string[]) =>
+  postJson<CompareOut>("/repositories/compare", { repositories });

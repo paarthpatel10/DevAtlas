@@ -5,8 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { useCompareList } from "@/lib/compare-store";
+
 const LINKS = [
   { href: "/explore", label: "Explore" },
+  { href: "/discover", label: "Discover" },
   { href: "/ask", label: "Ask AI" },
   { href: "/saved", label: "Saved" },
 ];
@@ -27,7 +30,11 @@ export function SiteNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const links = LINKS.map((link) => {
+  const compare = useCompareList();
+  const visible = compare.length > 0
+    ? [...LINKS, { href: "/compare", label: `Compare (${compare.length})` }]
+    : LINKS;
+  const links = visible.map((link) => {
     const active = isActive(pathname, link.href);
     return (
       <li key={link.href}>

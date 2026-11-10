@@ -27,6 +27,10 @@ class GitHubNotFound(GitHubError):
     pass
 
 
+class GitHubForbidden(GitHubError):
+    """The token may not read this resource (e.g. stargazers with a fine-grained token)."""
+
+
 class GitHubRateLimited(GitHubError):
     def __init__(self, message: str, reset_at: datetime | None = None) -> None:
         super().__init__(message)
@@ -103,13 +107,55 @@ class GitHubClient:
     def get_languages(self, full_name: str) -> dict[str, int]:
         return self._request(f"/repos/{full_name}/languages").json()
 
+    def search_repositories(
+        self, q: str, sort: str = "stars", per_page: int = 30
+    ) -> list[dict[str, Any]]:
+        params = {"q": q, "sort": sort, "order": "desc", "per_page": per_page}
+        data = self._request("/search/repositories", params=params).json()
+        return list(data.get("items") or [])
+
+    def graphql(self, query: str, variables: dict[str, Any]) -> dict[str, Any]:
+        payload = self._request(
+            "/graphql", method="POST", json={"query": query, "variables": variables}
+        ).json()
+        errors = payload.get("errors") or []
+        if any(e.get("type") == "FORBIDDEN" for e in errors):
+            raise GitHubForbidden(errors[0].get("message", "forbidden"))
+        if errors:
+            raise GitHubError("; ".join(str(e.get("message")) for e in errors)[:300])
+        return payload["data"]
+
+    def get_commit_activity(
+        self, full_name: str, attempts: int = 3, wait_s: float = 2.0
+    ) -> list[dict[str, Any]] | None:
+        """Weekly commit counts (with per-day breakdown) for the last year.
+
+        GitHub computes these statistics lazily and answers 202 while it does; after
+        `attempts` retries we give up and return None (no data, not zero commits).
+        """
+        for attempt in range(attempts + 1):
+            response = self._request(f"/repos/{full_name}/stats/commit_activity")
+            if response.status_code == 200:
+                return response.json() or []
+            if response.status_code == 204:
+                return []
+            if attempt < attempts:
+                self._sleep(wait_s)
+        return None
+
     # Internals --------------------------------------------------------------------------
 
-    def _request(self, path: str) -> httpx.Response:
+    def _request(
+        self,
+        path: str,
+        method: str = "GET",
+        json: dict[str, Any] | None = None,
+        params: dict[str, Any] | None = None,
+    ) -> httpx.Response:
         attempt = 0
         while True:
             try:
-                response = self._client.get(path)
+                response = self._client.request(method, path, json=json, params=params)
             except httpx.TransportError as exc:
                 self._backoff_or_raise(attempt, f"transport error: {exc}")
                 attempt += 1

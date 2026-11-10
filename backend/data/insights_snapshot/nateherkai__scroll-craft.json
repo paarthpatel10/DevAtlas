@@ -1,0 +1,326 @@
+{
+  "full_name": "nateherkai/scroll-craft",
+  "generated_at": "2026-11-10 09:13:56.618383+00:00",
+  "github_id": 1342930695,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Interaction, engagement, and being unrepeatable** - **Scroll is the timeline.** Video scrubs frame by frame under the wheel, sections pin while their argument advances, rails pan sideways, headlines assemble line by line, the page ground…",
+            "id": "C3",
+            "section_title": "What it actually does",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | Why | Notes | | --- | --- | --- | | **Node 18+** | every script | | | **A full ffmpeg build** | encoding clips so they *scrub* rather than play | Some toolchains put a stripped ffmpeg on PATH with ~50 filters and no `scale`. `doctor`…",
+            "id": "C6",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` plugins/nateherk-design/ └── skills/scroll-craft/ ├── SKILL.md the procedure: brief, grammar, score, build, verify ├── references/ │ ├── approved-collection.md the ten-site workflow and worked examples │ ├── hero-depth.md independent…",
+            "id": "C7",
+            "section_title": "What is in here",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Node.js",
+          "FFmpeg",
+          "Playwright"
+        ],
+        "description": "Create a chaptered editorial page with frame-by-frame video scrubbing under the scroll wheel and synchronized typography.",
+        "how_it_is_used": "Uses scroll-craft's engine and references for page grammars and video encoding to handle scroll-driven timelines.",
+        "title": "Interactive Editorial Scrollytelling Article"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "brand kit and its hard rules win, including rules that forbid things the skill would otherwise reach for. - **A refuse list.** Identical feature-card grids, `01 / 06` counters, scroll cues, gradient text, em dashes, invented statistics,…",
+            "id": "C5",
+            "section_title": "What it actually does",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | Why | Notes | | --- | --- | --- | | **Node 18+** | every script | | | **A full ffmpeg build** | encoding clips so they *scrub* rather than play | Some toolchains put a stripped ffmpeg on PATH with ~50 filters and no `scale`. `doctor`…",
+            "id": "C6",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Playwright",
+          "Chrome"
+        ],
+        "description": "Build an automated testing pipeline that walks finished web pages at every scroll position to report contrast issues and dead scroll.",
+        "how_it_is_used": "Leverages the headless browser verification framework included in the skill to audit composited pages.",
+        "title": "Automated Design Compliance Auditor"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "A 50-second walkthrough of several approved sites, showing their layered heroes, pointer response, and scroll transitions. https://github.com/user-attachments/assets/d193073b-5af9-45de-93ae-95bf7c6934d5 - Plan independent depth planes,…",
+            "id": "C2",
+            "section_title": "See the worked examples in motion",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "label": "Worked examples in motion",
+        "url": "https://github.com/user-attachments/assets/d193073b-5af9-45de-93ae-95bf7c6934d5"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Only ever run on Windows.** The scripts look for ffmpeg and Chrome in Windows, macOS and Linux locations, but no build has been done on a Mac. `SCROLLCRAFT_FFMPEG` and `SCROLLCRAFT_CHROME` override the search. - **Generated video is…",
+            "id": "C9",
+            "section_title": "Honest limitations",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "text": "Primarily verified and run on Windows environments, with limited testing on macOS or Linux."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Only ever run on Windows.** The scripts look for ffmpeg and Chrome in Windows, macOS and Linux locations, but no build has been done on a Mac. `SCROLLCRAFT_FFMPEG` and `SCROLLCRAFT_CHROME` override the search. - **Generated video is…",
+            "id": "C9",
+            "section_title": "Honest limitations",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "text": "Generated video assets via AI APIs can incur real financial costs."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Only ever run on Windows.** The scripts look for ffmpeg and Chrome in Windows, macOS and Linux locations, but no build has been done on a Mac. `SCROLLCRAFT_FFMPEG` and `SCROLLCRAFT_CHROME` override the search. - **Generated video is…",
+            "id": "C9",
+            "section_title": "Honest limitations",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "text": "Highly opinionated design constraints that actively refuse standard layouts, gradients, and palettes found in typical AI output."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "**An agent skill for building premium, scroll-driven websites, with a real design standard.** Use it with Codex, Claude Code, or another coding agent that can read instructions, edit files, run commands, and inspect a browser. The skill…",
+          "id": "C10",
+          "section_title": "scroll-craft",
+          "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+        }
+      ],
+      "text": "It solves the tendency of AI-generated websites to be either forgettable and well-behaved or flashy scroll animations with poor readability, broken responsiveness, and uniform layouts."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "``` plugins/nateherk-design/ └── skills/scroll-craft/ ├── SKILL.md the procedure: brief, grammar, score, build, verify ├── references/ │ ├── approved-collection.md the ten-site workflow and worked examples │ ├── hero-depth.md independent…",
+            "id": "C7",
+            "section_title": "What is in here",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          },
+          {
+            "excerpt": "+ .css. The mechanism, never edited per project ├── templates/ the empty registry a new workspace is seeded from └── scripts/ doctor · workspace · kie · encode · serve · shoot · worldflight-assert ``` `CHANGELOG.md` is worth reading on its…",
+            "id": "C8",
+            "section_title": "What is in here",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "text": "Consists of an agent skill directory containing reference guidelines, a fixed mechanism engine (scrollcraft.js and CSS), templates, and operational scripts (doctor, workspace, kie, encode, serve, shoot, worldflight-assert)."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "brand kit and its hard rules win, including rules that forbid things the skill would otherwise reach for. - **A refuse list.** Identical feature-card grids, `01 / 06` counters, scroll cues, gradient text, em dashes, invented statistics,…",
+              "id": "C5",
+              "section_title": "What it actually does",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "name": "Headless browser verification pass for dead scroll and contrast checking"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Interaction, engagement, and being unrepeatable** - **Scroll is the timeline.** Video scrubs frame by frame under the wheel, sections pin while their argument advances, rails pan sideways, headlines assemble line by line, the page ground…",
+              "id": "C3",
+              "section_title": "What it actually does",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "name": "Eight mutually exclusive page grammars"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "**Interaction, engagement, and being unrepeatable** - **Scroll is the timeline.** Video scrubs frame by frame under the wheel, sections pin while their argument advances, rails pan sideways, headlines assemble line by line, the page ground…",
+              "id": "C3",
+              "section_title": "What it actually does",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "name": "Frame-by-frame video scrubbing under the scroll wheel"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "nateherkai/scroll-craft: An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin. Topics: accessibility, agent skills, ai web…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/nateherkai/scroll-craft"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "nateherkai/scroll-craft: An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin. Topics: accessibility, agent skills, ai web…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/nateherkai/scroll-craft"
+            }
+          ],
+          "name": "Codex"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "| | Why | Notes | | --- | --- | --- | | **Node 18+** | every script | | | **A full ffmpeg build** | encoding clips so they *scrub* rather than play | Some toolchains put a stripped ffmpeg on PATH with ~50 filters and no `scale`. `doctor`…",
+              "id": "C6",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "text": "Node 18+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | Why | Notes | | --- | --- | --- | | **Node 18+** | every script | | | **A full ffmpeg build** | encoding clips so they *scrub* rather than play | Some toolchains put a stripped ffmpeg on PATH with ~50 filters and no `scale`. `doctor`…",
+              "id": "C6",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "text": "A full ffmpeg build for video encoding"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | Why | Notes | | --- | --- | --- | | **Node 18+** | every script | | | **A full ffmpeg build** | encoding clips so they *scrub* rather than play | Some toolchains put a stripped ffmpeg on PATH with ~50 filters and no `scale`. `doctor`…",
+              "id": "C6",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+            }
+          ],
+          "text": "playwright-core and Chrome for the verification pass"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "nateherkai/scroll-craft: An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin. Topics: accessibility, agent skills, ai web…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/nateherkai/scroll-craft"
+          }
+        ],
+        "text": "Building cinematic, scroll-driven landing pages and scrollytelling experiences using coding agents."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "nateherkai/scroll-craft: An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin. Topics: accessibility, agent skills, ai web…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/nateherkai/scroll-craft"
+        },
+        {
+          "excerpt": "**An agent skill for building premium, scroll-driven websites, with a real design standard.** Use it with Codex, Claude Code, or another coding agent that can read instructions, edit files, run commands, and inspect a browser. The skill…",
+          "id": "C10",
+          "section_title": "scroll-craft",
+          "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+        }
+      ],
+      "explanation": "Scroll-craft is an agent skill designed to work with coding agents like Claude Code and Codex to build scroll-driven, immersive websites. It treats interaction and craft as a single job, incorporating strict rules for typography, page grammars, and visual depth. It also features a verification pass using a headless browser to catch dead scroll and rendering errors.",
+      "one_line": "An agent skill and Claude Code plugin for building immersive, scroll-driven websites with strict design standards."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Developers and AI Prompt Engineers",
+        "citations": [
+          {
+            "excerpt": "nateherkai/scroll-craft: An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin. Topics: accessibility, agent skills, ai web…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/nateherkai/scroll-craft"
+          },
+          {
+            "excerpt": "**An agent skill for building premium, scroll-driven websites, with a real design standard.** Use it with Codex, Claude Code, or another coding agent that can read instructions, edit files, run commands, and inspect a browser. The skill…",
+            "id": "C10",
+            "section_title": "scroll-craft",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "reason": "Developers using coding agents who want to generate sophisticated, non-generic scroll-animated web pages."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Interaction, engagement, and being unrepeatable** - **Scroll is the timeline.** Video scrubs frame by frame under the wheel, sections pin while their argument advances, rails pan sideways, headlines assemble line by line, the page ground…",
+            "id": "C3",
+            "section_title": "What it actually does",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "point": "Enforces a fingerprint gate that requires new builds to differ from previous pages on at least 4 out of 6 dimensions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Interaction, engagement, and being unrepeatable** - **Scroll is the timeline.** Video scrubs frame by frame under the wheel, sections pin while their argument advances, rails pan sideways, headlines assemble line by line, the page ground…",
+            "id": "C3",
+            "section_title": "What it actually does",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "point": "Provides eight mutually exclusive page grammars where each grammar forbids what others require."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "brand kit and its hard rules win, including rules that forbid things the skill would otherwise reach for. - **A refuse list.** Identical feature-card grids, `01 / 06` counters, scroll cues, gradient text, em dashes, invented statistics,…",
+            "id": "C5",
+            "section_title": "What it actually does",
+            "source_url": "https://github.com/nateherkai/scroll-craft/blob/main/README.md"
+          }
+        ],
+        "point": "Includes an automated headless browser verification harness that checks for dead scroll, unrendered video clips, and contrast compliance."
+      }
+    ]
+  },
+  "source_hash": "51770e71004ff96b31dbd04e66e483efab31167f8dee1e1ec72f31c22545e772"
+}

@@ -1,0 +1,490 @@
+{
+  "full_name": "Hebbian-Robotics/hflow",
+  "generated_at": "2026-11-10 09:17:08.856450+00:00",
+  "github_id": 1338681838,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+            "id": "C3",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "Get started in six lines of code. This fuller example uses a robot teleoperation episode, but the same step interface applies to egocentric video and other physical-AI recordings. ``` import asyncio import hflow from hflow.asyncio_utils…",
+            "id": "C7",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "joints, rate_hz=100) # your line: unchanged return hflow.CheckResult(measurements=result) # our line: record @app.check(version=\"1\", critical=True) async def camera_blackout(ep: hflow.Episode) -> hflow.CheckResult: camera_topic =…",
+            "id": "C8",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Airflow",
+          "DuckDB",
+          "Python"
+        ],
+        "description": "Build an automated quality pipeline that ingests teleoperation MCAP files, runs joint smoothness and camera blackout checks, and records measurements as queryable evidence.",
+        "how_it_is_used": "Uses HFlow's asynchronous check framework and episode accessors to evaluate sensor channels and record structured check results.",
+        "title": "Automated Teleoperation Dataset Quality Gate"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+            "id": "C4",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "value exactly as written: keep it for behavior-preserving refactors, and bump it when old and new results should no longer be treated as comparable. Curation comes afterwards, via `hflow.curate(data_root / \"catalog\", sql,…",
+            "id": "C9",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "DuckDB",
+          "Parquet",
+          "SQL"
+        ],
+        "description": "Create a query tool that interfaces with the Parquet catalog to filter episodes by task success, pipeline version, and custom quality percentage thresholds without parsing raw recordings.",
+        "how_it_is_used": "Uses HFlow's curation query capabilities and DuckDB to output customized training manifests.",
+        "title": "Corpus Query and Manifest Generator"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Install the SDK from PyPI with uv: ``` uv add hflow ``` The Hebbian Robotics project starts at version 0.2.0. Earlier 0.1.x releases under the same PyPI name belonged to an unrelated, inactive project before the name was transferred. To…",
+            "id": "C5",
+            "section_title": "Install and try it",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "label": "Quickstart and Repository",
+        "url": "https://github.com/Hebbian-Robotics/hflow.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Python ≥ 3.11 - Docker (for the pipeline runtime; `app.test()` needs none), or bring your own Airflow deployment (Astronomer, MWAA, Cloud Composer, self-managed) - The first `hflow up` downloads ~2 GB of container images and builds the…",
+            "id": "C11",
+            "section_title": "Requirements",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Airflow does not run natively on Windows; Windows is supported via WSL2."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Install the SDK from PyPI with uv: ``` uv add hflow ``` The Hebbian Robotics project starts at version 0.2.0. Earlier 0.1.x releases under the same PyPI name belonged to an unrelated, inactive project before the name was transferred. To…",
+            "id": "C5",
+            "section_title": "Install and try it",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Earlier 0.1.x releases under the same PyPI name belonged to an unrelated project before the name was transferred."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Hebbian Robotics (YC S26) HFlow Open source SDK for scalable multimodal data pipelines in robotics and physical AI Hebbian Robotics (YC S26) is building HFlow, an open source SDK for scalable multimodal data pipelines in robotics and…",
+          "id": "C12",
+          "section_title": null,
+          "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+        }
+      ],
+      "text": "Data processing is a major bottleneck in robotics due to complex corpora combining video, state, actions, timestamps, and metadata. Teams often struggle with quality control issues such as frozen cameras, drifted streams, missing topics, and duplicate recordings, as well as fragmented scripts that make it difficult to audit results or reproduce datasets."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Human and robot data move through a four-stage lifecycle: ``` collection --> ingestion ---------------> curation ------> delivery (landing (transform -> QC gate -> (SQL over (curated MCAP + bucket) enrich, as an episode manifest; convert…",
+            "id": "C2",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Data flows through a four-stage lifecycle: collection (landing bucket), ingestion (transformations, QC gates, and enrichments run via Airflow DAGs), curation (SQL querying over an episode catalog), and delivery (curated MCAP files and manifests converted for training)."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Multimodal episode ingestion and containerization with MCAP"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+              "id": "C4",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Parquet-backed metadata and quality measurement catalog queryable via DuckDB"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Pipeline graph visualization and Airflow DAG rendering"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            },
+            {
+              "excerpt": "Get started in six lines of code. This fuller example uses a robot teleoperation episode, but the same step interface applies to egocentric video and other physical-AI recordings. ``` import asyncio import hflow from hflow.asyncio_utils…",
+              "id": "C7",
+              "section_title": "What it looks like",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Python-based quality check and transformation execution"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "episode. It runs HFlow's local deterministic quality baseline and two hosted semantic checks together. Contact us to get access to the hosted API. Use `uv run hflow --help` to see the CLI. When you are ready to schedule the same pipeline,…",
+              "id": "C6",
+              "section_title": "Install and try it",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "LeRobot dataset episode import support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Human and robot data move through a four-stage lifecycle: ``` collection --> ingestion ---------------> curation ------> delivery (landing (transform -> QC gate -> (SQL over (curated MCAP + bucket) enrich, as an episode manifest; convert…",
+              "id": "C2",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            },
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            },
+            {
+              "excerpt": "- Python ≥ 3.11 - Docker (for the pipeline runtime; `app.test()` needs none), or bring your own Airflow deployment (Astronomer, MWAA, Cloud Composer, self-managed) - The first `hflow up` downloads ~2 GB of container images and builds the…",
+              "id": "C11",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Airflow"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow"
+            },
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Foxglove"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow"
+            },
+            {
+              "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+              "id": "C3",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "Rerun"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow"
+            },
+            {
+              "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+              "id": "C4",
+              "section_title": "What you get",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "DuckDB"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow"
+            },
+            {
+              "excerpt": "episode. It runs HFlow's local deterministic quality baseline and two hosted semantic checks together. Contact us to get access to the hosted API. Use `uv run hflow --help` to see the CLI. When you are ready to schedule the same pipeline,…",
+              "id": "C6",
+              "section_title": "Install and try it",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "LeRobot"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Python ≥ 3.11 - Docker (for the pipeline runtime; `app.test()` needs none), or bring your own Airflow deployment (Astronomer, MWAA, Cloud Composer, self-managed) - The first `hflow up` downloads ~2 GB of container images and builds the…",
+              "id": "C11",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "name": "AWS S3, Google Cloud Storage, Azure"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Python ≥ 3.11 - Docker (for the pipeline runtime; `app.test()` needs none), or bring your own Airflow deployment (Astronomer, MWAA, Cloud Composer, self-managed) - The first `hflow up` downloads ~2 GB of container images and builds the…",
+              "id": "C11",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "text": "Python >= 3.11"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Python ≥ 3.11 - Docker (for the pipeline runtime; `app.test()` needs none), or bring your own Airflow deployment (Astronomer, MWAA, Cloud Composer, self-managed) - The first `hflow up` downloads ~2 GB of container images and builds the…",
+              "id": "C11",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+            }
+          ],
+          "text": "Docker or a custom Airflow deployment for scheduled runtime execution (app.test() requires none)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Install the SDK from PyPI with uv: ``` uv add hflow ``` The Hebbian Robotics project starts at version 0.2.0. Earlier 0.1.x releases under the same PyPI name belonged to an unrelated, inactive project before the name was transferred. To…",
+            "id": "C5",
+            "section_title": "Install and try it",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "Get started in six lines of code. This fuller example uses a robot teleoperation episode, but the same step interface applies to egocentric video and other physical-AI recordings. ``` import asyncio import hflow from hflow.asyncio_utils…",
+            "id": "C7",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "joints, rate_hz=100) # your line: unchanged return hflow.CheckResult(measurements=result) # our line: record @app.check(version=\"1\", critical=True) async def camera_blackout(ep: hflow.Episode) -> hflow.CheckResult: camera_topic =…",
+            "id": "C8",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Verifying robot teleoperation and egocentric video recordings for data quality issues like camera blackouts or joint smoothness anomalies."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "episode. It runs HFlow's local deterministic quality baseline and two hosted semantic checks together. Contact us to get access to the hosted API. Use `uv run hflow --help` to see the CLI. When you are ready to schedule the same pipeline,…",
+            "id": "C6",
+            "section_title": "Install and try it",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Importing LeRobot dataset episodes into canonical MCAP format with provenance tracking."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+            "id": "C4",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "value exactly as written: keep it for behavior-preserving refactors, and bump it when old and new results should no longer be treated as comparable. Curation comes afterwards, via `hflow.curate(data_root / \"catalog\", sql,…",
+            "id": "C9",
+            "section_title": "What it looks like",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "text": "Querying an episode catalog using SQL via DuckDB to build specific training manifests based on user-owned thresholds."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/Hebbian-Robotics/hflow"
+        },
+        {
+          "excerpt": "Human and robot data move through a four-stage lifecycle: ``` collection --> ingestion ---------------> curation ------> delivery (landing (transform -> QC gate -> (SQL over (curated MCAP + bucket) enrich, as an episode manifest; convert…",
+          "id": "C2",
+          "section_title": "What you get",
+          "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+          "id": "C3",
+          "section_title": "What you get",
+          "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+        },
+        {
+          "excerpt": "Hebbian Robotics (YC S26) HFlow Open source SDK for scalable multimodal data pipelines in robotics and physical AI Hebbian Robotics (YC S26) is building HFlow, an open source SDK for scalable multimodal data pipelines in robotics and…",
+          "id": "C12",
+          "section_title": null,
+          "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+        }
+      ],
+      "explanation": "HFlow is an open-source SDK designed to help robotics and physical AI teams manage their multimodal data pipelines. It guides human and robot data through a four-stage lifecycle: collection, ingestion, curation, and delivery, using standard file formats like MCAP and Parquet. Existing transformation and quality control code plugs directly into the pipeline through small adapters without requiring a complete rewrite.",
+      "one_line": "SDK for robotics teams to verify and curate multimodal data for AI model training."
+    },
+    "who_should_care": [
+      {
+        "audience": "Robotics Engineers",
+        "citations": [
+          {
+            "excerpt": "Hebbian-Robotics/hflow: SDK for robotics teams to verify the quality of their data used for AI model training. Topics: airflow, data engineering, data pipeline, data quality, dataset curation, duckdb, foxglove, lerobot, mcap, multimodal,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow"
+          },
+          {
+            "excerpt": "Hebbian Robotics (YC S26) HFlow Open source SDK for scalable multimodal data pipelines in robotics and physical AI Hebbian Robotics (YC S26) is building HFlow, an open source SDK for scalable multimodal data pipelines in robotics and…",
+            "id": "C12",
+            "section_title": null,
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "reason": "To manage multimodal data pipelines, run quality checks on robot recordings, and curate datasets for AI model training."
+      },
+      {
+        "audience": "Data Engineers in Physical AI",
+        "citations": [
+          {
+            "excerpt": "Human and robot data move through a four-stage lifecycle: ``` collection --> ingestion ---------------> curation ------> delivery (landing (transform -> QC gate -> (SQL over (curated MCAP + bucket) enrich, as an episode manifest; convert…",
+            "id": "C2",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+            "id": "C3",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+            "id": "C4",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "reason": "To orchestrate data ingestion, track dataset provenance, and query large recording corpora using DuckDB and SQL."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+            "id": "C3",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          },
+          {
+            "excerpt": "1. **Democratize the architecture, defer the optimizations.** Preserve the useful workflow and standard interfaces at small scale, and label each production-scale mechanism honestly as implemented, simplified, deferred, or out of scope. 2.…",
+            "id": "C10",
+            "section_title": "Design principles",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "point": "Processing code stays native to the user's environment, integrating transformations and quality checks via small adapters."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Your processing code stays yours.** Transformations, quality checks, labels, and enrichments are plain Python functions in your own environment. Existing code plugs in through small adapters instead of being rewritten for a proprietary…",
+            "id": "C3",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "point": "Episodes are stored in MCAP format using in-band H.264 and topic-group chunking so camera streams and state streams never share a chunk."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "checks produce reusable evidence.** Accessors extract the inputs existing processing code expects (numpy arrays, MP4 paths, JPEG frames), and results land as queryable measurements rather than hardcoded verdicts. Different datasets can…",
+            "id": "C4",
+            "section_title": "What you get",
+            "source_url": "https://github.com/Hebbian-Robotics/hflow/blob/main/README.md"
+          }
+        ],
+        "point": "Metadata, quality measurements, and artifact locations live in a Parquet catalog, allowing DuckDB to query the corpus without opening underlying MCAP files."
+      }
+    ]
+  },
+  "source_hash": "b2a3902d642618832c570f68cb0fc5e9daaddcd31d1f81cf1c3f395f837b9b58"
+}
