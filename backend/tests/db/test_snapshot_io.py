@@ -98,3 +98,29 @@ def test_insights_round_trip_and_staleness(db_session, providers, tmp_path):
     chunk.content_hash = "readme changed since export"
     db_session.flush()
     assert get_report(db_session, jobs(db_session))[2] is True  # loaded but flagged stale
+
+
+def test_trending_observations_round_trip(db_session, providers, tmp_path):
+    from app.models import GitHubTrendingObservation
+    from app.services.github_trending import TrendingRepo
+    from app.services.snapshot_io import export_trending, import_trending
+    from app.services.trending_tracker import record_trending
+
+    seed_from_directory(db_session, FIXTURES_DIR, providers)
+    record_trending(
+        db_session,
+        "",
+        [TrendingRepo(1, "acme/jobs", None, "Python", 10, 1, 77)],
+        TODAY,
+        datetime(2026, 11, 10, tzinfo=UTC),
+    )
+    db_session.commit()
+    path = tmp_path / "trending.json"
+    export_trending(db_session, path)
+    db_session.execute(delete(GitHubTrendingObservation))
+    db_session.commit()
+    import_trending(db_session, path)
+    import_trending(db_session, path)
+    db_session.commit()
+    rows = db_session.scalars(select(GitHubTrendingObservation)).all()
+    assert len(rows) == 1 and rows[0].stars_today == 77 and rows[0].repository_id is not None

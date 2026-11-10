@@ -276,7 +276,7 @@ def rank_new(signals: list[RepoSignals], cfg: RankingConfig, now: datetime) -> l
         if age is not None and age <= nc.created_within_days:
             reason = "created"
         elif (
-            s.discovery_source == "search"
+            s.discovery_source in ("search", "trending")
             and indexed is not None
             and indexed <= nc.discovered_within_days
         ):

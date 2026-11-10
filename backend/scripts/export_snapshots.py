@@ -10,17 +10,22 @@ from sqlalchemy.orm import Session
 
 from app.config import BACKEND_DIR, get_settings
 from app.db.session import get_engine
-from app.services.snapshot_io import export_history, export_insights
+from app.services.snapshot_io import export_history, export_insights, export_trending
 
 HISTORY_PATH = BACKEND_DIR / "data" / "history_snapshot.json"
 INSIGHTS_DIR = BACKEND_DIR / "data" / "insights_snapshot"
+TRENDING_PATH = BACKEND_DIR / "data" / "github_trending_observations.json"
 
 
 def main() -> int:
     with Session(get_engine(get_settings().database_url)) as session:
         export_history(session, HISTORY_PATH)
         count = export_insights(session, INSIGHTS_DIR)
-    print(f"history -> {HISTORY_PATH.name}; insights={count} -> {INSIGHTS_DIR.name}/")
+        observations = export_trending(session, TRENDING_PATH)
+    print(
+        f"history -> {HISTORY_PATH.name}; insights={count} -> {INSIGHTS_DIR.name}/; "
+        f"github trending observations={observations}"
+    )
     return 0
 
 

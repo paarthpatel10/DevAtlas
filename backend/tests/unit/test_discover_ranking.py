@@ -267,3 +267,9 @@ def test_rising_needs_two_observed_days_and_repeat_appearances():
     assert observed_days == 3
     assert ids(entries) == [1, 2]  # 3 days beats 2 days; a single big day is not "rising"
     assert entries[0].signals["github_trending_days"] == 3
+
+
+def test_repositories_found_on_github_trending_count_as_newly_discovered():
+    found = sig(1, discovery_source="trending", first_indexed_at=NOW - timedelta(days=2))
+    entries = rank_new([found], CFG, NOW)
+    assert ids(entries) == [1] and entries[0].signals["reason"] == "discovered"

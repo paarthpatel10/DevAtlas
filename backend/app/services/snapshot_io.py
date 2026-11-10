@@ -13,7 +13,13 @@ from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
-from app.models import Repository, RepositoryDailyStat, RepositoryInsight, RepositoryRelease
+from app.models import (
+    GitHubTrendingObservation,
+    Repository,
+    RepositoryDailyStat,
+    RepositoryInsight,
+    RepositoryRelease,
+)
 from app.schemas.snapshot import snapshot_stem
 
 
@@ -163,3 +169,60 @@ def import_insights(session: Session, directory: Path) -> int:
         imported += 1
     session.flush()
     return imported
+
+
+def export_trending(session: Session, path: Path) -> int:
+    rows = session.scalars(
+        select(GitHubTrendingObservation).order_by(
+            GitHubTrendingObservation.day,
+            GitHubTrendingObservation.scope,
+            GitHubTrendingObservation.rank,
+        )
+    ).all()
+    _write_json(
+        path,
+        [
+            {
+                "day": o.day,
+                "scope": o.scope,
+                "rank": o.rank,
+                "full_name": o.full_name,
+                "stars_today": o.stars_today,
+                "stars_total": o.stars_total,
+                "forks_total": o.forks_total,
+                "observed_at": o.observed_at,
+            }
+            for o in rows
+        ],
+    )
+    return len(rows)
+
+
+def import_trending(session: Session, path: Path) -> int:
+    if not path.exists():
+        return 0
+    from app.services.trending_tracker import link_observations
+
+    records = json.loads(path.read_text(encoding="utf-8"))
+    for r in records:
+        values = {
+            "rank": r["rank"],
+            "stars_today": r["stars_today"],
+            "stars_total": r["stars_total"],
+            "forks_total": r["forks_total"],
+            "observed_at": _dt(r["observed_at"]),
+        }
+        session.execute(
+            insert(GitHubTrendingObservation)
+            .values(
+                id=uuid.uuid4(),
+                day=date.fromisoformat(r["day"]),
+                scope=r["scope"],
+                full_name=r["full_name"],
+                **values,
+            )
+            .on_conflict_do_update(index_elements=["day", "scope", "full_name"], set_=values)
+        )
+    session.flush()
+    link_observations(session)
+    return len(records)

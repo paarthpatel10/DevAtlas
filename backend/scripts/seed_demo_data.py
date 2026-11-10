@@ -22,7 +22,7 @@ from app.schemas.snapshot import curated_by_stem, load_curated
 from app.services.discover_ranking import load_ranking_config
 from app.services.discover_service import compute_feeds
 from app.services.ingestion_service import seed_from_directory
-from app.services.snapshot_io import import_history, import_insights
+from app.services.snapshot_io import import_history, import_insights, import_trending
 
 DATA = BACKEND_DIR / "data"
 
@@ -46,21 +46,25 @@ def main(argv: list[str] | None = None) -> int:
             f"curated: created={report.created} updated={report.updated} "
             f"unchanged={report.unchanged}"
         )
-        discovered_dir = DATA / "discovered_snapshot"
-        if discovered_dir.exists():
-            found = seed_from_directory(
-                session,
-                discovered_dir,
-                providers,
-                data_source="github_live",
-                discovery_source="search",
-            )
-            print(
-                f"discovered: created={found.created} updated={found.updated} "
-                f"unchanged={found.unchanged}"
-            )
+        for folder, source in (
+            ("discovered_snapshot", "search"),
+            ("trending_snapshot", "trending"),
+        ):
+            if (DATA / folder).exists():
+                found = seed_from_directory(
+                    session,
+                    DATA / folder,
+                    providers,
+                    data_source="github_live",
+                    discovery_source=source,
+                )
+                print(
+                    f"{folder}: created={found.created} updated={found.updated} "
+                    f"unchanged={found.unchanged}"
+                )
         histories = import_history(session, DATA / "history_snapshot.json")
         insights = import_insights(session, DATA / "insights_snapshot")
+        import_trending(session, DATA / "github_trending_observations.json")
         session.commit()
         print(f"history={histories} insights={insights}")
         if not args.skip_feeds:

@@ -60,3 +60,8 @@ search:
     security: ["topic:security", "topic:authentication"]
     developer_tools: ["topic:developer-tools", "topic:cli"]
     learning: ["topic:tutorial", "topic:learning-resources"]
+
+# GitHub Trending tracker (scripts/track_github_trending.py): daily pages only.
+github_trending:
+  delay_s: 2.0
+  languages: [python, typescript, javascript, go, rust, java, c++, jupyter-notebook]
