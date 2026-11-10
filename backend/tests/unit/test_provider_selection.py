@@ -11,7 +11,7 @@ def settings(**kw) -> Settings:
 
 def test_auto_uses_gemini_when_key_present():
     p = get_providers(settings(gemini_api_key="k"))
-    assert p.llm_available and p.llm.model_name == "gemini:gemini-3.5-flash"
+    assert p.llm_available and p.llm.model_name == "gemini:gemini-3.5-flash-lite"
     assert p.embeddings.model_name == "mock-hashing-v1"
 
 

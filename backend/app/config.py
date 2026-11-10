@@ -62,7 +62,8 @@ class Settings(BaseSettings):
     gemini_api_key: SecretStr | None = Field(
         default=None, validation_alias=AliasChoices("gemini_api_key", "gemini")
     )
-    gemini_model: str = "gemini-3.5-flash"
+    # flash-lite: the free tier allows far more requests per day than flash (20/day).
+    gemini_model: str = "gemini-3.5-flash-lite"
     gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta"
     ai_requests_per_minute: int = 10
     embedding_dim: int = 1024
