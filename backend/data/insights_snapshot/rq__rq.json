@@ -1,0 +1,404 @@
+{
+  "full_name": "rq/rq",
+  "generated_at": "2026-11-10 09:11:22.757710+00:00",
+  "github_id": 2771544,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "First, run a Redis/Valkey server: ``` $ redis-server ``` To put jobs on queues, you don't have to do anything special, just define your typically lengthy or blocking function: ``` import requests def count_words_at_url(url): \"\"\"Just an…",
+            "id": "C3",
+            "section_title": "Getting started",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Flask",
+          "FastAPI",
+          "Requests"
+        ],
+        "description": "A service that fetches remote URLs and parses text content in the background so the user interface remains responsive.",
+        "how_it_is_used": "Enqueues lengthy HTTP request functions to an RQ queue using Python.",
+        "title": "Asynchronous Web Scraper Service"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Scheduling jobs is also easy: ``` # Schedule job to run at 9:15, October 10th job = queue.enqueue_at(datetime(2019, 10, 10, 9, 15), say_hello) # Schedule job to run in 10 seconds job = queue.enqueue_in(timedelta(seconds=10), say_hello) ```",
+            "id": "C8",
+            "section_title": "Scheduling Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ 2.11.0 adds concurrency-based rate limits for jobs sharing a key: ``` from rq import RateLimit queue.enqueue(generate_report, rate_limit=RateLimit(key='reports', concurrency=2)) ``` More details can be found in the docs.",
+            "id": "C11",
+            "section_title": "Rate Limiting",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Celery alternative tech stack",
+          "Pandas",
+          "PostgreSQL"
+        ],
+        "description": "An application that schedules heavy reports to run at designated times while ensuring that concurrent executions are rate-limited.",
+        "how_it_is_used": "Uses `enqueue_at` and `RateLimit` parameters to control report generation timing and concurrency.",
+        "title": "Scheduled Report Generator with Rate Limiting"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "To execute a `Job` multiple times, use the `Repeat` class: ``` from rq import Queue, Repeat # Repeat job 3 times after successful execution, with 30 second intervals queue.enqueue(my_function, repeat=Repeat(times=3, interval=30)) # Repeat…",
+            "id": "C9",
+            "section_title": "Repeating Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Retrying failed jobs is also supported: ``` from rq import Retry # Retry up to 3 times, failed job will be requeued immediately queue.enqueue(say_hello, retry=Retry(max=3)) # Retry up to 3 times, with configurable intervals between retries…",
+            "id": "C12",
+            "section_title": "Retrying Failed Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "SendGrid API",
+          "SMTP"
+        ],
+        "description": "A system that dispatches emails or notifications with built-in failure recovery and recurrence options.",
+        "how_it_is_used": "Leverages the `Retry` and `Repeat` classes to handle transient delivery failures and periodic execution.",
+        "title": "Automated Notification System with Retries"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "First, run a Redis/Valkey server: ``` $ redis-server ``` To put jobs on queues, you don't have to do anything special, just define your typically lengthy or blocking function: ``` import requests def count_words_at_url(url): \"\"\"Just an…",
+          "id": "C3",
+          "section_title": "Getting started",
+          "source_url": "https://github.com/rq/rq/blob/master/README.md"
+        },
+        {
+          "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/rq/rq/blob/master/README.md"
+        }
+      ],
+      "text": "It solves the need to execute lengthy or blocking Python functions asynchronously in the background so they do not block main application threads."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+              "id": "C4",
+              "section_title": null,
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Background job queueing and execution"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "By default, jobs are added to the end of a single queue. RQ offers two ways to give certain jobs higher priority:",
+              "id": "C5",
+              "section_title": "Job Prioritization",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            },
+            {
+              "excerpt": "You can enqueue a job at the front of its queue so it’s picked up before other jobs: ``` job = queue.enqueue(count_words_at_url, 'https://stamps.id', at_front=True) ```",
+              "id": "C6",
+              "section_title": "1. Enqueue at the front",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            },
+            {
+              "excerpt": "You can create multiple queues and enqueue jobs into different queues based on their priority: ``` from rq import Queue high_priority_queue = Queue('high', connection=Redis()) low_priority_queue = Queue('low', connection=Redis()) # This…",
+              "id": "C7",
+              "section_title": "2. Use multiple queues",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Job prioritization (enqueue at front or use multiple queues)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Scheduling jobs is also easy: ``` # Schedule job to run at 9:15, October 10th job = queue.enqueue_at(datetime(2019, 10, 10, 9, 15), say_hello) # Schedule job to run in 10 seconds job = queue.enqueue_in(timedelta(seconds=10), say_hello) ```",
+              "id": "C8",
+              "section_title": "Scheduling Jobs",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Job scheduling for specific times or relative delays"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To execute a `Job` multiple times, use the `Repeat` class: ``` from rq import Queue, Repeat # Repeat job 3 times after successful execution, with 30 second intervals queue.enqueue(my_function, repeat=Repeat(times=3, interval=30)) # Repeat…",
+              "id": "C9",
+              "section_title": "Repeating Jobs",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Repeating jobs with intervals"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You can prevent duplicate jobs from being enqueued by using the `unique` parameter: ``` job = queue.enqueue(send_email, user_id, job_id='welcome-42', unique=True) ``` More details can be found in the docs.",
+              "id": "C10",
+              "section_title": "Unique Jobs",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Unique job deduplication"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "RQ 2.11.0 adds concurrency-based rate limits for jobs sharing a key: ``` from rq import RateLimit queue.enqueue(generate_report, rate_limit=RateLimit(key='reports', concurrency=2)) ``` More details can be found in the docs.",
+              "id": "C11",
+              "section_title": "Rate Limiting",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Concurrency-based rate limiting"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Retrying failed jobs is also supported: ``` from rq import Retry # Retry up to 3 times, failed job will be requeued immediately queue.enqueue(say_hello, retry=Retry(max=3)) # Retry up to 3 times, with configurable intervals between retries…",
+              "id": "C12",
+              "section_title": "Retrying Failed Jobs",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Failed job retries with configurable intervals"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "First, run a Redis/Valkey server: ``` $ redis-server ``` To put jobs on queues, you don't have to do anything special, just define your typically lengthy or blocking function: ``` import requests def count_words_at_url(url): \"\"\"Just an…",
+              "id": "C3",
+              "section_title": "Getting started",
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            },
+            {
+              "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+              "id": "C4",
+              "section_title": null,
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Redis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+              "id": "C4",
+              "section_title": null,
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "name": "Valkey"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+              "id": "C4",
+              "section_title": null,
+              "source_url": "https://github.com/rq/rq/blob/master/README.md"
+            }
+          ],
+          "text": "Redis >= 5 or Valkey >= 7.2"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "First, run a Redis/Valkey server: ``` $ redis-server ``` To put jobs on queues, you don't have to do anything special, just define your typically lengthy or blocking function: ``` import requests def count_words_at_url(url): \"\"\"Just an…",
+            "id": "C3",
+            "section_title": "Getting started",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "text": "Executing slow or blocking network requests asynchronously away from a web request-response cycle."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Scheduling jobs is also easy: ``` # Schedule job to run at 9:15, October 10th job = queue.enqueue_at(datetime(2019, 10, 10, 9, 15), say_hello) # Schedule job to run in 10 seconds job = queue.enqueue_in(timedelta(seconds=10), say_hello) ```",
+            "id": "C8",
+            "section_title": "Scheduling Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "text": "Scheduling tasks to run at a specific date and time or after a precise time delay."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "You can prevent duplicate jobs from being enqueued by using the `unique` parameter: ``` job = queue.enqueue(send_email, user_id, job_id='welcome-42', unique=True) ``` More details can be found in the docs.",
+            "id": "C10",
+            "section_title": "Unique Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ 2.11.0 adds concurrency-based rate limits for jobs sharing a key: ``` from rq import RateLimit queue.enqueue(generate_report, rate_limit=RateLimit(key='reports', concurrency=2)) ``` More details can be found in the docs.",
+            "id": "C11",
+            "section_title": "Rate Limiting",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "text": "Preventing duplicate work with unique job constraints and handling rate-limited resource usage."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/rq/rq/blob/master/README.md"
+        }
+      ],
+      "explanation": "RQ (Redis Queue) is a simple Python library designed for queueing jobs and executing them asynchronously using background workers. It is backed by Redis or Valkey and provides a low barrier to entry while scaling for applications of any size. Features include job prioritization, scheduling, repeating jobs, rate limiting, and retrying failed tasks.",
+      "one_line": "Simple Python library for queueing jobs and processing them in the background with workers."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "First, run a Redis/Valkey server: ``` $ redis-server ``` To put jobs on queues, you don't have to do anything special, just define your typically lengthy or blocking function: ``` import requests def count_words_at_url(url): \"\"\"Just an…",
+            "id": "C3",
+            "section_title": "Getting started",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "reason": "Looking for a straightforward way to offload blocking tasks to background workers without complex setup."
+      },
+      {
+        "audience": "Backend Engineers",
+        "citations": [
+          {
+            "excerpt": "RQ (_Redis Queue_) is a simple Python library for queueing jobs and processing them in the background with workers. It is backed by Redis/Valkey and is designed to have a low barrier to entry while scaling incredibly well for large…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Scheduling jobs is also easy: ``` # Schedule job to run at 9:15, October 10th job = queue.enqueue_at(datetime(2019, 10, 10, 9, 15), say_hello) # Schedule job to run in 10 seconds job = queue.enqueue_in(timedelta(seconds=10), say_hello) ```",
+            "id": "C8",
+            "section_title": "Scheduling Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ 2.11.0 adds concurrency-based rate limits for jobs sharing a key: ``` from rq import RateLimit queue.enqueue(generate_report, rate_limit=RateLimit(key='reports', concurrency=2)) ``` More details can be found in the docs.",
+            "id": "C11",
+            "section_title": "Rate Limiting",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Retrying failed jobs is also supported: ``` from rq import Retry # Retry up to 3 times, failed job will be requeued immediately queue.enqueue(say_hello, retry=Retry(max=3)) # Retry up to 3 times, with configurable intervals between retries…",
+            "id": "C12",
+            "section_title": "Retrying Failed Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "reason": "Need to manage high-volume asynchronous tasks, scheduled jobs, rate limiting, and failure retries backed by Redis or Valkey."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "By default, jobs are added to the end of a single queue. RQ offers two ways to give certain jobs higher priority:",
+            "id": "C5",
+            "section_title": "Job Prioritization",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "You can enqueue a job at the front of its queue so it’s picked up before other jobs: ``` job = queue.enqueue(count_words_at_url, 'https://stamps.id', at_front=True) ```",
+            "id": "C6",
+            "section_title": "1. Enqueue at the front",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "You can create multiple queues and enqueue jobs into different queues based on their priority: ``` from rq import Queue high_priority_queue = Queue('high', connection=Redis()) low_priority_queue = Queue('low', connection=Redis()) # This…",
+            "id": "C7",
+            "section_title": "2. Use multiple queues",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "point": "Offers multiple ways to handle job prioritization, such as enqueuing at the front of a queue or using multiple distinct priority queues."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Scheduling jobs is also easy: ``` # Schedule job to run at 9:15, October 10th job = queue.enqueue_at(datetime(2019, 10, 10, 9, 15), say_hello) # Schedule job to run in 10 seconds job = queue.enqueue_in(timedelta(seconds=10), say_hello) ```",
+            "id": "C8",
+            "section_title": "Scheduling Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "To execute a `Job` multiple times, use the `Repeat` class: ``` from rq import Queue, Repeat # Repeat job 3 times after successful execution, with 30 second intervals queue.enqueue(my_function, repeat=Repeat(times=3, interval=30)) # Repeat…",
+            "id": "C9",
+            "section_title": "Repeating Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "You can prevent duplicate jobs from being enqueued by using the `unique` parameter: ``` job = queue.enqueue(send_email, user_id, job_id='welcome-42', unique=True) ``` More details can be found in the docs.",
+            "id": "C10",
+            "section_title": "Unique Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "RQ 2.11.0 adds concurrency-based rate limits for jobs sharing a key: ``` from rq import RateLimit queue.enqueue(generate_report, rate_limit=RateLimit(key='reports', concurrency=2)) ``` More details can be found in the docs.",
+            "id": "C11",
+            "section_title": "Rate Limiting",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Retrying failed jobs is also supported: ``` from rq import Retry # Retry up to 3 times, failed job will be requeued immediately queue.enqueue(say_hello, retry=Retry(max=3)) # Retry up to 3 times, with configurable intervals between retries…",
+            "id": "C12",
+            "section_title": "Retrying Failed Jobs",
+            "source_url": "https://github.com/rq/rq/blob/master/README.md"
+          }
+        ],
+        "point": "Supports advanced execution patterns out-of-the-box like job scheduling, repeating jobs with custom intervals, unique deduplication, concurrency-based rate limits, and retries."
+      }
+    ]
+  },
+  "source_hash": "14549a1220439fbb0fe1ff5d22ae174e1c26af41aa7172b3eb2f9a37b850519f"
+}

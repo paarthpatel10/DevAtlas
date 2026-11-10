@@ -1,0 +1,397 @@
+{
+  "full_name": "supabase/supabase",
+  "generated_at": "2026-11-10 09:02:23.155352+00:00",
+  "github_id": 214587193,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Vue.js",
+          "Tailwind CSS"
+        ],
+        "description": "A multi-user application where changes made by one user are instantly broadcasted to all other connected clients.",
+        "how_it_is_used": "Uses Realtime servers to listen to PostgreSQL table changes and broadcasts them via WebSockets.",
+        "title": "Realtime Collaborative Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/supabase/supabase"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "OpenAI API",
+          "Next.js",
+          "Python"
+        ],
+        "description": "An application that stores documents as embeddings and performs semantic search queries.",
+        "how_it_is_used": "Leverages the built-in AI and vector/embeddings toolkit in combination with the Postgres database.",
+        "title": "AI Vector Search Knowledge Base"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Flutter",
+          "Swift",
+          "AWS S3"
+        ],
+        "description": "A platform where users can upload, manage, and download files with fine-grained access control.",
+        "how_it_is_used": "Uses Storage REST APIs for file operations and GoTrue for user authentication and session management.",
+        "title": "Secure File Sharing Portal"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/supabase/supabase"
+        },
+        {
+          "excerpt": "Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and…",
+          "id": "C3",
+          "section_title": "How it works",
+          "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+        },
+        {
+          "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+          "id": "C5",
+          "section_title": "Supabase",
+          "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+        }
+      ],
+      "text": "Provides an open-source, Firebase-like feature set built on top of enterprise-grade tools, allowing developers to use a dedicated Postgres database without building backend services from scratch."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "text": "Supabase is a hosted platform composed of open source tools including Postgres, an Elixir Realtime server, PostgREST, GoTrue for JWT authentication, a storage API for S3, pg_graphql, postgres-meta, and Envoy proxy."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/supabase/supabase"
+            },
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "Hosted Postgres Database"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "Authentication and Authorization"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "Auto-generated REST and GraphQL APIs"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "Realtime subscriptions"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "Database and Edge Functions"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "File Storage"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+              "id": "C5",
+              "section_title": "Supabase",
+              "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+            }
+          ],
+          "name": "AI + Vector/Embeddings Toolkit"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/supabase/supabase"
+          },
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "text": "Building web and mobile applications with user sign-ups, logins, and JWT-based session management."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "text": "Listening to PostgreSQL database inserts, updates, and deletes via WebSockets in real time."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "text": "Managing files in S3 storage using Postgres-handled permissions."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/supabase/supabase"
+        },
+        {
+          "excerpt": "Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and…",
+          "id": "C3",
+          "section_title": "How it works",
+          "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+        },
+        {
+          "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+          "id": "C5",
+          "section_title": "Supabase",
+          "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+        }
+      ],
+      "explanation": "Supabase gives developers a dedicated Postgres database along with authentication, auto-generated APIs, file storage, and real-time capabilities. It combines enterprise-grade open source components to offer a developer experience similar to Firebase.",
+      "one_line": "The Postgres development platform that provides a suite of open source tools matching Firebase features."
+    },
+    "who_should_care": [
+      {
+        "audience": "Web and Mobile Developers",
+        "citations": [
+          {
+            "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/supabase/supabase"
+          },
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "reason": "Needs a backend platform with authentication, file storage, and real-time database capabilities without managing custom server infrastructure."
+      },
+      {
+        "audience": "AI Application Builders",
+        "citations": [
+          {
+            "excerpt": "supabase/supabase: The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications. Topics: ai, alternative, auth, database, deno, embeddings, example, firebase, nextjs,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/supabase/supabase"
+          },
+          {
+            "excerpt": "Supabase is the Postgres development platform. We're building the features of Firebase using enterprise-grade open source tools. - [x] Hosted Postgres Database. Docs - [x] Authentication and Authorization. Docs - [x] Auto-generated APIs. -…",
+            "id": "C5",
+            "section_title": "Supabase",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "reason": "Requires built-in vector and embeddings toolkits alongside a Postgres database."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "point": "Combines many powerful open source products like PostgREST, GoTrue, and Realtime into a unified platform."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "is a hosted platform. You can sign up and start using Supabase without installing anything. You can also self-host and develop locally. - Postgres is an object-relational database system with over 30 years of active development that has…",
+            "id": "C4",
+            "section_title": "How it works",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "point": "Can be used immediately as a hosted platform or self-hosted for local development."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Our approach for client libraries is modular. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing tools. Language Client Feature-Clients (bundled in Supabase client)…",
+            "id": "C7",
+            "section_title": "Client libraries",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          },
+          {
+            "excerpt": "- gotrue-java - storage-java - Kotlin supabase-kt postgrest-kt auth-kt realtime-kt storage-kt functions-kt Ruby supabase-rb postgrest-rb - - - - Rust - postgrest-rs - - - - Godot Engine (GDScript) supabase-gdscript - - - - -",
+            "id": "C8",
+            "section_title": "Client libraries",
+            "source_url": "https://github.com/supabase/supabase/blob/master/README.md"
+          }
+        ],
+        "point": "Offers modular client libraries across multiple programming languages and environments."
+      }
+    ]
+  },
+  "source_hash": "c0bb303ee5265ee61840948c778e56ed0890b2bc5b1458622ec4177bd24afa95"
+}

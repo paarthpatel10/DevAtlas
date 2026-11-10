@@ -1,0 +1,425 @@
+{
+  "full_name": "google/elephant-goldfish-model",
+  "generated_at": "2026-11-10 09:09:32.176895+00:00",
+  "github_id": 1368596582,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "google/elephant-goldfish-model: Open-source plugin for designing and reviewing software with agents Topics: agent skills, ai agents, antigravity, claude code, claude code plugin, claude skills, codex, codex plugin, coding agents, context…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/google/elephant-goldfish-model"
+          },
+          {
+            "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+            "id": "C3",
+            "section_title": "Try your first design",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "Claude Code",
+          "Codex",
+          "Antigravity CLI"
+        ],
+        "description": "Create a guided specification workflow for adding webhook infrastructure to an existing API project, handling failure cases and duplicate event deliveries.",
+        "how_it_is_used": "Utilizes the brainstorming and drafting skills to map out the webhook delivery design and save it into a project brief and design draft.",
+        "title": "Automated Webhook Integration Spec Generator"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "google/elephant-goldfish-model: Open-source plugin for designing and reviewing software with agents Topics: agent skills, ai agents, antigravity, claude code, claude code plugin, claude skills, codex, codex plugin, coding agents, context…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/google/elephant-goldfish-model"
+          },
+          {
+            "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+            "id": "C11",
+            "section_title": "Choose a skill",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "LLMs",
+          "AI Agents"
+        ],
+        "description": "Analyze an legacy or undocumented codebase to automatically generate core architectural documentation and flag inconsistencies between old docs and updated source files.",
+        "how_it_is_used": "Invokes the bootstrap skill to generate initial documentation and the drift report skill to identify discrepancies against current code.",
+        "title": "Codebase Documentation Bootstrapper & Drift Detector"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` agy plugin install https://github.com/google/elephant-goldfish-model ``` For the **Antigravity App** and **Antigravity for IDEs** (Visual Studio Code extension), run `/plugin` or see the installation instructions.",
+            "id": "C8",
+            "section_title": "Antigravity CLI",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "label": "Antigravity CLI installation",
+        "url": "https://github.com/google/elephant-goldfish-model"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` claude plugin marketplace add google/elephant-goldfish-model claude plugin install egm@egm ```",
+            "id": "C9",
+            "section_title": "Claude Code",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "label": "Claude Code installation marketplace add",
+        "url": "https://github.com/google/elephant-goldfish-model"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` codex plugin marketplace add google/elephant-goldfish-model codex plugin add egm@egm ``` Start a new session after installation. For **Claude Cowork** and **ChatGPT Work**, see the setup guide.",
+            "id": "C10",
+            "section_title": "Codex CLI",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "label": "Codex CLI installation marketplace add",
+        "url": "https://github.com/google/elephant-goldfish-model"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+            "id": "C5",
+            "section_title": "How it works",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "text": "Goldfish reviews require fresh subagent contexts; if the agent cannot create them, EGM stops the review."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+            "id": "C5",
+            "section_title": "How it works",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "text": "A review does not replace automated tests or human judgment."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+          "id": "C5",
+          "section_title": "How it works",
+          "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+        },
+        {
+          "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+          "id": "C6",
+          "section_title": null,
+          "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+        }
+      ],
+      "text": "Helps developers overcome conversational bias and blind spots during software specification and design by using fresh subagents to review drafts without the clutter of earlier brainstorming discussions."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Brainstorming requirements and saving concept briefs"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "after each section for your feedback in chat. **Review the draft** ``` /egm-review design_draft.md ``` Use the draft path returned by the agent. Fresh reviewers check the design, its clarity, its fit with the code, and its implementation…",
+              "id": "C4",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Drafting specifications section by section"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+              "id": "C5",
+              "section_title": "How it works",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+              "id": "C11",
+              "section_title": "Choose a skill",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Executing multi-stage design reviews via fresh subagents"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+              "id": "C6",
+              "section_title": null,
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+              "id": "C11",
+              "section_title": "Choose a skill",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Generating drift reports comparing checked-in documents with source code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+              "id": "C11",
+              "section_title": "Choose a skill",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Bootstrapping documentation for an existing codebase"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` agy plugin install https://github.com/google/elephant-goldfish-model ``` For the **Antigravity App** and **Antigravity for IDEs** (Visual Studio Code extension), run `/plugin` or see the installation instructions.",
+              "id": "C8",
+              "section_title": "Antigravity CLI",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Antigravity CLI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` claude plugin marketplace add google/elephant-goldfish-model claude plugin install egm@egm ```",
+              "id": "C9",
+              "section_title": "Claude Code",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` codex plugin marketplace add google/elephant-goldfish-model codex plugin add egm@egm ``` Start a new session after installation. For **Claude Cowork** and **ChatGPT Work**, see the setup guide.",
+              "id": "C10",
+              "section_title": "Codex CLI",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "name": "Codex"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+              "id": "C3",
+              "section_title": "Try your first design",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            },
+            {
+              "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+              "id": "C5",
+              "section_title": "How it works",
+              "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+            }
+          ],
+          "text": "A supported coding agent session capable of creating fresh subagents for reviews."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+            "id": "C3",
+            "section_title": "Try your first design",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "text": "Brainstorming requirements and trade-offs for new software features such as webhook delivery mechanisms."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "after each section for your feedback in chat. **Review the draft** ``` /egm-review design_draft.md ``` Use the draft path returned by the agent. Fresh reviewers check the design, its clarity, its fit with the code, and its implementation…",
+            "id": "C4",
+            "section_title": "Try your first design",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+            "id": "C5",
+            "section_title": "How it works",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "text": "Drafting implementation specifications and reviewing design drafts for clarity and implementation risks using fresh subagents."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+            "id": "C11",
+            "section_title": "Choose a skill",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "text": "Comparing checked-in documentation against the current source code to generate drift reports."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "google/elephant-goldfish-model: Open-source plugin for designing and reviewing software with agents Topics: agent skills, ai agents, antigravity, claude code, claude code plugin, claude skills, codex, codex plugin, coding agents, context…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/google/elephant-goldfish-model"
+        },
+        {
+          "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+          "id": "C6",
+          "section_title": null,
+          "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+        }
+      ],
+      "explanation": "Elephant Goldfish Model (EGM) is an open-source plugin for AI assistants that aids in software design and review. It splits tasks between an 'Elephant' persona that holds project context to draft specifications, and 'Goldfish' reviewers that evaluate the draft without prior conversational bias to expose blind spots and unstated assumptions.",
+      "one_line": "An open-source plugin for designing and reviewing software with AI agents."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "Open your project in your coding agent and choose a feature that needs design decisions. This example adds webhook delivery: what should happen when a delivery fails, or the same event arrives twice? The commands below are shown without a…",
+            "id": "C3",
+            "section_title": "Try your first design",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "after each section for your feedback in chat. **Review the draft** ``` /egm-review design_draft.md ``` Use the draft path returned by the agent. Fresh reviewers check the design, its clarity, its fit with the code, and its implementation…",
+            "id": "C4",
+            "section_title": "Try your first design",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "reason": "Want to use coding agents to brainstorm, structure, draft, and rigorously review software designs before writing implementation code."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "RoleContextResponsibility ElephantYour project, requirements, and earlier decisionsExplore the problem and draft the specification. GoldfishThe document and its referenced source material, without the earlier conversationFind missing…",
+            "id": "C5",
+            "section_title": "How it works",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "point": "Employs a dual-persona approach (Elephant for context retention and drafting, Goldfish for unbiased fresh reviews) to improve software specification quality."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Design with an elephant. Review with a goldfish. Install &ensp;·&ensp; Quickstart &ensp;·&ensp; Documentation &ensp;·&ensp; Website Develop ideas with context and review documents with fresh eyes. EGM is an open-source plugin for AI…",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          },
+          {
+            "excerpt": "You can use each skill when you need it. You do not have to follow the full sequence. SkillUse it to… &nbsp;BrainstormTest an idea and write a concept brief. &nbsp;DraftTurn a brief or existing notes into a design document.…",
+            "id": "C11",
+            "section_title": "Choose a skill",
+            "source_url": "https://github.com/google/elephant-goldfish-model/blob/main/README.md"
+          }
+        ],
+        "point": "Supports specific workflows like brainstorming, drafting, reviewing across five stages, drift reporting, and code bootstrapping."
+      }
+    ]
+  },
+  "source_hash": "51ef8717b47206b80c61a57a1661ef56af70ca8f7d8202a132d331b8160a39c2"
+}

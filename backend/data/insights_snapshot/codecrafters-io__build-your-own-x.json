@@ -1,0 +1,302 @@
+{
+  "full_name": "codecrafters-io/build-your-own-x",
+  "generated_at": "2026-11-10 09:00:37.138635+00:00",
+  "github_id": 132750724,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "* **C**: _Let's Build a Simple Database_ * **C++**: _Build Your Own Redis from Scratch_ * **C#**: _Build Your Own Database_ * **Clojure**: _An Archaeology-Inspired Database_ * **Crystal**: _Why you should build your own NoSQL Database_ *…",
+            "id": "C12",
+            "section_title": "Build your own Database",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Go",
+          "Rust",
+          "C++",
+          "Docker"
+        ],
+        "description": "Build a functional database or key-value store from scratch to understand data structures like B+Trees, persistence, and network protocols.",
+        "how_it_is_used": "Utilizes tutorials detailing how to construct databases and Redis servers from scratch in languages like C, C++, Go, or Rust.",
+        "title": "Custom In-Memory Database or Redis Clone"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **C#**: _Building a BitTorrent client from scratch in C#_ * **Go**: _Building a BitTorrent client from the ground up in Go_ * **Nim**: _Writing a Bencode Parser_ * **Node.js**: _Write your own bittorrent client_ * **Python**: _A…",
+            "id": "C7",
+            "section_title": "Build your own BitTorrent Client",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "Go",
+          "Node.js",
+          "Wireshark"
+        ],
+        "description": "Create a file-sharing client capable of parsing bencode formats and communicating over the BitTorrent protocol.",
+        "how_it_is_used": "Relies on step-by-step implementation guides for building a BitTorrent client from the ground up in languages such as Go, Python, C#, or Node.js.",
+        "title": "Peer-to-Peer BitTorrent Client"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **ATS**: _Functional Blockchain_ * **Crystal**: _Write your own blockchain and PoW algorithm using Crystal_ * **Go**: _Building Blockchain in Go_ * **Go**: _Code your own blockchain in less than 200 lines of Go_ * **Java**: _Creating…",
+            "id": "C8",
+            "section_title": "Build your own Blockchain / Cryptocurrency",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "simple actor-based blockchain_ * **TypeScript**: _Naivecoin: a tutorial for building a cryptocurrency_ * **TypeScript**: _NaivecoinStake: a tutorial for building a cryptocurrency with the Proof of Stake consensus_ * **Rust**: _Building A…",
+            "id": "C9",
+            "section_title": "Build your own Blockchain / Cryptocurrency",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "JavaScript",
+          "Python",
+          "Go",
+          "TypeScript"
+        ],
+        "description": "Develop a lightweight blockchain application featuring block creation and consensus algorithms.",
+        "how_it_is_used": "Draws upon guides explaining how to write a blockchain and Proof of Work algorithms using Go, JavaScript, Python, or Crystal.",
+        "title": "Cryptocurrency Blockchain with Proof of Work"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+          "id": "C2",
+          "section_title": "Build your own &lt;insert-technology-here&gt;",
+          "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+        }
+      ],
+      "text": "It solves the problem of not fully understanding how complex technologies work by offering practical, step-by-step guides to recreate them from scratch, embodying the principle that creation leads to understanding."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+              "id": "C2",
+              "section_title": "Build your own &lt;insert-technology-here&gt;",
+              "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+            },
+            {
+              "excerpt": "* **C++**: _Introduction to Ray Tracing: a Simple Method for Creating 3D Images_ * **C++**: _How OpenGL works: software rendering in 500 lines of code_ * **C++**: _Raycasting engine of Wolfenstein 3D_ * **C++**: _Physically Based…",
+              "id": "C4",
+              "section_title": "Build your own 3D Renderer",
+              "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+            },
+            {
+              "excerpt": "* **C#**: _Building a BitTorrent client from scratch in C#_ * **Go**: _Building a BitTorrent client from the ground up in Go_ * **Nim**: _Writing a Bencode Parser_ * **Node.js**: _Write your own bittorrent client_ * **Python**: _A…",
+              "id": "C7",
+              "section_title": "Build your own BitTorrent Client",
+              "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+            },
+            {
+              "excerpt": "* **ATS**: _Functional Blockchain_ * **Crystal**: _Write your own blockchain and PoW algorithm using Crystal_ * **Go**: _Building Blockchain in Go_ * **Go**: _Code your own blockchain in less than 200 lines of Go_ * **Java**: _Creating…",
+              "id": "C8",
+              "section_title": "Build your own Blockchain / Cryptocurrency",
+              "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+            },
+            {
+              "excerpt": "* **C**: _Let's Build a Simple Database_ * **C++**: _Build Your Own Redis from Scratch_ * **C#**: _Build Your Own Database_ * **Clojure**: _An Archaeology-Inspired Database_ * **Crystal**: _Why you should build your own NoSQL Database_ *…",
+              "id": "C12",
+              "section_title": "Build your own Database",
+              "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+            }
+          ],
+          "name": "Step-by-step tutorials for building databases, 3D renderers, blockchains, Bittorrent clients, and other complex software"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+            "id": "C2",
+            "section_title": "Build your own &lt;insert-technology-here&gt;",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C#**: _Building a BitTorrent client from scratch in C#_ * **Go**: _Building a BitTorrent client from the ground up in Go_ * **Nim**: _Writing a Bencode Parser_ * **Node.js**: _Write your own bittorrent client_ * **Python**: _A…",
+            "id": "C7",
+            "section_title": "Build your own BitTorrent Client",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **ATS**: _Functional Blockchain_ * **Crystal**: _Write your own blockchain and PoW algorithm using Crystal_ * **Go**: _Building Blockchain in Go_ * **Go**: _Code your own blockchain in less than 200 lines of Go_ * **Java**: _Creating…",
+            "id": "C8",
+            "section_title": "Build your own Blockchain / Cryptocurrency",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C**: _Let's Build a Simple Database_ * **C++**: _Build Your Own Redis from Scratch_ * **C#**: _Build Your Own Database_ * **Clojure**: _An Archaeology-Inspired Database_ * **Crystal**: _Why you should build your own NoSQL Database_ *…",
+            "id": "C12",
+            "section_title": "Build your own Database",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "text": "Learning how core technologies like databases, BitTorrent clients, or blockchain algorithms work internally by following step-by-step instructions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **C++**: _Introduction to Ray Tracing: a Simple Method for Creating 3D Images_ * **C++**: _How OpenGL works: software rendering in 500 lines of code_ * **C++**: _Raycasting engine of Wolfenstein 3D_ * **C++**: _Physically Based…",
+            "id": "C4",
+            "section_title": "Build your own 3D Renderer",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **Haskell**: _Roll your own IRC bot_ * **Node.js**: _Creating a Simple Facebook Messenger AI Bot with API.ai in Node.js_ * **Node.js**: _How to make a responsive telegram bot_ * **Node.js**: _Create a Discord bot_ * **Node.js**: _gifbot…",
+            "id": "C10",
+            "section_title": "Build your own Bot",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **Go**: _Visualize your local git contributions with Go_ * **Go**: _Build a command line app with Go: lolcat_ * **Go**: _Building a cli command with Go: cowsay_ * **Go**: _Go CLI tutorial: fortune clone_ * **Nim**: _Writing a stow…",
+            "id": "C11",
+            "section_title": "Build your own Command-Line Tool",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "text": "Practicing implementation skills in a specific programming language by building command-line tools, bots, or 3D renderers."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "codecrafters-io/build-your-own-x: Master programming by recreating your favorite technologies from scratch. Topics: awesome list, free, programming, tutorial code, tutorial exercises, tutorials. Primary language: Markdown.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/codecrafters-io/build-your-own-x"
+        },
+        {
+          "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+          "id": "C2",
+          "section_title": "Build your own &lt;insert-technology-here&gt;",
+          "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+        }
+      ],
+      "explanation": "This repository provides a curated collection of tutorials and guides that help developers master programming by building well-known technologies from the ground up. It covers diverse domains such as databases, operating systems, 3D renderers, and blockchains using various programming languages.",
+      "one_line": "A compilation of step-by-step guides for recreating favorite technologies from scratch."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software developers and programming students",
+        "citations": [
+          {
+            "excerpt": "codecrafters-io/build-your-own-x: Master programming by recreating your favorite technologies from scratch. Topics: awesome list, free, programming, tutorial code, tutorial exercises, tutorials. Primary language: Markdown.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x"
+          },
+          {
+            "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+            "id": "C2",
+            "section_title": "Build your own &lt;insert-technology-here&gt;",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "reason": "They can deepen their technical skills and master programming concepts by building real-world software components and systems from scratch."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch. > *What I cannot create, I do not understand — Richard Feynman.* It's a great way to learn. * 3D Renderer * AI…",
+            "id": "C2",
+            "section_title": "Build your own &lt;insert-technology-here&gt;",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "point": "It offers a wide variety of project categories ranging from simple bots and command-line tools to complex systems like databases, virtual machines, and AI models."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **Java**: _Building Your Own Kafka-like System From Scratch: A Step-by-Step Guide_",
+            "id": "C3",
+            "section_title": "Build your own Distributed Systems",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C++**: _Introduction to Ray Tracing: a Simple Method for Creating 3D Images_ * **C++**: _How OpenGL works: software rendering in 500 lines of code_ * **C++**: _Raycasting engine of Wolfenstein 3D_ * **C++**: _Physically Based…",
+            "id": "C4",
+            "section_title": "Build your own 3D Renderer",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **Python**: _A Large Language Model (LLM)_ * **Python**: _Diffusion Models for Image Generation_ * **Python**: _RAG for Document Search_",
+            "id": "C5",
+            "section_title": "Build your own AI Model",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C#**: _How To: Augmented Reality App Tutorial for Beginners with Vuforia and Unity 3D_ [video] * **C#**: _How To Unity ARCore_ [video] * **C#**: _AR Portal Tutorial with Unity_ [video] * **C#**: _How to create a Dragon in Augmented…",
+            "id": "C6",
+            "section_title": "Build your own Augmented Reality",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C#**: _Building a BitTorrent client from scratch in C#_ * **Go**: _Building a BitTorrent client from the ground up in Go_ * **Nim**: _Writing a Bencode Parser_ * **Node.js**: _Write your own bittorrent client_ * **Python**: _A…",
+            "id": "C7",
+            "section_title": "Build your own BitTorrent Client",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **ATS**: _Functional Blockchain_ * **Crystal**: _Write your own blockchain and PoW algorithm using Crystal_ * **Go**: _Building Blockchain in Go_ * **Go**: _Code your own blockchain in less than 200 lines of Go_ * **Java**: _Creating…",
+            "id": "C8",
+            "section_title": "Build your own Blockchain / Cryptocurrency",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "simple actor-based blockchain_ * **TypeScript**: _Naivecoin: a tutorial for building a cryptocurrency_ * **TypeScript**: _NaivecoinStake: a tutorial for building a cryptocurrency with the Proof of Stake consensus_ * **Rust**: _Building A…",
+            "id": "C9",
+            "section_title": "Build your own Blockchain / Cryptocurrency",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **Haskell**: _Roll your own IRC bot_ * **Node.js**: _Creating a Simple Facebook Messenger AI Bot with API.ai in Node.js_ * **Node.js**: _How to make a responsive telegram bot_ * **Node.js**: _Create a Discord bot_ * **Node.js**: _gifbot…",
+            "id": "C10",
+            "section_title": "Build your own Bot",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **Go**: _Visualize your local git contributions with Go_ * **Go**: _Build a command line app with Go: lolcat_ * **Go**: _Building a cli command with Go: cowsay_ * **Go**: _Go CLI tutorial: fortune clone_ * **Nim**: _Writing a stow…",
+            "id": "C11",
+            "section_title": "Build your own Command-Line Tool",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          },
+          {
+            "excerpt": "* **C**: _Let's Build a Simple Database_ * **C++**: _Build Your Own Redis from Scratch_ * **C#**: _Build Your Own Database_ * **Clojure**: _An Archaeology-Inspired Database_ * **Crystal**: _Why you should build your own NoSQL Database_ *…",
+            "id": "C12",
+            "section_title": "Build your own Database",
+            "source_url": "https://github.com/codecrafters-io/build-your-own-x/blob/master/README.md"
+          }
+        ],
+        "point": "Guides are tailored to numerous programming languages, allowing developers to learn by building in languages they prefer."
+      }
+    ]
+  },
+  "source_hash": "bae8b5bd9ce00e921fed24c1781571f06313425077cdbbc50c091dbbd6224cd6"
+}

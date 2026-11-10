@@ -1,0 +1,592 @@
+{
+  "full_name": "pgvector/pgvector",
+  "generated_at": "2026-11-10 07:49:47.898613+00:00",
+  "github_id": 359952601,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+            "id": "C7",
+            "section_title": "Querying",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Average vectors ``` SELECT AVG(embedding) FROM items; ``` Average groups of vectors ``` SELECT category_id, AVG(embedding) FROM items GROUP BY category_id; ```",
+            "id": "C9",
+            "section_title": "Aggregates",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PostgreSQL",
+          "Python"
+        ],
+        "description": "Store item product embeddings directly in Postgres tables and query top similar items based on vector distance.",
+        "how_it_is_used": "Uses pgvector vector columns with an HNSW index configured for cosine distance (`<=>`) or inner product (`<#>`) along with group vector averaging (`AVG(embedding)`).",
+        "title": "E-Commerce Recommendation System"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+            "id": "C6",
+            "section_title": "Storing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+            "id": "C7",
+            "section_title": "Querying",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PostgreSQL",
+          "Docker"
+        ],
+        "description": "Index sparse and binary vector data for specialized search filters.",
+        "how_it_is_used": "Leverages pgvector's `bit` and `sparsevec` types indexed with HNSW using Hamming (`<~>`) or Jaccard (`<%>`) distance operators.",
+        "title": "Sparse and Binary Similarity Search Service"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+            "id": "C4",
+            "section_title": "Linux and Mac",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Ensure C++ support in Visual Studio is installed and run `x64 Native Tools Command Prompt for VS [version]` as administrator. Then use `nmake` to build: ``` set \"PGROOT=C:\\Program Files\\PostgreSQL\\18\" cd %TEMP% git clone --branch v0.8.7…",
+            "id": "C5",
+            "section_title": "Windows",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "label": "Git Repository",
+        "url": "https://github.com/pgvector/pgvector.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "HNSW index dimension limits are capped at 2,000 dimensions for vector, 4,000 for halfvec, 64,000 for bit, and 1,000 non-zero elements for sparsevec."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "HNSW indexes take longer to build and use more memory compared to IVFFlat indexes."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+            "id": "C10",
+            "section_title": "Indexing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "Approximate nearest neighbor indexes trade recall for speed, returning different query results than exact nearest neighbor searches."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Enable the extension (do this once in each database where you want to use it) ``` CREATE EXTENSION vector; ``` Create a vector column with 3 dimensions ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Insert…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "The inner product distance operator `<#>` returns a negative inner product due to Postgres operator ASC order index scan requirements."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+          "id": "C3",
+          "section_title": "pgvector",
+          "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+        }
+      ],
+      "text": "It enables storing and searching vector embeddings directly inside PostgreSQL tables, removing the need for a separate vector database while retaining ACID compliance, point-in-time recovery, JOINs, and standard SQL tooling."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "pgvector/pgvector: Open-source vector similarity search for Postgres Topics: approximate nearest neighbor search, nearest neighbor search. Primary language: C.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/pgvector/pgvector"
+          },
+          {
+            "excerpt": "Enable the extension (do this once in each database where you want to use it) ``` CREATE EXTENSION vector; ``` Create a vector column with 3 dimensions ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Insert…",
+            "id": "C2",
+            "section_title": "Getting Started",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+            "id": "C6",
+            "section_title": "Storing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+            "id": "C10",
+            "section_title": "Indexing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "pgvector is written in C and executes as an extension within PostgreSQL (`CREATE EXTENSION vector;`). It introduces custom data types (`vector`, `halfvec`, `bit`, `sparsevec`), custom distance operators, and index methods like HNSW and IVFFlat that run inside standard Postgres transaction and query execution frameworks."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+              "id": "C3",
+              "section_title": "pgvector",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+              "id": "C10",
+              "section_title": "Indexing",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "Exact and approximate nearest neighbor search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+              "id": "C10",
+              "section_title": "Indexing",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+              "id": "C11",
+              "section_title": "HNSW",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "HNSW and IVFFlat index types"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+              "id": "C3",
+              "section_title": "pgvector",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+              "id": "C7",
+              "section_title": "Querying",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "L2, inner product, cosine, L1, Hamming, and Jaccard distance search operators"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+              "id": "C3",
+              "section_title": "pgvector",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+              "id": "C6",
+              "section_title": "Storing",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+              "id": "C11",
+              "section_title": "HNSW",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "Vector data types (vector, halfvec, bit, sparsevec)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Average vectors ``` SELECT AVG(embedding) FROM items; ``` Average groups of vectors ``` SELECT category_id, AVG(embedding) FROM items GROUP BY category_id; ```",
+              "id": "C9",
+              "section_title": "Aggregates",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "Vector aggregations (AVG)"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "pgvector/pgvector: Open-source vector similarity search for Postgres Topics: approximate nearest neighbor search, nearest neighbor search. Primary language: C.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/pgvector/pgvector"
+            },
+            {
+              "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+              "id": "C3",
+              "section_title": "pgvector",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "Ensure C++ support in Visual Studio is installed and run `x64 Native Tools Command Prompt for VS [version]` as administrator. Then use `nmake` to build: ``` set \"PGROOT=C:\\Program Files\\PostgreSQL\\18\" cd %TEMP% git clone --branch v0.8.7…",
+              "id": "C5",
+              "section_title": "Windows",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "Docker"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "Homebrew"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "PGXN"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            },
+            {
+              "excerpt": "Ensure C++ support in Visual Studio is installed and run `x64 Native Tools Command Prompt for VS [version]` as administrator. Then use `nmake` to build: ``` set \"PGROOT=C:\\Program Files\\PostgreSQL\\18\" cd %TEMP% git clone --branch v0.8.7…",
+              "id": "C5",
+              "section_title": "Windows",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "conda-forge"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "name": "APT / Yum / pkg / APK"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Compile and install the extension (supports Postgres 13+) ``` cd /tmp git clone --branch v0.8.7 https://github.com/pgvector/pgvector.git cd pgvector make make install # may need sudo ``` See the installation notes if you run into issues…",
+              "id": "C4",
+              "section_title": "Linux and Mac",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "text": "Postgres 13+ for Linux/Mac compilation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Ensure C++ support in Visual Studio is installed and run `x64 Native Tools Command Prompt for VS [version]` as administrator. Then use `nmake` to build: ``` set \"PGROOT=C:\\Program Files\\PostgreSQL\\18\" cd %TEMP% git clone --branch v0.8.7…",
+              "id": "C5",
+              "section_title": "Windows",
+              "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+            }
+          ],
+          "text": "Visual Studio C++ support and nmake for Windows build"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+            "id": "C7",
+            "section_title": "Querying",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+            "id": "C10",
+            "section_title": "Indexing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "Running exact or approximate similarity queries to retrieve nearest neighbors for a target vector or row."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+            "id": "C6",
+            "section_title": "Storing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "Storing, updating, upserting, and bulk-loading vector representations alongside existing table data."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Average vectors ``` SELECT AVG(embedding) FROM items; ``` Average groups of vectors ``` SELECT category_id, AVG(embedding) FROM items GROUP BY category_id; ```",
+            "id": "C9",
+            "section_title": "Aggregates",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "text": "Computing vector average aggregations across category groups using AVG()."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "pgvector/pgvector: Open-source vector similarity search for Postgres Topics: approximate nearest neighbor search, nearest neighbor search. Primary language: C.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/pgvector/pgvector"
+        },
+        {
+          "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+          "id": "C3",
+          "section_title": "pgvector",
+          "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+        },
+        {
+          "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+          "id": "C10",
+          "section_title": "Indexing",
+          "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+        }
+      ],
+      "explanation": "pgvector is a Postgres extension that allows developers to store and query vector embeddings directly alongside traditional data. It provides exact and approximate nearest neighbor search supporting various vector types and distance metrics while integrating with standard PostgreSQL features.",
+      "one_line": "An open-source vector similarity search extension for PostgreSQL."
+    },
+    "who_should_care": [
+      {
+        "audience": "PostgreSQL Developers and Database Administrators",
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "reason": "They can add vector indexing and similarity search capability to existing Postgres infrastructure without introducing external vector stores."
+      },
+      {
+        "audience": "AI and Machine Learning Engineers",
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+            "id": "C7",
+            "section_title": "Querying",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "reason": "They can persist high-dimensional vector embeddings and run distance query evaluations directly via SQL."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+            "id": "C6",
+            "section_title": "Storing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "point": "Supports multiple vector data types including single-precision, half-precision, binary, and sparse vectors."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Create a new table with a vector column ``` CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3)); ``` Or add a vector column to an existing table ``` ALTER TABLE items ADD COLUMN embedding vector(3); ``` Also supports…",
+            "id": "C6",
+            "section_title": "Storing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Average vectors ``` SELECT AVG(embedding) FROM items; ``` Average groups of vectors ``` SELECT category_id, AVG(embedding) FROM items GROUP BY category_id; ```",
+            "id": "C9",
+            "section_title": "Aggregates",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "point": "Integrates directly with PostgreSQL functionality such as JOINs, ACID compliance, point-in-time recovery, vector averaging aggregates, and binary COPY bulk loading."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "By default, pgvector performs exact nearest neighbor search, which provides perfect recall. You can add an index to use approximate nearest neighbor search, which trades some recall for speed. Unlike typical indexes, you will see different…",
+            "id": "C10",
+            "section_title": "Indexing",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "An HNSW index creates a multilayer graph. It has better query performance than IVFFlat (in terms of speed-recall tradeoff), but has slower build times and uses more memory. Also, an index can be created without any data in the table since…",
+            "id": "C11",
+            "section_title": "HNSW",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "point": "Provides HNSW and IVFFlat index types for approximate nearest neighbor search to balance search performance against recall."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Open-source vector similarity search for Postgres Store your vectors with the rest of your data. Supports: - exact and approximate nearest neighbor search - single-precision, half-precision, binary, and sparse vectors - L2 distance, inner…",
+            "id": "C3",
+            "section_title": "pgvector",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          },
+          {
+            "excerpt": "Get the nearest neighbors to a vector ``` SELECT * FROM items ORDER BY embedding <-> '[3,1,2]' LIMIT 5; ``` Supported distance functions are: - `<->` - L2 distance - `<#>` - (negative) inner product - `<=>` - cosine distance - `<+>` - L1…",
+            "id": "C7",
+            "section_title": "Querying",
+            "source_url": "https://github.com/pgvector/pgvector/blob/master/README.md"
+          }
+        ],
+        "point": "Offers operators for L2, inner product, cosine, L1, Hamming, and Jaccard distance metrics."
+      }
+    ]
+  },
+  "source_hash": "cbe0fd393ac0af020cbf430dc2406fa7d3f9e9fb6fe86526c49df28a31888a96"
+}

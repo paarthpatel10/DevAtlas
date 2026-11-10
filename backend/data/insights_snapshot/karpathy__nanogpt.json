@@ -1,0 +1,490 @@
+{
+  "full_name": "karpathy/nanoGPT",
+  "generated_at": "2026-11-10 09:05:16.418958+00:00",
+  "github_id": 582822129,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+            "id": "C2",
+            "section_title": "install",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB)…",
+            "id": "C3",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "a baby GPT with the settings provided in the config/train_shakespeare_char.py config file: ``` python train.py config/train_shakespeare_char.py ``` If you peek inside it, you'll see that we're training a GPT with a context size of up to…",
+            "id": "C4",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PyTorch",
+          "tiktoken",
+          "tqdm"
+        ],
+        "description": "Train a small character-level or token-level GPT model on a specific author's collected works to generate stylized text samples.",
+        "how_it_is_used": "Uses data preparation scripts to process raw text into binary training files, trains a small Transformer config via train.py, and samples text from the output directory.",
+        "title": "Custom Style Text Generator"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+            "id": "C2",
+            "section_title": "install",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "Finetuning is no different than training, we just make sure to initialize from a pretrained model and train with a smaller learning rate. For an example of how to finetune a GPT on new text go to `data/shakespeare` and run `prepare.py` to…",
+            "id": "C12",
+            "section_title": "finetuning",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "transformers",
+          "datasets",
+          "PyTorch"
+        ],
+        "description": "Take a pretrained OpenAI GPT-2 checkpoint and adapt it to a specific niche text dataset using low-learning-rate finetuning.",
+        "how_it_is_used": "Initializes training from a pretrained model checkpoint and points the training script to a custom prepared dataset binary.",
+        "title": "Domain-Specific GPT Finetuner"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "The repository is old and deprecated, with an improved cousin called nanochat recommended instead."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the OpenWebText, an open reproduction of OpenAI's (private) WebText: ``` python…",
+            "id": "C9",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "OpenAI GPT-2 checkpoints allow us to get some baselines in place for openwebtext. We can get the numbers as follows: ``` $ python train.py config/eval_gpt2.py $ python train.py config/eval_gpt2_medium.py $ python train.py…",
+            "id": "C11",
+            "section_title": "baselines",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "OpenWebText is an open reproduction of OpenAI's private WebText dataset, introducing a dataset domain gap compared to original GPT-2 training data."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+          "id": "C8",
+          "section_title": "nanoGPT",
+          "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+        },
+        {
+          "excerpt": "models ~match. If you're in a cluster environment and you are blessed with multiple GPU nodes you can make GPU go brrrr e.g. across 2 nodes like: ``` # Run on the first (master) node with example IP 123.456.123.456: torchrun…",
+          "id": "C10",
+          "section_title": "reproducing GPT-2",
+          "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+        }
+      ],
+      "text": "Provides a simple, transparent, and hackable boilerplate codebase to train and finetune medium-sized GPT models without unnecessary abstractions."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "A standard Transformer-based GPT architecture defined in a ~300-line model file, driven by a ~300-line training loop script."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "karpathy/nanoGPT: The simplest, fastest repository for training/finetuning medium-sized GPTs. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/karpathy/nanoGPT"
+            },
+            {
+              "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+              "id": "C8",
+              "section_title": "nanoGPT",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Training medium-sized GPT models from scratch"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+              "id": "C8",
+              "section_title": "nanoGPT",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "Finetuning is no different than training, we just make sure to initialize from a pretrained model and train with a smaller learning rate. For an example of how to finetune a GPT on new text go to `data/shakespeare` and run `prepare.py` to…",
+              "id": "C12",
+              "section_title": "finetuning",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Finetuning pretrained GPT-2 checkpoints"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the OpenWebText, an open reproduction of OpenAI's (private) WebText: ``` python…",
+              "id": "C9",
+              "section_title": "reproducing GPT-2",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "models ~match. If you're in a cluster environment and you are blessed with multiple GPU nodes you can make GPU go brrrr e.g. across 2 nodes like: ``` # Run on the first (master) node with example IP 123.456.123.456: torchrun…",
+              "id": "C10",
+              "section_title": "reproducing GPT-2",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Distributed Data Parallel (DDP) multi-GPU and multi-node training"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "VINCENTIO: I thank your eyes against it. DUKE VINCENTIO: Then will answer him to save the malm: And what have you tyrannous shall do this? DUKE VINCENTIO: If you have done evils of all disposition To end his power, the day of thrust for a…",
+              "id": "C5",
+              "section_title": "quick start",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "--log_interval=1 --block_size=64 --batch_size=12 --n_layer=4 --n_head=4 --n_embd=128 --max_iters=2000 --lr_decay_iters=2000 --dropout=0.0 ``` Here, since we are running on CPU instead of GPU we must set both `--device=cpu` and also turn…",
+              "id": "C6",
+              "section_title": "quick start",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "also worse samples, but it's still good fun: ``` python sample.py --out_dir=out-shakespeare-char --device=cpu ``` Generates samples like this: ``` GLEORKEN VINGHARD III: Whell's the couse, the came light gacks, And the for mought you in…",
+              "id": "C7",
+              "section_title": "quick start",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Apple Silicon (MPS) and CPU execution support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "PyTorch"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Hugging Face Transformers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Hugging Face Datasets"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+              "id": "C8",
+              "section_title": "nanoGPT",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "OpenAI GPT-2 weights"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "Weights & Biases (wandb)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+              "id": "C8",
+              "section_title": "nanoGPT",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            },
+            {
+              "excerpt": "A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the OpenWebText, an open reproduction of OpenAI's (private) WebText: ``` python…",
+              "id": "C9",
+              "section_title": "reproducing GPT-2",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "OpenWebText dataset"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "name": "OpenAI tiktoken BPE"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` pip install torch numpy transformers datasets tiktoken wandb tqdm ``` Dependencies: - pytorch <3 - numpy <3 - `transformers` for huggingface transformers <3 (to load GPT-2 checkpoints) - `datasets` for huggingface datasets <3 (if you…",
+              "id": "C2",
+              "section_title": "install",
+              "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+            }
+          ],
+          "text": "Python and package dependencies including torch, numpy, transformers, datasets, tiktoken, wandb, and tqdm"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB)…",
+            "id": "C3",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "Training a character-level GPT from scratch on custom text datasets like the works of Shakespeare."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "Finetuning is no different than training, we just make sure to initialize from a pretrained model and train with a smaller learning rate. For an example of how to finetune a GPT on new text go to `data/shakespeare` and run `prepare.py` to…",
+            "id": "C12",
+            "section_title": "finetuning",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "Finetuning pretrained OpenAI GPT-2 checkpoints on specialized downstream text domains."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the OpenWebText, an open reproduction of OpenAI's (private) WebText: ``` python…",
+            "id": "C9",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "models ~match. If you're in a cluster environment and you are blessed with multiple GPU nodes you can make GPU go brrrr e.g. across 2 nodes like: ``` # Run on the first (master) node with example IP 123.456.123.456: torchrun…",
+            "id": "C10",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "OpenAI GPT-2 checkpoints allow us to get some baselines in place for openwebtext. We can get the numbers as follows: ``` $ python train.py config/eval_gpt2.py $ python train.py config/eval_gpt2_medium.py $ python train.py…",
+            "id": "C11",
+            "section_title": "baselines",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "text": "Reproducing GPT-2 baseline training runs using distributed data parallel training across multiple GPUs or nodes."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "karpathy/nanoGPT: The simplest, fastest repository for training/finetuning medium-sized GPTs. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/karpathy/nanoGPT"
+        },
+        {
+          "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+          "id": "C8",
+          "section_title": "nanoGPT",
+          "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+        }
+      ],
+      "explanation": "nanoGPT is a lightweight PyTorch implementation designed for training and finetuning medium-sized GPT models from scratch. It consists of a plain, readable codebase featuring a roughly 300-line training loop and a roughly 300-line model definition. It serves as a rewrite of minGPT, allowing developers to easily hack on, train new models, or load OpenAI GPT-2 weights.",
+      "one_line": "The simplest, fastest repository for training and finetuning medium-sized GPTs."
+    },
+    "who_should_care": [
+      {
+        "audience": "Deep learning practitioners and researchers",
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "models ~match. If you're in a cluster environment and you are blessed with multiple GPU nodes you can make GPU go brrrr e.g. across 2 nodes like: ``` # Run on the first (master) node with example IP 123.456.123.456: torchrun…",
+            "id": "C10",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "reason": "They want to understand, modify, or train Transformer language models without wading through heavy framework abstractions."
+      },
+      {
+        "audience": "Developers with limited hardware",
+        "citations": [
+          {
+            "excerpt": "If you are not a deep learning professional and you just want to feel the magic and get your feet wet, the fastest way to get started is to train a character-level GPT on the works of Shakespeare. First, we download it as a single (1MB)…",
+            "id": "C3",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "VINCENTIO: I thank your eyes against it. DUKE VINCENTIO: Then will answer him to save the malm: And what have you tyrannous shall do this? DUKE VINCENTIO: If you have done evils of all disposition To end his power, the day of thrust for a…",
+            "id": "C5",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "also worse samples, but it's still good fun: ``` python sample.py --out_dir=out-shakespeare-char --device=cpu ``` Generates samples like this: ``` GLEORKEN VINGHARD III: Whell's the couse, the came light gacks, And the for mought you in…",
+            "id": "C7",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "reason": "They can train small character-level or token-level GPT models on a CPU, Apple Silicon GPU, or single consumer GPU."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "point": "The model architecture and training loops are extremely compact, consisting of only about 300 lines of code each."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "--- **Update Nov 2025** nanoGPT has a new and improved cousin called nanochat. It is very likely you meant to use/find nanochat instead. nanoGPT (this repo) is now very old and deprecated but I will leave it up for posterity. --- The…",
+            "id": "C8",
+            "section_title": "nanoGPT",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "A more serious deep learning professional may be more interested in reproducing GPT-2 results. So here we go - we first tokenize the dataset, in this case the OpenWebText, an open reproduction of OpenAI's (private) WebText: ``` python…",
+            "id": "C9",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "point": "Capable of reproducing GPT-2 (124M) on OpenWebText using distributed training."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "VINCENTIO: I thank your eyes against it. DUKE VINCENTIO: Then will answer him to save the malm: And what have you tyrannous shall do this? DUKE VINCENTIO: If you have done evils of all disposition To end his power, the day of thrust for a…",
+            "id": "C5",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "also worse samples, but it's still good fun: ``` python sample.py --out_dir=out-shakespeare-char --device=cpu ``` Generates samples like this: ``` GLEORKEN VINGHARD III: Whell's the couse, the came light gacks, And the for mought you in…",
+            "id": "C7",
+            "section_title": "quick start",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          },
+          {
+            "excerpt": "models ~match. If you're in a cluster environment and you are blessed with multiple GPU nodes you can make GPU go brrrr e.g. across 2 nodes like: ``` # Run on the first (master) node with example IP 123.456.123.456: torchrun…",
+            "id": "C10",
+            "section_title": "reproducing GPT-2",
+            "source_url": "https://github.com/karpathy/nanoGPT/blob/master/README.md"
+          }
+        ],
+        "point": "Supports flexible training environments ranging from a single CPU or MacBook to multi-node GPU clusters."
+      }
+    ]
+  },
+  "source_hash": "0e35ab581f861004b5fe21f26628eec91ac874d80daf0b827a6f2adcc1470dc8"
+}

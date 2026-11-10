@@ -1,0 +1,481 @@
+{
+  "full_name": "prisma/orm",
+  "generated_at": "2026-11-10 09:06:51.766020+00:00",
+  "github_id": 192925833,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PostGIS",
+          "Leaflet.js",
+          "Next.js"
+        ],
+        "description": "A mapping application that stores properties with geometry coordinates and runs spatial queries to locate nearby listings.",
+        "how_it_is_used": "Uses PostgreSQL with the PostGIS extension for geometry columns and geo queries.",
+        "title": "Geospatial Property Finder"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "OpenAI Embeddings API",
+          "Hono"
+        ],
+        "description": "An internal knowledge base that vectorizes uploaded documentation to provide AI-powered semantic search.",
+        "how_it_is_used": "Uses PostgreSQL with pgvector for vector columns and similarity search.",
+        "title": "Semantic Document Search Engine"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "CipherStash",
+          "NestJS"
+        ],
+        "description": "A customer management tool that ensures customer data is encrypted at the database level with strict access controls.",
+        "how_it_is_used": "Integrates searchable encryption and data-level access control via extensions.",
+        "title": "Secure Enterprise CRM"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **PostgreSQL** — the primary target, first-class support - **MongoDB** — first-class support - **SQLite** — planned next, a proof of concept today MySQL follows after SQLite. See the feature scoreboard for what each database supports…",
+            "id": "C3",
+            "section_title": "Supported databases",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "text": "SQLite and MySQL support are still in development or planned as upcoming features."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Docs | Discord | X | Blog Post | Architecture --- > **Using Prisma 7?** It is maintained for eighteen months after `8.0.0` final; supported versions says what that covers. Its source lives on the `v7` branch of this repository and its docs…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "text": "Prisma 8 is currently a release candidate, meaning it may include breaking changes prior to final release."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "prisma/orm: The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute. Topics: cockroachdb, database, javascript, loggy core, loggy…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/prisma/orm"
+        },
+        {
+          "excerpt": "Docs | Discord | X | Blog Post | Architecture --- > **Using Prisma 7?** It is maintained for eighteen months after `8.0.0` final; supported versions says what that covers. Its source lives on the `v7` branch of this repository and its docs…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+        }
+      ],
+      "text": "It removes the need to write raw SQL by providing human-readable queries in TypeScript and bridges the gap for AI-agent-driven database workflows through native skills."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "prisma/orm: The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute. Topics: cockroachdb, database, javascript, loggy core, loggy…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/prisma/orm"
+            }
+          ],
+          "name": "TypeScript query builder"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+              "id": "C9",
+              "section_title": "For extension authors",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Public extension SPI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+              "id": "C8",
+              "section_title": "3. Use your AI agent for everything Prisma 8",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "AI agent skill integration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+              "id": "C9",
+              "section_title": "For extension authors",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Vector columns and similarity search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+              "id": "C9",
+              "section_title": "For extension authors",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Geometry columns and geo queries"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Next.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Hono"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Nuxt"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Astro"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "NestJS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "SvelteKit"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "TanStack Start"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+              "id": "C6",
+              "section_title": "1. Scaffold a new project",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Elysia"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **PostgreSQL** — the primary target, first-class support - **MongoDB** — first-class support - **SQLite** — planned next, a proof of concept today MySQL follows after SQLite. See the feature scoreboard for what each database supports…",
+              "id": "C3",
+              "section_title": "Supported databases",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **PostgreSQL** — the primary target, first-class support - **MongoDB** — first-class support - **SQLite** — planned next, a proof of concept today MySQL follows after SQLite. See the feature scoreboard for what each database supports…",
+              "id": "C3",
+              "section_title": "Supported databases",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "MongoDB"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+              "id": "C8",
+              "section_title": "3. Use your AI agent for everything Prisma 8",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+              "id": "C8",
+              "section_title": "3. Use your AI agent for everything Prisma 8",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Cursor"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+              "id": "C8",
+              "section_title": "3. Use your AI agent for everything Prisma 8",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Devin"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+              "id": "C9",
+              "section_title": "For extension authors",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "name": "Supabase"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Node.js 24 or newer - A package manager (`npm`, `pnpm`, or `yarn`)",
+              "id": "C5",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 24 or newer"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Node.js 24 or newer - A package manager (`npm`, `pnpm`, or `yarn`)",
+              "id": "C5",
+              "section_title": "Prerequisites",
+              "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+            }
+          ],
+          "text": "A package manager (npm, pnpm, or yarn)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "The interactive scaffolder picks an app template (Next.js, Hono, Nuxt, Astro, NestJS, SvelteKit, TanStack Start, or Elysia) and wires Prisma 8 in with your chosen database (PostgreSQL or MongoDB): ``` npm create prisma ``` You finish with…",
+            "id": "C6",
+            "section_title": "1. Scaffold a new project",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "text": "Building modern web applications using frameworks like Next.js, Hono, NestJS, or Nuxt connected to PostgreSQL or MongoDB databases."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "text": "Performing vector column operations and similarity searches using PostgreSQL extensions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "text": "Handling geometry columns and spatial queries."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "prisma/orm: The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute. Topics: cockroachdb, database, javascript, loggy core, loggy…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/prisma/orm"
+        },
+        {
+          "excerpt": "Docs | Discord | X | Blog Post | Architecture --- > **Using Prisma 7?** It is maintained for eighteen months after `8.0.0` final; supported versions says what that covers. Its source lives on the `v7` branch of this repository and its docs…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+        },
+        {
+          "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+          "id": "C9",
+          "section_title": "For extension authors",
+          "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+        }
+      ],
+      "explanation": "Prisma ORM is a TypeScript database tool that allows developers to write applications using human-readable queries rather than raw SQL. Version 8 is a complete rewrite featuring a minimal core, an extensible public SPI, and built-in AI agent skills for automated workflows.",
+      "one_line": "A TypeScript ORM with human-readable queries, designed to be extensible, composable, and AI-agent friendly."
+    },
+    "who_should_care": [
+      {
+        "audience": "TypeScript Developers",
+        "citations": [
+          {
+            "excerpt": "prisma/orm: The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute. Topics: cockroachdb, database, javascript, loggy core, loggy…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/prisma/orm"
+          }
+        ],
+        "reason": "Allows writing type-safe database queries without wrestling with raw SQL syntax."
+      },
+      {
+        "audience": "AI-Assisted Developers",
+        "citations": [
+          {
+            "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+            "id": "C8",
+            "section_title": "3. Use your AI agent for everything Prisma 8",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "reason": "Provides pre-configured agent skills and primers that let AI agents drive database schema changes and queries end-to-end."
+      },
+      {
+        "audience": "Library and Extension Authors",
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "reason": "Provides a public SPI allowing custom database integrations, vector search, geometry, and encryption extensions."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Docs | Discord | X | Blog Post | Architecture --- > **Using Prisma 7?** It is maintained for eighteen months after `8.0.0` final; supported versions says what that covers. Its source lives on the `v7` branch of this repository and its docs…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "point": "Built from the ground up to be extensible, composable, and AI-agent friendly by default."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Prisma 8 has a minimal core. Everything around it, including Postgres support itself, is built on the same public SPI that's available to any author. If you've wanted to integrate your tool, your database, or your library with Prisma, this…",
+            "id": "C9",
+            "section_title": "For extension authors",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "point": "Features a minimal core where database support and functionality are built on a public SPI."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Both installers leave a top-level **`prisma-8.md`** primer at your project root for any agent to read first, and install one **`SKILL.md`** per workflow into the directories agent runtimes read: - `.claude/skills//SKILL.md` — Claude Code -…",
+            "id": "C8",
+            "section_title": "3. Use your AI agent for everything Prisma 8",
+            "source_url": "https://github.com/prisma/orm/blob/main/README.md"
+          }
+        ],
+        "point": "Ships with agent skills integrated directly into package runtimes for editors like Claude Code, Cursor, and Devin."
+      }
+    ]
+  },
+  "source_hash": "b48f4856f61d8534d630eacdf96a4447d69f1c361db9fd945fd5da8f7832ce75"
+}

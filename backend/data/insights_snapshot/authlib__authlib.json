@@ -1,0 +1,485 @@
+{
+  "full_name": "authlib/authlib",
+  "generated_at": "2026-11-10 09:13:10.253375+00:00",
+  "github_id": 108510280,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Flask",
+          "Django",
+          "PostgreSQL",
+          "Redis"
+        ],
+        "description": "Build an authentication service that issues ID tokens, manages client registration, and supports discovery endpoints for internal microservices.",
+        "how_it_is_used": "Uses framework-specific provider integrations (such as Flask or Django OpenID Connect providers) along with JWT capabilities.",
+        "title": "Custom OpenID Connect Identity Provider"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "HTTPX",
+          "Uvicorn"
+        ],
+        "description": "Create a secure proxy service that validates incoming Bearer tokens, handles token revocation, and introspects access tokens against an authorization server.",
+        "how_it_is_used": "Uses OAuth 2.0 token introspection, Bearer token usage, and token revocation RFC implementations.",
+        "title": "Multi-Tenant API Gateway with OAuth2 Token Introspection"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "HTTPX",
+          "Starlette",
+          "Asyncio"
+        ],
+        "description": "Develop an asynchronous web service that allows users to authenticate via multiple third-party social providers using modern asynchronous HTTP clients.",
+        "how_it_is_used": "Uses HTTPX integration clients like AsyncOAuth2Client and OpenID Connect sessions.",
+        "title": "Async Third-Party Social Login Aggregator"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. Homepage: . 2. Documentation: . 3. Purchase Commercial License: . 4. Blog: . 5. Twitter: . 6. StackOverflow: . 7. Other Repositories: . 8. Subscribe Tidelift: https://tidelift.com/subscription/pkg/pypi-authlib.",
+            "id": "C9",
+            "section_title": "Useful Links",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "label": "Tidelift Subscription",
+        "url": "https://tidelift.com/subscription/pkg/pypi-authlib"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Authlib will deprecate `authlib.jose` module, please read: - Migrating from `authlib.jose` to `joserfc`",
+            "id": "C7",
+            "section_title": "Migrations",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "text": "The `authlib.jose` module will be deprecated in favor of `joserfc`."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/authlib/authlib"
+        },
+        {
+          "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+          "id": "C3",
+          "section_title": "Features",
+          "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+        },
+        {
+          "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+        }
+      ],
+      "text": "Simplifies the complex implementation of authentication and authorization protocols (such as OAuth 1.0, OAuth 2.0, OpenID Connect) and cryptographic token formats (JOSE) in Python applications."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "OAuth 1.0 Protocol implementation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "OAuth 2.0 Framework and extensions implementation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/authlib/authlib"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "OpenID Connect 1.0 implementation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/authlib/authlib"
+            },
+            {
+              "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "Javascript Object Signing and Encryption (JWS, JWE, JWK, JWA, JWT)"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/authlib/authlib"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "Flask"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/authlib/authlib"
+            },
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            },
+            {
+              "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "Django"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "Starlette"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "FastAPI"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "Requests"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "name": "HTTPX"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "The ultimate Python library in building OAuth and OpenID Connect servers. JWS, JWK, JWA, JWT are included. Authlib is compatible with Python3.11+.",
+              "id": "C6",
+              "section_title": null,
+              "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.11+"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "text": "Connecting third-party OAuth and OpenID Connect providers into Flask, Django, Starlette, or FastAPI applications."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "text": "Building custom OAuth 1.0, OAuth 2.0, and OpenID Connect authorization servers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/authlib/authlib"
+          },
+          {
+            "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "text": "Signing, encrypting, and verifying tokens using JSON Web Signatures and Encryption (JWS/JWE/JWT)."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/authlib/authlib"
+        },
+        {
+          "excerpt": "Generic, spec-compliant implementation to build clients and providers:",
+          "id": "C2",
+          "section_title": "Features",
+          "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+        },
+        {
+          "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+          "id": "C3",
+          "section_title": "Features",
+          "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+        },
+        {
+          "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+        }
+      ],
+      "explanation": "Authlib is a spec-compliant Python library designed to help developers build OAuth 1.0, OAuth 2.0, and OpenID Connect clients and authorization servers. It also includes support for Javascript Object Signing and Encryption (JOSE) standards such as JWS, JWE, JWK, JWA, and JWT.",
+      "one_line": "A comprehensive Python library for building OAuth, OpenID Connect clients and servers, and handling JOSE standards."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python backend developers",
+        "citations": [
+          {
+            "excerpt": "authlib/authlib: The ultimate Python library in building OAuth, OpenID Connect clients and servers. JWS, JWE, JWK, JWA, JWT included. Topics: django, flask, jose, jwe, jwk, jws, jwt, oauth, oauth2, oauth2 provider, oauth2 server, oidc,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/authlib/authlib"
+          },
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "reason": "Need to implement custom OAuth/OIDC authorization servers or connect their applications to third-party identity providers."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- The OAuth 1.0 Protocol - RFC5849: The OAuth 1.0 Protocol - The OAuth 2.0 Authorization Framework - RFC6749: The OAuth 2.0 Authorization Framework - RFC6750: The OAuth 2.0 Authorization Framework: Bearer Token Usage - RFC7009: OAuth 2.0…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "point": "Implements a wide range of official RFCs for OAuth, OpenID Connect, and JOSE specifications."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Response Mode - Javascript Object Signing and Encryption - RFC7515: JSON Web Signature - RFC7516: JSON Web Encryption - RFC7517: JSON Web Key - RFC7518: JSON Web Algorithms - RFC7519: JSON Web Token - RFC7638: JSON Web Key (JWK) Thumbprint…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          },
+          {
+            "excerpt": "Client - Django OAuth Client - Starlette OAuth Client - FastAPI OAuth Client Build your own OAuth 1.0, OAuth 2.0, and OpenID Connect providers: - Flask - Flask OAuth 1.0 Provider - Flask OAuth 2.0 Provider - Flask OpenID Connect 1.0…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/authlib/authlib/blob/main/README.md"
+          }
+        ],
+        "point": "Provides built-in client and provider integrations for multiple popular Python web frameworks and HTTP libraries."
+      }
+    ]
+  },
+  "source_hash": "cf79946bd219804f192f6ecbe778d7a50cfab5360e1e33ba751c126e1ae9a6c7"
+}

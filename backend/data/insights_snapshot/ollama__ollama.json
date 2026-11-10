@@ -1,0 +1,421 @@
+{
+  "full_name": "ollama/ollama",
+  "generated_at": "2026-11-10 07:44:27.571128+00:00",
+  "github_id": 658928958,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+            "id": "C4",
+            "section_title": "Ollama",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more: ``` ollama launch openclaw ```",
+            "id": "C11",
+            "section_title": "AI assistant",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "OpenClaw",
+          "Slack API",
+          "Telegram API",
+          "WhatsApp API"
+        ],
+        "description": "Build a privacy-focused personal AI assistant connected to team and personal chat applications.",
+        "how_it_is_used": "Ollama executes open models locally, which are exposed to messaging platforms like Slack and Telegram using OpenClaw via `ollama launch openclaw`.",
+        "title": "Cross-Platform Messaging AI Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+            "id": "C9",
+            "section_title": "Get started",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+            "id": "C10",
+            "section_title": "Coding",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Codex",
+          "Copilot CLI",
+          "OpenCode"
+        ],
+        "description": "Create a developer workspace assistant that routes coding prompts to local LLMs.",
+        "how_it_is_used": "Ollama handles model loading and execution locally, exposing endpoints for tools like Claude Code, Codex, and Copilot CLI.",
+        "title": "Offline Developer Assistant Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -fsSL https://ollama.com/install.sh | sh ``` or download manually",
+            "id": "C5",
+            "section_title": "macOS",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` curl -fsSL https://ollama.com/install.sh | sh ``` Manual install instructions",
+            "id": "C7",
+            "section_title": "Linux",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "label": "macOS and Linux Installation Script",
+        "url": "https://ollama.com/install.sh"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` irm https://ollama.com/install.ps1 | iex ``` or download manually",
+            "id": "C6",
+            "section_title": "Windows",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "label": "Windows Installation Script",
+        "url": "https://ollama.com/install.ps1"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "ollama/ollama: Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models. Topics: deepseek, gemma, glm, go, golang, gpt oss, llama, llm, llms, minimax, mistral, muse, ollama, qwen. Primary language: Go.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/ollama/ollama"
+        },
+        {
+          "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+          "id": "C4",
+          "section_title": "Ollama",
+          "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+        }
+      ],
+      "text": "It simplifies setting up, running, and integrating open-source language models locally or in the cloud while maintaining complete privacy."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "- llama.cpp project founded by Georgi Gerganov.",
+            "id": "C2",
+            "section_title": "Supported backends",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+            "id": "C4",
+            "section_title": "Ollama",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "text": "Integrates supported backends including the llama.cpp project to run models locally or in the cloud."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+              "id": "C4",
+              "section_title": "Ollama",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Local and cloud model execution with complete privacy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Run and chat with Gemma 4: ``` ollama run gemma4 ``` See ollama.com/library for the full list. See the quickstart guide for more details.",
+              "id": "C12",
+              "section_title": "Chat with a model",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Command-line model interaction (`ollama run`)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Integration launching for coding agents (`ollama launch`)"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+              "id": "C9",
+              "section_title": "Get started",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            },
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+              "id": "C9",
+              "section_title": "Get started",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            },
+            {
+              "excerpt": "Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more: ``` ollama launch openclaw ```",
+              "id": "C11",
+              "section_title": "AI assistant",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "OpenClaw"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+              "id": "C9",
+              "section_title": "Get started",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            },
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Codex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Copilot CLI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "DeepSeek Harness"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Droid"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+              "id": "C9",
+              "section_title": "Get started",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            },
+            {
+              "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+              "id": "C10",
+              "section_title": "Coding",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "OpenCode"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The official Ollama Docker image `ollama/ollama` is available on Docker Hub.",
+              "id": "C8",
+              "section_title": "Docker",
+              "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+            }
+          ],
+          "name": "Docker"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Run and chat with Gemma 4: ``` ollama run gemma4 ``` See ollama.com/library for the full list. See the quickstart guide for more details.",
+            "id": "C12",
+            "section_title": "Chat with a model",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "text": "Running and chatting with local language models such as Gemma 4."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+            "id": "C10",
+            "section_title": "Coding",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "text": "Launching coding agent integrations including Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more: ``` ollama launch openclaw ```",
+            "id": "C11",
+            "section_title": "AI assistant",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "text": "Setting up an AI assistant across messaging services like WhatsApp, Telegram, Slack, and Discord via OpenClaw."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "ollama/ollama: Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models. Topics: deepseek, gemma, glm, go, golang, gpt oss, llama, llm, llms, minimax, mistral, muse, ollama, qwen. Primary language: Go.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/ollama/ollama"
+        },
+        {
+          "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+          "id": "C4",
+          "section_title": "Ollama",
+          "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+        },
+        {
+          "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+          "id": "C9",
+          "section_title": "Get started",
+          "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+        }
+      ],
+      "explanation": "Ollama enables developers to run, manage, and build with open language models such as Gemma, Qwen, and DeepSeek. It allows running models locally or in the cloud with complete privacy and provides simple integration with coding agents and chat tools.",
+      "one_line": "A tool for getting up and running with open language models locally or in the cloud with privacy."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+            "id": "C4",
+            "section_title": "Ollama",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` ollama ``` You'll be prompted to run a model or connect Ollama to your existing agents or applications such as `Claude Code`, `OpenClaw`, `OpenCode` , `Codex`, `Copilot`, and more.",
+            "id": "C9",
+            "section_title": "Get started",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+            "id": "C10",
+            "section_title": "Coding",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "reason": "They can run open language models locally and connect them to coding agents like Claude Code, Codex, or Copilot CLI."
+      },
+      {
+        "audience": "AI Application Developers",
+        "citations": [
+          {
+            "excerpt": "Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more: ``` ollama launch openclaw ```",
+            "id": "C11",
+            "section_title": "AI assistant",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "reason": "They can build local personal assistants and connect them to platforms like Slack, Discord, WhatsApp, and Telegram."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Start building with open models. Access the latest releases locally or in the cloud with complete privacy.",
+            "id": "C4",
+            "section_title": "Ollama",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "point": "Allows running open models locally or in the cloud with complete privacy."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "To launch a specific integration: ``` ollama launch claude ``` Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.",
+            "id": "C10",
+            "section_title": "Coding",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          },
+          {
+            "excerpt": "Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more: ``` ollama launch openclaw ```",
+            "id": "C11",
+            "section_title": "AI assistant",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "point": "Provides built-in launcher commands for developer tools like Claude Code, Codex, and OpenClaw."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- llama.cpp project founded by Georgi Gerganov.",
+            "id": "C2",
+            "section_title": "Supported backends",
+            "source_url": "https://github.com/ollama/ollama/blob/main/README.md"
+          }
+        ],
+        "point": "Utilizes llama.cpp as a supported backend for model execution."
+      }
+    ]
+  },
+  "source_hash": "fdf29bde89a7fd3793f78381b3561fa4cea1198f669de6abe67ebdb04db017ba"
+}

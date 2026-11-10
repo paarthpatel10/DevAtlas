@@ -1,0 +1,432 @@
+{
+  "full_name": "qdrant/qdrant",
+  "generated_at": "2026-11-10 07:56:50.521291+00:00",
+  "github_id": 268163609,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "There's more to discovery than text search, especially when it comes to food. People often choose meals based on appearance rather than descriptions and ingredients. Let Qdrant help your users find their next delicious meal using visual…",
+            "id": "C11",
+            "section_title": "Explore Similar Image Search - Food Discovery 🍕",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "React",
+          "PyTorch"
+        ],
+        "description": "Allow users to upload pictures of meals to find visually similar dishes without knowing their names.",
+        "how_it_is_used": "Stores and queries image embeddings to perform visual similarity search.",
+        "title": "Visual Food Discovery App"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+            "id": "C2",
+            "section_title": "Highlighted Features",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "Enter the cutting-edge realm of extreme classification, an emerging machine learning field tackling multi-class and multi-label problems with millions of labels. Harness the potential of similarity learning models, and see how a…",
+            "id": "C12",
+            "section_title": "Master Extreme Classification - E-Commerce Product Categorization 📺",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Transformers",
+          "Node.js",
+          "PostgreSQL"
+        ],
+        "description": "Categorize millions of products using multi-class similarity learning and pre-trained transformers.",
+        "how_it_is_used": "Uses vector search combined with payload filtering to categorize products and support faceted search.",
+        "title": "Semantic E-Commerce Product Catalog"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Qdrant Edge is a lightweight version of Qdrant designed for edge devices and resource-constrained environments. Unlike Qdrant Server, which uses a client-server architecture, Qdrant Edge runs inside the application process. Data is stored…",
+            "id": "C8",
+            "section_title": "Qdrant Edge",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "SQLite"
+        ],
+        "description": "An application running on resource-constrained environments that provides local recommendations and syncs data to a main server.",
+        "how_it_is_used": "Utilizes Qdrant Edge to store and query vectors locally within the application process.",
+        "title": "Offline-Capable Edge Recommendation Tool"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "qdrant/qdrant: Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/ Topics: ai search, ai search engine, embeddings…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/qdrant/qdrant"
+          }
+        ],
+        "label": "Qdrant Cloud",
+        "url": "https://cloud.qdrant.io/"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+          "id": "C2",
+          "section_title": "Highlighted Features",
+          "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+        },
+        {
+          "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+        }
+      ],
+      "text": "Provides vector similarity search with extended filtering support, enabling applications to store, search, and manage points (vectors with payloads) for semantic-based matching, faceted search, and recommendations."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "To experience the full power of Qdrant locally, run the container with this command: ``` docker run -p 6333:6333 qdrant/qdrant ``` Note that this starts an insecure deployment without authentication, open to all network interfaces. Please…",
+            "id": "C6",
+            "section_title": "Client-Server",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "Qdrant Edge is a lightweight version of Qdrant designed for edge devices and resource-constrained environments. Unlike Qdrant Server, which uses a client-server architecture, Qdrant Edge runs inside the application process. Data is stored…",
+            "id": "C8",
+            "section_title": "Qdrant Edge",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "text": "Offers both a client-server architecture via Qdrant Server and an in-process embedded option via Qdrant Edge."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Faceting"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Recommendation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Discovery"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Search Relevance Tuning"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Multitenancy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Query Planning and Payload Indexes"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "SIMD Hardware Acceleration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "GPU Support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Async I/O"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+              "id": "C2",
+              "section_title": "Highlighted Features",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Write-Ahead Logging"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Qdrant integrates with the tools you're already using across every stage of your AI stack. You can connect to embedding providers, AI application frameworks, and data pipeline tools, as well as observability platforms for monitoring and…",
+              "id": "C3",
+              "section_title": "Integrations",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Embedding providers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Qdrant integrates with the tools you're already using across every stage of your AI stack. You can connect to embedding providers, AI application frameworks, and data pipeline tools, as well as observability platforms for monitoring and…",
+              "id": "C3",
+              "section_title": "Integrations",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "AI application frameworks"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Qdrant integrates with the tools you're already using across every stage of your AI stack. You can connect to embedding providers, AI application frameworks, and data pipeline tools, as well as observability platforms for monitoring and…",
+              "id": "C3",
+              "section_title": "Integrations",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Data pipeline tools"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Qdrant integrates with the tools you're already using across every stage of your AI stack. You can connect to embedding providers, AI application frameworks, and data pipeline tools, as well as observability platforms for monitoring and…",
+              "id": "C3",
+              "section_title": "Integrations",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "Observability platforms"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Qdrant integrates with the tools you're already using across every stage of your AI stack. You can connect to embedding providers, AI application frameworks, and data pipeline tools, as well as observability platforms for monitoring and…",
+              "id": "C3",
+              "section_title": "Integrations",
+              "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+            }
+          ],
+          "name": "No-code and low-code automation platforms"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Unlock the power of semantic embeddings with Qdrant, transcending keyword-based search to find meaningful connections in short texts. Deploy a neural search in minutes using a pre-trained neural network, and experience the future of text…",
+            "id": "C10",
+            "section_title": "Discover Semantic Text Search 🔍",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "text": "Semantic text search to find meaningful connections in short texts using embeddings."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "There's more to discovery than text search, especially when it comes to food. People often choose meals based on appearance rather than descriptions and ingredients. Let Qdrant help your users find their next delicious meal using visual…",
+            "id": "C11",
+            "section_title": "Explore Similar Image Search - Food Discovery 🍕",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "text": "Similar image search for visual product discovery."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Enter the cutting-edge realm of extreme classification, an emerging machine learning field tackling multi-class and multi-label problems with millions of labels. Harness the potential of similarity learning models, and see how a…",
+            "id": "C12",
+            "section_title": "Master Extreme Classification - E-Commerce Product Categorization 📺",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "text": "Extreme classification and e-commerce product categorization using similarity learning models."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "qdrant/qdrant: Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdrant.io/ Topics: ai search, ai search engine, embeddings…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/qdrant/qdrant"
+        },
+        {
+          "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+        }
+      ],
+      "explanation": "Qdrant is a vector similarity search engine and vector database tailored for extended filtering support. It provides a production-ready service to store, search, and manage vectors with payloads, enabling semantic-based matching and neural network integration.",
+      "one_line": "A high-performance, massive-scale vector database and vector search engine written in Rust."
+    },
+    "who_should_care": [
+      {
+        "audience": "AI and Machine Learning Engineers",
+        "citations": [
+          {
+            "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "Unlock the power of semantic embeddings with Qdrant, transcending keyword-based search to find meaningful connections in short texts. Deploy a neural search in minutes using a pre-trained neural network, and experience the future of text…",
+            "id": "C10",
+            "section_title": "Discover Semantic Text Search 🔍",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          },
+          {
+            "excerpt": "There's more to discovery than text search, especially when it comes to food. People often choose meals based on appearance rather than descriptions and ingredients. Let Qdrant help your users find their next delicious meal using visual…",
+            "id": "C11",
+            "section_title": "Explore Similar Image Search - Food Discovery 🍕",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "reason": "Building applications that require vector search, semantic text search, image search, and recommendation systems."
+      },
+      {
+        "audience": "Backend Developers",
+        "citations": [
+          {
+            "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+            "id": "C2",
+            "section_title": "Highlighted Features",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "reason": "Needing a scalable vector database with multi-tenancy, write-ahead logging, and query planning."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Vector Search Engine for the next generation of AI applications **Qdrant** (read: _quadrant_) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "point": "Written in Rust for high speed and reliability under high load."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* **Faceting** - aggregate search results by payload values. * **Recommendation** - use positive and negative examples to find similar points. * **Discovery** - constrain search to a specific region of the vector space. * **Search…",
+            "id": "C2",
+            "section_title": "Highlighted Features",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "point": "Features SIMD hardware acceleration, GPU support, and asynchronous I/O via io_uring."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Qdrant Edge is a lightweight version of Qdrant designed for edge devices and resource-constrained environments. Unlike Qdrant Server, which uses a client-server architecture, Qdrant Edge runs inside the application process. Data is stored…",
+            "id": "C8",
+            "section_title": "Qdrant Edge",
+            "source_url": "https://github.com/qdrant/qdrant/blob/master/README.md"
+          }
+        ],
+        "point": "Includes Qdrant Edge, a lightweight version running inside the application process for resource-constrained or offline environments."
+      }
+    ]
+  },
+  "source_hash": "b76d9a47ac0f05704e7668c8187a9d8f3e3120df95acd234132ef6ebdd0726f1"
+}

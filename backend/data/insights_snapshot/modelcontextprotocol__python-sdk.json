@@ -1,0 +1,410 @@
+{
+  "full_name": "modelcontextprotocol/python-sdk",
+  "generated_at": "2026-11-10 07:49:14.196189+00:00",
+  "github_id": 862584018,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+            "id": "C6",
+            "section_title": "A server in 15 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "uv",
+          "Python"
+        ],
+        "description": "An MCP server that exposes mathematical tool functions and personalized resource templates to LLM hosts.",
+        "how_it_is_used": "Uses MCPServer function decorators (@mcp.tool() and @mcp.resource()) with Python type hints and docstrings.",
+        "title": "Custom Math Tool MCP Server"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+            "id": "C7",
+            "section_title": "A client in 10 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "asyncio",
+          "HTTP"
+        ],
+        "description": "An asynchronous Python script that connects to a Streamable HTTP MCP server and executes remote tool calls.",
+        "how_it_is_used": "Uses Client as an async context manager over an HTTP endpoint to execute client.call_tool().",
+        "title": "Async MCP Client Runner"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "This project is licensed under the MIT License. See the LICENSE file for details. [pypi-badge]: https://img.shields.io/pypi/v/mcp.svg [pypi-url]: https://pypi.org/project/mcp/ [mit-badge]: https://img.shields.io/pypi/l/mcp.svg [mit-url]:…",
+            "id": "C9",
+            "section_title": "License",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "label": "SDK Documentation",
+        "url": "https://py.sdk.modelcontextprotocol.io/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This project is licensed under the MIT License. See the LICENSE file for details. [pypi-badge]: https://img.shields.io/pypi/v/mcp.svg [pypi-url]: https://pypi.org/project/mcp/ [mit-badge]: https://img.shields.io/pypi/l/mcp.svg [mit-url]:…",
+            "id": "C9",
+            "section_title": "License",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "label": "Model Context Protocol Home",
+        "url": "https://modelcontextprotocol.io"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This project is licensed under the MIT License. See the LICENSE file for details. [pypi-badge]: https://img.shields.io/pypi/v/mcp.svg [pypi-url]: https://pypi.org/project/mcp/ [mit-badge]: https://img.shields.io/pypi/l/mcp.svg [mit-url]:…",
+            "id": "C9",
+            "section_title": "License",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "label": "MCP Specification",
+        "url": "https://modelcontextprotocol.io/specification/latest"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This project is licensed under the MIT License. See the LICENSE file for details. [pypi-badge]: https://img.shields.io/pypi/v/mcp.svg [pypi-url]: https://pypi.org/project/mcp/ [mit-badge]: https://img.shields.io/pypi/l/mcp.svg [mit-url]:…",
+            "id": "C9",
+            "section_title": "License",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "label": "PyPI Package",
+        "url": "https://pypi.org/project/mcp/"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+          "id": "C2",
+          "section_title": "What is MCP?",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+        },
+        {
+          "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+          "id": "C6",
+          "section_title": "A server in 15 lines",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+        }
+      ],
+      "text": "Exposing data and tools to LLMs typically requires manual schema definition, protocol handling, request parsing, and input validation. This SDK handles protocol management and schema creation automatically using type-hinted Python functions and docstrings."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+              "id": "C2",
+              "section_title": "What is MCP?",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+              "id": "C6",
+              "section_title": "A server in 15 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "MCP server creation with tools, resources, and prompts"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+              "id": "C2",
+              "section_title": "What is MCP?",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+              "id": "C7",
+              "section_title": "A client in 10 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "MCP client creation for stdio and HTTP connections"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+              "id": "C6",
+              "section_title": "A server in 15 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "Automatic JSON Schema generation from type hints"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` uv add \"mcp[cli]\" # or: pip install \"mcp[cli]\" ``` The `cli` extra adds the `mcp` command-line tool (`mcp dev`, `mcp run`, `mcp install`) on top of the SDK; install plain `mcp` if you don't need it. For one-off commands, `uv run --with…",
+              "id": "C3",
+              "section_title": "Installation",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+              "id": "C6",
+              "section_title": "A server in 15 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "CLI dev tools for testing and running servers"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+              "id": "C2",
+              "section_title": "What is MCP?",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+              "id": "C7",
+              "section_title": "A client in 10 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "stdio transport"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+              "id": "C2",
+              "section_title": "What is MCP?",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+              "id": "C7",
+              "section_title": "A client in 10 lines",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "Streamable HTTP transport"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+              "id": "C2",
+              "section_title": "What is MCP?",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "name": "SSE transport"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Python implementation of the Model Context Protocol (MCP) [![PyPI][pypi-badge]][pypi-url] [![MIT licensed][mit-badge]][mit-url] [![Python Version][python-badge]][python-url] [![Documentation][docs-badge]][docs-url]…",
+              "id": "C4",
+              "section_title": "MCP Python SDK",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            },
+            {
+              "excerpt": "This project is licensed under the MIT License. See the LICENSE file for details. [pypi-badge]: https://img.shields.io/pypi/v/mcp.svg [pypi-url]: https://pypi.org/project/mcp/ [mit-badge]: https://img.shields.io/pypi/l/mcp.svg [mit-url]:…",
+              "id": "C9",
+              "section_title": "License",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "text": "Python"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` uv add \"mcp[cli]\" # or: pip install \"mcp[cli]\" ``` The `cli` extra adds the `mcp` command-line tool (`mcp dev`, `mcp run`, `mcp install`) on top of the SDK; install plain `mcp` if you don't need it. For one-off commands, `uv run --with…",
+              "id": "C3",
+              "section_title": "Installation",
+              "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+            }
+          ],
+          "text": "uv or pip package manager"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+            "id": "C2",
+            "section_title": "What is MCP?",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "text": "Building MCP servers to expose tools, resources, and prompts to MCP hosts."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+            "id": "C2",
+            "section_title": "What is MCP?",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          },
+          {
+            "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+            "id": "C7",
+            "section_title": "A client in 10 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "text": "Building MCP clients to connect to remote or local MCP servers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+            "id": "C6",
+            "section_title": "A server in 15 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "text": "Inspecting and testing local MCP server implementations during development using mcp dev."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "modelcontextprotocol/python-sdk: The official Python SDK for Model Context Protocol servers and clients Topics: mcp, mcp client, mcp server, python. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk"
+        },
+        {
+          "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+          "id": "C2",
+          "section_title": "What is MCP?",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+        },
+        {
+          "excerpt": "Python implementation of the Model Context Protocol (MCP) [![PyPI][pypi-badge]][pypi-url] [![MIT licensed][mit-badge]][mit-url] [![Python Version][python-badge]][python-url] [![Documentation][docs-badge]][docs-url]…",
+          "id": "C4",
+          "section_title": "MCP Python SDK",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+        }
+      ],
+      "explanation": "The Model Context Protocol Python SDK allows developers to build MCP servers and clients that expose data and functionality to LLM applications. It supports standard transport protocols including stdio, Streamable HTTP, and SSE.",
+      "one_line": "Official Python SDK for building Model Context Protocol servers and clients."
+    },
+    "who_should_care": [
+      {
+        "audience": "LLM application developers",
+        "citations": [
+          {
+            "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+            "id": "C2",
+            "section_title": "What is MCP?",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          },
+          {
+            "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+            "id": "C7",
+            "section_title": "A client in 10 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "reason": "They can build clients that connect to any standardized MCP server over HTTP or stdio."
+      },
+      {
+        "audience": "Python backend developers",
+        "citations": [
+          {
+            "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+            "id": "C2",
+            "section_title": "What is MCP?",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          },
+          {
+            "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+            "id": "C6",
+            "section_title": "A server in 15 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "reason": "They can easily expose tools, resources, and prompts to LLM applications with minimal boilerplate code."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+            "id": "C6",
+            "section_title": "A server in 15 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "point": "Allows building MCP servers using type-hinted Python functions and docstrings without writing JSON schema or parsing code."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The Model Context Protocol lets you build servers that expose data and functionality to LLM applications in a secure, standardized way. Think of it like a web API, but designed for LLM interactions. With this SDK you can: - **Build MCP…",
+            "id": "C2",
+            "section_title": "What is MCP?",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          },
+          {
+            "excerpt": "The same package is a full MCP **client**. Serve `server.py` over HTTP: ``` uv run mcp run server.py --transport streamable-http ``` then point a `Client` at it: ``` import asyncio from mcp import Client async def main() -> None: async…",
+            "id": "C7",
+            "section_title": "A client in 10 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "point": "Supports stdio, Streamable HTTP, and SSE transport protocols for client-server communication."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` uv add \"mcp[cli]\" # or: pip install \"mcp[cli]\" ``` The `cli` extra adds the `mcp` command-line tool (`mcp dev`, `mcp run`, `mcp install`) on top of the SDK; install plain `mcp` if you don't need it. For one-off commands, `uv run --with…",
+            "id": "C3",
+            "section_title": "Installation",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          },
+          {
+            "excerpt": "Create a `server.py`: ``` from mcp.server import MCPServer mcp = MCPServer(\"Demo\") @mcp.tool() def add(a: int, b: int) -> int: \"\"\"Add two numbers.\"\"\" return a + b @mcp.resource(\"greeting://{name}\") def greeting(name: str) -> str: \"\"\"Greet…",
+            "id": "C6",
+            "section_title": "A server in 15 lines",
+            "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md"
+          }
+        ],
+        "point": "Includes CLI features like mcp dev, mcp run, and mcp install when installed with the cli extra."
+      }
+    ]
+  },
+  "source_hash": "f233600955d9d6d4edbae2c5432ee7ad5f1802a9a2edb4e8d4a1e207fb967e3a"
+}

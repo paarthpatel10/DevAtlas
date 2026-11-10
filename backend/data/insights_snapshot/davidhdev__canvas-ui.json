@@ -1,0 +1,506 @@
+{
+  "full_name": "DavidHDev/canvas-ui",
+  "generated_at": "2026-11-10 09:13:19.484689+00:00",
+  "github_id": 1302826522,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+            "id": "C3",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Every component ships for all six frameworks in both renderer builds. Compare them in the playground. 🌊 Fluid &amp; motion | Component | What it does | Component | What it does | | ---------------------------------------------------------…",
+            "id": "C8",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | **Force Field** | Energy shield with click shockwaves | **Laser** | Beam that reveals content on scroll | 💎 Glass &amp; optics | Component | What it does | Component | What it does | |…",
+            "id": "C10",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "OpenWeatherMap API",
+          "Tailwind CSS"
+        ],
+        "description": "A weather application featuring real-time meteorological data wrapped in atmospheric visual effects like rain droplets, melting frost, and wind-blown clouds.",
+        "how_it_is_used": "Wrap the dashboard UI elements inside components like Droplets, Frost, and Clouds to dynamically affect the underlying page layout.",
+        "title": "Interactive Weather Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+            "id": "C3",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | **Force Field** | Energy shield with click shockwaves | **Laser** | Beam that reveals content on scroll | 💎 Glass &amp; optics | Component | What it does | Component | What it does | |…",
+            "id": "C10",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | **Peel** | Peels back to reveal a second layer | **Clouds** | Mist parted by cursor wind | 📼 Retro &amp; glitch | Component | What it does | Component | What it does | |…",
+            "id": "C11",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Vue",
+          "shadcn",
+          "Vite"
+        ],
+        "description": "A high-tech developer portfolio utilizing sci-fi aesthetic components, retro tape waves, and decryption text reveals.",
+        "how_it_is_used": "Use components like Decrypt Reveal, VHS glitch effects, and Magnify scanner lenses to construct interactive section headers and overlays.",
+        "title": "Cyberpunk Portfolio Landing Page"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Browser | HTML-in-canvas components | 3D effect components | | -------------------- | :-----------------------: | :------------------: | | Chrome 157 and later | ✅ Full effect | ✅ Full effect | | Everything else | ⚠️ GPU overlay fallback…",
+            "id": "C4",
+            "section_title": "Browser support",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "HTML-in-canvas capability depends on browser support (such as Chrome 157 and later, or via specific flags/origin trials), falling back to GPU overlays on other browsers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+            "id": "C7",
+            "section_title": "WebGL and WebGPU",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "WebGPU builds require a compatible browser such as Chrome/Edge 113+, Safari/iOS 26+, or Firefox 141+."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+          "id": "C2",
+          "section_title": "What makes it different",
+          "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+        },
+        {
+          "excerpt": "An open source library of creative, framework-agnostic components drawn on canvas. Fluid simulations, shader effects, and 3D scenes that run over your live, fully interactive interface. WebGL or WebGPU via vgpu, your choice. canvasui.dev ·…",
+          "id": "C6",
+          "section_title": null,
+          "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+        }
+      ],
+      "text": "Bridges the gap between creative visual effects and interactive DOM content by allowing live HTML, text selection, and clickable links to sit underneath real-time graphical distortions without losing interactivity."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+            "id": "C3",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Browser | HTML-in-canvas components | 3D effect components | | -------------------- | :-----------------------: | :------------------: | | Chrome 157 and later | ✅ Full effect | ✅ Full effect | | Everything else | ⚠️ GPU overlay fallback…",
+            "id": "C4",
+            "section_title": "Browser support",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+            "id": "C7",
+            "section_title": "WebGL and WebGPU",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Components are distributed via a registry where source code is copied directly into the project codebase under components/canvasui/. It implements dual renderers utilizing either WebGL/GLSL or WebGPU/WGSL, falling back to GPU overlays or standard HTML when native HTML-in-canvas support is unavailable."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            },
+            {
+              "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+              "id": "C7",
+              "section_title": "WebGL and WebGPU",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "WebGL rendering with GLSL shaders"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            },
+            {
+              "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+              "id": "C7",
+              "section_title": "WebGL and WebGPU",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "WebGPU rendering via vgpu with WGSL shaders"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Browser | HTML-in-canvas components | 3D effect components | | -------------------- | :-----------------------: | :------------------: | | Chrome 157 and later | ✅ Full effect | ✅ Full effect | | Everything else | ⚠️ GPU overlay fallback…",
+              "id": "C4",
+              "section_title": "Browser support",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            },
+            {
+              "excerpt": "(WebGPU). Those upload methods keep their existing signatures. This also applies to the generated registry components for all six frameworks. The same updates changed capture markup and hit testing. Canvas UI uses `content=\"drawable\"` and…",
+              "id": "C5",
+              "section_title": "Browser support",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "HTML-in-canvas live DOM capture and interaction"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            },
+            {
+              "excerpt": "| Browser | HTML-in-canvas components | 3D effect components | | -------------------- | :-----------------------: | :------------------: | | Chrome 157 and later | ✅ Full effect | ✅ Full effect | | Everything else | ⚠️ GPU overlay fallback…",
+              "id": "C4",
+              "section_title": "Browser support",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "GPU overlay fallback for unsupported browsers"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "DavidHDev/canvas-ui: A library of creative canvas components. Real HTML with WebGL effects running over it. React, Vue, Svelte, vanilla. Topics: animation, canvas, component library, components, creative coding, design engineering,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DavidHDev/canvas-ui"
+            },
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DavidHDev/canvas-ui: A library of creative canvas components. Real HTML with WebGL effects running over it. React, Vue, Svelte, vanilla. Topics: animation, canvas, component library, components, creative coding, design engineering,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DavidHDev/canvas-ui"
+            },
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Vue"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "DavidHDev/canvas-ui: A library of creative canvas components. Real HTML with WebGL effects running over it. React, Vue, Svelte, vanilla. Topics: animation, canvas, component library, components, creative coding, design engineering,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/DavidHDev/canvas-ui"
+            },
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Svelte"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Solid"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Preact"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "shadcn CLI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+              "id": "C7",
+              "section_title": "WebGL and WebGPU",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Three.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+              "id": "C2",
+              "section_title": "What makes it different",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Model Context Protocol (MCP)"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+              "id": "C3",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+            }
+          ],
+          "text": "shadcn CLI initialized in the target project repository."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Every component ships for all six frameworks in both renderer builds. Compare them in the playground. 🌊 Fluid &amp; motion | Component | What it does | Component | What it does | | ---------------------------------------------------------…",
+            "id": "C8",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Adding pointer-driven fluid simulations, water ripples, or rain droplets over live web application interfaces."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| | **Force Field** | Energy shield with click shockwaves | **Laser** | Beam that reveals content on scroll | 💎 Glass &amp; optics | Component | What it does | Component | What it does | |…",
+            "id": "C10",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Applying optical distortions like crystal-ball glass lenses, melting frost, or sci-fi scanner HUDs that follow the cursor."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**Decrypt Reveal** | Cipher text decrypting at the cursor | **Glyph Rain** | Falling glyphs that light up the page | ✨ Particles &amp; structure | Component | What it does | Component | What it does | |…",
+            "id": "C12",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Rendering 3D scenes from GLB or glTF models, SVGs, or images over web pages."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "DavidHDev/canvas-ui: A library of creative canvas components. Real HTML with WebGL effects running over it. React, Vue, Svelte, vanilla. Topics: animation, canvas, component library, components, creative coding, design engineering,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/DavidHDev/canvas-ui"
+        },
+        {
+          "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+          "id": "C2",
+          "section_title": "What makes it different",
+          "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+        },
+        {
+          "excerpt": "An open source library of creative, framework-agnostic components drawn on canvas. Fluid simulations, shader effects, and 3D scenes that run over your live, fully interactive interface. WebGL or WebGPU via vgpu, your choice. canvasui.dev ·…",
+          "id": "C6",
+          "section_title": null,
+          "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+        }
+      ],
+      "explanation": "Canvas UI is a framework-agnostic component library that provides creative canvas effects like fluid simulations, fire, glass, and 3D scenes running over live interactive HTML interfaces. It supports multiple frameworks and offers copy-paste components via a shadcn-compatible registry. Components can render using WebGL with GLSL or WebGPU through vgpu with WGSL.",
+      "one_line": "A library of creative canvas components offering real HTML with WebGL and WebGPU effects running over it."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Developers",
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Add a component with the shadcn CLI (run `npx shadcn@latest init` first if you have not): ``` npx shadcn@latest add @canvas-ui/liquid-react ``` Swap `liquid` for any component, `react` for `solid`, `preact`, `vue`, `svelte`, or `vanilla`.…",
+            "id": "C3",
+            "section_title": "Quick start",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "reason": "Can easily add immersive creative shader effects and canvas components into apps across multiple modern frameworks using the shadcn CLI."
+      },
+      {
+        "audience": "Design Engineers",
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Every component ships for all six frameworks in both renderer builds. Compare them in the playground. 🌊 Fluid &amp; motion | Component | What it does | Component | What it does | | ---------------------------------------------------------…",
+            "id": "C8",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | **Force Field** | Energy shield with click shockwaves | **Laser** | Beam that reveals content on scroll | 💎 Glass &amp; optics | Component | What it does | Component | What it does | |…",
+            "id": "C10",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | **Peel** | Peels back to reveal a second layer | **Clouds** | Mist parted by cursor wind | 📼 Retro &amp; glitch | Component | What it does | Component | What it does | |…",
+            "id": "C11",
+            "section_title": "Components",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "reason": "Provides ready-to-use visual components like liquid simulations, glass refraction, force fields, and retro glitches that wrap around UI elements."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Allows live DOM content to act as a texture that gets distorted in real time by effects like fire, fluid, and glass while keeping text selectable and links clickable."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Framework agnostic, shipping components for React, Solid, Preact, Vue, Svelte, and vanilla environments."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "Every effect ships in two renderer builds. The WebGL build is the default: raw WebGL2 and GLSL, zero dependencies except `three` for the object effects. The WebGPU build renders through vgpu with WGSL shaders, keeps the same props and…",
+            "id": "C7",
+            "section_title": "WebGL and WebGPU",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Supports dual renderers with WebGL/GLSL and WebGPU/WGSL builds."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most components use the experimental HTML-in-canvas API to read and redraw your live DOM. Text stays selectable, links stay clickable, and the page becomes a texture that fire, fluid, and glass distort in real time. Where it is not…",
+            "id": "C2",
+            "section_title": "What makes it different",
+            "source_url": "https://github.com/DavidHDev/canvas-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Includes Model Context Protocol (MCP) readiness so AI assistants can find and install components automatically."
+      }
+    ]
+  },
+  "source_hash": "f6af15920c415f43eeec22bf930103b5b5677ffb42366e7ce329df4d32106c57"
+}

@@ -1,0 +1,453 @@
+{
+  "full_name": "tangency-labs/solidcraft",
+  "generated_at": "2026-11-10 09:09:58.954816+00:00",
+  "github_id": 1409246014,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "`solidcraft-cli mcp` is a Model Context Protocol server. Headless it runs its own design session, or with `--connect` it drives the running app so you can watch. Claude Code: `claude mcp add solidcraft -- solidcraft-cli mcp`. If a terminal…",
+            "id": "C6",
+            "section_title": "AI agents (MCP)",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Python",
+          "Node.js"
+        ],
+        "description": "Build an AI agent workflow using the MCP server to automatically generate custom electronics enclosures (like Raspberry Pi cases) with precise standoff patterns, port cut-outs, and vents based on text prompts.",
+        "how_it_is_used": "Connects to solidcraft-cli mcp to execute design scripts, create sketches, apply extrusions, and export resulting parts.",
+        "title": "AI-Driven Enclosure Generator"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` cargo run --release -p solidcraft -- --sample # desktop app with a sample part cargo run --release -p solidcraft-cli -- commands # the command registry cargo run --release -p solidcraft-cli -- run examples/bracket.json --out…",
+            "id": "C5",
+            "section_title": "Build from source",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "A script is a JSON list of the same commands the UI runs, executed with `solidcraft-cli run`. Format and example: docs/scripts.md. Pages can also be driven through the browser command API.",
+            "id": "C7",
+            "section_title": "Scripts",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "Docker",
+          "Rust"
+        ],
+        "description": "Create a headless CI/CD pipeline that takes configuration parameters in JSON, runs the SolidCraft CLI to build and update the geometry, and exports STL or 3MF files for automated 3D print preparation.",
+        "how_it_is_used": "Invokes solidcraft-cli run with design JSON files to generate output meshes headlessly.",
+        "title": "Automated CAD Pipeline for 3D Printing"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "text": "Described as early in development, though usable for simple parts."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Windows:** the [installer][windows-msi]. - **macOS:** the [disk image][macos-dmg] (Apple silicon and Intel). - **Linux:** the [AppImage][linux-appimage], or `sudo snap install solidcraft` ([Snap Store][snap-store]). - **Web:** [try it…",
+            "id": "C4",
+            "section_title": "Download",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "text": "Windows installers are currently unsigned, requiring manual bypass in SmartScreen."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+          "id": "C2",
+          "section_title": "What works",
+          "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+        },
+        {
+          "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+          "id": "C3",
+          "section_title": null,
+          "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+        }
+      ],
+      "text": "Provides an open-source parametric 3D CAD platform with a parametric feature timeline, unit-aware configuration parameters, and multi-platform availability (desktop, web, and headless CLI/MCP) that automatically rebuilds models when dimensions change."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Sketch constraint solver"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            },
+            {
+              "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+              "id": "C3",
+              "section_title": null,
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Parametric feature timeline"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Assemblies with joints, motion studies, and mass properties"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Sheet metal and plastic enclosure features"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "tangency-labs/solidcraft: SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP. Topics: 3d modeling, brep, cad, egui, mcp, parametric cad, rust, step, wasm. Primary language:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/tangency-labs/solidcraft"
+            },
+            {
+              "excerpt": "`solidcraft-cli mcp` is a Model Context Protocol server. Headless it runs its own design session, or with `--connect` it drives the running app so you can watch. Claude Code: `claude mcp add solidcraft -- solidcraft-cli mcp`. If a terminal…",
+              "id": "C6",
+              "section_title": "AI agents (MCP)",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Model Context Protocol (MCP) server support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            },
+            {
+              "excerpt": "A script is a JSON list of the same commands the UI runs, executed with `solidcraft-cli run`. Format and example: docs/scripts.md. Pages can also be driven through the browser command API.",
+              "id": "C7",
+              "section_title": "Scripts",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "Headless CLI execution and JSON command scripts"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "STEP"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "IGES"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "3MF"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "STL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "OBJ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "glTF"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+              "id": "C2",
+              "section_title": "What works",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "name": "URDF"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` cargo run --release -p solidcraft -- --sample # desktop app with a sample part cargo run --release -p solidcraft-cli -- commands # the command registry cargo run --release -p solidcraft-cli -- run examples/bracket.json --out…",
+              "id": "C5",
+              "section_title": "Build from source",
+              "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+            }
+          ],
+          "text": "Rust toolchain (Cargo) for building from source."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "text": "Parametric 3D mechanical part and assembly design with automated timeline rebuilds when underlying dimensions change."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "`solidcraft-cli mcp` is a Model Context Protocol server. Headless it runs its own design session, or with `--connect` it drives the running app so you can watch. Claude Code: `claude mcp add solidcraft -- solidcraft-cli mcp`. If a terminal…",
+            "id": "C6",
+            "section_title": "AI agents (MCP)",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "A script is a JSON list of the same commands the UI runs, executed with `solidcraft-cli run`. Format and example: docs/scripts.md. Pages can also be driven through the browser command API.",
+            "id": "C7",
+            "section_title": "Scripts",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "text": "Headless CAD automation and scripting through CLI commands and an MCP server for AI-driven modeling workflows."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "text": "Format conversion and interoperability across multiple file types including STEP, IGES, 3MF, STL, OBJ, glTF, and URDF export."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "tangency-labs/solidcraft: SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP. Topics: 3d modeling, brep, cad, egui, mcp, parametric cad, rust, step, wasm. Primary language:…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/tangency-labs/solidcraft"
+        },
+        {
+          "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+          "id": "C3",
+          "section_title": null,
+          "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+        }
+      ],
+      "explanation": "SolidCraft is an open-source parametric 3D CAD application written in pure Rust that runs on the desktop, in web browsers, or headless via CLI. It allows users to create and constrain sketches, build solid models on a parametric feature timeline, and control the modeling process through an integrated Model Context Protocol (MCP) server for AI agents.",
+      "one_line": "An open-source parametric 3D CAD application built in pure Rust."
+    },
+    "who_should_care": [
+      {
+        "audience": "CAD Developers and Engineers",
+        "citations": [
+          {
+            "excerpt": "tangency-labs/solidcraft: SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP. Topics: 3d modeling, brep, cad, egui, mcp, parametric cad, rust, step, wasm. Primary language:…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/tangency-labs/solidcraft"
+          },
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "Help is welcome. CONTRIBUTING.md covers how to build and test, the code map, the clean-room and licence rules, and where help is wanted most. Open work is in GitHub issues; chat is on Discord.",
+            "id": "C8",
+            "section_title": "Contributing",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "reason": "They can inspect, build, and extend an open-source parametric 3D modeling system written in Rust."
+      },
+      {
+        "audience": "AI Engineers / Practitioners",
+        "citations": [
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "`solidcraft-cli mcp` is a Model Context Protocol server. Headless it runs its own design session, or with `--connect` it drives the running app so you can watch. Claude Code: `claude mcp add solidcraft -- solidcraft-cli mcp`. If a terminal…",
+            "id": "C6",
+            "section_title": "AI agents (MCP)",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "reason": "They can leverage the built-in MCP server to connect AI coding agents to a live 3D CAD application and automate design tasks."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "tangency-labs/solidcraft: SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP. Topics: 3d modeling, brep, cad, egui, mcp, parametric cad, rust, step, wasm. Primary language:…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/tangency-labs/solidcraft"
+          },
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "point": "Built entirely in pure Rust, running natively across desktop environments and inside web browsers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "SolidCraft An open-source parametric 3D CAD application built in pure Rust. Sketch, constrain, and build solids with a parametric feature timeline. Change a dimension and watch your model rebuild. Run it on your desktop, in your browser,…",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          },
+          {
+            "excerpt": "`solidcraft-cli mcp` is a Model Context Protocol server. Headless it runs its own design session, or with `--connect` it drives the running app so you can watch. Claude Code: `claude mcp add solidcraft -- solidcraft-cli mcp`. If a terminal…",
+            "id": "C6",
+            "section_title": "AI agents (MCP)",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "point": "Features a built-in Model Context Protocol (MCP) server that enables AI agents like Claude Code to drive modeling sessions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Early but usable for simple parts: 75 of 76 public reference parts match their analytic or FreeCAD-computed volume, area, centre of mass and bounding box (oracle); the other is a tracked bug. - **Sketches and constraints:** lines, arcs,…",
+            "id": "C2",
+            "section_title": "What works",
+            "source_url": "https://github.com/tangency-labs/solidcraft/blob/main/README.md"
+          }
+        ],
+        "point": "Includes its own constraint solver supporting sketches with lines, arcs, splines, and parameter-driven dimensions."
+      }
+    ]
+  },
+  "source_hash": "b0505619e52eb111c40e7f9d9f85522a4cc0f929274fe4816cef46c4160d1efd"
+}

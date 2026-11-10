@@ -1,0 +1,428 @@
+{
+  "full_name": "concile-dev/concile",
+  "generated_at": "2026-11-10 09:18:56.308756+00:00",
+  "github_id": 1307680978,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "On the server, you just write plain functions in one file: ``` // concile/tasks.ts import { query, mutation } from \"./_generated/server\"; export const list = query(async (ctx) => ctx.db.query(\"tasks\").collect()); export const add =…",
+            "id": "C6",
+            "section_title": "See it in ten lines of code",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` npx concile init ``` Run it in an existing app, and it configures Concile there. Run it in an empty directory, and it prompts for a project name to set up a starter app. Type `.` at that prompt to use the current directory. It lists…",
+            "id": "C7",
+            "section_title": "Get started in one minute",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Vite",
+          "Tailwind CSS"
+        ],
+        "description": "A multi-user task management application where task additions and status changes instantly appear across all browser windows without refreshing.",
+        "how_it_is_used": "Uses server-side queries and mutations alongside the browser hook to instantly keep the task list in sync.",
+        "title": "Real-time Shared Task Tracker"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "AWS S3",
+          "Docker"
+        ],
+        "description": "An application allowing users to upload files, store them securely, and view live updates to file metadata and logs.",
+        "how_it_is_used": "Leverages built-in file storage on disk or S3/R2 alongside the live dashboard for log tailing.",
+        "title": "Self-Hosted Document and File Vault"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` npx concile init ``` Run it in an existing app, and it configures Concile there. Run it in an empty directory, and it prompts for a project name to set up a starter app. Type `.` at that prompt to use the current directory. It lists…",
+            "id": "C7",
+            "section_title": "Get started in one minute",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "label": "React + Vite localhost URL",
+        "url": "http://localhost:5173"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` npx concile init ``` Run it in an existing app, and it configures Concile there. Run it in an empty directory, and it prompts for a project name to set up a starter app. Type `.` at that prompt to use the current directory. It lists…",
+            "id": "C7",
+            "section_title": "Get started in one minute",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "label": "Next.js localhost URL",
+        "url": "http://localhost:3001"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Concile is currently pre-1.0, but it works end to end today. The reactive engine and production tooling are already built and tested on both Node and Bun. The distributed tier and search features are up next. We are building the backend we…",
+            "id": "C11",
+            "section_title": "Join the project",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "text": "The project is currently pre-1.0 (though functional end-to-end), with the distributed tier and search features planned for upcoming releases."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Concile uses the FSL-1.1-Apache-2.0 license. You can use it, modify it, and self-host it, and yes, that includes commercial work. There is really only one rule: you cannot resell Concile itself as a hosted service. Every release…",
+            "id": "C10",
+            "section_title": "Your data, your server, forever",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "text": "The FSL-1.1-Apache-2.0 license prevents reselling Concile itself as a hosted service."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "You have a great idea for an app. But between that idea and shipping it, you have to deal with a mountain of plumbing. And let's be honest, you didn't start this project to write boilerplate. **Concile gets rid of the plumbing.** | The old…",
+          "id": "C4",
+          "section_title": "Building a backend shouldn't be this hard",
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        },
+        {
+          "excerpt": "On the server, you just write plain functions in one file: ``` // concile/tasks.ts import { query, mutation } from \"./_generated/server\"; export const list = query(async (ctx) => ctx.db.query(\"tasks\").collect()); export const add =…",
+          "id": "C6",
+          "section_title": "See it in ten lines of code",
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        }
+      ],
+      "text": "It removes the need to write custom backend plumbing such as REST endpoints, websocket connection servers, manual polling loops, caching layers, and database migration setups."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "You have a great idea for an app. But between that idea and shipping it, you have to deal with a mountain of plumbing. And let's be honest, you didn't start this project to write boilerplate. **Concile gets rid of the plumbing.** | The old…",
+            "id": "C4",
+            "section_title": "Building a backend shouldn't be this hard",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "On the server, you just write plain functions in one file: ``` // concile/tasks.ts import { query, mutation } from \"./_generated/server\"; export const list = query(async (ctx) => ctx.db.query(\"tasks\").collect()); export const add =…",
+            "id": "C6",
+            "section_title": "See it in ten lines of code",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "text": "A backend architecture running transactions safely on the server with an embedded SQLite database by default, communicating reactive updates to clients without websockets explicitly configured by the developer."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "concile-dev/concile: The open-source Convex alternative reactive backend Topics: baas, backend, cloudflare workers, convex alternative, live queries, offline first, open source, postgres, reactive, realtime, self hosted, sqlite,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/concile-dev/concile"
+            },
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "Live queries and reactive data updates"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "Durable scheduler for crons, retries, and workflows"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "File storage supporting disk, S3, and R2"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "Embedded SQLite and Postgres database support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "concile-dev/concile: The open-source Convex alternative reactive backend Topics: baas, backend, cloudflare workers, convex alternative, live queries, offline first, open source, postgres, reactive, realtime, self hosted, sqlite,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/concile-dev/concile"
+            }
+          ],
+          "name": "TypeScript"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "concile-dev/concile: The open-source Convex alternative reactive backend Topics: baas, backend, cloudflare workers, convex alternative, live queries, offline first, open source, postgres, reactive, realtime, self hosted, sqlite,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/concile-dev/concile"
+            },
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "Postgres"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "concile-dev/concile: The open-source Convex alternative reactive backend Topics: baas, backend, cloudflare workers, convex alternative, live queries, offline first, open source, postgres, reactive, realtime, self hosted, sqlite,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/concile-dev/concile"
+            },
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "SQLite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "AWS S3 / R2"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+              "id": "C2",
+              "section_title": "What you get out of the box",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            },
+            {
+              "excerpt": "``` npx concile init ``` Run it in an existing app, and it configures Concile there. Run it in an empty directory, and it prompts for a project name to set up a starter app. Type `.` at that prompt to use the current directory. It lists…",
+              "id": "C7",
+              "section_title": "Get started in one minute",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "name": "Docker"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Concile is currently pre-1.0, but it works end to end today. The reactive engine and production tooling are already built and tested on both Node and Bun. The distributed tier and search features are up next. We are building the backend we…",
+              "id": "C11",
+              "section_title": "Join the project",
+              "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+            }
+          ],
+          "text": "Node or Bun runtime environment"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "On the server, you just write plain functions in one file: ``` // concile/tasks.ts import { query, mutation } from \"./_generated/server\"; export const list = query(async (ctx) => ctx.db.query(\"tasks\").collect()); export const add =…",
+            "id": "C6",
+            "section_title": "See it in ten lines of code",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "text": "Building real-time collaborative application dashboards where modifications made on one device instantly reflect across all other active clients."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "text": "Developing web applications with integrated file storage, background cron schedules, durable retries, and workflows."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "concile-dev/concile: The open-source Convex alternative reactive backend Topics: baas, backend, cloudflare workers, convex alternative, live queries, offline first, open source, postgres, reactive, realtime, self hosted, sqlite,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/concile-dev/concile"
+        },
+        {
+          "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+          "id": "C2",
+          "section_title": "What you get out of the box",
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        },
+        {
+          "excerpt": "**Write a function. Watch your whole app come alive.** Concile is the open source backend that updates your data automatically. You don't have to wire up servers, glue together APIs, or ask your users to hit refresh. ***",
+          "id": "C3",
+          "section_title": null,
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        },
+        {
+          "excerpt": "You have a great idea for an app. But between that idea and shipping it, you have to deal with a mountain of plumbing. And let's be honest, you didn't start this project to write boilerplate. **Concile gets rid of the plumbing.** | The old…",
+          "id": "C4",
+          "section_title": "Building a backend shouldn't be this hard",
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        },
+        {
+          "excerpt": "On the server, you just write plain functions in one file: ``` // concile/tasks.ts import { query, mutation } from \"./_generated/server\"; export const list = query(async (ctx) => ctx.db.query(\"tasks\").collect()); export const add =…",
+          "id": "C6",
+          "section_title": "See it in ten lines of code",
+          "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+        }
+      ],
+      "explanation": "Concile is an open-source backend-as-a-service designed to eliminate standard plumbing like manual API design and websocket setup. Developers write plain TypeScript functions for queries and mutations, and the reactive engine automatically pushes updates to every connected screen when data changes. It uses an embedded SQLite database by default and supports switching to Postgres with a single flag.",
+      "one_line": "An open-source reactive backend that updates data and client screens automatically without polling or REST boilerplate."
+    },
+    "who_should_care": [
+      {
+        "audience": "TypeScript Full-Stack Developers",
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "You have a great idea for an app. But between that idea and shipping it, you have to deal with a mountain of plumbing. And let's be honest, you didn't start this project to write boilerplate. **Concile gets rid of the plumbing.** | The old…",
+            "id": "C4",
+            "section_title": "Building a backend shouldn't be this hard",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "reason": "They can build reactive, realtime web applications entirely in TypeScript without maintaining a separate REST API or manual client-side cache invalidation."
+      },
+      {
+        "audience": "Self-Hosters and Indie Hackers",
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` npx concile init ``` Run it in an existing app, and it configures Concile there. Run it in an empty directory, and it prompts for a project name to set up a starter app. Type `.` at that prompt to use the current directory. It lists…",
+            "id": "C7",
+            "section_title": "Get started in one minute",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          },
+          {
+            "excerpt": "Concile uses the FSL-1.1-Apache-2.0 license. You can use it, modify it, and self-host it, and yes, that includes commercial work. There is really only one rule: you cannot resell Concile itself as a hosted service. Every release…",
+            "id": "C10",
+            "section_title": "Your data, your server, forever",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "reason": "They can deploy a complete backend with built-in auth, file storage, and a live dashboard using a single Docker container on minimal hardware."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "point": "Real reactivity re-runs only queries touching changed data when a write occurs, yielding millisecond-level updates instead of polling."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "point": "Zero-config embedded SQLite database by default that can scale to Postgres with a single flag and zero migrations."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "* ⚡ **Real reactivity instead of polling.** When a write happens, we only re-run the queries that actually touched that specific data. Updates take milliseconds, not seconds. * 🧠 **Just TypeScript.** Write queries, mutations, actions for…",
+            "id": "C2",
+            "section_title": "What you get out of the box",
+            "source_url": "https://github.com/concile-dev/concile/blob/main/README.md"
+          }
+        ],
+        "point": "Fully typed end-to-end using plain TypeScript functions without requiring YAML files or ORMs."
+      }
+    ]
+  },
+  "source_hash": "ede1d5d1af38d6ad9f111090eb87d936eabfe98873a81c0c071ccccfe8d3feec"
+}

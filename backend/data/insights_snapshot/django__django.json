@@ -1,0 +1,279 @@
+{
+  "full_name": "django/django",
+  "generated_at": "2026-11-10 09:03:38.510265+00:00",
+  "github_id": 4164482,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/django/django"
+          }
+        ],
+        "complementary_tech": [
+          "PostgreSQL",
+          "Redis",
+          "Nginx"
+        ],
+        "description": "Create a robust database-backed web application utilizing built-in models, views, and an ORM.",
+        "how_it_is_used": "Uses Django models, views, and templates to handle data storage, business logic, and user interfaces.",
+        "title": "Data-Driven Web Application"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/django/django"
+          }
+        ],
+        "complementary_tech": [
+          "SQLite",
+          "Gunicorn",
+          "Bootstrap"
+        ],
+        "description": "Build a content management system featuring dynamic web pages and admin interfaces.",
+        "how_it_is_used": "Relies on Django views and template systems to render dynamic content pages.",
+        "title": "Custom Content Management System"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "label": "Online Documentation",
+        "url": "https://docs.djangoproject.com/en/stable/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Django's development depends on your contributions. If you depend on Django, remember to support the Django Software Foundation: https://www.djangoproject.com/fundraising/",
+            "id": "C2",
+            "section_title": "Supporting the Development of Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "label": "Fundraising and Support",
+        "url": "https://www.djangoproject.com/fundraising/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "and check out the reference (``docs/ref``) for gory details. * See ``docs/README`` for instructions on building an HTML version of the docs. Docs are updated rigorously. If you find any problems in the docs, or think they should be…",
+            "id": "C4",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "label": "Contributing Guide",
+        "url": "https://docs.djangoproject.com/en/dev/internals/contributing/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "and check out the reference (``docs/ref``) for gory details. * See ``docs/README`` for instructions on building an HTML version of the docs. Docs are updated rigorously. If you find any problems in the docs, or think they should be…",
+            "id": "C4",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "label": "Running Unit Tests",
+        "url": "https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/#running-the-unit-tests"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/django/django"
+        },
+        {
+          "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+          "id": "C3",
+          "section_title": "Django",
+          "source_url": "https://github.com/django/django/blob/main/README.rst"
+        }
+      ],
+      "text": "It facilitates rapid web application development and clean, pragmatic architectural design for developers with deadlines."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/django/django"
+            }
+          ],
+          "name": "ORM"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/django/django"
+            }
+          ],
+          "name": "Templates"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/django/django"
+            }
+          ],
+          "name": "Views"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/django/django"
+            }
+          ],
+          "name": "Models"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+              "id": "C3",
+              "section_title": "Django",
+              "source_url": "https://github.com/django/django/blob/main/README.rst"
+            }
+          ],
+          "text": "Python environment and following the installation documentation in docs/intro/install.txt."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/django/django"
+          },
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "text": "Building web applications rapidly using Python."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "text": "Setting up deployment servers for Python web applications."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/django/django"
+        },
+        {
+          "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+          "id": "C3",
+          "section_title": "Django",
+          "source_url": "https://github.com/django/django/blob/main/README.rst"
+        }
+      ],
+      "explanation": "Django is a high-level Python web framework designed to enable rapid development and clean, pragmatic design. It provides comprehensive components for web applications, including models, views, templates, and an ORM.",
+      "one_line": "A high-level Python web framework encouraging rapid development and clean design."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "reason": "They can use it as a high-level web framework to build web applications quickly using clean design patterns."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "django/django: The Web framework for perfectionists with deadlines. Topics: apps, django, framework, models, orm, python, templates, views, web. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/django/django"
+          },
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "point": "It is structured around clean, pragmatic design principles targeted at perfectionists with deadlines."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Thanks for checking it out. All documentation is in the \"``docs``\" directory and online at…",
+            "id": "C3",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          },
+          {
+            "excerpt": "and check out the reference (``docs/ref``) for gory details. * See ``docs/README`` for instructions on building an HTML version of the docs. Docs are updated rigorously. If you find any problems in the docs, or think they should be…",
+            "id": "C4",
+            "section_title": "Django",
+            "source_url": "https://github.com/django/django/blob/main/README.rst"
+          }
+        ],
+        "point": "It features extensive built-in documentation and robust community support channels like Discord and a forum."
+      }
+    ]
+  },
+  "source_hash": "9750a3789f1684580d2d2267f8eb41a772a6415646f9c17148290044f5e448bc"
+}

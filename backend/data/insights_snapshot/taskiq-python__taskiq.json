@@ -1,0 +1,394 @@
+{
+  "full_name": "taskiq-python/taskiq",
+  "generated_at": "2026-11-10 09:14:27.331846+00:00",
+  "github_id": 514860374,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+            "id": "C2",
+            "section_title": "What is taskiq?",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          },
+          {
+            "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+            "id": "C4",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          },
+          {
+            "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+            "id": "C5",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Redis",
+          "Uvicorn"
+        ],
+        "description": "Build a FastAPI web application that offloads long-running data processing jobs to background workers.",
+        "how_it_is_used": "Uses Taskiq brokers to send jobs from web routes and worker processes to execute them asynchronously.",
+        "title": "Asynchronous Web Application Background Worker"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+            "id": "C4",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "NATS",
+          "Kafka",
+          "Docker"
+        ],
+        "description": "Construct a multi-stage data ingestion pipeline using message brokers to distribute events.",
+        "how_it_is_used": "Uses Taskiq's NATS JetStream or Kafka broker integration to route messages and execute tasks across distributed worker nodes.",
+        "title": "Distributed Event-Driven Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+            "id": "C5",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Documentation: https://taskiq-python.github.io/",
+            "id": "C6",
+            "section_title": null,
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "label": "Documentation",
+        "url": "https://taskiq-python.github.io/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "This project can be installed using pip: ``` pip install taskiq ``` Or it can be installed directly from git: ``` pip install git+https://github.com/taskiq-python/taskiq ```",
+            "id": "C3",
+            "section_title": "Installation",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "label": "Git Repository",
+        "url": "https://github.com/taskiq-python/taskiq"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+          "id": "C2",
+          "section_title": "What is taskiq?",
+          "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+        },
+        {
+          "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+          "id": "C4",
+          "section_title": "Usage",
+          "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+        },
+        {
+          "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+          "id": "C5",
+          "section_title": "Usage",
+          "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+        }
+      ],
+      "text": "Executes both sync and async functions in a distributed environment, communicates with workers via various queue backends, and integrates task queues with web frameworks."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "taskiq-python/taskiq: Distributed task queue with full async support Topics: asyncio, celery like, hacktoberfest, python, python3, task executor, task manager. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/taskiq-python/taskiq"
+            },
+            {
+              "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+              "id": "C2",
+              "section_title": "What is taskiq?",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            },
+            {
+              "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+              "id": "C4",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Distributed task execution"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+              "id": "C2",
+              "section_title": "What is taskiq?",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Asynchronous and synchronous function execution"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+              "id": "C5",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Worker hot reload"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+              "id": "C5",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Automatic module discovery via file system scanning"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+              "id": "C2",
+              "section_title": "What is taskiq?",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            },
+            {
+              "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+              "id": "C5",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "FastAPI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+              "id": "C2",
+              "section_title": "What is taskiq?",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            },
+            {
+              "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+              "id": "C5",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "AioHTTP"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+              "id": "C4",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "NATS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+              "id": "C4",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Redis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+              "id": "C4",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "RabbitMQ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+              "id": "C4",
+              "section_title": "Usage",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "name": "Kafka"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "taskiq-python/taskiq: Distributed task queue with full async support Topics: asyncio, celery like, hacktoberfest, python, python3, task executor, task manager. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/taskiq-python/taskiq"
+            },
+            {
+              "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+              "id": "C2",
+              "section_title": "What is taskiq?",
+              "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+            }
+          ],
+          "text": "Python"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "At first you need to create a broker. Broker is an object that can communicate to workers using distributed queues. We have different brokers for different queue backends. For example, we have a broker for NATS, Redis, RabbitMQ, Kafka and…",
+            "id": "C4",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "text": "Distributing background tasks across worker processes using backends like NATS, Redis, RabbitMQ, or Kafka."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+            "id": "C5",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "text": "Reusing web framework application dependencies inside background tasks."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "taskiq-python/taskiq: Distributed task queue with full async support Topics: asyncio, celery like, hacktoberfest, python, python3, task executor, task manager. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/taskiq-python/taskiq"
+        },
+        {
+          "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+          "id": "C2",
+          "section_title": "What is taskiq?",
+          "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+        }
+      ],
+      "explanation": "Taskiq is an asynchronous distributed task queue inspired by projects like Celery and Dramatiq. It handles both synchronous and asynchronous functions and integrates with popular async frameworks like FastAPI and AioHTTP. The codebase is fully type-hinted and uses PEP-612 to support autosuggestions.",
+      "one_line": "An asynchronous distributed task queue for Python with full async and sync function support."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python developers",
+        "citations": [
+          {
+            "excerpt": "taskiq-python/taskiq: Distributed task queue with full async support Topics: asyncio, celery like, hacktoberfest, python, python3, task executor, task manager. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/taskiq-python/taskiq"
+          },
+          {
+            "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+            "id": "C2",
+            "section_title": "What is taskiq?",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "reason": "Looking for a distributed task queue with first-class async support and full type hinting."
+      },
+      {
+        "audience": "FastAPI or AioHTTP developers",
+        "citations": [
+          {
+            "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+            "id": "C2",
+            "section_title": "What is taskiq?",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          },
+          {
+            "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+            "id": "C5",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "reason": "Need to run background tasks while reusing dependencies from their web applications."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+            "id": "C2",
+            "section_title": "What is taskiq?",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "point": "Supports both synchronous and asynchronous functions natively."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Taskiq is an asynchronous distributed task queue for python. This project takes inspiration from big projects such as Celery and Dramatiq. But taskiq can send and run both the sync and async functions, has integration with popular async…",
+            "id": "C2",
+            "section_title": "What is taskiq?",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "point": "Leverages PEP-612 for type hinting and robust autosuggestions."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The worker will execute the function. To start worker processes, just run the following command: ``` taskiq worker path.to.the.module:broker ``` Where `path.to.the.module` is the path to the module where the broker is defined and `broker`…",
+            "id": "C5",
+            "section_title": "Usage",
+            "source_url": "https://github.com/taskiq-python/taskiq/blob/master/README.md"
+          }
+        ],
+        "point": "Provides hot reload capabilities for workers during development."
+      }
+    ]
+  },
+  "source_hash": "03c78f373685a702abd3c483e17f725ebd684aa9a183d706f2e41af61c9a1125"
+}

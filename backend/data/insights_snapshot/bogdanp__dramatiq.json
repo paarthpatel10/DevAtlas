@@ -1,0 +1,251 @@
+{
+  "full_name": "Bogdanp/dramatiq",
+  "generated_at": "2026-11-10 09:13:49.219360+00:00",
+  "github_id": 92827980,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+            "id": "C2",
+            "section_title": "Installation",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          },
+          {
+            "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "RabbitMQ",
+          "Redis",
+          "requests"
+        ],
+        "description": "A service that accepts URLs, fetches page contents in the background, and counts words or processes content asynchronously.",
+        "how_it_is_used": "Uses dramatiq actors to queue and process URL fetching jobs via RabbitMQ or Redis.",
+        "title": "Asynchronous Web Scraping Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "*A fast and reliable distributed task processing library for Python 3.* **Changelog**: https://dramatiq.io/changelog.html **Community**: https://groups.io/g/dramatiq-users **Documentation**: https://dramatiq.io Sponsors",
+            "id": "C4",
+            "section_title": "dramatiq",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "label": "Documentation",
+        "url": "https://dramatiq.io"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "dramatiq is licensed under the LGPL. Please see [COPYING] and [COPYING.LESSER] for licensing details. [COPYING.LESSER]: https://github.com/Bogdanp/dramatiq/blob/master/COPYING.LESSER [COPYING]:…",
+            "id": "C5",
+            "section_title": "License",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "label": "User guide",
+        "url": "https://dramatiq.io/guide.html"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "*A fast and reliable distributed task processing library for Python 3.* **Changelog**: https://dramatiq.io/changelog.html **Community**: https://groups.io/g/dramatiq-users **Documentation**: https://dramatiq.io Sponsors",
+            "id": "C4",
+            "section_title": "dramatiq",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "label": "Changelog",
+        "url": "https://dramatiq.io/changelog.html"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Bogdanp/dramatiq: A fast and reliable background task processing library for Python 3. Topics: distributed lock, python, rabbit, redis, task, task manager, task runner, task scheduler. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/Bogdanp/dramatiq"
+        },
+        {
+          "excerpt": "*A fast and reliable distributed task processing library for Python 3.* **Changelog**: https://dramatiq.io/changelog.html **Community**: https://groups.io/g/dramatiq-users **Documentation**: https://dramatiq.io Sponsors",
+          "id": "C4",
+          "section_title": "dramatiq",
+          "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+        }
+      ],
+      "text": "It provides a fast and reliable way to handle background task processing and message passing in Python 3 applications."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Bogdanp/dramatiq: A fast and reliable background task processing library for Python 3. Topics: distributed lock, python, rabbit, redis, task, task manager, task runner, task scheduler. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/Bogdanp/dramatiq"
+            }
+          ],
+          "name": "Background task processing"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "*A fast and reliable distributed task processing library for Python 3.* **Changelog**: https://dramatiq.io/changelog.html **Community**: https://groups.io/g/dramatiq-users **Documentation**: https://dramatiq.io Sponsors",
+              "id": "C4",
+              "section_title": "dramatiq",
+              "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+            }
+          ],
+          "name": "Distributed task execution"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+            }
+          ],
+          "name": "RabbitMQ"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+            }
+          ],
+          "name": "Redis"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+            },
+            {
+              "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+            }
+          ],
+          "text": "RabbitMQ or Redis running"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "text": "Fetching web pages and counting words asynchronously in the background."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "Bogdanp/dramatiq: A fast and reliable background task processing library for Python 3. Topics: distributed lock, python, rabbit, redis, task, task manager, task runner, task scheduler. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/Bogdanp/dramatiq"
+        },
+        {
+          "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+          "id": "C2",
+          "section_title": "Installation",
+          "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+        },
+        {
+          "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+          "id": "C3",
+          "section_title": "Quickstart",
+          "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+        },
+        {
+          "excerpt": "*A fast and reliable distributed task processing library for Python 3.* **Changelog**: https://dramatiq.io/changelog.html **Community**: https://groups.io/g/dramatiq-users **Documentation**: https://dramatiq.io Sponsors",
+          "id": "C4",
+          "section_title": "dramatiq",
+          "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+        }
+      ],
+      "explanation": "Dramatiq is a distributed task processing library designed for Python 3. It allows developers to define background actors and send messages to workers using brokers like RabbitMQ or Redis.",
+      "one_line": "A fast and reliable background task processing library for Python 3."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "Bogdanp/dramatiq: A fast and reliable background task processing library for Python 3. Topics: distributed lock, python, rabbit, redis, task, task manager, task runner, task scheduler. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/Bogdanp/dramatiq"
+          },
+          {
+            "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "reason": "Developers needing to offload long-running or asynchronous operations to background workers."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "If you want to use it with [RabbitMQ] pip install 'dramatiq[rabbitmq, watch]' or if you want to use it with [Redis] pip install 'dramatiq[redis, watch]'",
+            "id": "C2",
+            "section_title": "Installation",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "point": "Supports multiple messaging backends including RabbitMQ and Redis."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Make sure you've got [RabbitMQ] running, then create a new file called `example.py`: ``` python import dramatiq import requests import sys @dramatiq.actor def count_words(url): response = requests.get(url) count = len(response.text.split(\"…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/Bogdanp/dramatiq/blob/master/README.md"
+          }
+        ],
+        "point": "Simple decorator-based actor definition for running background tasks."
+      }
+    ]
+  },
+  "source_hash": "683ba0ec1e895f65f28eb5873373f9d39a41a0211ab45f2db22e8c24e4c4aa6d"
+}

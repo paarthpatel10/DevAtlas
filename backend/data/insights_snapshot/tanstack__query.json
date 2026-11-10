@@ -1,0 +1,404 @@
+{
+  "full_name": "TanStack/query",
+  "generated_at": "2026-11-10 09:06:17.070898+00:00",
+  "github_id": 207645083,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/TanStack/query"
+          },
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          },
+          {
+            "excerpt": "- TanStack Config – Tooling for JS/TS packages - TanStack DB – Reactive sync client store - TanStack DevTools – Unified devtools panel - TanStack Form – Type‑safe form state - TanStack Pacer – Debouncing, throttling, batching - TanStack…",
+            "id": "C6",
+            "section_title": "Explore the TanStack Ecosystem",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "GraphQL",
+          "TanStack Virtual"
+        ],
+        "description": "A dynamic social feed that loads posts incrementally as the user scrolls down the page.",
+        "how_it_is_used": "Leverages infinite scroll, caching, and background updates to fetch and maintain feed items seamlessly.",
+        "title": "Infinite-Scrolling Social Media Feed"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/TanStack/query"
+          },
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          },
+          {
+            "excerpt": "- TanStack Config – Tooling for JS/TS packages - TanStack DB – Reactive sync client store - TanStack DevTools – Unified devtools panel - TanStack Form – Type‑safe form state - TanStack Pacer – Debouncing, throttling, batching - TanStack…",
+            "id": "C6",
+            "section_title": "Explore the TanStack Ecosystem",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Vue",
+          "REST API",
+          "TanStack Table"
+        ],
+        "description": "An administrative dashboard where user profile actions fetch downstream metrics and prefetch data on hover.",
+        "how_it_is_used": "Uses dependent queries, prefetching, and cancellation to optimize data loading paths.",
+        "title": "Dashboard with Dependent and Prefetched Queries"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "- TanStack Config – Tooling for JS/TS packages - TanStack DB – Reactive sync client store - TanStack DevTools – Unified devtools panel - TanStack Form – Type‑safe form state - TanStack Pacer – Debouncing, throttling, batching - TanStack…",
+            "id": "C6",
+            "section_title": "Explore the TanStack Ecosystem",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "label": "TanStack Website",
+        "url": "https://tanstack.com"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+          "id": "C3",
+          "section_title": "TanStack Query",
+          "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+        }
+      ],
+      "text": "It simplifies fetching, caching, synchronizing, and updating server state in web applications, handling complexities like pagination, background updates, and request cancellation."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Protocol-agnostic fetching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Caching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Refetching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Pagination"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Infinite scroll"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Mutations"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Dependent queries"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Background updates"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Prefetching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "Cancellation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "React Suspense support"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/TanStack/query"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/TanStack/query"
+            }
+          ],
+          "name": "Solid"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/TanStack/query"
+            }
+          ],
+          "name": "Svelte"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/TanStack/query"
+            }
+          ],
+          "name": "Vue"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "REST"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+              "id": "C3",
+              "section_title": "TanStack Query",
+              "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+            }
+          ],
+          "name": "GraphQL"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "text": "Fetching and caching data from REST or GraphQL APIs in web applications."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "text": "Implementing infinite scrolling and pagination for large lists of server data."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "text": "Executing server mutations with automatic background updates and prefetching."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/TanStack/query"
+        },
+        {
+          "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+          "id": "C3",
+          "section_title": "TanStack Query",
+          "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+        }
+      ],
+      "explanation": "TanStack Query is an async state management library built to simplify fetching, caching, synchronizing, and updating server state. It supports TypeScript/JavaScript and provides specific integrations for React, Solid, Svelte, and Vue.",
+      "one_line": "Powerful asynchronous state management and data fetching library for web applications across multiple frameworks."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Developers",
+        "citations": [
+          {
+            "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/TanStack/query"
+          },
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "reason": "They need an efficient way to manage asynchronous server state, handle caching, and synchronize data across components without writing custom boilerplate."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "point": "Protocol-agnostic fetching that supports REST, GraphQL, and generic promises."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "An async state management library built to simplify fetching, caching, synchronizing, and updating server state. - Protocol‑agnostic fetching (REST, GraphQL, promises, etc.) - Caching, refetching, pagination & infinite scroll - Mutations,…",
+            "id": "C3",
+            "section_title": "TanStack Query",
+            "source_url": "https://github.com/TanStack/query/blob/main/README.md"
+          }
+        ],
+        "point": "Built-in features for caching, refetching, pagination, infinite scroll, mutations, and background updates."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "TanStack/query: 🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query. Topics: async, cache, data, fetch, graphql, hooks, query, react,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/TanStack/query"
+          }
+        ],
+        "point": "Supports multi-framework environments including React, Solid, Svelte, and Vue."
+      }
+    ]
+  },
+  "source_hash": "270f3830135456f886921eaf6061ba2216c703e5c2f2e3cd6c586cb3d3614fba"
+}

@@ -1,0 +1,516 @@
+{
+  "full_name": "mikehasa/golive-skill",
+  "generated_at": "2026-11-10 09:15:44.687533+00:00",
+  "github_id": 1383518430,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mikehasa/golive-skill"
+          },
+          {
+            "excerpt": "as well. The installer copies the complete skill the package ships with, refuses an existing destination, and never connects provider accounts. **Both channels carry the same release.** The npm package publishes the version in this…",
+            "id": "C5",
+            "section_title": "Install from npm",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+            "id": "C11",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "Vercel API",
+          "Supabase CLI"
+        ],
+        "description": "Build an agent-driven utility that spins up disposable frontend hosting and managed databases for pull requests.",
+        "how_it_is_used": "Relies on the underlying CLI and skill deployment capabilities for Vercel, Netlify, Supabase, and Neon.",
+        "title": "Automated Multi-Cloud Staging Environment Spawner"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mikehasa/golive-skill"
+          },
+          {
+            "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+            "id": "C12",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Porkbun API",
+          "GoDaddy API",
+          "Cloudflare DNS"
+        ],
+        "description": "Create a tool to programmatically verify domain ownership and configure DNS challenge records during application provisioning.",
+        "how_it_is_used": "Uses custom domain configuration workflows for providers like Porkbun and GoDaddy.",
+        "title": "Automated DNS and Domain Verification Bot"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/mikehasa/golive-skill"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "text": "Installation has only been checked for Codex and Claude Code; other clients are unverified."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "editor as a fallback. A later change to the plan needs another approval; connecting auth or a domain may require a follow-up after the first deploy. **Using another provider?** The skill has a general guided flow: check the provider's…",
+            "id": "C10",
+            "section_title": "What a run looks like",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "text": "Using providers outside of built-in integrations relies on best-effort guidance with no guarantee of completion or equivalent verification coverage."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/mikehasa/golive-skill"
+        },
+        {
+          "excerpt": "and cost > information with the plan. Approve before I apply it. > > **You:** Approved. > > **Agent:** The deployment is live. Here is the URL, the verification report, and anything still > unverified. Next we'll test the app's own signup…",
+          "id": "C9",
+          "section_title": "What a run looks like",
+          "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+        }
+      ],
+      "text": "It automates the process of taking agent-built applications live across various hosting, database, domain, email, and payment providers using the developer's own accounts under explicit user approval."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "as well. The installer copies the complete skill the package ships with, refuses an existing destination, and never connects provider accounts. **Both channels carry the same release.** The npm package publishes the version in this…",
+              "id": "C5",
+              "section_title": "Install from npm",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Project detection and deployment planning"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "> **You:** Use golive to take this app live. Use test resources for now. > > **Agent:** This app uses Supabase. Where would you like to host it? > > 1. **Vercel** — built-in hosting workflow; live-tested with Supabase. > 2. **Netlify** —…",
+              "id": "C8",
+              "section_title": "What a run looks like",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            },
+            {
+              "excerpt": "and cost > information with the plan. Approve before I apply it. > > **You:** Approved. > > **Agent:** The deployment is live. Here is the URL, the verification report, and anything still > unverified. Next we'll test the app's own signup…",
+              "id": "C9",
+              "section_title": "What a run looks like",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Environment variable wiring and secret handling"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+              "id": "C12",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Custom domain attachment and DNS verification"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "as well. The installer copies the complete skill the package ships with, refuses an existing destination, and never connects provider accounts. **Both channels carry the same release.** The npm package publishes the version in this…",
+              "id": "C5",
+              "section_title": "Install from npm",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            },
+            {
+              "excerpt": "and cost > information with the plan. Approve before I apply it. > > **You:** Approved. > > **Agent:** The deployment is live. Here is the URL, the verification report, and anything still > unverified. Next we'll test the app's own signup…",
+              "id": "C9",
+              "section_title": "What a run looks like",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Infrastructure teardown planning"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Node.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            }
+          ],
+          "name": "TypeScript"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+              "id": "C11",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Vercel"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+              "id": "C11",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Netlify"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+              "id": "C11",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Supabase"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+              "id": "C11",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Neon"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+              "id": "C12",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Porkbun"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            },
+            {
+              "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+              "id": "C12",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "GoDaddy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+              "id": "C12",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Resend"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+              "id": "C12",
+              "section_title": "What this alpha supports",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "name": "Stripe"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/mikehasa/golive-skill"
+            }
+          ],
+          "name": "Cloudflare"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "text": "Node.js 20+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "text": "npm or npx"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "text": "Git"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+            }
+          ],
+          "text": "A coding agent that can load skills and run commands (verified for Codex and Claude Code)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "**Two hosting choices: Vercel and Netlify. Two database choices: Supabase and Neon.**",
+            "id": "C11",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+            "id": "C12",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "text": "Provisioning and deploying a frontend to Vercel or Netlify alongside a Supabase or Neon database."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+            "id": "C12",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "text": "Configuring custom domains via Porkbun or GoDaddy with DNS record writes and ownership verification."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| Live-tested path | What was exercised | | --- | --- | | **Vercel + Supabase** | Provisioning, environment wiring, deployment, authenticated CRUD and access isolation | | **Netlify + Neon** | Provisioning, environment wiring, deployment,…",
+            "id": "C12",
+            "section_title": "What this alpha supports",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "text": "Setting up email delivery via Resend and test payments via Stripe with webhook registration."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/mikehasa/golive-skill"
+        }
+      ],
+      "explanation": "GoLive is an open-source agent skill and zero-dependency Node CLI that helps take agent-built products live on a developer's own accounts. It follows a structured flow of detect, plan, approve, apply, and verify without relying on a GoLive backend, account, or telemetry. It operates using supported configurations for hosting, databases, domains, email, and payments.",
+      "one_line": "An open-source agent skill and zero-dependency Node CLI to take agent-built products live."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers using coding agents",
+        "citations": [
+          {
+            "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mikehasa/golive-skill"
+          },
+          {
+            "excerpt": "You need **Node.js 20+**, npm/npx, Git, and a coding agent that can load skills and run commands. Installation has been checked for Codex and Claude Code; other clients are unverified. **Install once for all your projects.** Run this from…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "reason": "Can automate the deployment of applications to production or staging environments using supported agents like Codex or Claude Code."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mikehasa/golive-skill"
+          }
+        ],
+        "point": "Operates entirely on your own accounts with zero telemetry and no centralized GoLive backend."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "mikehasa/golive-skill: Take your agent-built product live: hosting, database, domain, email, payments — on your own accounts. Open-source Agent Skill + zero-dependency Node CLI: detect → plan → approve → apply → verify. No GoLive account,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/mikehasa/golive-skill"
+          },
+          {
+            "excerpt": "> **You:** Use golive to take this app live. Use test resources for now. > > **Agent:** This app uses Supabase. Where would you like to host it? > > 1. **Vercel** — built-in hosting workflow; live-tested with Supabase. > 2. **Netlify** —…",
+            "id": "C8",
+            "section_title": "What a run looks like",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          },
+          {
+            "excerpt": "and cost > information with the plan. Approve before I apply it. > > **You:** Approved. > > **Agent:** The deployment is live. Here is the URL, the verification report, and anything still > unverified. Next we'll test the app's own signup…",
+            "id": "C9",
+            "section_title": "What a run looks like",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "point": "Follows a strict safety workflow of detect, plan, approve, apply, and verify before modifying external infrastructure."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "and cost > information with the plan. Approve before I apply it. > > **You:** Approved. > > **Agent:** The deployment is live. Here is the URL, the verification report, and anything still > unverified. Next we'll test the app's own signup…",
+            "id": "C9",
+            "section_title": "What a run looks like",
+            "source_url": "https://github.com/mikehasa/golive-skill/blob/main/README.md"
+          }
+        ],
+        "point": "Securely prompts for API keys on macOS using a native hidden-input dialog, storing values locally without leaking them into chat or command output."
+      }
+    ]
+  },
+  "source_hash": "95c5aa2bf073cb31fcff1a36149ae0964d652ff84045f84b5c8d470b9f2941e2"
+}

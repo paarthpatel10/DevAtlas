@@ -1,0 +1,412 @@
+{
+  "full_name": "microsoft/TokenEconomizer",
+  "generated_at": "2026-11-10 09:13:01.203374+00:00",
+  "github_id": 1416442720,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "`pi` and run `/te status`. **Cursor Agent** (experimental) ``` python scripts/build_plugin.py --out ~/.cursor/plugins/local/ ``` Reload Cursor, confirm `tokeneconomizer` appears in Customize, then send a prompt in a repository. Check its…",
+            "id": "C7",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "Streamlit",
+          "SQLite"
+        ],
+        "description": "Build a dashboard that reads local session transcripts and state data to visualize how much cache pricing and tool pruning save over time across multiple repository tasks.",
+        "how_it_is_used": "Relies on TokenEconomizer tracking session costs, hook events, and local state files per repository.",
+        "title": "Cross-Session Token Analytics Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "Run these commands in the folder where you want to keep the clone. Claude Code, Codex, the Copilot CLI and opencode run the plugin from the clone, so leave it in place. Then start the agent in one of your repositories. **Claude Code** ```…",
+            "id": "C5",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "Click"
+        ],
+        "description": "Create a developer utility that analyzes tool catalog refresh logs to recommend permanently deprecating tools that go unused across coding agent sessions.",
+        "how_it_is_used": "Uses the catalog refresh functionality and tool usage tracking provided by the plugin framework.",
+        "title": "Automated Tool Usage Auditor"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Run these commands in the folder where you want to keep the clone. Claude Code, Codex, the Copilot CLI and opencode run the plugin from the clone, so leave it in place. Then start the agent in one of your repositories. **Claude Code** ```…",
+            "id": "C5",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "label": "Repository Clone URL",
+        "url": "https://github.com/microsoft/TokenEconomizer.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "`pi` and run `/te status`. **Cursor Agent** (experimental) ``` python scripts/build_plugin.py --out ~/.cursor/plugins/local/ ``` Reload Cursor, confirm `tokeneconomizer` appears in Customize, then send a prompt in a repository. Check its…",
+            "id": "C7",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "micro-skills' LLM-free facts only) ``` python scripts/build_plugin.py --out dist/marketplace agy plugin install dist/marketplace/tokeneconomizer ``` Start `agy` and send a prompt in a repository, then check with `~/.tokeneconomizer/bin/te…",
+            "id": "C9",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "text": "Cursor support, Antigravity CLI, and certain experimental features are restricted to macOS and Linux due to POSIX shell script launchers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "`pi` and run `/te status`. **Cursor Agent** (experimental) ``` python scripts/build_plugin.py --out ~/.cursor/plugins/local/ ``` Reload Cursor, confirm `tokeneconomizer` appears in Customize, then send a prompt in a repository. Check its…",
+            "id": "C7",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "https://github.com/microsoft/TokenEconomizer.git grok plugin marketplace add \"$PWD/TokenEconomizer\" grok plugin install tokeneconomizer --trust ``` Grok runs Claude Code plugins, so this is the Claude Code plugin: grok loads…",
+            "id": "C8",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "micro-skills' LLM-free facts only) ``` python scripts/build_plugin.py --out dist/marketplace agy plugin install dist/marketplace/tokeneconomizer ``` Start `agy` and send a prompt in a repository, then check with `~/.tokeneconomizer/bin/te…",
+            "id": "C9",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "text": "Certain hosts like Cursor cannot report session costs as unavailable due to unsupported public transcript formats, and others lack support for tool pruning or paid proposers."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Coding agents are built to finish tasks, not to keep them cheap. Every turn pays again for the agent's instructions, every loaded tool, and the conversation so far. Developers use the same agent on the same repository again and again, so…",
+          "id": "C2",
+          "section_title": "How it works",
+          "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+        }
+      ],
+      "text": "Coding agents continually re-read instructions, load unused tools, and repeat failing loops or rediscovered facts across sessions, causing high and recurring token costs."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Tool pruning based on usage history"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Cache-aware token cost computation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Reversible fact tracking across sessions"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Loop guarding for agent turns"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "microsoft/TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents Topics: agentic ai, agentic coding, ai coding, ai coding assistant, anthropic, artificial intelligence, claude code, codex, coding agent, coding agents,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/microsoft/TokenEconomizer"
+            }
+          ],
+          "name": "Python"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Run these commands in the folder where you want to keep the clone. Claude Code, Codex, the Copilot CLI and opencode run the plugin from the clone, so leave it in place. Then start the agent in one of your repositories. **Claude Code** ```…",
+              "id": "C5",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Run these commands in the folder where you want to keep the clone. Claude Code, Codex, the Copilot CLI and opencode run the plugin from the clone, so leave it in place. Then start the agent in one of your repositories. **Claude Code** ```…",
+              "id": "C5",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Codex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "hooks take effect from your next Codex session, so quit (`/exit`), start `codex` again, and check with `$tokeneconomizer:status`. **Copilot CLI** ``` git clone https://github.com/microsoft/TokenEconomizer.git copilot plugin marketplace add…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "GitHub Copilot CLI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "hooks take effect from your next Codex session, so quit (`/exit`), start `codex` again, and check with `$tokeneconomizer:status`. **Copilot CLI** ``` git clone https://github.com/microsoft/TokenEconomizer.git copilot plugin marketplace add…",
+              "id": "C6",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Pi"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "`pi` and run `/te status`. **Cursor Agent** (experimental) ``` python scripts/build_plugin.py --out ~/.cursor/plugins/local/ ``` Reload Cursor, confirm `tokeneconomizer` appears in Customize, then send a prompt in a repository. Check its…",
+              "id": "C7",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Cursor Agent"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "https://github.com/microsoft/TokenEconomizer.git grok plugin marketplace add \"$PWD/TokenEconomizer\" grok plugin install tokeneconomizer --trust ``` Grok runs Claude Code plugins, so this is the Claude Code plugin: grok loads…",
+              "id": "C8",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Grok Build"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "micro-skills' LLM-free facts only) ``` python scripts/build_plugin.py --out dist/marketplace agy plugin install dist/marketplace/tokeneconomizer ``` Start `agy` and send a prompt in a repository, then check with `~/.tokeneconomizer/bin/te…",
+              "id": "C9",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "opencode"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "repository with `~/.tokeneconomizer/bin/te --host opencode status`. opencode has no plugin commands, so the plugin's commands run from a terminal. **Hermes Agent** (experimental; micro-skills and the loop guard, on the classic CLI and…",
+              "id": "C10",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Hermes Agent"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "https://github.com/microsoft/TokenEconomizer.git grok plugin marketplace add \"$PWD/TokenEconomizer\" grok plugin install tokeneconomizer --trust ``` Grok runs Claude Code plugins, so this is the Claude Code plugin: grok loads…",
+              "id": "C8",
+              "section_title": "Install",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "name": "Antigravity CLI"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "You need one of these agents, signed in any way it supports, and Python 3.10 or newer on `PATH`. The plugin needs no API key of its own and never handles credentials, so any plan or login works.",
+              "id": "C4",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.10 or newer on PATH"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "You need one of these agents, signed in any way it supports, and Python 3.10 or newer on `PATH`. The plugin needs no API key of its own and never handles credentials, so any plan or login works.",
+              "id": "C4",
+              "section_title": "Quick start",
+              "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+            }
+          ],
+          "text": "One of the supported coding agents signed in via any supported method"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Coding agents are built to finish tasks, not to keep them cheap. Every turn pays again for the agent's instructions, every loaded tool, and the conversation so far. Developers use the same agent on the same repository again and again, so…",
+            "id": "C2",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "Run these commands in the folder where you want to keep the clone. Claude Code, Codex, the Copilot CLI and opencode run the plugin from the clone, so leave it in place. Then start the agent in one of your repositories. **Claude Code** ```…",
+            "id": "C5",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          },
+          {
+            "excerpt": "hooks take effect from your next Codex session, so quit (`/exit`), start `codex` again, and check with `$tokeneconomizer:status`. **Copilot CLI** ``` git clone https://github.com/microsoft/TokenEconomizer.git copilot plugin marketplace add…",
+            "id": "C6",
+            "section_title": "Install",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "text": "Reducing repeat token expenditures when running coding assistants like Claude Code, Codex, or GitHub Copilot CLI repeatedly on the same repository."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "microsoft/TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents Topics: agentic ai, agentic coding, ai coding, ai coding assistant, anthropic, artificial intelligence, claude code, codex, coding agent, coding agents,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/microsoft/TokenEconomizer"
+        },
+        {
+          "excerpt": "Coding agents are built to finish tasks, not to keep them cheap. Every turn pays again for the agent's instructions, every loaded tool, and the conversation so far. Developers use the same agent on the same repository again and again, so…",
+          "id": "C2",
+          "section_title": "How it works",
+          "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+        }
+      ],
+      "explanation": "TokenEconomizer is a plugin designed to lower the recurring costs of running coding agents on a repository. Without altering the underlying model, weights, or code of the agent, it learns across multiple sessions to prune unused tools, manage repeated facts, and guard against failing loops.",
+      "one_line": "An experience-driven, black-box cost control plugin for coding agents."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "microsoft/TokenEconomizer: Experience-Driven Black-Box Cost Control for Coding Agents Topics: agentic ai, agentic coding, ai coding, ai coding assistant, anthropic, artificial intelligence, claude code, codex, coding agent, coding agents,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/microsoft/TokenEconomizer"
+          },
+          {
+            "excerpt": "Coding agents are built to finish tasks, not to keep them cheap. Every turn pays again for the agent's instructions, every loaded tool, and the conversation so far. Developers use the same agent on the same repository again and again, so…",
+            "id": "C2",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "reason": "Developers who frequently run AI coding agents on the same repository and want to minimize recurring token usage and API costs."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Coding agents are built to finish tasks, not to keep them cheap. Every turn pays again for the agent's instructions, every loaded tool, and the conversation so far. Developers use the same agent on the same repository again and again, so…",
+            "id": "C2",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "point": "Operates as a black-box plugin without modifying the agent's model weights or source code."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "point": "Computes token costs using cache pricing and accounts for the plugin's own model calls."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "of treating each one on its own, so whatever the plugin spends is paid back over the sessions that follow. Four principles guide the mechanisms: - **Work through what the agent already reads.** Facts enter the context at session start, and…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/microsoft/TokenEconomizer/blob/main/README.md"
+          }
+        ],
+        "point": "Maintains reversibility by dropping contradicted facts, restoring removed tools, and only redirecting loop guards."
+      }
+    ]
+  },
+  "source_hash": "9b603c4803cbdb18a3275a0e82f5f74ce91c1209c8738368b236642080d9aad7"
+}

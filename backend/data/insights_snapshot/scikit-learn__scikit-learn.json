@@ -1,0 +1,466 @@
+{
+  "full_name": "scikit-learn/scikit-learn",
+  "generated_at": "2026-11-10 09:04:48.706607+00:00",
+  "github_id": 843222,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+            "id": "C5",
+            "section_title": "Dependencies",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "Matplotlib",
+          "Seaborn",
+          "Plotly"
+        ],
+        "description": "Create visualizations for machine learning metrics and model outputs using display classes and plotting functions.",
+        "how_it_is_used": "Uses scikit-learn's built-in plotting functions and display classes.",
+        "title": "Data Visualization and Statistics Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using ``pip``:: pip install -U scikit-learn or ``conda``:: conda install -c conda-forge scikit-learn The documentation includes more…",
+            "id": "C2",
+            "section_title": "User installation",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          },
+          {
+            "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          },
+          {
+            "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+            "id": "C5",
+            "section_title": "Dependencies",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "complementary_tech": [
+          "NumPy",
+          "SciPy",
+          "joblib"
+        ],
+        "description": "Build a data processing and modeling pipeline leveraging underlying mathematical libraries.",
+        "how_it_is_used": "Uses scikit-learn alongside NumPy and SciPy dependencies for vector and matrix operations.",
+        "title": "Custom Machine Learning Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Discussions**: https://github.com/scikit-learn/scikit-learn/discussions - **Stack Overflow**: https://stackoverflow.com/questions/tagged/scikit-learn - **Discord**: https://discord.gg/h9qyrK8Jc8",
+            "id": "C3",
+            "section_title": "Developer & Support",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "GitHub Discussions",
+        "url": "https://github.com/scikit-learn/scikit-learn/discussions"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Discussions**: https://github.com/scikit-learn/scikit-learn/discussions - **Stack Overflow**: https://stackoverflow.com/questions/tagged/scikit-learn - **Discord**: https://discord.gg/h9qyrK8Jc8",
+            "id": "C3",
+            "section_title": "Developer & Support",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Stack Overflow",
+        "url": "https://stackoverflow.com/questions/tagged/scikit-learn"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **GitHub Discussions**: https://github.com/scikit-learn/scikit-learn/discussions - **Stack Overflow**: https://stackoverflow.com/questions/tagged/scikit-learn - **Discord**: https://discord.gg/h9qyrK8Jc8",
+            "id": "C3",
+            "section_title": "Developer & Support",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Discord",
+        "url": "https://discord.gg/h9qyrK8Jc8"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Website",
+        "url": "https://scikit-learn.org"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Official source code repo: https://github.com/scikit-learn/scikit-learn - Download releases: https://pypi.org/project/scikit-learn/ - Issue tracker: https://github.com/scikit-learn/scikit-learn/issues",
+            "id": "C8",
+            "section_title": "Important links",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Official source code repo",
+        "url": "https://github.com/scikit-learn/scikit-learn"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Official source code repo: https://github.com/scikit-learn/scikit-learn - Download releases: https://pypi.org/project/scikit-learn/ - Issue tracker: https://github.com/scikit-learn/scikit-learn/issues",
+            "id": "C8",
+            "section_title": "Important links",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Download releases",
+        "url": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Official source code repo: https://github.com/scikit-learn/scikit-learn - Download releases: https://pypi.org/project/scikit-learn/ - Issue tracker: https://github.com/scikit-learn/scikit-learn/issues",
+            "id": "C8",
+            "section_title": "Important links",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Issue tracker",
+        "url": "https://github.com/scikit-learn/scikit-learn/issues"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "After installation, you can launch the test suite from outside the source directory (you will need to have ``pytest`` >= installed):: pytest sklearn See the web page…",
+            "id": "C11",
+            "section_title": "Testing",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Testing and improving test coverage",
+        "url": "https://scikit-learn.org/dev/developers/contributing.html#testing-and-improving-test-coverage"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "After installation, you can launch the test suite from outside the source directory (you will need to have ``pytest`` >= installed):: pytest sklearn See the web page…",
+            "id": "C11",
+            "section_title": "Testing",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "SKLEARN_SEED global configuration details",
+        "url": "https://scikit-learn.org/dev/developers/global_configuration.html#sklearn-seed"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Before opening a Pull Request, have a look at the full Contributing page to make sure your code complies with our guidelines: https://scikit-learn.org/stable/developers/index.html",
+            "id": "C12",
+            "section_title": "Submitting a Pull Request",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "label": "Full Contributing page",
+        "url": "https://scikit-learn.org/stable/developers/index.html"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": null,
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn/scikit-learn: scikit-learn: machine learning in Python Topics: data analysis, data science, machine learning, python, statistics. Primary language: Python.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/scikit-learn/scikit-learn"
+            },
+            {
+              "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+              "id": "C4",
+              "section_title": null,
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "Machine learning modeling"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "Plotting and visualization displays"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using ``pip``:: pip install -U scikit-learn or ``conda``:: conda install -c conda-forge scikit-learn The documentation includes more…",
+              "id": "C2",
+              "section_title": "User installation",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            },
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "NumPy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using ``pip``:: pip install -U scikit-learn or ``conda``:: conda install -c conda-forge scikit-learn The documentation includes more…",
+              "id": "C2",
+              "section_title": "User installation",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            },
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "SciPy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "Matplotlib"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "Narwhals"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "joblib"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "name": "threadpoolctl"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "Python"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using ``pip``:: pip install -U scikit-learn or ``conda``:: conda install -c conda-forge scikit-learn The documentation includes more…",
+              "id": "C2",
+              "section_title": "User installation",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            },
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "NumPy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "If you already have a working installation of NumPy and SciPy, the easiest way to install scikit-learn is using ``pip``:: pip install -U scikit-learn or ``conda``:: conda install -c conda-forge scikit-learn The documentation includes more…",
+              "id": "C2",
+              "section_title": "User installation",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            },
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "SciPy"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "Narwhals"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "joblib"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+              "id": "C5",
+              "section_title": "Dependencies",
+              "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+            }
+          ],
+          "text": "threadpoolctl"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "scikit-learn/scikit-learn: scikit-learn: machine learning in Python Topics: data analysis, data science, machine learning, python, statistics. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/scikit-learn/scikit-learn"
+          },
+          {
+            "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "text": "Machine learning modeling and data analysis in Python."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "scikit-learn/scikit-learn: scikit-learn: machine learning in Python Topics: data analysis, data science, machine learning, python, statistics. Primary language: Python.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/scikit-learn/scikit-learn"
+        },
+        {
+          "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+          "id": "C4",
+          "section_title": null,
+          "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+        }
+      ],
+      "explanation": "Scikit-learn is an open-source machine learning library for Python designed to integrate with numerical and scientific libraries like NumPy and SciPy. It provides tools for data analysis, data science, and statistics. The project is maintained by a community of volunteers and organizations.",
+      "one_line": "A Python module for machine learning built on top of SciPy."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers and Data Scientists",
+        "citations": [
+          {
+            "excerpt": "scikit-learn/scikit-learn: scikit-learn: machine learning in Python Topics: data analysis, data science, machine learning, python, statistics. Primary language: Python.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/scikit-learn/scikit-learn"
+          },
+          {
+            "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "reason": "They can use scikit-learn to perform machine learning tasks and data analysis within Python workflows."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "**scikit-learn** is a Python module for machine learning built on top of SciPy and is distributed under the 3-Clause BSD license. The project was started in 2007 by David Cournapeau as a Google Summer of Code project, and since then many…",
+            "id": "C4",
+            "section_title": null,
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          },
+          {
+            "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+            "id": "C5",
+            "section_title": "Dependencies",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "point": "Built on top of SciPy and integrates closely with other scientific Python ecosystem tools."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "scikit-learn requires: - Python (>= ) - NumPy (>= ) - SciPy (>= ) - Narwhals (>= ) - joblib (>= ) - threadpoolctl (>= ) ======= Scikit-learn plotting capabilities (i.e., functions start with ``plot_`` and classes end with ``Display``)…",
+            "id": "C5",
+            "section_title": "Dependencies",
+            "source_url": "https://github.com/scikit-learn/scikit-learn/blob/main/README.rst"
+          }
+        ],
+        "point": "Includes plotting capabilities such as functions starting with 'plot_' and classes ending with 'Display'."
+      }
+    ]
+  },
+  "source_hash": "00aa601ca24f6f6e920a81a52814650458c71157c88930dcd72ae6aee6ebbea8"
+}

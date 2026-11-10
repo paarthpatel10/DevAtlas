@@ -1,0 +1,128 @@
+{
+  "full_name": "vuejs/core",
+  "generated_at": "2026-11-10 09:06:03.672533+00:00",
+  "github_id": 137078487,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vuejs/core"
+          }
+        ],
+        "complementary_tech": [
+          "Vite",
+          "TypeScript",
+          "Pinia"
+        ],
+        "description": "A dynamic dashboard application featuring real-time data widgets and user controls.",
+        "how_it_is_used": "Used as the core JavaScript framework for building the user interface web components.",
+        "title": "Interactive Web Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vuejs/core"
+          }
+        ],
+        "complementary_tech": [
+          "Vue Router",
+          "Webpack"
+        ],
+        "description": "An incremental web application that starts small with embedded widgets and scales into a multi-view application.",
+        "how_it_is_used": "Adopted incrementally to power the views and reactive UI elements of the application.",
+        "title": "Progressive Single-Page Application"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": null,
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/vuejs/core"
+            }
+          ],
+          "name": "Progressive and incrementally-adoptable web UI development"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vuejs/core"
+          }
+        ],
+        "text": "Building web user interfaces incrementally."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/vuejs/core"
+        },
+        {
+          "excerpt": "MIT Copyright (c) 2013-present, Yuxi (Evan) You",
+          "id": "C8",
+          "section_title": "License",
+          "source_url": "https://github.com/vuejs/core/blob/main/README.md"
+        }
+      ],
+      "explanation": "Vue.js is a progressive and incrementally-adoptable JavaScript framework designed for building web user interfaces. It is written primarily in TypeScript and is available under an MIT license.",
+      "one_line": "Vue.js is a progressive, incrementally-adoptable JavaScript framework for building web user interfaces."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Web Developers",
+        "citations": [
+          {
+            "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vuejs/core"
+          }
+        ],
+        "reason": "They can use the framework to build user interfaces on the web in a progressive and incrementally-adoptable manner."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "vuejs/core: 🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/vuejs/core"
+          }
+        ],
+        "point": "It is incrementally adoptable, allowing developers to scale it up from a library to a full-featured framework depending on needs."
+      }
+    ]
+  },
+  "source_hash": "e983155cf4349b693d2aa365dc715b52f0fc23524935589f9e18295ab7e118fa"
+}

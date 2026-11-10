@@ -1,0 +1,164 @@
+{
+  "full_name": "getsentry/sentry",
+  "generated_at": "2026-11-10 09:07:14.412282+00:00",
+  "github_id": 873328,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Sentry is the debugging platform that helps every developer detect, trace, and fix issues. Code breaks, fix it faster.",
+          "id": "C2",
+          "section_title": "What's Sentry?",
+          "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+        },
+        {
+          "excerpt": "Users and logs provide clues. Sentry provides answers.",
+          "id": "C3",
+          "section_title": null,
+          "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+        }
+      ],
+      "text": "It solves the difficulty of finding the root cause of broken code by moving beyond ambiguous user reports and raw logs to provide clear debugging answers."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/getsentry/sentry"
+            }
+          ],
+          "name": "Error tracking"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/getsentry/sentry"
+            }
+          ],
+          "name": "Performance monitoring"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Sentry is the debugging platform that helps every developer detect, trace, and fix issues. Code breaks, fix it faster.",
+              "id": "C2",
+              "section_title": "What's Sentry?",
+              "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+            }
+          ],
+          "name": "Issue detection and tracing"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/getsentry/sentry"
+          }
+        ],
+        "text": "Tracking application errors and crashes in production environments."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/getsentry/sentry"
+          }
+        ],
+        "text": "Monitoring software performance metrics."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/getsentry/sentry"
+        },
+        {
+          "excerpt": "Sentry is the debugging platform that helps every developer detect, trace, and fix issues. Code breaks, fix it faster.",
+          "id": "C2",
+          "section_title": "What's Sentry?",
+          "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+        },
+        {
+          "excerpt": "Users and logs provide clues. Sentry provides answers.",
+          "id": "C3",
+          "section_title": null,
+          "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+        }
+      ],
+      "explanation": "Sentry is a debugging platform designed to help developers detect, trace, and fix issues when code breaks. It moves beyond basic logs and user clues to provide actionable answers for application errors and performance problems.",
+      "one_line": "Developer-first error tracking and performance monitoring platform."
+    },
+    "who_should_care": [
+      {
+        "audience": "Developers",
+        "citations": [
+          {
+            "excerpt": "Sentry is the debugging platform that helps every developer detect, trace, and fix issues. Code breaks, fix it faster.",
+            "id": "C2",
+            "section_title": "What's Sentry?",
+            "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+          },
+          {
+            "excerpt": "Users and logs provide clues. Sentry provides answers.",
+            "id": "C3",
+            "section_title": null,
+            "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+          }
+        ],
+        "reason": "They need to detect, trace, and fix application issues and code breaks faster than relying purely on logs or user clues."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "getsentry/sentry: Developer-first error tracking and performance monitoring Topics: apm, crash reporting, crash reports, csp report, devops, django, error logging, error monitoring, fair source, hacktoberfest, monitor, monitoring, python,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/getsentry/sentry"
+          }
+        ],
+        "point": "It offers a developer-first approach focused explicitly on error tracking and performance monitoring."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Sentry is the debugging platform that helps every developer detect, trace, and fix issues. Code breaks, fix it faster.",
+            "id": "C2",
+            "section_title": "What's Sentry?",
+            "source_url": "https://github.com/getsentry/sentry/blob/master/README.md"
+          }
+        ],
+        "point": "It serves as a comprehensive debugging platform that handles detection, tracing, and fixing."
+      }
+    ]
+  },
+  "source_hash": "42a8b0e3e83ca5034525d2fdea0527657c61cc21fbf6e67c65e1068a1398a2d9"
+}

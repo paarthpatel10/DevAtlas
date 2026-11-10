@@ -1,0 +1,409 @@
+{
+  "full_name": "pgrundev/pgbot",
+  "generated_at": "2026-11-10 09:15:23.352816+00:00",
+  "github_id": 1331441014,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -fsSL https://pgbot.dev/install | sh pgbot inspect \"postgres://pgbot_ro@host:5432/db\" ``` Or set the connection once in the environment and drop the argument — handy for CI and shells, and it keeps the password out of your history…",
+            "id": "C2",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "GitLab CI",
+          "jq"
+        ],
+        "description": "Create a CI check that executes pgbot in JSON mode against staging databases to fail builds when critical issues like transaction-id wraparound risk or regression spikes arise.",
+        "how_it_is_used": "Invokes pgbot inspect with the --json flag and parses the versioned output contract in a script.",
+        "title": "Automated CI Database Health Gate"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Model Context Protocol",
+          "OpenAI API"
+        ],
+        "description": "Build a custom developer assistant tool that surfaces live database health readings and suggests query optimizations inside local coding workflows.",
+        "how_it_is_used": "Connects via the Model Context Protocol (MCP) or CLI commands to pull structured Postgres findings and supply them to an LLM provider.",
+        "title": "AI Database Assistant Plugin"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "| Method | Command | |---|---| | npx / bunx / pnpm dlx (no install) | `npx @pgbot/cli inspect \"$DATABASE_URL\"` | | Script (cosign signature + checksum) | `curl -fsSL https://pgbot.dev/install \\| sh` | | Homebrew | `brew install…",
+            "id": "C9",
+            "section_title": "Install",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/pgrundev/pgbot"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -fsSL https://pgbot.dev/install | sh pgbot inspect \"postgres://pgbot_ro@host:5432/db\" ``` Or set the connection once in the environment and drop the argument — handy for CI and shells, and it keeps the password out of your history…",
+            "id": "C2",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Method | Command | |---|---| | npx / bunx / pnpm dlx (no install) | `npx @pgbot/cli inspect \"$DATABASE_URL\"` | | Script (cosign signature + checksum) | `curl -fsSL https://pgbot.dev/install \\| sh` | | Homebrew | `brew install…",
+            "id": "C9",
+            "section_title": "Install",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "label": "Installation Script",
+        "url": "https://pgbot.dev/install"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "the same findings over the Model Context Protocol, with a skill and a Claude Code plugin on top. | How it compares to pganalyze, PMM, pgwatch pgbot is a **point-in-time diagnostic you run**, not a monitoring platform you operate. If you…",
+            "id": "C7",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "text": "Does not provide dashboards, alerting, long-term metric retention, or multi-host rollups."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+          "id": "C4",
+          "section_title": "Quickstart",
+          "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+        },
+        {
+          "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+          "id": "C6",
+          "section_title": "Why pgbot",
+          "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+        },
+        {
+          "excerpt": "the same findings over the Model Context Protocol, with a skill and a Claude Code plugin on top. | How it compares to pganalyze, PMM, pgwatch pgbot is a **point-in-time diagnostic you run**, not a monitoring platform you operate. If you…",
+          "id": "C7",
+          "section_title": "Why pgbot",
+          "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+        }
+      ],
+      "text": "Provides quick database diagnostics and health scores without requiring a deployed monitoring platform, time-series database, or complex setup."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+              "id": "C6",
+              "section_title": "Why pgbot",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Deterministic SQL-based diagnostics"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+              "id": "C6",
+              "section_title": "Why pgbot",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Local baseline tracking across runs"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+              "id": "C6",
+              "section_title": "Why pgbot",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Model Context Protocol (MCP) server support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Machine-readable versioned JSON output"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Google Gemini"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "xAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "(only if you want the optional `ask`/`explain` AI layer) one model key: ``` export DATABASE_URL=\"postgres://pgbot_ro:…@host:5432/db?sslmode=require\" # optional, for `pgbot ask` / `pgbot explain` — one of: export OPENAI_API_KEY=sk-… # →…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI-compatible endpoints"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- PostgreSQL 14–18 (16–18 fully supported, 14–15 best-effort); collectors degrade rather than fail on older feature sets — see Version support. - A login role holding `pg_monitor` — see Setup. - `pg_stat_statements` for the queries section…",
+              "id": "C8",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "text": "PostgreSQL 14–18 (16–18 fully supported, 14–15 best-effort)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- PostgreSQL 14–18 (16–18 fully supported, 14–15 best-effort); collectors degrade rather than fail on older feature sets — see Version support. - A login role holding `pg_monitor` — see Setup. - `pg_stat_statements` for the queries section…",
+              "id": "C8",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "text": "A login role holding pg_monitor"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- PostgreSQL 14–18 (16–18 fully supported, 14–15 best-effort); collectors degrade rather than fail on older feature sets — see Version support. - A login role holding `pg_monitor` — see Setup. - `pg_stat_statements` for the queries section…",
+              "id": "C8",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "text": "pg_stat_statements extension (optional, for query metrics)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- PostgreSQL 14–18 (16–18 fully supported, 14–15 best-effort); collectors degrade rather than fail on older feature sets — see Version support. - A login role holding `pg_monitor` — see Setup. - `pg_stat_statements` for the queries section…",
+              "id": "C8",
+              "section_title": "Requirements",
+              "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+            }
+          ],
+          "text": "hypopg extension and PostgreSQL 16+ (optional, for advise)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "the same findings over the Model Context Protocol, with a skill and a Claude Code plugin on top. | How it compares to pganalyze, PMM, pgwatch pgbot is a **point-in-time diagnostic you run**, not a monitoring platform you operate. If you…",
+            "id": "C7",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "text": "Triaging performance issues or slow queries on unfamiliar or remote PostgreSQL databases."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` curl -fsSL https://pgbot.dev/install | sh pgbot inspect \"postgres://pgbot_ro@host:5432/db\" ``` Or set the connection once in the environment and drop the argument — handy for CI and shells, and it keeps the password out of your history…",
+            "id": "C2",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "text": "Integrating database inspections and health checks into CI pipelines using versioned JSON outputs."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "pgrundev/pgbot: Postgres intelligence for ai agents Topics: ai, data analysis, database, postgres, postgresql, postgresql database. Primary language: Go.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/pgrundev/pgbot"
+        },
+        {
+          "excerpt": "18.0 GiB review checked · queries · vacuum · replication · checkpoints · connections · settings · deadlocks Database health: 82/100 CRITICAL ● transaction-id age 1.8B — 84% toward wraparound WARNING ● orders queries 3.2× slower (8 → 26 ms…",
+          "id": "C4",
+          "section_title": "Quickstart",
+          "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+        },
+        {
+          "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+          "id": "C6",
+          "section_title": "Why pgbot",
+          "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+        }
+      ],
+      "explanation": "pgbot is a point-in-time diagnostic tool written in Go that inspects PostgreSQL databases. It performs deterministic checks to generate health reports, track baselines, and provide optional AI-powered explanations.",
+      "one_line": "Postgres intelligence for AI agents and developers."
+    },
+    "who_should_care": [
+      {
+        "audience": "Software Developers",
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          },
+          {
+            "excerpt": "the same findings over the Model Context Protocol, with a skill and a Claude Code plugin on top. | How it compares to pganalyze, PMM, pgwatch pgbot is a **point-in-time diagnostic you run**, not a monitoring platform you operate. If you…",
+            "id": "C7",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "reason": "Want quick command-line diagnostics or automated checks for PostgreSQL performance issues without managing heavy monitoring infrastructure."
+      },
+      {
+        "audience": "AI Agent Builders",
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "reason": "Need structured, PII-free JSON metrics or Model Context Protocol support so AI agents can reason over live database findings."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "point": "Deterministic findings are computed in Go from SQL, while an optional AI layer provides plain-language explanations without generating the findings itself."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "point": "Maintains read-only access by role using a pg_monitor login along with session-level defenses like statement and lock timeouts."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "| | | |---|---| | **Read-only by role, not by flag** | The guarantee is a `pg_monitor` login role with no write grants. Session pinning (`default_transaction_read_only`, `statement_timeout=15s`, `lock_timeout=2s`) and `BEGIN READ ONLY` are…",
+            "id": "C6",
+            "section_title": "Why pgbot",
+            "source_url": "https://github.com/pgrundev/pgbot/blob/main/README.md"
+          }
+        ],
+        "point": "Remembers local baselines from run to run to track changes over time, and exposes findings over MCP (Model Context Protocol) for AI agents."
+      }
+    ]
+  },
+  "source_hash": "224e147298310737058b69ceebd39473f158b0c56abc1b1c0d62dc3d8038f7c1"
+}

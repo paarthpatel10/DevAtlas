@@ -1,0 +1,520 @@
+{
+  "full_name": "typesense/typesense",
+  "generated_at": "2026-11-10 09:08:34.451122+00:00",
+  "github_id": 79317191,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "React"
+        ],
+        "description": "Build a ChatGPT-style assistant that answers user questions grounded in internal documentation and company records.",
+        "how_it_is_used": "Uses Typesense's built-in RAG capabilities to send questions and retrieve fully-formed sentences based on indexed data.",
+        "title": "Conversational Enterprise Knowledge Base"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "TailwindCSS"
+        ],
+        "description": "An e-commerce search bar that accepts voice notes, product images, or typo-ridden text queries to find items.",
+        "how_it_is_used": "Leverages Whisper for voice transcription, CLIP for image search and similarity matching, and built-in typo tolerance for text queries.",
+        "title": "Multilingual E-Commerce Product Finder with Voice and Image Input"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Leaflet.js",
+          "Node.js"
+        ],
+        "description": "A directory application to search for businesses or services near a specific latitude/longitude or bounding box.",
+        "how_it_is_used": "Uses Typesense's Geo Search capabilities to search and sort results around geographic coordinates alongside dynamic faceting.",
+        "title": "Geo-Aware Local Directory with Faceted Filtering"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "not have to open source their modifications, as long as they make the modified code available to everyone who has access to the modified software. Now, if someone makes modifications to Typesense server and distributes the modifications,…",
+            "id": "C11",
+            "section_title": "Why the GPL license?",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "label": "Discourse background on GNU license",
+        "url": "https://meta.discourse.org/t/why-gnu-license/2531"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "typesense/typesense: Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences Topics: algolia,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/typesense/typesense"
+        },
+        {
+          "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+          "id": "C2",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        },
+        {
+          "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+          "id": "C3",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        },
+        {
+          "excerpt": "you to model SQL-like relationships elegantly. - **Synonyms:** Define words as equivalents of each other, so searching for a word will also return results for the synonyms defined. - **Curation & Merchandizing:** Boost particular records…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        }
+      ],
+      "text": "It removes the complexity of setting up and operating fast search infrastructure by providing an out-of-the-box search engine with built-in typo tolerance, semantic search, and geo-search capabilities delivered as a single binary."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "typesense/typesense: Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences Topics: algolia,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/typesense/typesense"
+          },
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "you to model SQL-like relationships elegantly. - **Synonyms:** Define words as equivalents of each other, so searching for a word will also return results for the synonyms defined. - **Curation & Merchandizing:** Boost particular records…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "Here's a quick example showcasing how you can create a collection, index a document and search it on Typesense. Let's begin by starting the Typesense server via Docker: ``` docker run -p 8108:8108 -v/tmp/data:/data typesense/typesense:29.0…",
+            "id": "C6",
+            "section_title": "Quick Start",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "text": "In-memory architecture implemented in C++ with Raft-based clustering for high availability and HTTP-based client communication."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Typo Tolerance"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Vector Search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            },
+            {
+              "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Semantic and Hybrid Search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Conversational Search (Built-in RAG)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Geo Search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Faceting and Filtering"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+              "id": "C2",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Federated Search"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+              "id": "C3",
+              "section_title": "Features",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "JOINs"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Laravel"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Symfony"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Gatsby"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Docusaurus"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "Firebase"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "WordPress"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "WooCommerce"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "We also have the following framework integrations: - Laravel - Firebase - Gatsby - WordPress - WooCommerce - Symfony - InstantSearch - DocSearch - Docusaurus - ToolJet - Plone CMS - Craft CMS - SEAL provides integrations of Typesense in…",
+              "id": "C8",
+              "section_title": "Framework Integrations",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "name": "ToolJet"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "**Option 1:** You can download the binary packages that we publish for Linux (x86_64 & arm64) and Mac (x86_64). **Option 2:** You can also run Typesense from our official Docker image. **Option 3:** Spin up a managed cluster with Typesense…",
+              "id": "C5",
+              "section_title": "Install",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            },
+            {
+              "excerpt": "Here's a quick example showcasing how you can create a collection, index a document and search it on Typesense. Let's begin by starting the Typesense server via Docker: ``` docker run -p 8108:8108 -v/tmp/data:/data typesense/typesense:29.0…",
+              "id": "C6",
+              "section_title": "Quick Start",
+              "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+            }
+          ],
+          "text": "Docker or compatible Linux/macOS environments to run the binary package or container image."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "typesense/typesense: Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences Topics: algolia,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/typesense/typesense"
+          },
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "\"string\", \"facet\": True } ], \"default_sorting_field\": \"num_employees\" }) ``` Now, let's add a document to the collection we just created: ``` document = { \"id\": \"124\", \"company_name\": \"Stark Industries\", \"num_employees\": 5215, \"country\":…",
+            "id": "C7",
+            "section_title": "Quick Start",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "text": "Implementing instant site search with out-of-the-box typo tolerance and faceted navigation."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "text": "Building semantic and hybrid search applications using embedded machine learning models or external APIs."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "text": "Creating conversational search and RAG experiences over proprietary indexed data."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "typesense/typesense: Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences Topics: algolia,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/typesense/typesense"
+        },
+        {
+          "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+          "id": "C2",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        },
+        {
+          "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+          "id": "C3",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        },
+        {
+          "excerpt": "you to model SQL-like relationships elegantly. - **Synonyms:** Define words as equivalents of each other, so searching for a word will also return results for the synonyms defined. - **Curation & Merchandizing:** Boost particular records…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+        }
+      ],
+      "explanation": "Typesense is an open-source search engine built from the ground up in C++ for low-latency searches. It provides features like typo tolerance, vector search, semantic search, and built-in RAG capabilities while running as a single binary with no runtime dependencies.",
+      "one_line": "A fast, typo-tolerant, in-memory fuzzy search engine designed for instant search experiences."
+    },
+    "who_should_care": [
+      {
+        "audience": "Backend Developers",
+        "citations": [
+          {
+            "excerpt": "typesense/typesense: Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences Topics: algolia,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/typesense/typesense"
+          },
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "reason": "Need a straightforward, fast search engine that handles typos, vector embeddings, and filtering without complex configuration."
+      },
+      {
+        "audience": "Application Architects",
+        "citations": [
+          {
+            "excerpt": "you to model SQL-like relationships elegantly. - **Synonyms:** Define words as equivalents of each other, so searching for a word will also return results for the synonyms defined. - **Curation & Merchandizing:** Boost particular records…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "reason": "Looking for an open-source search solution with high availability via Raft-based clustering and simple version upgrade paths."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "A fresh Typesense server will consume about 30 MB of memory. As you start indexing documents, the memory use will increase correspondingly. How much it increases depends on the number and type of fields you index. We've strived to keep the…",
+            "id": "C9",
+            "section_title": "Speed is great, but what about the memory footprint?",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "point": "Delivers low-latency under-50ms instant searches while maintaining a lean memory footprint."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Typo Tolerance:** Handles typographical errors elegantly, out-of-the-box. - **Simple and Delightful:** Simple to set-up, integrate with, operate and scale. - **⚡ Blazing Fast:** Built in C++. Meticulously architected from the ground-up…",
+            "id": "C2",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          },
+          {
+            "excerpt": "both queries and indexed data. This allows you to send JSON data into Typesense and build an out-of-the-box semantic search + keyword search experience. - **Conversational Search (Built-in RAG):** Send questions to Typesense and have the…",
+            "id": "C3",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "point": "Supports advanced retrieval modalities out of the box, including vector search, conversational search (RAG), natural language search, image search, and voice search."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "you to model SQL-like relationships elegantly. - **Synonyms:** Define words as equivalents of each other, so searching for a word will also return results for the synonyms defined. - **Curation & Merchandizing:** Boost particular records…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/typesense/typesense/blob/v31/README.md"
+          }
+        ],
+        "point": "Runs as a single standalone binary with zero runtime dependencies and supports Raft-based clustering."
+      }
+    ]
+  },
+  "source_hash": "195a243a8aac5da506c98d9b8ae1aff09d85161e2a1c2897e59f9791fc8a46dd"
+}

@@ -1,0 +1,445 @@
+{
+  "full_name": "ArteVisualenVivo/fabric-pipeline-express-7",
+  "generated_at": "2026-11-10 09:18:47.363794+00:00",
+  "github_id": 1448345885,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "and forwards the event payload as input. The same pipeline accepts a `file_name` parameter, which allows manual runs to follow the identical path. **2. File resolution.** The `Pick file` activity is a Set variable operation that resolves…",
+            "id": "C8",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+            "id": "C9",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Power BI",
+          "Azure Functions",
+          "Logic Apps"
+        ],
+        "description": "Monitor a landing folder for incoming inventory spreadsheets, merge new rows into a central Delta lakehouse table, and push delivery summaries to a collaboration channel.",
+        "how_it_is_used": "Relies on the OneLake file-created event trigger, the copy activity with Delta upsert semantics, and the Microsoft Teams notification activity.",
+        "title": "Inventory Shipment Monitor"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+            "id": "C9",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "in turn requires the target table to expose that column as a merge key. Replaying an already-processed file is supported and idempotent by design. **User data functions.** The `build_report` function targets the Fabric user data functions…",
+            "id": "C12",
+            "section_title": "Compatibility",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Pandas",
+          "Databricks",
+          "Great Expectations"
+        ],
+        "description": "Process incoming ingestion batches using a custom Python runtime function to analyze row counts against thresholds and format descriptive summaries.",
+        "how_it_is_used": "Uses the workspace-hosted Python user data function to ingest file metrics and return a formatted natural-language string.",
+        "title": "Custom Data Quality Reporter"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "The pipeline is designed to run natively inside Microsoft Fabric and depends on the following platform capabilities, all of which must be available in the target workspace. **OneLake and Lakehouse.** A Fabric lakehouse (`LH_Dock` in the…",
+            "id": "C11",
+            "section_title": "Compatibility",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "text": "Requires files to be formatted as CSV and follow a specific naming convention to allow wave timestamp parsing from the final underscore-delimited segment."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "The pipeline is designed to run natively inside Microsoft Fabric and depends on the following platform capabilities, all of which must be available in the target workspace. **OneLake and Lakehouse.** A Fabric lakehouse (`LH_Dock` in the…",
+            "id": "C11",
+            "section_title": "Compatibility",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "text": "Target Delta table must explicitly expose the shipment_id column as a merge key."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+        }
+      ],
+      "text": "It eliminates manual data ingestion steps and polling loops by reacting instantly to file creation events in OneLake. It also prevents duplicate records from file replays through a key-based upsert merge mechanism."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "numeric segment of the file name and rendered into a human-readable form, keeping the reporting logic decoupled from any external metadata store. - **Explicit activity chain**: The pipeline composes a variable assignment, a copy activity,…",
+            "id": "C6",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "and forwards the event payload as input. The same pipeline accepts a `file_name` parameter, which allows manual runs to follow the identical path. **2. File resolution.** The `Pick file` activity is a Set variable operation that resolves…",
+            "id": "C8",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+            "id": "C9",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "The message content is bound to the function output, so the announcement reflects the actual file and row count of the run that just completed. The dependency chain between activities is explicit: `Pick file` feeds `Upsert shipments`,…",
+            "id": "C10",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "text": "An explicit linear activity chain consisting of a Set variable operation (Pick file), a Copy data operation (Upsert shipments), a Functions invocation (Build report), and a Microsoft Teams notification activity (Post report)."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            },
+            {
+              "excerpt": "The pipeline is built around a continuous, event-driven sequence composed of four activities and a single trigger. Each stage performs one clearly scoped operation, passing its result forward to the next so that the file name, the row…",
+              "id": "C7",
+              "section_title": "How it works",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Event-driven orchestration via OneLake triggers"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+              "id": "C4",
+              "section_title": "Features",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            },
+            {
+              "excerpt": "and forwards the event payload as input. The same pipeline accepts a `file_name` parameter, which allows manual runs to follow the identical path. **2. File resolution.** The `Pick file` activity is a Set variable operation that resolves…",
+              "id": "C8",
+              "section_title": "How it works",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Idempotent key-based Delta table Upsert merge"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            },
+            {
+              "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+              "id": "C9",
+              "section_title": "How it works",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            },
+            {
+              "excerpt": "in turn requires the target table to expose that column as a merge key. Replaying an already-processed file is supported and idempotent by design. **User data functions.** The `build_report` function targets the Fabric user data functions…",
+              "id": "C12",
+              "section_title": "Compatibility",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "User data functions running Python code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+              "id": "C5",
+              "section_title": "Features",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            },
+            {
+              "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+              "id": "C9",
+              "section_title": "How it works",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Direct Microsoft Teams notification integration"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "in turn requires the target table to expose that column as a merge key. Replaying an already-processed file is supported and idempotent by design. **User data functions.** The `build_report` function targets the Fabric user data functions…",
+              "id": "C12",
+              "section_title": "Compatibility",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "fabric.functions"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "ArteVisualenVivo/fabric-pipeline-express-7: Event-driven OneLake pipeline with automated Upsert merge and Python reporting Topics: activator, data engineering, data factory, data pipeline, delta lake, dp 600, dp 700, etl, event driven,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7"
+            },
+            {
+              "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+              "id": "C2",
+              "section_title": "📦 PowerShell Install Button",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Microsoft Fabric OneLake"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ArteVisualenVivo/fabric-pipeline-express-7: Event-driven OneLake pipeline with automated Upsert merge and Python reporting Topics: activator, data engineering, data factory, data pipeline, delta lake, dp 600, dp 700, etl, event driven,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7"
+            },
+            {
+              "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+              "id": "C2",
+              "section_title": "📦 PowerShell Install Button",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Microsoft Teams"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ArteVisualenVivo/fabric-pipeline-express-7: Event-driven OneLake pipeline with automated Upsert merge and Python reporting Topics: activator, data engineering, data factory, data pipeline, delta lake, dp 600, dp 700, etl, event driven,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7"
+            },
+            {
+              "excerpt": "and forwards the event payload as input. The same pipeline accepts a `file_name` parameter, which allows manual runs to follow the identical path. **2. File resolution.** The `Pick file` activity is a Set variable operation that resolves…",
+              "id": "C8",
+              "section_title": "How it works",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "name": "Delta Lake"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Windows 10 or Windows 11 - PowerShell 5.1 or newer (already available on Windows) - Active network connection - No admin rights needed",
+              "id": "C3",
+              "section_title": "🔧 Requirements",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "text": "Windows 10 or Windows 11 with PowerShell 5.1 or newer"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "The pipeline is designed to run natively inside Microsoft Fabric and depends on the following platform capabilities, all of which must be available in the target workspace. **OneLake and Lakehouse.** A Fabric lakehouse (`LH_Dock` in the…",
+              "id": "C11",
+              "section_title": "Compatibility",
+              "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+            }
+          ],
+          "text": "Microsoft Fabric workspace with event-based triggers enabled and a supporting lakehouse capacity"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+            "id": "C2",
+            "section_title": "📦 PowerShell Install Button",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "The pipeline is built around a continuous, event-driven sequence composed of four activities and a single trigger. Each stage performs one clearly scoped operation, passing its result forward to the next so that the file name, the row…",
+            "id": "C7",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "text": "Automated ingestion of shipment tracking CSV files arriving in a OneLake landing zone."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+            "id": "C2",
+            "section_title": "📦 PowerShell Install Button",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+            "id": "C9",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "text": "Real-time alerting and batch reporting delivered to Microsoft Teams channels following a data load."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "ArteVisualenVivo/fabric-pipeline-express-7: Event-driven OneLake pipeline with automated Upsert merge and Python reporting Topics: activator, data engineering, data factory, data pipeline, delta lake, dp 600, dp 700, etl, event driven,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7"
+        },
+        {
+          "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+          "id": "C2",
+          "section_title": "📦 PowerShell Install Button",
+          "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+          "id": "C4",
+          "section_title": "Features",
+          "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+        },
+        {
+          "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+          "id": "C5",
+          "section_title": "Features",
+          "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+        }
+      ],
+      "explanation": "This project implements an event-driven Microsoft Fabric Data Factory pipeline that triggers automatically when a CSV file is deposited into a OneLake folder. It performs an idempotent upsert merge into a Delta table based on a shipment identifier key, passes the metrics to a hosted Python user data function to generate a batch report, and posts the summary directly to Microsoft Teams.",
+      "one_line": "An event-driven Microsoft Fabric data pipeline that upserts files into Delta tables and sends Python-generated reports to Microsoft Teams."
+    },
+    "who_should_care": [
+      {
+        "audience": "Data Engineers",
+        "citations": [
+          {
+            "excerpt": "ArteVisualenVivo/fabric-pipeline-express-7: Event-driven OneLake pipeline with automated Upsert merge and Python reporting Topics: activator, data engineering, data factory, data pipeline, delta lake, dp 600, dp 700, etl, event driven,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7"
+          },
+          {
+            "excerpt": "--- fabric-pipeline-express-7 implémente un pipeline Microsoft Fabric Data Factory entièrement événementiel : dès qu'un fichier de suivi de colis est déposé dans OneLake, le pipeline se déclenche automatiquement sans intervention manuelle.…",
+            "id": "C2",
+            "section_title": "📦 PowerShell Install Button",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "reason": "Looking to build event-driven pipelines on Microsoft Fabric with automated Delta table upserts and minimal boilerplate."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "The pipeline is built around a continuous, event-driven sequence composed of four activities and a single trigger. Each stage performs one clearly scoped operation, passing its result forward to the next so that the file name, the row…",
+            "id": "C7",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "point": "Uses an event-driven trigger bound to OneLake file creation events, eliminating the need for scheduled polling loops."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Event-driven orchestration**: A trigger bound to OneLake file-created events watches the designated inbox folder and launches the pipeline automatically the moment a matching file lands. No scheduler, no manual run, no polling loop;…",
+            "id": "C4",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "point": "Supports parameterless-by-design entry points that gracefully coalesce automatic event payloads with optional manual parameters."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "the same file is idempotent and never produces duplicate records, eliminating the need for hand-written MERGE statements or post-load deduplication. - **Embedded Python reporting function**: A user-defined function hosted in the workspace…",
+            "id": "C5",
+            "section_title": "Features",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          },
+          {
+            "excerpt": "is captured for the reporting stage. Because the merge is keyed, replaying the same file leaves the table unchanged rather than duplicating records. **4. Report generation.** The `Build report` activity invokes the user data function…",
+            "id": "C9",
+            "section_title": "How it works",
+            "source_url": "https://github.com/ArteVisualenVivo/fabric-pipeline-express-7/blob/main/README.md"
+          }
+        ],
+        "point": "Integrates Python user data functions directly inside the pipeline sequence to classify data volumes and format natural-language notifications."
+      }
+    ]
+  },
+  "source_hash": "a99ee2babd20a6bc0c1d6e11d1bf7bd8e82238600c1f97f57cb88596b0412069"
+}

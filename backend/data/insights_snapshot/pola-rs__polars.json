@@ -1,0 +1,310 @@
+{
+  "full_name": "pola-rs/polars",
+  "generated_at": "2026-11-10 09:07:54.557196+00:00",
+  "github_id": 263727855,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Queries are composed from expressions or SQL. This lazy query gets optimized out of the box and runs in parallel across all available cores: ``` import polars as pl df = ( pl.scan_parquet(\"orders.parquet\") .filter(pl.col(\"status\") ==…",
+            "id": "C4",
+            "section_title": "DataFrame API",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Apache Parquet",
+          "DuckDB",
+          "Apache Airflow"
+        ],
+        "description": "Process and aggregate millions of transactional records from Parquet files before loading them into a data warehouse.",
+        "how_it_is_used": "Utilizes Polars lazy evaluation, grouping, and aggregations over parquet files via `scan_parquet`.",
+        "title": "High-Performance ETL Pipeline"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` import polars as pl df = pl.sql(\"\"\" WITH totals AS ( SELECT customer_id, SUM(amount) AS total, COUNT(*) AS n_orders FROM read_parquet('orders.parquet') WHERE status = 'shipped' GROUP BY customer_id ) SELECT c.name, t.total, t.n_orders,…",
+            "id": "C5",
+            "section_title": "SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "DataFrames and LazyFrames in scope can be queried by name, and the result of a SQL query is a regular `LazyFrame`, so you can switch between SQL and expressions freely: ``` orders = pl.scan_parquet(\"orders.parquet\") df = ( pl.sql(\"SELECT…",
+            "id": "C6",
+            "section_title": "Mix both",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Node.js",
+          "Streamlit"
+        ],
+        "description": "Expose analytical endpoints that combine complex SQL joins with programmatic DataFrame filtering expressions.",
+        "how_it_is_used": "Uses `pl.sql()` combined with `.filter()` and `.collect()` to query local data frames and files interchangeably.",
+        "title": "Hybrid SQL & DataFrame Analytics Dashboard Backend"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+          "id": "C3",
+          "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+          "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+        },
+        {
+          "excerpt": "Running into hardware limitations executing your queries? Read how you can horizontally scale your Polars query on a cluster.",
+          "id": "C11",
+          "section_title": "Distributed Polars",
+          "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+        }
+      ],
+      "text": "It addresses hardware limitations and performance bottlenecks in analytical data workloads by providing multi-threaded execution, out-of-core spilling to disk when operations exceed available RAM, and optional NVIDIA GPU acceleration."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-threaded vectorized SIMD execution"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "Spill to disk for operations exceeding RAM"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "NVIDIA GPU acceleration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            },
+            {
+              "excerpt": "Queries are composed from expressions or SQL. This lazy query gets optimized out of the box and runs in parallel across all available cores: ``` import polars as pl df = ( pl.scan_parquet(\"orders.parquet\") .filter(pl.col(\"status\") ==…",
+              "id": "C4",
+              "section_title": "DataFrame API",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "Lazy evaluation and query optimization"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "Zero-copy data sharing via Apache Arrow"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "Apache Arrow"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+              "id": "C3",
+              "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "name": "NVIDIA GPUs"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Install the latest Polars version with: ``` pip install polars ``` See the User Guide for more details on optional dependencies Compile Polars from source If you want a bleeding edge release you should compile Polars from source. Advanced…",
+              "id": "C8",
+              "section_title": "Python",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "text": "Rust compiler (for building from source)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Install the latest Polars version with: ``` pip install polars ``` See the User Guide for more details on optional dependencies Compile Polars from source If you want a bleeding edge release you should compile Polars from source. Advanced…",
+              "id": "C8",
+              "section_title": "Python",
+              "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+            }
+          ],
+          "text": "maturin (for building Python bindings from source)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "Queries are composed from expressions or SQL. This lazy query gets optimized out of the box and runs in parallel across all available cores: ``` import polars as pl df = ( pl.scan_parquet(\"orders.parquet\") .filter(pl.col(\"status\") ==…",
+            "id": "C4",
+            "section_title": "DataFrame API",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "text": "Filtering, aggregating, and sorting large datasets using the Python or Rust DataFrame API."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` import polars as pl df = pl.sql(\"\"\" WITH totals AS ( SELECT customer_id, SUM(amount) AS total, COUNT(*) AS n_orders FROM read_parquet('orders.parquet') WHERE status = 'shipped' GROUP BY customer_id ) SELECT c.name, t.total, t.n_orders,…",
+            "id": "C5",
+            "section_title": "SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "DataFrames and LazyFrames in scope can be queried by name, and the result of a SQL query is a regular `LazyFrame`, so you can switch between SQL and expressions freely: ``` orders = pl.scan_parquet(\"orders.parquet\") df = ( pl.sql(\"SELECT…",
+            "id": "C6",
+            "section_title": "Mix both",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "text": "Querying data using standard SQL syntax or mixing SQL directly with DataFrame LazyFrames."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "pola-rs/polars: Extremely fast Query Engine for DataFrames, written in Rust Topics: arrow, dataframe, dataframe library, dataframes, out of core, polars, python, rust. Primary language: Rust.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/pola-rs/polars"
+        },
+        {
+          "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+          "id": "C3",
+          "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+          "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+        }
+      ],
+      "explanation": "Polars is an analytical query engine written in Rust that lets developers write queries using a DataFrame API, SQL, or a mix of both. It features multi-threaded, vectorized SIMD execution, Apache Arrow columnar format for zero-copy data sharing, and can spill to disk when operations exceed RAM.",
+      "one_line": "An analytical query engine written in Rust for DataFrame and SQL workloads."
+    },
+    "who_should_care": [
+      {
+        "audience": "Data engineers and data scientists",
+        "citations": [
+          {
+            "excerpt": "Documentation: Python - Rust - Node.js - R - SQL | Agents: Skill - MCP | User guide | Discord",
+            "id": "C2",
+            "section_title": null,
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "reason": "Need an expressive, fast query engine with bindings for Python, Rust, Node.js, R, and SQL to process large datasets efficiently."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          },
+          {
+            "excerpt": "DataFrames and LazyFrames in scope can be queried by name, and the result of a SQL query is a regular `LazyFrame`, so you can switch between SQL and expressions freely: ``` orders = pl.scan_parquet(\"orders.parquet\") df = ( pl.sql(\"SELECT…",
+            "id": "C6",
+            "section_title": "Mix both",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "point": "Allows seamless mixing of DataFrame API expressions and SQL queries through the same optimizer and engine."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "point": "Supports spilling to disk when data operations exceed available RAM."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Polars is an analytical query engine written in Rust. Write your queries with the DataFrame API, in SQL, or mix both: they run through the same optimizer and the same engine. It is designed to be fast, easy to use and expressive. Key…",
+            "id": "C3",
+            "section_title": "Polars: Extremely fast Query Engine for DataFrames and SQL",
+            "source_url": "https://github.com/pola-rs/polars/blob/main/README.md"
+          }
+        ],
+        "point": "Leverages the Apache Arrow Columnar Format for zero-copy data sharing and offers optional NVIDIA GPU acceleration."
+      }
+    ]
+  },
+  "source_hash": "a2b3489bbfb030c929c0b3e1383fb68b6c9a32bdec2742f63537aec824abdab1"
+}

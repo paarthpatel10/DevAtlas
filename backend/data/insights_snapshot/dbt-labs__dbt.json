@@ -1,0 +1,308 @@
+{
+  "full_name": "dbt-labs/dbt",
+  "generated_at": "2026-11-10 09:10:16.295922+00:00",
+  "github_id": 53548867,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "DuckDB",
+          "Apache Parquet",
+          "React"
+        ],
+        "description": "A local documentation and lineage tool that parses v2.0 Parquet project artifacts to render complex table dependencies and relationships.",
+        "how_it_is_used": "Uses the scalable Parquet project artifacts produced by dbt v2.0 to query and analyze the project structure.",
+        "title": "Large-Scale Data Pipeline Visualizer"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "GitHub Actions",
+          "Rust"
+        ],
+        "description": "A workflow utility that tracks parse and compile speed improvements across different iterations of large dbt projects.",
+        "how_it_is_used": "Utilizes the faster parsing, compilation, and execution capabilities of dbt v2.0.",
+        "title": "CI/CD Model Performance Analyzer"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 and its drivers are compiled per operating system and architecture. Legend: * 🟢 — Supported today * 🟡 — Not yet supported | Operating system | x86-64 | ARM | |---|---|---| | macOS | 🟢 | 🟢 | | Linux | 🟢 | 🟢 | | Windows | 🟢 | 🟡 |",
+            "id": "C3",
+            "section_title": "Supported operating systems and architectures",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "text": "Windows ARM architecture is not yet supported in v2.0."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+          "id": "C2",
+          "section_title": "About dbt v2.0",
+          "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+        }
+      ],
+      "text": "Solves slow parse and compile times on large projects, eliminates Python runtime and dependency management setup requirements, and improves local documentation scalability."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          },
+          {
+            "excerpt": "> [!WARNING] > **dbt v1 development has moved to the `1.latest` branch.** > The `main` branch now contains all the Apache 2.0 source code of dbt v2.0 — a ground-up rewrite of dbt in Rust. If you're looking for the v1 Python implementation…",
+            "id": "C5",
+            "section_title": null,
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "text": "Written entirely in Rust as a ground-up rewrite, distributed as a single binary without Python runtime dependencies, featuring a tightly-defined language specification for strict compile-time correctness."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+              "id": "C2",
+              "section_title": "About dbt v2.0",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "name": "Project parsing and compilation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+              "id": "C6",
+              "section_title": "Understanding dbt",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "name": "Data transformation via select statements (models)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+              "id": "C6",
+              "section_title": "Understanding dbt",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "name": "Model relationship management and visualization"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+              "id": "C6",
+              "section_title": "Understanding dbt",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "name": "Transformation quality testing"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+              "id": "C2",
+              "section_title": "About dbt v2.0",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "name": "Parquet and JSON artifact generation"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "dbt v2.0 and its drivers are compiled per operating system and architecture. Legend: * 🟢 — Supported today * 🟡 — Not yet supported | Operating system | x86-64 | ARM | |---|---|---| | macOS | 🟢 | 🟢 | | Linux | 🟢 | 🟢 | | Windows | 🟢 | 🟡 |",
+              "id": "C3",
+              "section_title": "Supported operating systems and architectures",
+              "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+            }
+          ],
+          "text": "Supported operating system and architecture (macOS x86-64/ARM, Linux x86-64/ARM, or Windows x86-64)."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+            "id": "C6",
+            "section_title": "Understanding dbt",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "text": "Building dependent data transformation models using simple SQL select statements."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+            "id": "C6",
+            "section_title": "Understanding dbt",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "text": "Assuring the quality of data transformations through built-in testing capabilities."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "text": "Querying and analyzing project metadata via newly produced Parquet artifacts."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "dbt-labs/dbt: dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications. Topics: analytics, business intelligence, data modeling, dbt viewpoint, elt, pypa,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/dbt-labs/dbt"
+        },
+        {
+          "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+          "id": "C2",
+          "section_title": "About dbt v2.0",
+          "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+        },
+        {
+          "excerpt": "> [!WARNING] > **dbt v1 development has moved to the `1.latest` branch.** > The `main` branch now contains all the Apache 2.0 source code of dbt v2.0 — a ground-up rewrite of dbt in Rust. If you're looking for the v1 Python implementation…",
+          "id": "C5",
+          "section_title": null,
+          "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+        },
+        {
+          "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+          "id": "C6",
+          "section_title": "Understanding dbt",
+          "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+        }
+      ],
+      "explanation": "dbt enables data analysts and engineers to transform their data using software engineering practices like version control and testing. Users write select statements or models that dbt turns into tables and views inside a data warehouse. Version 2.0 is a ground-up rewrite in Rust, offering faster performance, stricter language specifications, and a single self-contained binary installation.",
+      "one_line": "A data transformation tool enabling analysts and engineers to build and test data models using software engineering practices."
+    },
+    "who_should_care": [
+      {
+        "audience": "Data Analysts",
+        "citations": [
+          {
+            "excerpt": "dbt-labs/dbt: dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications. Topics: analytics, business intelligence, data modeling, dbt viewpoint, elt, pypa,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/dbt-labs/dbt"
+          },
+          {
+            "excerpt": "Analysts using dbt can transform their data by simply writing select statements, while dbt handles turning these statements into tables and views in a data warehouse. These select statements, or \"models\", form a dbt project. Models…",
+            "id": "C6",
+            "section_title": "Understanding dbt",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "reason": "Can transform data by writing select statements and manage relationships and data quality tests without managing complex application code."
+      },
+      {
+        "audience": "Data Engineers",
+        "citations": [
+          {
+            "excerpt": "dbt-labs/dbt: dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications. Topics: analytics, business intelligence, data modeling, dbt viewpoint, elt, pypa,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/dbt-labs/dbt"
+          },
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "reason": "Benefits from scalable artifacts, faster compilation times, and a single self-contained binary that bypasses Python dependency management."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          },
+          {
+            "excerpt": "> [!WARNING] > **dbt v1 development has moved to the `1.latest` branch.** > The `main` branch now contains all the Apache 2.0 source code of dbt v2.0 — a ground-up rewrite of dbt in Rust. If you're looking for the v1 Python implementation…",
+            "id": "C5",
+            "section_title": null,
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "point": "Engineered as a ground-up rewrite in Rust, providing dramatically improved parse and compile times for large projects."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "point": "Distributed as a single self-contained binary, requiring no Python runtime or dependency management."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "dbt v2.0 is engineered for performance at scale. It parses, compiles, and runs projects in a fraction of the time compared to v1. The source code in this repository is available to everyone under the standard Apache 2.0 license. dbt is a…",
+            "id": "C2",
+            "section_title": "About dbt v2.0",
+            "source_url": "https://github.com/dbt-labs/dbt/blob/main/README.md"
+          }
+        ],
+        "point": "Produces Parquet artifacts alongside traditional JSON artifacts to represent everything in a dbt project for efficient querying and analysis."
+      }
+    ]
+  },
+  "source_hash": "a85e84c72c3a99d01754c083d1537875e86c398fc7ab1cdbe57afedcfd473973"
+}

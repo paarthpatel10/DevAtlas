@@ -1,0 +1,432 @@
+{
+  "full_name": "NiazMorshed2007/reanimate",
+  "generated_at": "2026-11-10 09:15:11.713116+00:00",
+  "github_id": 1438029127,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Playwright",
+          "Jest",
+          "GitHub Actions"
+        ],
+        "description": "Build a pipeline that takes reference animations and newly implemented web components, runs headless browser frame comparisons, and outputs side-by-side verification reports.",
+        "how_it_is_used": "Relies on the recording, comparison, and side-by-side sheet generation features.",
+        "title": "Automated UI Animation Regression Tester"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "description": "Create a tool where developers submit screen recordings of product prototypes to automatically scaffold corresponding code components with matched easing and timing curves.",
+        "how_it_is_used": "Relies on capturing specs like start, duration, easing, and stagger values to write code in CSS, Framer Motion, or GSAP.",
+        "title": "Interactive Design System Component Generator"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Pages behind a login, YouTube and Loom can't be recorded directly; hand it a screen recording. - Physics springs are fitted from their overshoot and settle time, not read from the source. - Workers are seeded and traced, but their own…",
+            "id": "C11",
+            "section_title": "Limits",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Pages behind a login, YouTube, and Loom cannot be recorded directly and require hand-supplied screen recordings."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Pages behind a login, YouTube and Loom can't be recorded directly; hand it a screen recording. - Physics springs are fitted from their overshoot and settle time, not read from the source. - Workers are seeded and traced, but their own…",
+            "id": "C11",
+            "section_title": "Limits",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Physics springs are fitted from their overshoot and settle time rather than read directly from the source."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Pages behind a login, YouTube and Loom can't be recorded directly; hand it a screen recording. - Physics springs are fitted from their overshoot and settle time, not read from the source. - Workers are seeded and traced, but their own…",
+            "id": "C11",
+            "section_title": "Limits",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Workers run in real time even when traced and seeded, and canvases inside iframes require the iframe's specific URL."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Windows is untested."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "reanimate Reverse-engineer animations you like. Build your own on top.A Claude Code skill that works from a live site, a screen recording, an mp4, a gif or a Lottie file. A short demo. Watch the full video. A lot of good ideas start on…",
+          "id": "C9",
+          "section_title": null,
+          "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+        }
+      ],
+      "text": "Solves the issue where AI agents attempting to rebuild animations from links or screenshots make only one pass, fail to see the motion details, and miss how far off the implementation is from the original."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          },
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Operates as a CLI skill that records pages in a headless browser, extracts structured specs for elements and properties, writes implementation code matching existing project conventions, and runs visual regression comparisons to guide automated code adjustments."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. Topics: agent skills, animation, claude code, claude skills, frontend, motion, playwright. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate"
+            },
+            {
+              "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Frame-by-frame animation recording and comparison"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "WebGL, WebGPU, and Canvas 2D tracing"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Virtual clock execution for deterministic rendering"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- Pages behind a login, YouTube and Loom can't be recorded directly; hand it a screen recording. - Physics springs are fitted from their overshoot and settle time, not read from the source. - Workers are seeded and traced, but their own…",
+              "id": "C11",
+              "section_title": "Limits",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Physics spring fitting based on overshoot and settle time"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            },
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "three.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Framer Motion"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+              "id": "C3",
+              "section_title": "How it works",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "GSAP"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Pixi"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "PlayCanvas"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Babylon"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+              "id": "C10",
+              "section_title": "Canvas, WebGL and 3D",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "OGL"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. Topics: agent skills, animation, claude code, claude skills, frontend, motion, playwright. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate"
+            },
+            {
+              "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "name": "Playwright"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "text": "Bun 1.1 or later"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+              "id": "C2",
+              "section_title": "Install",
+              "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+            }
+          ],
+          "text": "macOS or Linux operating system (Windows is untested)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "``` npx skills add NiazMorshed2007/reanimate -g ``` The skills CLI asks which agents to set up; add `-a claude-code` to skip the question. Then, in Claude Code, say what you want, where it is and where it should go: ``` /reanimate the hero…",
+            "id": "C2",
+            "section_title": "Install",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Cloning specific UI interactions such as card hovers, loaders, logo marquees, or hero section entrances from URLs or video files."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+            "id": "C10",
+            "section_title": "Canvas, WebGL and 3D",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "text": "Reverse-engineering and rebuilding 3D scenes, particle effects, and canvas-based graphics from live web applications."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. Topics: agent skills, animation, claude code, claude skills, frontend, motion, playwright. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/NiazMorshed2007/reanimate"
+        },
+        {
+          "excerpt": "reanimate Reverse-engineer animations you like. Build your own on top.A Claude Code skill that works from a live site, a screen recording, an mp4, a gif or a Lottie file. A short demo. Watch the full video. A lot of good ideas start on…",
+          "id": "C9",
+          "section_title": null,
+          "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+        }
+      ],
+      "explanation": "reanimate is a Claude Code skill designed to take an animation from a live site, video, GIF, or recording, break it down, and rebuild it using your project's technology stack. It iteratively films the original and the copy, compares pixels and timing, and refines the clone until it matches the reference.",
+      "one_line": "A Claude Code skill that reverse-engineers and reproduces animations frame by frame."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Developers",
+        "citations": [
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "reason": "They can automatically generate code for complex animations and interactions found on other websites using their existing technology stack (CSS, Framer Motion, GSAP, three.js)."
+      },
+      {
+        "audience": "AI/Agent Engineers",
+        "citations": [
+          {
+            "excerpt": "NiazMorshed2007/reanimate: A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same. Topics: agent skills, animation, claude code, claude skills, frontend, motion, playwright. Primary…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate"
+          },
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "reason": "It acts as a specialized skill for Claude Code that executes iterative verification loops to self-correct code output against a visual target."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "1. **Record.** It films the reference in a headless browser at a fixed viewport and frame rate: a video, numbered frames, every CSS and Web Animations API animation it finds, and the position of chosen elements on every frame. For canvas…",
+            "id": "C3",
+            "section_title": "How it works",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          },
+          {
+            "excerpt": "reanimate Reverse-engineer animations you like. Build your own on top.A Claude Code skill that works from a live site, a screen recording, an mp4, a gif or a Lottie file. A short demo. Watch the full video. A lot of good ideas start on…",
+            "id": "C9",
+            "section_title": null,
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "point": "Uses a multi-round verification loop that records both the original and copy in a headless browser, compares timing and pixels, and automatically fixes discrepancies over 2 to 5 rounds."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+            "id": "C10",
+            "section_title": "Canvas, WebGL and 3D",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "point": "Supports tracing complex rendering pipelines like WebGL, WebGPU, and Canvas 2D by hooking into scene graphs and capturing shaders, uniforms, and worker activity."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A canvas only shows pixels, so reanimate records the calls that drew them. With `--gl` it traces WebGL, WebGPU and canvas 2D. It hooks the three.js, Pixi, PlayCanvas, Babylon and OGL scene graphs through their own devtools entry points,…",
+            "id": "C10",
+            "section_title": "Canvas, WebGL and 3D",
+            "source_url": "https://github.com/NiazMorshed2007/reanimate/blob/main/README.md"
+          }
+        ],
+        "point": "Features a virtual clock mode that advances frame-by-frame and seeds randomness to ensure identical captures regardless of GPU speed."
+      }
+    ]
+  },
+  "source_hash": "a53583c2afbf8a61ee2bd16dc01beda455a3cd0cae829230edde3e7a5bdf640a"
+}

@@ -1,0 +1,269 @@
+{
+  "full_name": "pmndrs/zustand",
+  "generated_at": "2026-11-10 09:05:55.437066+00:00",
+  "github_id": 180328715,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Just call `set` when you're ready, zustand doesn't care if your actions are async or not. ``` const useFishStore = create((set) => ({ fishies: {}, fetch: async (pond) => { const response = await fetch(pond) set({ fishies: await…",
+            "id": "C12",
+            "section_title": "Async actions",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Fetch API"
+        ],
+        "description": "A dashboard that fetches remote data via async actions and stores responses in a central store.",
+        "how_it_is_used": "Utilizes Zustand stores with async actions to fetch and merge responses into state.",
+        "title": "Async Data Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Basic typescript usage doesn't require anything special except for writing `create()(...)` instead of `create(...)`... ``` import { create } from 'zustand' import { devtools, persist } from 'zustand/middleware' import type {} from…",
+            "id": "C4",
+            "section_title": "TypeScript Usage",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "LocalStorage"
+        ],
+        "description": "A shopping cart application that saves its state across browser sessions.",
+        "how_it_is_used": "Uses the persist middleware to save and restore state storage.",
+        "title": "Persistent Shopping Cart"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "- Less boilerplate - Renders components only on changes - Centralized, action-based state management ---",
+          "id": "C3",
+          "section_title": "Why zustand over context?",
+          "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+        },
+        {
+          "excerpt": "A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated. Don't disregard it because it's cute. It has quite the claws, lots of time…",
+          "id": "C5",
+          "section_title": null,
+          "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+        }
+      ],
+      "text": "Reduces boilerplate and prevents unnecessary component re-renders while solving common React state issues like the zombie child problem, React concurrency, and context loss between mixed renderers."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- Simple and un-opinionated - Makes hooks the primary means of consuming state - Doesn't wrap your app in context providers - Can inform components transiently (without causing render)",
+              "id": "C2",
+              "section_title": "Why zustand over redux?",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "name": "Transient component updates without re-renders"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "It detects changes with strict-equality (old === new) by default, this is efficient for atomic state picks. ``` const nuts = useBearStore((state) => state.nuts) const honey = useBearStore((state) => state.honey) ``` If you want to…",
+              "id": "C9",
+              "section_title": "Selecting multiple state slices",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "name": "Shallow equality checking via useShallow"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Basic typescript usage doesn't require anything special except for writing `create()(...)` instead of `create(...)`... ``` import { create } from 'zustand' import { devtools, persist } from 'zustand/middleware' import type {} from…",
+              "id": "C4",
+              "section_title": "TypeScript Usage",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "name": "State persistence and devtools middleware"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Just call `set` when you're ready, zustand doesn't care if your actions are async or not. ``` const useFishStore = create((set) => ({ fishies: {}, fetch: async (pond) => { const response = await fetch(pond) set({ fishies: await…",
+              "id": "C12",
+              "section_title": "Async actions",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "name": "Support for asynchronous actions"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "pmndrs/zustand: 🐻 Bear necessities for state management in React Topics: hacktoberfest, hooks, react, react context, reactjs, redux, state management. Primary language: TypeScript.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/pmndrs/zustand"
+            }
+          ],
+          "name": "React"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "Basic typescript usage doesn't require anything special except for writing `create()(...)` instead of `create(...)`... ``` import { create } from 'zustand' import { devtools, persist } from 'zustand/middleware' import type {} from…",
+              "id": "C4",
+              "section_title": "TypeScript Usage",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "name": "Redux DevTools extension"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Basic typescript usage doesn't require anything special except for writing `create()(...)` instead of `create(...)`... ``` import { create } from 'zustand' import { devtools, persist } from 'zustand/middleware' import type {} from…",
+              "id": "C4",
+              "section_title": "TypeScript Usage",
+              "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+            }
+          ],
+          "text": "TypeScript users must write create()(...) instead of create(...)"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Less boilerplate - Renders components only on changes - Centralized, action-based state management ---",
+            "id": "C3",
+            "section_title": "Why zustand over context?",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          },
+          {
+            "excerpt": "It detects changes with strict-equality (old === new) by default, this is efficient for atomic state picks. ``` const nuts = useBearStore((state) => state.nuts) const honey = useBearStore((state) => state.honey) ``` If you want to…",
+            "id": "C9",
+            "section_title": "Selecting multiple state slices",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "text": "Managing centralized, action-based application state in React with atomic state picks."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Just call `set` when you're ready, zustand doesn't care if your actions are async or not. ``` const useFishStore = create((set) => ({ fishies: {}, fetch: async (pond) => { const response = await fetch(pond) set({ fishies: await…",
+            "id": "C12",
+            "section_title": "Async actions",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "text": "Handling asynchronous data fetching and updating state inside actions."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "pmndrs/zustand: 🐻 Bear necessities for state management in React Topics: hacktoberfest, hooks, react, react context, reactjs, redux, state management. Primary language: TypeScript.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/pmndrs/zustand"
+        },
+        {
+          "excerpt": "- Simple and un-opinionated - Makes hooks the primary means of consuming state - Doesn't wrap your app in context providers - Can inform components transiently (without causing render)",
+          "id": "C2",
+          "section_title": "Why zustand over redux?",
+          "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+        },
+        {
+          "excerpt": "A small, fast and scalable bearbones state-management solution using simplified flux principles. Has a comfy API based on hooks, isn't boilerplatey or opinionated. Don't disregard it because it's cute. It has quite the claws, lots of time…",
+          "id": "C5",
+          "section_title": null,
+          "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+        }
+      ],
+      "explanation": "Zustand is a state management library for React that uses hooks as the primary means of consuming state without wrapping your app in context providers. It provides a simple, un-opinionated API that handles common pitfalls like the zombie child problem, React concurrency, and context loss.",
+      "one_line": "A small, fast, and scalable bearbones state-management solution using simplified flux principles for React."
+    },
+    "who_should_care": [
+      {
+        "audience": "React Developers",
+        "citations": [
+          {
+            "excerpt": "pmndrs/zustand: 🐻 Bear necessities for state management in React Topics: hacktoberfest, hooks, react, react context, reactjs, redux, state management. Primary language: TypeScript.",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/pmndrs/zustand"
+          },
+          {
+            "excerpt": "- Simple and un-opinionated - Makes hooks the primary means of consuming state - Doesn't wrap your app in context providers - Can inform components transiently (without causing render)",
+            "id": "C2",
+            "section_title": "Why zustand over redux?",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          },
+          {
+            "excerpt": "- Less boilerplate - Renders components only on changes - Centralized, action-based state management ---",
+            "id": "C3",
+            "section_title": "Why zustand over context?",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "reason": "Looking for a state management solution with less boilerplate that avoids context provider wrapping and optimizes re-renders."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- Simple and un-opinionated - Makes hooks the primary means of consuming state - Doesn't wrap your app in context providers - Can inform components transiently (without causing render)",
+            "id": "C2",
+            "section_title": "Why zustand over redux?",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "point": "Does not wrap your application in context providers."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- Simple and un-opinionated - Makes hooks the primary means of consuming state - Doesn't wrap your app in context providers - Can inform components transiently (without causing render)",
+            "id": "C2",
+            "section_title": "Why zustand over redux?",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "point": "Can inform components transiently without causing a re-render."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Just call `set` when you're ready, zustand doesn't care if your actions are async or not. ``` const useFishStore = create((set) => ({ fishies: {}, fetch: async (pond) => { const response = await fetch(pond) set({ fishies: await…",
+            "id": "C12",
+            "section_title": "Async actions",
+            "source_url": "https://github.com/pmndrs/zustand/blob/main/README.md"
+          }
+        ],
+        "point": "Supports async actions natively by allowing direct calls to set when ready."
+      }
+    ]
+  },
+  "source_hash": "c74ba363a9290c7d7d4f6abbacebe342420b14b3e6e32bf975c4a6610ba33aa5"
+}

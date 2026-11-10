@@ -1,0 +1,474 @@
+{
+  "full_name": "jiwoochris/artex-global",
+  "generated_at": "2026-11-10 09:14:15.464284+00:00",
+  "github_id": 1403307052,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+            "id": "C9",
+            "section_title": "System architecture",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Next.js",
+          "PostgreSQL",
+          "Docker"
+        ],
+        "description": "Build a wrapper or reporting extension that ingests findings from the system and outputs localized summaries in regional languages for multi-national security teams.",
+        "how_it_is_used": "Relies on the multi-language output generation features for findings, fact summaries, and final reports.",
+        "title": "Localized Autonomous Threat Simulation Dashboard"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+            "id": "C5",
+            "section_title": "Quick start (Docker Compose)",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Go",
+          "OpenAI-compatible LLM servers",
+          "Docker Compose"
+        ],
+        "description": "Integrate alternative open-source or localized LLM backends to execute targeted vulnerability reconnaissance tasks in an isolated lab network.",
+        "how_it_is_used": "Relies on the capability to swap the LLM provider to any OpenAI-compatible endpoint.",
+        "title": "Custom LLM-driven Security Red-Teaming Bot"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+            "id": "C5",
+            "section_title": "Quick start (Docker Compose)",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "label": "GitHub Repository",
+        "url": "https://github.com/jiwoochris/artex-global.git"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "text": "Internal behavior reasoning prompts are kept in their original language and are not translated, to prevent behavior degradation and quality drift."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "text": "Commands, payloads, code, URLs, and raw logs are left in their original form and are not localized."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Upstream ARTEX has its prompts, UI, and documentation entirely in Chinese, which made it cumbersome for anyone who does not read Chinese to read the results and share them with a team. This edition aims to:",
+          "id": "C2",
+          "section_title": "Why a global edition",
+          "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+          "id": "C3",
+          "section_title": "Why a global edition",
+          "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+        }
+      ],
+      "text": "Solves the limitation of the upstream ARTEX framework, which had its prompts, UI, and documentation entirely in Chinese, by localizing findings, chat replies, and final reports into multiple selectable languages without introducing quality drift to internal reasoning prompts."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+            "id": "C5",
+            "section_title": "Quick start (Docker Compose)",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+            "id": "C9",
+            "section_title": "System architecture",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "**An autonomous penetration-testing system driven by LLM multi-agents** (Go backend + Next.js frontend) The UI and generated output default to English, and **can be switched to Korean, Chinese, Spanish or Japanese in Settings (System →…",
+            "id": "C10",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "text": "A single Go backend with an embedded Next.js frontend communicating with a PostgreSQL database, driven by LLM multi-agents structured around a dual-graph core with process-level worker communication and a shared planner todolist."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jiwoochris/artex-global"
+            },
+            {
+              "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+              "id": "C3",
+              "section_title": "Why a global edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            },
+            {
+              "excerpt": "**An autonomous penetration-testing system driven by LLM multi-agents** (Go backend + Next.js frontend) The UI and generated output default to English, and **can be switched to Korean, Chinese, Spanish or Japanese in Settings (System →…",
+              "id": "C10",
+              "section_title": "ARTEX — Global Edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Multi-language output localization (English, Korean, Chinese, Spanish, Japanese)"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jiwoochris/artex-global"
+            },
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            },
+            {
+              "excerpt": "> ## 🚨 Security & misuse warning — read this first > > **This repository is published for use only within authorized environments, and only to build defensive and detection capabilities.** > > ARTEX is an autonomous offensive tool powerful…",
+              "id": "C11",
+              "section_title": "ARTEX — Global Edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Autonomous multi-agent penetration testing from reconnaissance to data exfiltration"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Dual-graph core architecture with worker information exchange and a planner shared todolist"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/jiwoochris/artex-global"
+            },
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Go"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            },
+            {
+              "excerpt": "**An autonomous penetration-testing system driven by LLM multi-agents** (Go backend + Next.js frontend) The UI and generated output default to English, and **can be switched to Korean, Chinese, Spanish or Japanese in Settings (System →…",
+              "id": "C10",
+              "section_title": "ARTEX — Global Edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Next.js"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "norma SDK"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+              "id": "C5",
+              "section_title": "Quick start (Docker Compose)",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            },
+            {
+              "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+              "id": "C9",
+              "section_title": "System architecture",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "PostgreSQL"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+              "id": "C3",
+              "section_title": "Why a global edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI-compatible LLM endpoints"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+              "id": "C5",
+              "section_title": "Quick start (Docker Compose)",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic API"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+              "id": "C5",
+              "section_title": "Quick start (Docker Compose)",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI API"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+              "id": "C5",
+              "section_title": "Quick start (Docker Compose)",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "text": "Docker and Docker Compose"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+              "id": "C3",
+              "section_title": "Why a global edition",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            },
+            {
+              "excerpt": "> **Prerequisites:** Docker and Docker Compose. The database is **PostgreSQL**, brought up by compose. Exploration requires an **LLM** (`ANTHROPIC_API_KEY` or `OPENAI_API_KEY`; can also be set in the UI). > **Image:** the `artex` service…",
+              "id": "C5",
+              "section_title": "Quick start (Docker Compose)",
+              "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+            }
+          ],
+          "text": "An LLM API key (ANTHROPIC_API_KEY or OPENAI_API_KEY) or configured OpenAI-compatible endpoint"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "into an information and communications network violates the Network Act, and the Personal Information Protection Act also applies where personal data is involved. > - **Do not target live services or other parties' assets.** Verify only in…",
+            "id": "C12",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "text": "Running autonomous penetration testing simulations in locally isolated, deliberately vulnerable environments like OWASP Juice Shop or DVWA."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "> ## 🚨 Security & misuse warning — read this first > > **This repository is published for use only within authorized environments, and only to build defensive and detection capabilities.** > > ARTEX is an autonomous offensive tool powerful…",
+            "id": "C11",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "into an information and communications network violates the Network Act, and the Personal Information Protection Act also applies where personal data is involved. > - **Do not target live services or other parties' assets.** Verify only in…",
+            "id": "C12",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "text": "Developing detection mechanisms and engineering signatures to identify and block autonomous AI attacks."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/jiwoochris/artex-global"
+        },
+        {
+          "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+          "id": "C3",
+          "section_title": "Why a global edition",
+          "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+        },
+        {
+          "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+          "id": "C9",
+          "section_title": "System architecture",
+          "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+        },
+        {
+          "excerpt": "**An autonomous penetration-testing system driven by LLM multi-agents** (Go backend + Next.js frontend) The UI and generated output default to English, and **can be switched to Korean, Chinese, Spanish or Japanese in Settings (System →…",
+          "id": "C10",
+          "section_title": "ARTEX — Global Edition",
+          "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+        }
+      ],
+      "explanation": "ARTEX-global is an autonomous penetration-testing framework driven by LLM multi-agents. It features a Go backend with an embedded Next.js frontend, backed by PostgreSQL, and localizes agent outputs into English, Korean, Chinese, Spanish, or Japanese while preserving internal behavior and reasoning prompts.",
+      "one_line": "Global edition of an LLM multi-agent autonomous penetration-testing framework with multi-language support."
+    },
+    "who_should_care": [
+      {
+        "audience": "Defensive security engineers and analysts",
+        "citations": [
+          {
+            "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/jiwoochris/artex-global"
+          },
+          {
+            "excerpt": "> ## 🚨 Security & misuse warning — read this first > > **This repository is published for use only within authorized environments, and only to build defensive and detection capabilities.** > > ARTEX is an autonomous offensive tool powerful…",
+            "id": "C11",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "into an information and communications network violates the Network Act, and the Personal Information Protection Act also applies where personal data is involved. > - **Do not target live services or other parties' assets.** Verify only in…",
+            "id": "C12",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "reason": "To understand how autonomous AI attacks work and build capabilities to detect and block them using the included defensive and detection guides."
+      },
+      {
+        "audience": "Security researchers",
+        "citations": [
+          {
+            "excerpt": "jiwoochris/artex-global: Global edition of ARTEX — an LLM multi-agent autonomous penetration-testing framework. English default, switchable to Korean/Chinese/Spanish/Japanese. For authorized, defensive and detection use only. (upstream:…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/jiwoochris/artex-global"
+          },
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          },
+          {
+            "excerpt": "into an information and communications network violates the Network Act, and the Personal Information Protection Act also applies where personal data is involved. > - **Do not target live services or other parties' assets.** Verify only in…",
+            "id": "C12",
+            "section_title": "ARTEX — Global Edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "reason": "To run localized penetration-testing simulations and investigate multi-agent autonomous security tool behavior in authorized, isolated environments."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "point": "Keeps internal behavioral instruction prompts untranslated to preserve performance and avoid translation-induced quality drift while localizing human-facing outputs."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "ARTEX is an **autonomous penetration system driven by LLM multi-agents.** It uses a single Go backend (with the Next.js frontend embedded) over PostgreSQL, and the agent capabilities are provided by the `norma` SDK. At its core is a…",
+            "id": "C9",
+            "section_title": "System architecture",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "point": "Uses a dual-graph core architecture with process-level information exchange between workers and a planner's multi-round shared todolist."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Localize the output** — the findings, fact summaries, final reports, and chat replies that agents surface to a human are forced into the selected language (English by default; Korean, Chinese, Spanish, and Japanese selectable).…",
+            "id": "C3",
+            "section_title": "Why a global edition",
+            "source_url": "https://github.com/jiwoochris/artex-global/blob/main/README.md"
+          }
+        ],
+        "point": "Supports swapping the underlying LLM provider to any OpenAI-compatible endpoint or domestic/open models."
+      }
+    ]
+  },
+  "source_hash": "aca9c94737b88e2d0d16daa876d8bb85cb88e00b6ad08340619c21353f1411a2"
+}

@@ -1,0 +1,374 @@
+{
+  "full_name": "KarmenLoop/fullstack-web-delivery",
+  "generated_at": "2026-11-10 09:19:43.008704+00:00",
+  "github_id": 1428705567,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` flowchart LR V[Public visitor] --> R[SSR page route and content] V --> P[Public inquiry API] U[Staff sign-in] --> A[Credential check and session rotation] B[Workspace] --> G[Session, role, resource, write checks] G --> S[Inquiry…",
+            "id": "C4",
+            "section_title": "Request architecture (SENSU example)",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "| Increment | Exit evidence | |---|---| | Baseline and design | Reachable page; visual and task checks | | Visitor inquiry | Receipt matches a saved SQLite record | | Employee access | Same reference visible; direct write denied for…",
+            "id": "C5",
+            "section_title": "Business increments (inquiry example)",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Requirements:** Node 22.13+ within Node 22, npm, and a free loopback port (default **4319**). ``` cd examples/sensu-enterprise npm ci npm run setup npm run build npm start ``` Open `http://127.0.0.1:4319/`. Staff entry: `/login`.…",
+            "id": "C6",
+            "section_title": "A. Run the SENSU example (no skill install required)",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "React",
+          "Express",
+          "SQLite",
+          "Node.js"
+        ],
+        "description": "Build an internal workspace application with role-based access control where anonymous visitors can submit inquiries, read-only staff can view them, and administrators can handle lifecycle transitions and inspect audit logs.",
+        "how_it_is_used": "Leverages the Express and SQLite architecture pattern and business increment definitions provided in the runnable SENSU example.",
+        "title": "Enterprise Inquiry Tracking Portal"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Python",
+          "Markdown"
+        ],
+        "description": "Implement a script or workflow that generates standardized project specification packages and multi-layout comparisons prior to initiating codebase implementation.",
+        "how_it_is_used": "Uses the dependency-free Python specification renderer script found in the skill directory to emit required project documents.",
+        "title": "Structured Agent-Driven Project Planning Tool"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Under the default LICENSE, you may view, download, exact-copy, install, and use the **unmodified** Materials, including commercial project work with the unmodified skill. **Modifying, adapting, or distributing derivative Materials**…",
+            "id": "C12",
+            "section_title": "Can I modify the skill or example and publish a fork?",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "text": "Modifying, adapting, or distributing derivative materials requires prior written permission from KarmenLoop under the default license."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "No. Installing the skill does not start a process, create accounts, grant tool permissions, or import cloud credentials. Running SENSU is a separate Node workflow under `examples/sensu-enterprise`.",
+            "id": "C10",
+            "section_title": "Does installing the skill start a server or create accounts?",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "text": "The skill does not replace your host's model, tools, or permissions, and does not claim every documented install path is runtime-proven."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+          "id": "C2",
+          "section_title": "Why this exists",
+          "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+        }
+      ],
+      "text": "Prevents AI website-delivery prompts from collapsing into pages lacking boundaries between planning, visual choice, business flow, and acceptance. It stops agents from inventing facts, shipping frontend without authorization or storage, treating screenshots as proof, or improperly applying every interaction pattern."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "``` flowchart LR V[Public visitor] --> R[SSR page route and content] V --> P[Public inquiry API] U[Staff sign-in] --> A[Credential check and session rotation] B[Workspace] --> G[Session, role, resource, write checks] G --> S[Inquiry…",
+            "id": "C4",
+            "section_title": "Request architecture (SENSU example)",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "text": "The project separates into a method layer skill (SKILL.md and conditional references), a specification convenience renderer script, and a runnable Express/SQLite monolithic example application where server-side checks govern authorization and atomic persistence."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "``` flowchart LR V[Public visitor] --> R[SSR page route and content] V --> P[Public inquiry API] U[Staff sign-in] --> A[Credential check and session rotation] B[Workspace] --> G[Session, role, resource, write checks] G --> S[Inquiry…",
+              "id": "C4",
+              "section_title": "Request architecture (SENSU example)",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            },
+            {
+              "excerpt": "**Requirements:** Node 22.13+ within Node 22, npm, and a free loopback port (default **4319**). ``` cd examples/sensu-enterprise npm ci npm run setup npm run build npm start ``` Open `http://127.0.0.1:4319/`. Staff entry: `/login`.…",
+              "id": "C6",
+              "section_title": "A. Run the SENSU example (no skill install required)",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "Session authentication and credential rotation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` flowchart LR V[Public visitor] --> R[SSR page route and content] V --> P[Public inquiry API] U[Staff sign-in] --> A[Credential check and session rotation] B[Workspace] --> G[Session, role, resource, write checks] G --> S[Inquiry…",
+              "id": "C4",
+              "section_title": "Request architecture (SENSU example)",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "Role-checked workspace mutations and server-side write validation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "``` flowchart LR V[Public visitor] --> R[SSR page route and content] V --> P[Public inquiry API] U[Staff sign-in] --> A[Credential check and session rotation] B[Workspace] --> G[Session, role, resource, write checks] G --> S[Inquiry…",
+              "id": "C4",
+              "section_title": "Request architecture (SENSU example)",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "Atomic state and audit logging in SQLite"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+              "id": "C3",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "Project specification generation via a dependency-free Python renderer script"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "KarmenLoop/fullstack-web-delivery: A website-delivery skill with a runnable React, Express, and SQLite business example. / 网站交付技能，附可运行的 React、Express、SQLite 企业示例。 Topics: agent skill, agent workflow, authentication, claude code, codex,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery"
+            },
+            {
+              "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+              "id": "C3",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "React"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "KarmenLoop/fullstack-web-delivery: A website-delivery skill with a runnable React, Express, and SQLite business example. / 网站交付技能，附可运行的 React、Express、SQLite 企业示例。 Topics: agent skill, agent workflow, authentication, claude code, codex,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery"
+            },
+            {
+              "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+              "id": "C3",
+              "section_title": "Architecture",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "name": "Express"
+        }
+      ],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "**Requirements:** Node 22.13+ within Node 22, npm, and a free loopback port (default **4319**). ``` cd examples/sensu-enterprise npm ci npm run setup npm run build npm start ``` Open `http://127.0.0.1:4319/`. Staff entry: `/login`.…",
+              "id": "C6",
+              "section_title": "A. Run the SENSU example (no skill install required)",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            },
+            {
+              "excerpt": "Node **22.13+** within the Node **22** line (`engines` in `examples/sensu-enterprise/package.json`). Local publication checks used Node 22.x; hosted CI uses Node 22.",
+              "id": "C11",
+              "section_title": "Which Node version does the example need?",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "text": "Node 22.13+ within the Node 22 line and npm (for running the SENSU example)."
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Choose the **complete** release ZIP for the example and bilingual guides, or the smaller **skill** ZIP for the portable workflow only. Place the `fullstack-web-delivery` folder in **one** host-supported skill directory, using a **fresh**…",
+              "id": "C7",
+              "section_title": "B. Install the portable skill",
+              "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+            }
+          ],
+          "text": "A host-supported skill directory for installing the portable skill."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "A source-available **website-delivery agent skill** that turns a brief into a plan, project-specific specifications, and verified local increments—plus a **React / Express / SQLite** fictional enterprise example you can run end to end on…",
+            "id": "C9",
+            "section_title": "What is Fullstack Web Delivery, in one sentence?",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "text": "Developing a full-stack website or enterprise application using an agent workflow that starts with structured planning and specifications before writing code."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "**Requirements:** Node 22.13+ within Node 22, npm, and a free loopback port (default **4319**). ``` cd examples/sensu-enterprise npm ci npm run setup npm run build npm start ``` Open `http://127.0.0.1:4319/`. Staff entry: `/login`.…",
+            "id": "C6",
+            "section_title": "A. Run the SENSU example (no skill install required)",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "text": "Running a local reference web application featuring public content rendering, anonymous inquiry writes, session authentication, and role-checked workspace mutations."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "KarmenLoop/fullstack-web-delivery: A website-delivery skill with a runnable React, Express, and SQLite business example. / 网站交付技能，附可运行的 React、Express、SQLite 企业示例。 Topics: agent skill, agent workflow, authentication, claude code, codex,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery"
+        },
+        {
+          "excerpt": "A source-available **website-delivery agent skill** that turns a brief into a plan, project-specific specifications, and verified local increments—plus a **React / Express / SQLite** fictional enterprise example you can run end to end on…",
+          "id": "C9",
+          "section_title": "What is Fullstack Web Delivery, in one sentence?",
+          "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+        }
+      ],
+      "explanation": "A source-available website-delivery agent skill that translates a brief into a comprehensive plan, project specifications, and verified local increments. It includes a runnable React, Express, and SQLite fictional enterprise example to test the workflow end-to-end on loopback.",
+      "one_line": "A website-delivery agent skill turning briefs into specifications and verified local increments with a React/Express/SQLite example."
+    },
+    "who_should_care": [
+      {
+        "audience": "Full-stack Developers and AI Agent Users",
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "file-capable agent can also be pointed at the absolute `SKILL.md` path; that proves only the reading route you exercise. **Suggested first prompt** ``` Use $fullstack-web-delivery. Project: [business, audience, primary task]. Existing…",
+            "id": "C8",
+            "section_title": "B. Install the portable skill",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "reason": "Developers using AI agents can establish rigorous scoping, planning, and verification gates instead of raw unpredictable code output."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          },
+          {
+            "excerpt": "Three pieces stay deliberately separate: 1. **Method layer (skill)** — `SKILL.md` routes discovery, research, planning, visual decisions, implementation, and delivery. Conditional `references/` load only what the project needs. The skill…",
+            "id": "C3",
+            "section_title": "Architecture",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "point": "Treats website delivery as a strict systems workflow with discovery, research, planning, visual decisions, implementation, and delivery stages."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "point": "Requires opening three comparable layouts before expanding templates for new sites or substantial visual redesigns."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Most “build me a site” prompts collapse into pretty pages with no honest boundary between **planning**, **visual choice**, **business flow**, and **acceptance**. Agents invent unanswered facts, ship frontend without authorization or…",
+            "id": "C2",
+            "section_title": "Why this exists",
+            "source_url": "https://github.com/KarmenLoop/fullstack-web-delivery/blob/main/README.md"
+          }
+        ],
+        "point": "Delivers dependency-ready business increments containing UI, API, rules, auth, storage, and feedback together."
+      }
+    ]
+  },
+  "source_hash": "611fd647d5388909d302f445d53edb3656cb489bcb7b9454ef3c532c22832d70"
+}

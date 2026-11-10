@@ -1,0 +1,471 @@
+{
+  "full_name": "astral-sh/uv",
+  "generated_at": "2026-11-10 09:03:24.685944+00:00",
+  "github_id": 699532645,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv manages dependencies and environments for single-file scripts. Create a new script and add inline metadata declaring its dependencies: ``` $ echo 'import requests; print(requests.get(\"https://astral.sh\"))' > example.py $ uv add --script…",
+            "id": "C7",
+            "section_title": "Scripts",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "Docker"
+        ],
+        "description": "A lightweight execution pipeline that accepts single-file Python scripts with inline metadata, dynamically provisions isolated environments, and executes them securely.",
+        "how_it_is_used": "Uses uv's script execution capability with inline dependency metadata to run isolated scripts on demand.",
+        "title": "Automated Script Runner Service"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv installs Python and allows quickly switching between versions. Install multiple Python versions: ``` $ uv python install 3.12 3.13 3.14 Installed 3 versions in 972ms + cpython-3.12.12-macos-aarch64-none (python3.12) +…",
+            "id": "C9",
+            "section_title": "Python versions",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Click",
+          "Pytest"
+        ],
+        "description": "A local utility that automatically downloads multiple Python versions and runs a test suite across all of them.",
+        "how_it_is_used": "Uses uv's Python version installation and execution commands to target specific runtimes like CPython or PyPy.",
+        "title": "Cross-Version Python CI Matrix Runner"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv executes and installs command-line tools provided by Python packages, similar to `pipx`. Run a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`): ``` $ uvx pycowsay 'hello world!' Resolved 1 package in 167ms…",
+            "id": "C8",
+            "section_title": "Tools",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Textual",
+          "Rich"
+        ],
+        "description": "A manager dashboard that lets users install, run, and query various command-line tools published as Python packages.",
+        "how_it_is_used": "Relies on uv's tool running (`uvx`) and tool installation interface to execute and manage CLI packages.",
+        "title": "Command-Line Tool Hub"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Install uv with our standalone installers: ``` # On macOS and Linux. curl -LsSf https://astral.sh/uv/install.sh | sh ``` ``` # On Windows. powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\" ``` Or, from…",
+            "id": "C3",
+            "section_title": "Installation",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "label": "macOS and Linux installation script",
+        "url": "https://astral.sh/uv/install.sh"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Install uv with our standalone installers: ``` # On macOS and Linux. curl -LsSf https://astral.sh/uv/install.sh | sh ``` ``` # On Windows. powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\" ``` Or, from…",
+            "id": "C3",
+            "section_title": "Installation",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "label": "Windows installation script",
+        "url": "https://astral.sh/uv/install.ps1"
+      }
+    ],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "astral-sh/uv: An extremely fast Python package and project manager, written in Rust. Topics: packaging, python, resolver, uv. Primary language: Rust.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/astral-sh/uv"
+        },
+        {
+          "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+          "id": "C2",
+          "section_title": "Highlights",
+          "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+        }
+      ],
+      "text": "It addresses the fragmentation, slow speeds, and complexity of the Python packaging ecosystem by providing a single, fast, disk-space efficient utility for managing packages, lockfiles, virtual environments, Python versions, and standalone tools."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "astral-sh/uv: An extremely fast Python package and project manager, written in Rust. Topics: packaging, python, resolver, uv. Primary language: Rust.",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/astral-sh/uv"
+            },
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Python package and project management"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Universal lockfile generation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            },
+            {
+              "excerpt": "uv manages dependencies and environments for single-file scripts. Create a new script and add inline metadata declaring its dependencies: ``` $ echo 'import requests; print(requests.get(\"https://astral.sh\"))' > example.py $ uv add --script…",
+              "id": "C7",
+              "section_title": "Scripts",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Inline dependency metadata support for scripts"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            },
+            {
+              "excerpt": "uv installs Python and allows quickly switching between versions. Install multiple Python versions: ``` $ uv python install 3.12 3.13 3.14 Installed 3 versions in 972ms + cpython-3.12.12-macos-aarch64-none (python3.12) +…",
+              "id": "C9",
+              "section_title": "Python versions",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Python version installation and switching"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            },
+            {
+              "excerpt": "uv executes and installs command-line tools provided by Python packages, similar to `pipx`. Run a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`): ``` $ uvx pycowsay 'hello world!' Resolved 1 package in 167ms…",
+              "id": "C8",
+              "section_title": "Tools",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Standalone tool execution and installation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Cargo-style workspaces support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Global cache for dependency deduplication"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            },
+            {
+              "excerpt": "uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands. uv extends their interfaces with advanced features, such as dependency version overrides, platform-independent resolutions, reproducible…",
+              "id": "C10",
+              "section_title": "The pip interface",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "name": "Pip-compatible command interface"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+              "id": "C2",
+              "section_title": "Highlights",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            },
+            {
+              "excerpt": "Install uv with our standalone installers: ``` # On macOS and Linux. curl -LsSf https://astral.sh/uv/install.sh | sh ``` ``` # On Windows. powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\" ``` Or, from…",
+              "id": "C3",
+              "section_title": "Installation",
+              "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+            }
+          ],
+          "text": "Can be installed independently of Rust or Python via standalone curl/powershell scripts, or via pip and pipx."
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to `rye` or `poetry`: ``` $ uv init example Initialized project `example` at `/home/user/example` $ cd example $ uv add ruff…",
+            "id": "C6",
+            "section_title": "Projects",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "text": "Initializing and managing Python projects with universal lockfiles and Cargo-style workspaces."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv manages dependencies and environments for single-file scripts. Create a new script and add inline metadata declaring its dependencies: ``` $ echo 'import requests; print(requests.get(\"https://astral.sh\"))' > example.py $ uv add --script…",
+            "id": "C7",
+            "section_title": "Scripts",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "text": "Running single-file Python scripts that declare their own dependencies inline."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "uv executes and installs command-line tools provided by Python packages, similar to `pipx`. Run a tool in an ephemeral environment using `uvx` (an alias for `uv tool run`): ``` $ uvx pycowsay 'hello world!' Resolved 1 package in 167ms…",
+            "id": "C8",
+            "section_title": "Tools",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "text": "Executing command-line tools provided by Python packages in ephemeral environments or installing them globally."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv installs Python and allows quickly switching between versions. Install multiple Python versions: ``` $ uv python install 3.12 3.13 3.14 Installed 3 versions in 972ms + cpython-3.12.12-macos-aarch64-none (python3.12) +…",
+            "id": "C9",
+            "section_title": "Python versions",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "text": "Installing and managing multiple Python runtimes and switching between them per project."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands. uv extends their interfaces with advanced features, such as dependency version overrides, platform-independent resolutions, reproducible…",
+            "id": "C10",
+            "section_title": "The pip interface",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "text": "Compiling requirements into platform-independent requirement files and syncing virtual environments via a drop-in pip interface."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "astral-sh/uv: An extremely fast Python package and project manager, written in Rust. Topics: packaging, python, resolver, uv. Primary language: Rust.",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/astral-sh/uv"
+        },
+        {
+          "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+          "id": "C2",
+          "section_title": "Highlights",
+          "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+        }
+      ],
+      "explanation": "uv is a single tool designed to replace multiple Python dependency management and environment tools like pip, pip-tools, pipx, poetry, pyenv, twine, and virtualenv. It offers comprehensive project management, script execution with inline dependency metadata, Python version management, and tool installation capabilities.",
+      "one_line": "An extremely fast Python package and project manager written in Rust."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands. uv extends their interfaces with advanced features, such as dependency version overrides, platform-independent resolutions, reproducible…",
+            "id": "C10",
+            "section_title": "The pip interface",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "reason": "They can speed up dependency resolution, installation, and environment creation workflows across projects."
+      },
+      {
+        "audience": "DevOps Engineers and Maintainers",
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "Install uv with our standalone installers: ``` # On macOS and Linux. curl -LsSf https://astral.sh/uv/install.sh | sh ``` ``` # On Windows. powershell -ExecutionPolicy ByPass -c \"irm https://astral.sh/uv/install.ps1 | iex\" ``` Or, from…",
+            "id": "C3",
+            "section_title": "Installation",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv manages project dependencies and environments, with support for lockfiles, workspaces, and more, similar to `rye` or `poetry`: ``` $ uv init example Initialized project `example` at `/home/user/example` $ cd example $ uv add ruff…",
+            "id": "C6",
+            "section_title": "Projects",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "reason": "They can manage Python tool installations and build/publish workflows using a single standalone binary without requiring a prior Rust or Python installation."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv provides a drop-in replacement for common `pip`, `pip-tools`, and `virtualenv` commands. uv extends their interfaces with advanced features, such as dependency version overrides, platform-independent resolutions, reproducible…",
+            "id": "C10",
+            "section_title": "The pip interface",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "point": "It is significantly faster (10-100x) than standard pip operations."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "point": "It features a global cache for dependency deduplication, making it disk-space efficient."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv manages dependencies and environments for single-file scripts. Create a new script and add inline metadata declaring its dependencies: ``` $ echo 'import requests; print(requests.get(\"https://astral.sh\"))' > example.py $ uv add --script…",
+            "id": "C7",
+            "section_title": "Scripts",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "point": "It can run single-file Python scripts with inline dependency metadata inside an isolated virtual environment."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- A single tool to replace `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more. - 10-100x faster than `pip`. - Provides comprehensive project management, with a universal lockfile. - Runs scripts, with support…",
+            "id": "C2",
+            "section_title": "Highlights",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          },
+          {
+            "excerpt": "uv installs Python and allows quickly switching between versions. Install multiple Python versions: ``` $ uv python install 3.12 3.13 3.14 Installed 3 versions in 972ms + cpython-3.12.12-macos-aarch64-none (python3.12) +…",
+            "id": "C9",
+            "section_title": "Python versions",
+            "source_url": "https://github.com/astral-sh/uv/blob/main/README.md"
+          }
+        ],
+        "point": "It can install and manage multiple versions of Python and switch between them seamlessly."
+      }
+    ]
+  },
+  "source_hash": "7bacf2d4c9462cb29acb0f97edcebf9d9b656ca65d9f8812600c427d3583ee4c"
+}

@@ -1,0 +1,340 @@
+{
+  "full_name": "oil-oil/oil-ui",
+  "generated_at": "2026-11-10 09:14:06.778279+00:00",
+  "github_id": 1396939768,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/oil-oil/oil-ui"
+          },
+          {
+            "excerpt": "typography, color, and key imagery may share at most one between any two. Once the previews exist, it puts them side by side and squints at the light and dark shapes of each first screen. If two look alike, it changes the layout instead of…",
+            "id": "C3",
+            "section_title": "How it designs",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          },
+          {
+            "excerpt": "When you want to compare designs, it puts them side by side on one page. They can be HTML files, images, or running development pages, and the current version can go first as a baseline. You can switch between desktop and mobile sizes,…",
+            "id": "C8",
+            "section_title": "Built-in style comparison page",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Claude Code",
+          "Node.js",
+          "HTML/CSS"
+        ],
+        "description": "A CLI-driven workflow where an AI agent spins up multiple HTML prototypes based on a prompt and organizes them into a comparison page.",
+        "how_it_is_used": "Relies on the skill's ability to generate explicit comparisons and present them on a comparison page.",
+        "title": "Automated Multi-Direction Prototyper"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/oil-oil/oil-ui"
+          },
+          {
+            "excerpt": "Tell your agent what you need, for example: - “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.” - “Create three designs with different typography, colors, and compositions. Put…",
+            "id": "C6",
+            "section_title": "Usage",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Codex",
+          "Python",
+          "Playwright"
+        ],
+        "description": "An agent-powered tool that takes an image of a UI screen and generates desktop and mobile layouts.",
+        "how_it_is_used": "Relies on the capability to recreate pages from screenshots and add mobile layouts.",
+        "title": "Screenshot-to-Responsive-Layout Converter"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "Send this to an agent that can install skills: ``` Install this skill for me: run npx skills add oil-oil/oil-ui ``` Or run this in your terminal: ``` npx skills add oil-oil/oil-ui ``` It's ready to use right after installation, with…",
+            "id": "C5",
+            "section_title": "Installation",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Installing both the open-source version and Oil UI Pro causes them to compete for the same requests."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/oil-oil/oil-ui"
+        },
+        {
+          "excerpt": "1. **Understand what the product is.** Before drawing anything, it names the product category, finds two or three peers with the most distinctive styles, and looks at what they do and why. Then it decides what to keep and what to change.…",
+          "id": "C2",
+          "section_title": "How it designs",
+          "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+        }
+      ],
+      "text": "Bridges the gap between vague product requirements (such as 'clean' or 'premium') and concrete visual design decisions, allowing AI agents to generate distinct layout, typography, and color directions."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/oil-oil/oil-ui"
+            },
+            {
+              "excerpt": "1. **Understand what the product is.** Before drawing anything, it names the product category, finds two or three peers with the most distinctive styles, and looks at what they do and why. Then it decides what to keep and what to change.…",
+              "id": "C2",
+              "section_title": "How it designs",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Design direction exploration and product category analysis"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/oil-oil/oil-ui"
+            },
+            {
+              "excerpt": "When you want to compare designs, it puts them side by side on one page. They can be HTML files, images, or running development pages, and the current version can go first as a baseline. You can switch between desktop and mobile sizes,…",
+              "id": "C8",
+              "section_title": "Built-in style comparison page",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Side-by-side style comparison page generation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "typography, color, and key imagery may share at most one between any two. Once the previews exist, it puts them side by side and squints at the light and dark shapes of each first screen. If two look alike, it changes the layout instead of…",
+              "id": "C3",
+              "section_title": "How it designs",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Screenshot verification for desktop and mobile sizes"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "| | Oil UI (open source) | Oil UI Pro | | --- | :---: | :---: | | Design direction: product category, tone, distinct directions, comparison page | ✓ | ✓ | | Visuals: hierarchy, typography, color, spacing, imagery, and motion | ✓ | ✓ | |…",
+              "id": "C10",
+              "section_title": "Open source and Pro",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "name": "Screenshot recreation"
+        }
+      ],
+      "frameworks": [],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/oil-oil/oil-ui"
+            }
+          ],
+          "name": "Claude Code"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/oil-oil/oil-ui"
+            }
+          ],
+          "name": "Codex"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Send this to an agent that can install skills: ``` Install this skill for me: run npx skills add oil-oil/oil-ui ``` Or run this in your terminal: ``` npx skills add oil-oil/oil-ui ``` It's ready to use right after installation, with…",
+              "id": "C5",
+              "section_title": "Installation",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "name": "DeepSeek Harness"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/oil-oil/oil-ui"
+            },
+            {
+              "excerpt": "Each time it is used, the Skill checks for a newer version, going online at most once every 10 minutes. It only reads the public version list at ui.oiloil.org and uploads nothing from your project. By default it only tells you about an…",
+              "id": "C12",
+              "section_title": "Version checks",
+              "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Tell your agent what you need, for example: - “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.” - “Create three designs with different typography, colors, and compositions. Put…",
+            "id": "C6",
+            "section_title": "Usage",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Exploring multiple design directions and visual styles for a new course booking product or website."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Tell your agent what you need, for example: - “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.” - “Create three designs with different typography, colors, and compositions. Put…",
+            "id": "C6",
+            "section_title": "Usage",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Recreating a web page from a screenshot and adding a mobile layout."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Tell your agent what you need, for example: - “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.” - “Create three designs with different typography, colors, and compositions. Put…",
+            "id": "C6",
+            "section_title": "Usage",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "text": "Reviewing an existing homepage to get improvement recommendations without modifying files directly."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/oil-oil/oil-ui"
+        },
+        {
+          "excerpt": "English · 中文 · 日本語 Oil UI is an interface design skill for AI agents. It recommends one direction and refines it against real screenshots, or explores several side by side when you ask to compare. It works for websites, apps, dashboards,…",
+          "id": "C7",
+          "section_title": null,
+          "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+        }
+      ],
+      "explanation": "Oil UI is a UI design skill designed for AI agents like Claude Code and Codex. It helps create websites, apps, dashboards, and components by exploring distinct design directions, comparing them side by side, and refining them against real screenshots.",
+      "one_line": "An interface design skill for AI agents that explores layout directions and refines designs."
+    },
+    "who_should_care": [
+      {
+        "audience": "Frontend Developers",
+        "citations": [
+          {
+            "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/oil-oil/oil-ui"
+          },
+          {
+            "excerpt": "Tell your agent what you need, for example: - “Use oil-ui to explore a few design directions for this course booking product and build pages I can preview.” - “Create three designs with different typography, colors, and compositions. Put…",
+            "id": "C6",
+            "section_title": "Usage",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "reason": "Can leverage AI agents with this skill to rapidly explore and preview distinct UI directions and recreate pages from screenshots."
+      },
+      {
+        "audience": "UI/UX Designers",
+        "citations": [
+          {
+            "excerpt": "oil-oil/oil-ui: UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。 Topics: agent skills, ai design, claude code,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/oil-oil/oil-ui"
+          },
+          {
+            "excerpt": "When you want to compare designs, it puts them side by side on one page. They can be HTML files, images, or running development pages, and the current version can go first as a baseline. You can switch between desktop and mobile sizes,…",
+            "id": "C8",
+            "section_title": "Built-in style comparison page",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "reason": "Can use AI agents to automate early-stage design exploration and side-by-side style comparisons."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "typography, color, and key imagery may share at most one between any two. Once the previews exist, it puts them side by side and squints at the light and dark shapes of each first screen. If two look alike, it changes the layout instead of…",
+            "id": "C3",
+            "section_title": "How it designs",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Enables AI agents to generate distinct design directions where layout, typography, and color share at most one attribute between options."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "When you want to compare designs, it puts them side by side on one page. They can be HTML files, images, or running development pages, and the current version can go first as a baseline. You can switch between desktop and mobile sizes,…",
+            "id": "C8",
+            "section_title": "Built-in style comparison page",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Includes a built-in style comparison page allowing users to view options side by side, switch between desktop and mobile views, and select favorites."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "typography, color, and key imagery may share at most one between any two. Once the previews exist, it puts them side by side and squints at the light and dark shapes of each first screen. If two look alike, it changes the layout instead of…",
+            "id": "C3",
+            "section_title": "How it designs",
+            "source_url": "https://github.com/oil-oil/oil-ui/blob/main/README.md"
+          }
+        ],
+        "point": "Verifies final outputs by opening them at desktop and mobile sizes and checking screenshots."
+      }
+    ]
+  },
+  "source_hash": "5e48d2317ffe0527e8884fb1e3c8ee01d5926f4c8fa1c44bea3d0cc55a4c08d0"
+}

@@ -1,0 +1,568 @@
+{
+  "full_name": "pydantic/pydantic-ai",
+  "generated_at": "2026-11-10 09:09:01.761830+00:00",
+  "github_id": 818331198,
+  "model_name": "gemini:gemini-3.5-flash-lite",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "A typed support agent showing several features working together: dependency injection, function tools, structured output, a reusable capability bundling the customer context, and an on-demand capability the model loads only when the…",
+            "id": "C6",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "# a reusable unit of tools + instructions id='customer-context', description=\"Who the customer is and what's on their account.\", ) @customer_context.instructions async def add_customer_name(ctx: RunContext[SupportDependencies]) -> str:…",
+            "id": "C7",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "str: \"\"\"Look up the refund status for the customer's most recent charge.\"\"\" return await ctx.deps.db.refund_status(id=ctx.deps.customer_id) support_agent = Agent( 'openai:gpt-6.1-sol', deps_type=SupportDependencies,…",
+            "id": "C8",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "sorry to hear that, John. We are temporarily blocking your card to prevent unauthorized transactions.\" block_card=True risk=8 \"\"\" result = await support_agent.run( # the model loads `refunds` on demand, then answers 'Was I refunded for the…",
+            "id": "C9",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "PostgreSQL",
+          "FastAPI",
+          "OpenAI API"
+        ],
+        "description": "Build an AI support agent that injects database clients and customer context, uses function tools to check balances or refund statuses, and returns validated structured output for risk level and actions.",
+        "how_it_is_used": "Leverages Agent, Capability, RunContext, structured outputs via Pydantic BaseModel, and dependency injection.",
+        "title": "Typed Customer Support Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "A complete coding agent in your terminal: workspace-rooted file access, allowlisted shell, repo orientation, planning, and context management that survives long sessions. Here with web search and a second-opinion advisor snapped on…",
+            "id": "C12",
+            "section_title": "Coding agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Anthropic Claude",
+          "Terminal multiplexers",
+          "Ripgrep"
+        ],
+        "description": "Create a command-line coding assistant that has file system access, can run shell commands, perform web searches for troubleshooting documentation, and consult a secondary model for advice.",
+        "how_it_is_used": "Uses Agent, Coder capability, WebSearch capability, Advisor, and to_cli_sync().",
+        "title": "Terminal Coding Agent with Web Search"
+      }
+    ],
+    "generated": true,
+    "getting_started": [],
+    "limitations": [],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+          "id": "C3",
+          "section_title": "Why Pydantic AI",
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        },
+        {
+          "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+          "id": "C5",
+          "section_title": "Why Pydantic AI",
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        }
+      ],
+      "text": "It removes vendor lock-in and runtime errors by allowing model switching via simple string configs, providing end-to-end typing for structured outputs and tools, and enabling durable execution so agents survive restarts and run for days."
+    },
+    "technical": {
+      "architecture": null,
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Typed dependency injection"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Typed tools and structured outputs"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Graph-based workflows via Pydantic Graph"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "OpenTelemetry-native instrumentation"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Model evaluation via Pydantic Evals"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Durable execution engines support"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "pydantic/pydantic-ai: How Python does AI. Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. Topics: agent framework, genai, harness, harness engineering, llm, pydantic, python. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/pydantic/pydantic-ai"
+            },
+            {
+              "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+              "id": "C4",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Realtime voice interfaces"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "pydantic/pydantic-ai: How Python does AI. Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. Topics: agent framework, genai, harness, harness engineering, llm, pydantic, python. Primary…",
+              "id": "C1",
+              "section_title": "GitHub metadata",
+              "source_url": "https://github.com/pydantic/pydantic-ai"
+            },
+            {
+              "excerpt": "How Python does AI Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. --- **Pydantic AI** is the Python AI SDK: a typed, extensible agent loop with every model a string swap away, and…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Image generation and embeddings"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Temporal"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "DBOS"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Prefect"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Restate"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Airflow"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "OpenAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Anthropic"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Google"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Bedrock"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Azure AI Foundry"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Groq"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Mistral"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "xAI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Ollama"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+              "id": "C3",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "Pydantic Logfire"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+              "id": "C4",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "GitHub Agentic Workflows"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+              "id": "C5",
+              "section_title": "Why Pydantic AI",
+              "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+            }
+          ],
+          "name": "AWS Lambda"
+        }
+      ],
+      "prerequisites": []
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "A typed support agent showing several features working together: dependency injection, function tools, structured output, a reusable capability bundling the customer context, and an on-demand capability the model loads only when the…",
+            "id": "C6",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "# a reusable unit of tools + instructions id='customer-context', description=\"Who the customer is and what's on their account.\", ) @customer_context.instructions async def add_customer_name(ctx: RunContext[SupportDependencies]) -> str:…",
+            "id": "C7",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "str: \"\"\"Look up the refund status for the customer's most recent charge.\"\"\" return await ctx.deps.db.refund_status(id=ctx.deps.customer_id) support_agent = Agent( 'openai:gpt-6.1-sol', deps_type=SupportDependencies,…",
+            "id": "C8",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "sorry to hear that, John. We are temporarily blocking your card to prevent unauthorized transactions.\" block_card=True risk=8 \"\"\" result = await support_agent.run( # the model loads `refunds` on demand, then answers 'Was I refunded for the…",
+            "id": "C9",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "text": "Building customer support agents with access to custom databases, dependency injection, risk scoring, and on-demand capability loading."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+            "id": "C4",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "text": "Executing headless agentic workflows on GitHub for issues, pull requests, or custom schedules."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+            "id": "C4",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "text": "Deploying conversational applications across multiple interfaces including CLIs, built-in web chats, realtime voice calls, or editor agents via ACP."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "pydantic/pydantic-ai: How Python does AI. Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. Topics: agent framework, genai, harness, harness engineering, llm, pydantic, python. Primary…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/pydantic/pydantic-ai"
+        },
+        {
+          "excerpt": "From simple typed data extraction to complex, long-running multi-agent collaboration, Pydantic AI and Pydantic AI Harness have got you covered.",
+          "id": "C2",
+          "section_title": "What are you building?",
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        },
+        {
+          "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+          "id": "C3",
+          "section_title": "Why Pydantic AI",
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        },
+        {
+          "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+          "id": "C4",
+          "section_title": "Why Pydantic AI",
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        },
+        {
+          "excerpt": "How Python does AI Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. --- **Pydantic AI** is the Python AI SDK: a typed, extensible agent loop with every model a string swap away, and…",
+          "id": "C10",
+          "section_title": null,
+          "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+        }
+      ],
+      "explanation": "Pydantic AI is a Python AI SDK that provides a typed, extensible agent loop supporting multiple models and providers with simple string swaps or a gateway. It allows developers to build applications ranging from simple typed data extraction to complex multi-agent systems with integrated capabilities like tools, instructions, and hooks. It supports multiple interfaces, durable execution engines, and extensive instrumentation.",
+      "one_line": "A typed Python AI SDK for building agents, multi-agent collaboration, and workflows with end-to-end typing."
+    },
+    "who_should_care": [
+      {
+        "audience": "Python Developers",
+        "citations": [
+          {
+            "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+            "id": "C3",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "reason": "They can build type-safe AI agents and workflows that integrate smoothly with existing Python data structures and IDE tooling."
+      },
+      {
+        "audience": "AI Engineers",
+        "citations": [
+          {
+            "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+            "id": "C3",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "How Python does AI Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end. --- **Pydantic AI** is the Python AI SDK: a typed, extensible agent loop with every model a string swap away, and…",
+            "id": "C10",
+            "section_title": null,
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "packages, and so are genai-prices, which keeps model pricing current, and Monty, the sandboxed Python interpreter that runs model-written code. Pydantic Logfire is the AI engineering platform that sees your whole app, not just the LLM…",
+            "id": "C11",
+            "section_title": null,
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "reason": "They gain access to end-to-end tracing, performance evaluation, cost monitoring, and flexible support for multi-agent loops across various model providers."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+            "id": "C3",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "point": "Allows switching between virtually every model and provider using a string or through the Pydantic AI Gateway."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- **Any model, one Python API.** Virtually every model and provider (OpenAI, Anthropic, Google, Bedrock, Azure AI Foundry, Groq, Mistral, xAI, Ollama, and dozens more), swappable with a string, or through the Pydantic AI Gateway: one key…",
+            "id": "C3",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "point": "End-to-end typing for structured outputs, dependency injection, and tools, shifting errors from runtime to write-time."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "frontend or anything else; ACP serves it as an editor agent; and GitHub Agentic Workflows runs it headless on issues, pull requests or a schedule. - **Durable execution.** Durable execution on nine engines: Temporal, DBOS, Prefect,…",
+            "id": "C5",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "point": "Supports durable execution across nine different engines like Temporal, DBOS, Prefect, and AWS Lambda."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Evals grades final outputs and tool-call trajectories, against datasets in code or, with online evaluation, a sample of live production traffic. - **Batteries, composably.** One primitive, the capability, bundles tools, instructions,…",
+            "id": "C4",
+            "section_title": "Why Pydantic AI",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "A typed support agent showing several features working together: dependency injection, function tools, structured output, a reusable capability bundling the customer context, and an on-demand capability the model loads only when the…",
+            "id": "C6",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          },
+          {
+            "excerpt": "# a reusable unit of tools + instructions id='customer-context', description=\"Who the customer is and what's on their account.\", ) @customer_context.instructions async def add_customer_name(ctx: RunContext[SupportDependencies]) -> str:…",
+            "id": "C7",
+            "section_title": "Putting it together: a bank support agent",
+            "source_url": "https://github.com/pydantic/pydantic-ai/blob/main/README.md"
+          }
+        ],
+        "point": "Reusable capabilities can bundle instructions, hooks, and tools, and load on-demand when required by the conversation."
+      }
+    ]
+  },
+  "source_hash": "14b05ae3d18aaf2aacd3756fada7061763a9c643b84f22ca6ecb4bdd35cde928"
+}

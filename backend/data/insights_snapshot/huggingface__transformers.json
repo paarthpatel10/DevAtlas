@@ -1,0 +1,619 @@
+{
+  "full_name": "huggingface/transformers",
+  "generated_at": "2026-11-10 07:44:52.617421+00:00",
+  "github_id": 155220641,
+  "model_name": "gemini:gemini-3.5-flash",
+  "prompt_version": "insights-v1",
+  "report": {
+    "build_ideas": [
+      {
+        "citations": [
+          {
+            "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "7.85409429227002e-05}, {'label': 'quail', 'score': 5.502637941390276e-05}] ``` Visual question answering ``` from transformers import pipeline pipeline = pipeline(task=\"visual-question-answering\", model=\"Salesforce/blip-vqa-base\")…",
+            "id": "C6",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "FastAPI",
+          "PyTorch"
+        ],
+        "description": "An interactive assistant capable of answering user questions about uploaded images using spoken audio input.",
+        "how_it_is_used": "Use the pipeline API configured for automatic speech recognition (e.g., Whisper) to transcribe spoken user queries, then pass the query and image to a visual question answering model pipeline (e.g., BLIP-VQA).",
+        "title": "Multimodal Speech and Vision Assistant"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "the usage pattern is the same. The only difference is you need to construct a chat history (the input to `Pipeline`) between you and the system. > [!TIP] > You can also chat with a model directly from the command line, as long as…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Rich",
+          "Click"
+        ],
+        "description": "A terminal-based chat tool that maintains conversational context between the system and user.",
+        "how_it_is_used": "Construct a system and user message history array and pass it to a text-generation pipeline using open-weights models like Meta-Llama-3-8B-Instruct or utilize the built-in CLI chat command.",
+        "title": "CLI Chat Companion"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "You can test most of our models directly on their Hub model pages. Expand each modality below to see a few example models for various use cases. Audio - Audio classification with CLAP - Automatic speech recognition with Parakeet, Whisper,…",
+            "id": "C8",
+            "section_title": "Example models",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "with Emu3 - Vision to text with Llava-OneVision - Visual question answering with Llava - Visual referring expression segmentation with Kosmos-2 NLP - Masked word completion with ModernBERT - Named entity recognition with Gemma - Question…",
+            "id": "C9",
+            "section_title": "Example models",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "complementary_tech": [
+          "Streamlit"
+        ],
+        "description": "A processing tool to extract structured insights and summaries from scanned documents.",
+        "how_it_is_used": "Leverage optical character recognition and visual document understanding models (such as GOT-OCR2 or LayoutLMv3) along with NLP summarization models (such as BART).",
+        "title": "Document Intelligence Pipeline"
+      }
+    ],
+    "generated": true,
+    "getting_started": [
+      {
+        "citations": [
+          {
+            "excerpt": "Transformers works with Python 3.11+, and PyTorch 2.6+. Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager. ``` # venv python -m venv .my-env source .my-env/bin/activate # uv uv…",
+            "id": "C2",
+            "section_title": "Installation",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "label": "Source Repository Git URL",
+        "url": "https://github.com/huggingface/transformers.git"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "label": "Speech Recognition Sample Audio URL",
+        "url": "https://huggingface.co/datasets/Narsil/asr_dummy/resolve/main/mlk.flac"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "label": "Image Classification Sample Image URL",
+        "url": "https://huggingface.co/datasets/Narsil/image_dummy/raw/main/parrots.png"
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "7.85409429227002e-05}, {'label': 'quail', 'score': 5.502637941390276e-05}] ``` Visual question answering ``` from transformers import pipeline pipeline = pipeline(task=\"visual-question-answering\", model=\"Salesforce/blip-vqa-base\")…",
+            "id": "C6",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "label": "Visual Question Answering Sample Image URL",
+        "url": "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/idefics-few-shot.jpg"
+      }
+    ],
+    "limitations": [
+      {
+        "citations": [
+          {
+            "excerpt": "- This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving…",
+            "id": "C12",
+            "section_title": "When shouldn't I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Not designed as a modular toolbox of generic neural network building blocks."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "- This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving…",
+            "id": "C12",
+            "section_title": "When shouldn't I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "The built-in training API is optimized specifically for PyTorch models provided by Transformers; general ML training loops should use libraries like Accelerate."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "Transformers works with Python 3.11+, and PyTorch 2.6+. Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager. ``` # venv python -m venv .my-env source .my-env/bin/activate # uv uv…",
+            "id": "C2",
+            "section_title": "Installation",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Installing directly from source provides access to the newest changes but may be unstable."
+      }
+    ],
+    "problem_solved": {
+      "citations": [
+        {
+          "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+          "id": "C7",
+          "section_title": "Why should I use Transformers?",
+          "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+        },
+        {
+          "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+          "id": "C10",
+          "section_title": null,
+          "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+        }
+      ],
+      "text": "It provides a centralized model-definition framework across machine learning training frameworks, inference engines, and adjacent modeling libraries, while reducing compute costs and carbon footprint by enabling model sharing instead of training models from scratch."
+    },
+    "technical": {
+      "architecture": {
+        "citations": [
+          {
+            "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+            "id": "C7",
+            "section_title": "Why should I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+            "id": "C10",
+            "section_title": null,
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "- This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving…",
+            "id": "C12",
+            "section_title": "When shouldn't I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Transformers centralizes model definitions with few user-facing abstractions. Model code in individual model files is intentionally un-refactored from extra abstractions so developers can inspect and modify internals directly without navigating complex inheritance trees."
+      },
+      "capabilities": [
+        {
+          "citations": [
+            {
+              "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+              "id": "C3",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            },
+            {
+              "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+              "id": "C5",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            },
+            {
+              "excerpt": "7.85409429227002e-05}, {'label': 'quail', 'score': 5.502637941390276e-05}] ``` Visual question answering ``` from transformers import pipeline pipeline = pipeline(task=\"visual-question-answering\", model=\"Salesforce/blip-vqa-base\")…",
+              "id": "C6",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "High-level Pipeline API for multi-task inference"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "the usage pattern is the same. The only difference is you need to construct a chat history (the input to `Pipeline`) between you and the system. > [!TIP] > You can also chat with a model directly from the command line, as long as…",
+              "id": "C4",
+              "section_title": "Quickstart",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "CLI interactive chat interface"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "Centralized model definitions supporting training and inference ecosystem tools"
+        }
+      ],
+      "frameworks": [
+        {
+          "citations": [
+            {
+              "excerpt": "Transformers works with Python 3.11+, and PyTorch 2.6+. Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager. ``` # venv python -m venv .my-env source .my-env/bin/activate # uv uv…",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            },
+            {
+              "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+              "id": "C7",
+              "section_title": "Why should I use Transformers?",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "PyTorch"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+              "id": "C7",
+              "section_title": "Why should I use Transformers?",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "JAX"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+              "id": "C7",
+              "section_title": "Why should I use Transformers?",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "TensorFlow 2.0"
+        }
+      ],
+      "integrations": [
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "vLLM"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "SGLang"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "TGI"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "DeepSpeed"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "PyTorch-Lightning"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "Axolotl"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "Unsloth"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "llama.cpp"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+              "id": "C10",
+              "section_title": null,
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "name": "mlx"
+        }
+      ],
+      "prerequisites": [
+        {
+          "citations": [
+            {
+              "excerpt": "Transformers works with Python 3.11+, and PyTorch 2.6+. Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager. ``` # venv python -m venv .my-env source .my-env/bin/activate # uv uv…",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "text": "Python 3.11+"
+        },
+        {
+          "citations": [
+            {
+              "excerpt": "Transformers works with Python 3.11+, and PyTorch 2.6+. Create and activate a virtual environment with venv or uv, a fast Rust-based Python package and project manager. ``` # venv python -m venv .my-env source .my-env/bin/activate # uv uv…",
+              "id": "C2",
+              "section_title": "Installation",
+              "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+            }
+          ],
+          "text": "PyTorch 2.6+"
+        }
+      ]
+    },
+    "use_cases": [
+      {
+        "citations": [
+          {
+            "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "the usage pattern is the same. The only difference is you need to construct a chat history (the input to `Pipeline`) between you and the system. > [!TIP] > You can also chat with a model directly from the command line, as long as…",
+            "id": "C4",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "with Emu3 - Vision to text with Llava-OneVision - Visual question answering with Llava - Visual referring expression segmentation with Kosmos-2 NLP - Masked word completion with ModernBERT - Named entity recognition with Gemma - Question…",
+            "id": "C9",
+            "section_title": "Example models",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Natural language processing tasks including text generation, chat, summarization, translation, and question answering."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "You can test most of our models directly on their Hub model pages. Expand each modality below to see a few example models for various use cases. Audio - Audio classification with CLAP - Automatic speech recognition with Parakeet, Whisper,…",
+            "id": "C8",
+            "section_title": "Example models",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Audio processing including automatic speech recognition, text-to-audio generation, and keyword spotting."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "7.85409429227002e-05}, {'label': 'quail', 'score': 5.502637941390276e-05}] ``` Visual question answering ``` from transformers import pipeline pipeline = pipeline(task=\"visual-question-answering\", model=\"Salesforce/blip-vqa-base\")…",
+            "id": "C6",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "You can test most of our models directly on their Hub model pages. Expand each modality below to see a few example models for various use cases. Audio - Audio classification with CLAP - Automatic speech recognition with Parakeet, Whisper,…",
+            "id": "C8",
+            "section_title": "Example models",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "text": "Computer vision and multimodal tasks including image classification, object detection, visual question answering, and document question answering."
+      }
+    ],
+    "what_is_it": {
+      "citations": [
+        {
+          "excerpt": "huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. Topics: audio, deep learning, deepseek,…",
+          "id": "C1",
+          "section_title": "GitHub metadata",
+          "source_url": "https://github.com/huggingface/transformers"
+        },
+        {
+          "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+          "id": "C3",
+          "section_title": "Quickstart",
+          "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+        },
+        {
+          "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+          "id": "C10",
+          "section_title": null,
+          "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+        },
+        {
+          "excerpt": "engines (vLLM, SGLang, TGI, ...), and adjacent modeling libraries (llama.cpp, mlx, ...) which leverage the model definition from `transformers`. We pledge to help support new state-of-the-art models and democratize their usage by having…",
+          "id": "C11",
+          "section_title": null,
+          "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+        }
+      ],
+      "explanation": "Transformers centralizes machine learning model definitions for inference and training across text, computer vision, audio, video, and multimodal modalities. It provides high-level interfaces like the Pipeline API alongside broad compatibility with downstream training frameworks and inference engines. Users can access over one million pretrained model checkpoints hosted on the Hugging Face Hub.",
+      "one_line": "A model-definition framework for state-of-the-art machine learning models across text, vision, audio, and multimodal tasks."
+    },
+    "who_should_care": [
+      {
+        "audience": "Machine Learning Engineers and Developers",
+        "citations": [
+          {
+            "excerpt": "huggingface/transformers: 🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. Topics: audio, deep learning, deepseek,…",
+            "id": "C1",
+            "section_title": "GitHub metadata",
+            "source_url": "https://github.com/huggingface/transformers"
+          },
+          {
+            "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+            "id": "C7",
+            "section_title": "Why should I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+            "id": "C10",
+            "section_title": null,
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "reason": "They can leverage pretrained models across multiple modalities using high-level pipeline abstractions or integrate unified model definitions into training and inference pipelines."
+      },
+      {
+        "audience": "AI Researchers",
+        "citations": [
+          {
+            "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+            "id": "C7",
+            "section_title": "Why should I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "- This library is not a modular toolbox of building blocks for neural nets. The code in the model files is not refactored with additional abstractions on purpose, so that researchers can quickly iterate on each of the models without diving…",
+            "id": "C12",
+            "section_title": "When shouldn't I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "reason": "They can easily inspect and iterate on model files where model internals are exposed consistently without hidden abstraction layers."
+      }
+    ],
+    "why_interesting": [
+      {
+        "citations": [
+          {
+            "excerpt": "Get started with Transformers right away with the Pipeline API. The `Pipeline` is a high-level inference class that supports text, audio, vision, and multimodal tasks. It handles preprocessing the input and returns the appropriate output.…",
+            "id": "C3",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "examples below to see how `Pipeline` works for different modalities and tasks. Automatic speech recognition ``` from transformers import pipeline pipeline = pipeline(task=\"automatic-speech-recognition\", model=\"openai/whisper-large-v3\")…",
+            "id": "C5",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "7.85409429227002e-05}, {'label': 'quail', 'score': 5.502637941390276e-05}] ``` Visual question answering ``` from transformers import pipeline pipeline = pipeline(task=\"visual-question-answering\", model=\"Salesforce/blip-vqa-base\")…",
+            "id": "C6",
+            "section_title": "Quickstart",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "point": "Offers a unified Pipeline API that simplifies high-level inference across text, vision, audio, and multimodal tasks."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "English | 简体中文 | 繁體中文 | 한국어 | Español | 日本語 | हिन्दी | मराठी | Русский | Português | తెలుగు | Français | Deutsch | Italiano | Tiếng Việt | العربية | اردو | বাংলা | فارسی | Română | Türkçe State-of-the-art pretrained models for inference…",
+            "id": "C10",
+            "section_title": null,
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "point": "Serves as an ecosystem pivot compatible with training frameworks like DeepSpeed and PyTorch-Lightning as well as inference engines like vLLM and TGI."
+      },
+      {
+        "citations": [
+          {
+            "excerpt": "1. Easy-to-use state-of-the-art models: - High performance on natural language understanding & generation, computer vision, audio, video, and multimodal tasks. - Low barrier to entry for researchers, engineers, and developers. - Few…",
+            "id": "C7",
+            "section_title": "Why should I use Transformers?",
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          },
+          {
+            "excerpt": "engines (vLLM, SGLang, TGI, ...), and adjacent modeling libraries (llama.cpp, mlx, ...) which leverage the model definition from `transformers`. We pledge to help support new state-of-the-art models and democratize their usage by having…",
+            "id": "C11",
+            "section_title": null,
+            "source_url": "https://github.com/huggingface/transformers/blob/main/README.md"
+          }
+        ],
+        "point": "Provides access to over one million pretrained model checkpoints on the Hugging Face Hub."
+      }
+    ]
+  },
+  "source_hash": "03072f376431c9ec87f207ea9b6e424e00eb859b3d42197ed3c0ccfd7ca80c8c"
+}
