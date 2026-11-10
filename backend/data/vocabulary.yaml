@@ -1,0 +1,267 @@
+# Vocabulary for the deterministic (demo-mode) query understanding.
+#
+# stack_terms: technologies a user may already use. role groups them; language is the
+#   language the technology implies (used only for "inferred" compatibility notes).
+# capabilities: requirement concepts. `triggers` detect the concept in a query and are also
+#   searched for in repository text as evidence; `expansions` add generic technical
+#   synonyms for retrieval. Expansions must NOT contain product names, so that
+#   recommendations come from repository content, not from this dictionary.
+# licenses: phrases mapped to SPDX ids (used only when the query talks about licensing).
+
+stack_terms:
+  Python: {role: language, language: Python, aliases: [python]}
+  TypeScript: {role: language, language: TypeScript, aliases: [typescript]}
+  JavaScript: {role: language, language: JavaScript, aliases: [javascript, node.js, nodejs, node]}
+  Go: {role: language, language: Go, aliases: [golang]}
+  Rust: {role: language, language: Rust, aliases: [rust]}
+  Java: {role: language, language: Java, aliases: [java]}
+  FastAPI: {role: backend, language: Python, aliases: [fastapi, fast api]}
+  Django: {role: backend, language: Python, aliases: [django]}
+  Flask: {role: backend, language: Python, aliases: [flask]}
+  Express: {role: backend, language: JavaScript, aliases: [express, express.js, expressjs]}
+  NestJS: {role: backend, language: TypeScript, aliases: [nestjs, nest.js]}
+  Spring Boot: {role: backend, language: Java, aliases: [spring boot, spring]}
+  Next.js: {role: frontend, language: TypeScript, aliases: [next.js, nextjs, next js]}
+  React: {role: frontend, language: TypeScript, aliases: [react, react.js, reactjs]}
+  Vue: {role: frontend, language: TypeScript, aliases: [vue, vue.js, vuejs]}
+  Svelte: {role: frontend, language: TypeScript, aliases: [svelte, sveltekit]}
+  PostgreSQL: {role: database, aliases: [postgresql, postgres, pg]}
+  MySQL: {role: database, aliases: [mysql]}
+  SQLite: {role: database, aliases: [sqlite]}
+  Redis: {role: database, aliases: [redis]}
+  MongoDB: {role: database, aliases: [mongodb, mongo]}
+  Kubernetes: {role: infrastructure, aliases: [kubernetes, k8s]}
+  Docker: {role: infrastructure, aliases: [docker, containers]}
+  AWS: {role: infrastructure, aliases: [aws, amazon web services]}
+  JWT: {role: auth, aliases: [jwt, json web token, json web tokens]}
+
+capabilities:
+  background_jobs:
+    label: background jobs
+    category: backend
+    triggers: [background job, background jobs, background task, background tasks, task queue,
+               task queues, job queue, job queues, worker, workers, async task, async tasks,
+               asynchronous task, asynchronous tasks, distributed task, distributed tasks]
+    expansions: [task queue, job queue, background jobs, worker, asynchronous tasks,
+                 message broker]
+  retries:
+    label: retries
+    category: backend
+    triggers: [retry, retries, retrying, retried, backoff, exponential backoff]
+    expansions: [retry, retries, backoff]
+  scheduling:
+    label: scheduling
+    category: backend
+    triggers: [schedule, scheduled, scheduling, scheduler, cron, crontab, periodic,
+               periodic task, periodic tasks, recurring]
+    expansions: [scheduler, cron, periodic tasks, scheduled jobs]
+  rbac:
+    label: access control
+    category: backend
+    triggers: [role-based access control, role based access control, rbac, abac, acl,
+               access control, authorization, authorisation, permissions, permission,
+               policy enforcement]
+    expansions: [access control, authorization, rbac, permissions, policy]
+  authentication:
+    label: authentication
+    category: backend
+    triggers: [authentication, login, sign in, single sign-on, sso, oauth, oauth2, oidc,
+               openid connect, identity management, identity provider]
+    expansions: [authentication, identity, oauth, openid connect, single sign-on]
+  multi_tenancy:
+    label: multi-tenancy
+    category: backend
+    triggers: [multi-tenant, multi tenant, multitenant, multi-tenancy, multitenancy,
+               tenants, tenant]
+    expansions: [multi-tenant, tenancy, tenant isolation]
+  web_framework:
+    label: web framework
+    category: backend
+    triggers: [web framework, rest api, rest apis, http api, api server, http server,
+               web server, routing]
+    expansions: [web framework, rest api, http, routing, middleware]
+  orm:
+    label: database access
+    category: databases_search
+    triggers: [orm, object relational, object-relational, sql toolkit, query builder,
+               database toolkit, database access]
+    expansions: [orm, sql toolkit, database access, migrations]
+  full_text_search:
+    label: full-text search
+    category: databases_search
+    triggers: [full-text search, full text search, search engine, typo tolerance,
+               typo-tolerant, typo tolerant, fuzzy search, faceted search, instant search,
+               search-as-you-type, product search]
+    expansions: [search engine, full-text search, typo tolerance, relevancy, faceted search]
+  vector_search:
+    label: vector search
+    category: databases_search
+    triggers: [vector database, vector databases, vector search, vector similarity,
+               similarity search, embeddings, embedding, semantic search, nearest neighbor,
+               nearest neighbour, ann]
+    expansions: [vector database, vector similarity search, embeddings,
+                 nearest neighbor search]
+  caching_kv:
+    label: in-memory data store
+    category: databases_search
+    triggers: [in-memory, key-value, key value store, in memory database, pub/sub]
+    expansions: [in-memory data store, key-value, data structures]
+  llm:
+    label: large language models
+    category: llm_agents_mcp
+    triggers: [llm, llms, large language model, large language models, language model,
+               language models, chatbot, rag, retrieval augmented generation]
+    expansions: [large language models, llm, prompts]
+  local_llm:
+    label: local inference
+    category: llm_agents_mcp
+    triggers: [locally, local llm, local llms, local model, local models, on my laptop,
+               on-device, offline, self-hosted model, model serving, inference server,
+               llm inference, serving]
+    expansions: [run locally, local inference, inference server, model serving]
+  agents_tools:
+    label: agents and tool calling
+    category: llm_agents_mcp
+    triggers: [agent, agents, agentic, tool calling, tool use, function calling, mcp,
+               model context protocol, calls tools, call tools]
+    expansions: [agents, tool calling, model context protocol, mcp server, function calling]
+  ml_training:
+    label: machine learning
+    category: ai_ml
+    triggers: [machine learning, deep learning, train models, train a model, training,
+               neural network, neural networks, model training, transformers, fine-tune,
+               fine-tuning, experiment tracking]
+    expansions: [machine learning, deep learning, neural networks, training]
+  data_pipelines:
+    label: data pipelines
+    category: data_engineering
+    triggers: [data pipeline, data pipelines, pipeline, pipelines, orchestrate, orchestration,
+               workflow, workflows, etl, elt, dag, dags, data orchestration]
+    expansions: [data pipelines, workflow orchestration, etl, dag, data orchestration]
+  dataframes:
+    label: dataframes and analytics
+    category: data_engineering
+    triggers: [dataframe, dataframes, data frame, data frames, analytics, analytical,
+               columnar, olap, sql analytics, data analysis]
+    expansions: [dataframe, analytics, columnar, query engine]
+  data_transformation:
+    label: data transformation
+    category: data_engineering
+    triggers: [data transformation, transform data, analytics engineering, data modeling,
+               data warehouse, sql models]
+    expansions: [data transformation, sql models, data warehouse]
+  infrastructure_as_code:
+    label: infrastructure as code
+    category: devops_platform
+    triggers: [infrastructure as code, iac, provision, provisioning, cloud resources,
+               declarative infrastructure]
+    expansions: [infrastructure as code, provisioning, declarative configuration,
+                 cloud infrastructure]
+  monitoring_alerting:
+    label: monitoring and alerting
+    category: devops_platform
+    triggers: [monitoring, monitor, metrics, alerting, alerts, observability, dashboards,
+               dashboard, time series]
+    expansions: [monitoring, metrics, alerting, observability, dashboards, time series]
+  container_orchestration:
+    label: container orchestration
+    category: devops_platform
+    triggers: [container orchestration, orchestrate containers, deploy containers,
+               containerized applications]
+    expansions: [container orchestration, deployment, scaling]
+  continuous_delivery:
+    label: continuous delivery
+    category: devops_platform
+    triggers: [continuous delivery, continuous deployment, gitops, deploy to kubernetes,
+               deployments]
+    expansions: [continuous delivery, gitops, declarative deployment]
+  reverse_proxy:
+    label: reverse proxy
+    category: devops_platform
+    triggers: [reverse proxy, load balancer, load balancing, ingress, api gateway,
+               edge router]
+    expansions: [reverse proxy, load balancing, ingress]
+  linting_formatting:
+    label: linting and formatting
+    category: developer_tools
+    triggers: [linter, linters, linting, lint, formatter, formatting, code style,
+               code formatter, static analysis]
+    expansions: [linter, formatter, code quality, static analysis]
+  testing:
+    label: testing
+    category: developer_tools
+    triggers: [unit test, unit tests, unit testing, test framework, testing framework,
+               fixtures, test runner]
+    expansions: [testing framework, unit tests, fixtures, assertions]
+  browser_testing:
+    label: end-to-end testing
+    category: developer_tools
+    triggers: [end-to-end test, end-to-end tests, end-to-end testing, end to end tests, e2e,
+               browser testing, browser automation, ui testing, headless browser]
+    expansions: [end-to-end testing, browser automation, headless browser, test runner]
+  package_management:
+    label: package management
+    category: developer_tools
+    triggers: [package manager, package management, dependency management,
+               virtual environment, virtual environments, virtualenv, install packages]
+    expansions: [package manager, dependency resolution, virtual environments]
+  error_tracking:
+    label: error tracking
+    category: developer_tools
+    triggers: [error tracking, error monitoring, crash reporting, exception tracking]
+    expansions: [error tracking, crash reporting, performance monitoring]
+  git_hooks:
+    label: git hooks
+    category: developer_tools
+    triggers: [git hook, git hooks, pre-commit, commit hooks]
+    expansions: [git hooks, pre-commit]
+  form_validation:
+    label: form validation
+    category: frontend
+    triggers: [form validation, forms, form, schema validation, validation, validate,
+               validator, validators]
+    expansions: [form validation, schema validation, type-safe validation, forms]
+  server_state_caching:
+    label: server state and caching
+    category: frontend
+    triggers: [server state, data fetching, fetch data, caching, cache, api calls,
+               query caching, async state]
+    expansions: [data fetching, server state, caching, synchronization]
+  ui_components:
+    label: UI components
+    category: frontend
+    triggers: [ui components, component library, components, design system, ui kit]
+    expansions: [components, design system, accessible, ui]
+  state_management:
+    label: state management
+    category: frontend
+    triggers: [state management, global state, client state, state store]
+    expansions: [state management, store, hooks]
+  css_styling:
+    label: styling
+    category: frontend
+    triggers: [css, styling, utility classes, utility-first]
+    expansions: [css, utility-first, styling]
+  system_design_learning:
+    label: system design
+    category: learning
+    triggers: [system design, large-scale systems, large scale systems, scalable systems,
+               designing systems, systems are designed]
+    expansions: [system design, scalability, distributed systems, architecture]
+  learning_resources:
+    label: learning resources
+    category: learning
+    triggers: [learn, learning, beginner, beginners, tutorial, tutorials, course, courses,
+               curriculum, from scratch, build your own]
+    expansions: [tutorial, course, lessons, beginners, from scratch]
+
+licenses:
+  mit: MIT
+  apache 2.0: Apache-2.0
+  apache 2: Apache-2.0
+  apache: Apache-2.0
+  bsd: BSD-3-Clause
+  agpl: AGPL-3.0
+  lgpl: LGPL-3.0
+  gpl: GPL-3.0
+  mpl: MPL-2.0

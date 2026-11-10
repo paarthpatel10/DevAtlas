@@ -12,6 +12,14 @@ def settings() -> Settings:
     return Settings(app_env="test", database_url=None, _env_file=None)
 
 
+@pytest.fixture(scope="session")
+def vocab():
+    from app.ai.vocabulary import Vocabulary
+    from app.config import BACKEND_DIR
+
+    return Vocabulary.load(BACKEND_DIR / "data" / "vocabulary.yaml")
+
+
 @pytest.fixture
 def providers(settings: Settings) -> Providers:
     return get_providers(settings)

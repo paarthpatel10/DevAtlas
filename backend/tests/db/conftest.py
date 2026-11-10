@@ -9,12 +9,14 @@ from collections.abc import Iterator
 import pytest
 from alembic import command
 from alembic.config import Config
+from fastapi.testclient import TestClient
 from sqlalchemy import Engine, text
 from sqlalchemy.orm import Session
 
 from app.ai.provider import get_providers
 from app.config import BACKEND_DIR, Settings
-from app.db.session import get_engine
+from app.db.session import get_db, get_engine
+from app.main import create_app
 from app.services.ingestion_service import seed_from_directory
 from tests.factories import FIXTURES_DIR
 
@@ -83,3 +85,13 @@ def seeded(seeded_module_session: Session) -> Iterator[Session]:
     seeded_module_session.commit()
     yield seeded_module_session
     seeded_module_session.rollback()
+
+
+@pytest.fixture
+def api(seeded: Session) -> TestClient:
+    """API client whose DB dependency is the seeded test session."""
+    app = create_app(
+        Settings(app_env="test", _env_file=None, database_url="postgresql+psycopg://unused/x")
+    )
+    app.dependency_overrides[get_db] = lambda: seeded
+    return TestClient(app)

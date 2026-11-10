@@ -1,18 +1,4 @@
 import pytest
-from fastapi.testclient import TestClient
-
-from app.config import Settings
-from app.db.session import get_db
-from app.main import create_app
-
-
-@pytest.fixture
-def api(seeded):
-    app = create_app(
-        Settings(app_env="test", _env_file=None, database_url="postgresql+psycopg://unused/x")
-    )
-    app.dependency_overrides[get_db] = lambda: seeded
-    return TestClient(app)
 
 
 def full_names(response) -> list[str]:
