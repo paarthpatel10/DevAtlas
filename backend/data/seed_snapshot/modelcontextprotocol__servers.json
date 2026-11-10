@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "mcp_automation",
   "created_at_github": "2024-11-19T01:10:17Z",
   "default_branch": "main",
   "description": "Model Context Protocol Reference Servers",

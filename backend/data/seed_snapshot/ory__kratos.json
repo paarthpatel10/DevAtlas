@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "backend",
+  "category": "security",
   "created_at_github": "2018-05-29T16:09:37Z",
   "default_branch": "master",
   "description": "Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX and DX. Passkeys, Social Sign In, OIDC, Magic Link, Multi-Factor Auth, SMS, SAML, TOTP, and more. Runs everywhere, runs best on Ory Network. ",

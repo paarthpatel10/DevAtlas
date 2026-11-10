@@ -111,3 +111,14 @@ def test_demo_user_created_once(db_session):
     ensure_demo_user(db_session)
     assert count(db_session, User) == 1
     assert db_session.get(User, DEMO_USER_ID).email == "demo@example.com"
+
+
+def test_seed_applies_curation_over_snapshot_labels(db_session, providers):
+    from app.schemas.snapshot import CuratedEntry, curated_by_stem
+
+    curated = curated_by_stem([CuratedEntry(full_name="acme/jobs", category="security")])
+    seed_from_directory(db_session, FIXTURES_DIR, providers, curated=curated)
+    jobs = db_session.scalar(select(Repository).where(Repository.full_name == "acme/jobs"))
+    assert (jobs.category, jobs.featured) == ("security", False)
+    ui = db_session.scalar(select(Repository).where(Repository.full_name == "acme/ui"))
+    assert ui.category == "frontend"  # not curated: snapshot label kept

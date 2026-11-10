@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "llm_agents",
   "created_at_github": "2023-02-09T11:23:20Z",
   "default_branch": "main",
   "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",

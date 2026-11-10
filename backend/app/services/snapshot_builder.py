@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Protocol
 
-from app.schemas.snapshot import CuratedEntry, RepoSnapshot
+from app.schemas.snapshot import CuratedEntry, RepoSnapshot, snapshot_stem
 from app.services.github_client import GitHubError, GitHubRateLimited, ReadmeResult
 
 logger = logging.getLogger(__name__)
@@ -29,8 +29,7 @@ class BuildReport:
 
 
 def snapshot_filename(full_name: str) -> str:
-    owner, name = full_name.split("/", 1)
-    return f"{owner}__{name}.json".lower()
+    return f"{snapshot_stem(full_name)}.json"
 
 
 def write_snapshot(path: Path, snapshot: RepoSnapshot) -> None:

@@ -38,3 +38,31 @@ def test_vector_extension_installed(db_session):
     from sqlalchemy import text
 
     assert db_session.scalar(text("SELECT count(*) FROM pg_extension WHERE extname='vector'")) == 1
+
+
+def test_discover_tables_exist(db_engine):
+    tables = set(inspect(db_engine).get_table_names())
+    assert {
+        "repository_daily_stats",
+        "repository_releases",
+        "repository_insights",
+        "ai_generations",
+        "discovery_feed_entries",
+        "discovery_feed_runs",
+    } <= tables
+    columns = {c["name"] for c in inspect(db_engine).get_columns("repositories")}
+    assert {
+        "discovery_source",
+        "first_indexed_at",
+        "star_history_since",
+        "fork_history_since",
+        "commit_history_since",
+    } <= columns
+
+
+def test_discovery_source_defaults_to_curated(db_session):
+    repo = make_repo(github_id=5, full_name="a/z")
+    db_session.add(repo)
+    db_session.flush()
+    db_session.refresh(repo)
+    assert repo.discovery_source == "curated"

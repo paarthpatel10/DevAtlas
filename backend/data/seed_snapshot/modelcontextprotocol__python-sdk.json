@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "mcp_automation",
   "created_at_github": "2024-09-24T21:01:35Z",
   "default_branch": "main",
   "description": "The official Python SDK for Model Context Protocol servers and clients",

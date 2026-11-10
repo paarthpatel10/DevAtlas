@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "llm_agents",
   "created_at_github": "2022-10-17T02:58:36Z",
   "default_branch": "master",
   "description": "The agent engineering platform.",

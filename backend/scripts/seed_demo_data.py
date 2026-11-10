@@ -14,6 +14,7 @@ from sqlalchemy.orm import Session
 from app.ai.provider import get_providers
 from app.config import BACKEND_DIR, get_settings
 from app.db.session import get_engine
+from app.schemas.snapshot import curated_by_stem, load_curated
 from app.services.ingestion_service import seed_from_directory
 
 
@@ -28,7 +29,8 @@ def main(argv: list[str] | None = None) -> int:
         print("DATABASE_URL is not set (.env).")
         return 1
     with Session(get_engine(settings.database_url)) as session:
-        report = seed_from_directory(session, args.dir, get_providers(settings))
+        curated = curated_by_stem(load_curated(BACKEND_DIR / "data" / "curated_repositories.yaml"))
+        report = seed_from_directory(session, args.dir, get_providers(settings), curated)
     print(f"created={report.created} updated={report.updated} unchanged={report.unchanged}")
     return 0
 

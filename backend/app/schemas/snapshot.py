@@ -1,5 +1,6 @@
 """Curated list and raw repository snapshot schemas (the ingestion input format)."""
 
+import json
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Literal, get_args
@@ -11,26 +12,32 @@ from app.services.github_client import ReadmeResult
 
 CategorySlug = Literal[
     "ai_ml",
-    "llm_agents_mcp",
+    "llm_agents",
+    "mcp_automation",
     "backend",
     "frontend",
+    "full_stack",
     "databases_search",
-    "devops_platform",
     "data_engineering",
+    "devops_platform",
+    "security",
     "developer_tools",
     "learning",
 ]
 
 CATEGORY_LABELS: dict[str, str] = {
-    "ai_ml": "AI / ML",
-    "llm_agents_mcp": "LLMs, agents & MCP",
-    "backend": "Backend",
-    "frontend": "Frontend",
-    "databases_search": "Databases & search",
-    "devops_platform": "DevOps & platform",
-    "data_engineering": "Data engineering",
-    "developer_tools": "Developer tools",
-    "learning": "Learning",
+    "ai_ml": "AI & Machine Learning",
+    "llm_agents": "LLMs & AI Agents",
+    "mcp_automation": "MCP & Developer Automation",
+    "backend": "Backend Engineering",
+    "frontend": "Frontend Engineering",
+    "full_stack": "Full-Stack Development",
+    "databases_search": "Databases & Search",
+    "data_engineering": "Data Engineering",
+    "devops_platform": "DevOps & Cloud",
+    "security": "Security",
+    "developer_tools": "Developer Productivity",
+    "learning": "Open-Source Learning Resources",
 }
 assert set(CATEGORY_LABELS) == set(get_args(CategorySlug))
 
@@ -138,3 +145,25 @@ class RepoSnapshot(BaseModel):
             category=entry.category,
             featured=entry.featured,
         )
+
+
+def snapshot_stem(full_name: str) -> str:
+    """Snapshot file stem for a requested `owner/name` (stable across GitHub renames)."""
+    owner, name = full_name.split("/", 1)
+    return f"{owner}__{name}".lower()
+
+
+def curated_by_stem(entries: list[CuratedEntry]) -> dict[str, CuratedEntry]:
+    return {snapshot_stem(e.full_name): e for e in entries}
+
+
+def load_snapshot(path: Path, curated: dict[str, CuratedEntry] | None = None) -> RepoSnapshot:
+    """Load a snapshot file. The curated list, not the stored JSON, decides category and
+    featured; it is applied before validation so stored labels from older category sets load.
+    """
+    data = json.loads(path.read_text(encoding="utf-8"))
+    entry = (curated or {}).get(path.stem.lower())
+    if entry is not None:
+        data["category"] = entry.category
+        data["featured"] = entry.featured
+    return RepoSnapshot(**data)

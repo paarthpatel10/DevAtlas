@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "backend",
+  "category": "full_stack",
   "created_at_github": "2019-10-12T05:56:49Z",
   "default_branch": "master",
   "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",

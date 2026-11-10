@@ -4,7 +4,6 @@ Repositories are keyed by GitHub's stable repository ID, so renames update in pl
 Chunks and embeddings are rebuilt only when the chunk content fingerprint changes.
 """
 
-import json
 import logging
 import uuid
 from dataclasses import dataclass
@@ -23,7 +22,7 @@ from app.models import (
     RepositoryEmbedding,
     RepositorySnapshot,
 )
-from app.schemas.snapshot import RepoSnapshot
+from app.schemas.snapshot import CuratedEntry, RepoSnapshot, load_snapshot
 from app.services.chunking import Chunk, chunk_readme, metadata_chunk
 from app.services.users import ensure_demo_user
 
@@ -218,12 +217,17 @@ def ingest_snapshot(
     return IngestResult(repository_id=repo.id, created=created, content_changed=content_changed)
 
 
-def seed_from_directory(session: Session, directory: Path, providers: Providers) -> SeedReport:
+def seed_from_directory(
+    session: Session,
+    directory: Path,
+    providers: Providers,
+    curated: dict[str, CuratedEntry] | None = None,
+) -> SeedReport:
     ensure_demo_user(session)
     session.commit()
     created = updated = unchanged = 0
     for path in sorted(directory.glob("*.json")):
-        snap = RepoSnapshot(**json.loads(path.read_text(encoding="utf-8")))
+        snap = load_snapshot(path, curated)
         result = ingest_snapshot(session, snap, providers)
         session.commit()
         if result.created:

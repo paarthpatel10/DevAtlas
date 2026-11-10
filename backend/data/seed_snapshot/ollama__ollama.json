@@ -1,6 +1,6 @@
 {
   "archived": false,
-  "category": "llm_agents_mcp",
+  "category": "llm_agents",
   "created_at_github": "2023-06-26T19:39:32Z",
   "default_branch": "main",
   "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
