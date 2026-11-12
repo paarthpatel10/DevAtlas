@@ -1,0 +1,29 @@
+# Copy to cases/<id>.yaml and fill in. One file per case.
+# Never include proprietary code, company names or people's names.
+id: case-000                 # lowercase letters, digits and dashes
+title: Short neutral title
+kind: reuse                  # reuse | control
+example: false               # true = test fixture under cases/examples/, never counted
+contributor: c01             # anonymous code; the name mapping is kept outside the repository
+consent_to_publish: true     # may this be published in anonymous, generic form?
+date_observed: "2026-10"     # YYYY-MM; the month is enough
+stack:
+  language: python
+  python_version: "3.12"
+  frameworks: [fastapi]
+context: |
+  2 to 6 sentences describing the project in generic words.
+request: |
+  The task exactly as a developer would type it to the agent.
+  It must not name, hint at or rule out any library.
+workspace: null              # optional, e.g. workspaces/case-000; null = minimal generated project
+ground_truth:
+  accepted_tools:            # empty list [] for control cases
+    - name: example-lib
+      packages: [example-lib]        # names as installed
+      import_names: [example_lib]    # names as imported
+      repo_url: https://github.com/owner/example-lib
+  rationale: 1 to 3 sentences on why reuse (or, for controls, custom code) is the better answer.
+  found_how: searched        # searched | colleague | docs | assistant | other
+notes: ""
+# The dev/holdout split is assigned by `reuse-bench splits`; never set it here.

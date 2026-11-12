@@ -1,0 +1,14 @@
+id: B
+name: Instruction
+description: >-
+  The fixed instruction below is written to the workspace's project instruction file.
+  The text was fixed before any results existed; do not edit it.
+project_instruction: >-
+  Before implementing any non-trivial feature, first check whether a maintained open-source
+  library or tool already provides it. If one fits this project's stack and license, propose
+  it and use it instead of writing custom code. If none fits, say so briefly and build it.
+mcp_servers: {}
+extra_allowed_tools: []
+external_tool: null
+available: true
+unavailable_reason: ""
