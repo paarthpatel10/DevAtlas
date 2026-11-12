@@ -139,7 +139,8 @@ def _run_list(title: str, outcomes: list[RunOutcome], status: str) -> list[str]:
     if not selected:
         return lines + ["None.", ""]
     for o in selected:
-        reason = f": {o.failure_reason}" if o.failure_reason else ""
+        # Reasons can hold multi-line stderr tails; keep each run on one bullet.
+        reason = f": {' '.join(o.failure_reason.split())}" if o.failure_reason else ""
         lines.append(f"- `{o.run_id}`{reason}")
     return lines + [""]
 

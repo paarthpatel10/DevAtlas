@@ -150,3 +150,13 @@ def test_cli_report_default_path(bench, capsys):
     assert main(["report", "--root", str(bench)]) == 0
     written = list((bench / "results").glob("*-report.md"))
     assert len(written) == 1
+
+
+def test_multiline_failure_reason_stays_on_one_bullet(bench):
+    reason = "no_result (exit 1): Traceback\n  File x\nError: auth | failed"
+    make_run(bench / "runs", "example-list-batches", "A", status="failed", failure_reason=reason)
+    text = build_report(bench, TODAY, include_examples=True)
+    failed = text.split("## Failed runs")[1].split("##")[0].strip().splitlines()
+    assert failed == [
+        "- `example-list-batches--A--r1`: no_result (exit 1): Traceback File x Error: auth | failed"
+    ]

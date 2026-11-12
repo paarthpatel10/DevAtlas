@@ -212,3 +212,21 @@ def test_events_written_as_jsonl(bench):
     [meta] = _run(bench, FakeAdapter(events=events), planned)
     lines = (bench / "runs" / meta.run_id / "events.jsonl").read_text(encoding="utf-8").splitlines()
     assert json.loads(lines[0]) == events[0]
+
+
+def test_diff_failure_keeps_agent_record(bench, monkeypatch):
+    from reuse_bench import runner
+
+    def broken_diff(_workspace):
+        raise RuntimeError("git exploded")
+
+    monkeypatch.setattr(runner, "final_diff", broken_diff)
+    planned = _plan(bench, condition_ids=("A",))[:1]
+    events = [{"type": "assistant", "message": {"content": [{"type": "text", "text": "hi"}]}}]
+    [meta] = _run(bench, FakeAdapter(events=events, final_message="kept", cost_usd=0.5), planned)
+    run_dir = bench / "runs" / meta.run_id
+    assert meta.exit_status == "failed"
+    assert "diff" in meta.failure_reason and "git exploded" in meta.failure_reason
+    assert meta.cost_usd == 0.5
+    assert (run_dir / "final_message.txt").read_text(encoding="utf-8") == "kept"
+    assert (run_dir / "events.jsonl").read_text(encoding="utf-8").strip()
