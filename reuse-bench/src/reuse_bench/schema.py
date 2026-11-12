@@ -188,3 +188,14 @@ class AutoScore(_Strict):
     install_commands: list[str] = Field(default_factory=list)
     mentions: list[str] = Field(default_factory=list)
     needs_judging: bool
+
+
+class Judgment(_Strict):
+    """One judge's answers for one export row (identified by its opaque code)."""
+
+    code: str
+    judge: Annotated[str, StringConstraints(pattern=r"^j\d{2,}$")]
+    suitable_tool_surfaced: bool | None
+    tool_adopted: bool | None
+    unneeded_dependency: bool | None
+    comment: str = ""
