@@ -8,6 +8,17 @@ inferred compatibility are labelled as such.
 > `DevAtlas` is the internal working name; the UI uses a neutral placeholder brand.
 > The product specification is [`open_source_intelligence_v0_spec.md`](open_source_intelligence_v0_spec.md).
 
+## Pivot (2026-11-12): the Reuse Benchmark
+
+Work has moved to [`reuse-bench/`](reuse-bench/), a benchmark that measures whether coding
+agents surface existing open-source tools before writing custom code
+([spec](docs/superpowers/specs/2026-11-12-reuse-benchmark-pivot.md),
+[plan](docs/superpowers/plans/2026-11-12-reuse-benchmark.md)).
+
+The website below is **frozen**: Discover feeds, Compare, repository detail pages, Ask AI pages
+and roadmap milestones M2–M7 receive no changes except bug fixes needed to keep CI green.
+`scripts.track_github_trending` keeps running daily, because its history cannot be backfilled.
+
 ## Status: M1 (discovery foundation) + Discover (trending and repository intelligence)
 
 What works today, in demo mode with no AI credentials:
