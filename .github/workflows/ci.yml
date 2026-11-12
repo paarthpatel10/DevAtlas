@@ -22,6 +22,20 @@ jobs:
         env:
           TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
 
+  # Lint and unit tests only. CI never runs a real coding agent.
+  reuse-bench:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: reuse-bench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pytest -q
+
   frontend:
     runs-on: ubuntu-latest
     defaults:

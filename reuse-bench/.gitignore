@@ -1,0 +1,5 @@
+# Raw transcripts, diffs and run metadata stay local until sanitized.
+runs/
+.pytest_tmp/
+.venv/
+__pycache__/
