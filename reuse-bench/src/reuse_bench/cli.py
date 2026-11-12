@@ -20,6 +20,21 @@ def _cmd_validate(args: argparse.Namespace) -> int:
     return 1 if report.errors else 0
 
 
+def _cmd_splits(args: argparse.Namespace) -> int:
+    from reuse_bench.loading import load_cases
+    from reuse_bench.splits import assign_splits
+
+    cases = [case for _, case in load_cases(args.root / "cases")]
+    splits = assign_splits(cases)
+    if not splits:
+        print("no real cases yet (example fixtures never get a split)")
+        return 0
+    for case in cases:
+        if case.id in splits:
+            print(f"{case.id}  {case.kind}  {splits[case.id]}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="reuse-bench",
@@ -39,6 +54,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--allow-few", action="store_true", help="no warning below the target case counts"
     )
     validate.set_defaults(handler=_cmd_validate)
+
+    splits = sub.add_parser("splits", parents=[root_opts], help="show dev/holdout assignment")
+    splits.set_defaults(handler=_cmd_splits)
     return parser
 
 
