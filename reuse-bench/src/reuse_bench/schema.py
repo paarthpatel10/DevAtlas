@@ -171,3 +171,20 @@ class RunMeta(_Strict):
     isolation: dict
     started_at: datetime
     ended_at: datetime
+
+
+AutoLabel = Literal[
+    "adopted_accepted", "adopted_other", "mentioned_then_custom", "custom_no_mention", "failed"
+]
+
+
+class AutoScore(_Strict):
+    """Contents of runs/<run_id>/auto_score.json (provisional first-pass label)."""
+
+    run_id: str
+    label: AutoLabel
+    added_packages: list[str] = Field(default_factory=list)
+    new_imports: list[str] = Field(default_factory=list)
+    install_commands: list[str] = Field(default_factory=list)
+    mentions: list[str] = Field(default_factory=list)
+    needs_judging: bool

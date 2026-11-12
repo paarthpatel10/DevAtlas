@@ -109,6 +109,35 @@ def _cmd_run(args: argparse.Namespace, pilot: bool = False) -> int:
     return 0
 
 
+def _cases_by_id(root: Path) -> dict:
+    from reuse_bench.loading import load_cases
+
+    return {case.id: case for _, case in load_cases(root / "cases")}
+
+
+def _cmd_score(args: argparse.Namespace) -> int:
+    from collections import Counter
+
+    from reuse_bench.runner import finished_run_dirs, load_meta
+    from reuse_bench.scoring import score_run
+
+    cases = _cases_by_id(args.root)
+    counts: Counter[str] = Counter()
+    for run_dir in finished_run_dirs(args.root / "runs"):
+        case_id = load_meta(run_dir).case_id
+        case = cases.get(case_id)
+        if case is None:
+            print(f"WARNING: {run_dir.name}: case '{case_id}' not found; skipped")
+            continue
+        score = score_run(run_dir, case, args.root)
+        (run_dir / "auto_score.json").write_text(score.model_dump_json(indent=2), encoding="utf-8")
+        counts[score.label] += 1
+    for label in sorted(counts):
+        print(f"{label}: {counts[label]}")
+    print(f"{sum(counts.values())} runs scored.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="reuse-bench",
@@ -155,6 +184,9 @@ def build_parser() -> argparse.ArgumentParser:
         "pilot", parents=[root_opts, run_opts], help="3 cases x conditions x 1 repeat, with cost"
     )
     pilot.set_defaults(handler=lambda args: _cmd_run(args, pilot=True))
+
+    score = sub.add_parser("score", parents=[root_opts], help="automatic first-pass labels")
+    score.set_defaults(handler=_cmd_score)
     return parser
 
 
