@@ -284,3 +284,10 @@ def find_repo_root(bench_root: Path) -> Path:
         return Path(out)
     except (OSError, subprocess.CalledProcessError):
         return bench_root
+
+
+def finished_run_dirs(runs_dir: Path) -> list[Path]:
+    """Every run directory with a valid meta.json, sorted by run id."""
+    if not runs_dir.is_dir():
+        return []
+    return sorted(p for p in runs_dir.iterdir() if p.is_dir() and is_finished(p))

@@ -109,6 +109,67 @@ def _cmd_run(args: argparse.Namespace, pilot: bool = False) -> int:
     return 0
 
 
+def _cases_by_id(root: Path) -> dict:
+    from reuse_bench.loading import load_cases
+
+    return {case.id: case for _, case in load_cases(root / "cases")}
+
+
+def _cmd_score(args: argparse.Namespace) -> int:
+    from collections import Counter
+
+    from reuse_bench.runner import finished_run_dirs, load_meta
+    from reuse_bench.scoring import score_run
+
+    cases = _cases_by_id(args.root)
+    counts: Counter[str] = Counter()
+    for run_dir in finished_run_dirs(args.root / "runs"):
+        case_id = load_meta(run_dir).case_id
+        case = cases.get(case_id)
+        if case is None:
+            print(f"WARNING: {run_dir.name}: case '{case_id}' not found; skipped")
+            continue
+        score = score_run(run_dir, case, args.root)
+        (run_dir / "auto_score.json").write_text(score.model_dump_json(indent=2), encoding="utf-8")
+        counts[score.label] += 1
+    for label in sorted(counts):
+        print(f"{label}: {counts[label]}")
+    print(f"{sum(counts.values())} runs scored.")
+    return 0
+
+
+def _cmd_export_judging(args: argparse.Namespace) -> int:
+    from reuse_bench.judging import JudgingError, default_paths, export_judging
+
+    out_csv, key_path, _ = default_paths(args.root)
+    out_csv = args.out or out_csv
+    try:
+        n = export_judging(
+            args.root, args.seed, out_csv, key_path, include_examples=args.include_examples
+        )
+    except JudgingError as exc:
+        print(f"ERROR: {exc}")
+        return 1
+    print(f"{n} rows written to {out_csv}. Give each judge a copy; keep {key_path} private.")
+    return 0
+
+
+def _cmd_import_judgments(args: argparse.Namespace) -> int:
+    from reuse_bench.judging import JudgingError, default_paths, import_judgments
+
+    _, key_path, store_dir = default_paths(args.root)
+    if not key_path.exists():
+        print(f"ERROR: {key_path} not found; run export-judging first")
+        return 1
+    try:
+        n = import_judgments(args.csv, args.judge, key_path, store_dir)
+    except JudgingError as exc:
+        print(f"ERROR: {exc}")
+        return 1
+    print(f"{n} judgments stored for {args.judge}.")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="reuse-bench",
@@ -155,6 +216,24 @@ def build_parser() -> argparse.ArgumentParser:
         "pilot", parents=[root_opts, run_opts], help="3 cases x conditions x 1 repeat, with cost"
     )
     pilot.set_defaults(handler=lambda args: _cmd_run(args, pilot=True))
+
+    score = sub.add_parser("score", parents=[root_opts], help="automatic first-pass labels")
+    score.set_defaults(handler=_cmd_score)
+
+    export = sub.add_parser(
+        "export-judging", parents=[root_opts], help="blind CSV of runs for human judging"
+    )
+    export.add_argument("--seed", type=int, default=DEFAULT_SEED, help="row order seed")
+    export.add_argument("--out", type=Path, default=None, help="CSV path")
+    export.add_argument("--include-examples", action="store_true", help="smoke test only")
+    export.set_defaults(handler=_cmd_export_judging)
+
+    imp = sub.add_parser(
+        "import-judgments", parents=[root_opts], help="validate and store one judge's CSV"
+    )
+    imp.add_argument("csv", type=Path)
+    imp.add_argument("--judge", required=True, help="judge code, e.g. j01")
+    imp.set_defaults(handler=_cmd_import_judgments)
     return parser
 
 
