@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
@@ -110,3 +111,54 @@ class Limits(_Strict):
     permission_mode: str = "dontAsk"
     allowed_tools: list[str] = Field(default_factory=lambda: list(DEFAULT_ALLOWED_TOOLS))
     model: str | None = None
+
+
+RunStatus = Literal["completed", "failed"]
+
+
+class RunRecord(_Strict):
+    """What an adapter returns for one agent run."""
+
+    agent: str
+    agent_version: str | None
+    model: str | None
+    events: list[dict]
+    final_message: str
+    exit_status: RunStatus
+    failure_reason: str | None
+    cost_usd: float | None
+    usage: dict | None
+    num_turns: int | None
+    permission_denials: list[dict]
+    isolation: dict
+    started_at: datetime
+    ended_at: datetime
+
+
+class RunMeta(_Strict):
+    """Contents of runs/<run_id>/meta.json."""
+
+    run_id: str
+    case_id: str
+    case_hash: str
+    condition_id: str
+    condition_hash: str
+    repeat: int
+    order_seed: int
+    order_position: int
+    limits: Limits
+    harness_commit: str | None
+    example: bool
+    pilot: bool
+    agent: str
+    agent_version: str | None
+    model: str | None
+    exit_status: RunStatus
+    failure_reason: str | None
+    cost_usd: float | None
+    usage: dict | None
+    num_turns: int | None
+    permission_denials: list[dict]
+    isolation: dict
+    started_at: datetime
+    ended_at: datetime
