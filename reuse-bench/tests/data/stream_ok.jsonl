@@ -1,0 +1,5 @@
+{"type":"system","subtype":"init","cwd":"/tmp/rb-x","session_id":"s1","model":"claude-test-model","claude_code_version":"2.1.322","apiKeySource":"none","permissionMode":"dontAsk","tools":["Read","Edit","Write","Bash","WebSearch","WebFetch"],"mcp_servers":[],"slash_commands":[],"plugins":[{"name":"cc-plugin-sec-default","path":"/p/a"},{"name":"cc-plugin-telemetry","path":"/p/b"}]}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"I'll add a retry helper."}]}}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"tool_use","id":"t1","name":"Write","input":{"file_path":"app/retry.py","content":"def retry(): pass\n"}}]}}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t1","content":"ok"}]}}
+{"type":"result","subtype":"success","is_error":false,"num_turns":3,"result":"Done. Added app/retry.py.","total_cost_usd":0.0123,"usage":{"input_tokens":100,"output_tokens":50},"permission_denials":[]}

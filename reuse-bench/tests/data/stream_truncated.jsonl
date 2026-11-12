@@ -1,0 +1,3 @@
+{"type":"system","subtype":"init","model":"claude-test-model","tools":[],"mcp_servers":[],"plugins":[]}
+not json at all
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"Working on i

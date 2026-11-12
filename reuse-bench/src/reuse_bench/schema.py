@@ -88,6 +88,19 @@ class Condition(_Strict):
 
 
 # Same allowlist for every condition, so web access and tooling are identical across A/B/C.
+# Rule syntax per the Claude Code permissions docs: "Bash(cmd *)" prefix-matches (the space
+# before * matters); PowerShell rules have the same shape. Both shells get the same commands.
+_SHELL_COMMANDS = (
+    "uv",
+    "pip",
+    "pip3",
+    "python",
+    "python3",
+    "py",
+    "pytest",
+    "git status",
+    "git diff",
+)
 DEFAULT_ALLOWED_TOOLS: list[str] = [
     "Read",
     "Edit",
@@ -96,12 +109,8 @@ DEFAULT_ALLOWED_TOOLS: list[str] = [
     "Grep",
     "WebSearch",
     "WebFetch",
-    "Bash(uv *)",
-    "Bash(pip *)",
-    "Bash(python *)",
-    "Bash(pytest *)",
-    "Bash(git status*)",
-    "Bash(git diff*)",
+    *(f"{shell}({cmd} *)" for shell in ("Bash", "PowerShell") for cmd in _SHELL_COMMANDS),
+    *(f"{shell}({cmd})" for shell in ("Bash", "PowerShell") for cmd in ("git status", "git diff")),
 ]
 
 
