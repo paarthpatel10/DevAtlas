@@ -1,0 +1,24 @@
+# TEST FIXTURE: invented for unit tests, excluded from every count, rate and report.
+id: example-list-batches
+title: Split a list into fixed-size batches
+kind: control
+example: true
+contributor: c00
+consent_to_publish: false
+date_observed: "2026-11"
+stack:
+  language: python
+  python_version: "3.12"
+  frameworks: []
+context: |
+  A script that uploads records to an API which accepts at most 100 records per request.
+request: |
+  Split the list of records into batches of at most 100 items and upload each batch in turn.
+workspace: null
+ground_truth:
+  accepted_tools: []
+  rationale: >-
+    Python 3.12's standard library already provides itertools.batched; adding a third-party
+    dependency for this would be unnecessary.
+  found_how: other
+notes: "Test fixture, not a benchmark case."
