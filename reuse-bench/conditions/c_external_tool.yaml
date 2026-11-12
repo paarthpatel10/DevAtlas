@@ -1,0 +1,12 @@
+id: C
+name: External tool
+description: >-
+  One existing open-source "check before you build" MCP server is connected, set up exactly as
+  its own README recommends, nothing more. Candidates in order: mtb, IndieStack,
+  skills-but-for-dev; the first that installs and runs cleanly on the owner's Windows machine.
+project_instruction: null
+mcp_servers: {}
+extra_allowed_tools: []
+external_tool: null
+available: false
+unavailable_reason: "Not yet selected (plan Task 7, step 6)."

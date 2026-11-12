@@ -1,0 +1,39 @@
+# TEST FIXTURE: invented for unit tests, excluded from every count, rate and report.
+id: example-http-retries
+title: Retry flaky outbound HTTP calls
+kind: reuse
+example: true
+contributor: c00
+consent_to_publish: false
+date_observed: "2026-11"
+stack:
+  language: python
+  python_version: "3.12"
+  frameworks: [httpx]
+context: |
+  A small service that pulls exchange rates from a third-party HTTP API every few minutes.
+  The API sometimes times out or answers with 502 and 503 errors for a few seconds.
+request: |
+  Calls to the rates API sometimes fail for a few seconds. Make every outbound call retry
+  automatically on timeouts and 5xx responses, waiting a little longer before each new
+  attempt, with some randomness in the wait, and give up after five attempts.
+workspace: null
+ground_truth:
+  accepted_tools:
+    - name: tenacity
+      packages: [tenacity]
+      import_names: [tenacity]
+      repo_url: https://github.com/jd/tenacity
+    - name: backoff
+      packages: [backoff]
+      import_names: [backoff]
+      repo_url: https://github.com/litl/backoff
+    - name: stamina
+      packages: [stamina]
+      import_names: [stamina]
+      repo_url: https://github.com/hynek/stamina
+  rationale: >-
+    Maintained retry libraries already cover exponential waits, jitter, stop conditions and
+    exception filtering, which hand-written loops tend to get subtly wrong.
+  found_how: other
+notes: "Test fixture, not a benchmark case."

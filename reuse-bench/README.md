@@ -11,7 +11,22 @@ Implementation plan: [`docs/superpowers/plans/2026-11-12-reuse-benchmark.md`](..
 
 ## Status
 
-Milestone B0: scaffold only. Case format, runner, scoring and report land in B1 to B4.
+Milestone B1: case and condition format, validation and splits. Runner, scoring and report land
+in B2 to B4.
+
+## Adding a case
+
+1. Copy `cases/_template.yaml` to `cases/<id>.yaml` and fill it in. An optional starter project
+   goes in `workspaces/<id>/`; without one, a minimal Python project is generated.
+2. Run `uv run reuse-bench validate`. It fails when:
+   - the YAML does not match the schema (a reuse case needs an accepted tool, a control case
+     must have none);
+   - an example fixture is outside `cases/examples/`, or a real case is inside it;
+   - an id is duplicated, or the workspace is missing or outside `workspaces/`;
+   - the `request`, the `context` or any workspace file names an accepted tool, package or import
+     name (case-insensitive, also with `-`, `_` and `.` swapped).
+3. `uv run reuse-bench splits` shows the dev/holdout split. It is assigned deterministically from
+   the case id and a fixed seed, stratified by kind, and never set by hand.
 
 ## How it works (planned)
 

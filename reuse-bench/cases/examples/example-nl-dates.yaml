@@ -1,0 +1,35 @@
+# TEST FIXTURE: invented for unit tests, excluded from every count, rate and report.
+id: example-nl-dates
+title: Understand dates typed in plain words
+kind: reuse
+example: true
+contributor: c00
+consent_to_publish: false
+date_observed: "2026-11"
+stack:
+  language: python
+  python_version: "3.12"
+  frameworks: []
+context: |
+  A command-line reminder tool. Users type when a reminder is due as free text, and the tool
+  stores it as a timestamp.
+request: |
+  Let users type the due time in everyday words, such as "tomorrow at 5pm", "next Friday",
+  "in 3 days" or "2 weeks ago", and turn it into a datetime. It should also cope with a few
+  other languages besides English.
+workspace: null
+ground_truth:
+  accepted_tools:
+    - name: dateparser
+      packages: [dateparser]
+      import_names: [dateparser]
+      repo_url: https://github.com/scrapinghub/dateparser
+    - name: parsedatetime
+      packages: [parsedatetime]
+      import_names: [parsedatetime]
+      repo_url: https://github.com/bear/parsedatetime
+  rationale: >-
+    Relative and multilingual date expressions have many edge cases; existing parsers already
+    handle them and are maintained.
+  found_how: other
+notes: "Test fixture, not a benchmark case."

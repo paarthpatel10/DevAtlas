@@ -1,0 +1,11 @@
+id: A
+name: Baseline
+description: >-
+  Nothing added. The agent runs as a developer would normally run it, with web search and
+  fetch available.
+project_instruction: null
+mcp_servers: {}
+extra_allowed_tools: []
+external_tool: null
+available: true
+unavailable_reason: ""

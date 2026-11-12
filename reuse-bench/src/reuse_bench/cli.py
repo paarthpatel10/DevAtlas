@@ -3,8 +3,36 @@
 from __future__ import annotations
 
 import argparse
+from pathlib import Path
 
 from reuse_bench import __version__
+
+
+def _cmd_validate(args: argparse.Namespace) -> int:
+    from reuse_bench.validation import validate_all
+
+    report = validate_all(args.root, allow_few=args.allow_few)
+    for err in report.errors:
+        print(f"ERROR: {err}")
+    for warning in report.warnings:
+        print(f"WARNING: {warning}")
+    print(report.summary())
+    return 1 if report.errors else 0
+
+
+def _cmd_splits(args: argparse.Namespace) -> int:
+    from reuse_bench.loading import load_cases
+    from reuse_bench.splits import assign_splits
+
+    cases = [case for _, case in load_cases(args.root / "cases")]
+    splits = assign_splits(cases)
+    if not splits:
+        print("no real cases yet (example fixtures never get a split)")
+        return 0
+    for case in cases:
+        if case.id in splits:
+            print(f"{case.id}  {case.kind}  {splits[case.id]}")
+    return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -14,7 +42,21 @@ def build_parser() -> argparse.ArgumentParser:
         "before writing custom code.",
     )
     parser.add_argument("--version", action="version", version=f"reuse-bench {__version__}")
-    parser.add_subparsers(dest="command")
+    sub = parser.add_subparsers(dest="command")
+
+    root_opts = argparse.ArgumentParser(add_help=False)
+    root_opts.add_argument(
+        "--root", type=Path, default=Path.cwd(), help="reuse-bench directory (default: cwd)"
+    )
+
+    validate = sub.add_parser("validate", parents=[root_opts], help="validate cases")
+    validate.add_argument(
+        "--allow-few", action="store_true", help="no warning below the target case counts"
+    )
+    validate.set_defaults(handler=_cmd_validate)
+
+    splits = sub.add_parser("splits", parents=[root_opts], help="show dev/holdout assignment")
+    splits.set_defaults(handler=_cmd_splits)
     return parser
 
 
@@ -27,8 +69,4 @@ def main(argv: list[str] | None = None) -> int:
     if args.command is None:
         parser.print_help()
         return 0
-    handler = getattr(args, "handler", None)
-    if handler is None:
-        parser.print_help()
-        return 2
-    return int(handler(args) or 0)
+    return int(args.handler(args) or 0)
