@@ -180,8 +180,18 @@ def execute_run(
             record = adapter.run(workspace, case.request.strip(), condition, limits)
         except Exception as exc:  # the run fails; the matrix continues
             record = _failed_record(adapter, started, f"harness: {type(exc).__name__}: {exc}")
-        diff = final_diff(workspace)
-        snapshot_manifests(workspace, run_dir / "manifest_after")
+        try:
+            diff = final_diff(workspace)
+            snapshot_manifests(workspace, run_dir / "manifest_after")
+        except Exception as exc:
+            # Keep the agent's transcript and cost; without a diff the run cannot be scored.
+            if record.exit_status == "completed":
+                record = record.model_copy(
+                    update={
+                        "exit_status": "failed",
+                        "failure_reason": f"harness: diff failed: {type(exc).__name__}: {exc}",
+                    }
+                )
     except Exception as exc:
         record = _failed_record(adapter, started, f"harness: {type(exc).__name__}: {exc}")
     finally:

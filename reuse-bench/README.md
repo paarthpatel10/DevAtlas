@@ -11,8 +11,49 @@ Implementation plan: [`docs/superpowers/plans/2026-11-12-reuse-benchmark.md`](..
 
 ## Status
 
-Milestone B2: case format, validation, splits, runner, Claude Code adapter and pilot. Scoring and
-the report land in B3 and B4.
+Phase 1 (milestones B0 to B4) is built: case format, validation, splits, runner, Claude Code
+adapter, pilot, scoring, blind judging, report and gate. No real cases or results exist yet.
+
+## Full workflow
+
+```powershell
+uv run reuse-bench validate                       # cases are well-formed and leak nothing
+uv run reuse-bench pilot                          # 3 cases; approve the projected time and cost
+uv run reuse-bench run                            # full matrix (cases x A/B/C x 2 repeats)
+uv run reuse-bench score                          # automatic first-pass labels
+uv run reuse-bench export-judging                 # runs/judging/judging.csv, condition hidden
+uv run reuse-bench import-judgments j01.csv --judge j01
+uv run reuse-bench import-judgments j02.csv --judge j02
+uv run reuse-bench report                         # results/<date>-report.md with the gate
+```
+
+## Owner checklist (spec section 12)
+
+1. Fill in `case-001` from your own incident (`cases/_template.yaml`).
+2. Send the intake questions (spec section 12) to 5 to 10 colleagues; aim for 2 cases each.
+3. Review every case for private information before committing it.
+4. Run the pilot, approve the cost projection, then start the full run.
+5. Find two judges. Give each a copy of `runs/judging/judging.csv` and import each filled copy
+   with their own judge code (`j01`, `j02`). Keep `runs/judging/key.json` private.
+6. Read the report and decide: stop, narrow or continue. The harness only prints the gate.
+
+## Scoring, judging and the report
+
+- `score` labels each run `adopted_accepted`, `adopted_other`, `mentioned_then_custom`,
+  `custom_no_mention` or `failed`. It uses manifest changes, install commands, new third-party
+  imports, and accepted-tool names in the agent's text before its first code edit. "I will not
+  use X" and similar negated mentions are not counted. Every label except `adopted_accepted` and
+  `failed` goes to human judging.
+- `export-judging` shuffles the rows, replaces run ids with opaque codes, hides the condition,
+  and masks text that would reveal it (the condition B instruction, `CLAUDE.md`, and the
+  condition C tool, server and tool ids). Paraphrased references cannot be masked.
+- Judges answer `suitable_tool_surfaced` and `tool_adopted` (reuse cases) or
+  `unneeded_dependency` (control cases) with yes or no. Rows where the two judges differ are
+  `disputed` and listed separately; the harness does not resolve them.
+- `report` averages per case first, then across cases, prints counts next to every rate, and
+  marks rates based on fewer than 10 cases as "too few cases to read". Gate on the best of B and
+  C: 80% or more is STOP PRODUCT, 50% or less is CONTINUE, in between is NARROW. A condition
+  whose control accuracy is below 75% is flagged as over-recommending.
 
 ## Adding a case
 

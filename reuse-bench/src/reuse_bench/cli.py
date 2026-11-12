@@ -170,6 +170,25 @@ def _cmd_import_judgments(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_report(args: argparse.Namespace) -> int:
+    from datetime import date
+
+    from reuse_bench.report import build_report
+
+    if args.include_examples and args.out is None:
+        print("ERROR: example data never goes to results/; pass --out PATH for a smoke report")
+        return 1
+    today = date.today()
+    out = args.out or args.root / "results" / f"{today.isoformat()}-report.md"
+    text = build_report(args.root, today, include_examples=args.include_examples)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text, encoding="utf-8")
+    gate_line = next((line for line in text.splitlines() if line.startswith("Gate:")), "")
+    print(f"Report written to {out}")
+    print(gate_line)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="reuse-bench",
@@ -234,6 +253,13 @@ def build_parser() -> argparse.ArgumentParser:
     imp.add_argument("csv", type=Path)
     imp.add_argument("--judge", required=True, help="judge code, e.g. j01")
     imp.set_defaults(handler=_cmd_import_judgments)
+
+    report = sub.add_parser("report", parents=[root_opts], help="write the report and gate")
+    report.add_argument("--out", type=Path, default=None, help="default: results/<date>-report.md")
+    report.add_argument(
+        "--include-examples", action="store_true", help="smoke test only; requires --out"
+    )
+    report.set_defaults(handler=_cmd_report)
     return parser
 
 
