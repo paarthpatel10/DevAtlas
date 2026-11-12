@@ -4,9 +4,24 @@ description: >-
   One existing open-source "check before you build" MCP server is connected, set up exactly as
   its own README recommends, nothing more. Candidates in order: mtb, IndieStack,
   skills-but-for-dev; the first that installs and runs cleanly on the owner's Windows machine.
+  Selection on 2026-11-12: mtb skipped (needs Go, not installed; owner's decision).
+  IndieStack 1.20.0 fails to start as its README instructs (uvx --from indiestack
+  indiestack-mcp): its unpinned mcp dependency resolves to mcp 2.x, where
+  mcp.server.fastmcp no longer exists (ModuleNotFoundError). skills-but-for-dev 0.2.0 starts
+  cleanly via uvx and lists 7 MCP tools. Config below is the README's Claude Desktop
+  mcpServers block; the optional GITHUB_TOKEN is not set (the harness never passes secrets),
+  but the tool may pick up the owner's GitHub CLI login via `gh auth token`. On a network that
+  intercepts TLS, set UV_SYSTEM_CERTS=1 in the shell before running (uvx needs it).
 project_instruction: null
-mcp_servers: {}
-extra_allowed_tools: []
-external_tool: null
-available: false
-unavailable_reason: "Not yet selected (plan Task 7, step 6)."
+mcp_servers:
+  skills-but-for-dev:
+    command: uvx
+    args: [skills-but-for-dev]
+extra_allowed_tools: ["mcp__skills-but-for-dev__*"]
+external_tool:
+  name: skills-but-for-dev
+  version: "0.2.0 (PyPI, checked 2026-11-12; MCP serverInfo reports 4.1.8); README runs latest via uvx"
+  install_method: "uvx skills-but-for-dev (no install), passed to Claude Code via --mcp-config"
+  source_url: https://github.com/MelihcanTheGreat/Skills-but-for-dev
+available: true
+unavailable_reason: ""
