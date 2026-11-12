@@ -11,8 +11,8 @@ Implementation plan: [`docs/superpowers/plans/2026-11-12-reuse-benchmark.md`](..
 
 ## Status
 
-Milestone B1: case and condition format, validation and splits. Runner, scoring and report land
-in B2 to B4.
+Milestone B2: case format, validation, splits, runner, Claude Code adapter and pilot. Scoring and
+the report land in B3 and B4.
 
 ## Adding a case
 
@@ -52,6 +52,72 @@ uv run ruff check . ; uv run pytest -q
 ```
 
 Needs no database, no API keys and no DevAtlas backend.
+
+## Running the agent (owner only)
+
+Real runs use your Claude Code login and usage allowance. Tests and CI never start them.
+
+```powershell
+uv run reuse-bench pilot            # 3 real cases x every available condition x 1 repeat
+uv run reuse-bench run              # full matrix, 2 repeats (default)
+uv run reuse-bench run --cases case-001 --conditions A,B --repeats 1
+uv run reuse-bench pilot --include-examples   # smoke test on the fixtures (never counted)
+```
+
+- `pilot` prints time, cost and turns per run, plus the projected total for the full matrix.
+  Approve that projection before starting `run`. The cost figure is the CLI's API-equivalent
+  `total_cost_usd`, which does not map one-to-one to a subscription allowance.
+- Runs are resumable. A run with a `meta.json` is never repeated unless you pass `--force`;
+  a half-written run directory (interrupted harness) is redone. Failed runs (timeout, turn cap,
+  crash, authentication error) are recorded as `failed` and are not repeated automatically.
+- Condition order is shuffled per case and repeat with a recorded seed (`--seed`, default
+  20261112). All conditions of a case run back to back.
+- Defaults: 30 turns and 900 seconds per run (`--max-turns`, `--timeout`).
+
+Each run writes `runs/<run_id>/` (`<case>--<condition>--r<repeat>`, with the prefix `pilot--` for
+pilot runs): `meta.json` (case and condition hashes, repeat, seed and position, agent version,
+model, times, limits, exit status, isolation notes, cost, harness commit), `events.jsonl`,
+`final_message.txt`, `diff.patch`, `manifest_before/` and `manifest_after/`.
+
+### Isolation (Claude Code 2.1.322)
+
+Each run happens in a fresh temporary git repository outside this repository, containing only the
+case workspace (or a generated minimal project). Case files and ground truth are never copied in.
+For condition B, the fixed instruction is written to the workspace `CLAUDE.md` and committed
+before the run, so the diff shows only the agent's changes.
+
+The agent runs as:
+
+```
+claude -p <request> --output-format stream-json --verbose --max-turns 30 --no-session-persistence
+  --permission-mode dontAsk --allowedTools <same list for every condition>
+  --setting-sources project --strict-mcp-config --mcp-config <condition MCP servers>
+  --disable-slash-commands --settings {"claudeMdExcludes": ["~/.claude/CLAUDE.md", "~/.claude/rules/**"]}
+env: CLAUDE_CODE_DISABLE_AUTO_MEMORY=1; variables whose names look secret (KEY, TOKEN, SECRET,
+     PASSWORD, PWD, CREDENTIAL, neon_*, gemini*) are removed, except CLAUDE_CODE_OAUTH_TOKEN
+```
+
+This keeps your login but skips user-level settings, hooks, MCP servers, skills and slash
+commands, personal CLAUDE.md files and rules, and auto memory. It was verified empirically on
+2026-11-12. `--bare` was rejected because it needs an API key, and `--safe-mode` because it
+ignores `--mcp-config`. What stays active is recorded in every `meta.json` under `isolation`:
+org-managed plugins (on the owner's machine: `cc-plugin-sec-default`, `cc-plugin-agents-md`,
+`cc-plugin-telemetry`, `cc-plugin-privacy`, `cc-plugin-plugin-authoring`), the tool list, the
+connected MCP servers, and any `CLAUDE.md` found in a parent directory of the temp workspace.
+
+The permission allowlist is the same for every condition: Read, Edit, Write, Glob, Grep,
+WebSearch, WebFetch, and Bash/PowerShell commands starting with uv, pip, pip3, python, python3,
+py, pytest, git status and git diff. Everything else is denied without prompting; denials are
+recorded in `meta.json` (`permission_denials`). Condition C adds only its own MCP tools.
+
+### Condition C tool
+
+`skills-but-for-dev` 0.2.0 (Apache-2.0), run with `uvx skills-but-for-dev`, exactly as its README
+configures it. It was the first candidate that ran cleanly on the owner's Windows machine:
+`mtb` needs Go (not installed), and IndieStack 1.20.0 fails to start as its README instructs
+(its unpinned `mcp` dependency now resolves to 2.x). On a network that intercepts TLS, set
+`$env:UV_SYSTEM_CERTS = "1"` before running so `uvx` can download it. The tool may use your
+GitHub CLI login (`gh auth token`) for GitHub rate limits.
 
 ## Privacy
 

@@ -35,6 +35,80 @@ def _cmd_splits(args: argparse.Namespace) -> int:
     return 0
 
 
+def make_adapter(name: str):
+    if name == "claude_code":
+        from reuse_bench.adapters.claude_code import ClaudeCodeAdapter
+
+        return ClaudeCodeAdapter()
+    raise ValueError(f"unknown agent '{name}'")
+
+
+def _select_cases(args: argparse.Namespace, cases: list) -> list | None:
+    selected = [c for c in cases if args.include_examples or not c[1].example]
+    if args.cases:
+        wanted = [i.strip() for i in args.cases.split(",") if i.strip()]
+        known = {c[1].id for c in selected}
+        unknown = [i for i in wanted if i not in known]
+        if unknown:
+            print(f"ERROR: unknown or excluded case ids: {', '.join(unknown)}")
+            return None
+        selected = [c for c in selected if c[1].id in wanted]
+    return selected
+
+
+def _cmd_run(args: argparse.Namespace, pilot: bool = False) -> int:
+    from reuse_bench.loading import load_cases, load_conditions
+    from reuse_bench.runner import find_repo_root, pilot_summary, plan_matrix, run_matrix
+    from reuse_bench.schema import Limits
+    from reuse_bench.validation import validate_all
+
+    report = validate_all(args.root, allow_few=True)
+    if report.errors:
+        for err in report.errors:
+            print(f"ERROR: {err}")
+        print("Fix the errors above before running.")
+        return 1
+
+    all_cases = load_cases(args.root / "cases")
+    cases = _select_cases(args, all_cases)
+    if cases is None:
+        return 1
+    if not cases:
+        print(
+            "There are no real cases to run. Add cases, or pass --include-examples for a smoke run."
+        )
+        return 1
+    if pilot and not args.cases:
+        cases = cases[:3]
+
+    conditions = load_conditions(args.root / "conditions")
+    if args.conditions:
+        wanted = {i.strip().upper() for i in args.conditions.split(",")}
+        conditions = [c for c in conditions if c[1].id in wanted]
+    repeats = 1 if pilot else args.repeats
+    planned = plan_matrix(cases, conditions, repeats=repeats, seed=args.seed, pilot=pilot)
+    limits = Limits(max_turns=args.max_turns, timeout_s=args.timeout, model=args.model)
+    print(f"Starting {len(planned)} agent runs. Each one uses your agent login and allowance.")
+    metas = run_matrix(
+        planned,
+        make_adapter(args.agent),
+        limits,
+        args.root,
+        args.root / "runs",
+        find_repo_root(args.root),
+        force=args.force,
+    )
+    failed = [m for m in metas if m.exit_status == "failed"]
+    print(f"{len(metas)} runs recorded under runs/; {len(failed)} failed.")
+    for meta in failed:
+        print(f"  failed: {meta.run_id}: {meta.failure_reason}")
+    if pilot:
+        real_cases = [c for c in all_cases if not c[1].example] or cases
+        available = sum(1 for _, c in conditions if c.available)
+        print(pilot_summary(metas, full_runs=len(real_cases) * available * 2))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="reuse-bench",
@@ -57,6 +131,30 @@ def build_parser() -> argparse.ArgumentParser:
 
     splits = sub.add_parser("splits", parents=[root_opts], help="show dev/holdout assignment")
     splits.set_defaults(handler=_cmd_splits)
+
+    from reuse_bench.runner import DEFAULT_REPEATS, DEFAULT_SEED
+
+    run_opts = argparse.ArgumentParser(add_help=False)
+    run_opts.add_argument("--cases", help="comma-separated case ids (default: all real cases)")
+    run_opts.add_argument("--conditions", help="comma-separated condition ids (default: all)")
+    run_opts.add_argument("--seed", type=int, default=DEFAULT_SEED, help="condition order seed")
+    run_opts.add_argument("--max-turns", type=int, default=30)
+    run_opts.add_argument("--timeout", type=int, default=900, help="seconds per run")
+    run_opts.add_argument("--model", default=None, help="agent model (default: agent default)")
+    run_opts.add_argument("--agent", default="claude_code")
+    run_opts.add_argument("--force", action="store_true", help="repeat finished runs")
+    run_opts.add_argument(
+        "--include-examples", action="store_true", help="also run example fixtures (smoke test)"
+    )
+
+    run = sub.add_parser("run", parents=[root_opts, run_opts], help="run the full matrix")
+    run.add_argument("--repeats", type=int, default=DEFAULT_REPEATS)
+    run.set_defaults(handler=_cmd_run)
+
+    pilot = sub.add_parser(
+        "pilot", parents=[root_opts, run_opts], help="3 cases x conditions x 1 repeat, with cost"
+    )
+    pilot.set_defaults(handler=lambda args: _cmd_run(args, pilot=True))
     return parser
 
 
