@@ -9,7 +9,7 @@ from __future__ import annotations
 from datetime import date
 from pathlib import Path
 
-from reuse_bench.loading import load_conditions
+from reuse_bench.loading import load_cases, load_conditions
 from reuse_bench.metrics import (
     CONTINUE_AT,
     CONTROL_FLAG_BELOW,
@@ -60,8 +60,13 @@ def _environment(metas: list[RunMeta], root: Path) -> list[str]:
     plugins = {p for m in metas for p in m.isolation.get("active_plugins", [])}
     removed = {p for m in metas for p in m.isolation.get("env_removed", [])}
     limits = {f"{m.limits.max_turns} turns, {m.limits.timeout_s} s" for m in metas}
+    case_ids = {m.case_id for m in metas}
+    contributor_of = {case.id: case.contributor for _, case in load_cases(root / "cases")}
+    contributors = {contributor_of[c] for c in case_ids if c in contributor_of}
+    people = "contributor" if len(contributors) == 1 else "contributors"
     lines += [
-        f"- Runs: {len(metas)}; cases: {len({m.case_id for m in metas})}",
+        f"- Runs: {len(metas)}; cases: {len(case_ids)} from {len(contributors)} {people} "
+        "(cases from one contributor are not independent)",
         f"- Dates: {starts[0].date()} to {starts[-1].date()}",
         f"- Agent: {_join({m.agent for m in metas})}; versions: "
         f"{_join({m.agent_version for m in metas})}",
@@ -200,6 +205,33 @@ def _split_days(outcomes: list[RunOutcome]) -> list[str]:
     return lines + [f"- {case}: {', '.join(sorted(d))}" for case, d in sorted(split.items())] + [""]
 
 
+def _changed_files(metas: list[RunMeta]) -> list[str]:
+    """Runs of one case (or one condition) made from different file versions are not comparable."""
+    lines = [
+        "## Case or condition files changed between runs",
+        "",
+        "Each run records the hash of its case and condition files. More than one version means "
+        "the file was edited between runs; rerun the older runs with --force or treat them with "
+        "care.",
+        "",
+    ]
+    found = []
+    for label, key, hash_of in (
+        ("case", "case_id", "case_hash"),
+        ("condition", "condition_id", "condition_hash"),
+    ):
+        versions: dict[str, dict[str, list[str]]] = {}
+        for m in metas:
+            versions.setdefault(getattr(m, key), {}).setdefault(getattr(m, hash_of), []).append(
+                m.run_id
+            )
+        for name, by_hash in sorted(versions.items()):
+            if len(by_hash) > 1:
+                groups = "; ".join(", ".join(sorted(ids)) for ids in by_hash.values())
+                found.append(f"- {label} {name}: {len(by_hash)} versions (runs: {groups})")
+    return lines + (found or ["None."]) + [""]
+
+
 def _gate_lines(rates) -> list[str]:
     verdict, cond, value = gate(rates)
     lines = ["## Gate", ""]
@@ -250,6 +282,7 @@ def build_report(root: Path, today: date, include_examples: bool = False) -> str
             [o for o in outcomes if o.status == "pending"],
         )
         lines += _split_days(outcomes)
+        lines += _changed_files(metas)
     lines += ["## Limitations", ""] + [f"- {item}" for item in LIMITATIONS] + [""]
     lines += _gate_lines(rates)
     return "\n".join(lines)

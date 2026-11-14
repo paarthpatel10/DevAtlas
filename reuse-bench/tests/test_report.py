@@ -196,3 +196,30 @@ def test_report_counts_condition_c_tool_calls(bench):
     make_run(runs, "example-nl-dates", "A", events=[_mcp_event("mcp__skills-but-for-dev__ping")])
     text = build_report(bench, TODAY, include_examples=True)
     assert "1 of 3 condition C runs called the condition C tool (2 calls in total)" in text
+
+
+def test_report_counts_cases_and_contributors(bench):
+    make_run(bench / "runs", "example-http-retries", "A")
+    make_run(bench / "runs", "example-nl-dates", "A")
+    text = build_report(bench, TODAY, include_examples=True)
+    assert "cases: 2 from 1 contributor" in text
+
+
+def test_report_flags_files_changed_between_runs(bench):
+    runs = bench / "runs"
+    make_run(runs, "example-http-retries", "A", case_hash="a" * 64)
+    make_run(runs, "example-http-retries", "B", case_hash="b" * 64, condition_hash="c" * 64)
+    make_run(runs, "example-nl-dates", "B", condition_hash="d" * 64)
+    make_run(runs, "example-nl-dates", "A")
+    text = build_report(bench, TODAY, include_examples=True)
+    section = text.split("## Case or condition files changed between runs")[1].split("## ")[0]
+    assert "- case example-http-retries: 2 versions" in section
+    assert "- condition B: 2 versions" in section
+    assert "- case example-nl-dates" not in section and "- condition A" not in section
+
+
+def test_report_no_changed_files(bench):
+    make_run(bench / "runs", "example-http-retries", "A")
+    text = build_report(bench, TODAY, include_examples=True)
+    section = text.split("## Case or condition files changed between runs")[1].split("## ")[0]
+    assert "None." in section
