@@ -230,3 +230,51 @@ def test_diff_failure_keeps_agent_record(bench, monkeypatch):
     assert meta.cost_usd == 0.5
     assert (run_dir / "final_message.txt").read_text(encoding="utf-8") == "kept"
     assert (run_dir / "events.jsonl").read_text(encoding="utf-8").strip()
+
+
+def test_truncated_run_is_recorded_as_truncated(bench):
+    planned = _plan(bench, condition_ids=("A",))[:1]
+    adapter = FakeAdapter(
+        edits={"app/x.py": "x = 1\n"}, exit_status="truncated", failure_reason="max_turns"
+    )
+    [meta] = _run(bench, adapter, planned)
+    assert (meta.exit_status, meta.failure_reason) == ("truncated", "max_turns")
+    assert "+x = 1" in (bench / "runs" / meta.run_id / "diff.patch").read_text(encoding="utf-8")
+
+
+def test_diff_failure_on_truncated_run_becomes_failed(bench, monkeypatch):
+    from reuse_bench import runner
+
+    monkeypatch.setattr(runner, "final_diff", lambda _ws: (_ for _ in ()).throw(OSError("x")))
+    planned = _plan(bench, condition_ids=("A",))[:1]
+    adapter = FakeAdapter(exit_status="truncated", failure_reason="timeout")
+    [meta] = _run(bench, adapter, planned)
+    assert meta.exit_status == "failed" and "diff failed" in meta.failure_reason
+
+
+def test_cli_pilot_on_chosen_cases_including_examples(bench, monkeypatch, capsys):
+    fake = FakeAdapter(exit_status="truncated", failure_reason="max_turns")
+    monkeypatch.setattr(cli, "make_adapter", lambda name: fake)
+    code = cli.main(
+        [
+            "pilot",
+            "--root",
+            str(bench),
+            "--include-examples",
+            "--cases",
+            "example-nl-dates,example-list-batches",
+        ]
+    )
+    assert code == 0
+    assert len(fake.calls) == 2 * 3
+    cases = {p.name.split("--")[1] for p in (bench / "runs").iterdir()}
+    assert cases == {"example-nl-dates", "example-list-batches"}
+    assert all(p.name.startswith("pilot--") for p in (bench / "runs").iterdir())
+    out = capsys.readouterr().out
+    assert "6 truncated (scored), 0 failed (excluded)" in out
+
+
+def test_cli_pilot_rejects_unknown_case(bench, monkeypatch, capsys):
+    monkeypatch.setattr(cli, "make_adapter", lambda name: FakeAdapter())
+    assert cli.main(["pilot", "--root", str(bench), "--cases", "example-nl-dates"]) == 1
+    assert "unknown or excluded case ids: example-nl-dates" in capsys.readouterr().out

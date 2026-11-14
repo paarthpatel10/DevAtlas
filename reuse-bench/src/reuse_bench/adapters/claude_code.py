@@ -109,11 +109,29 @@ def _last_assistant_text(events: list[dict]) -> str:
     return ""
 
 
+def has_transcript(events: list[dict]) -> bool:
+    """True when the agent produced at least one assistant message with text or a tool call."""
+    for event in events:
+        if event.get("type") != "assistant":
+            continue
+        for block in (event.get("message") or {}).get("content") or []:
+            if not isinstance(block, dict):
+                continue
+            if block.get("type") == "tool_use" or str(block.get("text") or "").strip():
+                return True
+    return False
+
+
 def _status(
-    result: dict | None, timed_out: bool, returncode: int | None, stderr: str
+    result: dict | None,
+    timed_out: bool,
+    returncode: int | None,
+    stderr: str,
+    transcript: bool = False,
 ) -> tuple[str, str | None]:
+    """completed, truncated (turn cap or time limit with a usable transcript) or failed."""
     if timed_out:
-        return "failed", "timeout"
+        return ("truncated" if transcript else "failed"), "timeout"
     if result is None:
         tail = stderr.strip()[-_STDERR_TAIL:]
         return (
@@ -124,7 +142,7 @@ def _status(
     if subtype == "success" and not result.get("is_error"):
         return "completed", None
     if subtype == "error_max_turns":
-        return "failed", "max_turns"
+        return ("truncated" if transcript else "failed"), "max_turns"
     detail = result.get("terminal_reason") or result.get("api_error_status") or ""
     return "failed", f"{subtype}: {detail}".rstrip(": ")
 
@@ -145,7 +163,9 @@ def record_from_stream(
     stderr = redact(stderr, secrets)
     init = parsed.init or {}
     result = parsed.result
-    exit_status, failure_reason = _status(result, timed_out, returncode, stderr)
+    exit_status, failure_reason = _status(
+        result, timed_out, returncode, stderr, has_transcript(parsed.events)
+    )
     final = (result or {}).get("result") or _last_assistant_text(parsed.events)
     cost = (result or {}).get("total_cost_usd")
     plugins = [p.get("name") if isinstance(p, dict) else str(p) for p in init.get("plugins") or []]

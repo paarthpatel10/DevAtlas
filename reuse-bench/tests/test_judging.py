@@ -251,3 +251,13 @@ def test_cli_export_and_import(bench, capsys):
     filled = _fill(rows, bench / "j01.csv")
     assert main(["import-judgments", str(filled), "--judge", "j01", "--root", str(bench)]) == 0
     assert main(["import-judgments", str(filled), "--judge", "bob", "--root", str(bench)]) == 1
+
+
+def test_truncated_run_is_exported_with_a_note(bench):
+    make_run(bench / "runs", "example-http-retries", "A", status="truncated",
+             failure_reason="max_turns")  # fmt: skip
+    assert main(["score", "--root", str(bench)]) == 0
+    n, rows, _, _ = _export(bench)
+    assert n == 1
+    assert "stopped at the turn or time limit" in rows[0]["agent_proposal"]
+    assert "max_turns" not in rows[0]["agent_proposal"]

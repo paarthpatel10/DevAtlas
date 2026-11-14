@@ -21,9 +21,11 @@ from reuse_bench.metrics import (
     format_count,
     gate,
     over_recommending,
+    run_counts,
 )
 from reuse_bench.runner import finished_run_dirs, load_meta
 from reuse_bench.schema import NOT_AVAILABLE, RunMeta
+from reuse_bench.scoring import load_events, mcp_tool_calls
 
 LIMITATIONS = (
     "Small sample: rates are counts over few cases and make no claim of statistical significance.",
@@ -100,8 +102,8 @@ def _metrics_table(rates, condition_ids: list[str], unavailable: dict[str, str])
             f"{CONTROL_FLAG_BELOW:.0%}): {', '.join(flagged)}."
         )
     lines.append(
-        "Rates are averaged per case first (mean over repeats), then across cases. Failed, "
-        "disputed and pending runs are excluded."
+        "Rates are averaged per case first (mean over repeats), then across cases. Truncated "
+        "runs are included; failed, disputed and pending runs are excluded."
     )
     return lines + [""]
 
@@ -133,8 +135,50 @@ def _per_case(outcomes: list[RunOutcome], condition_ids: list[str]) -> list[str]
     return lines + [""]
 
 
-def _run_list(title: str, outcomes: list[RunOutcome], status: str) -> list[str]:
-    selected = [o for o in outcomes if o.status == status]
+def _run_counts_table(outcomes: list[RunOutcome], condition_ids: list[str]) -> list[str]:
+    counts = run_counts(outcomes)
+    lines = [
+        "## Runs by condition",
+        "",
+        "Truncated runs stopped at the turn cap or time limit but left a usable transcript; they "
+        "are scored and counted in the rates. Failed runs (crash, login error, no result) are "
+        "excluded.",
+        "",
+        "| Condition | Runs | Completed | Truncated | Failed |",
+        "|---|---|---|---|---|",
+    ]
+    for cond in condition_ids:
+        row = counts.get(cond, {"runs": 0, "completed": 0, "truncated": 0, "failed": 0})
+        lines.append(
+            f"| {cond} | {row['runs']} | {row['completed']} | {row['truncated']} | "
+            f"{row['failed']} |"
+        )
+    return lines + [""]
+
+
+def _condition_c_tool_use(metas: list[RunMeta], root: Path) -> list[str]:
+    lines = ["## Condition C tool use", ""]
+    c_metas = [m for m in metas if m.condition_id == "C"]
+    if not c_metas:
+        return lines + ["No condition C runs.", ""]
+    configured = []
+    for _, condition in load_conditions(root / "conditions"):
+        if condition.id == "C":
+            configured = list(condition.mcp_servers)
+    called = total_calls = 0
+    for meta in c_metas:
+        servers = meta.isolation.get("condition_mcp_servers") or configured
+        calls = mcp_tool_calls(load_events(root / "runs" / meta.run_id), servers)
+        total_calls += calls
+        called += 1 if calls else 0
+    return lines + [
+        f"{called} of {len(c_metas)} condition C runs called the condition C tool "
+        f"({total_calls} calls in total). Failed and truncated runs are included in the count.",
+        "",
+    ]
+
+
+def _run_list(title: str, selected: list[RunOutcome]) -> list[str]:
     lines = [f"## {title}", ""]
     if not selected:
         return lines + ["None.", ""]
@@ -193,9 +237,18 @@ def build_report(root: Path, today: date, include_examples: bool = False) -> str
         lines += _environment(metas, root)
         lines += _metrics_table(rates, condition_ids, unavailable)
         lines += _per_case(outcomes, condition_ids)
-        lines += _run_list("Disputed runs", outcomes, "disputed")
-        lines += _run_list("Failed runs", outcomes, "failed")
-        lines += _run_list("Pending runs (not yet judged by two judges)", outcomes, "pending")
+        lines += _run_counts_table(outcomes, condition_ids)
+        lines += _condition_c_tool_use(metas, root)
+        lines += _run_list("Disputed runs", [o for o in outcomes if o.status == "disputed"])
+        lines += _run_list(
+            "Truncated runs (scored; stopped at the turn cap or time limit)",
+            [o for o in outcomes if o.truncated and o.status != "failed"],
+        )
+        lines += _run_list("Failed runs", [o for o in outcomes if o.status == "failed"])
+        lines += _run_list(
+            "Pending runs (not yet judged by two judges)",
+            [o for o in outcomes if o.status == "pending"],
+        )
         lines += _split_days(outcomes)
     lines += ["## Limitations", ""] + [f"- {item}" for item in LIMITATIONS] + [""]
     lines += _gate_lines(rates)

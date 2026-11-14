@@ -160,3 +160,39 @@ def test_multiline_failure_reason_stays_on_one_bullet(bench):
     assert failed == [
         "- `example-list-batches--A--r1`: no_result (exit 1): Traceback File x Error: auth | failed"
     ]
+
+
+def _mcp_event(tool):
+    return {"type": "assistant", "message": {"content": [{"type": "tool_use", "name": tool}]}}
+
+
+def test_report_shows_truncated_and_failed_counts_per_condition(bench):
+    runs = bench / "runs"
+    make_run(runs, "example-http-retries", "A", status="truncated", failure_reason="max_turns",
+             after={"requirements.txt": "tenacity\n"})  # fmt: skip
+    make_run(runs, "example-nl-dates", "A", status="failed", failure_reason="no_result (exit 1)")
+    make_run(runs, "example-http-retries", "B", status="truncated", failure_reason="timeout",
+             after={"requirements.txt": "tenacity\n"})  # fmt: skip
+    make_run(runs, "example-http-retries", "C", after={"requirements.txt": "tenacity\n"})
+    assert main(["score", "--root", str(bench)]) == 0
+    text = build_report(bench, TODAY, include_examples=True)
+    table = text.split("## Runs by condition")[1].split("## ")[0]
+    assert "| Condition | Runs | Completed | Truncated | Failed |" in table
+    assert "| A | 2 | 0 | 1 | 1 |" in table
+    assert "| B | 1 | 0 | 1 | 0 |" in table
+    assert "| C | 1 | 1 | 0 | 0 |" in table
+    truncated = text.split("## Truncated runs")[1].split("## ")[0]
+    assert "example-http-retries--A--r1`: max_turns" in truncated
+    assert "example-http-retries--B--r1`: timeout" in truncated
+
+
+def test_report_counts_condition_c_tool_calls(bench):
+    runs = bench / "runs"
+    make_run(runs, "example-http-retries", "C",
+             events=[_mcp_event("mcp__skills-but-for-dev__search_github_repos"),
+                     _mcp_event("mcp__skills-but-for-dev__get_readme")])  # fmt: skip
+    make_run(runs, "example-nl-dates", "C", events=[_mcp_event("WebSearch")])
+    make_run(runs, "example-list-batches", "C", status="failed", failure_reason="no_result")
+    make_run(runs, "example-nl-dates", "A", events=[_mcp_event("mcp__skills-but-for-dev__ping")])
+    text = build_report(bench, TODAY, include_examples=True)
+    assert "1 of 3 condition C runs called the condition C tool (2 calls in total)" in text

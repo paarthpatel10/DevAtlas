@@ -190,3 +190,43 @@ def test_collect_outcomes_from_runs_and_judgments(bench):
     assert outcomes["example-http-retries--B--r1"].adopted is False
     assert outcomes["example-list-batches--B--r1"].no_unneeded_dep is True
     assert outcomes["example-nl-dates--C--r1"].status == "failed"
+
+
+def test_truncated_runs_count_in_rates():
+    from dataclasses import replace
+
+    truncated = replace(_o("c2", "A", True), truncated=True)
+    rate = condition_rates([_o("c1", "A", False), truncated])["A"]["surfaced"]
+    assert (rate.numerator, rate.cases) == (1.0, 2)
+
+
+def test_run_counts_per_condition():
+    from dataclasses import replace
+
+    from reuse_bench.metrics import run_counts
+
+    outcomes = [
+        _o("c1", "A", True),
+        replace(_o("c2", "A", False), truncated=True),
+        _o("c3", "A", None, status="failed"),
+        replace(_o("c1", "B", None, status="disputed"), truncated=True),
+    ]
+    counts = run_counts(outcomes)
+    assert counts["A"] == {"runs": 3, "completed": 1, "truncated": 1, "failed": 1}
+    assert counts["B"] == {"runs": 1, "completed": 0, "truncated": 1, "failed": 0}
+
+
+def test_collect_outcomes_marks_truncated(bench):
+    runs = bench / "runs"
+    make_run(
+        runs,
+        "example-http-retries",
+        "A",
+        status="truncated",
+        failure_reason="max_turns",
+        after={"requirements.txt": "tenacity\n"},
+    )
+    assert main(["score", "--root", str(bench)]) == 0
+    [outcome] = collect_outcomes(bench, include_examples=True)
+    assert outcome.truncated is True
+    assert outcome.status == "valid" and outcome.surfaced is True

@@ -54,6 +54,8 @@ uv run reuse-bench report                         # results/<date>-report.md wit
   marks rates based on fewer than 10 cases as "too few cases to read". Gate on the best of B and
   C: 80% or more is STOP PRODUCT, 50% or less is CONTINUE, in between is NARROW. A condition
   whose control accuracy is below 75% is flagged as over-recommending.
+- The report also shows completed, truncated and failed run counts per condition, and how many
+  condition C runs actually called the condition C tool, with the total number of calls.
 
 ## Adding a case
 
@@ -109,8 +111,16 @@ uv run reuse-bench pilot --include-examples   # smoke test on the fixtures (neve
   Approve that projection before starting `run`. The cost figure is the CLI's API-equivalent
   `total_cost_usd`, which does not map one-to-one to a subscription allowance.
 - Runs are resumable. A run with a `meta.json` is never repeated unless you pass `--force`;
-  a half-written run directory (interrupted harness) is redone. Failed runs (timeout, turn cap,
-  crash, authentication error) are recorded as `failed` and are not repeated automatically.
+  a half-written run directory (interrupted harness) is redone. Neither kind of run below is
+  repeated automatically:
+  - **truncated**: the run hit the turn cap or the time limit but left a usable transcript (at
+    least one assistant message with text or a tool call). It is scored and counted like a
+    completed run.
+  - **failed**: crashes, login or API errors, no result, or a turn cap or time limit with no
+    usable transcript. Failed runs are excluded from the rates.
+- Pick cases with `--cases`. Example fixtures need `--include-examples` as well; their runs are
+  never counted in the report. Example:
+  `uv run reuse-bench pilot --include-examples --cases case-002,example-http-retries,example-nl-dates`
 - Condition order is shuffled per case and repeat with a recorded seed (`--seed`, default
   20261112). All conditions of a case run back to back.
 - Defaults: 30 turns and 900 seconds per run (`--max-turns`, `--timeout`).

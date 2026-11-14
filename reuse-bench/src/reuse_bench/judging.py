@@ -129,12 +129,18 @@ def diff_summary(diff: str, score: AutoScore) -> str:
     return "\n".join(lines)
 
 
-def _row(case: Case, run_dir: Path, score: AutoScore, terms: list[str]) -> dict[str, str]:
+TRUNCATED_NOTE = "Note: this run stopped at the turn or time limit before the agent finished.\n\n"
+
+
+def _row(
+    case: Case, run_dir: Path, score: AutoScore, terms: list[str], truncated: bool = False
+) -> dict[str, str]:
     events = load_events(run_dir)
     final = (run_dir / "final_message.txt").read_text(encoding="utf-8", errors="replace")
     diff = (run_dir / "diff.patch").read_text(encoding="utf-8", errors="replace")
     proposal = (
-        "Before the first code edit:\n"
+        (TRUNCATED_NOTE if truncated else "")
+        + "Before the first code edit:\n"
         + (_clip(_pre_edit_text(events)) or "(no text)")
         + "\n\nFinal message:\n"
         + (_clip(final) or "(no text)")
@@ -178,7 +184,8 @@ def export_judging(
         case = cases.get(meta.case_id)
         if not score.needs_judging or case is None:
             continue
-        rows.append((meta.run_id, case.kind, _row(case, run_dir, score, terms)))
+        truncated = meta.exit_status == "truncated"
+        rows.append((meta.run_id, case.kind, _row(case, run_dir, score, terms, truncated)))
     if missing_scores:
         raise JudgingError(
             "runs without auto_score.json (run `reuse-bench score` first): "

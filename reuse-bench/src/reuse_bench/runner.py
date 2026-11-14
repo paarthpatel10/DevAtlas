@@ -185,7 +185,7 @@ def execute_run(
             snapshot_manifests(workspace, run_dir / "manifest_after")
         except Exception as exc:
             # Keep the agent's transcript and cost; without a diff the run cannot be scored.
-            if record.exit_status == "completed":
+            if record.exit_status in ("completed", "truncated"):
                 record = record.model_copy(
                     update={
                         "exit_status": "failed",
