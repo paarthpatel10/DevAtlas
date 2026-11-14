@@ -278,3 +278,12 @@ def test_cli_pilot_rejects_unknown_case(bench, monkeypatch, capsys):
     monkeypatch.setattr(cli, "make_adapter", lambda name: FakeAdapter())
     assert cli.main(["pilot", "--root", str(bench), "--cases", "example-nl-dates"]) == 1
     assert "unknown or excluded case ids: example-nl-dates" in capsys.readouterr().out
+
+
+def test_default_permission_mode_is_auto_and_overridable(bench, monkeypatch):
+    fake = FakeAdapter()
+    monkeypatch.setattr(cli, "make_adapter", lambda name: fake)
+    args = ["pilot", "--root", str(bench), "--include-examples", "--cases", "example-nl-dates"]
+    assert cli.main([*args, "--conditions", "A"]) == 0
+    assert cli.main([*args, "--conditions", "B", "--permission-mode", "dontAsk"]) == 0
+    assert [c["permission_mode"] for c in fake.calls] == ["auto", "dontAsk"]

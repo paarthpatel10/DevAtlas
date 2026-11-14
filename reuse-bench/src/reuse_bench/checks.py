@@ -45,6 +45,11 @@ def check_run(run_dir: Path) -> RunCheck:
     if meta.agent == "claude_code" or "init_seen" in iso:
         if not iso.get("init_seen"):
             result.problems.append("agent did not start (no init event in the stream)")
+    actual = iso.get("permission_mode")
+    if actual and actual != meta.limits.permission_mode:
+        result.problems.append(
+            f"agent ran in permission mode '{actual}', expected '{meta.limits.permission_mode}'"
+        )
 
     denied = _denied_tools(meta.permission_denials)
     if denied:

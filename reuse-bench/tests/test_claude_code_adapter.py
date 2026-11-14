@@ -49,7 +49,7 @@ def test_build_command_has_isolation_flags(adapter, conditions, tmp_path):
         "--verbose",
         "--max-turns 30",
         "--no-session-persistence",
-        "--permission-mode dontAsk",
+        "--permission-mode auto",
         "--setting-sources project",
         "--strict-mcp-config",
         "--disable-slash-commands",

@@ -40,6 +40,7 @@ class FakeAdapter:
                 "workspace": workspace_dir,
                 "prompt": prompt,
                 "condition": condition.id,
+                "permission_mode": limits.permission_mode,
                 "files": sorted(
                     p.relative_to(workspace_dir).as_posix()
                     for p in workspace_dir.rglob("*")

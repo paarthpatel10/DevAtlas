@@ -87,7 +87,12 @@ def _cmd_run(args: argparse.Namespace, pilot: bool = False) -> int:
         conditions = [c for c in conditions if c[1].id in wanted]
     repeats = 1 if pilot else args.repeats
     planned = plan_matrix(cases, conditions, repeats=repeats, seed=args.seed, pilot=pilot)
-    limits = Limits(max_turns=args.max_turns, timeout_s=args.timeout, model=args.model)
+    limits = Limits(
+        max_turns=args.max_turns,
+        timeout_s=args.timeout,
+        model=args.model,
+        permission_mode=args.permission_mode,
+    )
     print(f"Starting {len(planned)} agent runs. Each one uses your agent login and allowance.")
     metas = run_matrix(
         planned,
@@ -251,6 +256,12 @@ def build_parser() -> argparse.ArgumentParser:
     run_opts.add_argument("--timeout", type=int, default=900, help="seconds per run")
     run_opts.add_argument("--model", default=None, help="agent model (default: agent default)")
     run_opts.add_argument("--agent", default="claude_code")
+    run_opts.add_argument(
+        "--permission-mode",
+        default="auto",
+        choices=["auto", "dontAsk", "acceptEdits", "default"],
+        help="agent permission mode, the same for every condition (default: auto)",
+    )
     run_opts.add_argument("--force", action="store_true", help="repeat finished runs")
     run_opts.add_argument(
         "--include-examples", action="store_true", help="also run example fixtures (smoke test)"

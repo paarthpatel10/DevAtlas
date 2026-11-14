@@ -130,3 +130,14 @@ def test_cli_check_runs_exit_codes(tmp_path, capsys):
 def test_cli_check_runs_without_runs(tmp_path, capsys):
     assert main(["check-runs", "--root", str(tmp_path)]) == 1
     assert "No runs found" in capsys.readouterr().out
+
+
+def test_permission_mode_mismatch_is_a_problem(runs):
+    iso = {"init_seen": True, "permission_mode": "default"}
+    run = make_run(runs, "example-http-retries", "A", isolation=iso)
+    assert check_run(run).problems == ["agent ran in permission mode 'default', expected 'auto'"]
+
+
+def test_matching_permission_mode_is_ok(runs):
+    iso = {"init_seen": True, "permission_mode": "auto"}
+    assert check_run(make_run(runs, "example-http-retries", "A", isolation=iso)).problems == []
