@@ -117,7 +117,9 @@ DEFAULT_ALLOWED_TOOLS: list[str] = [
 class Limits(_Strict):
     max_turns: int = Field(default=30, ge=1)
     timeout_s: int = Field(default=900, ge=1)
-    permission_mode: str = "dontAsk"
+    # auto: a classifier approves safe actions (installs, tests, reads) and blocks risky ones;
+    # chosen by the owner after the dontAsk smoke run blocked installs and tests.
+    permission_mode: str = "auto"
     allowed_tools: list[str] = Field(default_factory=lambda: list(DEFAULT_ALLOWED_TOOLS))
     model: str | None = None
 

@@ -147,11 +147,13 @@ The agent runs as:
 
 ```
 claude -p <request> --output-format stream-json --verbose --max-turns 30 --no-session-persistence
-  --permission-mode dontAsk --allowedTools <same list for every condition>
+  --permission-mode auto --allowedTools <same list for every condition>
   --setting-sources project --strict-mcp-config --mcp-config <condition MCP servers>
   --disable-slash-commands --settings {"claudeMdExcludes": ["~/.claude/CLAUDE.md", "~/.claude/rules/**"]}
 env: CLAUDE_CODE_DISABLE_AUTO_MEMORY=1; variables whose names look secret (KEY, TOKEN, SECRET,
-     PASSWORD, PWD, CREDENTIAL, neon_*, gemini*) are removed, except CLAUDE_CODE_OAUTH_TOKEN
+     PASSWORD, PWD, CREDENTIAL, neon_*, gemini*) and every CLAUDE* variable of a parent session
+     or IDE terminal (IDE connection port, session ids, effort) are removed, except
+     CLAUDE_CODE_OAUTH_TOKEN
 ```
 
 This keeps your login but skips user-level settings, hooks, MCP servers, skills and slash
@@ -162,10 +164,16 @@ org-managed plugins (on the owner's machine: `cc-plugin-sec-default`, `cc-plugin
 `cc-plugin-telemetry`, `cc-plugin-privacy`, `cc-plugin-plugin-authoring`), the tool list, the
 connected MCP servers, and any `CLAUDE.md` found in a parent directory of the temp workspace.
 
-The permission allowlist is the same for every condition: Read, Edit, Write, Glob, Grep,
+Permissions are the same for every condition. Runs use auto mode (`--permission-mode auto`,
+overridable with `--permission-mode`). The allowlist pre-approves Read, Edit, Write, Glob, Grep,
 WebSearch, WebFetch, and Bash/PowerShell commands starting with uv, pip, pip3, python, python3,
-py, pytest, git status and git diff. Everything else is denied without prompting; denials are
-recorded in `meta.json` (`permission_denials`). Condition C adds only its own MCP tools.
+py, pytest, git status and git diff. Anything else goes to auto mode's classifier, which approves
+safe actions (installing packages, running tests, reading files) and blocks risky ones; the run
+carries on after a block. Condition C adds only its own MCP tools. Blocked actions are recorded in
+`meta.json` (`permission_denials`), and `check-runs` flags any run whose actual permission mode
+differs from the requested one (for example if auto mode is not available on the account).
+Auto mode was chosen after a smoke run in `dontAsk` mode blocked package installs and tests that
+a developer would normally approve.
 
 ### Condition C tool
 
