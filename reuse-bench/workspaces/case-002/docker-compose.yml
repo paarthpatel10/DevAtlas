@@ -1,0 +1,95 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# Data Assistant — Docker Compose
+# ══════════════════════════════════════════════════════════════════════════════
+# Services:
+#   1. fastapi    — Data Assistant API (port 8000)
+#   2. postgres   — PostgreSQL analytics database (port 5432)
+#   3. streamlit  — Streamlit frontend UI (port 8501)
+#
+# Note: OpenSearch is hosted on AWS (configured via .env), not as a container.
+# ══════════════════════════════════════════════════════════════════════════════
+
+
+services:
+  # ── FastAPI Application ───────────────────────────────────────────────────
+  fastapi:
+    build:
+      context: .
+      dockerfile: docker/fastapi.Dockerfile
+    container_name: assistant-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    networks:
+      - assistant-network
+    restart: unless-stopped
+
+  # ── PostgreSQL Database ───────────────────────────────────────────────────
+  postgres:
+    build:
+      context: .
+      dockerfile: docker/postgres.Dockerfile
+    container_name: assistant-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-analytics_db}
+      POSTGRES_USER: ${POSTGRES_USER:-assistant}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-assistant_password}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-assistant} -d ${POSTGRES_DB:-analytics_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - assistant-network
+    restart: unless-stopped
+
+
+
+  # ── Streamlit Frontend ───────────────────────────────────────────────────
+  streamlit:
+    build:
+      context: .
+      dockerfile: docker/streamlit.Dockerfile
+    container_name: assistant-streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://fastapi:8000
+    depends_on:
+      fastapi:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8501/_stcore/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - assistant-network
+    restart: unless-stopped
+
+# ── Volumes ─────────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+    driver: local
+
+# ── Networks ────────────────────────────────────────────────────────────────
+networks:
+  assistant-network:
+    driver: bridge
