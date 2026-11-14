@@ -19,7 +19,9 @@ adapter, pilot, scoring, blind judging, report and gate. No real cases or result
 ```powershell
 uv run reuse-bench validate                       # cases are well-formed and leak nothing
 uv run reuse-bench pilot                          # 3 cases; approve the projected time and cost
+uv run reuse-bench check-runs --pilot             # every run complete, condition C tool connected
 uv run reuse-bench run                            # full matrix (cases x A/B/C x 2 repeats)
+uv run reuse-bench check-runs                     # same checks for the full run
 uv run reuse-bench score                          # automatic first-pass labels
 uv run reuse-bench export-judging                 # runs/judging/judging.csv, condition hidden
 uv run reuse-bench import-judgments j01.csv --judge j01
@@ -67,7 +69,11 @@ uv run reuse-bench report                         # results/<date>-report.md wit
    - an example fixture is outside `cases/examples/`, or a real case is inside it;
    - an id is duplicated, or the workspace is missing or outside `workspaces/`;
    - the `request`, the `context` or any workspace file names an accepted tool, package or import
-     name (case-insensitive, also with `-`, `_` and `.` swapped).
+     name (case-insensitive, also with `-`, `_` and `.` swapped);
+   - the `request` starts with `-` (the agent's command line would read it as an option).
+4. After a real run, `uv run reuse-bench check-runs` reports per run: problems (incomplete or
+   failed run, missing files, agent never started, condition C server not connected, condition
+   C tool calls denied) and notes (truncated, other denied tools, condition C tool calls).
 3. `uv run reuse-bench splits` shows the dev/holdout split. It is assigned deterministically from
    the case id and a fixed seed, stratified by kind, and never set by hand.
 

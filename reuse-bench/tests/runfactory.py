@@ -46,6 +46,10 @@ def make_run(
     pilot: bool = False,
     cost_usd: float | None = 0.05,
     started_at: datetime | None = None,
+    isolation: dict | None = None,
+    case_hash: str = "0" * 64,
+    condition_hash: str = "1" * 64,
+    permission_denials: list[dict] | None = None,
 ) -> Path:
     run_id = f"{'pilot--' if pilot else ''}{case_id}--{condition_id}--r{repeat}"
     run_dir = runs_dir / run_id
@@ -62,9 +66,9 @@ def make_run(
     meta = RunMeta(
         run_id=run_id,
         case_id=case_id,
-        case_hash="0" * 64,
+        case_hash=case_hash,
         condition_id=condition_id,
-        condition_hash="1" * 64,
+        condition_hash=condition_hash,
         repeat=repeat,
         order_seed=1,
         order_position=0,
@@ -80,8 +84,9 @@ def make_run(
         cost_usd=cost_usd,
         usage=None,
         num_turns=3,
-        permission_denials=[],
-        isolation={"active_plugins": ["cc-plugin-sec-default"], "env_removed": ["GITHUB_TOKEN"]},
+        permission_denials=permission_denials or [],
+        isolation=isolation
+        or {"active_plugins": ["cc-plugin-sec-default"], "env_removed": ["GITHUB_TOKEN"]},
         started_at=start,
         ended_at=start + timedelta(seconds=60),
     )

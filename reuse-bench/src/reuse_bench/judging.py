@@ -191,6 +191,8 @@ def export_judging(
             "runs without auto_score.json (run `reuse-bench score` first): "
             + ", ".join(missing_scores)
         )
+    if not rows:
+        return 0  # nothing to judge: write no CSV and no key, so a later round is not blocked
 
     random.Random(seed).shuffle(rows)
     key: dict[str, dict[str, str]] = {}

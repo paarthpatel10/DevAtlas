@@ -156,6 +156,9 @@ def _cmd_export_judging(args: argparse.Namespace) -> int:
     except JudgingError as exc:
         print(f"ERROR: {exc}")
         return 1
+    if n == 0:
+        print("Nothing to judge: no scored run needs human judging. No files were written.")
+        return 0
     print(f"{n} rows written to {out_csv}. Give each judge a copy; keep {key_path} private.")
     return 0
 
@@ -193,6 +196,26 @@ def _cmd_report(args: argparse.Namespace) -> int:
     print(f"Report written to {out}")
     print(gate_line)
     return 0
+
+
+def _cmd_check_runs(args: argparse.Namespace) -> int:
+    from reuse_bench.checks import check_runs
+
+    results = check_runs(args.root / "runs", pilot_only=args.pilot)
+    if not results:
+        print("No runs found under runs/.")
+        return 1
+    for result in results:
+        if result.problems:
+            for problem in result.problems:
+                print(f"PROBLEM {result.run_id}: {problem}")
+        else:
+            print(f"OK      {result.run_id}")
+        for note in result.notes:
+            print(f"        {note}")
+    bad = sum(1 for r in results if r.problems)
+    print(f"{len(results)} runs checked; {bad} with problems.")
+    return 1 if bad else 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -266,6 +289,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--include-examples", action="store_true", help="smoke test only; requires --out"
     )
     report.set_defaults(handler=_cmd_report)
+
+    check = sub.add_parser(
+        "check-runs", parents=[root_opts], help="verify run records after a real run"
+    )
+    check.add_argument("--pilot", action="store_true", help="only check pilot runs")
+    check.set_defaults(handler=_cmd_check_runs)
     return parser
 
 

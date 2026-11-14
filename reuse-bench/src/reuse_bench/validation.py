@@ -123,6 +123,11 @@ def validate_all(root: Path, allow_few: bool = False) -> ValidationReport:
         if case.id in seen:
             report.errors.append(f"{rel}: duplicate case id '{case.id}' (also in {seen[case.id]})")
         seen.setdefault(case.id, rel)
+        if case.request.lstrip().startswith("-"):
+            report.errors.append(
+                f"{rel}: request must not start with '-' (the agent command line would read it "
+                "as an option)"
+            )
 
         if case.workspace:
             ws = resolve_workspace(root, case.workspace)
