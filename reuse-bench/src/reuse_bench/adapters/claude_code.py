@@ -259,7 +259,10 @@ class ClaudeCodeAdapter:
         removed: list[str] = []
         for name, value in base.items():
             secret = _SECRET_NAME.search(name) or name.lower().startswith(_SECRET_PREFIXES)
-            if secret and name not in _KEEP:
+            # Variables of a parent Claude Code session or IDE terminal (IDE connection port,
+            # session ids, effort level) would leak that session into the run.
+            parent_session = name.upper().startswith("CLAUDE")
+            if (secret or parent_session) and name not in _KEEP:
                 removed.append(name)
             else:
                 env[name] = value

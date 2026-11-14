@@ -223,3 +223,26 @@ def test_run_timeout_kills_and_fails(conditions, tmp_path, monkeypatch):
     rec = adapter.run(tmp_path, "x", conditions["A"], Limits(timeout_s=1))
     assert (rec.exit_status, rec.failure_reason) == ("failed", "timeout")
     assert (datetime.now(UTC) - started).total_seconds() < 30
+
+
+def test_child_env_drops_parent_session_variables(adapter):
+    """A run started from an IDE terminal or another Claude Code session must not inherit it."""
+    base = {
+        "PATH": "/usr/bin",
+        "CLAUDECODE": "1",
+        "CLAUDE_CODE_SSE_PORT": "12345",
+        "CLAUDE_CODE_SESSION_ID": "abc",
+        "CLAUDE_CODE_ENTRYPOINT": "cli",
+        "CLAUDE_EFFORT": "low",
+        "CLAUDE_PID": "42",
+        "CLAUDE_CODE_OAUTH_TOKEN": "keep-me-login",
+        "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "0",
+        "UV_SYSTEM_CERTS": "1",
+    }
+    env, removed = adapter.child_env(base)
+    for name in ("CLAUDECODE", "CLAUDE_CODE_SSE_PORT", "CLAUDE_CODE_SESSION_ID",
+                 "CLAUDE_CODE_ENTRYPOINT", "CLAUDE_EFFORT", "CLAUDE_PID"):  # fmt: skip
+        assert name not in env and name in removed
+    assert env["CLAUDE_CODE_OAUTH_TOKEN"] == "keep-me-login"
+    assert env["CLAUDE_CODE_DISABLE_AUTO_MEMORY"] == "1"
+    assert env["UV_SYSTEM_CERTS"] == "1" and env["PATH"] == "/usr/bin"
