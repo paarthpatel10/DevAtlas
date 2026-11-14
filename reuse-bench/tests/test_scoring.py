@@ -232,3 +232,33 @@ def test_cli_score_writes_auto_scores(tmp_path, project_root, capsys):
     out = capsys.readouterr().out
     assert "adopted_accepted: 1" in out
     assert "example-unknown" in out
+
+
+def test_truncated_run_is_scored_normally(tmp_path, retry, project_root):
+    score = _score(
+        tmp_path,
+        retry,
+        project_root,
+        status="truncated",
+        failure_reason="max_turns",
+        after={"requirements.txt": "tenacity\n"},
+    )
+    assert score.label == "adopted_accepted"
+
+
+def test_truncated_custom_run_goes_to_judging(tmp_path, retry, project_root):
+    score = _score(tmp_path, retry, project_root, status="truncated", failure_reason="timeout")
+    assert score.label == "custom_no_mention" and score.needs_judging is True
+
+
+def test_mcp_tool_calls_counts_condition_server_calls():
+    from reuse_bench.scoring import mcp_tool_calls
+
+    events = [
+        tool_event("mcp__skills-but-for-dev__search_github_repos", query="retry"),
+        tool_event("mcp__skills_but_for_dev__ping"),
+        tool_event("mcp__other__thing"),
+        tool_event("Bash", command="mcp__skills-but-for-dev__ping"),
+    ]
+    assert mcp_tool_calls(events, ["skills-but-for-dev"]) == 2
+    assert mcp_tool_calls(events, []) == 0

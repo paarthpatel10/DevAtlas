@@ -99,7 +99,13 @@ def _cmd_run(args: argparse.Namespace, pilot: bool = False) -> int:
         force=args.force,
     )
     failed = [m for m in metas if m.exit_status == "failed"]
-    print(f"{len(metas)} runs recorded under runs/; {len(failed)} failed.")
+    truncated = [m for m in metas if m.exit_status == "truncated"]
+    print(
+        f"{len(metas)} runs recorded under runs/; {len(truncated)} truncated (scored), "
+        f"{len(failed)} failed (excluded)."
+    )
+    for meta in truncated:
+        print(f"  truncated: {meta.run_id}: {meta.failure_reason}")
     for meta in failed:
         print(f"  failed: {meta.run_id}: {meta.failure_reason}")
     if pilot:

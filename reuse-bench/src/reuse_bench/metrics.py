@@ -39,6 +39,7 @@ class RunOutcome:
     no_unneeded_dep: bool | None
     date: str
     failure_reason: str | None = None
+    truncated: bool = False  # stopped at the turn cap or time limit; scored and counted normally
 
 
 @dataclass(frozen=True)
@@ -65,6 +66,7 @@ def collect_outcomes(root: Path, include_examples: bool = False) -> list[RunOutc
             condition_id=meta.condition_id,
             repeat=meta.repeat,
             date=meta.started_at.date().isoformat(),
+            truncated=meta.exit_status == "truncated",
         )
         empty = dict(surfaced=None, adopted=None, no_unneeded_dep=None)
         if meta.exit_status == "failed":
@@ -72,6 +74,8 @@ def collect_outcomes(root: Path, include_examples: bool = False) -> list[RunOutc
                 RunOutcome(**base, **empty, status="failed", failure_reason=meta.failure_reason)
             )
             continue
+        if meta.exit_status == "truncated":
+            base["failure_reason"] = meta.failure_reason  # timeout or max_turns
         score_path = run_dir / "auto_score.json"
         score = (
             AutoScore.model_validate_json(score_path.read_text(encoding="utf-8"))
@@ -112,6 +116,23 @@ def collect_outcomes(root: Path, include_examples: bool = False) -> list[RunOutc
                 )
             )
     return outcomes
+
+
+def run_counts(outcomes: list[RunOutcome]) -> dict[str, dict[str, int]]:
+    """Runs per condition, split into completed, truncated and failed."""
+    counts: dict[str, dict[str, int]] = {}
+    for o in outcomes:
+        row = counts.setdefault(
+            o.condition_id, {"runs": 0, "completed": 0, "truncated": 0, "failed": 0}
+        )
+        row["runs"] += 1
+        if o.status == "failed":
+            row["failed"] += 1
+        elif o.truncated:
+            row["truncated"] += 1
+        else:
+            row["completed"] += 1
+    return counts
 
 
 def case_means(outcomes: list[RunOutcome], field: str) -> dict[tuple[str, str], float]:

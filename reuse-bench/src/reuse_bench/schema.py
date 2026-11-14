@@ -122,7 +122,8 @@ class Limits(_Strict):
     model: str | None = None
 
 
-RunStatus = Literal["completed", "failed"]
+# truncated = stopped at the turn cap or time limit with a usable transcript; scored normally.
+RunStatus = Literal["completed", "truncated", "failed"]
 
 
 class RunRecord(_Strict):

@@ -132,10 +132,47 @@ def test_truncated_stream_is_failed_not_crash():
     assert len(rec.events) == 1
 
 
-def test_max_turns_is_failed():
-    line = json.dumps({"type": "result", "subtype": "error_max_turns", "is_error": True})
-    rec = _record(line)
+ASSISTANT_LINE = json.dumps(
+    {"type": "assistant", "message": {"content": [{"type": "text", "text": "Working on it."}]}}
+)
+MAX_TURNS_LINE = json.dumps({"type": "result", "subtype": "error_max_turns", "is_error": True})
+
+
+def test_max_turns_without_transcript_is_failed():
+    rec = _record(MAX_TURNS_LINE)
     assert (rec.exit_status, rec.failure_reason) == ("failed", "max_turns")
+
+
+def test_max_turns_with_transcript_is_truncated():
+    rec = _record(ASSISTANT_LINE + "\n" + MAX_TURNS_LINE)
+    assert (rec.exit_status, rec.failure_reason) == ("truncated", "max_turns")
+    assert rec.final_message == "Working on it."
+
+
+def test_timeout_with_transcript_is_truncated():
+    rec = _record(ASSISTANT_LINE + "\n", timed_out=True, returncode=None)
+    assert (rec.exit_status, rec.failure_reason) == ("truncated", "timeout")
+
+
+def test_timeout_without_transcript_is_failed():
+    rec = _record("", timed_out=True, returncode=None)
+    assert (rec.exit_status, rec.failure_reason) == ("failed", "timeout")
+
+
+def test_tool_call_alone_counts_as_transcript():
+    tool = json.dumps(
+        {"type": "assistant", "message": {"content": [{"type": "tool_use", "name": "Read"}]}}
+    )
+    assert _record(tool + "\n" + MAX_TURNS_LINE).exit_status == "truncated"
+
+
+def test_crash_and_login_error_stay_failed_even_with_transcript():
+    crash = _record(ASSISTANT_LINE + "\n", returncode=1, stderr="Segmentation fault")
+    assert crash.exit_status == "failed" and crash.failure_reason.startswith("no_result")
+    login = json.dumps(
+        {"type": "result", "subtype": "success", "is_error": True, "api_error_status": 401}
+    )
+    assert _record(ASSISTANT_LINE + "\n" + login).exit_status == "failed"
 
 
 def test_success_with_is_error_is_failed():

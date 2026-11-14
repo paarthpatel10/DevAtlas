@@ -1,0 +1,51 @@
+id: case-002
+title: Safety check for LLM-generated SQL before it runs
+kind: reuse
+example: false
+contributor: c01                # same person and same project as case-001
+consent_to_publish: true
+date_observed: 2026-06          # from public commit dates; OWNER TO CONFIRM
+stack:
+  language: python
+  python_version: "3.11"
+  frameworks: [fastapi, langchain, langgraph, sqlalchemy]
+context: |
+  An analytics assistant that turns natural-language questions into SQL with an
+  LLM and runs the SQL against a PostgreSQL database through SQLAlchemy, then
+  returns the result to the user. The assistant is meant for read-only analysis.
+  At the moment the generated SQL is executed without any check.
+request: |
+  Add a validation and safety layer that checks every LLM-generated SQL query
+  before it is executed. It should reject destructive operations, prevent
+  unauthorized access, handle malformed queries, and make sure only permitted
+  analytical queries run. Return a clear reason whenever a query is blocked.
+workspace: workspaces/case-002   # OWNER TASK: starter project does not exist yet, see notes
+ground_truth:
+  accepted_tools:
+    - name: SQLGlot
+      packages: [sqlglot]
+      import_names: [sqlglot]
+      repo_url: https://github.com/tobymao/sqlglot
+  rationale: |
+    In the real project this layer was hand-built as a first-word check plus a
+    keyword blocklist matched with regular expressions, after removing string
+    literals with a regular expression. Keyword matching cannot tell a statement
+    from a function: the blocklist contains REPLACE and CALL, so a harmless
+    SELECT that uses the replace() string function is rejected. A SQL parser
+    can check the statement type and structure directly (one statement, read
+    only) with less custom code and fewer false positives.
+    Limitation: parsing does not enforce permissions. A read-only database role
+    is still the real control, and a run that proposes it deserves credit in
+    the judge's comment.
+  found_how: assistant           # owner: found by internet search with AI help
+notes: |
+  1. The request is reconstructed from the owner's description of the feature,
+     not the verbatim prompt. OWNER TO EDIT into his own wording before running.
+  2. Other SQL parsers are not on the accepted list. A run that adopts one goes
+     to human judging as "adopted_other", which is the intended path.
+  3. Same project as case-001. The two cases are not independent; the report
+     should count them as one contributor.
+  4. Workspace: build the starter from the project with the safety module and
+     every call to it removed. No file may contain the accepted tool's name.
+  5. The owner's final implementation is in a public repository. Do not name
+     the project anywhere in the workspace.

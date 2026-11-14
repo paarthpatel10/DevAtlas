@@ -161,6 +161,23 @@ def new_imports(diff: str, local_names: set[str]) -> set[str]:
     return {name for name in found if name not in local_names}
 
 
+def _server_key(name: str) -> str:
+    return re.sub(r"[^a-z0-9]", "_", name.lower())
+
+
+def mcp_tool_calls(events: list[dict], servers: list[str]) -> int:
+    """Calls to the given MCP servers; tool names look like mcp__<server>__<tool>."""
+    wanted = {_server_key(s) for s in servers}
+    calls = 0
+    for event in events:
+        for block in _blocks(event):
+            name = str(block.get("name") or "")
+            if block.get("type") == "tool_use" and name.startswith("mcp__"):
+                if _server_key(name[5:].split("__", 1)[0]) in wanted:
+                    calls += 1
+    return calls
+
+
 def first_edit_index(events: list[dict]) -> int | None:
     """Index of the first event that edits a non-manifest file."""
     for index, event in enumerate(events):
