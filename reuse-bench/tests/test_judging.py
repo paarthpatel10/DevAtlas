@@ -58,6 +58,8 @@ def _export(bench, include_examples=True, seed=3):
     out = bench / "runs" / "judging" / "judging.csv"
     key = bench / "runs" / "judging" / "key.json"
     n = export_judging(bench, seed, out, key, include_examples=include_examples)
+    if not out.exists():
+        return n, [], out, key
     with out.open(encoding="utf-8-sig", newline="") as fh:
         rows = list(csv.DictReader(fh))
     return n, rows, out, key
@@ -261,3 +263,14 @@ def test_truncated_run_is_exported_with_a_note(bench):
     assert n == 1
     assert "stopped at the turn or time limit" in rows[0]["agent_proposal"]
     assert "max_turns" not in rows[0]["agent_proposal"]
+
+
+def test_export_with_nothing_to_judge_writes_no_files(bench):
+    make_run(bench / "runs", "example-http-retries", "A", after={"requirements.txt": "tenacity\n"})
+    assert main(["score", "--root", str(bench)]) == 0
+    n, rows, out, key = _export(bench)
+    assert n == 0 and rows == []
+    assert not out.exists() and not key.exists()
+    make_run(bench / "runs", "example-list-batches", "A")
+    assert main(["score", "--root", str(bench)]) == 0
+    assert _export(bench)[0] == 1  # a later round is not blocked

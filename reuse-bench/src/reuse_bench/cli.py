@@ -156,6 +156,9 @@ def _cmd_export_judging(args: argparse.Namespace) -> int:
     except JudgingError as exc:
         print(f"ERROR: {exc}")
         return 1
+    if n == 0:
+        print("Nothing to judge: no scored run needs human judging. No files were written.")
+        return 0
     print(f"{n} rows written to {out_csv}. Give each judge a copy; keep {key_path} private.")
     return 0
 

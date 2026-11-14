@@ -144,3 +144,10 @@ def test_cli_validate_exit_codes(tmp_path, project_root, capsys):
     root = _make_root(tmp_path / "second", project_root)
     write_yaml(root / "cases" / "examples" / "a.yaml", case_dict(request="Use toolkitlib."))
     assert main(["validate", "--root", str(root)]) == 1
+
+
+def test_request_starting_with_dash_fails(tmp_path, project_root):
+    root = _make_root(tmp_path, project_root)
+    write_yaml(root / "cases" / "examples" / "a.yaml", case_dict(request="- retry failed calls"))
+    report = validate_all(root)
+    assert any("request must not start with '-'" in err for err in report.errors)
