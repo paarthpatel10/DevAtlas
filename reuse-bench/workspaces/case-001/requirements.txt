@@ -1,0 +1,33 @@
+# ── Core Framework ────────────────────────────────────────────────────────────
+fastapi
+uvicorn
+
+# ── AWS ───────────────────────────────────────────────────────────────────────
+boto3
+
+# ── LangChain ────────────────────────────────────────────────────
+langchain
+langchain-community
+langchain-aws
+langchain-text-splitters
+
+# ── LangSmith Observability ──────────────────────────────────────────────────
+langsmith
+
+# ── OpenSearch ────────────────────────────────────────────────────────────────
+opensearch-py
+
+# ── Document Processing ──────────────────────────────────────────────────────
+pypdf
+
+# ── Data Validation ──────────────────────────────────────────────────────────
+pydantic
+pydantic-settings
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+python-dotenv
+python-multipart
+httpx
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest

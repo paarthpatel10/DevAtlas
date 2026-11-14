@@ -1,0 +1,46 @@
+# Owner's own incident (spec section 5). Content from the owner's questionnaire answers,
+# 2026-11-14. Review for private information before committing.
+id: case-001
+title: Route questions between a SQL pipeline and a document pipeline
+kind: reuse
+example: false
+contributor: c01
+consent_to_publish: true
+date_observed: "2026-05"
+stack:
+  language: python
+  python_version: "3.11"
+  frameworks: [fastapi, langchain, langchain-aws, opensearch-py]
+context: |
+  A document-based RAG application built with FastAPI and LangChain. It already supports
+  document ingestion, embedding generation, vector search over an OpenSearch index and
+  retrieval-augmented generation, using a cloud-hosted LLM and embedding model. The next step
+  adds analytical questions answered from a PostgreSQL database alongside the document answers.
+request: |
+  Extend an existing document-based RAG application to support analytical queries against a
+  relational database. Implement an intelligent routing mechanism that understands incoming
+  natural-language questions and determines whether they should be handled by the document
+  retrieval pipeline or the SQL analytics pipeline. Build the required workflow orchestration,
+  integrate the database querying capabilities, and ensure that the application returns
+  unified responses with appropriate error handling and fallback mechanisms.
+workspace: workspaces/case-001   # owner's public repo cut back to its RAG-only state
+ground_truth:
+  accepted_tools:
+    - name: Semantic Router
+      packages: [semantic-router]
+      import_names: [semantic_router]
+      repo_url: https://github.com/aurelio-labs/semantic-router
+  rationale: >-
+    A maintained routing library already classifies natural-language queries from example
+    utterances per route, with confidence thresholds, which replaces the hand-written LLM
+    classification prompt and response parsing. Workflow orchestration for the SQL and RAG
+    pipelines would still be needed; the library covers the intent-classification layer only.
+  found_how: searched
+notes: >-
+  The request is reconstructed from memory; the original prompt is unavailable. The accepted
+  tool replaces the classification layer, not the workflow orchestration. Owner caveat: its
+  effectiveness should be checked against representative SQL, document, ambiguous and
+  multi-intent queries. Workspace: the owner's public project repository at commit 9695a15,
+  cut back to its RAG-only state by removal only (routing, SQL, LangGraph workflow, Streamlit
+  UI, Postgres service and their tests, as marked "Milestone 3" in the code; README and design
+  notes removed). One test there (upload to S3) already failed before the cut.

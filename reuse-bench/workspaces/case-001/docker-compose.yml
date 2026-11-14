@@ -1,0 +1,35 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# Analytics Copilot — Docker Compose
+# ══════════════════════════════════════════════════════════════════════════════
+# Services:
+#   1. fastapi    — Analytics Copilot API (port 8000)
+#
+# Note: OpenSearch is hosted on AWS (configured via .env), not as a container.
+# ══════════════════════════════════════════════════════════════════════════════
+
+
+services:
+  # ── FastAPI Application ───────────────────────────────────────────────────
+  fastapi:
+    build:
+      context: .
+      dockerfile: docker/fastapi.Dockerfile
+    container_name: copilot-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    networks:
+      - copilot-network
+    restart: unless-stopped
+
+# ── Networks ────────────────────────────────────────────────────────────────
+networks:
+  copilot-network:
+    driver: bridge

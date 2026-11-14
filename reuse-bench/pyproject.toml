@@ -29,6 +29,8 @@ addopts = "--basetemp=.pytest_tmp"
 
 [tool.ruff]
 line-length = 100
+# Case workspaces are contributors' starter projects, kept exactly as provided.
+extend-exclude = ["workspaces"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
