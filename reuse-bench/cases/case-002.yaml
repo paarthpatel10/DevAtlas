@@ -4,7 +4,7 @@ kind: reuse
 example: false
 contributor: c01                # same person and same project as case-001
 consent_to_publish: true
-date_observed: 2026-06          # from public commit dates; OWNER TO CONFIRM
+date_observed: 2026-06          # from public commit dates
 stack:
   language: python
   python_version: "3.11"
@@ -15,11 +15,23 @@ context: |
   returns the result to the user. The assistant is meant for read-only analysis.
   At the moment the generated SQL is executed without any check.
 request: |
-  Add a validation and safety layer that checks every LLM-generated SQL query
-  before it is executed. It should reject destructive operations, prevent
-  unauthorized access, handle malformed queries, and make sure only permitted
-  analytical queries run. Return a clear reason whenever a query is blocked.
-workspace: workspaces/case-002   # OWNER TASK: starter project does not exist yet, see notes
+  I have an AI-powered analytics assistant that converts users' natural-language
+  questions into SQL queries and executes them against a PostgreSQL database.
+
+  Currently, the generated SQL is executed directly without proper validation.
+  I want to add a safety check before execution.
+
+  Make sure the application only allows safe, read-only analytical queries.
+  Reject queries that modify or delete data, access restricted tables, contain
+  multiple statements, or are malformed.
+
+  If a query is blocked, return a clear explanation of why it was rejected
+  instead of executing it. Keep the validation logic separate from the query
+  execution code so it is easy to maintain and extend.
+
+  Please integrate this into the existing application without breaking the
+  current SQL query workflow.
+workspace: workspaces/case-002
 ground_truth:
   accepted_tools:
     - name: SQLGlot
