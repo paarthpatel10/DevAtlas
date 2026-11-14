@@ -23,7 +23,7 @@ from tests.runfactory import make_run, new_file_diff, text_event
 def bench(tmp_path, project_root):
     root = tmp_path / "bench"
     shutil.copytree(project_root / "conditions", root / "conditions")
-    shutil.copytree(project_root / "cases", root / "cases")
+    shutil.copytree(project_root / "cases" / "examples", root / "cases" / "examples")
     (root / "workspaces").mkdir()
     return root
 

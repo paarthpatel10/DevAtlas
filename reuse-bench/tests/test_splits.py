@@ -48,6 +48,14 @@ def test_examples_get_no_split():
     assert assign_splits(cases) == {}
 
 
-def test_cli_splits_runs_on_repo(project_root, capsys):
-    assert main(["splits", "--root", str(project_root)]) == 0
+def test_cli_splits_without_real_cases(tmp_path, project_root, capsys):
+    import shutil
+
+    root = tmp_path / "bench"
+    shutil.copytree(project_root / "cases" / "examples", root / "cases" / "examples")
+    assert main(["splits", "--root", str(root)]) == 0
     assert "no real cases" in capsys.readouterr().out
+
+
+def test_cli_splits_runs_on_repo(project_root):
+    assert main(["splits", "--root", str(project_root)]) == 0

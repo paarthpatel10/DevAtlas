@@ -20,12 +20,26 @@ def _make_root(tmp_path, project_root):
     return root
 
 
-def test_examples_validate_clean(project_root):
-    report = validate_all(project_root)
+def _examples_root(tmp_path, project_root):
+    """Project root with the real conditions and only the example fixtures (no real cases)."""
+    root = _make_root(tmp_path, project_root)
+    shutil.copytree(
+        project_root / "cases" / "examples", root / "cases" / "examples", dirs_exist_ok=True
+    )
+    return root
+
+
+def test_examples_validate_clean(tmp_path, project_root):
+    report = validate_all(_examples_root(tmp_path, project_root))
     assert report.errors == []
     assert report.examples == 3
     assert report.real_reuse == 0
     assert report.real_control == 0
+
+
+def test_repo_cases_validate(project_root):
+    """The real cases committed in the repository must always validate (no leaks)."""
+    assert validate_all(project_root).errors == []
 
 
 def test_leak_tokens_include_separator_variants():
@@ -124,9 +138,9 @@ def test_generated_workspace_is_leak_checked(tmp_path, project_root):
 
 
 def test_cli_validate_exit_codes(tmp_path, project_root, capsys):
-    assert main(["validate", "--root", str(project_root)]) == 0
+    assert main(["validate", "--root", str(_examples_root(tmp_path, project_root))]) == 0
     out = capsys.readouterr().out
     assert "0 real cases (0 reuse, 0 control); 3 example fixtures (excluded from counts)" in out
-    root = _make_root(tmp_path, project_root)
+    root = _make_root(tmp_path / "second", project_root)
     write_yaml(root / "cases" / "examples" / "a.yaml", case_dict(request="Use toolkitlib."))
     assert main(["validate", "--root", str(root)]) == 1

@@ -222,7 +222,7 @@ def test_cli_score_writes_auto_scores(tmp_path, project_root, capsys):
     import shutil
 
     root = tmp_path / "bench"
-    shutil.copytree(project_root / "cases", root / "cases")
+    shutil.copytree(project_root / "cases" / "examples", root / "cases" / "examples")
     shutil.copytree(project_root / "conditions", root / "conditions")
     (root / "workspaces").mkdir()
     make_run(root / "runs", "example-http-retries", after={"requirements.txt": "tenacity\n"})
