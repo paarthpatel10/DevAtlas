@@ -46,6 +46,8 @@ def make_run(
     pilot: bool = False,
     cost_usd: float | None = 0.05,
     started_at: datetime | None = None,
+    isolation: dict | None = None,
+    permission_denials: list[dict] | None = None,
 ) -> Path:
     run_id = f"{'pilot--' if pilot else ''}{case_id}--{condition_id}--r{repeat}"
     run_dir = runs_dir / run_id
@@ -80,8 +82,9 @@ def make_run(
         cost_usd=cost_usd,
         usage=None,
         num_turns=3,
-        permission_denials=[],
-        isolation={"active_plugins": ["cc-plugin-sec-default"], "env_removed": ["GITHUB_TOKEN"]},
+        permission_denials=permission_denials or [],
+        isolation=isolation
+        or {"active_plugins": ["cc-plugin-sec-default"], "env_removed": ["GITHUB_TOKEN"]},
         started_at=start,
         ended_at=start + timedelta(seconds=60),
     )
