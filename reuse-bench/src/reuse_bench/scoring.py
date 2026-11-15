@@ -31,7 +31,18 @@ _VALUE_OPTIONS = {
     "-r", "--requirement", "-c", "--constraint", "-i", "--index-url", "--extra-index-url",
     "--group", "--optional", "-e", "--editable", "--python", "-p",
 }  # fmt: skip
-_PKG = re.compile(r"^([A-Za-z0-9][A-Za-z0-9._-]*)")
+# Names start with a letter, so shell redirects such as 2>&1 are never read as packages.
+_PKG = re.compile(r"^([A-Za-z][A-Za-z0-9._-]*)")
+# Test and lint tooling is not a tool adopted for the feature.
+DEV_TOOLS = {"pytest", "ruff", "black", "mypy", "flake8", "isort", "pylint", "coverage",
+             "pre-commit", "tox", "nox"}  # fmt: skip
+
+
+def is_dev_tool(name: str) -> bool:
+    name = normalize_pkg(name)
+    return name in DEV_TOOLS or name.startswith("pytest-")
+
+
 _IMPORT = re.compile(r"^\s*import\s+(.+)$")
 _FROM = re.compile(r"^\s*from\s+([A-Za-z_][\w.]*)\s+import\b")
 
@@ -234,11 +245,11 @@ def score_run(run_dir: Path, case: Case, bench_root: Path) -> AutoScore:
     before = manifest_packages(run_dir / "manifest_before")
     after = manifest_packages(run_dir / "manifest_after")
     commands, installed = install_packages(events)
-    added = sorted((after - before) | (installed - before))
+    added = sorted(p for p in (after - before) | (installed - before) if not is_dev_tool(p))
     imports = sorted(
         name
         for name in new_imports(diff, local_module_names(case, bench_root, diff))
-        if normalize_pkg(name) not in before
+        if normalize_pkg(name) not in before and not is_dev_tool(name)
     )
     accepted_pkgs = {normalize_pkg(p) for t in case.ground_truth.accepted_tools for p in t.packages}
     accepted_imports = {i.lower() for t in case.ground_truth.accepted_tools for i in t.import_names}

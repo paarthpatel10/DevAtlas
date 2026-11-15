@@ -262,3 +262,22 @@ def test_mcp_tool_calls_counts_condition_server_calls():
     ]
     assert mcp_tool_calls(events, ["skills-but-for-dev"]) == 2
     assert mcp_tool_calls(events, []) == 0
+
+
+def test_shell_redirects_are_not_packages():
+    events = [tool_event("Bash", command='pip install -q "sqlglot>=25,<27" pytest 2>&1 | tail -1')]
+    assert install_packages(events)[1] == {"sqlglot", "pytest"}
+
+
+def test_test_tools_are_not_adoption(tmp_path, retry, project_root):
+    diff = new_file_diff("tests/test_retry.py", ["import pytest", "from app.retry import retry"])
+    score = _score(
+        tmp_path,
+        retry,
+        project_root,
+        diff=diff,
+        events=[tool_event("Bash", command="uv add --dev pytest pytest-cov ruff")],
+        after={"pyproject.toml": _pyproject("pytest>=8")},
+    )
+    assert score.label == "custom_no_mention"
+    assert score.added_packages == [] and score.new_imports == []
